@@ -1,4 +1,4 @@
 
 # SliSE
 
-This a repository for SliSE.
+This is a repository for SliSE.
