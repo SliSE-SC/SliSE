@@ -26,6 +26,10 @@ logging.basicConfig(level=logging.INFO, filename="log.txt")
 logger = logging.getLogger()
 sys.setrecursionlimit(100000)
 
+logging.basicConfig(level=logging.INFO, filename="log.txt")
+logger = logging.getLogger()
+sys.setrecursionlimit(100000)
+
 def timeout_handler(signum, frame):
     raise TimeoutError("Function execution timed out")
 
@@ -54,21 +58,34 @@ def main():
     find_all_vulnerabilities_default = False
     default_timeout = 100
     is_reentrant = False
+    
+    text_art = '''                                                                    
+   SSSSSSSSSSSSSSS lllllll   iiii     SSSSSSSSSSSSSSS EEEEEEEEEEEEEEEEEEEEEE
+ SS:::::::::::::::Sl:::::l  i::::i  SS:::::::::::::::SE::::::::::::::::::::E
+S:::::SSSSSS::::::Sl:::::l   iiii  S:::::SSSSSS::::::SE::::::::::::::::::::E
+S:::::S     SSSSSSSl:::::l         S:::::S     SSSSSSSEE::::::EEEEEEEEE::::E
+S:::::S             l::::l iiiiiii S:::::S              E:::::E       EEEEEE
+S:::::S             l::::l i:::::i S:::::S              E:::::E             
+ S::::SSSS          l::::l  i::::i  S::::SSSS           E::::::EEEEEEEEEE   
+  SS::::::SSSSS     l::::l  i::::i   SS::::::SSSSS      E:::::::::::::::E   
+    SSS::::::::SS   l::::l  i::::i     SSS::::::::SS    E:::::::::::::::E   
+       SSSSSS::::S  l::::l  i::::i        SSSSSS::::S   E::::::EEEEEEEEEE   
+            S:::::S l::::l  i::::i             S:::::S  E:::::E             
+            S:::::S l::::l  i::::i             S:::::S  E:::::E       EEEEEE
+SSSSSSS     S:::::Sl::::::li::::::iSSSSSSS     S:::::SEE::::::EEEEEEEE:::::E
+S::::::SSSSSS:::::Sl::::::li::::::iS::::::SSSSSS:::::SE::::::::::::::::::::E
+S:::::::::::::::SS l::::::li::::::iS:::::::::::::::SS E::::::::::::::::::::E
+ SSSSSSSSSSSSSSS   lllllllliiiiiiii SSSSSSSSSSSSSSS   EEEEEEEEEEEEEEEEEEEEEE
+                                                                            
+'''
+    print(text_art)
 
-    parser = argparse.ArgumentParser(description='Symbolic execution tool for EVM')
-    parser.add_argument('file', type=argparse.FileType('rb'), help='File with EVM bytecode hex string to analyse')
+    parser = argparse.ArgumentParser(description='Vulnerability detection tool for EVM')
+    parser.add_argument('file', type=argparse.FileType('rb'), help='File to analyse')
     parser.add_argument('--solidity-file', '-s', action='store_true', default=is_solidity_file_default,
                         help=f'Use this option when file is a solidity file instead of EVM bytecode hex string. By default it is {"unset" if not is_solidity_file_default else "set"}')
-    parser.add_argument('--verbosity', '-v', type=str, default=log_output_default,
-                        help=f'Log output verbosity (NotSet, Debug, Info, Warning, Error, Critical). Default = {log_output_default}')
     parser.add_argument('--vuln-type', '-vt', action='append', default=[],
-                        help=f'VULN_TYPE can be {all_vuln_types}. Default = {all_vuln_types}')
-    parser.add_argument('--max-depth', '-md', type=int, default=max_depth_default,
-                        help=f'Max recursion depth. The counting is how many basic blocks should be analysed. Default = {max_depth_default}')
-    parser.add_argument('--find-all-vulnerabilities', '-fav', action='store_true',
-                        default=find_all_vulnerabilities_default,
-                        help=f'When set it will try to find all possible vulnerabilities. It will take some time. By '
-                             f'default it is {"unset" if not find_all_vulnerabilities_default else "set"}')
+                        help=f'Default = {"reentrancy"}')
     parser.add_argument('--timeout', '-t', type=int, default=default_timeout,
                         help=f'Timeout to Z3 Solver. Default = {default_timeout}')
     parser.add_argument('--target_function', '-tf', type=str, help='The target function to analyze')
