@@ -1,0 +1,86 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 12,
+            "contract": "EnumerableSet",
+            "exploit": {
+                "initialState": {
+                    "accounts": {
+                        "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe": {
+                            "balance": "0x1",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        },
+                        "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef": {
+                            "balance": "0x0",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        }
+                    }
+                },
+                "steps": [
+                    {
+                        "address": "",
+                        "calldata": "",
+                        "input": "0x6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f80fdfea26469706673582212202e4afaa8d41eb0b802d5729d57f8e4ab3aa8c39f12b0bfa05ad97347f98bfe0464736f6c63430008140033",
+                        "name": "unknown",
+                        "origin": "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe",
+                        "value": "0x0"
+                    }
+                ]
+            },
+            "filename": "all_contract/Registry_1.sol",
+            "function": "constructor",
+            "message": "An assertion violation was triggered.\nIt is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values). This issue is reported for internal compiler generated code.\nClassification: SWC-110",
+            "name": "Exception State (SWC 110)",
+            "severity": "Low"
+        },
+        {
+            "address": 12,
+            "contract": "Registry",
+            "exploit": {
+                "initialState": {
+                    "accounts": {
+                        "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe": {
+                            "balance": "0x2",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        },
+                        "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef": {
+                            "balance": "0x0",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        }
+                    }
+                },
+                "steps": [
+                    {
+                        "address": "",
+                        "calldata": "",
+                        "input": "0x608060405234801561000f575f80fd5b506107b48061001d5f395ff3fe608060405234801561000f575f80fd5b506004361061004a575f3560e01c806307e495981461004e578063297add6f1461006a5780637928324d1461009a578063b56fbc2a146100b8575b5f80fd5b610068600480360381019061006391906104a4565b6100e8565b005b610084600480360381019061007f91906104e2565b61023c565b604051610091919061051c565b60405180910390f35b6100a2610258565b6040516100af919061054d565b60405180910390f35b6100d260048036038101906100cd9190610590565b610268565b6040516100df91906105ca565b60405180910390f35b5f8160ff160361012d576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016101249061063d565b60405180910390fd5b6101418260016102cf90919063ffffffff16565b15610181576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610178906106cb565b60405180910390fd5b6101958260016102fc90919063ffffffff16565b50805f808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020015f205f6101000a81548160ff021916908360ff1602179055508173ffffffffffffffffffffffffffffffffffffffff167fe8c6648938dcdaa70242c130f3379b3af1d376b5870d92c9cf664aded9f08ba282604051610230919061051c565b60405180910390a25050565b5f602052805f5260405f205f915054906101000a900460ff1681565b5f6102636001610329565b905090565b5f6102736001610329565b82106102b4576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016102ab90610733565b60405180910390fd5b6102c882600161033c90919063ffffffff16565b9050919050565b5f6102f4835f018373ffffffffffffffffffffffffffffffffffffffff165f1b610353565b905092915050565b5f610321835f018373ffffffffffffffffffffffffffffffffffffffff165f1b610373565b905092915050565b5f610335825f016103da565b9050919050565b5f610349835f01836103e9565b5f1c905092915050565b5f80836001015f8481526020019081526020015f20541415905092915050565b5f61037e8383610353565b6103d057825f0182908060018154018082558091505060019003905f5260205f20015f9091909190915055825f0180549050836001015f8481526020019081526020015f2081905550600190506103d4565b5f90505b92915050565b5f815f01805490509050919050565b5f825f0182815481106103ff576103fe610751565b5b905f5260205f200154905092915050565b5f80fd5b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f61043d82610414565b9050919050565b61044d81610433565b8114610457575f80fd5b50565b5f8135905061046881610444565b92915050565b5f60ff82169050919050565b6104838161046e565b811461048d575f80fd5b50565b5f8135905061049e8161047a565b92915050565b5f80604083850312156104ba576104b9610410565b5b5f6104c78582860161045a565b92505060206104d885828601610490565b9150509250929050565b5f602082840312156104f7576104f6610410565b5b5f6105048482850161045a565b91505092915050565b6105168161046e565b82525050565b5f60208201905061052f5f83018461050d565b92915050565b5f819050919050565b61054781610535565b82525050565b5f6020820190506105605f83018461053e565b92915050565b61056f81610535565b8114610579575f80fd5b50565b5f8135905061058a81610566565b92915050565b5f602082840312156105a5576105a4610410565b5b5f6105b28482850161057c565b91505092915050565b6105c481610433565b82525050565b5f6020820190506105dd5f8301846105bb565b92915050565b5f82825260208201905092915050565b7f52656769737472793a20496e76616c69642076657273696f6e000000000000005f82015250565b5f6106276019836105e3565b9150610632826105f3565b602082019050919050565b5f6020820190508181035f8301526106548161061b565b9050919050565b7f52656769737472793a2053616665477561726420616c726561647920726567695f8201527f7374657265640000000000000000000000000000000000000000000000000000602082015250565b5f6106b56026836105e3565b91506106c08261065b565b604082019050919050565b5f6020820190508181035f8301526106e2816106a9565b9050919050565b7f52656769737472793a20496e76616c696420696e6465780000000000000000005f82015250565b5f61071d6017836105e3565b9150610728826106e9565b602082019050919050565b5f6020820190508181035f83015261074a81610711565b9050919050565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffdfea26469706673582212208ddc3cec2730716301340bb1178ccf3a38335e7e10bd3f6d5f2be7fec43dd7fb64736f6c63430008140033",
+                        "name": "unknown",
+                        "origin": "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe",
+                        "value": "0x1"
+                    }
+                ]
+            },
+            "filename": "all_contract/Registry_1.sol",
+            "function": "constructor",
+            "message": "An assertion violation was triggered.\nIt is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values). This issue is reported for internal compiler generated code.\nClassification: SWC-110",
+            "name": "Exception State (SWC 110)",
+            "severity": "Low"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "mythril-0.23.15",
+        "mode": "solidity",
+        "version": "2023/01/20"
+    }
+}

@@ -1,0 +1,133 @@
+INFO:Slither:Compilation warnings/errors on /sb/NodeRegistry_2.sol:
+/sb/NodeRegistry_2.sol:22:1: Warning: Experimental features are turned on. Do not use experimental features on live deployments.
+pragma experimental ABIEncoderV2;
+^-------------------------------^
+
+INFO:Detectors:[93m
+BlockhashRegistry.getParentAndBlockhash (/sb/NodeRegistry_2.sol#99-128) is declared view but contains assembly code
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#constant-functions-changing-the-state[0m
+INFO:Detectors:[93m
+NodeRegistry.onlyActiveState (/sb/NodeRegistry_2.sol#275-283) uses a dangerous strict equality:
+	- require(bool,string)(si.stage == Stages.Active,address is not an in3-signer)
+	- require(bool,string)(si.stage == Stages.Active,address is not an in3-signer)
+NodeRegistry.onlyActiveState (/sb/NodeRegistry_2.sol#275-283) uses a dangerous strict equality:
+	- require(bool,string)(si.stage == Stages.Active,address is not an in3-signer)
+	- require(bool,string)(si.stage == Stages.Active,address is not an in3-signer)
+NodeRegistry.revealConvict (/sb/NodeRegistry_2.sol#449-521) uses a dangerous strict equality:
+	- require(bool,string)(ecrecover(bytes32,uint8,bytes32,bytes32)(keccak256(bytes)(abi.encodePacked(_blockhash,_blockNumber,registryId)),_v,_r,_s) == _signer,the block was not signed by the signer of the node)
+NodeRegistry.onlyActiveState (/sb/NodeRegistry_2.sol#275-283) uses a dangerous strict equality:
+	- require(bool,string)(si.stage == Stages.Active,address is not an in3-signer)
+	- require(bool,string)(si.stage == Stages.Active,address is not an in3-signer)
+NodeRegistry.revealConvict (/sb/NodeRegistry_2.sol#449-521) uses a dangerous strict equality:
+	- require(bool,string)(ecrecover(bytes32,uint8,bytes32,bytes32)(keccak256(bytes)(abi.encodePacked(_blockhash,_blockNumber,registryId)),_v,_r,_s) == _signer,the block was not signed by the signer of the node)
+NodeRegistry.updateNode (/sb/NodeRegistry_2.sol#569-629) uses a dangerous strict equality:
+	- require(bool,string)(si.owner == msg.sender,only for the owner)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#dangerous-strict-equalities[0m
+INFO:Detectors:[93m
+ui in NodeRegistry.registerNodeInternal (/sb/NodeRegistry_2.sol#724) is a local variable never initialiazed
+m in NodeRegistry.registerNodeInternal (/sb/NodeRegistry_2.sol#710) is a local variable never initialiazed
+ui in NodeRegistry.updateNode (/sb/NodeRegistry_2.sol#596) is a local variable never initialiazed
+ci in NodeRegistry.convict (/sb/NodeRegistry_2.sol#304) is a local variable never initialiazed
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#uninitialized-local-variables[0m
+INFO:Detectors:[92m
+Reentrancy in NodeRegistry.revealConvict (/sb/NodeRegistry_2.sol#449-521):
+	External calls:
+	- evmBlockhash = blockRegistry.blockhashMapping(_blockNumber) (/sb/NodeRegistry_2.sol#463)
+	State variables written after the call(s):
+	- convictMapping (/sb/NodeRegistry_2.sol#511)
+	- nodes (/sb/NodeRegistry_2.sol#502)
+	- signerIndex (/sb/NodeRegistry_2.sol#502)
+	- signerIndex (/sb/NodeRegistry_2.sol#506)
+	- signerIndex (/sb/NodeRegistry_2.sol#507)
+	- signerIndex (/sb/NodeRegistry_2.sol#510)
+	- urlIndex (/sb/NodeRegistry_2.sol#502)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-2[0m
+INFO:Detectors:[92m
+NodeRegistry.removeNodeFromRegistry (/sb/NodeRegistry_2.sol#400-414) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp < (blockTimeStampDeployment + YEAR_DEFINITION),only in 1st year) (/sb/NodeRegistry_2.sol#406)
+NodeRegistry.returnDeposit (/sb/NodeRegistry_2.sol#422-435) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp > si.lockedTime,deposit still locked) (/sb/NodeRegistry_2.sol#430)
+NodeRegistry.updateNode (/sb/NodeRegistry_2.sol#569-629) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(si.owner == msg.sender,only for the owner) (/sb/NodeRegistry_2.sol#581)
+NodeRegistry.checkNodeProperties (/sb/NodeRegistry_2.sol#659-666) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp < (blockTimeStampDeployment + YEAR_DEFINITION) (/sb/NodeRegistry_2.sol#662-664)
+NodeRegistry.registerNodeInternal (/sb/NodeRegistry_2.sol#680-735) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(! urlIndex[urlHash].used && signerIndex[_signer].stage == Stages.NotInUse,a node with the same url or signer is already registered) (/sb/NodeRegistry_2.sol#701-702)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#block-timestamp[0m
+INFO:Detectors:[92m
+BlockhashRegistry.getParentAndBlockhash uses assembly (/sb/NodeRegistry_2.sol#99-128)
+	- /sb/NodeRegistry_2.sol#112-126
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+Different versions of Solidity is used in /sb/NodeRegistry_2.sol:
+	- Version used: ['0.5.10', 'ABIEncoderV2']
+	- /sb/NodeRegistry_2.sol#21 declares pragma solidity0.5.10
+	- /sb/NodeRegistry_2.sol#22 declares pragma experimentalABIEncoderV2
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#different-pragma-directives-are-used[0m
+INFO:Detectors:[92m
+BlockhashRegistry.recreateBlockheaders (/sb/NodeRegistry_2.sol#62-75) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/NodeRegistry_2.sol:
+	- pragma solidity0.5.10 (/sb/NodeRegistry_2.sol#21): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Parameter '_startNumber' of BlockhashRegistry.searchForAvailableBlock (/sb/NodeRegistry_2.sol#44) is not in mixedCase
+Parameter '_numBlocks' of BlockhashRegistry.searchForAvailableBlock (/sb/NodeRegistry_2.sol#44) is not in mixedCase
+Parameter '_blockNumber' of BlockhashRegistry.recreateBlockheaders (/sb/NodeRegistry_2.sol#62) is not in mixedCase
+Parameter '_blockheaders' of BlockhashRegistry.recreateBlockheaders (/sb/NodeRegistry_2.sol#62) is not in mixedCase
+Parameter '_blockNumber' of BlockhashRegistry.saveBlockNumber (/sb/NodeRegistry_2.sol#80) is not in mixedCase
+Parameter '_blockheader' of BlockhashRegistry.getParentAndBlockhash (/sb/NodeRegistry_2.sol#99) is not in mixedCase
+Parameter '_blockheaders' of BlockhashRegistry.reCalculateBlockheaders (/sb/NodeRegistry_2.sol#135) is not in mixedCase
+Parameter '_bHash' of BlockhashRegistry.reCalculateBlockheaders (/sb/NodeRegistry_2.sol#135) is not in mixedCase
+Parameter '_blockRegistry' of NodeRegistry. (/sb/NodeRegistry_2.sol#288) is not in mixedCase
+Parameter '_blockNumber' of NodeRegistry.convict (/sb/NodeRegistry_2.sol#302) is not in mixedCase
+Parameter '_hash' of NodeRegistry.convict (/sb/NodeRegistry_2.sol#302) is not in mixedCase
+Parameter '_url' of NodeRegistry.registerNode (/sb/NodeRegistry_2.sol#318) is not in mixedCase
+Parameter '_props' of NodeRegistry.registerNode (/sb/NodeRegistry_2.sol#319) is not in mixedCase
+Parameter '_timeout' of NodeRegistry.registerNode (/sb/NodeRegistry_2.sol#320) is not in mixedCase
+Parameter '_weight' of NodeRegistry.registerNode (/sb/NodeRegistry_2.sol#321) is not in mixedCase
+Parameter '_url' of NodeRegistry.registerNodeFor (/sb/NodeRegistry_2.sol#351) is not in mixedCase
+Parameter '_props' of NodeRegistry.registerNodeFor (/sb/NodeRegistry_2.sol#352) is not in mixedCase
+Parameter '_timeout' of NodeRegistry.registerNodeFor (/sb/NodeRegistry_2.sol#353) is not in mixedCase
+Parameter '_signer' of NodeRegistry.registerNodeFor (/sb/NodeRegistry_2.sol#354) is not in mixedCase
+Parameter '_weight' of NodeRegistry.registerNodeFor (/sb/NodeRegistry_2.sol#355) is not in mixedCase
+Parameter '_v' of NodeRegistry.registerNodeFor (/sb/NodeRegistry_2.sol#356) is not in mixedCase
+Parameter '_r' of NodeRegistry.registerNodeFor (/sb/NodeRegistry_2.sol#357) is not in mixedCase
+Parameter '_s' of NodeRegistry.registerNodeFor (/sb/NodeRegistry_2.sol#358) is not in mixedCase
+Parameter '_signer' of NodeRegistry.removeNodeFromRegistry (/sb/NodeRegistry_2.sol#400) is not in mixedCase
+Parameter '_signer' of NodeRegistry.returnDeposit (/sb/NodeRegistry_2.sol#422) is not in mixedCase
+Parameter '_signer' of NodeRegistry.revealConvict (/sb/NodeRegistry_2.sol#450) is not in mixedCase
+Parameter '_blockhash' of NodeRegistry.revealConvict (/sb/NodeRegistry_2.sol#451) is not in mixedCase
+Parameter '_blockNumber' of NodeRegistry.revealConvict (/sb/NodeRegistry_2.sol#452) is not in mixedCase
+Parameter '_v' of NodeRegistry.revealConvict (/sb/NodeRegistry_2.sol#453) is not in mixedCase
+Parameter '_r' of NodeRegistry.revealConvict (/sb/NodeRegistry_2.sol#454) is not in mixedCase
+Parameter '_s' of NodeRegistry.revealConvict (/sb/NodeRegistry_2.sol#455) is not in mixedCase
+Parameter '_signer' of NodeRegistry.transferOwnership (/sb/NodeRegistry_2.sol#530) is not in mixedCase
+Parameter '_newOwner' of NodeRegistry.transferOwnership (/sb/NodeRegistry_2.sol#530) is not in mixedCase
+Parameter '_signer' of NodeRegistry.unregisteringNode (/sb/NodeRegistry_2.sol#547) is not in mixedCase
+Parameter '_signer' of NodeRegistry.updateNode (/sb/NodeRegistry_2.sol#570) is not in mixedCase
+Parameter '_url' of NodeRegistry.updateNode (/sb/NodeRegistry_2.sol#571) is not in mixedCase
+Parameter '_props' of NodeRegistry.updateNode (/sb/NodeRegistry_2.sol#572) is not in mixedCase
+Parameter '_timeout' of NodeRegistry.updateNode (/sb/NodeRegistry_2.sol#573) is not in mixedCase
+Parameter '_weight' of NodeRegistry.updateNode (/sb/NodeRegistry_2.sol#574) is not in mixedCase
+Parameter '_node' of NodeRegistry.calcProofHash (/sb/NodeRegistry_2.sol#640) is not in mixedCase
+Parameter '_deposit' of NodeRegistry.checkNodeProperties (/sb/NodeRegistry_2.sol#659) is not in mixedCase
+Parameter '_timeout' of NodeRegistry.checkNodeProperties (/sb/NodeRegistry_2.sol#659) is not in mixedCase
+Parameter '_url' of NodeRegistry.registerNodeInternal (/sb/NodeRegistry_2.sol#681) is not in mixedCase
+Parameter '_props' of NodeRegistry.registerNodeInternal (/sb/NodeRegistry_2.sol#682) is not in mixedCase
+Parameter '_timeout' of NodeRegistry.registerNodeInternal (/sb/NodeRegistry_2.sol#683) is not in mixedCase
+Parameter '_signer' of NodeRegistry.registerNodeInternal (/sb/NodeRegistry_2.sol#684) is not in mixedCase
+Parameter '_owner' of NodeRegistry.registerNodeInternal (/sb/NodeRegistry_2.sol#685) is not in mixedCase
+Parameter '_deposit' of NodeRegistry.registerNodeInternal (/sb/NodeRegistry_2.sol#686) is not in mixedCase
+Parameter '_weight' of NodeRegistry.registerNodeInternal (/sb/NodeRegistry_2.sol#687) is not in mixedCase
+Parameter '_si' of NodeRegistry.unregisterNodeInternal (/sb/NodeRegistry_2.sol#740) is not in mixedCase
+Parameter '_n' of NodeRegistry.unregisterNodeInternal (/sb/NodeRegistry_2.sol#740) is not in mixedCase
+Parameter '_nodeIndex' of NodeRegistry.removeNode (/sb/NodeRegistry_2.sol#752) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/NodeRegistry_2.sol analyzed (2 contracts), 70 result(s) found

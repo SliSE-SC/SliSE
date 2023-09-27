@@ -1,0 +1,150 @@
+WARNING:root:You are using solc version 0.4.26. The supported version is 0.4.21.
+INFO:root:Contract /sb/InteractiveCrowdsaleLib_2.sol:BasicMathLib:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 89.9%
+INFO:symExec:	  Arithmetic bugs: 	 True
+INFO:symExec:	  └> Overflow bugs: 	 True
+/sb/InteractiveCrowdsaleLib_2.sol:BasicMathLib:41:14
+mul(a,b)
+^
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 True
+/sb/InteractiveCrowdsaleLib_2.sol:BasicMathLib:42:31
+div(res,b)
+^
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 11.8507311344 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/InteractiveCrowdsaleLib_2.sol:CrowdsaleLib:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 79.7%
+INFO:symExec:	  Arithmetic bugs: 	 True
+INFO:symExec:	  └> Overflow bugs: 	 True
+/sb/InteractiveCrowdsaleLib_2.sol:CrowdsaleLib:636:34
+self.withdrawTokensMap[msg.sender] * self.percentBurn
+^
+INFO:symExec:	  └> Underflow bugs: 	 True
+/sb/InteractiveCrowdsaleLib_2.sol:CrowdsaleLib:750:12
+self.startingTokenBalance - self.withdrawTokensMap[self.owner]
+^
+/sb/InteractiveCrowdsaleLib_2.sol:CrowdsaleLib:637:48
+self.withdrawTokensMap[msg.sender] - _burnAmount
+^
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 True
+Flow 1:
+/sb/InteractiveCrowdsaleLib_2.sol:CrowdsaleLib:663:5
+msg.sender.transfer(total)
+^
+Flow 2:
+/sb/InteractiveCrowdsaleLib_2.sol:CrowdsaleLib:682:5
+self.owner.transfer(amount)
+^
+INFO:symExec:	  Time dependency bug: 	 True
+/sb/InteractiveCrowdsaleLib_2.sol:CrowdsaleLib:672:5
+if ((!crowdsaleEnded(self)) && (self.token.balanceOf(this)>0)) {
+^
+/sb/InteractiveCrowdsaleLib_2.sol:CrowdsaleLib:672:9
+(!crowdsaleEnded(self)) && (self.token.balanceOf(this)>0)
+^
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 236.061810017 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/InteractiveCrowdsaleLib_2.sol:CrowdsaleToken:
+encoding/hex: invalid byte: U+005F '_'
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 0.0
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	  --- 0.0 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/InteractiveCrowdsaleLib_2.sol:InteractiveCrowdsaleLib:
+encoding/hex: invalid byte: U+005F '_'
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 0.0
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	  --- 0.0 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/InteractiveCrowdsaleLib_2.sol:LinkedListLib:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 100.0%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 0.017863035202 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/InteractiveCrowdsaleLib_2.sol:TokenLib:
+encoding/hex: invalid byte: U+005F '_'
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 0.0
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	  --- 0.0 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+
+  .oooooo.             o8o            o8o          
+ d8P'  `Y8b            `"'            `"'          
+888      888  .oooo.o oooo  oooo d8b oooo   .oooo.o
+888      888 d88(  "8 `888  `888""8P `888  d88(  "8
+888      888 `"Y88b.   888   888      888  `"Y88b. 
+`88b    d88' o.  )88b  888   888      888  o.  )88b
+ `Y8bood8P'  8""888P' o888o d888b    o888o 8""888P'
+
+
+
+
+
+
+

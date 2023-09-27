@@ -1,0 +1,545 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/0xb0510d68f210b7db66e8c7c814f22680f2b8d1d6.bin
+[00:00:00:00] Fuzzing starts at 08:40:02
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found sload(<0x0, { }, { }>) @ 0xe
+Found sstore(<0x0, { }, { }>, <T, { }, { CALLER, var_0 }>) @ 0x43
+Found sload(<0x0, { }, { }>) @ 0x2e3
+Found codecopy(<0x080, { }, { }>, _, _), arg# = 0
+Found sload(<0x1, { }, { }>) @ 0x369
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1 }>) @ 0x36d
+Found sload(<T, { Sha(0x1) }, { var_1 }>) @ 0x38f
+Found sstore(<T, { Sha(0x1) }, { var_1 }>, <T, { }, { arr_1 }>) @ 0x3c4
+Found sload(<0x0, { }, { }>) @ 0x2e3
+Found codecopy(<0x080, { }, { }>, _, _), arg# = 0
+Found sload(<0x1, { }, { }>) @ 0x369
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1 }>) @ 0x36d
+Found sload(<T, { Sha(0x1) }, { var_1 }>) @ 0x38f
+Found sstore(<T, { Sha(0x1) }, { var_1 }>, <T, { }, { arr_1 }>) @ 0x3c4
+Found sload(<0x0, { }, { }>) @ 0x2e3
+Found codecopy(<0x080, { }, { }>, _, _), arg# = 0
+Found sload(<0x1, { }, { }>) @ 0x369
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1 }>) @ 0x36d
+Found sload(<T, { Sha(0x1) }, { var_1 }>) @ 0x38f
+Found sstore(<T, { Sha(0x1) }, { var_1 }>, <T, { }, { arr_1 }>) @ 0x3c4
+Found sload(<0x0, { }, { }>) @ 0x2e3
+Found codecopy(<0x080, { }, { }>, _, _), arg# = 0
+Found sload(<0x1, { }, { }>) @ 0x369
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1 }>) @ 0x36d
+Found sload(<T, { Sha(0x1) }, { var_1 }>) @ 0x38f
+Found sstore(<T, { Sha(0x1) }, { var_1 }>, <T, { }, { arr_1 }>) @ 0x3c4
+Found sload(<0x1, { }, { }>) @ 0xaa
+Found sload(<T, { Sha(0x1) }, { }>) @ 0xc2
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0xfa
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { arr_1, map_2 }>) @ 0x12f
+Found sload(<0x1, { }, { }>) @ 0x135
+Found sload(<T, { Sha(0x1) + 0x1 }, { }>) @ 0x14d
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x186
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { arr_1.off_1, map_2 }>) @ 0x1bb
+Found sload(<0x1, { }, { }>) @ 0x1c2
+Found sload(<T, { Sha(0x1) + 0x2 }, { }>) @ 0x1da
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x213
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { arr_1.off_2, map_2 }>) @ 0x248
+Found sload(<0x1, { }, { }>) @ 0x24f
+Found sload(<T, { Sha(0x1) + 0x3 }, { }>) @ 0x267
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x2a0
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { arr_1.off_3, map_2 }>) @ 0x2d5
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: (onlyOwner) Def = { arr_1, map_2, var_0, var_1 }, Use = { arr_1, arr_1.off_1, arr_1.off_2, arr_1.off_3, map_2, var_0, var_1 }
+Constructor tainted: { var_0 }
+[DEBUG] Analyzing puppets(0a46e3e9) @ 90
+Found sload(<0x1, { }, { }>) @ 0x2b6
+Found sload(<T, { Sha(0x1) }, { }>) @ 0x2cf
+puppets(0a46e3e9): Def = {  }, Use = { arr_1, var_1 }
+[DEBUG] Analyzing fundPuppets(2daeb49a) @ fd
+Found sload(<0x0, { }, { }>) @ 0x2f4
+Found sstore(<0x4, { }, { }>, <T, { }, { }>) @ 0x35a
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x372
+Found sload(<0x4, { }, { }>) @ 0x3a8
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x3db
+Found sload(<0x4, { }, { }>) @ 0x411
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x444
+Found sload(<0x4, { }, { }>) @ 0x47a
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x4ad
+Found sload(<0x4, { }, { }>) @ 0x4e3
+fundPuppets(2daeb49a): (onlyOwner) Def = { var_4 }, Use = { map_2, var_0, var_4 }
+[DEBUG] Analyzing withdraw(3ccfd60b) @ 107
+Found sload(<0x0, { }, { }>) @ 0x505
+Found sload(<0x0, { }, { }>) @ 0x560
+withdraw(3ccfd60b): (onlyOwner) Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing getPuppetCount(4962b964) @ 11e
+Found sload(<0x1, { }, { }>) @ 0x5e2
+getPuppetCount(4962b964): Def = {  }, Use = { var_1 }
+[DEBUG] Analyzing setExtra(54dfbca8) @ 149
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x641
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { map_2 }>) @ 0x676
+setExtra(54dfbca8): Def = { map_2 }, Use = { map_2 }
+[DEBUG] Analyzing extra(6f2641e1) @ 196
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x68e
+extra(6f2641e1): Def = {  }, Use = { map_2 }
+[DEBUG] Analyzing owner(8da5cb5b) @ 203
+Found sload(<0x0, { }, { }>) @ 0x6b3
+owner(8da5cb5b): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing newPuppet(8dd7d6d1) @ 25a
+Found sload(<0x0, { }, { }>) @ 0x6db
+Found codecopy(<_, { }, { }>, _, _), arg# = 0
+Found sload(<0x1, { }, { }>) @ 0x761
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1 }>) @ 0x765
+Found sload(<T, { Sha(0x1) }, { var_1 }>) @ 0x787
+Found sstore(<T, { Sha(0x1) }, { var_1 }>, <T, { }, { arr_1 }>) @ 0x7bc
+newPuppet(8dd7d6d1): (onlyOwner) Def = { arr_1, var_1 }, Use = { arr_1, var_0, var_1 }
+[DEBUG] Analyzing fallback @ 0
+fallback: Def = {  }, Use = {  }
+(7 candidate sequences)
+["newPuppet(8dd7d6d1)"; "puppets(0a46e3e9)"]
+["newPuppet(8dd7d6d1)"; "newPuppet(8dd7d6d1)"]
+["newPuppet(8dd7d6d1)"; "getPuppetCount(4962b964)"]
+["setExtra(54dfbca8)"; "setExtra(54dfbca8)"]
+["setExtra(54dfbca8)"; "fundPuppets(2daeb49a)"]
+["setExtra(54dfbca8)"; "extra(6f2641e1)"]
+["fundPuppets(2daeb49a)"; "fundPuppets(2daeb49a)"]
+[00:00:00:00] Start main fuzzing phase
+[00:00:00:01] [*] Save new seed id-00000_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: newPuppet(8dd7d6d1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: puppets(0a46e3e9), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00001_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: newPuppet(8dd7d6d1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getPuppetCount(4962b964), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00002_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: setExtra(54dfbca8), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: setExtra(54dfbca8), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] Tx#2 found MishandledException at 3bd
+[00:00:00:02] Tx#2 found MishandledException at 426
+[00:00:00:02] Tx#2 found MishandledException at 48f
+[00:00:00:02] Tx#2 found MishandledException at 4f8
+[00:00:00:02] Tx#2 found MishandledExceptionMythril at 3bd
+[00:00:00:02] Tx#2 found MishandledExceptionMythril at 426
+[00:00:00:02] Tx#2 found MishandledExceptionMythril at 48f
+[00:00:00:02] Tx#2 found MishandledExceptionMythril at 4f8
+[00:00:00:02] Tx#2 found MishandledExceptionManticore at 3bd
+[00:00:00:02] Tx#2 found MishandledExceptionManticore at 426
+[00:00:00:02] Tx#2 found MishandledExceptionManticore at 48f
+[00:00:00:02] Tx#2 found MishandledExceptionManticore at 4f8
+[00:00:00:02] [*] Save bug seed id-00000-ME-ME_mant-ME_myth_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: setExtra(54dfbca8), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: fundPuppets(2daeb49a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00003_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: setExtra(54dfbca8), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: fundPuppets(2daeb49a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00004_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: setExtra(54dfbca8), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: extra(6f2641e1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] Tx#2 found AssertionFailure at 2bf
+[00:00:00:03] [*] Save bug seed id-00001-AF_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000810000000000
+(    TX 1    ) Function: newPuppet(8dd7d6d1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: puppets(0a46e3e9), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+[00:00:00:03] [*] Save new seed id-00005_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000810000000000
+(    TX 1    ) Function: newPuppet(8dd7d6d1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: puppets(0a46e3e9), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+[00:00:00:03] [*] Save new seed id-00006_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000009
+( => TX 1 <= ) Function: newPuppet(8dd7d6d1), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00007_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: newPuppet(8dd7d6d1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 3 <= ) Function: extra(6f2641e1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: puppets(0a46e3e9), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: puppets(0a46e3e9), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000081000000
+(    TX 6    ) Function: newPuppet(8dd7d6d1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] Tx#1 found MultipleSend at 426
+[00:00:00:03] Tx#1 found MultipleSend at 48f
+[00:00:00:03] Tx#1 found MultipleSend at 4f8
+[00:00:00:03] [*] Save bug seed id-00002-MS_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000040
+(    TX 1    ) Function: fundPuppets(2daeb49a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000800000010000
+( => TX 2 <= ) Function: puppets(0a46e3e9), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000000000000000000000000000000000000000000000000000000000FD
+
+[00:00:00:03] [*] Save new seed id-00008_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getPuppetCount(4962b964), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: setExtra(54dfbca8), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 000000000000000000000000000E000000000000
+( => TX 3 <= ) Function: newPuppet(8dd7d6d1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00009_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000400000000
+(    TX 1    ) Function: newPuppet(8dd7d6d1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: owner(8da5cb5b), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00010_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 4082000000000000000000000000006200000000000000000001080000009100
+(    TX 2    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 3 <= ) Function: setExtra(54dfbca8), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+
+[00:00:00:06] [*] Save new seed id-00011_00006: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 41FFFFFFFFFFFFFFFBFFFFFFFFFBFFFF0CFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+(    TX 1    ) Function: setExtra(54dfbca8), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 4000000000000000000000000000000000000000000000000000000000000001
+          Arg2 : address
+                 24CD2EDBA056B7C6C7A50E8201B619D4F624FDDA
+(    TX 2    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:07] [*] Save new seed id-00012_00007: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 8000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: setExtra(54dfbca8), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000000000000000000000000000000000000000000000000000000000C8
+          Arg2 : address
+                 00000200E6FF000040000000000000F900000000
+(    TX 2    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: newPuppet(8dd7d6d1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: withdraw(3ccfd60b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: puppets(0a46e3e9), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 1A000000A6000000000000100000000000000000810000000000000000000000
+
+[00:00:00:12] [*] Save new seed id-00013_00012: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 4000000000000000000001000000000000000000000000000000000000000001
+(    TX 1    ) Function: setExtra(54dfbca8), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 8000000000000000000000000000000000000000000000000000000000000001
+          Arg2 : address
+                 00000000000000000200000000000000D700E300
+( => TX 2 <= ) Function: puppets(0a46e3e9), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 8000000000000000000000000000000000000000000000000000000000002600
+(    TX 3    ) Function: fundPuppets(2daeb49a), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 000000000000000000000000000000000000000000000000FF00000000000000
+(    TX 4    ) Function: withdraw(3ccfd60b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:20] Tx#2 found ReentrancyMythril at 3bd
+[00:00:00:20] [*] Save bug seed id-00003-RE_myth_00020: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: setExtra(54dfbca8), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 33B808A5AE24C410E8739B5CA2D5EF3931D3E09F
+(    TX 2    ) Function: fundPuppets(2daeb49a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:03:46] Tx#2 found ReentrancyMythril at 426
+[00:00:03:46] [*] Save bug seed id-00004-RE_myth_00226: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 4000F600000000000000000000000000005E0000000000000000000000000001
+( => TX 1 <= ) Function: setExtra(54dfbca8), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+          Arg2 : address
+                 33B808A5AE24C410E8739B5CA2D5EF3931D3E09F
+(    TX 2    ) Function: fundPuppets(2daeb49a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: setExtra(54dfbca8), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+          Arg2 : address
+                 118A2C24808934116E6AB4C00FF48145BD3B09E1
+
+[00:00:15:48] Tx#3 found ReentrancyMythril at 4f8
+[00:00:15:48] [*] Save bug seed id-00005-RE_myth_00948: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 4000F600000000000000000040000000005E0000000000000000000000000001
+( => TX 1 <= ) Function: setExtra(54dfbca8), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000003
+          Arg2 : address
+                 33B808A5AE24C410E8739B5CA2D5EF3931D3E09F
+(    TX 2    ) Function: getPuppetCount(4962b964), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fundPuppets(2daeb49a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: setExtra(54dfbca8), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+          Arg2 : address
+                 118A2C24808934116E6AB4C00FF48145BD3B09E1
+
+[00:00:41:37] Tx#4 found ReentrancyManticore at 35a
+[00:00:41:37] [*] Save bug seed id-00006-RE_mant_02497: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDEFFFFFFFFFFFFFFFFFF
+(    TX 1    ) Function: fundPuppets(2daeb49a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+(    TX 2    ) Function: newPuppet(8dd7d6d1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: setExtra(54dfbca8), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+          Arg2 : address
+                 24CD2EDBA056B7C654A50E8201B619D4F624FDDA
+(    TX 4    ) Function: fundPuppets(2daeb49a), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 5    ) Function: getPuppetCount(4962b964), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 8    ) Function: setExtra(54dfbca8), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 FFFFFFFFFFFFFF7FFFFFFFFFFFFFFFFFFFFFFFFFFFAFFFFFFF26FFFFFFFFFFFF
+          Arg2 : address
+                 118A2C24608934A36E6AB4C00FF48145D23B09E1
+(    TX 9    ) Function: owner(8da5cb5b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 10    ) Function: extra(6f2641e1), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000000000000000EA000000000000EA0000000000000000000000000000
+(    TX 11    ) Function: fundPuppets(2daeb49a), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE2FFFFFFFF
+(    TX 12    ) Function: withdraw(3ccfd60b), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 13    ) Function: extra(6f2641e1), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 14    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 8000000000000000000000000000000000000000000000000000000000000001
+( => TX 15 <= ) Function: owner(8da5cb5b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 676415
+[00:01:00:00] Deployment failures: 132153
+[00:01:00:00] Test Cases: 14
+[00:01:00:00] Covered Edges: 75
+[00:01:00:00] Covered Instructions: 1176
+[00:01:00:00] Covered Def-Use Chains: 33
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 1
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 0
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 0
+[00:01:00:00]   Integer Bug: 0
+[00:01:00:00]   Mishandled Exception: 4
+[00:01:00:00]   Multiple Send: 3
+[00:01:00:00]   Reentrancy: 0
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

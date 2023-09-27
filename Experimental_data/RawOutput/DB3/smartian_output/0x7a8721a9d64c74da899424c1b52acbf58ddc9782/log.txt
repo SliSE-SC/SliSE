@@ -1,0 +1,334 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/0x7a8721a9d64c74da899424c1b52acbf58ddc9782.bin
+[00:00:00:00] Fuzzing starts at 08:40:00
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found sstore(<0x1, { }, { }>, <0x0DE0B6B3A7640000, { }, { }>) @ 0x10
+Found sload(<0x2, { }, { }>) @ 0x28
+Found sstore(<0x2, { }, { }>, <T, { }, { CALLER, var_2 }>) @ 0x5d
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_1, var_2 }, Use = { var_2 }
+Constructor tainted: { var_2 }
+[DEBUG] Analyzing MinDeposit(11bcd830) @ 7a
+Found sload(<0x1, { }, { }>) @ 0x1d0
+MinDeposit(11bcd830): Def = {  }, Use = { var_1 }
+[DEBUG] Analyzing balances(27e235e3) @ a5
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x1e8
+balances(27e235e3): Def = {  }, Use = { map_0 }
+[DEBUG] Analyzing setLog(4797f21b) @ fc
+Found sload(<0x2, { }, { }>) @ 0x1f1
+setLog(4797f21b): Def = {  }, Use = { var_2 }
+[DEBUG] Analyzing owner(8da5cb5b) @ 13f
+Found sload(<0x2, { }, { }>) @ 0x250
+owner(8da5cb5b): Def = {  }, Use = { var_2 }
+[DEBUG] Analyzing CashOut(9ffa0711) @ 196
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x2af
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x32c
+Found sstore(<T, { Sha(*, 0x0) }, { }>, <T, { }, { map_0 }>) @ 0x333
+CashOut(9ffa0711): Def = { map_0 }, Use = { map_0 }
+[DEBUG] Analyzing Deposit(ed21248c) @ 1c3
+Found sload(<0x1, { }, { }>) @ 0x33c
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x388
+Found sstore(<T, { Sha(*, 0x0) }, { }>, <T, { }, { map_0 }>) @ 0x38f
+Deposit(ed21248c): Def = { map_0 }, Use = { map_0, var_1 }
+[DEBUG] Analyzing fallback @ 0
+fallback: Def = {  }, Use = {  }
+Pruning out ["Deposit(ed21248c)"]
+(5 candidate sequences)
+["CashOut(9ffa0711)"; "balances(27e235e3)"]
+["CashOut(9ffa0711)"; "Deposit(ed21248c)"; "balances(27e235e3)"]
+["CashOut(9ffa0711)"; "Deposit(ed21248c)"; "Deposit(ed21248c)"]
+["CashOut(9ffa0711)"; "Deposit(ed21248c)"; "CashOut(9ffa0711)"]
+["CashOut(9ffa0711)"; "CashOut(9ffa0711)"]
+[00:00:00:01] Start main fuzzing phase
+[00:00:00:01] Tx#1 found ReentrancyMythril at 2df
+[00:00:00:01] Tx#1 found ReentrancyManticore at 333
+[00:00:00:01] [*] Save bug seed id-00000-RE_mant-RE_myth_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: CashOut(9ffa0711), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: balances(27e235e3), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00000_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: CashOut(9ffa0711), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: balances(27e235e3), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00001_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: CashOut(9ffa0711), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Deposit(ed21248c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: balances(27e235e3), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00002_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: CashOut(9ffa0711), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000080
+(    TX 2    ) Function: balances(27e235e3), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] Tx#1 found BlockstateDependencyManticore at 225
+[00:00:00:03] Tx#1 found TransactionOriginUse at 242
+[00:00:00:03] [*] Save bug seed id-00001-BD_mant-TO_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: setLog(4797f21b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 00F1000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00003_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: setLog(4797f21b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 00F1000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00004_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 8000000000000000000000410000000000000000000000000000000000000001
+( => TX 2 <= ) Function: MinDeposit(11bcd830), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: CashOut(9ffa0711), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 000000000000003300000000000000FF00000000000000000063000000000000
+(    TX 4    ) Function: CashOut(9ffa0711), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 400000000000000000000000000000000000000000000000000000000000F001
+
+[00:00:00:03] [*] Save new seed id-00005_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: setLog(4797f21b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000002800000004000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00006_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: CashOut(9ffa0711), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: balances(27e235e3), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: owner(8da5cb5b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00007_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: CashOut(9ffa0711), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 FF7FA3FBFFFFFFFFFFFFFFFFFFDDFFF2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+(    TX 2    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: owner(8da5cb5b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: balances(27e235e3), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000050000000020000000000000000000000000
+(    TX 5    ) Function: Deposit(ed21248c), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000DF1800000000000000000000000040
+( => TX 6 <= ) Function: owner(8da5cb5b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: MinDeposit(11bcd830), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00008_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: CashOut(9ffa0711), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Deposit(ed21248c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 000000000000000000000000000000000000000000000008000000003D000000
+( => TX 3 <= ) Function: balances(27e235e3), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000040260000000000000000
+
+[00:00:00:16] Tx#4 found ReentrancyILF at 333
+[00:00:00:16] [*] Save bug seed id-00002-RE_ilf_00016: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: CashOut(9ffa0711), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Deposit(ed21248c), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000008000000000000001
+(    TX 3    ) Function: owner(8da5cb5b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 4 <= ) Function: CashOut(9ffa0711), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000040000000
+
+[00:00:01:07] Tx#5 found Reentrancy at 333
+[00:00:01:07] Tx#5 found ReentrancySFuzz at 2df
+[00:00:01:07] [*] Save bug seed id-00003-RE-RE_sfuzz_00067: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Deposit(ed21248c), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 000000000000000000000000000000000000000000000008000000003D000000
+(    TX 2    ) Function: CashOut(9ffa0711), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: balances(27e235e3), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: CashOut(9ffa0711), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000000000F7230000000000080000000000004100000000000000000000
+(    TX 5    ) Function: CashOut(9ffa0711), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 6    ) Function: balances(27e235e3), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 00000000000000008000402600000000F1000600
+
+[00:00:02:24] [*] Save new seed id-00009_00144: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Deposit(ed21248c), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 000000000000000000000000000000000000000000000008000000003D000000
+( => TX 2 <= ) Function: CashOut(9ffa0711), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000080000000000000000
+(    TX 3    ) Function: CashOut(9ffa0711), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000000000F7230000000000080000000000004100000000000000000000
+(    TX 4    ) Function: CashOut(9ffa0711), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: balances(27e235e3), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 00000000000000008000402600000000F1000600
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 792867
+[00:01:00:00] Deployment failures: 0
+[00:01:00:00] Test Cases: 10
+[00:01:00:00] Covered Edges: 39
+[00:01:00:00] Covered Instructions: 456
+[00:01:00:00] Covered Def-Use Chains: 32
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 0
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 0
+[00:01:00:00]   Integer Bug: 0
+[00:01:00:00]   Mishandled Exception: 0
+[00:01:00:00]   Multiple Send: 0
+[00:01:00:00]   Reentrancy: 1
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 1
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

@@ -1,0 +1,566 @@
+{
+    "errors": [
+        "EXIT_CODE_56"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "Pool",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "burn",
+            "impact": "Medium",
+            "line": 1953,
+            "line_end": 1976,
+            "message": "Reentrancy in Pool.burn (Pool_1.sol#1953-1976):\n\tExternal calls:\n\t- daiReserves = dai.balanceOf(address(this)) (Pool_1.sol#1956)\n\t- yDaiReserves = yDai.balanceOf(address(this)) (Pool_1.sol#1959-1961)\n\tState variables written after the call(s):\n\t- _totalSupply (Pool_1.sol#1968)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Pool",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "init",
+            "impact": "Medium",
+            "line": 1914,
+            "line_end": 1920,
+            "message": "Reentrancy in Pool.init (Pool_1.sol#1914-1920):\n\tExternal calls:\n\t- dai.transferFrom(msg.sender,address(this),daiIn) (Pool_1.sol#1918-1919)\n\tState variables written after the call(s):\n\t- _totalSupply (Pool_1.sol#1920)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Pool",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "mint",
+            "impact": "Medium",
+            "line": 1931,
+            "line_end": 1950,
+            "message": "Reentrancy in Pool.mint (Pool_1.sol#1931-1950):\n\tExternal calls:\n\t- daiReserves = dai.balanceOf(address(this)) (Pool_1.sol#1935)\n\t- yDaiReserves = yDai.balanceOf(address(this)) (Pool_1.sol#1937)\n\t- require(bool)(dai.transferFrom(msg.sender,address(this),daiOffered)) (Pool_1.sol#1941-1942)\n\t- require(bool)(yDai.transferFrom(msg.sender,address(this),yDaiRequired)) (Pool_1.sol#1943)\n\tState variables written after the call(s):\n\t- _totalSupply (Pool_1.sol#1943)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Pool",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "sellDai",
+            "impact": "Medium",
+            "line": 1990,
+            "line_end": 2001,
+            "message": "Pool.sellDai (Pool_1.sol#1990-2001) does not use the value returned by external calls:\n\t-dai.transferFrom(from,address(this),daiIn) (Pool_1.sol#1998)\n\t-yDai.transfer(to,yDaiOut) (Pool_1.sol#1999)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Pool",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "buyDai",
+            "impact": "Medium",
+            "line": 2036,
+            "line_end": 2044,
+            "message": "Pool.buyDai (Pool_1.sol#2036-2044) does not use the value returned by external calls:\n\t-yDai.transferFrom(from,address(this),yDaiIn) (Pool_1.sol#2039-2040)\n\t-dai.transfer(to,daiOut) (Pool_1.sol#2040-2041)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Pool",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "sellYDai",
+            "impact": "Medium",
+            "line": 2074,
+            "line_end": 2083,
+            "message": "Pool.sellYDai (Pool_1.sol#2074-2083) does not use the value returned by external calls:\n\t-yDai.transferFrom(from,address(this),yDaiIn) (Pool_1.sol#2078)\n\t-dai.transfer(to,daiOut) (Pool_1.sol#2078-2079)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Pool",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "buyYDai",
+            "impact": "Medium",
+            "line": 2115,
+            "line_end": 2134,
+            "message": "Pool.buyYDai (Pool_1.sol#2115-2134) does not use the value returned by external calls:\n\t-dai.transferFrom(from,address(this),daiIn) (Pool_1.sol#2126-2127)\n\t-yDai.transfer(to,yDaiOut) (Pool_1.sol#2129)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Pool",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "init",
+            "impact": "Medium",
+            "line": 1914,
+            "line_end": 1920,
+            "message": "Pool.init (Pool_1.sol#1914-1920) does not use the value returned by external calls:\n\t-dai.transferFrom(msg.sender,address(this),daiIn) (Pool_1.sol#1918-1919)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Pool",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "burn",
+            "impact": "Medium",
+            "line": 1953,
+            "line_end": 1976,
+            "message": "Pool.burn (Pool_1.sol#1953-1976) does not use the value returned by external calls:\n\t-dai.transfer(msg.sender,daiReturned) (Pool_1.sol#1968-1969)\n\t-yDai.transfer(msg.sender,yDaiReturned) (Pool_1.sol#1969-1970)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Pool",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "burn",
+            "impact": "Low",
+            "line": 1953,
+            "line_end": 1976,
+            "message": "Reentrancy in Pool.burn (Pool_1.sol#1953-1976):\n\tExternal calls:\n\t- daiReserves = dai.balanceOf(address(this)) (Pool_1.sol#1956)\n\t- yDaiReserves = yDai.balanceOf(address(this)) (Pool_1.sol#1959-1961)\n\tState variables written after the call(s):\n\t- _balances (Pool_1.sol#1968)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Pool",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "init",
+            "impact": "Low",
+            "line": 1914,
+            "line_end": 1920,
+            "message": "Reentrancy in Pool.init (Pool_1.sol#1914-1920):\n\tExternal calls:\n\t- dai.transferFrom(msg.sender,address(this),daiIn) (Pool_1.sol#1918-1919)\n\tState variables written after the call(s):\n\t- _balances (Pool_1.sol#1920)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Pool",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "mint",
+            "impact": "Low",
+            "line": 1931,
+            "line_end": 1950,
+            "message": "Reentrancy in Pool.mint (Pool_1.sol#1931-1950):\n\tExternal calls:\n\t- daiReserves = dai.balanceOf(address(this)) (Pool_1.sol#1935)\n\t- yDaiReserves = yDai.balanceOf(address(this)) (Pool_1.sol#1937)\n\t- require(bool)(dai.transferFrom(msg.sender,address(this),daiOffered)) (Pool_1.sol#1941-1942)\n\t- require(bool)(yDai.transferFrom(msg.sender,address(this),yDaiRequired)) (Pool_1.sol#1943)\n\tState variables written after the call(s):\n\t- _balances (Pool_1.sol#1943)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "balanceOf",
+            "impact": "Informational",
+            "line": 1077,
+            "line_end": 1084,
+            "message": "ERC20.balanceOf (Pool_1.sol#1077-1084) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "balanceOf",
+            "impact": "Informational",
+            "line": 914,
+            "line_end": 917,
+            "message": "IERC20.balanceOf (Pool_1.sol#914-917) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "transfer",
+            "impact": "Informational",
+            "line": 921,
+            "line_end": 922,
+            "message": "IERC20.transfer (Pool_1.sol#921-922) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "transfer",
+            "impact": "Informational",
+            "line": 1092,
+            "line_end": 1095,
+            "message": "ERC20.transfer (Pool_1.sol#1092-1095) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "allowance",
+            "impact": "Informational",
+            "line": 928,
+            "line_end": 930,
+            "message": "IERC20.allowance (Pool_1.sol#928-930) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "allowance",
+            "impact": "Informational",
+            "line": 1099,
+            "line_end": 1101,
+            "message": "ERC20.allowance (Pool_1.sol#1099-1101) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "approve",
+            "impact": "Informational",
+            "line": 949,
+            "line_end": 952,
+            "message": "IERC20.approve (Pool_1.sol#949-952) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "approve",
+            "impact": "Informational",
+            "line": 1104,
+            "line_end": 1106,
+            "message": "ERC20.approve (Pool_1.sol#1104-1106) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "transferFrom",
+            "impact": "Informational",
+            "line": 1120,
+            "line_end": 1128,
+            "message": "ERC20.transferFrom (Pool_1.sol#1120-1128) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "transferFrom",
+            "impact": "Informational",
+            "line": 964,
+            "line_end": 965,
+            "message": "IERC20.transferFrom (Pool_1.sol#964-965) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "name",
+            "impact": "Informational",
+            "line": 1037,
+            "line_end": 1038,
+            "message": "ERC20.name (Pool_1.sol#1037-1038) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "symbol",
+            "impact": "Informational",
+            "line": 1040,
+            "line_end": 1042,
+            "message": "ERC20.symbol (Pool_1.sol#1040-1042) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "decimals",
+            "impact": "Informational",
+            "line": 1067,
+            "line_end": 1069,
+            "message": "ERC20.decimals (Pool_1.sol#1067-1069) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "increaseAllowance",
+            "impact": "Informational",
+            "line": 1141,
+            "line_end": 1142,
+            "message": "ERC20.increaseAllowance (Pool_1.sol#1141-1142) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "decreaseAllowance",
+            "impact": "Informational",
+            "line": 1158,
+            "line_end": 1162,
+            "message": "ERC20.decreaseAllowance (Pool_1.sol#1158-1162) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Delegable",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "addDelegate",
+            "impact": "Informational",
+            "line": 1790,
+            "line_end": 1793,
+            "message": "Delegable.addDelegate (Pool_1.sol#1790-1793) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Delegable",
+            "filename": "all_contract/Pool_1.sol",
+            "function": "revokeDelegate",
+            "impact": "Informational",
+            "line": 1794,
+            "line_end": 1797,
+            "message": "Delegable.revokeDelegate (Pool_1.sol#1794-1797) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 4,
+            "message": "Detected issues with version pragma in Pool_1.sol:\n\t- pragma solidity>=0.6.0<0.8.0 (Pool_1.sol#4): is has a complex pragma\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 17,
+            "line_end": 19,
+            "message": "Function 'Context._msgSender' (Pool_1.sol#17-19) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 21,
+            "line_end": 23,
+            "message": "Function 'Context._msgData' (Pool_1.sol#21-23) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 557,
+            "line_end": 587,
+            "message": "Function 'ABDKMath64x64.log_2' (Pool_1.sol#557-587) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 602,
+            "line_end": 751,
+            "message": "Function 'ABDKMath64x64.exp_2' (Pool_1.sol#602-751) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 201,
+            "line_end": 204,
+            "message": "Constant 'ABDKMath64x64.MIN_64x64' (Pool_1.sol#201-204) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 206,
+            "line_end": 209,
+            "message": "Constant 'ABDKMath64x64.MAX_64x64' (Pool_1.sol#206-209) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1174,
+            "line_end": 1191,
+            "message": "Function 'ERC20._transfer' (Pool_1.sol#1174-1191) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1201,
+            "line_end": 1208,
+            "message": "Function 'ERC20._mint' (Pool_1.sol#1201-1208) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1218,
+            "line_end": 1228,
+            "message": "Function 'ERC20._burn' (Pool_1.sol#1218-1228) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1239,
+            "line_end": 1251,
+            "message": "Function 'ERC20._approve' (Pool_1.sol#1239-1251) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1257,
+            "line_end": 1261,
+            "message": "Function 'ERC20._setupDecimals' (Pool_1.sol#1257-1261) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1279,
+            "line_end": 1280,
+            "message": "Function 'ERC20._beforeTokenTransfer' (Pool_1.sol#1279-1280) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1474,
+            "line_end": 1617,
+            "message": "Function 'YieldMath.log_2' (Pool_1.sol#1474-1617) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1619,
+            "line_end": 1773,
+            "message": "Function 'YieldMath.pow_2' (Pool_1.sol#1619-1773) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1803,
+            "message": "Parameter '' of IPot.pie (Pool_1.sol#1803) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1806,
+            "message": "Parameter '' of IPot.join (Pool_1.sol#1806) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1806,
+            "message": "Parameter '' of IPot.exit (Pool_1.sol#1806) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1818,
+            "message": "Parameter '' of IYDai.mint (Pool_1.sol#1818) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1818,
+            "message": "Parameter '_scope_0' of IYDai.mint (Pool_1.sol#1818) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1818,
+            "message": "Parameter '' of IYDai.burn (Pool_1.sol#1818) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1818,
+            "message": "Parameter '_scope_0' of IYDai.burn (Pool_1.sol#1818) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1818,
+            "message": "Parameter '' of IYDai.flashMint (Pool_1.sol#1818) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1818,
+            "line_end": 1819,
+            "message": "Parameter '_scope_0' of IYDai.flashMint (Pool_1.sol#1818-1819) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1819,
+            "message": "Parameter '_scope_1' of IYDai.flashMint (Pool_1.sol#1819) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1859,
+            "line_end": 1860,
+            "message": "Constant 'Pool.k' (Pool_1.sol#1859-1860) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Pool_1.sol",
+            "impact": "Informational",
+            "line": 1863,
+            "line_end": 1866,
+            "message": "Constant 'Pool.g' (Pool_1.sol#1863-1866) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

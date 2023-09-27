@@ -1,0 +1,1473 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_RECEIVED_SIGNAL_38"
+    ],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Medium",
+            "line": 533,
+            "line_end": 537,
+            "message": "usingOraclize.getCodeSize (ExchangeRateProvider_1.sol#533-537) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Medium",
+            "line": 958,
+            "line_end": 978,
+            "message": "usingOraclize.copyBytes (ExchangeRateProvider_1.sol#958-978) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "usingOraclize",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "oraclizeAPI",
+            "impact": "Medium",
+            "line": 76,
+            "line_end": 84,
+            "message": "Reentrancy in usingOraclize.oraclizeAPI (ExchangeRateProvider_1.sol#76-84):\n\tExternal calls:\n\t- address(oraclize) != OAR.getAddress() (ExchangeRateProvider_1.sol#80-81)\n\t- oraclize = OraclizeI(OAR.getAddress()) (ExchangeRateProvider_1.sol#81)\n\tState variables written after the call(s):\n\t- oraclize (ExchangeRateProvider_1.sol#81)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "ExchangeRateProvider",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "setQueryId",
+            "impact": "Medium",
+            "line": 1190,
+            "line_end": 1200,
+            "message": "ExchangeRateProvider.setQueryId (ExchangeRateProvider_1.sol#1190-1200) does not use the value returned by external calls:\n\t-_exchangeRates.setQueryId(_identifier,_queryType) (ExchangeRateProvider_1.sol#1199)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "ExchangeRateProvider",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "__callback",
+            "impact": "Low",
+            "line": 1204,
+            "line_end": 1239,
+            "message": "Reentrancy in ExchangeRateProvider.__callback (ExchangeRateProvider_1.sol#1204-1239):\n\tExternal calls:\n\t- require(bool)(msg.sender == oraclize_cbAddress()) (ExchangeRateProvider_1.sol#1208)\n\t- _exchangeRates = IExchangeRates(registry.getContractAddress(ExchangeRates)) (ExchangeRateProvider_1.sol#1210-1212)\n\t- _ratesActive = _exchangeRates.ratesActive() (ExchangeRateProvider_1.sol#1214)\n\t- _queryType = _exchangeRates.queryTypes(_queryId) (ExchangeRateProvider_1.sol#1218)\n\t- (_callInterval,_callbackGasLimit,_queryString) = _exchangeRates.getCurrencySettings(_queryType) (ExchangeRateProvider_1.sol#1219-1223)\n\t- require(bool)(_exchangeRates.setRate(_queryId,parseInt(_result,2))) (ExchangeRateProvider_1.sol#1227)\n\t- sendQuery(_queryString,_callInterval,_callbackGasLimit,_queryType) (ExchangeRateProvider_1.sol#1232-1237)\n\tExternal calls sending eth:\n\t- sendQuery(_queryString,_callInterval,_callbackGasLimit,_queryType) (ExchangeRateProvider_1.sol#1232-1237)\n\tState variables written after the call(s):\n\t- oraclize_network_name (ExchangeRateProvider_1.sol#1232-1237)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "usingOraclize",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "oraclize_newRandomDSQuery",
+            "impact": "Low",
+            "line": 768,
+            "line_end": 811,
+            "message": "Reentrancy in usingOraclize.oraclize_newRandomDSQuery (ExchangeRateProvider_1.sol#768-811):\n\tExternal calls:\n\t- sessionKeyHash_bytes32 = oraclize_randomDS_getSessionPubKeyHash() (ExchangeRateProvider_1.sol#776)\n\t- queryId = oraclize_query(random,args,_customGasLimit) (ExchangeRateProvider_1.sol#792)\n\tExternal calls sending eth:\n\t- queryId = oraclize_query(random,args,_customGasLimit) (ExchangeRateProvider_1.sol#792)\n\tState variables written after the call(s):\n\t- oraclize_network_name (ExchangeRateProvider_1.sol#792)\n\t- oraclize_randomDS_args (ExchangeRateProvider_1.sol#809)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "High",
+            "contract": "usingOraclize",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "getCodeSize",
+            "impact": "Informational",
+            "line": 533,
+            "line_end": 537,
+            "message": "usingOraclize.getCodeSize uses assembly (ExchangeRateProvider_1.sol#533-537)\n\t- ExchangeRateProvider_1.sol#534-537\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "usingOraclize",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "oraclize_newRandomDSQuery",
+            "impact": "Informational",
+            "line": 768,
+            "line_end": 811,
+            "message": "usingOraclize.oraclize_newRandomDSQuery uses assembly (ExchangeRateProvider_1.sol#768-811)\n\t- ExchangeRateProvider_1.sol#777-783\n\t- ExchangeRateProvider_1.sol#784-788\n\t- ExchangeRateProvider_1.sol#796-809\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "usingOraclize",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "verifySig",
+            "impact": "Informational",
+            "line": 820,
+            "line_end": 846,
+            "message": "usingOraclize.verifySig uses assembly (ExchangeRateProvider_1.sol#820-846)\n\t- ExchangeRateProvider_1.sol#834-840\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "usingOraclize",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "copyBytes",
+            "impact": "Informational",
+            "line": 958,
+            "line_end": 978,
+            "message": "usingOraclize.copyBytes uses assembly (ExchangeRateProvider_1.sol#958-978)\n\t- ExchangeRateProvider_1.sol#969-973\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "usingOraclize",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "safer_ecrecover",
+            "impact": "Informational",
+            "line": 982,
+            "line_end": 1007,
+            "message": "usingOraclize.safer_ecrecover uses assembly (ExchangeRateProvider_1.sol#982-1007)\n\t- ExchangeRateProvider_1.sol#993-1006\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "usingOraclize",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "ecrecovery",
+            "impact": "Informational",
+            "line": 1010,
+            "line_end": 1048,
+            "message": "usingOraclize.ecrecovery uses assembly (ExchangeRateProvider_1.sol#1010-1048)\n\t- ExchangeRateProvider_1.sol#1021-1041\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 41,
+            "message": "OraclizeI.cbAddress should be constant (ExchangeRateProvider_1.sol#41)\n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "OraclizeI",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "query2",
+            "impact": "Informational",
+            "line": 44,
+            "message": "OraclizeI.query2 (ExchangeRateProvider_1.sol#44) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "OraclizeI",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "queryN",
+            "impact": "Informational",
+            "line": 46,
+            "message": "OraclizeI.queryN (ExchangeRateProvider_1.sol#46) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "OraclizeI",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "getPrice",
+            "impact": "Informational",
+            "line": 48,
+            "message": "OraclizeI.getPrice (ExchangeRateProvider_1.sol#48) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "OraclizeI",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "getPrice",
+            "impact": "Informational",
+            "line": 49,
+            "message": "OraclizeI.getPrice (ExchangeRateProvider_1.sol#49) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "OraclizeAddrResolverI",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "getAddress",
+            "impact": "Informational",
+            "line": 55,
+            "message": "OraclizeAddrResolverI.getAddress (ExchangeRateProvider_1.sol#55) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "usingOraclize",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "__callback",
+            "impact": "Informational",
+            "line": 130,
+            "line_end": 132,
+            "message": "usingOraclize.__callback (ExchangeRateProvider_1.sol#130-132) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExchangeRateProvider",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "__callback",
+            "impact": "Informational",
+            "line": 1204,
+            "line_end": 1239,
+            "message": "ExchangeRateProvider.__callback (ExchangeRateProvider_1.sol#1204-1239) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExchangeRateProvider",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "selfDestruct",
+            "impact": "Informational",
+            "line": 1242,
+            "line_end": 1247,
+            "message": "ExchangeRateProvider.selfDestruct (ExchangeRateProvider_1.sol#1242-1247) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExchangeRateProvider",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "function": "fallback",
+            "impact": "Informational",
+            "line": 1250,
+            "line_end": 1253,
+            "message": "ExchangeRateProvider.fallback (ExchangeRateProvider_1.sol#1250-1253) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in ExchangeRateProvider_1.sol:\n\t- pragma solidity0.4.23 (ExchangeRateProvider_1.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 43,
+            "message": "Function 'OraclizeI.query_withGasLimit' (ExchangeRateProvider_1.sol#43) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 45,
+            "message": "Function 'OraclizeI.query2_withGasLimit' (ExchangeRateProvider_1.sol#45) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 47,
+            "message": "Function 'OraclizeI.queryN_withGasLimit' (ExchangeRateProvider_1.sol#47) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 52,
+            "message": "Function 'OraclizeI.randomDS_getSessionPubKeyHash' (ExchangeRateProvider_1.sol#52) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 57,
+            "line_end": 1050,
+            "message": "Contract 'usingOraclize' (ExchangeRateProvider_1.sol#57-1050) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 90,
+            "line_end": 93,
+            "message": "Function 'usingOraclize.oraclize_setNetwork' (ExchangeRateProvider_1.sol#90-93) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 94,
+            "line_end": 128,
+            "message": "Function 'usingOraclize.oraclize_setNetwork' (ExchangeRateProvider_1.sol#94-128) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 130,
+            "line_end": 132,
+            "message": "Function 'usingOraclize.__callback' (ExchangeRateProvider_1.sol#130-132) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 133,
+            "line_end": 136,
+            "message": "Function 'usingOraclize.__callback' (ExchangeRateProvider_1.sol#133-136) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 138,
+            "line_end": 140,
+            "message": "Function 'usingOraclize.oraclize_getPrice' (ExchangeRateProvider_1.sol#138-140) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 142,
+            "line_end": 144,
+            "message": "Function 'usingOraclize.oraclize_getPrice' (ExchangeRateProvider_1.sol#142-144) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 146,
+            "line_end": 150,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#146-150) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 151,
+            "line_end": 155,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#151-155) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 156,
+            "line_end": 160,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#156-160) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 161,
+            "line_end": 165,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#161-165) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 166,
+            "line_end": 170,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#166-170) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 171,
+            "line_end": 175,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#171-175) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 176,
+            "line_end": 180,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#176-180) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 181,
+            "line_end": 185,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#181-185) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 186,
+            "line_end": 191,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#186-191) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 192,
+            "line_end": 197,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#192-197) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 198,
+            "line_end": 203,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#198-203) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 204,
+            "line_end": 209,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#204-209) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 210,
+            "line_end": 214,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#210-214) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 215,
+            "line_end": 219,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#215-219) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 220,
+            "line_end": 224,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#220-224) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 225,
+            "line_end": 229,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#225-229) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 231,
+            "line_end": 236,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#231-236) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 237,
+            "line_end": 242,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#237-242) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 243,
+            "line_end": 248,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#243-248) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 249,
+            "line_end": 254,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#249-254) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 255,
+            "line_end": 261,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#255-261) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 262,
+            "line_end": 268,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#262-268) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 269,
+            "line_end": 275,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#269-275) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 276,
+            "line_end": 282,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#276-282) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 284,
+            "line_end": 291,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#284-291) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 292,
+            "line_end": 299,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#292-299) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 300,
+            "line_end": 307,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#300-307) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 308,
+            "line_end": 315,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#308-315) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 316,
+            "line_end": 324,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#316-324) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 325,
+            "line_end": 333,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#325-333) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 334,
+            "line_end": 342,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#334-342) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 343,
+            "line_end": 351,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#343-351) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 352,
+            "line_end": 357,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#352-357) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 358,
+            "line_end": 363,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#358-363) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 364,
+            "line_end": 369,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#364-369) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 370,
+            "line_end": 375,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#370-375) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 376,
+            "line_end": 380,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#376-380) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 381,
+            "line_end": 385,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#381-385) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 386,
+            "line_end": 390,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#386-390) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 391,
+            "line_end": 395,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#391-395) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 397,
+            "line_end": 402,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#397-402) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 403,
+            "line_end": 408,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#403-408) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 409,
+            "line_end": 414,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#409-414) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 415,
+            "line_end": 420,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#415-420) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 421,
+            "line_end": 427,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#421-427) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 428,
+            "line_end": 434,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#428-434) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 435,
+            "line_end": 441,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#435-441) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 442,
+            "line_end": 448,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#442-448) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 450,
+            "line_end": 457,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#450-457) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 458,
+            "line_end": 465,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#458-465) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 466,
+            "line_end": 473,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#466-473) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 474,
+            "line_end": 481,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#474-481) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 482,
+            "line_end": 490,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#482-490) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 491,
+            "line_end": 499,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#491-499) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 500,
+            "line_end": 508,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#500-508) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 509,
+            "line_end": 517,
+            "message": "Function 'usingOraclize.oraclize_query' (ExchangeRateProvider_1.sol#509-517) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 519,
+            "line_end": 521,
+            "message": "Function 'usingOraclize.oraclize_cbAddress' (ExchangeRateProvider_1.sol#519-521) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 522,
+            "line_end": 524,
+            "message": "Function 'usingOraclize.oraclize_setProof' (ExchangeRateProvider_1.sol#522-524) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 525,
+            "line_end": 527,
+            "message": "Function 'usingOraclize.oraclize_setCustomGasPrice' (ExchangeRateProvider_1.sol#525-527) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 529,
+            "line_end": 531,
+            "message": "Function 'usingOraclize.oraclize_randomDS_getSessionPubKeyHash' (ExchangeRateProvider_1.sol#529-531) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 539,
+            "message": "Parameter '_a' of usingOraclize.parseAddr (ExchangeRateProvider_1.sol#539) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 559,
+            "message": "Parameter '_a' of usingOraclize.strCompare (ExchangeRateProvider_1.sol#559) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 559,
+            "message": "Parameter '_b' of usingOraclize.strCompare (ExchangeRateProvider_1.sol#559) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 577,
+            "message": "Parameter '_haystack' of usingOraclize.indexOf (ExchangeRateProvider_1.sol#577) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 577,
+            "message": "Parameter '_needle' of usingOraclize.indexOf (ExchangeRateProvider_1.sol#577) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 604,
+            "message": "Parameter '_a' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#604) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 604,
+            "message": "Parameter '_b' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#604) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 604,
+            "message": "Parameter '_c' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#604) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 604,
+            "message": "Parameter '_d' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#604) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 604,
+            "message": "Parameter '_e' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#604) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 621,
+            "message": "Parameter '_a' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#621) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 621,
+            "message": "Parameter '_b' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#621) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 621,
+            "message": "Parameter '_c' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#621) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 621,
+            "message": "Parameter '_d' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#621) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 625,
+            "message": "Parameter '_a' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#625) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 625,
+            "message": "Parameter '_b' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#625) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 625,
+            "message": "Parameter '_c' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#625) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 629,
+            "message": "Parameter '_a' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#629) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 629,
+            "message": "Parameter '_b' of usingOraclize.strConcat (ExchangeRateProvider_1.sol#629) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 634,
+            "message": "Parameter '_a' of usingOraclize.parseInt (ExchangeRateProvider_1.sol#634) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 639,
+            "message": "Parameter '_a' of usingOraclize.parseInt (ExchangeRateProvider_1.sol#639) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 639,
+            "message": "Parameter '_b' of usingOraclize.parseInt (ExchangeRateProvider_1.sol#639) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 760,
+            "line_end": 762,
+            "message": "Function 'usingOraclize.oraclize_setNetworkName' (ExchangeRateProvider_1.sol#760-762) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 760,
+            "message": "Parameter '_network_name' of usingOraclize.oraclize_setNetworkName (ExchangeRateProvider_1.sol#760) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 764,
+            "line_end": 766,
+            "message": "Function 'usingOraclize.oraclize_getNetworkName' (ExchangeRateProvider_1.sol#764-766) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 768,
+            "line_end": 811,
+            "message": "Function 'usingOraclize.oraclize_newRandomDSQuery' (ExchangeRateProvider_1.sol#768-811) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 768,
+            "message": "Parameter '_delay' of usingOraclize.oraclize_newRandomDSQuery (ExchangeRateProvider_1.sol#768) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 768,
+            "message": "Parameter '_nbytes' of usingOraclize.oraclize_newRandomDSQuery (ExchangeRateProvider_1.sol#768) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 768,
+            "message": "Parameter '_customGasLimit' of usingOraclize.oraclize_newRandomDSQuery (ExchangeRateProvider_1.sol#768) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 813,
+            "line_end": 815,
+            "message": "Function 'usingOraclize.oraclize_randomDS_setCommitment' (ExchangeRateProvider_1.sol#813-815) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 848,
+            "line_end": 881,
+            "message": "Function 'usingOraclize.oraclize_randomDS_proofVerify__sessionKeyValidity' (ExchangeRateProvider_1.sol#848-881) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 893,
+            "line_end": 901,
+            "message": "Function 'usingOraclize.oraclize_randomDS_proofVerify__returnCode' (ExchangeRateProvider_1.sol#893-901) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 893,
+            "message": "Parameter '_queryId' of usingOraclize.oraclize_randomDS_proofVerify__returnCode (ExchangeRateProvider_1.sol#893) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 893,
+            "message": "Parameter '_result' of usingOraclize.oraclize_randomDS_proofVerify__returnCode (ExchangeRateProvider_1.sol#893) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 893,
+            "message": "Parameter '_proof' of usingOraclize.oraclize_randomDS_proofVerify__returnCode (ExchangeRateProvider_1.sol#893) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 903,
+            "message": "Parameter 'n_random_bytes' of usingOraclize.matchBytes32Prefix (ExchangeRateProvider_1.sol#903) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 915,
+            "line_end": 955,
+            "message": "Function 'usingOraclize.oraclize_randomDS_proofVerify__main' (ExchangeRateProvider_1.sol#915-955) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 915,
+            "message": "Parameter 'context_name' of usingOraclize.oraclize_randomDS_proofVerify__main (ExchangeRateProvider_1.sol#915) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 982,
+            "line_end": 1007,
+            "message": "Function 'usingOraclize.safer_ecrecover' (ExchangeRateProvider_1.sol#982-1007) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 58,
+            "message": "Constant 'usingOraclize.day' (ExchangeRateProvider_1.sol#58) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 59,
+            "message": "Constant 'usingOraclize.week' (ExchangeRateProvider_1.sol#59) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 60,
+            "message": "Constant 'usingOraclize.month' (ExchangeRateProvider_1.sol#60) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 61,
+            "message": "Constant 'usingOraclize.proofType_NONE' (ExchangeRateProvider_1.sol#61) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 62,
+            "message": "Constant 'usingOraclize.proofType_TLSNotary' (ExchangeRateProvider_1.sol#62) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 63,
+            "message": "Constant 'usingOraclize.proofType_Android' (ExchangeRateProvider_1.sol#63) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 64,
+            "message": "Constant 'usingOraclize.proofType_Ledger' (ExchangeRateProvider_1.sol#64) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 65,
+            "message": "Constant 'usingOraclize.proofType_Native' (ExchangeRateProvider_1.sol#65) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 66,
+            "message": "Constant 'usingOraclize.proofStorage_IPFS' (ExchangeRateProvider_1.sol#66) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 67,
+            "message": "Constant 'usingOraclize.networkID_auto' (ExchangeRateProvider_1.sol#67) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 68,
+            "message": "Constant 'usingOraclize.networkID_mainnet' (ExchangeRateProvider_1.sol#68) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 69,
+            "message": "Constant 'usingOraclize.networkID_testnet' (ExchangeRateProvider_1.sol#69) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 70,
+            "message": "Constant 'usingOraclize.networkID_morden' (ExchangeRateProvider_1.sol#70) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 71,
+            "message": "Constant 'usingOraclize.networkID_consensys' (ExchangeRateProvider_1.sol#71) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 73,
+            "message": "Variable 'usingOraclize.OAR' (ExchangeRateProvider_1.sol#73) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 759,
+            "message": "Variable 'usingOraclize.oraclize_network_name' (ExchangeRateProvider_1.sol#759) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 817,
+            "message": "Variable 'usingOraclize.oraclize_randomDS_args' (ExchangeRateProvider_1.sol#817) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 818,
+            "message": "Variable 'usingOraclize.oraclize_randomDS_sessionKeysHashVerified' (ExchangeRateProvider_1.sol#818) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 883,
+            "line_end": 891,
+            "message": "Modifier 'usingOraclize.oraclize_randomDS_proofVerify' (ExchangeRateProvider_1.sol#883-891) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1204,
+            "line_end": 1239,
+            "message": "Function 'ExchangeRateProvider.__callback' (ExchangeRateProvider_1.sol#1204-1239) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1204,
+            "message": "Parameter '_queryId' of ExchangeRateProvider.__callback (ExchangeRateProvider_1.sol#1204) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1204,
+            "message": "Parameter '_result' of ExchangeRateProvider.__callback (ExchangeRateProvider_1.sol#1204) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1137,
+            "message": "Parameter '_registryAddress' of ExchangeRateProvider. (ExchangeRateProvider_1.sol#1137) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1146,
+            "message": "Parameter '_gasPrice' of ExchangeRateProvider.setCallbackGasPrice (ExchangeRateProvider_1.sol#1146) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1159,
+            "message": "Parameter '_queryString' of ExchangeRateProvider.sendQuery (ExchangeRateProvider_1.sol#1159) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1161,
+            "message": "Parameter '_callInterval' of ExchangeRateProvider.sendQuery (ExchangeRateProvider_1.sol#1161) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1162,
+            "message": "Parameter '_callbackGasLimit' of ExchangeRateProvider.sendQuery (ExchangeRateProvider_1.sol#1162) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1163,
+            "message": "Parameter '_queryType' of ExchangeRateProvider.sendQuery (ExchangeRateProvider_1.sol#1163) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1190,
+            "message": "Parameter '_identifier' of ExchangeRateProvider.setQueryId (ExchangeRateProvider_1.sol#1190) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1190,
+            "message": "Parameter '_queryType' of ExchangeRateProvider.setQueryId (ExchangeRateProvider_1.sol#1190) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1242,
+            "message": "Parameter '_address' of ExchangeRateProvider.selfDestruct (ExchangeRateProvider_1.sol#1242) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 1116,
+            "message": "Constant 'ExchangeRateProvider.version' (ExchangeRateProvider_1.sol#1116) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeRateProvider_1.sol",
+            "impact": "Informational",
+            "line": 58,
+            "message": "usingOraclize.day (ExchangeRateProvider_1.sol#58) is never used in ExchangeRateProvider\nusingOraclize.week (ExchangeRateProvider_1.sol#59) is never used in ExchangeRateProvider\nusingOraclize.month (ExchangeRateProvider_1.sol#60) is never used in ExchangeRateProvider\nusingOraclize.proofType_NONE (ExchangeRateProvider_1.sol#61) is never used in ExchangeRateProvider\nusingOraclize.proofType_TLSNotary (ExchangeRateProvider_1.sol#62) is never used in ExchangeRateProvider\nusingOraclize.proofType_Android (ExchangeRateProvider_1.sol#63) is never used in ExchangeRateProvider\nusingOraclize.proofType_Ledger (ExchangeRateProvider_1.sol#64) is never used in ExchangeRateProvider\nusingOraclize.proofType_Native (ExchangeRateProvider_1.sol#65) is never used in ExchangeRateProvider\nusingOraclize.proofStorage_IPFS (ExchangeRateProvider_1.sol#66) is never used in ExchangeRateProvider\nusingOraclize.networkID_mainnet (ExchangeRateProvider_1.sol#68) is never used in ExchangeRateProvider\nusingOraclize.networkID_testnet (ExchangeRateProvider_1.sol#69) is never used in ExchangeRateProvider\nusingOraclize.networkID_morden (ExchangeRateProvider_1.sol#70) is never used in ExchangeRateProvider\nusingOraclize.networkID_consensys (ExchangeRateProvider_1.sol#71) is never used in ExchangeRateProvider\n",
+            "name": "unused-state"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

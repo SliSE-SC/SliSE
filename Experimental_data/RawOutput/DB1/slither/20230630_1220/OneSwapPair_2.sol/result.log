@@ -1,0 +1,43 @@
+INFO:Slither:Compilation warnings/errors on /sb/OneSwapPair_2.sol:
+Warning: Contract code size exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+   --> /sb/OneSwapPair_2.sol:692:1:
+    |
+692 | contract OneSwapPair is OneSwapPool, IOneSwapPair {
+    | ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: Contract code size exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+    --> /sb/OneSwapPair_2.sol:1438:1:
+     |
+1438 | contract OneSwapFactoryTEST {
+     | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+ERROR:root:Error in /sb/OneSwapPair_2.sol
+ERROR:root:Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/slitherSolc.py", line 59, in _parse_contracts_from_json
+    data_loaded = json.loads(json_data)
+  File "/usr/lib/python3.6/json/__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.6/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.6/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/__main__.py", line 564, in main_impl
+    (results, number_contracts) = process(filename, args, detector_classes, printer_classes)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/__main__.py", line 53, in process
+    triage_mode=args.triage_mode)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/slither.py", line 46, in __init__
+    self._init_from_solc(contract, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/slither.py", line 91, in _init_from_solc
+    self._parse_contracts_from_json(c)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/slitherSolc.py", line 81, in _parse_contracts_from_json
+    self._parse_contracts_from_loaded_json(data_loaded, filename)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/slitherSolc.py", line 112, in _parse_contracts_from_loaded_json
+    assert contract_data[self.get_key()] in ['ContractDefinition', 'PragmaDirective', 'ImportDirective']
+AssertionError
+

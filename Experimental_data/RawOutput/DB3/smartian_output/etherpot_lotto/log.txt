@@ -1,0 +1,720 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/etherpot_lotto.bin
+[00:00:00:00] Fuzzing starts at 08:40:07
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = {  }, Use = {  }
+Constructor tainted: {  }
+[DEBUG] Analyzing blockReward(0ac168a1) @ 333
+blockReward(0ac168a1): Def = {  }, Use = {  }
+[DEBUG] Analyzing ticketPrice(1209b1f6) @ 35e
+ticketPrice(1209b1f6): Def = {  }, Use = {  }
+[DEBUG] Analyzing getPot(28d3ad3f) @ 389
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x7c9
+getPot(28d3ad3f): Def = {  }, Use = { map_0.off_1 }
+[DEBUG] Analyzing getTicketsCountByBuyer(305a762a) @ 3ca
+Found sload(<T, { Sha(... (Sha(*, 0x0) + 0x4) ...) + ? }, { }>) @ 0x825
+getTicketsCountByBuyer(305a762a): Def = {  }, Use = { map_0.off_4 }
+[DEBUG] Analyzing getIsCashed(358d5dc2) @ 42b
+Found sload(<T, { Sha(... (Sha(*, 0x0) + 0x3) ...) + ? }, { }>) @ 0x859
+getIsCashed(358d5dc2): Def = {  }, Use = { map_0.off_3 }
+[DEBUG] Analyzing getBuyers(459f93f7) @ 47a
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x884
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x8a1
+Found sload(<T, { Sha(... (Sha(*, 0x0)) ...) + ? }, { }>) @ 0x8bd
+getBuyers(459f93f7): Def = {  }, Use = { map_0 }
+[DEBUG] Analyzing getSubpotsCount(46a2679a) @ 51c
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x931
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x95e
+getSubpotsCount(46a2679a): Def = {  }, Use = { map_0.off_1 }
+[DEBUG] Analyzing calculateWinner(6572ae13) @ 55d
+Found sload(<T, { Sha(*, 0x0) + 0x2 }, { }>) @ 0x9c5
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x9f2
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0xa19
+Found sload(<T, { Sha(... (Sha(*, 0x0)) ...) + ? }, { }>) @ 0xa31
+Found sload(<T, { Sha(... (Sha(*, 0x0) + 0x4) ...) + ? }, { }>) @ 0xaa3
+calculateWinner(6572ae13): Def = {  }, Use = { map_0, map_0.off_2, map_0.off_4 }
+[DEBUG] Analyzing getRoundIndex(67af1c81) @ 5d4
+getRoundIndex(67af1c81): Def = {  }, Use = {  }
+[DEBUG] Analyzing blocksPerRound(6e4ed796) @ 5ff
+blocksPerRound(6e4ed796): Def = {  }, Use = {  }
+[DEBUG] Analyzing getHashOfBlock(8089d001) @ 62a
+getHashOfBlock(8089d001): Def = {  }, Use = {  }
+[DEBUG] Analyzing getBlocksPerRound(86bb7121) @ 66b
+getBlocksPerRound(86bb7121): Def = {  }, Use = {  }
+[DEBUG] Analyzing getTicketPrice(87bb7ae0) @ 696
+getTicketPrice(87bb7ae0): Def = {  }, Use = {  }
+[DEBUG] Analyzing getSubpot(93dafba2) @ 6c1
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x931
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x95e
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0xb21
+getSubpot(93dafba2): Def = {  }, Use = { map_0.off_1 }
+[DEBUG] Analyzing cash(ce5566c5) @ 702
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x931
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x95e
+Found sload(<T, { Sha(... (Sha(*, 0x0) + 0x3) ...) + ? }, { }>) @ 0xb94
+Found sload(<T, { Sha(*, 0x0) + 0x2 }, { }>) @ 0x9c5
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x9f2
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0xa19
+Found sload(<T, { Sha(... (Sha(*, 0x0)) ...) + ? }, { }>) @ 0xa31
+Found sload(<T, { Sha(... (Sha(*, 0x0) + 0x4) ...) + ? }, { }>) @ 0xaa3
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x931
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x95e
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0xb21
+Found sload(<T, { Sha(... (Sha(*, 0x0) + 0x3) ...) + ? }, { }>) @ 0xc25
+Found sstore(<T, { Sha(... (Sha(*, 0x0) + 0x3) ...) + ? }, { }>, <T, { }, { map_0.off_3 }>) @ 0xc33
+cash(ce5566c5): Def = { map_0.off_3 }, Use = { map_0, map_0.off_1, map_0.off_2, map_0.off_3, map_0.off_4 }
+[DEBUG] Analyzing getDecisionBlockNumber(df2f0a4a) @ 739
+getDecisionBlockNumber(df2f0a4a): Def = {  }, Use = {  }
+[DEBUG] Analyzing fallback @ 0
+Found sload(<T, { Sha(*, 0x0) + 0x2 }, { }>) @ 0x18e
+Found sstore(<T, { Sha(*, 0x0) + 0x2 }, { }>, <T, { }, { map_0.off_2 }>) @ 0x195
+Found sload(<T, { Sha(... (Sha(*, 0x0) + 0x4) ...) + ? }, { }>) @ 0x1eb
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x208
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0xc53
+Found sstore(<T, { Sha(*, 0x0) }, { }>, <T, { }, { map_0 }>) @ 0xc56
+Found sstore(<T, { Sha(... (Sha(*, 0x0)) ...) + ? }, { map_0 }>, <0x0, { }, { }>) @ 0xc92
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x233
+Found sload(<T, { Sha(... (Sha(*, 0x0)) ...) + ? }, { map_0 }>) @ 0x24f
+Found sstore(<T, { Sha(... (Sha(*, 0x0)) ...) + ? }, { map_0 }>, <T, { }, { CALLER, map_0 }>) @ 0x284
+Found sload(<T, { Sha(... (Sha(*, 0x0) + 0x4) ...) + ? }, { }>) @ 0x2de
+Found sstore(<T, { Sha(... (Sha(*, 0x0) + 0x4) ...) + ? }, { }>, <T, { }, { map_0.off_4 }>) @ 0x2e5
+Found sload(<T, { Sha(*, 0x0) + 0x2 }, { }>) @ 0x301
+Found sstore(<T, { Sha(*, 0x0) + 0x2 }, { }>, <T, { }, { map_0.off_2 }>) @ 0x308
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x324
+Found sstore(<T, { Sha(*, 0x0) + 0x1 }, { }>, <T, { }, { map_0.off_1 }>) @ 0x32b
+fallback: Def = { map_0, map_0.off_1, map_0.off_2, map_0.off_4 }, Use = { map_0, map_0.off_1, map_0.off_2, map_0.off_4 }
+(10 candidate sequences)
+["fallback"; "getTicketsCountByBuyer(305a762a)"]
+["fallback"; "getSubpotsCount(46a2679a)"]
+["fallback"; "getSubpot(93dafba2)"]
+["fallback"; "getPot(28d3ad3f)"]
+["fallback"; "getBuyers(459f93f7)"]
+["fallback"; "fallback"]
+["fallback"; "cash(ce5566c5)"]
+["fallback"; "calculateWinner(6572ae13)"]
+["cash(ce5566c5)"; "getIsCashed(358d5dc2)"]
+["cash(ce5566c5)"; "cash(ce5566c5)"]
+[00:00:00:01] Start main fuzzing phase
+[00:00:00:02] Tx#1 found BlockstateDependencyManticore at 78a
+[00:00:00:02] [*] Save bug seed id-00000-BD_mant_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getTicketsCountByBuyer(305a762a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00000_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getTicketsCountByBuyer(305a762a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00001_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getSubpotsCount(46a2679a), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] Tx#2 found AssertionFailure at b29
+[00:00:00:02] [*] Save bug seed id-00001-AF_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getSubpot(93dafba2), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00002_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getSubpot(93dafba2), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00003_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getPot(28d3ad3f), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00004_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getBuyers(459f93f7), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00005_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: cash(ce5566c5), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] Tx#2 found AssertionFailure at 9ce
+[00:00:00:02] Tx#2 found BlockstateDependencyMythril at 99f
+[00:00:00:02] Tx#2 found BlockstateDependencyManticore at 998
+[00:00:00:02] Tx#2 found BlockstateDependencyManticore at adb
+[00:00:00:02] [*] Save bug seed id-00002-AF-BD_mant-BD_myth_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: calculateWinner(6572ae13), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00006_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: calculateWinner(6572ae13), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00007_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: cash(ce5566c5), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getIsCashed(358d5dc2), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00008_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: cash(ce5566c5), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000080000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getTicketsCountByBuyer(305a762a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: calculateWinner(6572ae13), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000410000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00009_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getTicketsCountByBuyer(305a762a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000E60000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+( => TX 2 <= ) Function: blockReward(0ac168a1), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 4000000000000000000000000000000000000000000000000000000000000001
+
+[00:00:00:03] [*] Save new seed id-00010_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 8000000000000000000000000000400000000000000000000000100000000001
+( => TX 2 <= ) Function: calculateWinner(6572ae13), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 8000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: getTicketsCountByBuyer(305a762a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000400000400000000000000000400000002000000000000000
+          Arg2 : address
+                 0000000000000000000000003F00000008000000
+(    TX 4    ) Function: getRoundIndex(67af1c81), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: getPot(28d3ad3f), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 3FFFFFFFFFFFFFFFFFFF17FFFFFFFFFFFFFFFFFFFFFFFFFFFFF7FFFFFFFFDFFF
+
+[00:00:00:03] Tx#1 found BlockstateDependencySFuzz at 78a
+[00:00:00:03] [*] Save bug seed id-00003-BD_sfuzz_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000009F00000000
+( => TX 2 <= ) Function: getTicketsCountByBuyer(305a762a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000004000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00011_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getTicketsCountByBuyer(305a762a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+( => TX 3 <= ) Function: ticketPrice(1209b1f6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00012_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getBuyers(459f93f7), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 7F0000000000000000007F000000000000000000000000000000000000000001
+          Arg2 : address
+                 33B808A5AE24C410E8739B5CA2D5EF3931D3E09F
+(    TX 2    ) Function: blocksPerRound(6e4ed796), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00013_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 00000000000000000000000000000000000000000000000000003F0000000001
+( => TX 2 <= ) Function: getTicketsCountByBuyer(305a762a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: getTicketPrice(87bb7ae0), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00014_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 FF00000000000001000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getTicketsCountByBuyer(305a762a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: getDecisionBlockNumber(df2f0a4a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00015_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: getRoundIndex(67af1c81), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: blocksPerRound(6e4ed796), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: getSubpot(93dafba2), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: getHashOfBlock(8089d001), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: getBuyers(459f93f7), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000000000000000003F0000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+(    TX 6    ) Function: ticketPrice(1209b1f6), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00016_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: getTicketsCountByBuyer(305a762a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000001000
+          Arg2 : address
+                 0000000000000000000081000000000000000000
+(    TX 2    ) Function: blocksPerRound(6e4ed796), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: blockReward(0ac168a1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: cash(ce5566c5), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000000000FE000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 00000000000200000000000000000000400000000000000000FE000000000000
+(    TX 5    ) Function: getBlocksPerRound(86bb7121), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] Tx#1 found IntegerBugMythril at c48
+[00:00:00:03] [*] Save bug seed id-00004-IB_myth_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: calculateWinner(6572ae13), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 8000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 000000000000000000000000000000000000FF40020000000000000000000000
+(    TX 2    ) Function: blocksPerRound(6e4ed796), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: getPot(28d3ad3f), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000100000000000013000000000000000200000000000000000000000000
+
+[00:00:00:03] Tx#1 found IntegerBugManticore at c48
+[00:00:00:03] [*] Save bug seed id-00005-IB_mant_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getDecisionBlockNumber(df2f0a4a), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0080000000000000000000000000000000000000040000000000000000000000
+          Arg2 : uint256
+                 8000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 4000000000000000000000000000007F00000000000000000000000000000001
+
+[00:00:00:04] Tx#1 found MishandledException at 156
+[00:00:00:04] Tx#1 found MishandledExceptionMythril at 156
+[00:00:00:04] Tx#1 found MishandledExceptionManticore at 156
+[00:00:00:04] [*] Save bug seed id-00006-ME-ME_mant-ME_myth_00004: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000800000000005000001
+( => TX 2 <= ) Function: blockReward(0ac168a1), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:04] [*] Save new seed id-00017_00004: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000800000000005000001
+( => TX 2 <= ) Function: blockReward(0ac168a1), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:05] Tx#2 found IntegerBugSFuzz at c47
+[00:00:00:05] Tx#2 found IntegerBugMythril at c47
+[00:00:00:05] [*] Save bug seed id-00007-IB_myth-IB_sfuzz_00005: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getBuyers(459f93f7), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 4000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000080790000000000000000000000
+( => TX 2 <= ) Function: calculateWinner(6572ae13), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          Arg2 : uint256
+                 0000000000000000000000000002000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 000000000000000000004100000000000000000000010000E700000000006900
+
+[00:00:00:06] Tx#2 found IntegerBugSFuzz at c49
+[00:00:00:06] Tx#2 found IntegerBugMythril at c49
+[00:00:00:06] [*] Save bug seed id-00008-IB_myth-IB_sfuzz_00006: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: cash(ce5566c5), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: calculateWinner(6572ae13), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFFFFFFFFFFFFFFFFFFFFFF
+          Arg2 : uint256
+                 8000000000000000000000000000000000000000000000000100000000000000
+(    TX 3    ) Function: ticketPrice(1209b1f6), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:06] Tx#6 found BlockstateDependencyILF at 156
+[00:00:00:06] [*] Save bug seed id-00009-BD_ilf_00006: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0100000000200000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: calculateWinner(6572ae13), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: getPot(28d3ad3f), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: blockReward(0ac168a1), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: getTicketPrice(87bb7ae0), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000F60000000000000000
+
+[00:00:00:07] Tx#1 found IntegerBugManticore at c49
+[00:00:00:07] [*] Save bug seed id-00010-IB_mant_00007: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getDecisionBlockNumber(df2f0a4a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00F6000000000000000000000000000000000000000002000000000000000000
+          Arg2 : uint256
+                 80000000000000000000000000000000000000000000000000002C0000000001
+( => TX 2 <= ) Function: blocksPerRound(6e4ed796), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:07] Tx#2 found MishandledExceptionSFuzz at 156
+[00:00:00:07] Tx#2 found MishandledExceptionILF at 156
+[00:00:00:07] [*] Save bug seed id-00011-ME_ilf-ME_sfuzz_00007: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: calculateWinner(6572ae13), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000002000000000000000
+( => TX 3 <= ) Function: getDecisionBlockNumber(df2f0a4a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:15] Tx#1 found IntegerBugManticore at c47
+[00:00:00:15] [*] Save bug seed id-00012-IB_mant_00015: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getDecisionBlockNumber(df2f0a4a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+( => TX 2 <= ) Function: getRoundIndex(67af1c81), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: getBlocksPerRound(86bb7121), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:03:25] [*] Save new seed id-00018_00205: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 000000000000000000000000000000000000000000000000E800000000000000
+(    TX 2    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000400000000000000000
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 1380063
+[00:01:00:00] Deployment failures: 0
+[00:01:00:00] Test Cases: 19
+[00:01:00:00] Covered Edges: 116
+[00:01:00:00] Covered Instructions: 1661
+[00:01:00:00] Covered Def-Use Chains: 14
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 2
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 0
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 0
+[00:01:00:00]   Integer Bug: 0
+[00:01:00:00]   Mishandled Exception: 1
+[00:01:00:00]   Multiple Send: 0
+[00:01:00:00]   Reentrancy: 0
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

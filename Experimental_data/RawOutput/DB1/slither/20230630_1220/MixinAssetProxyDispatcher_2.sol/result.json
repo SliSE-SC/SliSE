@@ -1,0 +1,298 @@
+{
+    "errors": [
+        "EXIT_CODE_28"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "impact": "Medium",
+            "line": 98,
+            "line_end": 107,
+            "message": "LibBytes.rawAddress (MixinAssetProxyDispatcher_2.sol#98-107) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "impact": "Medium",
+            "line": 112,
+            "line_end": 121,
+            "message": "LibBytes.contentAddress (MixinAssetProxyDispatcher_2.sol#112-121) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "impact": "Medium",
+            "line": 127,
+            "line_end": 228,
+            "message": "LibBytes.memCopy (MixinAssetProxyDispatcher_2.sol#127-228) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "impact": "Medium",
+            "line": 268,
+            "line_end": 292,
+            "message": "LibBytes.sliceDestructive (MixinAssetProxyDispatcher_2.sol#268-292) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "impact": "Medium",
+            "line": 297,
+            "line_end": 316,
+            "message": "LibBytes.popLastByte (MixinAssetProxyDispatcher_2.sol#297-316) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "impact": "Medium",
+            "line": 321,
+            "line_end": 340,
+            "message": "LibBytes.popLast20Bytes (MixinAssetProxyDispatcher_2.sol#321-340) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "impact": "Medium",
+            "line": 364,
+            "line_end": 390,
+            "message": "LibBytes.readAddress (MixinAssetProxyDispatcher_2.sol#364-390) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "impact": "Medium",
+            "line": 396,
+            "line_end": 436,
+            "message": "LibBytes.writeAddress (MixinAssetProxyDispatcher_2.sol#396-436) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "impact": "Medium",
+            "line": 442,
+            "line_end": 463,
+            "message": "LibBytes.readBytes32 (MixinAssetProxyDispatcher_2.sol#442-463) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "impact": "Medium",
+            "line": 469,
+            "line_end": 489,
+            "message": "LibBytes.writeBytes32 (MixinAssetProxyDispatcher_2.sol#469-489) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "impact": "Medium",
+            "line": 525,
+            "line_end": 544,
+            "message": "LibBytes.readBytes4 (MixinAssetProxyDispatcher_2.sol#525-544) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "impact": "Medium",
+            "line": 552,
+            "line_end": 576,
+            "message": "LibBytes.readBytesWithLength (MixinAssetProxyDispatcher_2.sol#552-576) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "MixinAssetProxyDispatcher",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "registerAssetProxy",
+            "impact": "Low",
+            "line": 819,
+            "line_end": 839,
+            "message": "Reentrancy in MixinAssetProxyDispatcher.registerAssetProxy (MixinAssetProxyDispatcher_2.sol#819-839):\n\tExternal calls:\n\t- assetProxyId = assetProxyContract.getProxyId() (MixinAssetProxyDispatcher_2.sol#826)\n\tState variables written after the call(s):\n\t- assetProxies (MixinAssetProxyDispatcher_2.sol#834)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "rawAddress",
+            "impact": "Informational",
+            "line": 98,
+            "line_end": 107,
+            "message": "LibBytes.rawAddress uses assembly (MixinAssetProxyDispatcher_2.sol#98-107)\n\t- MixinAssetProxyDispatcher_2.sol#103-106\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "contentAddress",
+            "impact": "Informational",
+            "line": 112,
+            "line_end": 121,
+            "message": "LibBytes.contentAddress uses assembly (MixinAssetProxyDispatcher_2.sol#112-121)\n\t- MixinAssetProxyDispatcher_2.sol#117-120\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "memCopy",
+            "impact": "Informational",
+            "line": 127,
+            "line_end": 228,
+            "message": "LibBytes.memCopy uses assembly (MixinAssetProxyDispatcher_2.sol#127-228)\n\t- MixinAssetProxyDispatcher_2.sol#139-145\n\t- MixinAssetProxyDispatcher_2.sol#167-195\n\t- MixinAssetProxyDispatcher_2.sol#196-226\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "sliceDestructive",
+            "impact": "Informational",
+            "line": 268,
+            "line_end": 292,
+            "message": "LibBytes.sliceDestructive uses assembly (MixinAssetProxyDispatcher_2.sol#268-292)\n\t- MixinAssetProxyDispatcher_2.sol#287-291\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "popLastByte",
+            "impact": "Informational",
+            "line": 297,
+            "line_end": 316,
+            "message": "LibBytes.popLastByte uses assembly (MixinAssetProxyDispatcher_2.sol#297-316)\n\t- MixinAssetProxyDispatcher_2.sol#310-315\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "popLast20Bytes",
+            "impact": "Informational",
+            "line": 321,
+            "line_end": 340,
+            "message": "LibBytes.popLast20Bytes uses assembly (MixinAssetProxyDispatcher_2.sol#321-340)\n\t- MixinAssetProxyDispatcher_2.sol#334-339\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "readAddress",
+            "impact": "Informational",
+            "line": 364,
+            "line_end": 390,
+            "message": "LibBytes.readAddress uses assembly (MixinAssetProxyDispatcher_2.sol#364-390)\n\t- MixinAssetProxyDispatcher_2.sol#383-389\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "writeAddress",
+            "impact": "Informational",
+            "line": 396,
+            "line_end": 436,
+            "message": "LibBytes.writeAddress uses assembly (MixinAssetProxyDispatcher_2.sol#396-436)\n\t- MixinAssetProxyDispatcher_2.sol#415-436\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "readBytes32",
+            "impact": "Informational",
+            "line": 442,
+            "line_end": 463,
+            "message": "LibBytes.readBytes32 uses assembly (MixinAssetProxyDispatcher_2.sol#442-463)\n\t- MixinAssetProxyDispatcher_2.sol#459-462\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "writeBytes32",
+            "impact": "Informational",
+            "line": 469,
+            "line_end": 489,
+            "message": "LibBytes.writeBytes32 uses assembly (MixinAssetProxyDispatcher_2.sol#469-489)\n\t- MixinAssetProxyDispatcher_2.sol#486-489\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "readBytes4",
+            "impact": "Informational",
+            "line": 525,
+            "line_end": 544,
+            "message": "LibBytes.readBytes4 uses assembly (MixinAssetProxyDispatcher_2.sol#525-544)\n\t- MixinAssetProxyDispatcher_2.sol#537-543\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "readBytesWithLength",
+            "impact": "Informational",
+            "line": 552,
+            "line_end": 576,
+            "message": "LibBytes.readBytesWithLength uses assembly (MixinAssetProxyDispatcher_2.sol#552-576)\n\t- MixinAssetProxyDispatcher_2.sol#572-575\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "MixinAssetProxyDispatcher",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "dispatchTransferFrom",
+            "impact": "Informational",
+            "line": 857,
+            "line_end": 956,
+            "message": "MixinAssetProxyDispatcher.dispatchTransferFrom uses assembly (MixinAssetProxyDispatcher_2.sol#857-956)\n\t- MixinAssetProxyDispatcher_2.sol#875-881\n\t- MixinAssetProxyDispatcher_2.sol#904-955\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "IOwnable",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "transferOwnership",
+            "impact": "Informational",
+            "line": 38,
+            "line_end": 39,
+            "message": "IOwnable.transferOwnership (MixinAssetProxyDispatcher_2.sol#38-39) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Ownable",
+            "filename": "all_contract/MixinAssetProxyDispatcher_2.sol",
+            "function": "transferOwnership",
+            "impact": "Informational",
+            "line": 60,
+            "line_end": 67,
+            "message": "Ownable.transferOwnership (MixinAssetProxyDispatcher_2.sol#60-67) should be declared external\n",
+            "name": "external-function"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

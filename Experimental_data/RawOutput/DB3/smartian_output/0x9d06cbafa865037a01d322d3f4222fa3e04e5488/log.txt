@@ -1,0 +1,300 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/0x9d06cbafa865037a01d322d3f4222fa3e04e5488.bin
+[00:00:00:00] Fuzzing starts at 08:40:01
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found sload(<0x0, { }, { }>) @ 0x22
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x57
+Found sload(<0x1, { }, { }>) @ 0x77
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1 }>) @ 0xac
+Found sload(<0x2, { }, { }>) @ 0xcc
+Found sstore(<0x2, { }, { }>, <T, { }, { var_2 }>) @ 0x101
+Found sstore(<0x3, { }, { }>, <0x1, { }, { }>) @ 0x107
+Found sstore(<0x4, { }, { }>, <0x38D7EA4C68000, { }, { }>) @ 0x112
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_0, var_1, var_2, var_3, var_4 }, Use = { var_0, var_1, var_2 }
+Constructor tainted: {  }
+[DEBUG] Analyzing active(02fb0c5e) @ a4
+Found sload(<0x3, { }, { }>) @ 0x54e
+active(02fb0c5e): Def = {  }, Use = { var_3 }
+[DEBUG] Analyzing change_active(243f6e0c) @ cf
+Found sload(<0x1, { }, { }>) @ 0x559
+Found sstore(<0x3, { }, { }>, <T, { }, { }>) @ 0x5b5
+change_active(243f6e0c): Def = { var_3 }, Use = { var_1 }
+[DEBUG] Analyzing withdraw(2e1a7d4d) @ 114
+Found sload(<0x1, { }, { }>) @ 0x5c8
+Found sload(<0x1, { }, { }>) @ 0x64b
+withdraw(2e1a7d4d): Def = {  }, Use = { var_1 }
+[DEBUG] Analyzing owner2(52709725) @ 159
+Found sload(<0x2, { }, { }>) @ 0x6ad
+owner2(52709725): Def = {  }, Use = { var_2 }
+[DEBUG] Analyzing tokens_buy(6c675ae6) @ 1b0
+Found sload(<0x3, { }, { }>) @ 0x2f9
+Found sload(<0x4, { }, { }>) @ 0x308
+Found sload(<0x4, { }, { }>) @ 0x319
+Found sload(<0x0, { }, { }>) @ 0x344
+Found sload(<0x1, { }, { }>) @ 0x3f9
+Found sload(<0x2, { }, { }>) @ 0x4ef
+tokens_buy(6c675ae6): Def = {  }, Use = { var_0, var_1, var_2, var_3, var_4 }
+[DEBUG] Analyzing token_price(7b4fd96e) @ 1d2
+Found sload(<0x4, { }, { }>) @ 0x6d0
+token_price(7b4fd96e): Def = {  }, Use = { var_4 }
+[DEBUG] Analyzing owner(8da5cb5b) @ 1fd
+Found sload(<0x1, { }, { }>) @ 0x6d9
+owner(8da5cb5b): Def = {  }, Use = { var_1 }
+[DEBUG] Analyzing change_token_price(bec60bd2) @ 254
+Found sload(<0x1, { }, { }>) @ 0x701
+Found sstore(<0x4, { }, { }>, <T, { }, { }>) @ 0x75d
+change_token_price(bec60bd2): Def = { var_4 }, Use = { var_1 }
+[DEBUG] Analyzing c(c3da42b8) @ 299
+Found sload(<0x0, { }, { }>) @ 0x76c
+c(c3da42b8): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing fallback @ 0
+Found sload(<0x3, { }, { }>) @ 0x2f9
+Found sload(<0x4, { }, { }>) @ 0x308
+Found sload(<0x4, { }, { }>) @ 0x319
+Found sload(<0x0, { }, { }>) @ 0x344
+Found sload(<0x1, { }, { }>) @ 0x3f9
+Found sload(<0x2, { }, { }>) @ 0x4ef
+fallback: Def = {  }, Use = { var_0, var_1, var_2, var_3, var_4 }
+(6 candidate sequences)
+["change_token_price(bec60bd2)"; "tokens_buy(6c675ae6)"]
+["change_token_price(bec60bd2)"; "token_price(7b4fd96e)"]
+["change_token_price(bec60bd2)"; "fallback"]
+["change_active(243f6e0c)"; "tokens_buy(6c675ae6)"]
+["change_active(243f6e0c)"; "fallback"]
+["change_active(243f6e0c)"; "active(02fb0c5e)"]
+[00:00:00:01] Start main fuzzing phase
+[00:00:00:02] [*] Save new seed id-00000_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: change_token_price(bec60bd2), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: tokens_buy(6c675ae6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00001_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: change_token_price(bec60bd2), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: token_price(7b4fd96e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00002_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: change_token_price(bec60bd2), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00003_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: change_active(243f6e0c), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: tokens_buy(6c675ae6), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00004_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: change_active(243f6e0c), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: active(02fb0c5e), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] Tx#2 found MishandledException at 53b
+[00:00:00:02] Tx#2 found MishandledExceptionMythril at 53b
+[00:00:00:02] Tx#2 found MishandledExceptionManticore at 53b
+[00:00:00:02] [*] Save bug seed id-00000-ME-ME_mant-ME_myth_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: change_token_price(bec60bd2), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: tokens_buy(6c675ae6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000007F00000000000000
+
+[00:00:00:02] [*] Save new seed id-00005_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: change_token_price(bec60bd2), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: tokens_buy(6c675ae6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000007F00000000000000
+
+[00:00:00:03] [*] Save new seed id-00006_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: change_token_price(bec60bd2), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+(    TX 2    ) Function: withdraw(2e1a7d4d), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 8000000000000000000000000000000000000000000000000000670000000001
+
+[00:00:00:03] [*] Save new seed id-00007_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: owner2(52709725), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: change_token_price(bec60bd2), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 80000000000000000000000000000000000000000000001D0000000000000000
+(    TX 3    ) Function: tokens_buy(6c675ae6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 4000000000001100000000000000000100000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00008_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: owner(8da5cb5b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: withdraw(2e1a7d4d), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 000000000000000000000081000000000000000000000000F000000000000000
+( => TX 3 <= ) Function: change_active(243f6e0c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000000000008100000010000000000000E9000000000000EB0019000400
+(    TX 4    ) Function: withdraw(2e1a7d4d), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000007F00000000000000000000000000000000
+(    TX 5    ) Function: change_active(243f6e0c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000340000000000000000000000
+(    TX 6    ) Function: fallback, From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: owner2(52709725), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00009_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: active(02fb0c5e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: active(02fb0c5e), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: c(c3da42b8), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: c(c3da42b8), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: active(02fb0c5e), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: c(c3da42b8), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 4000000000000000000000000000000000003800000000000000000000000000
+(    TX 8    ) Function: owner(8da5cb5b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 9    ) Function: change_active(243f6e0c), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 10    ) Function: change_token_price(bec60bd2), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 3FFFFFFF22FFFFFBFFFFFFFFFF1FFFFFFFFFFFFF00FF7FFFFFFFFFFFFFFFFFFF
+
+[00:00:00:04] [*] Save new seed id-00010_00004: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: change_token_price(bec60bd2), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000007F00000000000000
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 913941
+[00:01:00:00] Deployment failures: 0
+[00:01:00:00] Test Cases: 11
+[00:01:00:00] Covered Edges: 55
+[00:01:00:00] Covered Instructions: 747
+[00:01:00:00] Covered Def-Use Chains: 0
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 0
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 0
+[00:01:00:00]   Integer Bug: 0
+[00:01:00:00]   Mishandled Exception: 1
+[00:01:00:00]   Multiple Send: 0
+[00:01:00:00]   Reentrancy: 0
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

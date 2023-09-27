@@ -1,0 +1,620 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/0xbe4041d55db380c5ae9d4a9b9703f1ed4e7e3888.bin
+[00:00:00:00] Fuzzing starts at 08:40:03
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = {  }, Use = {  }
+Constructor tainted: {  }
+[DEBUG] Analyzing SetLogFile(303b9379) @ 8f
+Found sload(<0x2, { }, { }>) @ 0x257
+SetLogFile(303b9379): Def = {  }, Use = { var_2 }
+[DEBUG] Analyzing Collect(3fe43822) @ d2
+Found sload(<0x1, { }, { }>) @ 0x2b3
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x2b8
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x2c7
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x2d6
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x319
+Found sstore(<T, { Sha(*, 0x0) + 0x1 }, { }>, <T, { }, { map_0.off_1 }>) @ 0x320
+Collect(3fe43822): Def = { map_0.off_1 }, Use = { map_0, map_0.off_1, var_1 }
+[DEBUG] Analyzing Initialized(5daa87a0) @ f2
+Found sload(<0x2, { }, { }>) @ 0x333
+Found sstore(<0x2, { }, { }>, <T, { }, { var_2 }>) @ 0x341
+Initialized(5daa87a0): Def = { var_2 }, Use = { var_2 }
+[DEBUG] Analyzing SetMinSum(640d3017) @ 109
+Found sload(<0x2, { }, { }>) @ 0x34a
+Found sstore(<0x1, { }, { }>, <T, { }, { }>) @ 0x364
+SetMinSum(640d3017): Def = { var_1 }, Use = { var_2 }
+[DEBUG] Analyzing Put(65f3c31a) @ 136
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x22b
+Found sstore(<T, { Sha(*, 0x0) + 0x1 }, { }>, <T, { }, { map_0.off_1 }>) @ 0x232
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x238
+Found sstore(<T, { Sha(*, 0x0) }, { }>, <T, { }, { }>) @ 0x24b
+Put(65f3c31a): Def = { map_0, map_0.off_1 }, Use = { map_0, map_0.off_1 }
+[DEBUG] Analyzing Acc(7731cd2a) @ 156
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x381
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x387
+Acc(7731cd2a): Def = {  }, Use = { map_0, map_0.off_1 }
+[DEBUG] Analyzing MinSum(c2808d1a) @ 1b4
+Found sload(<0x1, { }, { }>) @ 0x38f
+MinSum(c2808d1a): Def = {  }, Use = { var_1 }
+[DEBUG] Analyzing fallback @ 0
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x22b
+Found sstore(<T, { Sha(*, 0x0) + 0x1 }, { }>, <T, { }, { map_0.off_1 }>) @ 0x232
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x238
+Found sstore(<T, { Sha(*, 0x0) }, { }>, <T, { }, { }>) @ 0x24b
+fallback: Def = { map_0, map_0.off_1 }, Use = { map_0, map_0.off_1 }
+Pruning out ["Put(65f3c31a)"]
+Pruning out ["fallback"]
+Pruning out ["SetMinSum(640d3017)"]
+(14 candidate sequences)
+["Initialized(5daa87a0)"; "SetMinSum(640d3017)"; "MinSum(c2808d1a)"]
+["Initialized(5daa87a0)"; "SetMinSum(640d3017)"; "Collect(3fe43822)"]
+["Initialized(5daa87a0)"; "SetLogFile(303b9379)"]
+["Initialized(5daa87a0)"; "Initialized(5daa87a0)"]
+["Collect(3fe43822)"; "fallback"]
+["Collect(3fe43822)"; "Put(65f3c31a)"; "fallback"; "fallback"]
+["Collect(3fe43822)"; "Put(65f3c31a)"; "fallback"; "Put(65f3c31a)"]
+["Collect(3fe43822)"; "Put(65f3c31a)"; "fallback"; "Collect(3fe43822)"]
+["Collect(3fe43822)"; "Put(65f3c31a)"; "fallback"; "Acc(7731cd2a)"]
+["Collect(3fe43822)"; "Put(65f3c31a)"; "Put(65f3c31a)"]
+["Collect(3fe43822)"; "Put(65f3c31a)"; "Collect(3fe43822)"]
+["Collect(3fe43822)"; "Put(65f3c31a)"; "Acc(7731cd2a)"]
+["Collect(3fe43822)"; "Collect(3fe43822)"]
+["Collect(3fe43822)"; "Acc(7731cd2a)"]
+[00:00:00:00] Start main fuzzing phase
+[00:00:00:01] [*] Save new seed id-00000_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Initialized(5daa87a0), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: SetMinSum(640d3017), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: MinSum(c2808d1a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] Tx#3 found BlockstateDependencyMythril at 2de
+[00:00:00:01] Tx#3 found BlockstateDependencyManticore at 2d7
+[00:00:00:01] Tx#3 found ReentrancyMythril at 306
+[00:00:00:01] Tx#3 found ReentrancyManticore at 320
+[00:00:00:01] [*] Save bug seed id-00000-BD_mant-BD_myth-RE_mant-RE_myth_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Initialized(5daa87a0), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: SetMinSum(640d3017), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: Collect(3fe43822), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00001_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Initialized(5daa87a0), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: SetMinSum(640d3017), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: Collect(3fe43822), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00002_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Initialized(5daa87a0), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: SetLogFile(303b9379), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:01] Tx#2 found BlockstateDependencyMythril at 241
+[00:00:00:01] Tx#2 found BlockstateDependencyManticore at 23a
+[00:00:00:01] Tx#2 found BlockstateDependencyManticore at 243
+[00:00:00:01] [*] Save bug seed id-00001-BD_mant-BD_myth_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Collect(3fe43822), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00003_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Collect(3fe43822), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00004_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Collect(3fe43822), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Put(65f3c31a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00005_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Collect(3fe43822), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Put(65f3c31a), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: Put(65f3c31a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00006_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Collect(3fe43822), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Put(65f3c31a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: Collect(3fe43822), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00007_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Collect(3fe43822), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Put(65f3c31a), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: Acc(7731cd2a), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00008_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: SetMinSum(640d3017), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 000000E60000010000000000000400000000000000000000E900000000000000
+(    TX 2    ) Function: MinSum(c2808d1a), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: SetLogFile(303b9379), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] Tx#3 found BlockstateDependencySFuzz at 23a
+[00:00:00:02] Tx#3 found BlockstateDependencySFuzz at 243
+[00:00:00:02] [*] Save bug seed id-00002-BD_sfuzz_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: MinSum(c2808d1a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: SetLogFile(303b9379), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000008
+(    TX 4    ) Function: Initialized(5daa87a0), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: Acc(7731cd2a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000081000000000000000000000000
+( => TX 6 <= ) Function: Put(65f3c31a), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000B70000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000400000000000
+(    TX 7    ) Function: Collect(3fe43822), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 8    ) Function: Collect(3fe43822), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 9    ) Function: SetLogFile(303b9379), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 000000D5000000000000000000002D0000000000
+(    TX 10    ) Function: MinSum(c2808d1a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 11    ) Function: Acc(7731cd2a), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000E2000000000000000000000000F200
+
+[00:00:00:02] [*] Save new seed id-00009_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: SetMinSum(640d3017), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000000000004100000020000000000000DF000000000000000000000000
+(    TX 2    ) Function: Collect(3fe43822), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: Initialized(5daa87a0), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: SetMinSum(640d3017), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: MinSum(c2808d1a), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] Tx#3 found BlockstateDependencySFuzz at 2d7
+[00:00:00:02] [*] Save bug seed id-00003-BD_sfuzz_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Collect(3fe43822), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: Put(65f3c31a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 4000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: Collect(3fe43822), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: MinSum(c2808d1a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: Initialized(5daa87a0), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: Collect(3fe43822), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000000000000000000000FF000080000000000000000000000000000000
+(    TX 7    ) Function: Collect(3fe43822), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0040000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000F30000000080000000
+
+[00:00:00:02] Tx#5 found IntegerBug at 244
+[00:00:00:02] Tx#5 found IntegerBugSFuzz at 23b
+[00:00:00:02] Tx#5 found IntegerBugSFuzz at 244
+[00:00:00:02] Tx#5 found IntegerBugMythril at 23b
+[00:00:00:02] Tx#5 found IntegerBugMythril at 244
+[00:00:00:02] Tx#5 found IntegerBugManticore at 244
+[00:00:00:02] [*] Save bug seed id-00004-IB-IB_mant-IB_myth-IB_sfuzz_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Acc(7731cd2a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: Initialized(5daa87a0), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: Acc(7731cd2a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000010008
+(    TX 4    ) Function: SetMinSum(640d3017), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 5    ) Function: Put(65f3c31a), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+[00:00:00:08] Tx#4 found BlockstateDependency at 306
+[00:00:00:08] Tx#4 found BlockstateDependencyILF at 306
+[00:00:00:08] Tx#4 found ReentrancyILF at 320
+[00:00:00:08] [*] Save bug seed id-00005-BD-BD_ilf-RE_ilf_00008: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Collect(3fe43822), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 4000000000000000000000000000000000000000000000000000000000000001
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Put(65f3c31a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 3 <= ) Function: fallback, From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000002000000000000
+(    TX 4    ) Function: Collect(3fe43822), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000004
+
+[00:00:00:27] Tx#6 found Reentrancy at 320
+[00:00:00:27] Tx#6 found ReentrancySFuzz at 306
+[00:00:00:27] [*] Save bug seed id-00006-RE-RE_sfuzz_00027: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: MinSum(c2808d1a), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Put(65f3c31a), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000007F00000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: SetLogFile(303b9379), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000008100
+(    TX 4    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000500FE0000010000000000000000000000000000000015000000000000
+( => TX 5 <= ) Function: MinSum(c2808d1a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: Collect(3fe43822), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 000000000000000000000000000000000000000000000000000000F000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000810000000000
+(    TX 7    ) Function: SetLogFile(303b9379), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 24CD2EDBA056B7C654A50E8201B619D4F624FDDA
+(    TX 8    ) Function: Put(65f3c31a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 9    ) Function: Put(65f3c31a), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 10    ) Function: Initialized(5daa87a0), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:46:33] Tx#6 found IntegerBug at 31a
+[00:00:46:33] Tx#6 found IntegerBugSFuzz at 31a
+[00:00:46:33] Tx#6 found IntegerBugMythril at 31a
+[00:00:46:33] Tx#6 found IntegerBugManticore at 31a
+[00:00:46:33] [*] Save bug seed id-00007-IB-IB_mant-IB_myth-IB_sfuzz_02793: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000500FE0000010000000000000000000000000000000015000000000000
+( => TX 2 <= ) Function: Put(65f3c31a), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: SetLogFile(303b9379), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: MinSum(c2808d1a), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: MinSum(c2808d1a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: Collect(3fe43822), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 000000000000000000000000000000000000000000000000000000F000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 7    ) Function: Acc(7731cd2a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+(    TX 8    ) Function: SetLogFile(303b9379), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 24CD2EDBA056B7C654A50E8201B619D4F624FDDA
+(    TX 9    ) Function: Put(65f3c31a), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 10    ) Function: Put(65f3c31a), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 11    ) Function: Initialized(5daa87a0), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:54:07] [*] Save new seed id-00010_03247: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Initialized(5daa87a0), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Initialized(5daa87a0), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: Put(65f3c31a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 005F000000000000160000000000000001000000000000000000000000040000
+          Arg1 : uint256
+                 00000000000000E7000000000000000000000000B07F0070FF00000000000002
+(    TX 4    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000E30000000000
+(    TX 5    ) Function: Acc(7731cd2a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 33B808A5AE244010E8739B5CA2D5EF3931D3E09F
+(    TX 6    ) Function: Collect(3fe43822), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 7FFFFFFFFFFFFFFFFFFFFF04FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7FE9FFFFFF
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000020000000000000000000
+(    TX 7    ) Function: Initialized(5daa87a0), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 8    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 8000000000000000000000008600400000000000000000110000000000000000
+( => TX 9 <= ) Function: SetMinSum(640d3017), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000007A00000000000000
+(    TX 10    ) Function: Collect(3fe43822), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000800000000000
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 1686171
+[00:01:00:00] Deployment failures: 0
+[00:01:00:00] Test Cases: 11
+[00:01:00:00] Covered Edges: 51
+[00:01:00:00] Covered Instructions: 558
+[00:01:00:00] Covered Def-Use Chains: 57
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 1
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 0
+[00:01:00:00]   Integer Bug: 2
+[00:01:00:00]   Mishandled Exception: 0
+[00:01:00:00]   Multiple Send: 0
+[00:01:00:00]   Reentrancy: 1
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

@@ -1,0 +1,70 @@
+INFO:Slither:Compilation warnings/errors on /sb/AdminImpl_3.sol:
+/sb/AdminImpl_3.sol:21:1: Warning: Experimental features are turned on. Do not use experimental features on live deployments.
+pragma experimental ABIEncoderV2;
+^-------------------------------^
+
+INFO:Detectors:[93m
+Require.stringify (/sb/AdminImpl_3.sol#1092-1110) is declared view but contains assembly code
+Token.checkSuccess (/sb/AdminImpl_3.sol#1926-1958) is declared view but contains assembly code
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#constant-functions-changing-the-state[0m
+INFO:Detectors:[93m
+IErc20 (/sb/AdminImpl_3.sol#277-345) has incorrect ERC20 function interface(s):
+	-transfer (/sb/AdminImpl_3.sol#311-315)
+	-transferFrom (/sb/AdminImpl_3.sol#318-323)
+	-approve (/sb/AdminImpl_3.sol#325-329)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-erc20-interface[0m
+INFO:Detectors:[93m
+supplyValue in Storage.getAccountValues (/sb/AdminImpl_3.sol#1471) is a local variable never initialiazed
+borrowValue in Storage.getAccountValues (/sb/AdminImpl_3.sol#1472) is a local variable never initialiazed
+result in Types.add (/sb/AdminImpl_3.sol#2165) is a local variable never initialiazed
+result in Types.add (/sb/AdminImpl_3.sol#2052) is a local variable never initialiazed
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#uninitialized-local-variables[0m
+INFO:Detectors:[93m
+AdminImpl._setInterestSetter (/sb/AdminImpl_3.sol#2507-2519) does not use the value returned by external calls:
+	-interestSetter.getInterestRate(token,0,0) (/sb/AdminImpl_3.sol#2518)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-return[0m
+INFO:Detectors:[92m
+Require.stringify uses assembly (/sb/AdminImpl_3.sol#1092-1110)
+	- /sb/AdminImpl_3.sol#1103-1106
+Token.checkSuccess uses assembly (/sb/AdminImpl_3.sol#1926-1958)
+	- /sb/AdminImpl_3.sol#1935-1957
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+Different versions of Solidity is used in /sb/AdminImpl_3.sol:
+	- Version used: ['0.5.4', 'ABIEncoderV2']
+	- /sb/AdminImpl_3.sol#20 declares pragma solidity0.5.4
+	- /sb/AdminImpl_3.sol#21 declares pragma experimentalABIEncoderV2
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#different-pragma-directives-are-used[0m
+INFO:Detectors:[92m
+IInterestSetter.getInterestRate (/sb/AdminImpl_3.sol#603-610) should be declared external
+IPriceOracle.getPrice (/sb/AdminImpl_3.sol#652-657) should be declared external
+AdminImpl.ownerWithdrawExcessTokens (/sb/AdminImpl_3.sol#2280-2307) should be declared external
+AdminImpl.ownerWithdrawUnsupportedTokens (/sb/AdminImpl_3.sol#2309-2322) should be declared external
+AdminImpl.ownerAddMarket (/sb/AdminImpl_3.sol#2326-2348) should be declared external
+AdminImpl.ownerSetIsClosing (/sb/AdminImpl_3.sol#2350-2359) should be declared external
+AdminImpl.ownerSetPriceOracle (/sb/AdminImpl_3.sol#2361-2370) should be declared external
+AdminImpl.ownerSetInterestSetter (/sb/AdminImpl_3.sol#2372-2381) should be declared external
+AdminImpl.ownerSetMarginPremium (/sb/AdminImpl_3.sol#2383-2392) should be declared external
+AdminImpl.ownerSetSpreadPremium (/sb/AdminImpl_3.sol#2394-2403) should be declared external
+AdminImpl.ownerSetMarginRatio (/sb/AdminImpl_3.sol#2407-2424) should be declared external
+AdminImpl.ownerSetLiquidationSpread (/sb/AdminImpl_3.sol#2426-2443) should be declared external
+AdminImpl.ownerSetEarningsRate (/sb/AdminImpl_3.sol#2445-2457) should be declared external
+AdminImpl.ownerSetMinBorrowedValue (/sb/AdminImpl_3.sol#2459-2471) should be declared external
+AdminImpl.ownerSetGlobalOperator (/sb/AdminImpl_3.sol#2475-2483) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/AdminImpl_3.sol:
+	- pragma solidity0.5.4 (/sb/AdminImpl_3.sol#20): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Function 'AdminImpl._setPriceOracle' (/sb/AdminImpl_3.sol#2488-2505) is not in mixedCase
+Function 'AdminImpl._setInterestSetter' (/sb/AdminImpl_3.sol#2507-2519) is not in mixedCase
+Function 'AdminImpl._setMarginPremium' (/sb/AdminImpl_3.sol#2521-2534) is not in mixedCase
+Function 'AdminImpl._setSpreadPremium' (/sb/AdminImpl_3.sol#2536-2549) is not in mixedCase
+Function 'AdminImpl._requireNoMarket' (/sb/AdminImpl_3.sol#2551-2574) is not in mixedCase
+Function 'AdminImpl._validateMarketId' (/sb/AdminImpl_3.sol#2576-2589) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Detectors:[92m
+Interest.FILE (/sb/AdminImpl_3.sol#778) is never used in Interest
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-state-variables[0m
+INFO:Slither:/sb/AdminImpl_3.sol analyzed (16 contracts), 34 result(s) found

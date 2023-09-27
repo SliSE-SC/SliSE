@@ -1,0 +1,2484 @@
+{
+    "file": "HomeBridgeNativeToErc_1.sol",
+    "global_structs": [
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0xfde"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0xfdf"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xfe0"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "uintStorage",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "stringStorage",
+            "type": [
+                "array",
+                "integer",
+                "unknown"
+            ],
+            "init": []
+        },
+        {
+            "name": "addressStorage",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "bytesStorage",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "boolStorage",
+            "type": [
+                "array",
+                "integer",
+                "boolean"
+            ],
+            "init": []
+        },
+        {
+            "name": "intStorage",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "SafeMath",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "IBridgeValidators",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "Message",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "EternalStorage",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "Validatable",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ERC20Basic",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "BasicBridge",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "BasicHomeBridge",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "HomeBridgeNativeToErc",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x46",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x47",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x48",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8c",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8d",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8e",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd4",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd5",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd6",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x126",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x127",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x128",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x178",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x179",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x17a",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1d6",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1d7",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1d8",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x234",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x235",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x236",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x288",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x289",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x28a",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x2ec",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x2ed",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x2ee",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x340",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x341",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x342",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x3a4",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x3a5",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x3a6",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x408",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x409",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x40a",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x46c",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x46d",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x46e",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4c7",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4c8",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4c9",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x521",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x522",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x523",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x588",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x589",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x58a",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5ef",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5f0",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5f1",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x662",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x663",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x664",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x6d5",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x6d6",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x6d7",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x73e",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x73f",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x740",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x7b7",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x7b8",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x7b9",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x820",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x821",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x822",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x899",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x89a",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x89b",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x902",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x903",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x904",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x97b",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x97c",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x97d",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x9e4",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x9e5",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x9e6",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa5d",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa5e",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa5f",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xac6",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xac7",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xac8",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xb3f",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xb40",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xb41",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xbb8",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xbb9",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xbba",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xc31",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xc32",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xc33",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xcaa",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xcab",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xcac",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd23",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd24",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd25",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd9c",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd9d",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd9e",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xdbe",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xdbf",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xdc0",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xde2",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xde3",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xde4",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe10",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe11",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe12",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe3e",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe3f",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe40",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe6c",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe6d",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe6e",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe9a",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe9b",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe9c",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xec8",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xec9",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xeca",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xef6",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xef7",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xef8",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xf30",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xf31",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xf32",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xf6a",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xf6b",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xf6c",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xfa4",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xfa5",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xfa6",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xfde",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xfdf",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xfe0",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "uintStorage",
+            "addrs": [
+                "0x2",
+                "0x8",
+                "0xe",
+                "0x10",
+                "0x12",
+                "0x14",
+                "0x16",
+                "0x18",
+                "0x19",
+                "0x1a",
+                "0x1b",
+                "0x1c",
+                "0x1e",
+                "0x2b",
+                "0x2e",
+                "0x43",
+                "0x45"
+            ]
+        },
+        {
+            "name": "boolStorage",
+            "addrs": [
+                "0x2",
+                "0xa",
+                "0x29",
+                "0x3f"
+            ]
+        },
+        {
+            "name": "addressStorage",
+            "addrs": [
+                "0x2",
+                "0xc"
+            ]
+        },
+        {
+            "name": "bytesStorage",
+            "addrs": [
+                "0x2",
+                "0x3c",
+                "0x41"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8",
+            "instructions": [
+                "CLR_0 = uintStorage[U]",
+                "REF_205 = CLR_0",
+                "uintStorage[0] = U",
+                "uintStorage[1] = U",
+                "uintStorage[2] = U",
+                "uintStorage[3] = U",
+                "uintStorage[4] = U",
+                "uintStorage[5] = U",
+                "uintStorage[6] = U",
+                "uintStorage[7] = U",
+                "uintStorage[8] = U",
+                "uintStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa",
+            "instructions": [
+                "CLR_1 = boolStorage[U]",
+                "REF_206 = CLR_1",
+                "RTMP_586 = ! REF_206",
+                "CONDITION RTMP_586 0x9 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9",
+            "instructions": [
+                "CLR_2 = boolStorage[U]",
+                "REF_199 = CLR_2",
+                "boolStorage[0] = true",
+                "boolStorage[1] = true",
+                "boolStorage[2] = true",
+                "boolStorage[3] = true",
+                "boolStorage[4] = true",
+                "boolStorage[5] = true",
+                "boolStorage[6] = true",
+                "boolStorage[7] = true",
+                "boolStorage[8] = true",
+                "boolStorage[9] = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc",
+            "instructions": [
+                "CLR_3 = boolStorage[U]",
+                "REF_208 = CLR_3",
+                "RTMP_587 = ! REF_208",
+                "CONDITION RTMP_587 0xb 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb",
+            "instructions": [
+                "CLR_4 = addressStorage[U]",
+                "REF_207 = CLR_4",
+                "addressStorage[0] = U",
+                "addressStorage[1] = U",
+                "addressStorage[2] = U",
+                "addressStorage[3] = U",
+                "addressStorage[4] = U",
+                "addressStorage[5] = U",
+                "addressStorage[6] = U",
+                "addressStorage[7] = U",
+                "addressStorage[8] = U",
+                "addressStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xe",
+            "instructions": [
+                "CLR_5 = boolStorage[U]",
+                "REF_210 = CLR_5",
+                "RTMP_588 = ! REF_210",
+                "CONDITION RTMP_588 0xd 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd",
+            "instructions": [
+                "CLR_6 = uintStorage[U]",
+                "REF_209 = CLR_6",
+                "CLR_7 = block.number",
+                "uintStorage[0] = CLR_7",
+                "uintStorage[1] = CLR_7",
+                "uintStorage[2] = CLR_7",
+                "uintStorage[3] = CLR_7",
+                "uintStorage[4] = CLR_7",
+                "uintStorage[5] = CLR_7",
+                "uintStorage[6] = CLR_7",
+                "uintStorage[7] = CLR_7",
+                "uintStorage[8] = CLR_7",
+                "uintStorage[9] = CLR_7"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10",
+            "instructions": [
+                "CLR_8 = boolStorage[U]",
+                "REF_212 = CLR_8",
+                "RTMP_589 = ! REF_212",
+                "CONDITION RTMP_589 0xf 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xf",
+            "instructions": [
+                "CLR_9 = uintStorage[U]",
+                "REF_211 = CLR_9",
+                "uintStorage[0] = U",
+                "uintStorage[1] = U",
+                "uintStorage[2] = U",
+                "uintStorage[3] = U",
+                "uintStorage[4] = U",
+                "uintStorage[5] = U",
+                "uintStorage[6] = U",
+                "uintStorage[7] = U",
+                "uintStorage[8] = U",
+                "uintStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12",
+            "instructions": [
+                "CLR_10 = boolStorage[U]",
+                "REF_214 = CLR_10",
+                "RTMP_590 = ! REF_214",
+                "CONDITION RTMP_590 0x11 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11",
+            "instructions": [
+                "CLR_11 = uintStorage[U]",
+                "REF_213 = CLR_11",
+                "uintStorage[0] = U",
+                "uintStorage[1] = U",
+                "uintStorage[2] = U",
+                "uintStorage[3] = U",
+                "uintStorage[4] = U",
+                "uintStorage[5] = U",
+                "uintStorage[6] = U",
+                "uintStorage[7] = U",
+                "uintStorage[8] = U",
+                "uintStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14",
+            "instructions": [
+                "CLR_12 = boolStorage[U]",
+                "REF_216 = CLR_12",
+                "RTMP_591 = ! REF_216",
+                "CONDITION RTMP_591 0x13 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13",
+            "instructions": [
+                "CLR_13 = uintStorage[U]",
+                "REF_215 = CLR_13",
+                "uintStorage[0] = U",
+                "uintStorage[1] = U",
+                "uintStorage[2] = U",
+                "uintStorage[3] = U",
+                "uintStorage[4] = U",
+                "uintStorage[5] = U",
+                "uintStorage[6] = U",
+                "uintStorage[7] = U",
+                "uintStorage[8] = U",
+                "uintStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x16",
+            "instructions": [
+                "CLR_14 = boolStorage[U]",
+                "REF_218 = CLR_14",
+                "RTMP_592 = ! REF_218",
+                "CONDITION RTMP_592 0x15 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15",
+            "instructions": [
+                "CLR_15 = uintStorage[U]",
+                "REF_217 = CLR_15",
+                "uintStorage[0] = U",
+                "uintStorage[1] = U",
+                "uintStorage[2] = U",
+                "uintStorage[3] = U",
+                "uintStorage[4] = U",
+                "uintStorage[5] = U",
+                "uintStorage[6] = U",
+                "uintStorage[7] = U",
+                "uintStorage[8] = U",
+                "uintStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x18",
+            "instructions": [
+                "CLR_16 = boolStorage[U]",
+                "REF_220 = CLR_16",
+                "RTMP_593 = ! REF_220",
+                "CONDITION RTMP_593 0x17 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x17",
+            "instructions": [
+                "CLR_17 = uintStorage[U]",
+                "REF_219 = CLR_17",
+                "uintStorage[0] = U",
+                "uintStorage[1] = U",
+                "uintStorage[2] = U",
+                "uintStorage[3] = U",
+                "uintStorage[4] = U",
+                "uintStorage[5] = U",
+                "uintStorage[6] = U",
+                "uintStorage[7] = U",
+                "uintStorage[8] = U",
+                "uintStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x19",
+            "instructions": [
+                "CLR_18 = uintStorage[U]",
+                "REF_221 = CLR_18",
+                "uintStorage[0] = U",
+                "uintStorage[1] = U",
+                "uintStorage[2] = U",
+                "uintStorage[3] = U",
+                "uintStorage[4] = U",
+                "uintStorage[5] = U",
+                "uintStorage[6] = U",
+                "uintStorage[7] = U",
+                "uintStorage[8] = U",
+                "uintStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1a",
+            "instructions": [
+                "CLR_19 = uintStorage[U]",
+                "REF_222 = CLR_19",
+                "uintStorage[0] = U",
+                "uintStorage[1] = U",
+                "uintStorage[2] = U",
+                "uintStorage[3] = U",
+                "uintStorage[4] = U",
+                "uintStorage[5] = U",
+                "uintStorage[6] = U",
+                "uintStorage[7] = U",
+                "uintStorage[8] = U",
+                "uintStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1b",
+            "instructions": [
+                "CLR_20 = uintStorage[U]",
+                "REF_223 = CLR_20",
+                "uintStorage[0] = U",
+                "uintStorage[1] = U",
+                "uintStorage[2] = U",
+                "uintStorage[3] = U",
+                "uintStorage[4] = U",
+                "uintStorage[5] = U",
+                "uintStorage[6] = U",
+                "uintStorage[7] = U",
+                "uintStorage[8] = U",
+                "uintStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1c",
+            "instructions": [
+                "CLR_21 = uintStorage[U]",
+                "REF_224 = CLR_21",
+                "uintStorage[0] = U",
+                "uintStorage[1] = U",
+                "uintStorage[2] = U",
+                "uintStorage[3] = U",
+                "uintStorage[4] = U",
+                "uintStorage[5] = U",
+                "uintStorage[6] = U",
+                "uintStorage[7] = U",
+                "uintStorage[8] = U",
+                "uintStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1e",
+            "instructions": [
+                "CLR_22 = msg.value",
+                "RTMP_594 = CLR_22 > 0",
+                "CONDITION RTMP_594 0x1f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1f",
+            "instructions": [
+                "CLR_23 = msg.data",
+                "REF_225 = CLR_23",
+                "REF_226 = NEW_VAL integer",
+                "RTMP_595 = REF_226 == 0",
+                "CONDITION RTMP_595 0x1d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1d",
+            "instructions": [
+                "CLR_24 = uintStorage[U]",
+                "REF_198 = CLR_24",
+                "uintStorage[0] = U",
+                "uintStorage[1] = U",
+                "uintStorage[2] = U",
+                "uintStorage[3] = U",
+                "uintStorage[4] = U",
+                "uintStorage[5] = U",
+                "uintStorage[6] = U",
+                "uintStorage[7] = U",
+                "uintStorage[8] = U",
+                "uintStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x29",
+            "instructions": [
+                "CLR_25 = boolStorage[U]",
+                "REF_230 = CLR_25",
+                "RTMP_605 = ! REF_230",
+                "CONDITION RTMP_605 0x28 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x28",
+            "instructions": [
+                "CLR_26 = boolStorage[U]",
+                "REF_193 = CLR_26",
+                "boolStorage[0] = true",
+                "boolStorage[1] = true",
+                "boolStorage[2] = true",
+                "boolStorage[3] = true",
+                "boolStorage[4] = true",
+                "boolStorage[5] = true",
+                "boolStorage[6] = true",
+                "boolStorage[7] = true",
+                "boolStorage[8] = true",
+                "boolStorage[9] = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2e",
+            "instructions": [
+                "CLR_27 = boolStorage[U]",
+                "REF_232 = CLR_27",
+                "RTMP_610 = ! REF_232",
+                "CONDITION RTMP_610 0x2f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2f",
+            "instructions": [
+                "RTMP_611 = ! false",
+                "RTMP_612 = ! false",
+                "RTMP_613 = RTMP_611 || RTMP_612",
+                "CONDITION RTMP_613 0x2d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2d",
+            "instructions": [
+                "CLR_28 = uintStorage[U]",
+                "REF_194 = CLR_28",
+                "uintStorage[0] = U",
+                "uintStorage[1] = U",
+                "uintStorage[2] = U",
+                "uintStorage[3] = U",
+                "uintStorage[4] = U",
+                "uintStorage[5] = U",
+                "uintStorage[6] = U",
+                "uintStorage[7] = U",
+                "uintStorage[8] = U",
+                "uintStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3c",
+            "instructions": [
+                "CLR_29 = uintStorage[U]",
+                "REF_234 = CLR_29",
+                "RTMP_630 = REF_234 > 1",
+                "CONDITION RTMP_630 0x1 0x3d"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3d",
+            "instructions": [
+                "RTMP_631 = ! false",
+                "RTMP_632 = ! false",
+                "RTMP_633 = RTMP_631 || RTMP_632",
+                "CONDITION RTMP_633 0x3b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3b",
+            "instructions": [
+                "CLR_30 = bytesStorage[U]",
+                "REF_196 = CLR_30",
+                "bytesStorage[0] = U",
+                "bytesStorage[1] = U",
+                "bytesStorage[2] = U",
+                "bytesStorage[3] = U",
+                "bytesStorage[4] = U",
+                "bytesStorage[5] = U",
+                "bytesStorage[6] = U",
+                "bytesStorage[7] = U",
+                "bytesStorage[8] = U",
+                "bytesStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3f",
+            "instructions": [
+                "RTMP_634 = ! false",
+                "RTMP_635 = ! false",
+                "RTMP_636 = RTMP_634 || RTMP_635",
+                "CONDITION RTMP_636 0x3e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3e",
+            "instructions": [
+                "CLR_31 = boolStorage[U]",
+                "REF_192 = CLR_31",
+                "boolStorage[0] = true",
+                "boolStorage[1] = true",
+                "boolStorage[2] = true",
+                "boolStorage[3] = true",
+                "boolStorage[4] = true",
+                "boolStorage[5] = true",
+                "boolStorage[6] = true",
+                "boolStorage[7] = true",
+                "boolStorage[8] = true",
+                "boolStorage[9] = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x41",
+            "instructions": [
+                "RTMP_637 = ! false",
+                "RTMP_638 = ! false",
+                "RTMP_639 = RTMP_637 || RTMP_638",
+                "CONDITION RTMP_639 0x40 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x40",
+            "instructions": [
+                "CLR_32 = bytesStorage[U]",
+                "REF_195 = CLR_32",
+                "bytesStorage[0] = U",
+                "bytesStorage[1] = U",
+                "bytesStorage[2] = U",
+                "bytesStorage[3] = U",
+                "bytesStorage[4] = U",
+                "bytesStorage[5] = U",
+                "bytesStorage[6] = U",
+                "bytesStorage[7] = U",
+                "bytesStorage[8] = U",
+                "bytesStorage[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x45",
+            "instructions": [
+                "RTMP_643 = ! false",
+                "RTMP_644 = ! false",
+                "RTMP_645 = RTMP_643 || RTMP_644",
+                "CONDITION RTMP_645 0x44 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x44",
+            "instructions": [
+                "CLR_33 = uintStorage[U]",
+                "REF_197 = CLR_33",
+                "uintStorage[0] = U",
+                "uintStorage[1] = U",
+                "uintStorage[2] = U",
+                "uintStorage[3] = U",
+                "uintStorage[4] = U",
+                "uintStorage[5] = U",
+                "uintStorage[6] = U",
+                "uintStorage[7] = U",
+                "uintStorage[8] = U",
+                "uintStorage[9] = U"
+            ]
+        }
+    ],
+    "root_addr": "0xfe3",
+    "dest_addrs": [
+        "0x1000"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xfe1",
+            "instructions": [
+                "TMP_471 = TMP_488",
+                "JUMP 0xfe2"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xfe3",
+            "instructions": [
+                "NOP",
+                "value = NEW_VAL integer",
+                "_withdrawal = NEW_VAL integer",
+                "_number = NEW_VAL integer",
+                "_value = NEW_VAL integer",
+                "transactionHash = NEW_VAL integer",
+                "hashSender = NEW_VAL integer",
+                "_status = NEW_VAL boolean",
+                "_withdrawal = NEW_VAL integer",
+                "_v = NEW_VAL integer",
+                "_withdrawal = NEW_VAL integer",
+                "_number = NEW_VAL integer",
+                "signed = NEW_VAL integer",
+                "recipient = NEW_VAL integer",
+                "_withdrawal = NEW_VAL integer",
+                "_recipient = NEW_VAL integer",
+                "hashMsg = NEW_VAL integer",
+                "JUMP 0xfe4"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xfe4",
+            "instructions": [
+                "NOP",
+                "JUMP 0xfe5"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xfe5",
+            "instructions": [
+                "TMP_249 = NEW_VAL integer",
+                "TMP_250 = CALL1 keccak TMP_249",
+                "CLR_34 = addressStorage[TMP_250]",
+                "REF_95 = CLR_34",
+                "TMP_251 = NEW_VAL unknown",
+                "TMP_488 = TMP_251",
+                "JUMP 0xfe1"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xfe2",
+            "instructions": [
+                "ATTACK",
+                "TMP_472 = NEW_VAL boolean",
+                "JUMP 0xfe6"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfe6",
+            "instructions": [
+                "NOP",
+                "_requiredBlockConfirmations = NEW_VAL integer",
+                "_dailyLimit = NEW_VAL integer",
+                "_maxPerTx = NEW_VAL integer",
+                "_minPerTx = NEW_VAL integer",
+                "_status = NEW_VAL boolean",
+                "_validatorContract = NEW_VAL integer",
+                "_homeGasPrice = NEW_VAL integer",
+                "JUMP 0xfe7"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfe8",
+            "instructions": [
+                "TMP_427 = ! TMP_426",
+                "CONDITION TMP_427 0xfe8_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfe8_r0",
+            "instructions": [
+                "JUMP 0xfe9"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfe9",
+            "instructions": [
+                "TMP_429 = 0",
+                "TMP_430 = _validatorContract != TMP_429",
+                "CONDITION TMP_430 0xfe9_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfe9_r0",
+            "instructions": [
+                "JUMP 0xfea"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfea",
+            "instructions": [
+                "TMP_432 = _homeGasPrice > 0",
+                "CONDITION TMP_432 0xfea_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfea_r0",
+            "instructions": [
+                "JUMP 0xfeb"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfeb",
+            "instructions": [
+                "TMP_434 = _requiredBlockConfirmations > 0",
+                "CONDITION TMP_434 0xfeb_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfeb_r0",
+            "instructions": [
+                "JUMP 0xfec"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfec",
+            "instructions": [
+                "TMP_436 = _minPerTx > 0",
+                "TMP_437 = _maxPerTx > _minPerTx",
+                "TMP_438 = TMP_436 && TMP_437",
+                "TMP_439 = _dailyLimit > _maxPerTx",
+                "TMP_440 = TMP_438 && TMP_439",
+                "CONDITION TMP_440 0xfec_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfec_r0",
+            "instructions": [
+                "JUMP 0xfed"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfee",
+            "instructions": [
+                "NOP",
+                "JUMP 0xfef"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfe7",
+            "instructions": [
+                "NOP",
+                "JUMP 0xff0"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xff0",
+            "instructions": [
+                "TMP_375 = NEW_VAL integer",
+                "TMP_376 = CALL1 keccak TMP_375",
+                "CLR_35 = boolStorage[TMP_376]",
+                "REF_150 = CLR_35",
+                "TMP_575 = REF_150",
+                "JUMP 0xff1"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xff1",
+            "instructions": [
+                "TMP_426 = TMP_575",
+                "JUMP 0xfe8"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xff2",
+            "instructions": [
+                "NOP",
+                "JUMP 0xff3"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xff3",
+            "instructions": [
+                "TMP_373 = NEW_VAL integer",
+                "TMP_374 = CALL1 keccak TMP_373",
+                "CLR_36 = boolStorage[TMP_374]",
+                "REF_148 = CLR_36",
+                "boolStorage[TMP_374] = _status",
+                "JUMP 0xff4"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xfed",
+            "instructions": [
+                "TMP_442 = NEW_VAL integer",
+                "TMP_443 = CALL1 keccak TMP_442",
+                "CLR_37 = addressStorage[TMP_443]",
+                "REF_165 = CLR_37",
+                "addressStorage[TMP_443] = _validatorContract",
+                "TMP_444 = NEW_VAL integer",
+                "TMP_445 = CALL1 keccak TMP_444",
+                "CLR_38 = uintStorage[TMP_445]",
+                "REF_167 = CLR_38",
+                "CLR_39 = block.number",
+                "uintStorage[TMP_445] = CLR_39",
+                "TMP_446 = NEW_VAL integer",
+                "TMP_447 = CALL1 keccak TMP_446",
+                "CLR_40 = uintStorage[TMP_447]",
+                "REF_169 = CLR_40",
+                "uintStorage[TMP_447] = _dailyLimit",
+                "TMP_448 = NEW_VAL integer",
+                "TMP_449 = CALL1 keccak TMP_448",
+                "CLR_41 = uintStorage[TMP_449]",
+                "REF_171 = CLR_41",
+                "uintStorage[TMP_449] = _maxPerTx",
+                "TMP_450 = NEW_VAL integer",
+                "TMP_451 = CALL1 keccak TMP_450",
+                "CLR_42 = uintStorage[TMP_451]",
+                "REF_173 = CLR_42",
+                "uintStorage[TMP_451] = _minPerTx",
+                "TMP_452 = NEW_VAL integer",
+                "TMP_453 = CALL1 keccak TMP_452",
+                "CLR_43 = uintStorage[TMP_453]",
+                "REF_175 = CLR_43",
+                "uintStorage[TMP_453] = _homeGasPrice",
+                "TMP_454 = NEW_VAL integer",
+                "TMP_455 = CALL1 keccak TMP_454",
+                "CLR_44 = uintStorage[TMP_455]",
+                "REF_177 = CLR_44",
+                "uintStorage[TMP_455] = _requiredBlockConfirmations",
+                "_status = true",
+                "JUMP 0xff2"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xff4",
+            "instructions": [
+                "NOP",
+                "JUMP 0xff5"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xff5",
+            "instructions": [
+                "TMP_375 = NEW_VAL integer",
+                "TMP_376 = CALL1 keccak TMP_375",
+                "CLR_45 = boolStorage[TMP_376]",
+                "REF_150 = CLR_45",
+                "TMP_575 = REF_150",
+                "JUMP 0xff6"
+            ]
+        },
+        {
+            "scope": "initialize",
+            "addr": "0xff6",
+            "instructions": [
+                "TMP_457 = TMP_575",
+                "JUMP 0xfee"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xff7",
+            "instructions": [
+                "NOP",
+                "JUMP 0xff8"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xff9",
+            "instructions": [
+                "TMP_259 = ! TMP_258",
+                "CONDITION TMP_259 0xff9_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xff9_r0",
+            "instructions": [
+                "JUMP 0xffa"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xffb",
+            "instructions": [
+                "TMP_264 = ! TMP_263",
+                "CONDITION TMP_264 0xffb_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xffb_r0",
+            "instructions": [
+                "JUMP 0xffc"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xffd",
+            "instructions": [
+                "NOP",
+                "JUMP 0xffe"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xfff",
+            "instructions": [
+                "TMP_270 = signed >= TMP_269",
+                "CONDITION TMP_270 0x1000 0x1001"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xfef",
+            "instructions": [
+                "CONDITION TMP_472 0xfef_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xfef_r0",
+            "instructions": [
+                "JUMP 0x1002"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1002",
+            "instructions": [
+                "NOP",
+                "JUMP 0xff7"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1003",
+            "instructions": [
+                "NOP",
+                "JUMP 0x1004"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1004",
+            "instructions": [
+                "TMP_319 = NEW_VAL integer",
+                "TMP_320 = CALL1 keccak TMP_319",
+                "CLR_46 = boolStorage[TMP_320]",
+                "REF_113 = CLR_46",
+                "TMP_553 = REF_113",
+                "JUMP 0x1005"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xff8",
+            "instructions": [
+                "TMP_254 = NEW_VAL integer",
+                "TMP_255 = CALL1 keccak TMP_254",
+                "hashMsg = TMP_255",
+                "TMP_256 = NEW_VAL integer",
+                "TMP_257 = CALL1 keccak TMP_256",
+                "hashSender = TMP_257",
+                "_withdrawal = hashSender",
+                "JUMP 0x1003"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1005",
+            "instructions": [
+                "TMP_258 = TMP_553",
+                "JUMP 0xff9"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1006",
+            "instructions": [
+                "NOP",
+                "JUMP 0x1007"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1007",
+            "instructions": [
+                "TMP_315 = NEW_VAL integer",
+                "TMP_316 = CALL1 keccak TMP_315",
+                "CLR_47 = boolStorage[TMP_316]",
+                "REF_109 = CLR_47",
+                "boolStorage[TMP_316] = _status",
+                "JUMP 0x1008"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xffa",
+            "instructions": [
+                "_withdrawal = hashSender",
+                "_status = true",
+                "JUMP 0x1006"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1009",
+            "instructions": [
+                "NOP",
+                "JUMP 0x100a"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x100a",
+            "instructions": [
+                "TMP_313 = NEW_VAL integer",
+                "TMP_314 = CALL1 keccak TMP_313",
+                "CLR_48 = uintStorage[TMP_314]",
+                "REF_107 = CLR_48",
+                "TMP_550 = REF_107",
+                "JUMP 0x100b"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1008",
+            "instructions": [
+                "_withdrawal = hashMsg",
+                "JUMP 0x1009"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x100b",
+            "instructions": [
+                "TMP_262 = TMP_550",
+                "JUMP 0x100c"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x100d",
+            "instructions": [
+                "NOP",
+                "JUMP 0x100e"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x100e",
+            "instructions": [
+                "TMP_339 = 2 ** 255",
+                "TMP_340 = _number & TMP_339",
+                "TMP_341 = 2 ** 255",
+                "TMP_342 = TMP_340 == TMP_341",
+                "TMP_563 = TMP_342",
+                "JUMP 0x100f"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x100c",
+            "instructions": [
+                "signed = TMP_262",
+                "_number = signed",
+                "JUMP 0x100d"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x100f",
+            "instructions": [
+                "TMP_263 = TMP_563",
+                "JUMP 0xffb"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1010",
+            "instructions": [
+                "NOP",
+                "JUMP 0x1011"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1011",
+            "instructions": [
+                "TMP_317 = NEW_VAL integer",
+                "TMP_318 = CALL1 keccak TMP_317",
+                "CLR_49 = uintStorage[TMP_318]",
+                "REF_111 = CLR_49",
+                "uintStorage[TMP_318] = _number",
+                "JUMP 0xffd"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xffc",
+            "instructions": [
+                "TMP_266 = signed + 1",
+                "signed = TMP_266",
+                "_withdrawal = hashMsg",
+                "_number = signed",
+                "JUMP 0x1010"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0xffe",
+            "instructions": [
+                "NOP",
+                "JUMP 0x1012"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1013",
+            "instructions": [
+                "TMP_253 = NEW_VAL integer",
+                "JUMP 0x1014"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1014",
+            "instructions": [
+                "TMP_545 = TMP_253",
+                "JUMP 0x1015"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1012",
+            "instructions": [
+                "NOP",
+                "JUMP 0x1016"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1016",
+            "instructions": [
+                "TMP_249 = NEW_VAL integer",
+                "TMP_250 = CALL1 keccak TMP_249",
+                "CLR_50 = addressStorage[TMP_250]",
+                "REF_95 = CLR_50",
+                "TMP_251 = NEW_VAL unknown",
+                "TMP_544 = TMP_251",
+                "JUMP 0x1017"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1017",
+            "instructions": [
+                "TMP_252 = TMP_544",
+                "JUMP 0x1013"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1015",
+            "instructions": [
+                "TMP_269 = TMP_545",
+                "JUMP 0xfff"
+            ]
+        },
+        {
+            "scope": "executeAffirmation",
+            "addr": "0x1000",
+            "instructions": [
+                "_v = signed"
+            ]
+        },
+        {
+            "scope": "trap",
+            "addr": "0x1001",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

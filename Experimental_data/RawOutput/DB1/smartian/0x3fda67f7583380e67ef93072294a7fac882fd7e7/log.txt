@@ -1,0 +1,758 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B3/bin/0x3fda67f7583380e67ef93072294a7fac882fd7e7.bin
+[00:00:00:00] Fuzzing starts at 03:16:30
+[00:00:00:00] Time limit : 300 s
+[DEBUG] Analyzing constructor @ 0
+Found sload(<0x1, { }, { }>) @ 0x1c
+Found sstore(<0x1, { }, { }>, <T, { }, { CALLER, var_1 }>) @ 0x51
+Found sstore(<0x7, { }, { }>, <0x1BC16D674EC80000, { }, { }>) @ 0x79
+Found sstore(<0x08, { }, { }>, <0x0, { }, { }>) @ 0x99
+Found sstore(<0x09, { }, { }>, <0x0, { }, { }>) @ 0xb9
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_1, var_7, var_8, var_9 }, Use = { var_1 }
+Constructor tainted: { var_1 }
+[DEBUG] Analyzing getBorrowBalance(118e31b7) @ 19b
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0xde7
+Found sload(<T, { Sha(*, 0x5) + 0x7 }, { }>) @ 0xdec
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0xdf1
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0xe33
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0xe38
+getBorrowBalance(118e31b7): Def = {  }, Use = { map_4, map_5.off_1, map_5.off_7, map_5.off_8 }
+[DEBUG] Analyzing _setOriginationFee(24021127) @ 212
+Found sload(<0x1, { }, { }>) @ 0xe89
+Found sload(<0x08, { }, { }>) @ 0xf01
+Found sstore(<0x08, { }, { }>, <_, { }, { }>) @ 0xf23
+_setOriginationFee(24021127): (onlyOwner) Def = { var_8 }, Use = { var_1, var_8 }
+[DEBUG] Analyzing _setPaused(26617c28) @ 253
+Found sload(<0x1, { }, { }>) @ 0xf87
+Found sload(<0x0A, { }, { }>) @ 0xff6
+Found sstore(<0x0A, { }, { }>, <T, { }, { var_10 }>) @ 0x1004
+_setPaused(26617c28): (onlyOwner) Def = { var_10 }, Use = { var_1, var_10 }
+[DEBUG] Analyzing pendingAdmin(26782247) @ 296
+Found sload(<0x0, { }, { }>) @ 0x105a
+pendingAdmin(26782247): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing _setOracle(3be59443) @ 2ed
+Found sload(<0x1, { }, { }>) @ 0x1085
+Found sload(<0x2, { }, { }>) @ 0x11ca
+Found sload(<0x2, { }, { }>) @ 0x11f4
+Found sstore(<0x2, { }, { }>, <T, { }, { var_2 }>) @ 0x1229
+_setOracle(3be59443): (onlyOwner) Def = { var_2 }, Use = { var_1, var_2 }
+[DEBUG] Analyzing _withdrawEquity(4706c375) @ 344
+Found sload(<0x1, { }, { }>) @ 0x12e6
+Found sload(<T, { Sha(*, 0x5) + 0x6 }, { }>) @ 0x139c
+Found sload(<T, { Sha(*, 0x5) + 0x3 }, { }>) @ 0x13df
+Found sload(<0x1, { }, { }>) @ 0x143f
+Found sload(<0x1, { }, { }>) @ 0x14c0
+_withdrawEquity(4706c375): (onlyOwner) Def = {  }, Use = { map_5.off_3, map_5.off_6, var_1 }
+[DEBUG] Analyzing borrow(4b8a3529) @ 3a5
+Found sload(<0x0A, { }, { }>) @ 0x158f
+Found sload(<T, { Sha(*, 0x5) }, { }>) @ 0x1678
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0x16a3
+Found sload(<T, { Sha(*, 0x5) + 0x7 }, { }>) @ 0x16a8
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x16ad
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x1701
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x1706
+Found sload(<0x08, { }, { }>) @ 0x5ac4
+Found sload(<0x08, { }, { }>) @ 0x5af5
+Found sload(<T, { Sha(*, 0x5) + 0x6 }, { }>) @ 0x17f0
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x17fa
+Found sload(<0x6, { }, { }>) @ 0x61b9
+Found sload(<0x6, { }, { }>) @ 0x61da
+Found sload(<T, { Sha(0x6) }, { }>) @ 0x61f2
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x6396
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x63a4
+Found sload(<T, { Sha(*, 0x5) + 0x4 }, { }>) @ 0x63a9
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x63ae
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x6405
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x640a
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x650a
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0x6518
+Found sload(<T, { Sha(*, 0x5) + 0x7 }, { }>) @ 0x651d
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x6522
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x6579
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x657e
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<0x7, { }, { }>) @ 0x5c93
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<0x7, { }, { }>) @ 0x5e8b
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x19a0
+Found sload(<T, { Sha(*, 0x5) + 0x4 }, { }>) @ 0x19a5
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x19aa
+Found sload(<T, { Sha(*, 0x5) + 0x2 }, { }>) @ 0x19fe
+Found sload(<T, { Sha(*, 0x5) + 0x2 }, { }>) @ 0x1b43
+Found sstore(<T, { Sha(*, 0x5) + 0x1 }, { }>, <T, { }, { }>) @ 0x1cce
+Found sstore(<T, { Sha(*, 0x5) + 0x6 }, { }>, <_, { }, { }>) @ 0x1cdb
+Found sstore(<T, { Sha(*, 0x5) + 0x4 }, { }>, <_, { }, { }>) @ 0x1ce9
+Found sstore(<T, { Sha(*, 0x5) + 0x5 }, { }>, <_, { }, { }>) @ 0x1cf6
+Found sstore(<T, { Sha(*, 0x5) + 0x7 }, { }>, <_, { }, { }>) @ 0x1d04
+Found sstore(<T, { Sha(*, 0x5) + 0x08 }, { }>, <_, { }, { }>) @ 0x1d11
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x1d17
+Found sstore(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>, <_, { }, { }>) @ 0x1d2d
+Found sstore(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>, <_, { }, { }>) @ 0x1d3a
+borrow(4b8a3529): Def = { map_4, map_5.off_1, map_5.off_4, map_5.off_5, map_5.off_6, map_5.off_7, map_5.off_8 }, Use = { arr_6, map_3, map_4, map_5, map_5.off_1, map_5.off_2, map_5.off_4, map_5.off_5, map_5.off_6, map_5.off_7, map_5.off_8, var_10, var_2, var_6, var_7, var_8 }
+[DEBUG] Analyzing paused(5c975abb) @ 406
+Found sload(<0x0A, { }, { }>) @ 0x1e20
+paused(5c975abb): Def = {  }, Use = { var_10 }
+[DEBUG] Analyzing _setMarketInterestRateModel(5cf756d2) @ 435
+Found sload(<0x1, { }, { }>) @ 0x1e35
+Found sload(<T, { Sha(*, 0x5) + 0x2 }, { }>) @ 0x1ee4
+Found sstore(<T, { Sha(*, 0x5) + 0x2 }, { }>, <T, { }, { map_5.off_2 }>) @ 0x1f19
+_setMarketInterestRateModel(5cf756d2): (onlyOwner) Def = { map_5.off_2 }, Use = { map_5.off_2, var_1 }
+[DEBUG] Analyzing assetPrices(5e9a523c) @ 4ac
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+assetPrices(5e9a523c): Def = {  }, Use = { var_2 }
+[DEBUG] Analyzing getAccountLiquidity(5ec88c79) @ 503
+Found sload(<0x6, { }, { }>) @ 0x61b9
+Found sload(<0x6, { }, { }>) @ 0x61da
+Found sload(<T, { Sha(0x6) }, { }>) @ 0x61f2
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x6396
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x63a4
+Found sload(<T, { Sha(*, 0x5) + 0x4 }, { }>) @ 0x63a9
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x63ae
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x6405
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x640a
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x650a
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0x6518
+Found sload(<T, { Sha(*, 0x5) + 0x7 }, { }>) @ 0x651d
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x6522
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x6579
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x657e
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<0x7, { }, { }>) @ 0x5c93
+getAccountLiquidity(5ec88c79): Def = {  }, Use = { arr_6, map_3, map_4, map_5.off_1, map_5.off_4, map_5.off_5, map_5.off_7, map_5.off_8, var_2, var_6, var_7 }
+[DEBUG] Analyzing getCollateralMarketsLength(6e2ede03) @ 55a
+Found sload(<0x6, { }, { }>) @ 0x20b8
+getCollateralMarketsLength(6e2ede03): Def = {  }, Use = { var_6 }
+[DEBUG] Analyzing oracle(7dc0d1d0) @ 585
+Found sload(<0x2, { }, { }>) @ 0x20c5
+oracle(7dc0d1d0): Def = {  }, Use = { var_2 }
+[DEBUG] Analyzing liquidationDiscount(8053fcbe) @ 5dc
+Found sload(<0x09, { }, { }>) @ 0x20ec
+liquidationDiscount(8053fcbe): Def = {  }, Use = { var_9 }
+[DEBUG] Analyzing markets(8e8f294b) @ 607
+Found sload(<T, { Sha(*, 0x5) }, { }>) @ 0x210d
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x211d
+Found sload(<T, { Sha(*, 0x5) + 0x2 }, { }>) @ 0x2126
+Found sload(<T, { Sha(*, 0x5) + 0x3 }, { }>) @ 0x2149
+Found sload(<T, { Sha(*, 0x5) + 0x4 }, { }>) @ 0x214f
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x2155
+Found sload(<T, { Sha(*, 0x5) + 0x6 }, { }>) @ 0x215b
+Found sload(<T, { Sha(*, 0x5) + 0x7 }, { }>) @ 0x2161
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0x2167
+markets(8e8f294b): Def = {  }, Use = { map_5, map_5.off_1, map_5.off_2, map_5.off_3, map_5.off_4, map_5.off_5, map_5.off_6, map_5.off_7, map_5.off_8 }
+[DEBUG] Analyzing calculateAccountValues(9f180cf1) @ 6c6
+Found sload(<0x6, { }, { }>) @ 0x61b9
+Found sload(<0x6, { }, { }>) @ 0x61da
+Found sload(<T, { Sha(0x6) }, { }>) @ 0x61f2
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x6396
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x63a4
+Found sload(<T, { Sha(*, 0x5) + 0x4 }, { }>) @ 0x63a9
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x63ae
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x6405
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x640a
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x650a
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0x6518
+Found sload(<T, { Sha(*, 0x5) + 0x7 }, { }>) @ 0x651d
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x6522
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x6579
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x657e
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+calculateAccountValues(9f180cf1): Def = {  }, Use = { arr_6, map_3, map_4, map_5.off_1, map_5.off_4, map_5.off_5, map_5.off_7, map_5.off_8, var_2, var_6 }
+[DEBUG] Analyzing repayBorrow(abdb5ea8) @ 72b
+Found sload(<0x0A, { }, { }>) @ 0x21f2
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0x22db
+Found sload(<T, { Sha(*, 0x5) + 0x7 }, { }>) @ 0x22e0
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x22e5
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x2339
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x233e
+Found sload(<T, { Sha(*, 0x5) + 0x6 }, { }>) @ 0x247b
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x2485
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x2534
+Found sload(<T, { Sha(*, 0x5) + 0x4 }, { }>) @ 0x2539
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x253e
+Found sload(<T, { Sha(*, 0x5) + 0x2 }, { }>) @ 0x2592
+Found sload(<T, { Sha(*, 0x5) + 0x2 }, { }>) @ 0x26d7
+Found sstore(<T, { Sha(*, 0x5) + 0x1 }, { }>, <T, { }, { }>) @ 0x2866
+Found sstore(<T, { Sha(*, 0x5) + 0x6 }, { }>, <_, { }, { }>) @ 0x2873
+Found sstore(<T, { Sha(*, 0x5) + 0x4 }, { }>, <_, { }, { }>) @ 0x2881
+Found sstore(<T, { Sha(*, 0x5) + 0x5 }, { }>, <_, { }, { }>) @ 0x288e
+Found sstore(<T, { Sha(*, 0x5) + 0x7 }, { }>, <_, { }, { }>) @ 0x289c
+Found sstore(<T, { Sha(*, 0x5) + 0x08 }, { }>, <_, { }, { }>) @ 0x28a9
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x28af
+Found sstore(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>, <_, { }, { }>) @ 0x28c5
+Found sstore(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>, <_, { }, { }>) @ 0x28d2
+repayBorrow(abdb5ea8): Def = { map_4, map_5.off_1, map_5.off_4, map_5.off_5, map_5.off_6, map_5.off_7, map_5.off_8 }, Use = { map_4, map_5.off_1, map_5.off_2, map_5.off_4, map_5.off_5, map_5.off_6, map_5.off_7, map_5.off_8, var_10 }
+[DEBUG] Analyzing collateralRatio(b4eae1cb) @ 78c
+Found sload(<0x7, { }, { }>) @ 0x29b1
+collateralRatio(b4eae1cb): Def = {  }, Use = { var_7 }
+[DEBUG] Analyzing _setPendingAdmin(b71d1a0c) @ 7b7
+Found sload(<0x1, { }, { }>) @ 0x29bf
+Found sload(<0x0, { }, { }>) @ 0x2a28
+Found sload(<0x0, { }, { }>) @ 0x2a51
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x2a86
+_setPendingAdmin(b71d1a0c): (onlyOwner) Def = { var_0 }, Use = { var_0, var_1 }
+[DEBUG] Analyzing supplyBalances(b7adddac) @ 80e
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x2b5a
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x2b60
+supplyBalances(b7adddac): Def = {  }, Use = { map_3 }
+[DEBUG] Analyzing originationFee(b8bb5c42) @ 88c
+Found sload(<0x08, { }, { }>) @ 0x2b6c
+originationFee(b8bb5c42): Def = {  }, Use = { var_8 }
+[DEBUG] Analyzing getSupplyBalance(ba377731) @ 8b7
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x2c41
+Found sload(<T, { Sha(*, 0x5) + 0x4 }, { }>) @ 0x2c46
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x2c4b
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x2c8d
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x2c92
+getSupplyBalance(ba377731): Def = {  }, Use = { map_3, map_5.off_1, map_5.off_4, map_5.off_5 }
+[DEBUG] Analyzing collateralMarkets(beb54615) @ 92e
+Found sload(<0x6, { }, { }>) @ 0x2cd8
+Found sload(<T, { Sha(0x6) }, { }>) @ 0x2cf1
+collateralMarkets(beb54615): Def = {  }, Use = { arr_6, var_6 }
+[DEBUG] Analyzing _supportMarket(c1abfaa3) @ 99b
+Found sload(<0x1, { }, { }>) @ 0x2d22
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<T, { Sha(*, 0x5) + 0x2 }, { }>) @ 0x2e31
+Found sstore(<T, { Sha(*, 0x5) + 0x2 }, { }>, <T, { }, { map_5.off_2 }>) @ 0x2e66
+Found sload(<0x6, { }, { }>) @ 0x6b11
+Found sload(<0x6, { }, { }>) @ 0x6ba2
+Found sstore(<0x6, { }, { }>, <T, { }, { var_6 }>) @ 0x6ba6
+Found sload(<T, { Sha(0x6) }, { var_6 }>) @ 0x6bc8
+Found sstore(<T, { Sha(0x6) }, { var_6 }>, <T, { }, { arr_6 }>) @ 0x6bfd
+Found sload(<0x6, { }, { }>) @ 0x6b36
+Found sload(<T, { Sha(0x6) }, { }>) @ 0x6b4e
+Found sload(<T, { Sha(*, 0x5) }, { }>) @ 0x2ebc
+Found sstore(<T, { Sha(*, 0x5) }, { }>, <T, { }, { map_5 }>) @ 0x2eca
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x2f10
+Found sstore(<T, { Sha(*, 0x5) + 0x5 }, { }>, <0x0DE0B6B3A7640000, { }, { }>) @ 0x2f64
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0x2fab
+Found sstore(<T, { Sha(*, 0x5) + 0x08 }, { }>, <0x0DE0B6B3A7640000, { }, { }>) @ 0x2fff
+_supportMarket(c1abfaa3): (onlyOwner) Def = { arr_6, map_5, map_5.off_2, map_5.off_5, map_5.off_8, var_6 }, Use = { arr_6, map_5, map_5.off_2, map_5.off_5, map_5.off_8, var_1, var_2, var_6 }
+[DEBUG] Analyzing _setRiskParameters(c365a646) @ a12
+Found sload(<0x1, { }, { }>) @ 0x30f2
+Found sload(<0x7, { }, { }>) @ 0x3273
+Found sload(<0x09, { }, { }>) @ 0x328d
+Found sstore(<0x7, { }, { }>, <_, { }, { }>) @ 0x32a0
+Found sstore(<0x09, { }, { }>, <_, { }, { }>) @ 0x32b0
+_setRiskParameters(c365a646): (onlyOwner) Def = { var_7, var_9 }, Use = { var_1, var_7, var_9 }
+[DEBUG] Analyzing _suspendMarket(dbe2bc84) @ a5d
+Found sload(<0x1, { }, { }>) @ 0x3330
+Found sload(<T, { Sha(*, 0x5) }, { }>) @ 0x33da
+Found sload(<T, { Sha(*, 0x5) }, { }>) @ 0x344a
+Found sstore(<T, { Sha(*, 0x5) }, { }>, <T, { }, { map_5 }>) @ 0x3458
+_suspendMarket(dbe2bc84): (onlyOwner) Def = { map_5 }, Use = { map_5, var_1 }
+[DEBUG] Analyzing liquidateBorrow(e61604cf) @ ab4
+Found sload(<0x0A, { }, { }>) @ 0x34ec
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0x387c
+Found sload(<T, { Sha(*, 0x5) + 0x7 }, { }>) @ 0x3881
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x3886
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x38da
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x38df
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x3931
+Found sload(<T, { Sha(*, 0x5) + 0x4 }, { }>) @ 0x3936
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x393b
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x398f
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x3994
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x39e6
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x39eb
+Found sload(<T, { Sha(*, 0x5) + 0x3 }, { }>) @ 0x3a3d
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x3a48
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x3aa1
+Found sload(<0x09, { }, { }>) @ 0x6cb2
+Found sload(<T, { Sha(*, 0x5) }, { }>) @ 0x3b48
+Found sload(<0x6, { }, { }>) @ 0x61b9
+Found sload(<0x6, { }, { }>) @ 0x61da
+Found sload(<T, { Sha(0x6) }, { }>) @ 0x61f2
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x6396
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x63a4
+Found sload(<T, { Sha(*, 0x5) + 0x4 }, { }>) @ 0x63a9
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x63ae
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x6405
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x640a
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x650a
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0x6518
+Found sload(<T, { Sha(*, 0x5) + 0x7 }, { }>) @ 0x651d
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x6522
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x6579
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x657e
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<0x7, { }, { }>) @ 0x5c93
+Found sload(<0x7, { }, { }>) @ 0x6e62
+Found sload(<0x09, { }, { }>) @ 0x6e7a
+Found sload(<0x09, { }, { }>) @ 0x6ff9
+Found sload(<T, { Sha(*, 0x5) + 0x6 }, { }>) @ 0x3d62
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x3d6d
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x3e21
+Found sload(<T, { Sha(*, 0x5) + 0x4 }, { }>) @ 0x3e26
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x3e2b
+Found sload(<T, { Sha(*, 0x5) + 0x2 }, { }>) @ 0x3e7f
+Found sload(<T, { Sha(*, 0x5) + 0x2 }, { }>) @ 0x3fc6
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0x410d
+Found sload(<T, { Sha(*, 0x5) + 0x7 }, { }>) @ 0x4112
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x4117
+Found sstore(<T, { Sha(*, 0x5) + 0x1 }, { }>, <T, { }, { }>) @ 0x4242
+Found sstore(<T, { Sha(*, 0x5) + 0x6 }, { }>, <_, { }, { }>) @ 0x4250
+Found sstore(<T, { Sha(*, 0x5) + 0x4 }, { }>, <_, { }, { }>) @ 0x425e
+Found sstore(<T, { Sha(*, 0x5) + 0x5 }, { }>, <_, { }, { }>) @ 0x426b
+Found sstore(<T, { Sha(*, 0x5) + 0x7 }, { }>, <_, { }, { }>) @ 0x4279
+Found sstore(<T, { Sha(*, 0x5) + 0x08 }, { }>, <_, { }, { }>) @ 0x4286
+Found sstore(<T, { Sha(*, 0x5) + 0x1 }, { }>, <T, { }, { }>) @ 0x4296
+Found sstore(<T, { Sha(*, 0x5) + 0x3 }, { }>, <_, { }, { }>) @ 0x42a4
+Found sstore(<T, { Sha(*, 0x5) + 0x5 }, { }>, <_, { }, { }>) @ 0x42b1
+Found sstore(<T, { Sha(*, 0x5) + 0x08 }, { }>, <_, { }, { }>) @ 0x42be
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x42c4
+Found sstore(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>, <_, { }, { }>) @ 0x42db
+Found sstore(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>, <_, { }, { }>) @ 0x42e8
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x42ee
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <_, { }, { }>) @ 0x4305
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <_, { }, { }>) @ 0x4312
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x4318
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <_, { }, { }>) @ 0x432f
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <_, { }, { }>) @ 0x433c
+liquidateBorrow(e61604cf): Def = { map_3, map_4, map_5.off_1, map_5.off_3, map_5.off_4, map_5.off_5, map_5.off_6, map_5.off_7, map_5.off_8 }, Use = { arr_6, map_3, map_4, map_5, map_5.off_1, map_5.off_2, map_5.off_3, map_5.off_4, map_5.off_5, map_5.off_6, map_5.off_7, map_5.off_8, var_10, var_2, var_6, var_7, var_9 }
+[DEBUG] Analyzing _acceptAdmin(e9c714f2) @ b55
+Found sload(<0x0, { }, { }>) @ 0x436e
+Found sload(<0x1, { }, { }>) @ 0x43d8
+Found sload(<0x0, { }, { }>) @ 0x43fc
+Found sload(<0x1, { }, { }>) @ 0x4423
+Found sstore(<0x1, { }, { }>, <T, { }, { var_0, var_1 }>) @ 0x4458
+Found sload(<0x0, { }, { }>) @ 0x4464
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x4499
+_acceptAdmin(e9c714f2): Def = { var_0, var_1 }, Use = { var_0, var_1 }
+[DEBUG] Analyzing supply(f2b9fdb8) @ b80
+Found sload(<0x0A, { }, { }>) @ 0x455b
+Found sload(<T, { Sha(*, 0x5) }, { }>) @ 0x4644
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x46ae
+Found sload(<T, { Sha(*, 0x5) + 0x4 }, { }>) @ 0x46b3
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x46b8
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x470c
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x4711
+Found sload(<T, { Sha(*, 0x5) + 0x3 }, { }>) @ 0x47af
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x47b9
+Found sload(<T, { Sha(*, 0x5) + 0x2 }, { }>) @ 0x4864
+Found sload(<T, { Sha(*, 0x5) + 0x6 }, { }>) @ 0x48a7
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0x49a8
+Found sload(<T, { Sha(*, 0x5) + 0x7 }, { }>) @ 0x49ad
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x49b2
+Found sload(<T, { Sha(*, 0x5) + 0x2 }, { }>) @ 0x4a07
+Found sload(<T, { Sha(*, 0x5) + 0x6 }, { }>) @ 0x4a4a
+Found sstore(<T, { Sha(*, 0x5) + 0x1 }, { }>, <T, { }, { }>) @ 0x4b92
+Found sstore(<T, { Sha(*, 0x5) + 0x3 }, { }>, <_, { }, { }>) @ 0x4b9f
+Found sstore(<T, { Sha(*, 0x5) + 0x4 }, { }>, <_, { }, { }>) @ 0x4bac
+Found sstore(<T, { Sha(*, 0x5) + 0x5 }, { }>, <_, { }, { }>) @ 0x4bb9
+Found sstore(<T, { Sha(*, 0x5) + 0x7 }, { }>, <_, { }, { }>) @ 0x4bc7
+Found sstore(<T, { Sha(*, 0x5) + 0x08 }, { }>, <_, { }, { }>) @ 0x4bd5
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x4bdb
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <_, { }, { }>) @ 0x4bf0
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <_, { }, { }>) @ 0x4bfd
+supply(f2b9fdb8): Def = { map_3, map_5.off_1, map_5.off_3, map_5.off_4, map_5.off_5, map_5.off_7, map_5.off_8 }, Use = { map_3, map_5, map_5.off_1, map_5.off_2, map_5.off_3, map_5.off_4, map_5.off_5, map_5.off_6, map_5.off_7, map_5.off_8, var_10 }
+[DEBUG] Analyzing withdraw(f3fef3a3) @ be1
+Found sload(<0x0A, { }, { }>) @ 0x4ce6
+Found sload(<0x6, { }, { }>) @ 0x61b9
+Found sload(<0x6, { }, { }>) @ 0x61da
+Found sload(<T, { Sha(0x6) }, { }>) @ 0x61f2
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x6396
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x63a4
+Found sload(<T, { Sha(*, 0x5) + 0x4 }, { }>) @ 0x63a9
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x63ae
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x6405
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x640a
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x650a
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0x6518
+Found sload(<T, { Sha(*, 0x5) + 0x7 }, { }>) @ 0x651d
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x6522
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x6579
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x657e
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<0x7, { }, { }>) @ 0x5c93
+Found sload(<T, { Sha(*, 0x5) + 0x5 }, { }>) @ 0x4e26
+Found sload(<T, { Sha(*, 0x5) + 0x4 }, { }>) @ 0x4e2b
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x4e30
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x4e84
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x4e89
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<0x2, { }, { }>) @ 0x5fd6
+Found sload(<0x2, { }, { }>) @ 0x6034
+Found sload(<T, { Sha(*, 0x5) + 0x3 }, { }>) @ 0x50d6
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x50e0
+Found sload(<T, { Sha(*, 0x5) + 0x2 }, { }>) @ 0x512c
+Found sload(<T, { Sha(*, 0x5) + 0x6 }, { }>) @ 0x516f
+Found sload(<T, { Sha(*, 0x5) + 0x08 }, { }>) @ 0x5271
+Found sload(<T, { Sha(*, 0x5) + 0x7 }, { }>) @ 0x5276
+Found sload(<T, { Sha(*, 0x5) + 0x1 }, { }>) @ 0x527b
+Found sload(<T, { Sha(*, 0x5) + 0x2 }, { }>) @ 0x52d0
+Found sload(<T, { Sha(*, 0x5) + 0x6 }, { }>) @ 0x5313
+Found sstore(<T, { Sha(*, 0x5) + 0x1 }, { }>, <T, { }, { }>) @ 0x545f
+Found sstore(<T, { Sha(*, 0x5) + 0x3 }, { }>, <_, { }, { }>) @ 0x546c
+Found sstore(<T, { Sha(*, 0x5) + 0x4 }, { }>, <_, { }, { }>) @ 0x547a
+Found sstore(<T, { Sha(*, 0x5) + 0x5 }, { }>, <_, { }, { }>) @ 0x5487
+Found sstore(<T, { Sha(*, 0x5) + 0x7 }, { }>, <_, { }, { }>) @ 0x5495
+Found sstore(<T, { Sha(*, 0x5) + 0x08 }, { }>, <_, { }, { }>) @ 0x54a3
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x54a9
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <_, { }, { }>) @ 0x54be
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <_, { }, { }>) @ 0x54cb
+withdraw(f3fef3a3): Def = { map_3, map_5.off_1, map_5.off_3, map_5.off_4, map_5.off_5, map_5.off_7, map_5.off_8 }, Use = { arr_6, map_3, map_4, map_5.off_1, map_5.off_2, map_5.off_3, map_5.off_4, map_5.off_5, map_5.off_6, map_5.off_7, map_5.off_8, var_10, var_2, var_6, var_7 }
+[DEBUG] Analyzing admin(f851a440) @ c42
+Found sload(<0x1, { }, { }>) @ 0x55a8
+admin(f851a440): Def = {  }, Use = { var_1 }
+[DEBUG] Analyzing borrowBalances(fc7d42d7) @ c99
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x55ee
+Found sload(<T, { Sha(... (Sha(*, 0x4)) ...) + ? }, { }>) @ 0x55f4
+borrowBalances(fc7d42d7): Def = {  }, Use = { map_4 }
+[DEBUG] Analyzing fallback @ 0
+fallback: Def = {  }, Use = {  }
+Pruning out ["borrow(4b8a3529)"]
+Pruning out ["_supportMarket(c1abfaa3)"]
+Pruning out ["liquidateBorrow(e61604cf)"]
+Pruning out ["repayBorrow(abdb5ea8)"]
+Pruning out ["supply(f2b9fdb8)"]
+Pruning out ["withdraw(f3fef3a3)"]
+Pruning out ["_setMarketInterestRateModel(5cf756d2)"]
+Pruning out ["_suspendMarket(dbe2bc84)"]
+Pruning out ["_acceptAdmin(e9c714f2)"]
+Pruning out ["_setRiskParameters(c365a646)"]
+(126 candidate sequences)
+["_setPendingAdmin(b71d1a0c)"; "pendingAdmin(26782247)"]
+["_setPendingAdmin(b71d1a0c)"; "_setPendingAdmin(b71d1a0c)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "pendingAdmin(26782247)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)"; "admin(f851a440)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_withdrawEquity(4706c375)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_suspendMarket(dbe2bc84)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_supportMarket(c1abfaa3)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_setRiskParameters(c365a646)"; "withdraw(f3fef3a3)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_setRiskParameters(c365a646)"; "liquidationDiscount(8053fcbe)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_setRiskParameters(c365a646)"; "liquidateBorrow(e61604cf)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_setRiskParameters(c365a646)"; "getAccountLiquidity(5ec88c79)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_setRiskParameters(c365a646)"; "collateralRatio(b4eae1cb)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_setRiskParameters(c365a646)"; "borrow(4b8a3529)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_setRiskParameters(c365a646)"; "_setRiskParameters(c365a646)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_setPendingAdmin(b71d1a0c)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)"; "_setPaused(26617c28)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_setOriginationFee(24021127)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)"; "_setOracle(3be59443)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_setMarketInterestRateModel(5cf756d2)"]
+["_setPendingAdmin(b71d1a0c)"; "_acceptAdmin(e9c714f2)";
+ "_acceptAdmin(e9c714f2)"]
+["_setOracle(3be59443)"; "withdraw(f3fef3a3)"]
+["_setOracle(3be59443)"; "oracle(7dc0d1d0)"]
+["_setOracle(3be59443)"; "liquidateBorrow(e61604cf)"]
+["_setOracle(3be59443)"; "getAccountLiquidity(5ec88c79)"]
+["_setOracle(3be59443)"; "calculateAccountValues(9f180cf1)"]
+["_setOracle(3be59443)"; "borrow(4b8a3529)"]
+["_setOracle(3be59443)"; "assetPrices(5e9a523c)"]
+["_setOracle(3be59443)"; "_supportMarket(c1abfaa3)"]
+["_setOracle(3be59443)"; "_setOracle(3be59443)"]
+["_setPaused(26617c28)"; "withdraw(f3fef3a3)"]
+["_setPaused(26617c28)"; "supply(f2b9fdb8)"]
+["_setPaused(26617c28)"; "repayBorrow(abdb5ea8)"]
+["_setPaused(26617c28)"; "paused(5c975abb)"]
+["_setPaused(26617c28)"; "liquidateBorrow(e61604cf)"]
+["_setPaused(26617c28)"; "borrow(4b8a3529)"]
+["_setPaused(26617c28)"; "_setPaused(26617c28)"]
+["_setOriginationFee(24021127)"; "originationFee(b8bb5c42)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "withdraw(f3fef3a3)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "supply(f2b9fdb8)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "repayBorrow(abdb5ea8)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "markets(8e8f294b)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "liquidateBorrow(e61604cf)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)";
+ "getSupplyBalance(ba377731)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)";
+ "getBorrowBalance(118e31b7)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)";
+ "getAccountLiquidity(5ec88c79)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)";
+ "calculateAccountValues(9f180cf1)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "borrowBalances(fc7d42d7)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "borrow(4b8a3529)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_withdrawEquity(4706c375)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "withdraw(f3fef3a3)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "supply(f2b9fdb8)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "repayBorrow(abdb5ea8)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "markets(8e8f294b)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "liquidateBorrow(e61604cf)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "getSupplyBalance(ba377731)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "getCollateralMarketsLength(6e2ede03)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "getBorrowBalance(118e31b7)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "getAccountLiquidity(5ec88c79)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "collateralMarkets(beb54615)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "calculateAccountValues(9f180cf1)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "borrow(4b8a3529)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_suspendMarket(dbe2bc84)"; "supply(f2b9fdb8)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_suspendMarket(dbe2bc84)"; "markets(8e8f294b)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_suspendMarket(dbe2bc84)"; "liquidateBorrow(e61604cf)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_suspendMarket(dbe2bc84)"; "borrow(4b8a3529)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_suspendMarket(dbe2bc84)"; "_suspendMarket(dbe2bc84)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_suspendMarket(dbe2bc84)"; "_supportMarket(c1abfaa3)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_supportMarket(c1abfaa3)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "withdraw(f3fef3a3)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "supply(f2b9fdb8)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "repayBorrow(abdb5ea8)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "markets(8e8f294b)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "withdraw(f3fef3a3)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "supplyBalances(b7adddac)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "supply(f2b9fdb8)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "withdraw(f3fef3a3)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "withdraw(f3fef3a3)";
+ "withdraw(f3fef3a3)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "withdraw(f3fef3a3)";
+ "supplyBalances(b7adddac)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "withdraw(f3fef3a3)";
+ "supply(f2b9fdb8)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "withdraw(f3fef3a3)";
+ "repayBorrow(abdb5ea8)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "withdraw(f3fef3a3)";
+ "markets(8e8f294b)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "withdraw(f3fef3a3)";
+ "liquidateBorrow(e61604cf)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "withdraw(f3fef3a3)";
+ "getSupplyBalance(ba377731)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "withdraw(f3fef3a3)";
+ "getBorrowBalance(118e31b7)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "withdraw(f3fef3a3)";
+ "getAccountLiquidity(5ec88c79)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "withdraw(f3fef3a3)";
+ "calculateAccountValues(9f180cf1)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "withdraw(f3fef3a3)";
+ "borrow(4b8a3529)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "withdraw(f3fef3a3)";
+ "_withdrawEquity(4706c375)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "withdraw(f3fef3a3)";
+ "_supportMarket(c1abfaa3)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "supplyBalances(b7adddac)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "supply(f2b9fdb8)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "repayBorrow(abdb5ea8)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "markets(8e8f294b)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "liquidateBorrow(e61604cf)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "getSupplyBalance(ba377731)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "getBorrowBalance(118e31b7)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "getAccountLiquidity(5ec88c79)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "calculateAccountValues(9f180cf1)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "borrow(4b8a3529)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "_withdrawEquity(4706c375)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "supply(f2b9fdb8)"; "_supportMarket(c1abfaa3)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "repayBorrow(abdb5ea8)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "markets(8e8f294b)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "liquidateBorrow(e61604cf)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "getSupplyBalance(ba377731)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "getBorrowBalance(118e31b7)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "getAccountLiquidity(5ec88c79)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "calculateAccountValues(9f180cf1)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "borrowBalances(fc7d42d7)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "borrow(4b8a3529)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "_withdrawEquity(4706c375)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "repayBorrow(abdb5ea8)"; "_supportMarket(c1abfaa3)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "markets(8e8f294b)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "liquidateBorrow(e61604cf)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "getSupplyBalance(ba377731)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "getBorrowBalance(118e31b7)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "getAccountLiquidity(5ec88c79)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "calculateAccountValues(9f180cf1)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "borrowBalances(fc7d42d7)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "borrow(4b8a3529)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "_withdrawEquity(4706c375)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "liquidateBorrow(e61604cf)";
+ "_supportMarket(c1abfaa3)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "borrow(4b8a3529)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)"; "_supportMarket(c1abfaa3)"]
+["_setOriginationFee(24021127)"; "borrow(4b8a3529)"; "_supportMarket(c1abfaa3)";
+ "_setMarketInterestRateModel(5cf756d2)";
+ "_setMarketInterestRateModel(5cf756d2)"]
+["_setOriginationFee(24021127)"; "_setOriginationFee(24021127)"]
+[00:00:00:07] Start main fuzzing phase
+[00:00:00:08] [*] Save new seed id-00000_00008: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: _setPendingAdmin(b71d1a0c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: pendingAdmin(26782247), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+Fuzzing timeout expired.
+[00:00:05:00] ===== Statistics =====
+[00:00:05:00] Total Executions: 60599
+[00:00:05:00] Deployment failures: 60598
+[00:00:05:00] Test Cases: 1
+[00:00:05:00] Covered Edges: 1
+[00:00:05:00] Covered Instructions: 115
+[00:00:05:00] Covered Def-Use Chains: 0
+[00:00:05:00] Found Bugs:
+[00:00:05:00]   Assertion Failure: 0
+[00:00:05:00]   Arbitrary Write: 0
+[00:00:05:00]   Block state Dependency: 0
+[00:00:05:00]   Control Hijack: 0
+[00:00:05:00]   Ether Leak: 0
+[00:00:05:00]   Integer Bug: 0
+[00:00:05:00]   Mishandled Exception: 0
+[00:00:05:00]   Multiple Send: 0
+[00:00:05:00]   Reentrancy: 0
+[00:00:05:00]   Suicidal Contract: 0
+[00:00:05:00]   Transaction Origin Use: 0
+[00:00:05:00]   Freezing Ether: 0
+[00:00:05:00]   Requirement Violation: 0
+[00:00:05:00] Done, clean up and exit...

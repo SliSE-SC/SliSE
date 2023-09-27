@@ -1,0 +1,865 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B3/bin/0xb0ca787f8cf38f077e8201b05378da230a8b462f.bin
+[00:00:00:00] Fuzzing starts at 04:22:03
+[00:00:00:00] Time limit : 300 s
+[DEBUG] Analyzing constructor @ 0
+Found sstore(<0x1, { }, { }>, <0x33B2E3C9FD0803CE8000000, { }, { }>) @ 0x14
+Found sload(<0x1, { }, { }>) @ 0x24
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { var_1 }>) @ 0x7a
+Found sload(<0x1, { }, { }>) @ 0xe2
+Found sload(<0x0, { }, { }>) @ 0x115
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x14a
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { map_2, var_0, var_1 }, Use = { var_0, var_1 }
+Constructor tainted: {  }
+[DEBUG] Analyzing name(06fdde03) @ f6
+name(06fdde03): Def = {  }, Use = {  }
+[DEBUG] Analyzing approve(095ea7b3) @ 186
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <T, { }, { }>) @ 0x876
+approve(095ea7b3): Def = { map_3 }, Use = {  }
+[DEBUG] Analyzing totalSupply(18160ddd) @ 1eb
+Found sload(<0x1, { }, { }>) @ 0x8e9
+totalSupply(18160ddd): Def = {  }, Use = { var_1 }
+[DEBUG] Analyzing transferFrom(23b872dd) @ 216
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x96f
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <T, { }, { map_3 }>) @ 0x9fc
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x1866
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x18c3
+Found sload(<T, { Sha(*, 0x4) + 0x1 }, { }>) @ 0x1917
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x1a6b
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { map_2 }>) @ 0x1abb
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x1b00
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { map_2 }>) @ 0x1b50
+Found sload(<T, { Sha(*, 0x4) + 0x1 }, { }>) @ 0x196d
+Found sload(<T, { Sha(... (Sha(*, 0x4) + 0x1) ...) + ? }, { }>) @ 0x198c
+Found sload(<T, { Sha(... (Sha(*, 0x4) + 0x1) ...) + ? }, { }>) @ 0x199a
+transferFrom(23b872dd): Def = { map_2, map_3 }, Use = { map_2, map_3, map_4, map_4.off_1 }
+[DEBUG] Analyzing decimals(313ce567) @ 29b
+decimals(313ce567): Def = {  }, Use = {  }
+[DEBUG] Analyzing increaseAllowance(39509351) @ 2cc
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0xad6
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <T, { }, { map_3 }>) @ 0xb63
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0xc30
+increaseAllowance(39509351): Def = { map_3 }, Use = { map_3 }
+[DEBUG] Analyzing _totalLimit(39f85f5d) @ 331
+_totalLimit(39f85f5d): Def = {  }, Use = {  }
+[DEBUG] Analyzing lock(3abc6609) @ 35c
+Found sload(<0x0, { }, { }>) @ 0xc6e
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0xd76
+Found sload(<T, { Sha(*, 0x4) + 0x1 }, { }>) @ 0x1bbd
+Found sstore(<T, { Sha(*, 0x4) + 0x1 }, { }>, <0x0, { }, { }>) @ 0x1bc0
+Found sstore(<T, { Sha(... (Sha(*, 0x4) + 0x1) ...) + ? }, { }>, <0x0, { }, { }>) @ 0x1c04
+Found sstore(<T, { Sha(... (Sha(*, 0x4) + 0x1) ...) + ? }, { }>, <0x0, { }, { }>) @ 0x1c0c
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0xe2b
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <T, { }, { map_4 }>) @ 0xe3a
+Found sload(<T, { Sha(*, 0x4) + 0x1 }, { }>) @ 0xfef
+Found sstore(<T, { Sha(*, 0x4) + 0x1 }, { }>, <T, { }, { map_4.off_1 }>) @ 0xff3
+Found sstore(<T, { Sha(... (Sha(*, 0x4) + 0x1) ...) + ? }, { map_4.off_1 }>, <_, { }, { }>) @ 0x101e
+Found sstore(<T, { Sha(... (Sha(*, 0x4) + 0x1) ...) + ? }, { map_4.off_1 }>, <_, { }, { }>) @ 0x1028
+Found sload(<T, { Sha(*, 0x4) + 0x1 }, { }>) @ 0x110a
+Found sstore(<T, { Sha(*, 0x4) + 0x1 }, { }>, <T, { }, { map_4.off_1 }>) @ 0x110e
+Found sstore(<T, { Sha(... (Sha(*, 0x4) + 0x1) ...) + ? }, { map_4.off_1 }>, <_, { }, { }>) @ 0x1139
+Found sstore(<T, { Sha(... (Sha(*, 0x4) + 0x1) ...) + ? }, { map_4.off_1 }>, <_, { }, { }>) @ 0x1143
+lock(3abc6609): Def = { map_4, map_4.off_1 }, Use = { map_4, map_4.off_1, var_0 }
+[DEBUG] Analyzing balanceOf(70a08231) @ 44a
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x1289
+balanceOf(70a08231): Def = {  }, Use = { map_2 }
+[DEBUG] Analyzing renounceOwnership(715018a6) @ 4a1
+Found sload(<0x0, { }, { }>) @ 0x1291
+Found sload(<0x0, { }, { }>) @ 0x1304
+Found sload(<0x0, { }, { }>) @ 0x136e
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x13a3
+renounceOwnership(715018a6): Def = { var_0 }, Use = { var_0 }
+[DEBUG] Analyzing owner(8da5cb5b) @ 4b8
+Found sload(<0x0, { }, { }>) @ 0x13ab
+owner(8da5cb5b): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing symbol(95d89b41) @ 50f
+symbol(95d89b41): Def = {  }, Use = {  }
+[DEBUG] Analyzing decreaseAllowance(a457c2d7) @ 59f
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x14c2
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <T, { }, { map_3 }>) @ 0x154f
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x161c
+decreaseAllowance(a457c2d7): Def = { map_3 }, Use = { map_3 }
+[DEBUG] Analyzing transfer(a9059cbb) @ 604
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x1866
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x18c3
+Found sload(<T, { Sha(*, 0x4) + 0x1 }, { }>) @ 0x1917
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x1a6b
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { map_2 }>) @ 0x1abb
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x1b00
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { map_2 }>) @ 0x1b50
+Found sload(<T, { Sha(*, 0x4) + 0x1 }, { }>) @ 0x196d
+Found sload(<T, { Sha(... (Sha(*, 0x4) + 0x1) ...) + ? }, { }>) @ 0x198c
+Found sload(<T, { Sha(... (Sha(*, 0x4) + 0x1) ...) + ? }, { }>) @ 0x199a
+transfer(a9059cbb): Def = { map_2 }, Use = { map_2, map_4, map_4.off_1 }
+[DEBUG] Analyzing allowance(dd62ed3e) @ 669
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x1674
+allowance(dd62ed3e): Def = {  }, Use = { map_3 }
+[DEBUG] Analyzing lockData(e8345bd1) @ 6e0
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x1693
+lockData(e8345bd1): Def = {  }, Use = { map_4 }
+[DEBUG] Analyzing transferOwnership(f2fde38b) @ 73d
+Found sload(<0x0, { }, { }>) @ 0x16a7
+Found sload(<0x0, { }, { }>) @ 0x1755
+Found sload(<0x0, { }, { }>) @ 0x17be
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x17f3
+transferOwnership(f2fde38b): Def = { var_0 }, Use = { var_0 }
+Pruning out ["decreaseAllowance(a457c2d7)"]
+Pruning out ["increaseAllowance(39509351)"]
+Pruning out ["transferFrom(23b872dd)"]
+Pruning out ["transfer(a9059cbb)"]
+Pruning out ["transferOwnership(f2fde38b)"]
+(28 candidate sequences)
+["renounceOwnership(715018a6)"; "transferOwnership(f2fde38b)";
+ "transferOwnership(f2fde38b)"]
+["renounceOwnership(715018a6)"; "transferOwnership(f2fde38b)";
+ "renounceOwnership(715018a6)"]
+["renounceOwnership(715018a6)"; "transferOwnership(f2fde38b)"; "owner(8da5cb5b)"]
+["renounceOwnership(715018a6)"; "transferOwnership(f2fde38b)"; "lock(3abc6609)"]
+["renounceOwnership(715018a6)"; "renounceOwnership(715018a6)"]
+["renounceOwnership(715018a6)"; "owner(8da5cb5b)"]
+["renounceOwnership(715018a6)"; "lock(3abc6609)"]
+["lock(3abc6609)"; "transferFrom(23b872dd)"]
+["lock(3abc6609)"; "transfer(a9059cbb)"]
+["lock(3abc6609)"; "lockData(e8345bd1)"]
+["lock(3abc6609)"; "lock(3abc6609)"]
+["approve(095ea7b3)"; "transferFrom(23b872dd)"]
+["approve(095ea7b3)"; "increaseAllowance(39509351)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)"; "transferFrom(23b872dd)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)";
+ "increaseAllowance(39509351)"; "transferFrom(23b872dd)";
+ "transferFrom(23b872dd)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)";
+ "increaseAllowance(39509351)"; "transferFrom(23b872dd)"; "transfer(a9059cbb)";
+ "transferFrom(23b872dd)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)";
+ "increaseAllowance(39509351)"; "transferFrom(23b872dd)"; "transfer(a9059cbb)";
+ "transfer(a9059cbb)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)";
+ "increaseAllowance(39509351)"; "transferFrom(23b872dd)"; "transfer(a9059cbb)";
+ "balanceOf(70a08231)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)";
+ "increaseAllowance(39509351)"; "transferFrom(23b872dd)";
+ "increaseAllowance(39509351)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)";
+ "increaseAllowance(39509351)"; "transferFrom(23b872dd)";
+ "decreaseAllowance(a457c2d7)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)";
+ "increaseAllowance(39509351)"; "transferFrom(23b872dd)"; "balanceOf(70a08231)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)";
+ "increaseAllowance(39509351)"; "transferFrom(23b872dd)"; "allowance(dd62ed3e)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)";
+ "increaseAllowance(39509351)"; "increaseAllowance(39509351)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)";
+ "increaseAllowance(39509351)"; "decreaseAllowance(a457c2d7)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)";
+ "increaseAllowance(39509351)"; "allowance(dd62ed3e)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)";
+ "decreaseAllowance(a457c2d7)"]
+["approve(095ea7b3)"; "decreaseAllowance(a457c2d7)"; "allowance(dd62ed3e)"]
+["approve(095ea7b3)"; "allowance(dd62ed3e)"]
+[00:00:00:01] Start main fuzzing phase
+[00:00:00:02] [*] Save new seed id-00000_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: renounceOwnership(715018a6), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: transferOwnership(f2fde38b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00001_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: renounceOwnership(715018a6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: owner(8da5cb5b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00002_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: renounceOwnership(715018a6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: lock(3abc6609), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint8
+                 00
+          Arg3 : uint256[]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg4 : uint256[]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00003_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: lock(3abc6609), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint8
+                 00
+          Arg3 : uint256[]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg4 : uint256[]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferFrom(23b872dd), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+          Arg3 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00004_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: lock(3abc6609), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint8
+                 00
+          Arg3 : uint256[]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg4 : uint256[]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transfer(a9059cbb), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00005_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: lock(3abc6609), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint8
+                 00
+          Arg3 : uint256[]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg4 : uint256[]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: lockData(e8345bd1), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00006_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: renounceOwnership(715018a6), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000001F00000000000080000000
+(    TX 3    ) Function: transferOwnership(f2fde38b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000039000000000000000000000000
+(    TX 4    ) Function: decimals(313ce567), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00007_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: renounceOwnership(715018a6), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: totalSupply(18160ddd), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00008_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: renounceOwnership(715018a6), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: symbol(95d89b41), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: transferOwnership(f2fde38b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000220000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00009_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: increaseAllowance(39509351), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 33B808A5AE249A10E8739B5CA2D5EF3931D3E09F
+          Arg2 : uint256
+                 2000000000000000000000000800008300000000000000000000001000000000
+(    TX 2    ) Function: increaseAllowance(39509351), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 33B808A5AE24C410E8739B5CA2D5EF3931D3E09F
+          Arg2 : uint256
+                 0000000000000000EF0000000000000000000000000000000000000000000000
+(    TX 3    ) Function: approve(095ea7b3), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 E60000000000000000C900000000000000001C00
+          Arg2 : uint256
+                 4000000E00000000000000000000000000000000000000000000000000004000
+(    TX 4    ) Function: lockData(e8345bd1), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000760000000000000000000000000000000000
+(    TX 5    ) Function: renounceOwnership(715018a6), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00010_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: increaseAllowance(39509351), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 00000000000000000000000000000000000000000000000000000A0000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 000000000000000000FF0000000B000000BC0000
+( => TX 3 <= ) Function: increaseAllowance(39509351), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 4000000000000000000000000000000000000000000000000000000000000001
+(    TX 4    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 6B773032D99FB9AAD6FC267651C446FA7F9301AF
+(    TX 5    ) Function: renounceOwnership(715018a6), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: transferOwnership(f2fde38b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000004B000000000000009C0000000000
+
+[00:00:00:03] [*] Save new seed id-00011_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: transferOwnership(f2fde38b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: transfer(a9059cbb), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: approve(095ea7b3), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 00000000000000000000000000000000000000000000000000002C0000000000
+( => TX 4 <= ) Function: renounceOwnership(715018a6), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: allowance(dd62ed3e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000005B00
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00012_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: increaseAllowance(39509351), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 24CD2EDBA056B7C654A50E8201B619D4F624FDDA
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: name(06fdde03), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: increaseAllowance(39509351), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 000000000000422B000000000000000000000000
+          Arg2 : uint256
+                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+(    TX 5    ) Function: symbol(95d89b41), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: _totalLimit(39f85f5d), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: transferOwnership(f2fde38b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 33B808B1AE24C410E8739B5CA246EF3931D3E09F
+(    TX 8    ) Function: totalSupply(18160ddd), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 9    ) Function: balanceOf(70a08231), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00013_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: transferOwnership(f2fde38b), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 00000000000200000C0000000000000000000000
+(    TX 2    ) Function: decreaseAllowance(a457c2d7), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00014_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: name(06fdde03), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: renounceOwnership(715018a6), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: decreaseAllowance(a457c2d7), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 118A2C24808934116E6AB4C00FF48145D23B09E1
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: transferOwnership(f2fde38b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:05] [*] Save new seed id-00015_00005: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: _totalLimit(39f85f5d), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: transferOwnership(f2fde38b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 1300000000000000000000000000000100000000
+(    TX 3    ) Function: owner(8da5cb5b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: increaseAllowance(39509351), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: decimals(313ce567), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: approve(095ea7b3), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: renounceOwnership(715018a6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 8    ) Function: decreaseAllowance(a457c2d7), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000800000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000017000100000000000000000100000000000000
+(    TX 9    ) Function: decreaseAllowance(a457c2d7), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 10    ) Function: owner(8da5cb5b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:05] [*] Save new seed id-00016_00005: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: transferFrom(23b872dd), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 118A2C24808934116E6AB4C00FF48145D23B09E1
+          Arg2 : address
+                 0000008000000000000000000000000000000000
+          Arg3 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: name(06fdde03), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: renounceOwnership(715018a6), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: decreaseAllowance(a457c2d7), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: increaseAllowance(39509351), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:03:09] Tx#10 found IntegerBugSFuzz at 19d0
+[00:00:03:09] Tx#10 found IntegerBugMythril at 19d0
+[00:00:03:09] [*] Save bug seed id-00000-IB_myth-IB_sfuzz_00189: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: approve(095ea7b3), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 00000000000000000000000081000000000000000000005C0000000070000000
+(    TX 2    ) Function: transferFrom(23b872dd), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+          Arg3 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: increaseAllowance(39509351), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+          Arg2 : uint256
+                 8000000000000000000000000000000000000000000000000000000000000001
+(    TX 4    ) Function: transfer(a9059cbb), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 6B773032D99FB9AAD6FC267651C446FA7F9301AF
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 5 <= ) Function: transferFrom(23b872dd), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000020000
+          Arg3 : uint256
+                 000000000000000000000000000000000000000000000000003F000000000000
+(    TX 6    ) Function: balanceOf(70a08231), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 7    ) Function: transfer(a9059cbb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000810000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 8    ) Function: totalSupply(18160ddd), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 9    ) Function: transfer(a9059cbb), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 10    ) Function: increaseAllowance(39509351), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+          Arg2 : uint256
+                 FF00000000000000000000000000000000000000000000000000000000000000
+(    TX 11    ) Function: transfer(a9059cbb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 000000000000803F000000000000000000000018
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 12    ) Function: decreaseAllowance(a457c2d7), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF99FFFF
+(    TX 13    ) Function: decreaseAllowance(a457c2d7), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000010000000000000000000000000000000000000000000000000000000000
+
+[00:00:03:09] [*] Save new seed id-00017_00189: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: approve(095ea7b3), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 00000000000000000000000081000000000000000000005C0000000070000000
+(    TX 2    ) Function: transferFrom(23b872dd), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+          Arg3 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: increaseAllowance(39509351), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+          Arg2 : uint256
+                 8000000000000000000000000000000000000000000000000000000000000001
+(    TX 4    ) Function: transfer(a9059cbb), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 6B773032D99FB9AAD6FC267651C446FA7F9301AF
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 5 <= ) Function: transferFrom(23b872dd), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000020000
+          Arg3 : uint256
+                 000000000000000000000000000000000000000000000000003F000000000000
+(    TX 6    ) Function: balanceOf(70a08231), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 7    ) Function: transfer(a9059cbb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000810000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 8    ) Function: totalSupply(18160ddd), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 9    ) Function: transfer(a9059cbb), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 10    ) Function: increaseAllowance(39509351), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+          Arg2 : uint256
+                 FF00000000000000000000000000000000000000000000000000000000000000
+(    TX 11    ) Function: transfer(a9059cbb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 000000000000803F000000000000000000000018
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 12    ) Function: decreaseAllowance(a457c2d7), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF99FFFF
+(    TX 13    ) Function: decreaseAllowance(a457c2d7), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000010000000000000000000000000000000000000000000000000000000000
+
+Fuzzing timeout expired.
+[00:00:05:00] ===== Statistics =====
+[00:00:05:00] Total Executions: 58087
+[00:00:05:00] Deployment failures: 0
+[00:00:05:00] Test Cases: 18
+[00:00:05:00] Covered Edges: 123
+[00:00:05:00] Covered Instructions: 2271
+[00:00:05:00] Covered Def-Use Chains: 9794
+[00:00:05:00] Found Bugs:
+[00:00:05:00]   Assertion Failure: 0
+[00:00:05:00]   Arbitrary Write: 0
+[00:00:05:00]   Block state Dependency: 0
+[00:00:05:00]   Control Hijack: 0
+[00:00:05:00]   Ether Leak: 0
+[00:00:05:00]   Integer Bug: 0
+[00:00:05:00]   Mishandled Exception: 0
+[00:00:05:00]   Multiple Send: 0
+[00:00:05:00]   Reentrancy: 0
+[00:00:05:00]   Suicidal Contract: 0
+[00:00:05:00]   Transaction Origin Use: 0
+[00:00:05:00]   Freezing Ether: 0
+[00:00:05:00]   Requirement Violation: 0
+[00:00:05:00] Done, clean up and exit...

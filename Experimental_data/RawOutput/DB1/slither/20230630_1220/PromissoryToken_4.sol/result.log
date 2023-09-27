@@ -1,0 +1,249 @@
+INFO:Slither:Compilation warnings/errors on /sb/PromissoryToken_4.sol:
+/sb/PromissoryToken_4.sol:90:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function PromissoryToken( bytes32 _founderHash, address _cofounderAddress, uint _numOfBackers){
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/PromissoryToken_4.sol:104:38: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.sender != cofounder) throw;
+                                     ^---^
+/sb/PromissoryToken_4.sol:122:47: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if(sha3(_founderHash) != founderHash) throw;
+                                              ^---^
+/sb/PromissoryToken_4.sol:140:128: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if(msg.sender != cofounder || sha3(_newFounderAddr, founderHash, _oneTimesharedPhrase) != tempHashes[_newFounderAddr]) throw;
+                                                                                                                               ^---^
+/sb/PromissoryToken_4.sol:166:75: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+            _tokenAmount + prepaidUnits + claimedUnits > promissoryUnits) throw;
+                                                                          ^---^
+/sb/PromissoryToken_4.sol:167:85: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (earlyBackerList.length == numOfBackers && backers[_backer].length == 0) throw ;
+                                                                                    ^---^
+/sb/PromissoryToken_4.sol:207:13: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+            throw;
+            ^---^
+/sb/PromissoryToken_4.sol:221:29: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (lastPrice == 0) throw;
+                            ^---^
+/sb/PromissoryToken_4.sol:228:74: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (tokenAmount + claimedUnits + prepaidUnits > promissoryUnits) throw;
+                                                                         ^---^
+/sb/PromissoryToken_4.sol:296:84: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+                if(!withdrawals[_withdrawalID].destination[i].send(amountPerAddr)) throw;
+                                                                                   ^---^
+/sb/PromissoryToken_4.sol:318:42: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (this.balance < _totalAmount) throw;
+                                         ^---^
+/sb/PromissoryToken_4.sol:386:36: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.sender != founder) throw;
+                                   ^---^
+/sb/PromissoryToken_4.sol:391:144: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if(backers[msg.sender].length == 0 || withdrawals[_withdrawalID].spent == true || withdrawalsVotes[msg.sender][_withdrawalID] == true) throw;
+                                                                                                                                               ^---^
+/sb/PromissoryToken_4.sol:396:50: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+       if(earlyBackerList.length < numOfBackers) throw;
+                                                 ^---^
+/sb/PromissoryToken_4.sol:404:13: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+            throw;
+            ^---^
+/sb/PromissoryToken_4.sol:415:9: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        throw;
+        ^---^
+/sb/PromissoryToken_4.sol:92:23: Warning: "sha3" has been deprecated in favour of "keccak256"
+        founderHash = sha3(_founderHash);
+                      ^----------------^
+/sb/PromissoryToken_4.sol:92:23: Warning: This function only accepts a single "bytes" argument. Please use "abi.encodePacked(...)" or a similar function to encode the data.
+        founderHash = sha3(_founderHash);
+                      ^----------------^
+/sb/PromissoryToken_4.sol:92:23: Warning: The provided argument of type bytes32 is not implicitly convertible to expected type bytes memory.
+        founderHash = sha3(_founderHash);
+                      ^----------------^
+/sb/PromissoryToken_4.sol:107:9: Warning: Invoking events without "emit" prefix is deprecated.
+        CofounderSwitchedEvent(_newCofounderAddr);
+        ^---------------------------------------^
+/sb/PromissoryToken_4.sol:122:12: Warning: "sha3" has been deprecated in favour of "keccak256"
+        if(sha3(_founderHash) != founderHash) throw;
+           ^----------------^
+/sb/PromissoryToken_4.sol:122:12: Warning: This function only accepts a single "bytes" argument. Please use "abi.encodePacked(...)" or a similar function to encode the data.
+        if(sha3(_founderHash) != founderHash) throw;
+           ^----------------^
+/sb/PromissoryToken_4.sol:122:12: Warning: The provided argument of type bytes32 is not implicitly convertible to expected type bytes memory.
+        if(sha3(_founderHash) != founderHash) throw;
+           ^----------------^
+/sb/PromissoryToken_4.sol:124:34: Warning: "sha3" has been deprecated in favour of "keccak256"
+        tempHashes[msg.sender] = sha3(msg.sender, founderHash, _oneTimesharedPhrase);
+                                 ^-------------------------------------------------^
+/sb/PromissoryToken_4.sol:124:34: Warning: This function only accepts a single "bytes" argument. Please use "abi.encodePacked(...)" or a similar function to encode the data.
+        tempHashes[msg.sender] = sha3(msg.sender, founderHash, _oneTimesharedPhrase);
+                                 ^-------------------------------------------------^
+/sb/PromissoryToken_4.sol:125:9: Warning: Invoking events without "emit" prefix is deprecated.
+        FounderSwitchRequestEvent(msg.sender);
+        ^-----------------------------------^
+/sb/PromissoryToken_4.sol:140:39: Warning: "sha3" has been deprecated in favour of "keccak256"
+        if(msg.sender != cofounder || sha3(_newFounderAddr, founderHash, _oneTimesharedPhrase) != tempHashes[_newFounderAddr]) throw;
+                                      ^------------------------------------------------------^
+/sb/PromissoryToken_4.sol:140:39: Warning: This function only accepts a single "bytes" argument. Please use "abi.encodePacked(...)" or a similar function to encode the data.
+        if(msg.sender != cofounder || sha3(_newFounderAddr, founderHash, _oneTimesharedPhrase) != tempHashes[_newFounderAddr]) throw;
+                                      ^------------------------------------------------------^
+/sb/PromissoryToken_4.sol:144:9: Warning: Invoking events without "emit" prefix is deprecated.
+        FounderSwitchedEvent(_newFounderAddr);
+        ^-----------------------------------^
+/sb/PromissoryToken_4.sol:172:69: Warning: "sha3" has been deprecated in favour of "keccak256"
+        backers[_backer].push(backerData(_tokenPrice, _tokenAmount, sha3(_privatePhrase, _backer), true, false, _backerRank));
+                                                                    ^---------------------------^
+/sb/PromissoryToken_4.sol:172:69: Warning: This function only accepts a single "bytes" argument. Please use "abi.encodePacked(...)" or a similar function to encode the data.
+        backers[_backer].push(backerData(_tokenPrice, _tokenAmount, sha3(_privatePhrase, _backer), true, false, _backerRank));
+                                                                    ^---------------------------^
+/sb/PromissoryToken_4.sol:177:9: Warning: Invoking events without "emit" prefix is deprecated.
+        AddedPrepaidTokensEvent(_backer, backers[_backer].length - 1, _tokenPrice, _tokenAmount);
+        ^--------------------------------------------------------------------------------------^
+/sb/PromissoryToken_4.sol:199:55: Warning: "sha3" has been deprecated in favour of "keccak256"
+           backers[msg.sender][_index].privateHash == sha3( _privatePhrase, msg.sender) &&
+                                                      ^-------------------------------^
+/sb/PromissoryToken_4.sol:199:55: Warning: This function only accepts a single "bytes" argument. Please use "abi.encodePacked(...)" or a similar function to encode the data.
+           backers[msg.sender][_index].privateHash == sha3( _privatePhrase, msg.sender) &&
+                                                      ^-------------------------------^
+/sb/PromissoryToken_4.sol:205:13: Warning: Invoking events without "emit" prefix is deprecated.
+            PrepaidTokensClaimedEvent(msg.sender, _index, _boughtTokensPrice, _tokenAmount);
+            ^-----------------------------------------------------------------------------^
+/sb/PromissoryToken_4.sol:233:73: Warning: "sha3" has been deprecated in favour of "keccak256"
+        backers[msg.sender].push(backerData(discountPrice, tokenAmount, sha3(msg.sender), false, true, 0));
+                                                                        ^--------------^
+/sb/PromissoryToken_4.sol:233:73: Warning: This function only accepts a single "bytes" argument. Please use "abi.encodePacked(...)" or a similar function to encode the data.
+        backers[msg.sender].push(backerData(discountPrice, tokenAmount, sha3(msg.sender), false, true, 0));
+                                                                        ^--------------^
+/sb/PromissoryToken_4.sol:233:73: Warning: The provided argument of type address is not implicitly convertible to expected type bytes memory.
+        backers[msg.sender].push(backerData(discountPrice, tokenAmount, sha3(msg.sender), false, true, 0));
+                                                                        ^--------------^
+/sb/PromissoryToken_4.sol:237:9: Warning: Invoking events without "emit" prefix is deprecated.
+        TokensClaimedEvent(msg.sender, backers[msg.sender].length - 1, discountPrice, tokenAmount);
+        ^----------------------------------------------------------------------------------------^
+/sb/PromissoryToken_4.sol:279:9: Warning: Invoking events without "emit" prefix is deprecated.
+        WithdrawalVotedEvent(_withdrawalID, msg.sender, backerStake, withdrawals[_withdrawalID].totalStake);
+        ^-------------------------------------------------------------------------------------------------^
+/sb/PromissoryToken_4.sol:299:13: Warning: Invoking events without "emit" prefix is deprecated.
+            WithdrawalApproved(_withdrawalID,
+            ^ (Relevant source part starts here and spans across multiple lines).
+/sb/PromissoryToken_4.sol:318:13: Warning: Using contract member "balance" inherited from the address type is deprecated. Convert the contract to "address" type to access the member, for example use "address(contract).balance" instead.
+        if (this.balance < _totalAmount) throw;
+            ^----------^
+/sb/PromissoryToken_4.sol:328:9: Warning: Invoking events without "emit" prefix is deprecated.
+        WithdrawalCreatedEvent(withdrawalID, _totalAmount, _reason);
+        ^---------------------------------------------------------^
+/sb/PromissoryToken_4.sol:355:13: Warning: Invoking events without "emit" prefix is deprecated.
+            RedeemEvent(_backerAddr, totalTokens);
+            ^-----------------------------------^
+/sb/PromissoryToken_4.sol:90:5: Warning: No visibility specified. Defaulting to "public". 
+    function PromissoryToken( bytes32 _founderHash, address _cofounderAddress, uint _numOfBackers){
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/PromissoryToken_4.sol:121:5: Warning: No visibility specified. Defaulting to "public". 
+    function founderSwitchRequest(bytes32 _founderHash, bytes32 _oneTimesharedPhrase) returns (bool success){
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/PromissoryToken_4.sol:251:5: Warning: No visibility specified. Defaulting to "public". 
+    function checkBalance(address _backerAddress, uint index) constant returns (uint, uint, bytes32, bool, bool){
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/PromissoryToken_4.sol:338:5: Warning: No visibility specified. Defaulting to "public". 
+    function redeem(uint _amount, address _backerAddr) returns(bool){
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/PromissoryToken_4.sol:414:5: Warning: No visibility specified. Defaulting to "public". 
+    function () {
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+INFO:Detectors:[92m
+PromissoryToken.approveWithdraw has external calls inside a loop:
+	- ! withdrawals[_withdrawalID].destination[i].send(amountPerAddr) (/sb/PromissoryToken_4.sol#303-308)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation/_edit#calls-inside-a-loop[0m
+INFO:Detectors:[92m
+PromissoryToken.promissoryUnits should be constant (/sb/PromissoryToken_4.sol#47-48)
+PromissoryToken.redeemedTokens should be constant (/sb/PromissoryToken_4.sol#51)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#state-variables-that-could-be-declared-constant[0m
+INFO:Detectors:[92m
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#94-97:
+	- Usage of "sha3()" should be replaced with "keccak256()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#109:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#124-125:
+	- Usage of "sha3()" should be replaced with "keccak256()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#125:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#125-131:
+	- Usage of "sha3()" should be replaced with "keccak256()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#142-146:
+	- Usage of "sha3()" should be replaced with "keccak256()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#146:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#169:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#172:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#175-177:
+	- Usage of "sha3()" should be replaced with "keccak256()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#198-213:
+	- Usage of "sha3()" should be replaced with "keccak256()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#213:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#226:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#235:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#237-241:
+	- Usage of "sha3()" should be replaced with "keccak256()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#308:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#326:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#401:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#410:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol#412:
+	- Usage of "throw" should be replaced with "revert()"
+Deprecated standard detected @ /sb/PromissoryToken_4.sol:
+	- Usage of "throw" should be replaced with "revert()"
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#deprecated-standards[0m
+INFO:Detectors:[92m
+PromissoryToken.founderSwitchRequest (/sb/PromissoryToken_4.sol#122-132) should be declared external
+PromissoryToken.checkBalance (/sb/PromissoryToken_4.sol#255-267) should be declared external
+PromissoryToken.redeem (/sb/PromissoryToken_4.sol#347-370) should be declared external
+PromissoryToken.getWithdrawalData (/sb/PromissoryToken_4.sol#381-396) should be declared external
+PromissoryToken.fallback (/sb/PromissoryToken_4.sol) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/PromissoryToken_4.sol:
+	- pragma solidity^0.4.13 (/sb/PromissoryToken_4.sol#3-5): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Struct 'PromissoryToken.backerData' (/sb/PromissoryToken_4.sol#57-64) is not in CapWords
+Struct 'PromissoryToken.withdrawalData' (/sb/PromissoryToken_4.sol#72-79) is not in CapWords
+Function 'PromissoryToken.PromissoryToken' (/sb/PromissoryToken_4.sol#90-98) is not in mixedCase
+Parameter '_founderHash' of PromissoryToken.PromissoryToken (/sb/PromissoryToken_4.sol#91-92) is not in mixedCase
+Parameter '_cofounderAddress' of PromissoryToken.PromissoryToken (/sb/PromissoryToken_4.sol#92) is not in mixedCase
+Parameter '_numOfBackers' of PromissoryToken.PromissoryToken (/sb/PromissoryToken_4.sol#92-93) is not in mixedCase
+Parameter '_newCofounderAddr' of PromissoryToken.cofounderSwitchAddress (/sb/PromissoryToken_4.sol#104-106) is not in mixedCase
+Parameter '_founderHash' of PromissoryToken.founderSwitchRequest (/sb/PromissoryToken_4.sol#122-124) is not in mixedCase
+Parameter '_oneTimesharedPhrase' of PromissoryToken.founderSwitchRequest (/sb/PromissoryToken_4.sol#124) is not in mixedCase
+Parameter '_newFounderAddr' of PromissoryToken.cofounderApproveSwitchRequest (/sb/PromissoryToken_4.sol#140) is not in mixedCase
+Parameter '_oneTimesharedPhrase' of PromissoryToken.cofounderApproveSwitchRequest (/sb/PromissoryToken_4.sol#140) is not in mixedCase
+Parameter '_backer' of PromissoryToken.setPrepaid (/sb/PromissoryToken_4.sol#163-164) is not in mixedCase
+Parameter '_tokenPrice' of PromissoryToken.setPrepaid (/sb/PromissoryToken_4.sol#164) is not in mixedCase
+Parameter '_tokenAmount' of PromissoryToken.setPrepaid (/sb/PromissoryToken_4.sol#164) is not in mixedCase
+Parameter '_privatePhrase' of PromissoryToken.setPrepaid (/sb/PromissoryToken_4.sol#165) is not in mixedCase
+Parameter '_backerRank' of PromissoryToken.setPrepaid (/sb/PromissoryToken_4.sol#165) is not in mixedCase
+Parameter '_index' of PromissoryToken.claimPrepaid (/sb/PromissoryToken_4.sol#195) is not in mixedCase
+Parameter '_boughtTokensPrice' of PromissoryToken.claimPrepaid (/sb/PromissoryToken_4.sol#195-196) is not in mixedCase
+Parameter '_tokenAmount' of PromissoryToken.claimPrepaid (/sb/PromissoryToken_4.sol#196) is not in mixedCase
+Parameter '_privatePhrase' of PromissoryToken.claimPrepaid (/sb/PromissoryToken_4.sol#196-197) is not in mixedCase
+Parameter '_backerRank' of PromissoryToken.claimPrepaid (/sb/PromissoryToken_4.sol#197) is not in mixedCase
+Parameter '_backerAddress' of PromissoryToken.checkBalance (/sb/PromissoryToken_4.sol#255-256) is not in mixedCase
+Parameter '_withdrawalID' of PromissoryToken.approveWithdraw (/sb/PromissoryToken_4.sol#274) is not in mixedCase
+Parameter '_totalAmount' of PromissoryToken.withdraw (/sb/PromissoryToken_4.sol#324) is not in mixedCase
+Parameter '_reason' of PromissoryToken.withdraw (/sb/PromissoryToken_4.sol#324) is not in mixedCase
+Parameter '_destination' of PromissoryToken.withdraw (/sb/PromissoryToken_4.sol#324) is not in mixedCase
+Parameter '_amount' of PromissoryToken.redeem (/sb/PromissoryToken_4.sol#348-349) is not in mixedCase
+Parameter '_backerAddr' of PromissoryToken.redeem (/sb/PromissoryToken_4.sol#349) is not in mixedCase
+Parameter '_withdrawalID' of PromissoryToken.getWithdrawalData (/sb/PromissoryToken_4.sol#382) is not in mixedCase
+Constant 'PromissoryToken.minimumPrepaidClaimedPercent' (/sb/PromissoryToken_4.sol#46-47) is not in UPPER_CASE_WITH_UNDERSCORES
+Modifier 'PromissoryToken.EarliestBackersSet' (/sb/PromissoryToken_4.sol#411-412) is not in mixedCase
+Modifier 'PromissoryToken.MinimumBackersClaimed' (/sb/PromissoryToken_4.sol#413-418) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/PromissoryToken_4.sol analyzed (1 contracts), 62 result(s) found

@@ -1,0 +1,109 @@
+{
+    "errors": [
+        "EXIT_CODE_10"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "MixinResolver",
+            "filename": "all_contract/AddressResolver_49.sol",
+            "function": "rebuildCache",
+            "impact": "Low",
+            "line": 233,
+            "line_end": 234,
+            "message": "MixinResolver.rebuildCache has external calls inside a loop:\n\t- destination = resolver.requireAndGetAddress(name,string(abi.encodePacked(Resolver missing target: ,name))) (AddressResolver_49.sol#233-234)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "MixinResolver",
+            "filename": "all_contract/AddressResolver_49.sol",
+            "function": "isResolverCached",
+            "impact": "Low",
+            "line": 247,
+            "line_end": 249,
+            "message": "MixinResolver.isResolverCached has external calls inside a loop:\n\t- resolver.getAddress(name) != addressCache[name] || addressCache[name] == address(0) (AddressResolver_49.sol#247-249)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "AddressResolver",
+            "filename": "all_contract/AddressResolver_49.sol",
+            "function": "rebuildCaches",
+            "impact": "Low",
+            "line": 291,
+            "message": "AddressResolver.rebuildCaches has external calls inside a loop:\n\t- destinations[i].rebuildCache() (AddressResolver_49.sol#291)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "MixinResolver",
+            "filename": "all_contract/AddressResolver_49.sol",
+            "function": "rebuildCache",
+            "impact": "Low",
+            "line": 227,
+            "line_end": 238,
+            "message": "Reentrancy in MixinResolver.rebuildCache (AddressResolver_49.sol#227-238):\n\tExternal calls:\n\t- destination = resolver.requireAndGetAddress(name,string(abi.encodePacked(Resolver missing target: ,name))) (AddressResolver_49.sol#233-234)\n\tState variables written after the call(s):\n\t- addressCache (AddressResolver_49.sol#235)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "High",
+            "contract": "MixinResolver",
+            "filename": "all_contract/AddressResolver_49.sol",
+            "function": "rebuildCache",
+            "impact": "Informational",
+            "line": 227,
+            "line_end": 238,
+            "message": "MixinResolver.rebuildCache (AddressResolver_49.sol#227-238) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AddressResolver_49.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in AddressResolver_49.sol:\n\t- pragma solidity^0.5.16 (AddressResolver_49.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AddressResolver_49.sol",
+            "impact": "Informational",
+            "line": 11,
+            "message": "Parameter '_owner' of Owned. (AddressResolver_49.sol#11) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AddressResolver_49.sol",
+            "impact": "Informational",
+            "line": 17,
+            "message": "Parameter '_owner' of Owned.nominateNewOwner (AddressResolver_49.sol#17) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AddressResolver_49.sol",
+            "impact": "Informational",
+            "line": 34,
+            "line_end": 36,
+            "message": "Function 'Owned._onlyOwner' (AddressResolver_49.sol#34-36) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AddressResolver_49.sol",
+            "impact": "Informational",
+            "line": 200,
+            "message": "Parameter '_resolver' of MixinResolver. (AddressResolver_49.sol#200) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

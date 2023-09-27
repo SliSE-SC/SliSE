@@ -1,0 +1,703 @@
+{
+    "errors": [
+        "EXIT_CODE_78"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Medium",
+            "line": 103,
+            "line_end": 114,
+            "message": "Message.parseMessage (HomeBridgeNativeToErc_1.sol#103-114) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Medium",
+            "line": 124,
+            "line_end": 136,
+            "message": "Message.recoverAddressFromSignedMessage (HomeBridgeNativeToErc_1.sol#124-136) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "BasicHomeBridge",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "executeAffirmation",
+            "impact": "Medium",
+            "line": 326,
+            "line_end": 349,
+            "message": "Reentrancy in BasicHomeBridge.executeAffirmation (HomeBridgeNativeToErc_1.sol#326-349):\n\tExternal calls:\n\t- signed >= requiredSignatures() (HomeBridgeNativeToErc_1.sol#342-348)\n\tState variables written after the call(s):\n\t- uintStorage (HomeBridgeNativeToErc_1.sol#345)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "BasicHomeBridge",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "submitSignature",
+            "impact": "Medium",
+            "line": 351,
+            "line_end": 382,
+            "message": "Reentrancy in BasicHomeBridge.submitSignature (HomeBridgeNativeToErc_1.sol#351-382):\n\tExternal calls:\n\t- reqSigs = requiredSignatures() (HomeBridgeNativeToErc_1.sol#377)\n\tState variables written after the call(s):\n\t- uintStorage (HomeBridgeNativeToErc_1.sol#379)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicHomeBridge",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "signature",
+            "impact": "Low",
+            "line": 351,
+            "message": "BasicHomeBridge.submitSignature.signature (local variable @ HomeBridgeNativeToErc_1.sol#351) shadows:\n\t- BasicHomeBridge.signature (function @ HomeBridgeNativeToErc_1.sol#407-410)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicHomeBridge",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "message",
+            "impact": "Low",
+            "line": 351,
+            "message": "BasicHomeBridge.submitSignature.message (local variable @ HomeBridgeNativeToErc_1.sol#351) shadows:\n\t- BasicHomeBridge.message (function @ HomeBridgeNativeToErc_1.sol#432-434)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Message",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "hasEnoughValidSignatures",
+            "impact": "Low",
+            "line": 159,
+            "message": "Message.hasEnoughValidSignatures has external calls inside a loop:\n\t- require(bool)(_validatorContract.isValidator(recoveredAddress)) (HomeBridgeNativeToErc_1.sol#159)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "High",
+            "contract": "Message",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "parseMessage",
+            "impact": "Informational",
+            "line": 103,
+            "line_end": 114,
+            "message": "Message.parseMessage uses assembly (HomeBridgeNativeToErc_1.sol#103-114)\n\t- HomeBridgeNativeToErc_1.sol#109-114\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "Message",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "recoverAddressFromSignedMessage",
+            "impact": "Informational",
+            "line": 124,
+            "line_end": 136,
+            "message": "Message.recoverAddressFromSignedMessage uses assembly (HomeBridgeNativeToErc_1.sol#124-136)\n\t- HomeBridgeNativeToErc_1.sol#130-135\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "IBridgeValidators",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "isValidator",
+            "impact": "Informational",
+            "line": 52,
+            "message": "IBridgeValidators.isValidator (HomeBridgeNativeToErc_1.sol#52) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IBridgeValidators",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "requiredSignatures",
+            "impact": "Informational",
+            "line": 53,
+            "message": "IBridgeValidators.requiredSignatures (HomeBridgeNativeToErc_1.sol#53) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IBridgeValidators",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "owner",
+            "impact": "Informational",
+            "line": 54,
+            "message": "IBridgeValidators.owner (HomeBridgeNativeToErc_1.sol#54) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20Basic",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "totalSupply",
+            "impact": "Informational",
+            "line": 213,
+            "message": "ERC20Basic.totalSupply (HomeBridgeNativeToErc_1.sol#213) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20Basic",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "balanceOf",
+            "impact": "Informational",
+            "line": 214,
+            "message": "ERC20Basic.balanceOf (HomeBridgeNativeToErc_1.sol#214) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20Basic",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "transfer",
+            "impact": "Informational",
+            "line": 215,
+            "message": "ERC20Basic.transfer (HomeBridgeNativeToErc_1.sol#215) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicBridge",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "setGasPrice",
+            "impact": "Informational",
+            "line": 226,
+            "line_end": 230,
+            "message": "BasicBridge.setGasPrice (HomeBridgeNativeToErc_1.sol#226-230) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicBridge",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "gasPrice",
+            "impact": "Informational",
+            "line": 232,
+            "line_end": 234,
+            "message": "BasicBridge.gasPrice (HomeBridgeNativeToErc_1.sol#232-234) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicBridge",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "setRequiredBlockConfirmations",
+            "impact": "Informational",
+            "line": 236,
+            "line_end": 240,
+            "message": "BasicBridge.setRequiredBlockConfirmations (HomeBridgeNativeToErc_1.sol#236-240) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicBridge",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "requiredBlockConfirmations",
+            "impact": "Informational",
+            "line": 242,
+            "line_end": 244,
+            "message": "BasicBridge.requiredBlockConfirmations (HomeBridgeNativeToErc_1.sol#242-244) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicBridge",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "deployedAtBlock",
+            "impact": "Informational",
+            "line": 246,
+            "line_end": 248,
+            "message": "BasicBridge.deployedAtBlock (HomeBridgeNativeToErc_1.sol#246-248) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicBridge",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "setDailyLimit",
+            "impact": "Informational",
+            "line": 278,
+            "line_end": 281,
+            "message": "BasicBridge.setDailyLimit (HomeBridgeNativeToErc_1.sol#278-281) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicBridge",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "claimTokens",
+            "impact": "Informational",
+            "line": 302,
+            "line_end": 312,
+            "message": "BasicBridge.claimTokens (HomeBridgeNativeToErc_1.sol#302-312) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicHomeBridge",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "signature",
+            "impact": "Informational",
+            "line": 407,
+            "line_end": 410,
+            "message": "BasicHomeBridge.signature (HomeBridgeNativeToErc_1.sol#407-410) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicHomeBridge",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "message",
+            "impact": "Informational",
+            "line": 432,
+            "line_end": 434,
+            "message": "BasicHomeBridge.message (HomeBridgeNativeToErc_1.sol#432-434) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "HomeBridgeNativeToErc",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "initialize",
+            "impact": "Informational",
+            "line": 457,
+            "line_end": 481,
+            "message": "HomeBridgeNativeToErc.initialize (HomeBridgeNativeToErc_1.sol#457-481) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "HomeBridgeNativeToErc",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "function": "fallback",
+            "impact": "Informational",
+            "line": 483,
+            "line_end": 489,
+            "message": "HomeBridgeNativeToErc.fallback (HomeBridgeNativeToErc_1.sol#483-489) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 116,
+            "message": "Parameter '_msg' of Message.isMessageValid (HomeBridgeNativeToErc_1.sol#116) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 146,
+            "message": "Parameter '_message' of Message.hasEnoughValidSignatures (HomeBridgeNativeToErc_1.sol#146) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 147,
+            "message": "Parameter '_vs' of Message.hasEnoughValidSignatures (HomeBridgeNativeToErc_1.sol#147) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 148,
+            "message": "Parameter '_rs' of Message.hasEnoughValidSignatures (HomeBridgeNativeToErc_1.sol#148) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 149,
+            "message": "Parameter '_ss' of Message.hasEnoughValidSignatures (HomeBridgeNativeToErc_1.sol#149) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 150,
+            "message": "Parameter '_validatorContract' of Message.hasEnoughValidSignatures (HomeBridgeNativeToErc_1.sol#150) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 226,
+            "message": "Parameter '_gasPrice' of BasicBridge.setGasPrice (HomeBridgeNativeToErc_1.sol#226) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 236,
+            "message": "Parameter '_blockConfirmations' of BasicBridge.setRequiredBlockConfirmations (HomeBridgeNativeToErc_1.sol#236) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 250,
+            "message": "Parameter '_day' of BasicBridge.setTotalSpentPerDay (HomeBridgeNativeToErc_1.sol#250) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 250,
+            "message": "Parameter '_value' of BasicBridge.setTotalSpentPerDay (HomeBridgeNativeToErc_1.sol#250) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 254,
+            "message": "Parameter '_day' of BasicBridge.totalSpentPerDay (HomeBridgeNativeToErc_1.sol#254) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 266,
+            "message": "Parameter '_status' of BasicBridge.setInitialize (HomeBridgeNativeToErc_1.sol#266) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 278,
+            "message": "Parameter '_dailyLimit' of BasicBridge.setDailyLimit (HomeBridgeNativeToErc_1.sol#278) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 287,
+            "message": "Parameter '_maxPerTx' of BasicBridge.setMaxPerTx (HomeBridgeNativeToErc_1.sol#287) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 292,
+            "message": "Parameter '_minPerTx' of BasicBridge.setMinPerTx (HomeBridgeNativeToErc_1.sol#292) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 297,
+            "message": "Parameter '_amount' of BasicBridge.withinLimit (HomeBridgeNativeToErc_1.sol#297) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 302,
+            "message": "Parameter '_token' of BasicBridge.claimTokens (HomeBridgeNativeToErc_1.sol#302) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 302,
+            "message": "Parameter '_to' of BasicBridge.claimTokens (HomeBridgeNativeToErc_1.sol#302) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 384,
+            "message": "Parameter '_hash' of BasicHomeBridge.setMessagesSigned (HomeBridgeNativeToErc_1.sol#384) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 384,
+            "message": "Parameter '_status' of BasicHomeBridge.setMessagesSigned (HomeBridgeNativeToErc_1.sol#384) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 388,
+            "message": "Parameter '' of BasicHomeBridge.onExecuteAffirmation (HomeBridgeNativeToErc_1.sol#388) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 388,
+            "message": "Parameter '_scope_0' of BasicHomeBridge.onExecuteAffirmation (HomeBridgeNativeToErc_1.sol#388) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 391,
+            "message": "Parameter '_withdrawal' of BasicHomeBridge.numAffirmationsSigned (HomeBridgeNativeToErc_1.sol#391) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 395,
+            "message": "Parameter '_withdrawal' of BasicHomeBridge.setAffirmationsSigned (HomeBridgeNativeToErc_1.sol#395) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 395,
+            "message": "Parameter '_status' of BasicHomeBridge.setAffirmationsSigned (HomeBridgeNativeToErc_1.sol#395) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 399,
+            "message": "Parameter '_withdrawal' of BasicHomeBridge.setNumAffirmationsSigned (HomeBridgeNativeToErc_1.sol#399) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 399,
+            "message": "Parameter '_number' of BasicHomeBridge.setNumAffirmationsSigned (HomeBridgeNativeToErc_1.sol#399) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 403,
+            "message": "Parameter '_withdrawal' of BasicHomeBridge.affirmationsSigned (HomeBridgeNativeToErc_1.sol#403) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 407,
+            "message": "Parameter '_hash' of BasicHomeBridge.signature (HomeBridgeNativeToErc_1.sol#407) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 407,
+            "message": "Parameter '_index' of BasicHomeBridge.signature (HomeBridgeNativeToErc_1.sol#407) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 412,
+            "message": "Parameter '_message' of BasicHomeBridge.messagesSigned (HomeBridgeNativeToErc_1.sol#412) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 416,
+            "message": "Parameter '_hash' of BasicHomeBridge.messages (HomeBridgeNativeToErc_1.sol#416) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 420,
+            "message": "Parameter '_hash' of BasicHomeBridge.signatures (HomeBridgeNativeToErc_1.sol#420) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 424,
+            "message": "Parameter '_hash' of BasicHomeBridge.setSignatures (HomeBridgeNativeToErc_1.sol#424) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 424,
+            "message": "Parameter '_signature' of BasicHomeBridge.setSignatures (HomeBridgeNativeToErc_1.sol#424) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 428,
+            "message": "Parameter '_hash' of BasicHomeBridge.setMessages (HomeBridgeNativeToErc_1.sol#428) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 428,
+            "message": "Parameter '_message' of BasicHomeBridge.setMessages (HomeBridgeNativeToErc_1.sol#428) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 432,
+            "message": "Parameter '_hash' of BasicHomeBridge.message (HomeBridgeNativeToErc_1.sol#432) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 436,
+            "message": "Parameter '_message' of BasicHomeBridge.setNumMessagesSigned (HomeBridgeNativeToErc_1.sol#436) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 436,
+            "message": "Parameter '_number' of BasicHomeBridge.setNumMessagesSigned (HomeBridgeNativeToErc_1.sol#436) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 440,
+            "message": "Parameter '_v' of BasicHomeBridge.markAsProcessed (HomeBridgeNativeToErc_1.sol#440) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 444,
+            "message": "Parameter '_number' of BasicHomeBridge.isAlreadyProcessed (HomeBridgeNativeToErc_1.sol#444) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 448,
+            "message": "Parameter '_message' of BasicHomeBridge.numMessagesSigned (HomeBridgeNativeToErc_1.sol#448) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 491,
+            "message": "Parameter '_recipient' of HomeBridgeNativeToErc.onExecuteAffirmation (HomeBridgeNativeToErc_1.sol#491) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 491,
+            "message": "Parameter '_value' of HomeBridgeNativeToErc.onExecuteAffirmation (HomeBridgeNativeToErc_1.sol#491) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 458,
+            "message": "Parameter '_validatorContract' of HomeBridgeNativeToErc.initialize (HomeBridgeNativeToErc_1.sol#458) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 459,
+            "message": "Parameter '_dailyLimit' of HomeBridgeNativeToErc.initialize (HomeBridgeNativeToErc_1.sol#459) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 460,
+            "message": "Parameter '_maxPerTx' of HomeBridgeNativeToErc.initialize (HomeBridgeNativeToErc_1.sol#460) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 461,
+            "message": "Parameter '_minPerTx' of HomeBridgeNativeToErc.initialize (HomeBridgeNativeToErc_1.sol#461) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 462,
+            "message": "Parameter '_homeGasPrice' of HomeBridgeNativeToErc.initialize (HomeBridgeNativeToErc_1.sol#462) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 463,
+            "message": "Parameter '_requiredBlockConfirmations' of HomeBridgeNativeToErc.initialize (HomeBridgeNativeToErc_1.sol#463) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HomeBridgeNativeToErc_1.sol",
+            "impact": "Informational",
+            "line": 176,
+            "message": "EternalStorage.stringStorage (HomeBridgeNativeToErc_1.sol#176) is never used in HomeBridgeNativeToErc\nEternalStorage.intStorage (HomeBridgeNativeToErc_1.sol#180) is never used in HomeBridgeNativeToErc\n",
+            "name": "unused-state"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

@@ -1,0 +1,117 @@
+INFO:Detectors:[93m
+Contract locking ether found in /sb/Degens_2.sol:
+	Contract Degens has payable functions:
+	 - fallback (/sb/Degens_2.sol#223-225)
+	But does not have a function to withdraw the ether
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#contracts-that-lock-ether[0m
+INFO:Detectors:[93m
+Reentrancy in Degens.matchOrders (/sb/Degens_2.sol#255-316):
+	External calls:
+	- (leftMaxPosition,leftAmount) = computeMaxPosition(leftOrder) (/sb/Degens_2.sol#267)
+	- (rightMaxPosition,rightAmount) = computeMaxPosition(rightOrder) (/sb/Degens_2.sol#268)
+	- rightTrade = tradeCore(rightAmount,rightOrder,true) (/sb/Degens_2.sol#277)
+	State variables written after the call(s):
+	- matches (/sb/Degens_2.sol#284)
+Reentrancy in Degens.matchOrders (/sb/Degens_2.sol#255-316):
+	External calls:
+	- (leftMaxPosition,leftAmount) = computeMaxPosition(leftOrder) (/sb/Degens_2.sol#267)
+	- (rightMaxPosition,rightAmount) = computeMaxPosition(rightOrder) (/sb/Degens_2.sol#268)
+	- rightTrade = tradeCore(rightAmount,rightOrder,true) (/sb/Degens_2.sol#277)
+	- leftTrade = tradeCore(leftAmount,leftOrder,true) (/sb/Degens_2.sol#286)
+	State variables written after the call(s):
+	- matches (/sb/Degens_2.sol#290)
+Reentrancy in Degens.matchOrders (/sb/Degens_2.sol#255-316):
+	External calls:
+	- (leftMaxPosition,leftAmount) = computeMaxPosition(leftOrder) (/sb/Degens_2.sol#267)
+	- (rightMaxPosition,rightAmount) = computeMaxPosition(rightOrder) (/sb/Degens_2.sol#268)
+	- rightTrade = tradeCore(rightAmount,rightOrder,true) (/sb/Degens_2.sol#277)
+	- leftTrade = tradeCore(leftAmount,leftOrder,true) (/sb/Degens_2.sol#286)
+	- adjustBalance(leftOrder.token,msg.sender,takerBalanceDelta) (/sb/Degens_2.sol#304)
+	- applyTrade(leftOrder,leftTrade) (/sb/Degens_2.sol#307)
+	State variables written after the call(s):
+	- filledAmounts (/sb/Degens_2.sol#307)
+Reentrancy in Degens.matchOrders (/sb/Degens_2.sol#255-316):
+	External calls:
+	- (leftMaxPosition,leftAmount) = computeMaxPosition(leftOrder) (/sb/Degens_2.sol#267)
+	- (rightMaxPosition,rightAmount) = computeMaxPosition(rightOrder) (/sb/Degens_2.sol#268)
+	- rightTrade = tradeCore(rightAmount,rightOrder,true) (/sb/Degens_2.sol#277)
+	- leftTrade = tradeCore(leftAmount,leftOrder,true) (/sb/Degens_2.sol#286)
+	- adjustBalance(leftOrder.token,msg.sender,takerBalanceDelta) (/sb/Degens_2.sol#304)
+	- applyTrade(leftOrder,leftTrade) (/sb/Degens_2.sol#307)
+	- applyTrade(rightOrder,rightTrade) (/sb/Degens_2.sol#308)
+	State variables written after the call(s):
+	- filledAmounts (/sb/Degens_2.sol#308)
+Reentrancy in Degens.matchOrders (/sb/Degens_2.sol#255-316):
+	External calls:
+	- (leftMaxPosition,leftAmount) = computeMaxPosition(leftOrder) (/sb/Degens_2.sol#267)
+	- (rightMaxPosition,rightAmount) = computeMaxPosition(rightOrder) (/sb/Degens_2.sol#268)
+	- rightTrade = tradeCore(rightAmount,rightOrder,true) (/sb/Degens_2.sol#277)
+	- leftTrade = tradeCore(leftAmount,leftOrder,true) (/sb/Degens_2.sol#286)
+	- adjustBalance(leftOrder.token,msg.sender,takerBalanceDelta) (/sb/Degens_2.sol#304)
+	- applyTrade(rightOrder,rightTrade) (/sb/Degens_2.sol#310)
+	State variables written after the call(s):
+	- filledAmounts (/sb/Degens_2.sol#310)
+Reentrancy in Degens.matchOrders (/sb/Degens_2.sol#255-316):
+	External calls:
+	- (leftMaxPosition,leftAmount) = computeMaxPosition(leftOrder) (/sb/Degens_2.sol#267)
+	- (rightMaxPosition,rightAmount) = computeMaxPosition(rightOrder) (/sb/Degens_2.sol#268)
+	- rightTrade = tradeCore(rightAmount,rightOrder,true) (/sb/Degens_2.sol#277)
+	- leftTrade = tradeCore(leftAmount,leftOrder,true) (/sb/Degens_2.sol#286)
+	- adjustBalance(leftOrder.token,msg.sender,takerBalanceDelta) (/sb/Degens_2.sol#304)
+	- applyTrade(rightOrder,rightTrade) (/sb/Degens_2.sol#310)
+	- applyTrade(leftOrder,leftTrade) (/sb/Degens_2.sol#311)
+	State variables written after the call(s):
+	- filledAmounts (/sb/Degens_2.sol#311)
+Reentrancy in Degens.trade (/sb/Degens_2.sol#227-253):
+	External calls:
+	- t = tradeCore(amountRemaining,o,false) (/sb/Degens_2.sol#241)
+	State variables written after the call(s):
+	- matches (/sb/Degens_2.sol#244)
+Reentrancy in Degens.trade (/sb/Degens_2.sol#227-253):
+	External calls:
+	- t = tradeCore(amountRemaining,o,false) (/sb/Degens_2.sol#241)
+	- applyTrade(o,t) (/sb/Degens_2.sol#245)
+	State variables written after the call(s):
+	- filledAmounts (/sb/Degens_2.sol#245)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[93m
+longAmount_scope_1 in Degens.computeMaxPosition (/sb/Degens_2.sol#667) is a local variable never initialiazed
+shortAmount_scope_2 in Degens.computeMaxPosition (/sb/Degens_2.sol#667) is a local variable never initialiazed
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#uninitialized-local-variables[0m
+INFO:Detectors:[92m
+Reentrancy in Degens.applyTrade (/sb/Degens_2.sol#431-445):
+	External calls:
+	- adjustBalance(o.token,t.longAddr,t.longBalanceDelta) (/sb/Degens_2.sol#435)
+	- adjustBalance(o.token,t.shortAddr,t.shortBalanceDelta) (/sb/Degens_2.sol#436)
+	- adjustBalance(o.token,t.shortAddr,t.shortBalanceDelta) (/sb/Degens_2.sol#438)
+	- adjustBalance(o.token,t.longAddr,t.longBalanceDelta) (/sb/Degens_2.sol#439)
+	State variables written after the call(s):
+	- filledAmounts (/sb/Degens_2.sol#442)
+	- filledAmounts (/sb/Degens_2.sol#442)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-2[0m
+INFO:Detectors:[92m
+Degens.trade (/sb/Degens_2.sol#227-253) uses timestamp for comparisons
+	Dangerous comparisons:
+	- expiry != 0 && block.timestamp >= expiry (/sb/Degens_2.sol#229-232)
+Degens.recoverFunds (/sb/Degens_2.sol#378-393) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(recoveryTime < block.timestamp,DERR_TOO_SOON_TO_RECOVER) (/sb/Degens_2.sol#385)
+Degens.tradeCore (/sb/Degens_2.sol#517-645) uses timestamp for comparisons
+	Dangerous comparisons:
+	- cancelTimestamps[o.maker] >= o.timestamp || orderFilledAmount == uint256(- 1) (/sb/Degens_2.sol#527-530)
+	- block.timestamp >= o.expiry (/sb/Degens_2.sol#520-523)
+Degens.getOrderAmount (/sb/Degens_2.sol#647-659) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp >= o.expiry || cancelTimestamps[o.maker] >= o.timestamp (/sb/Degens_2.sol#648)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#block-timestamp[0m
+INFO:Detectors:[92m
+IERC20Token.balanceOf (/sb/Degens_2.sol#6) should be declared external
+IERC20Token.allowance (/sb/Degens_2.sol#7) should be declared external
+IERC20Token.transfer (/sb/Degens_2.sol#8) should be declared external
+IERC20Token.transferFrom (/sb/Degens_2.sol#9) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/Degens_2.sol:
+	- pragma solidity^0.5.10 (/sb/Degens_2.sol#1): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Slither:/sb/Degens_2.sol analyzed (2 contracts), 21 result(s) found

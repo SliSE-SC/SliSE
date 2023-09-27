@@ -1,0 +1,40 @@
+{
+    "0x4e73b32ed6c35f570686b89848e5f39f20ecc106.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "Collect",
+                "SetLogFile"
+            ],
+            "from_function": "SetLogFile",
+            "to_function": "Collect",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 6\nFunction: SetLogFile\nNode: \nEXPRESSION Log = LogFile(_log)\nIRS: \nLog := TMP_4\"",
+                        "\"BlockID: 18\nFunction: Collect\nNode: \nEXPRESSION Log.AddMessage(msg.sender,_am,Collect)\nIRS: \nHIGH_LEVEL_CALL, dest:Log(LogFile), function:AddMessage, arguments:['msg.sender', '_am', 'Collect']  \""
+                    ],
+                    "state_variable": "Log"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "Collect",
+                "Collect"
+            ],
+            "from_function": "Collect",
+            "to_function": "Collect",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 33\nFunction: Collect\nNode: \nIF balances[msg.sender] >= MinSum && balances[msg.sender] >= _am\nIRS: \nCONDITION TMP_8\"",
+                        "\"BlockID: 17\nFunction: Collect\nNode: \nEXPRESSION balances[msg.sender] -= _am\nIRS: \nREF_6 = REF_6 - _am\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        }
+    ]
+}

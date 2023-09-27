@@ -1,0 +1,572 @@
+{
+    "file": "0xc213dc998b6c0d9c51f9cc72240596e1dd684ec7.sol",
+    "global_structs": [
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0xb"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0xc"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xd"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "lastWithdrawTime",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "balances",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "withdrawalLimit",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xa"
+            ]
+        },
+        {
+            "name": "EtherStore",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xa",
+            "instructions": [
+                "withdrawalLimit = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xb",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xc",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "balances",
+            "addrs": [
+                "0x2",
+                "0x3",
+                "0x5"
+            ]
+        },
+        {
+            "name": "lastWithdrawTime",
+            "addrs": [
+                "0x2",
+                "0x8"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3",
+            "instructions": [
+                "CLR_0 = msg.sender",
+                "CLR_1 = balances[CLR_0]",
+                "REF_7 = CLR_1",
+                "CLR_2 = msg.value",
+                "TMP_12 = REF_7 + CLR_2",
+                "CLR_3 = msg.sender",
+                "balances[CLR_3] = TMP_12"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5",
+            "instructions": [
+                "CLR_4 = msg.sender",
+                "CLR_5 = lastWithdrawTime[CLR_4]",
+                "REF_8 = CLR_5",
+                "TMP_13 = REF_8 + 604800",
+                "RTMP_14 = now >= TMP_13",
+                "CONDITION RTMP_14 0x6 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6",
+            "instructions": [
+                "RTMP_15 = None == true",
+                "CONDITION RTMP_15 0x4 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4",
+            "instructions": [
+                "CLR_6 = msg.sender",
+                "balances[CLR_6] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8",
+            "instructions": [
+                "CLR_7 = msg.sender",
+                "CLR_8 = lastWithdrawTime[CLR_7]",
+                "REF_10 = CLR_8",
+                "TMP_16 = REF_10 + 604800",
+                "RTMP_17 = now >= TMP_16",
+                "CONDITION RTMP_17 0x9 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9",
+            "instructions": [
+                "RTMP_18 = None == true",
+                "CONDITION RTMP_18 0x7 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7",
+            "instructions": [
+                "CLR_9 = msg.sender",
+                "CLR_10 = lastWithdrawTime[CLR_9]",
+                "REF_9 = CLR_10",
+                "CLR_11 = msg.sender",
+                "lastWithdrawTime[CLR_11] = now"
+            ]
+        }
+    ],
+    "root_addr": "0xe",
+    "dest_addrs": [
+        "0x1b"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "withdrawFunds_v1",
+            "addr": "0xe",
+            "instructions": [
+                "NOP",
+                "_weiToWithdraw = NEW_VAL integer",
+                "JUMP 0xf"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v1",
+            "addr": "0xf",
+            "instructions": [
+                "CLR_12 = msg.sender",
+                "CLR_13 = balances[CLR_12]",
+                "REF_1 = CLR_13",
+                "TMP_0 = REF_1 >= _weiToWithdraw",
+                "CONDITION TMP_0 0xf_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v1",
+            "addr": "0xf_r0",
+            "instructions": [
+                "JUMP 0x10"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v1",
+            "addr": "0x10",
+            "instructions": [
+                "TMP_2 = _weiToWithdraw <= withdrawalLimit",
+                "CONDITION TMP_2 0x10_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v1",
+            "addr": "0x10_r0",
+            "instructions": [
+                "JUMP 0x11"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v1",
+            "addr": "0x11",
+            "instructions": [
+                "CLR_14 = msg.sender",
+                "CLR_15 = lastWithdrawTime[CLR_14]",
+                "REF_2 = CLR_15",
+                "TMP_4 = REF_2 + 604800",
+                "TMP_5 = now >= TMP_4",
+                "CONDITION TMP_5 0x11_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v1",
+            "addr": "0x11_r0",
+            "instructions": [
+                "JUMP 0x12"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v1",
+            "addr": "0x12",
+            "instructions": [
+                "NOP",
+                "NOP",
+                "ATTACK",
+                "TUPLE_0 = NEW_COL unknown",
+                "JUMP 0x13"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v2",
+            "addr": "0x13",
+            "instructions": [
+                "NOP",
+                "_weiToWithdraw = NEW_VAL integer",
+                "JUMP 0x14"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v2",
+            "addr": "0x14",
+            "instructions": [
+                "CLR_16 = msg.sender",
+                "CLR_17 = balances[CLR_16]",
+                "REF_1 = CLR_17",
+                "TMP_0 = REF_1 >= _weiToWithdraw",
+                "CONDITION TMP_0 0x14_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v2",
+            "addr": "0x14_r0",
+            "instructions": [
+                "JUMP 0x15"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v2",
+            "addr": "0x15",
+            "instructions": [
+                "TMP_2 = _weiToWithdraw <= withdrawalLimit",
+                "CONDITION TMP_2 0x15_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v2",
+            "addr": "0x15_r0",
+            "instructions": [
+                "JUMP 0x16"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v2",
+            "addr": "0x16",
+            "instructions": [
+                "CLR_18 = msg.sender",
+                "CLR_19 = lastWithdrawTime[CLR_18]",
+                "REF_2 = CLR_19",
+                "TMP_4 = REF_2 + 604800",
+                "TMP_5 = now >= TMP_4",
+                "CONDITION TMP_5 0x16_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v2",
+            "addr": "0x16_r0",
+            "instructions": [
+                "JUMP 0x17"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v2",
+            "addr": "0x17",
+            "instructions": [
+                "NOP",
+                "NOP",
+                "CLR_20 = this.balance",
+                "WRP_0 = CLR_20 - _weiToWithdraw",
+                "this.balance = WRP_0",
+                "TUPLE_0 = NEW_COL unknown",
+                "JUMP 0x18"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v2",
+            "addr": "0x18",
+            "instructions": [
+                "success = NEW_VAL unknown",
+                "data = NEW_VAL unknown",
+                "CONDITION success 0x18_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v2",
+            "addr": "0x18_r0",
+            "instructions": [
+                "JUMP 0x19"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v2",
+            "addr": "0x19",
+            "instructions": [
+                "CLR_21 = msg.sender",
+                "CLR_22 = balances[CLR_21]",
+                "REF_5 = CLR_22",
+                "CLR_23 = msg.sender",
+                "WRP_1 = REF_5 - _weiToWithdraw",
+                "balances[CLR_23] = WRP_1",
+                "CLR_24 = msg.sender",
+                "CLR_25 = lastWithdrawTime[CLR_24]",
+                "REF_6 = CLR_25",
+                "CLR_26 = msg.sender",
+                "lastWithdrawTime[CLR_26] = now",
+                "JUMP 0x1a"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v1",
+            "addr": "0x1b",
+            "instructions": [
+                "CLR_27 = msg.sender",
+                "CLR_28 = balances[CLR_27]",
+                "REF_5 = CLR_28",
+                "CLR_29 = msg.sender",
+                "WRP_2 = REF_5 - _weiToWithdraw",
+                "balances[CLR_29] = WRP_2",
+                "CLR_30 = msg.sender",
+                "CLR_31 = lastWithdrawTime[CLR_30]",
+                "REF_6 = CLR_31",
+                "CLR_32 = msg.sender",
+                "lastWithdrawTime[CLR_32] = now"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v1",
+            "addr": "0x1a",
+            "instructions": [
+                "success = NEW_VAL unknown",
+                "data = NEW_VAL unknown",
+                "CONDITION success 0x1a_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "withdrawFunds_v1",
+            "addr": "0x1a_r0",
+            "instructions": [
+                "JUMP 0x1b"
+            ]
+        },
+        {
+            "scope": "trap",
+            "addr": "0x1c",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

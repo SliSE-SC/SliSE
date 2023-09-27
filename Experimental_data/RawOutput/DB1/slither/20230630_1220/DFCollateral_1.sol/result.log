@@ -1,0 +1,34 @@
+INFO:Detectors:[93m
+DFCollateral.transferOut (/sb/DFCollateral_1.sol#227-238) uses a dangerous strict equality:
+	- assert(bool)(sub(IERC20Token(_tokenID).balanceOf(_to),_balance) == _amount)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#dangerous-strict-equalities[0m
+INFO:Detectors:[93m
+DFCollateral.transferOut (/sb/DFCollateral_1.sol#227-238) does not use the value returned by external calls:
+	-IERC20Token(_tokenID).transfer(_to,_amount) (/sb/DFCollateral_1.sol#234)
+DFCollateral.approveToEngine (/sb/DFCollateral_1.sol#240-242) does not use the value returned by external calls:
+	-IERC20Token(_tokenIdx).approve(_engineAddress,uint256(- 1)) (/sb/DFCollateral_1.sol#241)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-return[0m
+INFO:Detectors:[92m
+IERC20Token.balanceOf (/sb/DFCollateral_1.sol#8) should be declared external
+IERC20Token.allowance (/sb/DFCollateral_1.sol#9) should be declared external
+IERC20Token.transfer (/sb/DFCollateral_1.sol#10) should be declared external
+IERC20Token.transferFrom (/sb/DFCollateral_1.sol#11) should be declared external
+IERC20Token.approve (/sb/DFCollateral_1.sol#12) should be declared external
+IERC20Token.totalSupply (/sb/DFCollateral_1.sol#13) should be declared external
+DSMath.pow (/sb/DFCollateral_1.sol#107-123) should be declared external
+DSAuthority.canCall (/sb/DFCollateral_1.sol#140-142) should be declared external
+DSAuth.disableOwnership (/sb/DFCollateral_1.sol#162-165) should be declared external
+DSAuth.transferOwnership (/sb/DFCollateral_1.sol#167-170) should be declared external
+DSAuth.acceptOwnership (/sb/DFCollateral_1.sol#172-177) should be declared external
+DSAuth.setAuthority (/sb/DFCollateral_1.sol#180-186) should be declared external
+DFCollateral.transferOut (/sb/DFCollateral_1.sol#227-238) should be declared external
+DFCollateral.approveToEngine (/sb/DFCollateral_1.sol#240-242) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Parameter '_tokenID' of DFCollateral.transferOut (/sb/DFCollateral_1.sol#227) is not in mixedCase
+Parameter '_to' of DFCollateral.transferOut (/sb/DFCollateral_1.sol#227) is not in mixedCase
+Parameter '_amount' of DFCollateral.transferOut (/sb/DFCollateral_1.sol#227) is not in mixedCase
+Parameter '_tokenIdx' of DFCollateral.approveToEngine (/sb/DFCollateral_1.sol#240) is not in mixedCase
+Parameter '_engineAddress' of DFCollateral.approveToEngine (/sb/DFCollateral_1.sol#240) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/DFCollateral_1.sol analyzed (7 contracts), 22 result(s) found

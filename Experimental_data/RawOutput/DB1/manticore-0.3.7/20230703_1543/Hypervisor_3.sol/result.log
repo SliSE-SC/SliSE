@@ -1,0 +1,720 @@
+2023-07-03 16:06:08,822: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:06:08,822: [11] m.main:INFO: Beginning analysis
+2023-07-03 16:06:08,824: [11] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:06:08,867: [11] m.e.manticore:INFO: Failed to build contract /sb/Hypervisor_3.sol:2279:1: Errors : Invalid solc compilation Error: Unknown pragma "abicoder"
+    --> sb/Hypervisor_3.sol:2279:1:
+     |
+2279 | pragma abicoder v2;
+     | ^^^^^^^^^^^^^^^^^^^
+
+Error: No visibility specified. Did you intend to add "public"?
+    --> sb/Hypervisor_3.sol:2398:5:
+     |
+2398 |     constructor(
+     |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:10:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2490:9:
+     |
+2490 |         uint256 base0,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:25:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |                         ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2491:9:
+     |
+2491 |         uint256 base1,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:10:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2492:9:
+     |
+2492 |         uint256 limit0,
+     |         ^^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:26:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |                          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2493:9:
+     |
+2493 |         uint256 limit1
+     |         ^^^^^^^^^^^^^^
+
+Error: This type is only supported in ABIEncoderV2. Use "pragma experimental ABIEncoderV2;" to enable the feature.
+    --> sb/Hypervisor_3.sol:2349:62:
+     |
+2349 |     function getLockAt(uint256 index) external view returns (LockData memory lockData);
+     |                                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+. Solidity failed to generate bytecode for your contract. Check if all the abstract functions are implemented. 
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1766, in worker_finalize
+    finalizer(q.get_nowait())
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1757, in finalizer
+    if only_alive_states and last_tx.result in {"REVERT", "THROW", "TXERROR"}:
+AttributeError: 'NoneType' object has no attribute 'result'
+2023-07-03 16:06:08,939: [11] m.c.manticore:INFO: Results in /mcore_7emkemp_
+2023-07-03 16:06:08,939: [11] m.c.manticore:WARNING: Manticore failed to run
+2023-07-03 16:06:09,563: [36] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:06:09,563: [36] m.main:INFO: Beginning analysis
+2023-07-03 16:06:09,572: [36] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:06:09,627: [36] m.e.manticore:INFO: Failed to build contract SyntaxError: Errors : Invalid solc compilation Error: Unknown pragma "abicoder"
+    --> sb/Hypervisor_3.sol:2279:1:
+     |
+2279 | pragma abicoder v2;
+     | ^^^^^^^^^^^^^^^^^^^
+
+Error: No visibility specified. Did you intend to add "public"?
+    --> sb/Hypervisor_3.sol:2398:5:
+     |
+2398 |     constructor(
+     |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:10:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2490:9:
+     |
+2490 |         uint256 base0,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:25:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |                         ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2491:9:
+     |
+2491 |         uint256 base1,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:10:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2492:9:
+     |
+2492 |         uint256 limit0,
+     |         ^^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:26:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |                          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2493:9:
+     |
+2493 |         uint256 limit1
+     |         ^^^^^^^^^^^^^^
+
+Error: This type is only supported in ABIEncoderV2. Use "pragma experimental ABIEncoderV2;" to enable the feature.
+    --> sb/Hypervisor_3.sol:2349:62:
+     |
+2349 |     function getLockAt(uint256 index) external view returns (LockData memory lockData);
+     |                                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+. Solidity failed to generate bytecode for your contract. Check if all the abstract functions are implemented. 
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1766, in worker_finalize
+    finalizer(q.get_nowait())
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1757, in finalizer
+    if only_alive_states and last_tx.result in {"REVERT", "THROW", "TXERROR"}:
+AttributeError: 'NoneType' object has no attribute 'result'
+2023-07-03 16:06:09,705: [36] m.c.manticore:INFO: Results in /mcore_y0p1nt2s
+2023-07-03 16:06:09,706: [36] m.c.manticore:WARNING: Manticore failed to run
+2023-07-03 16:06:10,394: [61] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:06:10,394: [61] m.main:INFO: Beginning analysis
+2023-07-03 16:06:10,397: [61] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:06:10,445: [61] m.e.manticore:INFO: Failed to build contract Unknown Errors : Invalid solc compilation Error: Unknown pragma "abicoder"
+    --> sb/Hypervisor_3.sol:2279:1:
+     |
+2279 | pragma abicoder v2;
+     | ^^^^^^^^^^^^^^^^^^^
+
+Error: No visibility specified. Did you intend to add "public"?
+    --> sb/Hypervisor_3.sol:2398:5:
+     |
+2398 |     constructor(
+     |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:10:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2490:9:
+     |
+2490 |         uint256 base0,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:25:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |                         ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2491:9:
+     |
+2491 |         uint256 base1,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:10:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2492:9:
+     |
+2492 |         uint256 limit0,
+     |         ^^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:26:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |                          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2493:9:
+     |
+2493 |         uint256 limit1
+     |         ^^^^^^^^^^^^^^
+
+Error: This type is only supported in ABIEncoderV2. Use "pragma experimental ABIEncoderV2;" to enable the feature.
+    --> sb/Hypervisor_3.sol:2349:62:
+     |
+2349 |     function getLockAt(uint256 index) external view returns (LockData memory lockData);
+     |                                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+. Solidity failed to generate bytecode for your contract. Check if all the abstract functions are implemented. 
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1766, in worker_finalize
+    finalizer(q.get_nowait())
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1757, in finalizer
+    if only_alive_states and last_tx.result in {"REVERT", "THROW", "TXERROR"}:
+AttributeError: 'NoneType' object has no attribute 'result'
+2023-07-03 16:06:10,510: [61] m.c.manticore:INFO: Results in /mcore_iupergf8
+2023-07-03 16:06:10,511: [61] m.c.manticore:WARNING: Manticore failed to run
+2023-07-03 16:06:11,204: [86] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:06:11,204: [86] m.main:INFO: Beginning analysis
+2023-07-03 16:06:11,207: [86] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:06:11,270: [86] m.e.manticore:INFO: Failed to build contract pragma Errors : Invalid solc compilation Error: Unknown pragma "abicoder"
+    --> sb/Hypervisor_3.sol:2279:1:
+     |
+2279 | pragma abicoder v2;
+     | ^^^^^^^^^^^^^^^^^^^
+
+Error: No visibility specified. Did you intend to add "public"?
+    --> sb/Hypervisor_3.sol:2398:5:
+     |
+2398 |     constructor(
+     |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:10:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2490:9:
+     |
+2490 |         uint256 base0,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:25:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |                         ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2491:9:
+     |
+2491 |         uint256 base1,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:10:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2492:9:
+     |
+2492 |         uint256 limit0,
+     |         ^^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:26:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |                          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2493:9:
+     |
+2493 |         uint256 limit1
+     |         ^^^^^^^^^^^^^^
+
+Error: This type is only supported in ABIEncoderV2. Use "pragma experimental ABIEncoderV2;" to enable the feature.
+    --> sb/Hypervisor_3.sol:2349:62:
+     |
+2349 |     function getLockAt(uint256 index) external view returns (LockData memory lockData);
+     |                                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+. Solidity failed to generate bytecode for your contract. Check if all the abstract functions are implemented. 
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1766, in worker_finalize
+    finalizer(q.get_nowait())
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1757, in finalizer
+    if only_alive_states and last_tx.result in {"REVERT", "THROW", "TXERROR"}:
+AttributeError: 'NoneType' object has no attribute 'result'
+2023-07-03 16:06:11,344: [86] m.c.manticore:INFO: Results in /mcore_j1afvuux
+2023-07-03 16:06:11,345: [86] m.c.manticore:WARNING: Manticore failed to run
+2023-07-03 16:06:12,253: [111] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:06:12,253: [111] m.main:INFO: Beginning analysis
+2023-07-03 16:06:12,256: [111] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:06:12,320: [111] m.e.manticore:INFO: Failed to build contract "abicoder" Errors : Invalid solc compilation Error: Unknown pragma "abicoder"
+    --> sb/Hypervisor_3.sol:2279:1:
+     |
+2279 | pragma abicoder v2;
+     | ^^^^^^^^^^^^^^^^^^^
+
+Error: No visibility specified. Did you intend to add "public"?
+    --> sb/Hypervisor_3.sol:2398:5:
+     |
+2398 |     constructor(
+     |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:10:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2490:9:
+     |
+2490 |         uint256 base0,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:25:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |                         ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2491:9:
+     |
+2491 |         uint256 base1,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:10:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2492:9:
+     |
+2492 |         uint256 limit0,
+     |         ^^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:26:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |                          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2493:9:
+     |
+2493 |         uint256 limit1
+     |         ^^^^^^^^^^^^^^
+
+Error: This type is only supported in ABIEncoderV2. Use "pragma experimental ABIEncoderV2;" to enable the feature.
+    --> sb/Hypervisor_3.sol:2349:62:
+     |
+2349 |     function getLockAt(uint256 index) external view returns (LockData memory lockData);
+     |                                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+. Solidity failed to generate bytecode for your contract. Check if all the abstract functions are implemented. 
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1766, in worker_finalize
+    finalizer(q.get_nowait())
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1757, in finalizer
+    if only_alive_states and last_tx.result in {"REVERT", "THROW", "TXERROR"}:
+AttributeError: 'NoneType' object has no attribute 'result'
+2023-07-03 16:06:12,398: [111] m.c.manticore:INFO: Results in /mcore_ffbnx9cv
+2023-07-03 16:06:12,399: [111] m.c.manticore:WARNING: Manticore failed to run
+2023-07-03 16:06:13,153: [136] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:06:13,153: [136] m.main:INFO: Beginning analysis
+2023-07-03 16:06:13,155: [136] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:06:13,207: [136] m.e.manticore:INFO: Failed to build contract pragma Errors : Invalid solc compilation Error: Unknown pragma "abicoder"
+    --> sb/Hypervisor_3.sol:2279:1:
+     |
+2279 | pragma abicoder v2;
+     | ^^^^^^^^^^^^^^^^^^^
+
+Error: No visibility specified. Did you intend to add "public"?
+    --> sb/Hypervisor_3.sol:2398:5:
+     |
+2398 |     constructor(
+     |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:10:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2490:9:
+     |
+2490 |         uint256 base0,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:25:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |                         ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2491:9:
+     |
+2491 |         uint256 base1,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:10:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2492:9:
+     |
+2492 |         uint256 limit0,
+     |         ^^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:26:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |                          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2493:9:
+     |
+2493 |         uint256 limit1
+     |         ^^^^^^^^^^^^^^
+
+Error: This type is only supported in ABIEncoderV2. Use "pragma experimental ABIEncoderV2;" to enable the feature.
+    --> sb/Hypervisor_3.sol:2349:62:
+     |
+2349 |     function getLockAt(uint256 index) external view returns (LockData memory lockData);
+     |                                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+. Solidity failed to generate bytecode for your contract. Check if all the abstract functions are implemented. 
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1766, in worker_finalize
+    finalizer(q.get_nowait())
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1757, in finalizer
+    if only_alive_states and last_tx.result in {"REVERT", "THROW", "TXERROR"}:
+AttributeError: 'NoneType' object has no attribute 'result'
+2023-07-03 16:06:13,289: [136] m.c.manticore:INFO: Results in /mcore_oqwkdqe2
+2023-07-03 16:06:13,289: [136] m.c.manticore:WARNING: Manticore failed to run
+2023-07-03 16:06:13,932: [161] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:06:13,932: [161] m.main:INFO: Beginning analysis
+2023-07-03 16:06:13,934: [161] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:06:13,988: [161] m.e.manticore:INFO: Failed to build contract abicoder Errors : Invalid solc compilation Error: Unknown pragma "abicoder"
+    --> sb/Hypervisor_3.sol:2279:1:
+     |
+2279 | pragma abicoder v2;
+     | ^^^^^^^^^^^^^^^^^^^
+
+Error: No visibility specified. Did you intend to add "public"?
+    --> sb/Hypervisor_3.sol:2398:5:
+     |
+2398 |     constructor(
+     |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:10:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2490:9:
+     |
+2490 |         uint256 base0,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:25:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |                         ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2491:9:
+     |
+2491 |         uint256 base1,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:10:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2492:9:
+     |
+2492 |         uint256 limit0,
+     |         ^^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:26:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |                          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2493:9:
+     |
+2493 |         uint256 limit1
+     |         ^^^^^^^^^^^^^^
+
+Error: This type is only supported in ABIEncoderV2. Use "pragma experimental ABIEncoderV2;" to enable the feature.
+    --> sb/Hypervisor_3.sol:2349:62:
+     |
+2349 |     function getLockAt(uint256 index) external view returns (LockData memory lockData);
+     |                                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+. Solidity failed to generate bytecode for your contract. Check if all the abstract functions are implemented. 
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1766, in worker_finalize
+    finalizer(q.get_nowait())
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1757, in finalizer
+    if only_alive_states and last_tx.result in {"REVERT", "THROW", "TXERROR"}:
+AttributeError: 'NoneType' object has no attribute 'result'
+2023-07-03 16:06:14,072: [161] m.c.manticore:INFO: Results in /mcore_0rp1z8_v
+2023-07-03 16:06:14,072: [161] m.c.manticore:WARNING: Manticore failed to run
+2023-07-03 16:06:14,745: [186] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:06:14,745: [186] m.main:INFO: Beginning analysis
+2023-07-03 16:06:14,748: [186] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:06:14,808: [186] m.e.manticore:INFO: Failed to build contract v2; Errors : Invalid solc compilation Error: Unknown pragma "abicoder"
+    --> sb/Hypervisor_3.sol:2279:1:
+     |
+2279 | pragma abicoder v2;
+     | ^^^^^^^^^^^^^^^^^^^
+
+Error: No visibility specified. Did you intend to add "public"?
+    --> sb/Hypervisor_3.sol:2398:5:
+     |
+2398 |     constructor(
+     |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:10:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2490:9:
+     |
+2490 |         uint256 base0,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:25:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |                         ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2491:9:
+     |
+2491 |         uint256 base1,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:10:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2492:9:
+     |
+2492 |         uint256 limit0,
+     |         ^^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:26:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |                          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2493:9:
+     |
+2493 |         uint256 limit1
+     |         ^^^^^^^^^^^^^^
+
+Error: This type is only supported in ABIEncoderV2. Use "pragma experimental ABIEncoderV2;" to enable the feature.
+    --> sb/Hypervisor_3.sol:2349:62:
+     |
+2349 |     function getLockAt(uint256 index) external view returns (LockData memory lockData);
+     |                                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+. Solidity failed to generate bytecode for your contract. Check if all the abstract functions are implemented. 
+Process Process-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1766, in worker_finalize
+    finalizer(q.get_nowait())
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1757, in finalizer
+    if only_alive_states and last_tx.result in {"REVERT", "THROW", "TXERROR"}:
+AttributeError: 'NoneType' object has no attribute 'result'
+2023-07-03 16:06:14,874: [186] m.c.manticore:INFO: Results in /mcore_6hwuui0c
+2023-07-03 16:06:14,874: [186] m.c.manticore:WARNING: Manticore failed to run
+2023-07-03 16:06:15,551: [211] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:06:15,551: [211] m.main:INFO: Beginning analysis
+2023-07-03 16:06:15,553: [211] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:06:15,611: [211] m.e.manticore:INFO: Failed to build contract ^-----------------^ Errors : Invalid solc compilation Error: Unknown pragma "abicoder"
+    --> sb/Hypervisor_3.sol:2279:1:
+     |
+2279 | pragma abicoder v2;
+     | ^^^^^^^^^^^^^^^^^^^
+
+Error: No visibility specified. Did you intend to add "public"?
+    --> sb/Hypervisor_3.sol:2398:5:
+     |
+2398 |     constructor(
+     |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:10:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2490:9:
+     |
+2490 |         uint256 base0,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2496:25:
+     |
+2496 |         (uint256 base0, uint256 base1) = _burnLiquidity(
+     |                         ^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2491:9:
+     |
+2491 |         uint256 base1,
+     |         ^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:10:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2492:9:
+     |
+2492 |         uint256 limit0,
+     |         ^^^^^^^^^^^^^^
+
+Warning: This declaration shadows an existing declaration.
+    --> sb/Hypervisor_3.sol:2503:26:
+     |
+2503 |         (uint256 limit0, uint256 limit1) = _burnLiquidity(
+     |                          ^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+    --> sb/Hypervisor_3.sol:2493:9:
+     |
+2493 |         uint256 limit1
+     |         ^^^^^^^^^^^^^^
+
+Error: This type is only supported in ABIEncoderV2. Use "pragma experimental ABIEncoderV2;" to enable the feature.
+    --> sb/Hypervisor_3.sol:2349:62:
+     |
+2349 |     function getLockAt(uint256 index) external view returns (LockData memory lockData);
+     |                                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+. Solidity failed to generate bytecode for your contract. Check if all the abstract functions are implemented. 
+Process Process-2:
+Traceback (most recent call last):
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1766, in worker_finalize
+    finalizer(q.get_nowait())
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1757, in finalizer
+    if only_alive_states and last_tx.result in {"REVERT", "THROW", "TXERROR"}:
+AttributeError: 'NoneType' object has no attribute 'result'
+2023-07-03 16:06:15,690: [211] m.c.manticore:INFO: Results in /mcore_lh_0spxn
+2023-07-03 16:06:15,690: [211] m.c.manticore:WARNING: Manticore failed to run

@@ -1,0 +1,202 @@
+INFO:Detectors:[93m
+EIP20NonStandardInterface (/sb/RToken_18.sol#288-350) has incorrect ERC20 function interface(s):
+	-transfer (/sb/RToken_18.sol#314)
+	-transferFrom (/sb/RToken_18.sol#328)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-erc20-interface[0m
+INFO:Detectors:[93m
+RBinance.getCashPrior (/sb/RToken_18.sol#2752-2758) uses a dangerous strict equality:
+	- require(bool)(err == MathError.NO_ERROR)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#dangerous-strict-equalities[0m
+INFO:Detectors:[93m
+Reentrancy in RToken._addReservesInternal (/sb/RToken_18.sol#2421-2433):
+	External calls:
+	- error = accrueInterest() (/sb/RToken_18.sol#2422-2423)
+	State variables written after the call(s):
+	- totalReserves (/sb/RToken_18.sol#2429-2430)
+Reentrancy in RToken._reduceReserves (/sb/RToken_18.sol#2484-2494):
+	External calls:
+	- error = accrueInterest() (/sb/RToken_18.sol#2485-2486)
+	State variables written after the call(s):
+	- totalReserves (/sb/RToken_18.sol#2491-2492)
+Reentrancy in RToken._setCointroller (/sb/RToken_18.sol#2353-2372):
+	External calls:
+	- require(bool,string)(newCointroller.isCointroller(),marker method returned false) (/sb/RToken_18.sol#2361-2362)
+	State variables written after the call(s):
+	- cointroller (/sb/RToken_18.sol#2364-2365)
+Reentrancy in RToken._setInterestRateModel (/sb/RToken_18.sol#2549-2559):
+	External calls:
+	- error = accrueInterest() (/sb/RToken_18.sol#2550-2551)
+	- _setInterestRateModelFresh(newInterestRateModel) (/sb/RToken_18.sol#2556-2557)
+	State variables written after the call(s):
+	- interestRateModel (/sb/RToken_18.sol#2556-2557)
+Reentrancy in RToken._setInterestRateModelFresh (/sb/RToken_18.sol#2565-2595):
+	External calls:
+	- require(bool,string)(newInterestRateModel.isInterestRateModel(),marker method returned false) (/sb/RToken_18.sol#2584-2586)
+	State variables written after the call(s):
+	- interestRateModel (/sb/RToken_18.sol#2587-2589)
+Reentrancy in RToken._setReserveFactor (/sb/RToken_18.sol#2377-2387):
+	External calls:
+	- error = accrueInterest() (/sb/RToken_18.sol#2378-2379)
+	State variables written after the call(s):
+	- reserveFactorMantissa (/sb/RToken_18.sol#2384-2385)
+Reentrancy in RToken.accrueInterest (/sb/RToken_18.sol#1579-1657):
+	External calls:
+	- borrowRateMantissa = interestRateModel.getBorrowRate(cashPrior,borrowsPrior,reservesPrior) (/sb/RToken_18.sol#1596)
+	State variables written after the call(s):
+	- accrualBlockNumber (/sb/RToken_18.sol#1648)
+	- borrowIndex (/sb/RToken_18.sol#1649)
+	- totalBorrows (/sb/RToken_18.sol#1650)
+	- totalReserves (/sb/RToken_18.sol#1651)
+Reentrancy in RToken.borrowInternal (/sb/RToken_18.sol#1910-1918):
+	External calls:
+	- error = accrueInterest() (/sb/RToken_18.sol#1911)
+	- borrowFresh(msg.sender,borrowAmount) (/sb/RToken_18.sol#1917)
+	State variables written after the call(s):
+	- totalBorrows (/sb/RToken_18.sol#1917)
+Reentrancy in RBinance.constructor (/sb/RToken_18.sol#2649-2666):
+	External calls:
+	- initialize(cointroller_,interestRateModel_,initialExchangeRateMantissa_,name_,symbol_,decimals_) (/sb/RToken_18.sol#2659-2661)
+	State variables written after the call(s):
+	- admin (/sb/RToken_18.sol#2662-2663)
+Reentrancy in RToken.initialize (/sb/RToken_18.sol#1220-1251):
+	External calls:
+	- err = _setCointroller(cointroller_) (/sb/RToken_18.sol#1234)
+	State variables written after the call(s):
+	- accrualBlockNumber (/sb/RToken_18.sol#1238)
+	- borrowIndex (/sb/RToken_18.sol#1239)
+Reentrancy in RToken.liquidateBorrowInternal (/sb/RToken_18.sol#2125-2140):
+	External calls:
+	- error = accrueInterest() (/sb/RToken_18.sol#2126)
+	- error = rTokenCollateral.accrueInterest() (/sb/RToken_18.sol#2132)
+	- liquidateBorrowFresh(msg.sender,borrower,repayAmount,rTokenCollateral) (/sb/RToken_18.sol#2139)
+	State variables written after the call(s):
+	- totalBorrows (/sb/RToken_18.sol#2139)
+Reentrancy in RToken.redeemFresh (/sb/RToken_18.sol#1809-1903):
+	External calls:
+	- allowed = cointroller.redeemAllowed(address(this),redeemer,vars.redeemTokens) (/sb/RToken_18.sol#1849)
+	State variables written after the call(s):
+	- totalSupply (/sb/RToken_18.sol#1892)
+Reentrancy in RToken.repayBorrowBehalfInternal (/sb/RToken_18.sol#2020-2028):
+	External calls:
+	- error = accrueInterest() (/sb/RToken_18.sol#2021)
+	- repayBorrowFresh(msg.sender,borrower,repayAmount) (/sb/RToken_18.sol#2027)
+	State variables written after the call(s):
+	- totalBorrows (/sb/RToken_18.sol#2027)
+Reentrancy in RToken.repayBorrowInternal (/sb/RToken_18.sol#2004-2012):
+	External calls:
+	- error = accrueInterest() (/sb/RToken_18.sol#2005)
+	- repayBorrowFresh(msg.sender,msg.sender,repayAmount) (/sb/RToken_18.sol#2011)
+	State variables written after the call(s):
+	- totalBorrows (/sb/RToken_18.sol#2011)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[93m
+vars in RToken.mintFresh (/sb/RToken_18.sol#1704) is a local variable never initialiazed
+actualAddAmount in RToken._addReservesFresh (/sb/RToken_18.sol#2442-2444) is a local variable never initialiazed
+vars in RToken.repayBorrowFresh (/sb/RToken_18.sol#2060) is a local variable never initialiazed
+vars in RToken.borrowFresh (/sb/RToken_18.sol#1950) is a local variable never initialiazed
+vars in RToken.redeemFresh (/sb/RToken_18.sol#1812) is a local variable never initialiazed
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#uninitialized-local-variables[0m
+INFO:Detectors:[92m
+Exponential.divScalarByExpTruncate.fraction (local variable @ /sb/RToken_18.sol#1050) shadows:
+	- ExponentialNoError.fraction (function @ /sb/RToken_18.sol#277-279)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#local-variable-shadowing[0m
+INFO:Detectors:[92m
+Reentrancy in RToken.borrowFresh (/sb/RToken_18.sol#1933-1997):
+	External calls:
+	- allowed = cointroller.borrowAllowed(address(this),borrower,borrowAmount) (/sb/RToken_18.sol#1935)
+	State variables written after the call(s):
+	- accountBorrows (/sb/RToken_18.sol#1985)
+	- accountBorrows (/sb/RToken_18.sol#1986)
+	- totalBorrows (/sb/RToken_18.sol#1987)
+Reentrancy in RToken.initialize (/sb/RToken_18.sol#1220-1251):
+	External calls:
+	- err = _setCointroller(cointroller_) (/sb/RToken_18.sol#1234)
+	- err = _setInterestRateModelFresh(interestRateModel_) (/sb/RToken_18.sol#1242)
+	State variables written after the call(s):
+	- _notEntered (/sb/RToken_18.sol#1250)
+	- decimals (/sb/RToken_18.sol#1247)
+	- name (/sb/RToken_18.sol#1245)
+	- symbol (/sb/RToken_18.sol#1246)
+Reentrancy in RToken.mintFresh (/sb/RToken_18.sol#1692-1757):
+	External calls:
+	- allowed = cointroller.mintAllowed(address(this),minter,mintAmount) (/sb/RToken_18.sol#1694)
+	State variables written after the call(s):
+	- accountTokens (/sb/RToken_18.sol#1746)
+	- totalSupply (/sb/RToken_18.sol#1745)
+Reentrancy in RToken.redeemFresh (/sb/RToken_18.sol#1809-1903):
+	External calls:
+	- allowed = cointroller.redeemAllowed(address(this),redeemer,vars.redeemTokens) (/sb/RToken_18.sol#1849)
+	State variables written after the call(s):
+	- accountTokens (/sb/RToken_18.sol#1893)
+Reentrancy in RToken.repayBorrowFresh (/sb/RToken_18.sol#2048-2115):
+	External calls:
+	- allowed = cointroller.repayBorrowAllowed(address(this),payer,borrower,repayAmount) (/sb/RToken_18.sol#2050)
+	State variables written after the call(s):
+	- accountBorrows (/sb/RToken_18.sol#2103)
+	- accountBorrows (/sb/RToken_18.sol#2104)
+	- totalBorrows (/sb/RToken_18.sol#2105)
+Reentrancy in RToken.seizeInternal (/sb/RToken_18.sol#2245-2292):
+	External calls:
+	- allowed = cointroller.seizeAllowed(address(this),seizerToken,liquidator,borrower,seizeTokens) (/sb/RToken_18.sol#2247)
+	State variables written after the call(s):
+	- accountTokens (/sb/RToken_18.sol#2281)
+	- accountTokens (/sb/RToken_18.sol#2282)
+Reentrancy in RToken.transferTokens (/sb/RToken_18.sol#1262-1322):
+	External calls:
+	- allowed = cointroller.transferAllowed(address(this),src,dst,tokens) (/sb/RToken_18.sol#1264)
+	State variables written after the call(s):
+	- accountTokens (/sb/RToken_18.sol#1307)
+	- accountTokens (/sb/RToken_18.sol#1308)
+	- transferAllowances (/sb/RToken_18.sol#1312)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-2[0m
+INFO:Detectors:[92m
+RBep20Storage.underlying should be constant (/sb/RToken_18.sol#666)
+RDelegationStorage.implementation should be constant (/sb/RToken_18.sol#692)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#state-variables-that-could-be-declared-constant[0m
+INFO:Detectors:[92m
+RToken._setInterestRateModel (/sb/RToken_18.sol#2549-2559) should be declared external
+RTokenInterface._setInterestRateModel (/sb/RToken_18.sol#659) should be declared external
+RDelegatorInterface._setImplementation (/sb/RToken_18.sol#707) should be declared external
+RDelegateInterface._becomeImplementation (/sb/RToken_18.sol#716) should be declared external
+RDelegateInterface._resignImplementation (/sb/RToken_18.sol#721) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/RToken_18.sol:
+	- pragma solidity^0.5.16 (/sb/RToken_18.sol#2): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Function 'ExponentialNoError.mul_ScalarTruncate' (/sb/RToken_18.sol#121-124) is not in mixedCase
+Function 'ExponentialNoError.mul_ScalarTruncateAddUInt' (/sb/RToken_18.sol#129-132) is not in mixedCase
+Constant 'ExponentialNoError.expScale' (/sb/RToken_18.sol#96) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'ExponentialNoError.doubleScale' (/sb/RToken_18.sol#97) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'ExponentialNoError.halfExpScale' (/sb/RToken_18.sol#98) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'ExponentialNoError.mantissaOne' (/sb/RToken_18.sol#99) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'CointrollerInterface.isCointroller' (/sb/RToken_18.sol#355) is not in UPPER_CASE_WITH_UNDERSCORES
+Variable 'RTokenStorage._notEntered' (/sb/RToken_18.sol#429) is not in mixedCase
+Constant 'RTokenStorage.borrowRateMaxMantissa' (/sb/RToken_18.sol#450) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'RTokenStorage.reserveFactorMaxMantissa' (/sb/RToken_18.sol#455) is not in UPPER_CASE_WITH_UNDERSCORES
+Function 'RTokenInterface._setPendingAdmin' (/sb/RToken_18.sol#654) is not in mixedCase
+Function 'RTokenInterface._acceptAdmin' (/sb/RToken_18.sol#655) is not in mixedCase
+Function 'RTokenInterface._setCointroller' (/sb/RToken_18.sol#656) is not in mixedCase
+Function 'RTokenInterface._setReserveFactor' (/sb/RToken_18.sol#657) is not in mixedCase
+Function 'RTokenInterface._reduceReserves' (/sb/RToken_18.sol#658) is not in mixedCase
+Function 'RTokenInterface._setInterestRateModel' (/sb/RToken_18.sol#659) is not in mixedCase
+Constant 'RTokenInterface.isRToken' (/sb/RToken_18.sol#542) is not in UPPER_CASE_WITH_UNDERSCORES
+Function 'RBep20Interface._addReserves' (/sb/RToken_18.sol#685) is not in mixedCase
+Function 'RDelegatorInterface._setImplementation' (/sb/RToken_18.sol#707) is not in mixedCase
+Function 'RDelegateInterface._becomeImplementation' (/sb/RToken_18.sol#716) is not in mixedCase
+Function 'RDelegateInterface._resignImplementation' (/sb/RToken_18.sol#721) is not in mixedCase
+Constant 'InterestRateModel.isInterestRateModel' (/sb/RToken_18.sol#1180) is not in UPPER_CASE_WITH_UNDERSCORES
+Function 'RToken._setPendingAdmin' (/sb/RToken_18.sol#2303-2319) is not in mixedCase
+Function 'RToken._acceptAdmin' (/sb/RToken_18.sol#2326-2348) is not in mixedCase
+Function 'RToken._setCointroller' (/sb/RToken_18.sol#2353-2372) is not in mixedCase
+Function 'RToken._setReserveFactor' (/sb/RToken_18.sol#2377-2387) is not in mixedCase
+Function 'RToken._reduceReserves' (/sb/RToken_18.sol#2484-2494) is not in mixedCase
+Function 'RToken._setInterestRateModel' (/sb/RToken_18.sol#2549-2559) is not in mixedCase
+Function 'RToken._setReserveFactorFresh' (/sb/RToken_18.sol#2392-2416) is not in mixedCase
+Function 'RToken._addReservesInternal' (/sb/RToken_18.sol#2421-2433) is not in mixedCase
+Function 'RToken._addReservesFresh' (/sb/RToken_18.sol#2439-2479) is not in mixedCase
+Function 'RToken._reduceReservesFresh' (/sb/RToken_18.sol#2500-2543) is not in mixedCase
+Function 'RToken._setInterestRateModelFresh' (/sb/RToken_18.sol#2565-2595) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/RToken_18.sol analyzed (18 contracts), 69 result(s) found

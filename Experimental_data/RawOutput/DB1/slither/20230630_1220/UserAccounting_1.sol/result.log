@@ -1,0 +1,24 @@
+ERROR:root:Error in /sb/UserAccounting_1.sol
+ERROR:root:Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/__main__.py", line 564, in main_impl
+    (results, number_contracts) = process(filename, args, detector_classes, printer_classes)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/__main__.py", line 53, in process
+    triage_mode=args.triage_mode)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/slither.py", line 58, in __init__
+    self._analyze_contracts()
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/slitherSolc.py", line 249, in _analyze_contracts
+    self._analyze_second_part(contracts_to_be_analyzed, libraries)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/slitherSolc.py", line 298, in _analyze_second_part
+    self._analyze_struct_events(lib)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/slitherSolc.py", line 355, in _analyze_struct_events
+    contract.analyze_structs()
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/declarations/contract.py", line 411, in analyze_structs
+    self._analyze_struct(struct)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/declarations/contract.py", line 407, in _analyze_struct
+    struct.analyze()
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/declarations/structure.py", line 24, in analyze
+    elem = StructureVariableSolc(elem_to_parse)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/variables/variable_declaration.py", line 52, in __init__
+    self._init_from_declaration(var, var['value'])
+KeyError: 'value'
+

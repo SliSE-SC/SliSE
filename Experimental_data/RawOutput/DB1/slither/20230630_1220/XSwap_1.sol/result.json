@@ -1,0 +1,589 @@
+{
+    "errors": [
+        "EXIT_CODE_64"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "NonStandardIERC20Token",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "approve",
+            "impact": "Medium",
+            "line": 103,
+            "line_end": 109,
+            "message": "NonStandardIERC20Token (XSwap_1.sol#103-109) has incorrect ERC20 function interface(s):\n\t-transfer (XSwap_1.sol#106)\n\t-transferFrom (XSwap_1.sol#107)\n\t-approve (XSwap_1.sol#108)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "trade",
+            "impact": "Medium",
+            "line": 176,
+            "line_end": 205,
+            "message": "XSwap.trade (XSwap_1.sol#176-205) does not use the value returned by external calls:\n\t-ILendFMe(lendFMe).supply(chai,IERC20Token(chai).balanceOf(address(this))) (XSwap_1.sol#186)\n\t-ILendFMe(lendFMe).supply(_input,_inputAmount) (XSwap_1.sol#189)\n\t-ILendFMe(lendFMe).withdraw(chai,_amountToUser) (XSwap_1.sol#197)\n\t-ILendFMe(lendFMe).withdraw(_output,denormalizedToken(_output,_amountToUser)) (XSwap_1.sol#201)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "enableLending",
+            "impact": "Medium",
+            "line": 217,
+            "line_end": 239,
+            "message": "XSwap.enableLending (XSwap_1.sol#217-239) does not use the value returned by external calls:\n\t-IERC20Token(_token).approve(chai,uint256(- 1)) (XSwap_1.sol#222)\n\t-IERC20Token(chai).approve(lendFMe,uint256(- 1)) (XSwap_1.sol#223)\n\t-ILendFMe(lendFMe).supply(chai,IERC20Token(chai).balanceOf(address(this))) (XSwap_1.sol#233)\n\t-ILendFMe(lendFMe).supply(_token,_balance) (XSwap_1.sol#236)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "disableLending",
+            "impact": "Medium",
+            "line": 241,
+            "line_end": 253,
+            "message": "XSwap.disableLending (XSwap_1.sol#241-253) does not use the value returned by external calls:\n\t-ILendFMe(lendFMe).withdraw(chai,uint256(- 1)) (XSwap_1.sol#246)\n\t-ILendFMe(lendFMe).withdraw(_token,uint256(- 1)) (XSwap_1.sol#250)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "transferOut",
+            "impact": "Medium",
+            "line": 290,
+            "line_end": 305,
+            "message": "XSwap.transferOut (XSwap_1.sol#290-305) does not use the value returned by external calls:\n\t-ILendFMe(lendFMe).withdraw(chai,_amount) (XSwap_1.sol#293)\n\t-ILendFMe(lendFMe).withdraw(_token,_amount) (XSwap_1.sol#297)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "transferOutALL",
+            "impact": "Medium",
+            "line": 307,
+            "line_end": 322,
+            "message": "XSwap.transferOutALL (XSwap_1.sol#307-322) does not use the value returned by external calls:\n\t-ILendFMe(lendFMe).withdraw(chai,uint256(- 1)) (XSwap_1.sol#310)\n\t-ILendFMe(lendFMe).withdraw(_token,uint256(- 1)) (XSwap_1.sol#314)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "transferIn",
+            "impact": "Medium",
+            "line": 324,
+            "line_end": 335,
+            "message": "XSwap.transferIn (XSwap_1.sol#324-335) does not use the value returned by external calls:\n\t-ILendFMe(lendFMe).supply(chai,IERC20Token(chai).balanceOf(address(this))) (XSwap_1.sol#329)\n\t-ILendFMe(lendFMe).supply(_token,NonStandardIERC20Token(_token).balanceOf(address(this))) (XSwap_1.sol#332)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "createPair",
+            "impact": "Low",
+            "line": 256,
+            "line_end": 260,
+            "message": "Reentrancy in XSwap.createPair (XSwap_1.sol#256-260):\n\tExternal calls:\n\t- setPrices(_input,_output,_priceInOut,_priceOutIn) (XSwap_1.sol#257)\n\t- setFee(_input,_output,_fee) (XSwap_1.sol#258)\n\tState variables written after the call(s):\n\t- fee (XSwap_1.sol#258)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "setPrices",
+            "impact": "Low",
+            "line": 262,
+            "line_end": 266,
+            "message": "Reentrancy in XSwap.setPrices (XSwap_1.sol#262-266):\n\tExternal calls:\n\t- setPrices(_input,_output,_priceInOut) (XSwap_1.sol#263)\n\t- setPrices(_output,_input,_priceOutIn) (XSwap_1.sol#264)\n\tState variables written after the call(s):\n\t- prices (XSwap_1.sol#264)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 149,
+            "message": "XSwap.chai should be constant (XSwap_1.sol#149)\nXSwap.dai should be constant (XSwap_1.sol#150)\n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuthority",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "canCall",
+            "impact": "Informational",
+            "line": 18,
+            "line_end": 20,
+            "message": "DSAuthority.canCall (XSwap_1.sol#18-20) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuth",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "disableOwnership",
+            "impact": "Informational",
+            "line": 40,
+            "line_end": 43,
+            "message": "DSAuth.disableOwnership (XSwap_1.sol#40-43) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuth",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "transferOwnership",
+            "impact": "Informational",
+            "line": 45,
+            "line_end": 48,
+            "message": "DSAuth.transferOwnership (XSwap_1.sol#45-48) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuth",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "acceptOwnership",
+            "impact": "Informational",
+            "line": 50,
+            "line_end": 55,
+            "message": "DSAuth.acceptOwnership (XSwap_1.sol#50-55) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuth",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "setAuthority",
+            "impact": "Informational",
+            "line": 58,
+            "line_end": 64,
+            "message": "DSAuth.setAuthority (XSwap_1.sol#58-64) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "active",
+            "impact": "Informational",
+            "line": 163,
+            "line_end": 169,
+            "message": "XSwap.active (XSwap_1.sol#163-169) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "trade",
+            "impact": "Informational",
+            "line": 172,
+            "line_end": 174,
+            "message": "XSwap.trade (XSwap_1.sol#172-174) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "getTokenLiquidation",
+            "impact": "Informational",
+            "line": 207,
+            "line_end": 210,
+            "message": "XSwap.getTokenLiquidation (XSwap_1.sol#207-210) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "setLendFMe",
+            "impact": "Informational",
+            "line": 212,
+            "line_end": 215,
+            "message": "XSwap.setLendFMe (XSwap_1.sol#212-215) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "enableLending",
+            "impact": "Informational",
+            "line": 217,
+            "line_end": 239,
+            "message": "XSwap.enableLending (XSwap_1.sol#217-239) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "disableLending",
+            "impact": "Informational",
+            "line": 241,
+            "line_end": 253,
+            "message": "XSwap.disableLending (XSwap_1.sol#241-253) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "XSwap",
+            "filename": "all_contract/XSwap_1.sol",
+            "function": "setTokenDecimals",
+            "impact": "Informational",
+            "line": 279,
+            "line_end": 283,
+            "message": "XSwap.setTokenDecimals (XSwap_1.sol#279-283) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 15,
+            "message": "Detected issues with version pragma in XSwap_1.sol:\n\t- pragma solidity^0.5.4 (XSwap_1.sol#15): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 163,
+            "message": "Parameter '_lendFMe' of XSwap.active (XSwap_1.sol#163) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 172,
+            "message": "Parameter '_input' of XSwap.trade (XSwap_1.sol#172) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 172,
+            "message": "Parameter '_output' of XSwap.trade (XSwap_1.sol#172) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 172,
+            "message": "Parameter '_inputAmount' of XSwap.trade (XSwap_1.sol#172) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 176,
+            "message": "Parameter '_input' of XSwap.trade (XSwap_1.sol#176) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 176,
+            "message": "Parameter '_output' of XSwap.trade (XSwap_1.sol#176) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 176,
+            "message": "Parameter '_inputAmount' of XSwap.trade (XSwap_1.sol#176) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 176,
+            "message": "Parameter '_receiver' of XSwap.trade (XSwap_1.sol#176) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 207,
+            "message": "Parameter '_token' of XSwap.getTokenLiquidation (XSwap_1.sol#207) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 212,
+            "message": "Parameter '_lendFMe' of XSwap.setLendFMe (XSwap_1.sol#212) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 217,
+            "message": "Parameter '_token' of XSwap.enableLending (XSwap_1.sol#217) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 241,
+            "message": "Parameter '_token' of XSwap.disableLending (XSwap_1.sol#241) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 256,
+            "message": "Parameter '_input' of XSwap.createPair (XSwap_1.sol#256) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 256,
+            "message": "Parameter '_output' of XSwap.createPair (XSwap_1.sol#256) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 256,
+            "message": "Parameter '_priceInOut' of XSwap.createPair (XSwap_1.sol#256) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 256,
+            "message": "Parameter '_priceOutIn' of XSwap.createPair (XSwap_1.sol#256) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 256,
+            "message": "Parameter '_fee' of XSwap.createPair (XSwap_1.sol#256) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 262,
+            "message": "Parameter '_input' of XSwap.setPrices (XSwap_1.sol#262) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 262,
+            "message": "Parameter '_output' of XSwap.setPrices (XSwap_1.sol#262) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 262,
+            "message": "Parameter '_priceInOut' of XSwap.setPrices (XSwap_1.sol#262) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 262,
+            "message": "Parameter '_priceOutIn' of XSwap.setPrices (XSwap_1.sol#262) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 268,
+            "message": "Parameter '_input' of XSwap.setPrices (XSwap_1.sol#268) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 268,
+            "message": "Parameter '_output' of XSwap.setPrices (XSwap_1.sol#268) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 268,
+            "message": "Parameter '_price' of XSwap.setPrices (XSwap_1.sol#268) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 273,
+            "message": "Parameter '_input' of XSwap.setFee (XSwap_1.sol#273) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 273,
+            "message": "Parameter '_output' of XSwap.setFee (XSwap_1.sol#273) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 273,
+            "message": "Parameter '_fee' of XSwap.setFee (XSwap_1.sol#273) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 279,
+            "message": "Parameter '_token' of XSwap.setTokenDecimals (XSwap_1.sol#279) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 279,
+            "message": "Parameter '_decimals' of XSwap.setTokenDecimals (XSwap_1.sol#279) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 285,
+            "message": "Parameter '_open' of XSwap.emergencyStop (XSwap_1.sol#285) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 290,
+            "message": "Parameter '_token' of XSwap.transferOut (XSwap_1.sol#290) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 290,
+            "message": "Parameter '_receiver' of XSwap.transferOut (XSwap_1.sol#290) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 290,
+            "message": "Parameter '_amount' of XSwap.transferOut (XSwap_1.sol#290) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 307,
+            "message": "Parameter '_token' of XSwap.transferOutALL (XSwap_1.sol#307) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 307,
+            "message": "Parameter '_receiver' of XSwap.transferOutALL (XSwap_1.sol#307) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 324,
+            "message": "Parameter '_token' of XSwap.transferIn (XSwap_1.sol#324) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 324,
+            "message": "Parameter '_amount' of XSwap.transferIn (XSwap_1.sol#324) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 337,
+            "message": "Parameter '_token' of XSwap.normalizeToken (XSwap_1.sol#337) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 337,
+            "message": "Parameter '_amount' of XSwap.normalizeToken (XSwap_1.sol#337) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 342,
+            "message": "Parameter '_token' of XSwap.denormalizedToken (XSwap_1.sol#342) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/XSwap_1.sol",
+            "impact": "Informational",
+            "line": 342,
+            "message": "Parameter '_amount' of XSwap.denormalizedToken (XSwap_1.sol#342) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

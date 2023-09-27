@@ -1,0 +1,77 @@
+{
+    "errors": [
+        "EXIT_CODE_7"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/JoinSplit_1.sol",
+            "impact": "Medium",
+            "line": 49,
+            "line_end": 241,
+            "message": "JoinSplitABIEncoder.encodeAndExit (JoinSplit_1.sol#49-241) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "JoinSplitABIEncoder",
+            "filename": "all_contract/JoinSplit_1.sol",
+            "function": "encodeAndExit",
+            "impact": "Informational",
+            "line": 49,
+            "line_end": 241,
+            "message": "JoinSplitABIEncoder.encodeAndExit uses assembly (JoinSplit_1.sol#49-241)\n\t- JoinSplit_1.sol#50-240\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "JoinSplit",
+            "filename": "all_contract/JoinSplit_1.sol",
+            "function": "fallback",
+            "impact": "Informational",
+            "line": 312,
+            "line_end": 666,
+            "message": "JoinSplit.fallback uses assembly (JoinSplit_1.sol#312-666)\n\t- JoinSplit_1.sol#313-662\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/JoinSplit_1.sol",
+            "impact": "Informational",
+            "line": 2,
+            "message": "Detected issues with version pragma in JoinSplit_1.sol:\n\t- pragma solidity>=0.5.0<0.6.0 (JoinSplit_1.sol#2): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/JoinSplit_1.sol",
+            "impact": "Informational",
+            "line": 268,
+            "message": "Parameter '' of JoinSplitInterface.validateJoinSplit (JoinSplit_1.sol#268) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/JoinSplit_1.sol",
+            "impact": "Informational",
+            "line": 269,
+            "message": "Parameter '_scope_0' of JoinSplitInterface.validateJoinSplit (JoinSplit_1.sol#269) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/JoinSplit_1.sol",
+            "impact": "Informational",
+            "line": 270,
+            "message": "Parameter '_scope_1' of JoinSplitInterface.validateJoinSplit (JoinSplit_1.sol#270) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

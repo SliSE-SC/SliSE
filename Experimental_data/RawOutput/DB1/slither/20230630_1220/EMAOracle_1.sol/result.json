@@ -1,0 +1,139 @@
+{
+    "errors": [
+        "EXIT_CODE_14"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "EMAOracle",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "function": "updateAndQuery",
+            "impact": "Medium",
+            "line": 310,
+            "line_end": 328,
+            "message": "Reentrancy in EMAOracle.updateAndQuery (EMAOracle_1.sol#310-328):\n\tExternal calls:\n\t- newIncomeIndex = moneyMarket.incomeIndex() (EMAOracle_1.sol#320)\n\tState variables written after the call(s):\n\t- emaStored (EMAOracle_1.sol#325)\n\t- lastIncomeIndex (EMAOracle_1.sol#326)\n\t- lastUpdateTimestamp (EMAOracle_1.sol#327)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "High",
+            "contract": "EMAOracle",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "function": "updateAndQuery",
+            "impact": "Informational",
+            "line": 310,
+            "line_end": 328,
+            "message": "EMAOracle.updateAndQuery (EMAOracle_1.sol#310-328) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IInterestOracle",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "function": "updateAndQuery",
+            "impact": "Informational",
+            "line": 259,
+            "message": "IInterestOracle.updateAndQuery (EMAOracle_1.sol#259) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IInterestOracle",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "function": "query",
+            "impact": "Informational",
+            "line": 261,
+            "message": "IInterestOracle.query (EMAOracle_1.sol#261) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "EMAOracle",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "function": "query",
+            "impact": "Informational",
+            "line": 330,
+            "line_end": 332,
+            "message": "EMAOracle.query (EMAOracle_1.sol#330-332) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in EMAOracle_1.sol:\n\t- pragma solidity0.5.17 (EMAOracle_1.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "impact": "Informational",
+            "line": 292,
+            "message": "Parameter '_emaInitial' of EMAOracle. (EMAOracle_1.sol#292) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "impact": "Informational",
+            "line": 293,
+            "message": "Parameter '_updateInterval' of EMAOracle. (EMAOracle_1.sol#293) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "impact": "Informational",
+            "line": 294,
+            "message": "Parameter '_smoothingFactor' of EMAOracle. (EMAOracle_1.sol#294) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "impact": "Informational",
+            "line": 295,
+            "message": "Parameter '_averageWindowInIntervals' of EMAOracle. (EMAOracle_1.sol#295) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "impact": "Informational",
+            "line": 296,
+            "message": "Parameter '_moneyMarket' of EMAOracle. (EMAOracle_1.sol#296) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "impact": "Informational",
+            "line": 275,
+            "message": "Variable 'EMAOracle.UPDATE_INTERVAL' (EMAOracle_1.sol#275) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "impact": "Informational",
+            "line": 276,
+            "message": "Variable 'EMAOracle.UPDATE_MULTIPLIER' (EMAOracle_1.sol#276) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/EMAOracle_1.sol",
+            "impact": "Informational",
+            "line": 277,
+            "message": "Variable 'EMAOracle.ONE_MINUS_UPDATE_MULTIPLIER' (EMAOracle_1.sol#277) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

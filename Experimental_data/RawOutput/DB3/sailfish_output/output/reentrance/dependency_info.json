@@ -1,0 +1,22 @@
+{
+    "reentrance.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "withdraw",
+                "withdraw"
+            ],
+            "from_function": "withdraw",
+            "to_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 12\nFunction: withdraw\nNode: \nIF balances[msg.sender] >= _amount\nIRS: \nCONDITION TMP_0\"",
+                        "\"BlockID: 9\nFunction: withdraw\nNode: \nEXPRESSION balances[msg.sender] -= _amount\nIRS: \nREF_5 = REF_5 - _amount\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,382 @@
+{
+    "errors": [
+        "EXIT_CODE_38"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "GnosisSafe",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "handlePayment",
+            "impact": "High",
+            "line": 694,
+            "line_end": 712,
+            "message": "GnosisSafe.handlePayment (GnosisSafe_1.sol#694-712) sends eth to arbitrary user\n\tDangerous calls:\n\t- require(bool,string)(receiver.send(amount),Could not pay gas costs with ether) (GnosisSafe_1.sol#708)\n",
+            "name": "arbitrary-send"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Medium",
+            "line": 458,
+            "line_end": 478,
+            "message": "SignatureDecoder.signatureSplit (GnosisSafe_1.sol#458-478) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GnosisSafe",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "execTransaction",
+            "impact": "Medium",
+            "line": 656,
+            "line_end": 692,
+            "message": "Reentrancy in GnosisSafe.execTransaction (GnosisSafe_1.sol#656-692):\n\tExternal calls:\n\t- require(bool,string)(checkSignatures(keccak256(bytes)(txHashData),txHashData,signatures,true),Invalid signatures provided) (GnosisSafe_1.sol#677)\n\tState variables written after the call(s):\n\t- nonce (GnosisSafe_1.sol#680)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GnosisSafe",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "checkSignatures",
+            "impact": "Low",
+            "line": 750,
+            "line_end": 752,
+            "message": "GnosisSafe.checkSignatures has external calls inside a loop:\n\t- ! ISignatureValidator(currentOwner).isValidSignature(data,contractSignature) (GnosisSafe_1.sol#750-752)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "High",
+            "contract": "Executor",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "executeCall",
+            "impact": "Informational",
+            "line": 53,
+            "line_end": 61,
+            "message": "Executor.executeCall uses assembly (GnosisSafe_1.sol#53-61)\n\t- GnosisSafe_1.sol#58-60\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "Executor",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "executeDelegateCall",
+            "impact": "Informational",
+            "line": 63,
+            "line_end": 71,
+            "message": "Executor.executeDelegateCall uses assembly (GnosisSafe_1.sol#63-71)\n\t- GnosisSafe_1.sol#68-70\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "Executor",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "executeCreate",
+            "impact": "Informational",
+            "line": 73,
+            "line_end": 81,
+            "message": "Executor.executeCreate uses assembly (GnosisSafe_1.sol#73-81)\n\t- GnosisSafe_1.sol#78-80\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "SignatureDecoder",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "signatureSplit",
+            "impact": "Informational",
+            "line": 458,
+            "line_end": 478,
+            "message": "SignatureDecoder.signatureSplit uses assembly (GnosisSafe_1.sol#458-478)\n\t- GnosisSafe_1.sol#467-477\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "SecuredTokenTransfer",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "transferToken",
+            "impact": "Informational",
+            "line": 491,
+            "line_end": 510,
+            "message": "SecuredTokenTransfer.transferToken uses assembly (GnosisSafe_1.sol#491-510)\n\t- GnosisSafe_1.sol#501-509\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "GnosisSafe",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "checkSignatures",
+            "impact": "Informational",
+            "line": 722,
+            "line_end": 775,
+            "message": "GnosisSafe.checkSignatures uses assembly (GnosisSafe_1.sol#722-775)\n\t- GnosisSafe_1.sol#746-749\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "ModuleManager",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "enableModule",
+            "impact": "Informational",
+            "line": 122,
+            "line_end": 133,
+            "message": "ModuleManager.enableModule (GnosisSafe_1.sol#122-133) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ModuleManager",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "disableModule",
+            "impact": "Informational",
+            "line": 139,
+            "line_end": 149,
+            "message": "ModuleManager.disableModule (GnosisSafe_1.sol#139-149) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ModuleManager",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "execTransactionFromModule",
+            "impact": "Informational",
+            "line": 156,
+            "line_end": 164,
+            "message": "ModuleManager.execTransactionFromModule (GnosisSafe_1.sol#156-164) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ModuleManager",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "getModules",
+            "impact": "Informational",
+            "line": 168,
+            "line_end": 191,
+            "message": "ModuleManager.getModules (GnosisSafe_1.sol#168-191) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "OwnerManager",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "addOwnerWithThreshold",
+            "impact": "Informational",
+            "line": 244,
+            "line_end": 260,
+            "message": "OwnerManager.addOwnerWithThreshold (GnosisSafe_1.sol#244-260) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "OwnerManager",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "removeOwner",
+            "impact": "Informational",
+            "line": 267,
+            "line_end": 285,
+            "message": "OwnerManager.removeOwner (GnosisSafe_1.sol#267-285) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "OwnerManager",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "swapOwner",
+            "impact": "Informational",
+            "line": 292,
+            "line_end": 308,
+            "message": "OwnerManager.swapOwner (GnosisSafe_1.sol#292-308) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "OwnerManager",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "getThreshold",
+            "impact": "Informational",
+            "line": 325,
+            "line_end": 331,
+            "message": "OwnerManager.getThreshold (GnosisSafe_1.sol#325-331) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "OwnerManager",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "isOwner",
+            "impact": "Informational",
+            "line": 333,
+            "line_end": 339,
+            "message": "OwnerManager.isOwner (GnosisSafe_1.sol#333-339) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "OwnerManager",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "getOwners",
+            "impact": "Informational",
+            "line": 343,
+            "line_end": 359,
+            "message": "OwnerManager.getOwners (GnosisSafe_1.sol#343-359) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "MasterCopy",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "changeMasterCopy",
+            "impact": "Informational",
+            "line": 394,
+            "line_end": 401,
+            "message": "MasterCopy.changeMasterCopy (GnosisSafe_1.sol#394-401) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "GnosisSafe",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "function": "getTransactionHash",
+            "impact": "Informational",
+            "line": 907,
+            "line_end": 924,
+            "message": "GnosisSafe.getTransactionHash (GnosisSafe_1.sol#907-924) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 2,
+            "message": "Detected issues with version pragma in GnosisSafe_1.sol:\n\t- pragma solidity^0.5.0 (GnosisSafe_1.sol#2): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 213,
+            "message": "Parameter '_owners' of OwnerManager.setupOwners (GnosisSafe_1.sol#213) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 213,
+            "message": "Parameter '_threshold' of OwnerManager.setupOwners (GnosisSafe_1.sol#213) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 244,
+            "message": "Parameter '_threshold' of OwnerManager.addOwnerWithThreshold (GnosisSafe_1.sol#244) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 267,
+            "message": "Parameter '_threshold' of OwnerManager.removeOwner (GnosisSafe_1.sol#267) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 313,
+            "message": "Parameter '_threshold' of OwnerManager.changeThreshold (GnosisSafe_1.sol#313) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 374,
+            "message": "Parameter '_owners' of BaseSafe.setupSafe (GnosisSafe_1.sol#374) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 374,
+            "message": "Parameter '_threshold' of BaseSafe.setupSafe (GnosisSafe_1.sol#374) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 394,
+            "message": "Parameter '_masterCopy' of MasterCopy.changeMasterCopy (GnosisSafe_1.sol#394) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 830,
+            "message": "Parameter '_data' of GnosisSafe.isValidSignature (GnosisSafe_1.sol#830) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 830,
+            "message": "Parameter '_signature' of GnosisSafe.isValidSignature (GnosisSafe_1.sol#830) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 635,
+            "message": "Parameter '_owners' of GnosisSafe.setup (GnosisSafe_1.sol#635) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 635,
+            "message": "Parameter '_threshold' of GnosisSafe.setup (GnosisSafe_1.sol#635) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 817,
+            "message": "Parameter '_data' of GnosisSafe.signMessage (GnosisSafe_1.sol#817) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 883,
+            "message": "Parameter '_nonce' of GnosisSafe.encodeTransactionData (GnosisSafe_1.sol#883) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GnosisSafe_1.sol",
+            "impact": "Informational",
+            "line": 917,
+            "message": "Parameter '_nonce' of GnosisSafe.getTransactionHash (GnosisSafe_1.sol#917) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

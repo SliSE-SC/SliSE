@@ -1,0 +1,34 @@
+INFO:Slither:Compilation warnings/errors on /sb/MultiCall_1.sol:
+/sb/MultiCall_1.sol:8:1: Warning: Experimental features are turned on. Do not use experimental features on live deployments.
+pragma experimental ABIEncoderV2;
+^-------------------------------^
+
+INFO:Detectors:[92m
+Multicall.aggregate has external calls inside a loop:
+	- (success,ret) = calls[i].target.call(calls[i].callData) (/sb/MultiCall_1.sol#25)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation/_edit#calls-inside-a-loop[0m
+INFO:Detectors:[92m
+Different versions of Solidity is used in /sb/MultiCall_1.sol:
+	- Version used: ['>=0.5.0', 'ABIEncoderV2']
+	- /sb/MultiCall_1.sol#1 declares pragma solidity>=0.5.0
+	- /sb/MultiCall_1.sol#8 declares pragma experimentalABIEncoderV2
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#different-pragma-directives-are-used[0m
+INFO:Detectors:[92m
+Multicall.aggregate (/sb/MultiCall_1.sol#21-29) should be declared external
+Multicall.getEthBalance (/sb/MultiCall_1.sol#32-34) should be declared external
+Multicall.getBlockHash (/sb/MultiCall_1.sol#36-38) should be declared external
+Multicall.getLastBlockHash (/sb/MultiCall_1.sol#40-42) should be declared external
+Multicall.getCurrentBlockTimestamp (/sb/MultiCall_1.sol#44-46) should be declared external
+Multicall.getCurrentBlockDifficulty (/sb/MultiCall_1.sol#48-50) should be declared external
+Multicall.getCurrentBlockGasLimit (/sb/MultiCall_1.sol#52-54) should be declared external
+Multicall.getCurrentBlockCoinbase (/sb/MultiCall_1.sol#56-58) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/MultiCall_1.sol:
+	- pragma solidity>=0.5.0 (/sb/MultiCall_1.sol#1): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Low level call in Multicall.aggregate (/sb/MultiCall_1.sol#21-29):
+	-(success,ret) = calls[i].target.call(calls[i].callData) /sb/MultiCall_1.sol#25
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#low-level-calls[0m
+INFO:Slither:/sb/MultiCall_1.sol analyzed (1 contracts), 12 result(s) found

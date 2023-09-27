@@ -1,0 +1,299 @@
+{
+    "errors": [
+        "EXIT_CODE_32"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Medium",
+            "line": 108,
+            "line_end": 129,
+            "message": "ECDSA.recover (TokenDistributor_1.sol#108-129) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "TokenDistributor",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "function": "claimTokens",
+            "impact": "Medium",
+            "line": 299,
+            "line_end": 336,
+            "message": "Reentrancy in TokenDistributor.claimTokens (TokenDistributor_1.sol#299-336):\n\tExternal calls:\n\t- _delegateTokens(user_address,delegate_address) (TokenDistributor_1.sol#330-331)\n\tState variables written after the call(s):\n\t- claimedBitMap (TokenDistributor_1.sol#331-332)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "TokenDistributor",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "function": "transferUnclaimed",
+            "impact": "Low",
+            "line": 353,
+            "line_end": 361,
+            "message": "TokenDistributor.transferUnclaimed (TokenDistributor_1.sol#353-361) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(block.timestamp >= deployTime + CONTRACT_ACTIVE,TokenDistributor: Contract is still active.) (TokenDistributor_1.sol#354-355)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "High",
+            "contract": "ECDSA",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "function": "recover",
+            "impact": "Informational",
+            "line": 108,
+            "line_end": 129,
+            "message": "ECDSA.recover uses assembly (TokenDistributor_1.sol#108-129)\n\t- TokenDistributor_1.sol#122-126\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "TokenDistributor",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "function": "transferUnclaimed",
+            "impact": "Informational",
+            "line": 353,
+            "line_end": 361,
+            "message": "TokenDistributor.transferUnclaimed (TokenDistributor_1.sol#353-361) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in TokenDistributor_1.sol:\n\t- pragma solidity0.6.12 (TokenDistributor_1.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 212,
+            "message": "Parameter '' of GTCErc20.delegateOnDist (TokenDistributor_1.sol#212) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 212,
+            "message": "Parameter '_scope_0' of GTCErc20.delegateOnDist (TokenDistributor_1.sol#212) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 271,
+            "message": "Parameter '_token' of TokenDistributor. (TokenDistributor_1.sol#271) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 271,
+            "message": "Parameter '_signer' of TokenDistributor. (TokenDistributor_1.sol#271) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 271,
+            "message": "Parameter '_timeLock' of TokenDistributor. (TokenDistributor_1.sol#271) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 271,
+            "message": "Parameter '_merkleRoot' of TokenDistributor. (TokenDistributor_1.sol#271) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 300,
+            "line_end": 301,
+            "message": "Parameter 'user_id' of TokenDistributor.claimTokens (TokenDistributor_1.sol#300-301) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 301,
+            "line_end": 302,
+            "message": "Parameter 'user_address' of TokenDistributor.claimTokens (TokenDistributor_1.sol#301-302) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 302,
+            "line_end": 303,
+            "message": "Parameter 'user_amount' of TokenDistributor.claimTokens (TokenDistributor_1.sol#302-303) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 303,
+            "line_end": 304,
+            "message": "Parameter 'delegate_address' of TokenDistributor.claimTokens (TokenDistributor_1.sol#303-304) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 304,
+            "line_end": 305,
+            "message": "Parameter 'eth_signed_message_hash_hex' of TokenDistributor.claimTokens (TokenDistributor_1.sol#304-305) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 305,
+            "line_end": 306,
+            "message": "Parameter 'eth_signed_signature_hex' of TokenDistributor.claimTokens (TokenDistributor_1.sol#305-306) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 365,
+            "message": "Parameter 'eth_signed_message_hash_hex' of TokenDistributor.isSigned (TokenDistributor_1.sol#365) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 365,
+            "message": "Parameter 'eth_signed_signature_hex' of TokenDistributor.isSigned (TokenDistributor_1.sol#365) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 389,
+            "line_end": 390,
+            "message": "Parameter '_user_id' of TokenDistributor.hashMatch (TokenDistributor_1.sol#389-390) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 390,
+            "line_end": 391,
+            "message": "Parameter '_user_address' of TokenDistributor.hashMatch (TokenDistributor_1.sol#390-391) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 391,
+            "line_end": 392,
+            "message": "Parameter '_user_amount' of TokenDistributor.hashMatch (TokenDistributor_1.sol#391-392) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 392,
+            "line_end": 393,
+            "message": "Parameter '_delegate_address' of TokenDistributor.hashMatch (TokenDistributor_1.sol#392-393) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 393,
+            "line_end": 394,
+            "message": "Parameter '_leaf' of TokenDistributor.hashMatch (TokenDistributor_1.sol#393-394) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 394,
+            "line_end": 395,
+            "message": "Parameter 'eth_signed_message_hash_hex' of TokenDistributor.hashMatch (TokenDistributor_1.sol#394-395) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 442,
+            "line_end": 448,
+            "message": "Function 'TokenDistributor._setClaimed' (TokenDistributor_1.sol#442-448) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 452,
+            "line_end": 458,
+            "message": "Function 'TokenDistributor._hashLeaf' (TokenDistributor_1.sol#452-458) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 452,
+            "message": "Parameter 'user_id' of TokenDistributor._hashLeaf (TokenDistributor_1.sol#452) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 452,
+            "message": "Parameter 'user_amount' of TokenDistributor._hashLeaf (TokenDistributor_1.sol#452) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 462,
+            "line_end": 468,
+            "message": "Function 'TokenDistributor._delegateTokens' (TokenDistributor_1.sol#462-468) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/TokenDistributor_1.sol",
+            "impact": "Informational",
+            "line": 224,
+            "line_end": 226,
+            "message": "Variable 'TokenDistributor.DOMAIN_SEPARATOR' (TokenDistributor_1.sol#224-226) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

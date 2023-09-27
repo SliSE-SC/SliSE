@@ -1,0 +1,109 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/0xf29ebe930a539a60279ace72c707cba851a57707.bin
+[00:00:00:00] Fuzzing starts at 08:40:06
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found sload(<0x0, { }, { }>) @ 0xe
+Found sstore(<0x0, { }, { }>, <T, { }, { CALLER, var_0 }>) @ 0x43
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_0 }, Use = { var_0 }
+Constructor tainted: { var_0 }
+[DEBUG] Analyzing go(0f59f83a) @ 4e
+Found sload(<0x0, { }, { }>) @ 0xfa
+go(0f59f83a): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing owner(8da5cb5b) @ 58
+Found sload(<0x0, { }, { }>) @ 0x17c
+owner(8da5cb5b): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing fallback @ 0
+fallback: Def = {  }, Use = {  }
+(0 candidate sequences)
+[00:00:00:00] Start main fuzzing phase
+[00:00:00:01] Tx#1 found MishandledException at f0
+[00:00:00:01] Tx#1 found MishandledExceptionMythril at f0
+[00:00:00:01] Tx#1 found MishandledExceptionManticore at f0
+[00:00:00:01] [*] Save bug seed id-00000-ME-ME_mant-ME_myth_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: go(0f59f83a), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00000_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: go(0f59f83a), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00001_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: owner(8da5cb5b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00002_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00003_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: go(0f59f83a), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] Tx#6 found MultipleSend at 15d
+[00:00:00:02] [*] Save bug seed id-00001-MS_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 2    ) Function: owner(8da5cb5b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: owner(8da5cb5b), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: owner(8da5cb5b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 000200000000000000000000000000000000000000EFD700000000E300000000
+(    TX 6    ) Function: go(0f59f83a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 2648403
+[00:01:00:00] Deployment failures: 0
+[00:01:00:00] Test Cases: 4
+[00:01:00:00] Covered Edges: 13
+[00:01:00:00] Covered Instructions: 181
+[00:01:00:00] Covered Def-Use Chains: 0
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 0
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 0
+[00:01:00:00]   Integer Bug: 0
+[00:01:00:00]   Mishandled Exception: 1
+[00:01:00:00]   Multiple Send: 1
+[00:01:00:00]   Reentrancy: 0
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

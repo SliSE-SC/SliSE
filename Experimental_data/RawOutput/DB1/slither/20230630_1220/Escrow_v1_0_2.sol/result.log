@@ -1,0 +1,103 @@
+INFO:Detectors:[91m
+Escrow_v1_0.transferFunds (/sb/Escrow_v1_0_2.sol#522-563) sends eth to arbitrary user
+	Dangerous calls:
+	- destinations[i].transfer(amounts[i]) (/sb/Escrow_v1_0_2.sol#541)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#functions-that-send-ether-to-arbitrary-destinations[0m
+INFO:Detectors:[93m
+Escrow_v1_0.checkTransactionType (/sb/Escrow_v1_0_2.sol#154-163) uses a dangerous strict equality:
+	- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)
+	- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)
+Escrow_v1_0.checkTransactionType (/sb/Escrow_v1_0_2.sol#154-163) uses a dangerous strict equality:
+	- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)
+	- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)
+Escrow_v1_0.execute (/sb/Escrow_v1_0_2.sol#393-427) uses a dangerous strict equality:
+	- require(bool,string)(transferFunds(scriptHash,destinations,amounts) == transactions[scriptHash].value,Total value to be released must be equal to the transaction escrow value)
+Escrow_v1_0.checkTransactionType (/sb/Escrow_v1_0_2.sol#154-163) uses a dangerous strict equality:
+	- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)
+	- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)
+Escrow_v1_0.execute (/sb/Escrow_v1_0_2.sol#393-427) uses a dangerous strict equality:
+	- require(bool,string)(transferFunds(scriptHash,destinations,amounts) == transactions[scriptHash].value,Total value to be released must be equal to the transaction escrow value)
+Escrow_v1_0.inFundedState (/sb/Escrow_v1_0_2.sol#142-147) uses a dangerous strict equality:
+	- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)
+	- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)
+Escrow_v1_0.checkTransactionType (/sb/Escrow_v1_0_2.sol#154-163) uses a dangerous strict equality:
+	- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)
+	- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)
+Escrow_v1_0.execute (/sb/Escrow_v1_0_2.sol#393-427) uses a dangerous strict equality:
+	- require(bool,string)(transferFunds(scriptHash,destinations,amounts) == transactions[scriptHash].value,Total value to be released must be equal to the transaction escrow value)
+Escrow_v1_0.inFundedState (/sb/Escrow_v1_0_2.sol#142-147) uses a dangerous strict equality:
+	- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)
+	- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)
+Escrow_v1_0.isTimeLockExpired (/sb/Escrow_v1_0_2.sol#622-634) uses a dangerous strict equality:
+	- timeoutHours == 0
+Escrow_v1_0.checkTransactionType (/sb/Escrow_v1_0_2.sol#154-163) uses a dangerous strict equality:
+	- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)
+	- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)
+Escrow_v1_0.execute (/sb/Escrow_v1_0_2.sol#393-427) uses a dangerous strict equality:
+	- require(bool,string)(transferFunds(scriptHash,destinations,amounts) == transactions[scriptHash].value,Total value to be released must be equal to the transaction escrow value)
+Escrow_v1_0.inFundedState (/sb/Escrow_v1_0_2.sol#142-147) uses a dangerous strict equality:
+	- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)
+	- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)
+Escrow_v1_0.isTimeLockExpired (/sb/Escrow_v1_0_2.sol#622-634) uses a dangerous strict equality:
+	- timeoutHours == 0
+Escrow_v1_0.onlyBuyer (/sb/Escrow_v1_0_2.sol#165-170) uses a dangerous strict equality:
+	- require(bool,string)(msg.sender == transactions[scriptHash].buyer,The initiator of the transaction is not buyer)
+	- require(bool,string)(msg.sender == transactions[scriptHash].buyer,The initiator of the transaction is not buyer)
+Escrow_v1_0.checkTransactionType (/sb/Escrow_v1_0_2.sol#154-163) uses a dangerous strict equality:
+	- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)
+	- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)
+Escrow_v1_0.execute (/sb/Escrow_v1_0_2.sol#393-427) uses a dangerous strict equality:
+	- require(bool,string)(transferFunds(scriptHash,destinations,amounts) == transactions[scriptHash].value,Total value to be released must be equal to the transaction escrow value)
+Escrow_v1_0.inFundedState (/sb/Escrow_v1_0_2.sol#142-147) uses a dangerous strict equality:
+	- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)
+	- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)
+Escrow_v1_0.isTimeLockExpired (/sb/Escrow_v1_0_2.sol#622-634) uses a dangerous strict equality:
+	- timeoutHours == 0
+Escrow_v1_0.onlyBuyer (/sb/Escrow_v1_0_2.sol#165-170) uses a dangerous strict equality:
+	- require(bool,string)(msg.sender == transactions[scriptHash].buyer,The initiator of the transaction is not buyer)
+	- require(bool,string)(msg.sender == transactions[scriptHash].buyer,The initiator of the transaction is not buyer)
+Escrow_v1_0.transactionDoesNotExists (/sb/Escrow_v1_0_2.sol#137-140) uses a dangerous strict equality:
+	- require(bool,string)(transactions[scriptHash].value == 0,Transaction exists)
+	- require(bool,string)(transactions[scriptHash].value == 0,Transaction exists)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#dangerous-strict-equalities[0m
+INFO:Detectors:[93m
+Reentrancy in Escrow_v1_0.addTokensToTransaction (/sb/Escrow_v1_0_2.sol#339-367):
+	External calls:
+	- require(bool,string)(token.transferFrom(transactions[scriptHash].buyer,this,value),Token transfer failed, maybe you did not approve escrow contract to spend on behalf of buyer) (/sb/Escrow_v1_0_2.sol#357-360)
+	State variables written after the call(s):
+	- transactions (/sb/Escrow_v1_0_2.sol#362-363)
+	- transactions (/sb/Escrow_v1_0_2.sol#364)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[92m
+Escrow_v1_0.transferFunds has external calls inside a loop:
+	- destinations[i].transfer(amounts[i]) (/sb/Escrow_v1_0_2.sol#541)
+Escrow_v1_0.transferFunds has external calls inside a loop:
+	- require(bool,string)(token.transfer(destinations[j],amounts[j]),Token transfer failed.) (/sb/Escrow_v1_0_2.sol#556)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation/_edit#calls-inside-a-loop[0m
+INFO:Detectors:[92m
+Escrow_v1_0.addTokensToTransaction (/sb/Escrow_v1_0_2.sol#339-367) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(token.transferFrom(transactions[scriptHash].buyer,this,value),Token transfer failed, maybe you did not approve escrow contract to spend on behalf of buyer) (/sb/Escrow_v1_0_2.sol#357-360)
+Escrow_v1_0.execute (/sb/Escrow_v1_0_2.sol#393-427) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(transferFunds(scriptHash,destinations,amounts) == transactions[scriptHash].value,Total value to be released must be equal to the transaction escrow value) (/sb/Escrow_v1_0_2.sol#421-424)
+Escrow_v1_0.verifyTransaction (/sb/Escrow_v1_0_2.sol#485-517) uses timestamp for comparisons
+	Dangerous comparisons:
+	- sigV.length < transactions[scriptHash].threshold && (! timeLockExpired || lastRecovered != transactions[scriptHash].seller) (/sb/Escrow_v1_0_2.sol#510-515)
+Escrow_v1_0.verifySignatures (/sb/Escrow_v1_0_2.sol#567-620) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(transactions[scriptHash].isOwner[recovered],Invalid signature) (/sb/Escrow_v1_0_2.sol#609-612)
+	- require(bool,string)(! transactions[scriptHash].voted[recovered],Same signature sent twice) (/sb/Escrow_v1_0_2.sol#613-616)
+Escrow_v1_0.isTimeLockExpired (/sb/Escrow_v1_0_2.sol#622-634) uses timestamp for comparisons
+	Dangerous comparisons:
+	- expired = (timeSince > uint256(timeoutHours).mul(3600)) (/sb/Escrow_v1_0_2.sol#631-633)
+	- timeoutHours == 0 (/sb/Escrow_v1_0_2.sol#631-633)
+Escrow_v1_0._addTransaction (/sb/Escrow_v1_0_2.sol#639-711) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(! transactions[scriptHash].isOwner[moderator],Either buyer or seller is passed as moderator) (/sb/Escrow_v1_0_2.sol#699-702)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#block-timestamp[0m
+INFO:Detectors:[92m
+Contract 'Escrow_v1_0' (/sb/Escrow_v1_0_2.sol#83-712) is not in CapWords
+Function 'Escrow_v1_0._addTransaction' (/sb/Escrow_v1_0_2.sol#639-711) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/Escrow_v1_0_2.sol analyzed (3 contracts), 18 result(s) found

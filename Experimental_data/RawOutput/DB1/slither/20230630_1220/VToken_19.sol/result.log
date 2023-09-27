@@ -1,0 +1,193 @@
+INFO:Detectors:[93m
+EIP20NonStandardInterface (/sb/VToken_19.sol#1230-1291) has incorrect ERC20 function interface(s):
+	-transfer (/sb/VToken_19.sol#1256)
+	-transferFrom (/sb/VToken_19.sol#1270)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-erc20-interface[0m
+INFO:Detectors:[93m
+Reentrancy in VToken._addReservesInternal (/sb/VToken_19.sol#2528-2540):
+	External calls:
+	- error = accrueInterest() (/sb/VToken_19.sol#2529-2530)
+	State variables written after the call(s):
+	- totalReserves (/sb/VToken_19.sol#2536-2537)
+Reentrancy in VToken._reduceReserves (/sb/VToken_19.sol#2591-2601):
+	External calls:
+	- error = accrueInterest() (/sb/VToken_19.sol#2592-2593)
+	State variables written after the call(s):
+	- totalReserves (/sb/VToken_19.sol#2598-2599)
+Reentrancy in VToken._setComptroller (/sb/VToken_19.sol#2460-2479):
+	External calls:
+	- require(bool,string)(newComptroller.isComptroller(),marker method returned false) (/sb/VToken_19.sol#2468-2469)
+	State variables written after the call(s):
+	- comptroller (/sb/VToken_19.sol#2471-2472)
+Reentrancy in VToken._setInterestRateModel (/sb/VToken_19.sol#2656-2666):
+	External calls:
+	- error = accrueInterest() (/sb/VToken_19.sol#2657-2658)
+	- _setInterestRateModelFresh(newInterestRateModel) (/sb/VToken_19.sol#2663-2664)
+	State variables written after the call(s):
+	- interestRateModel (/sb/VToken_19.sol#2663-2664)
+Reentrancy in VToken._setInterestRateModelFresh (/sb/VToken_19.sol#2672-2702):
+	External calls:
+	- require(bool,string)(newInterestRateModel.isInterestRateModel(),marker method returned false) (/sb/VToken_19.sol#2691-2693)
+	State variables written after the call(s):
+	- interestRateModel (/sb/VToken_19.sol#2694-2696)
+Reentrancy in VToken._setReserveFactor (/sb/VToken_19.sol#2484-2494):
+	External calls:
+	- error = accrueInterest() (/sb/VToken_19.sol#2485-2486)
+	State variables written after the call(s):
+	- reserveFactorMantissa (/sb/VToken_19.sol#2491-2492)
+Reentrancy in VToken.accrueInterest (/sb/VToken_19.sol#1666-1744):
+	External calls:
+	- borrowRateMantissa = interestRateModel.getBorrowRate(cashPrior,borrowsPrior,reservesPrior) (/sb/VToken_19.sol#1683)
+	State variables written after the call(s):
+	- accrualBlockNumber (/sb/VToken_19.sol#1735)
+	- borrowIndex (/sb/VToken_19.sol#1736)
+	- totalBorrows (/sb/VToken_19.sol#1737)
+	- totalReserves (/sb/VToken_19.sol#1738)
+Reentrancy in VToken.borrowInternal (/sb/VToken_19.sol#2022-2030):
+	External calls:
+	- error = accrueInterest() (/sb/VToken_19.sol#2023)
+	- borrowFresh(msg.sender,borrowAmount) (/sb/VToken_19.sol#2029)
+	State variables written after the call(s):
+	- totalBorrows (/sb/VToken_19.sol#2029)
+Reentrancy in VToken.initialize (/sb/VToken_19.sol#1308-1339):
+	External calls:
+	- err = _setComptroller(comptroller_) (/sb/VToken_19.sol#1322)
+	State variables written after the call(s):
+	- accrualBlockNumber (/sb/VToken_19.sol#1326)
+	- borrowIndex (/sb/VToken_19.sol#1327)
+Reentrancy in VToken.liquidateBorrowInternal (/sb/VToken_19.sol#2234-2249):
+	External calls:
+	- error = accrueInterest() (/sb/VToken_19.sol#2235)
+	- error = vTokenCollateral.accrueInterest() (/sb/VToken_19.sol#2241)
+	- liquidateBorrowFresh(msg.sender,borrower,repayAmount,vTokenCollateral) (/sb/VToken_19.sol#2248)
+	State variables written after the call(s):
+	- totalBorrows (/sb/VToken_19.sol#2248)
+Reentrancy in VToken.redeemFresh (/sb/VToken_19.sol#1895-2015):
+	External calls:
+	- allowed = comptroller.redeemAllowed(address(this),redeemer,vars.redeemTokens) (/sb/VToken_19.sol#1935)
+	- IComptroller(address(comptroller)).treasuryPercent() != 0 (/sb/VToken_19.sol#1978-1999)
+	- (vars.mathErr,feeAmount) = mulUInt(vars.redeemAmount,IComptroller(address(comptroller)).treasuryPercent()) (/sb/VToken_19.sol#1979)
+	- doTransferOut(address(uint160(IComptroller(address(comptroller)).treasuryAddress())),feeAmount) (/sb/VToken_19.sol#1994)
+	State variables written after the call(s):
+	- accountTokens (/sb/VToken_19.sol#2005)
+	- totalSupply (/sb/VToken_19.sol#2004)
+Reentrancy in VToken.repayBorrowBehalfInternal (/sb/VToken_19.sol#2130-2138):
+	External calls:
+	- error = accrueInterest() (/sb/VToken_19.sol#2131)
+	- repayBorrowFresh(msg.sender,borrower,repayAmount) (/sb/VToken_19.sol#2137)
+	State variables written after the call(s):
+	- totalBorrows (/sb/VToken_19.sol#2137)
+Reentrancy in VToken.repayBorrowInternal (/sb/VToken_19.sol#2114-2122):
+	External calls:
+	- error = accrueInterest() (/sb/VToken_19.sol#2115)
+	- repayBorrowFresh(msg.sender,msg.sender,repayAmount) (/sb/VToken_19.sol#2121)
+	State variables written after the call(s):
+	- totalBorrows (/sb/VToken_19.sol#2121)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[93m
+actualAddAmount in VToken._addReservesFresh (/sb/VToken_19.sol#2549-2551) is a local variable never initialiazed
+vars in VToken.mintFresh (/sb/VToken_19.sol#1791) is a local variable never initialiazed
+vars in VToken.redeemFresh (/sb/VToken_19.sol#1898) is a local variable never initialiazed
+vars in VToken.repayBorrowFresh (/sb/VToken_19.sol#2170) is a local variable never initialiazed
+vars in VToken.borrowFresh (/sb/VToken_19.sol#2061) is a local variable never initialiazed
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#uninitialized-local-variables[0m
+INFO:Detectors:[92m
+Exponential.divScalarByExpTruncate.fraction (local variable @ /sb/VToken_19.sol#1104) shadows:
+	- ExponentialNoError.fraction (function @ /sb/VToken_19.sol#982-984)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#local-variable-shadowing[0m
+INFO:Detectors:[92m
+Reentrancy in VToken.borrowFresh (/sb/VToken_19.sol#2044-2107):
+	External calls:
+	- allowed = comptroller.borrowAllowed(address(this),borrower,borrowAmount) (/sb/VToken_19.sol#2046)
+	State variables written after the call(s):
+	- accountBorrows (/sb/VToken_19.sol#2096)
+	- accountBorrows (/sb/VToken_19.sol#2097)
+	- totalBorrows (/sb/VToken_19.sol#2098)
+Reentrancy in VToken.initialize (/sb/VToken_19.sol#1308-1339):
+	External calls:
+	- err = _setComptroller(comptroller_) (/sb/VToken_19.sol#1322)
+	- err = _setInterestRateModelFresh(interestRateModel_) (/sb/VToken_19.sol#1330)
+	State variables written after the call(s):
+	- _notEntered (/sb/VToken_19.sol#1338)
+	- decimals (/sb/VToken_19.sol#1335)
+	- name (/sb/VToken_19.sol#1333)
+	- symbol (/sb/VToken_19.sol#1334)
+Reentrancy in VToken.mintFresh (/sb/VToken_19.sol#1779-1843):
+	External calls:
+	- allowed = comptroller.mintAllowed(address(this),minter,mintAmount) (/sb/VToken_19.sol#1781)
+	State variables written after the call(s):
+	- accountTokens (/sb/VToken_19.sol#1833)
+	- totalSupply (/sb/VToken_19.sol#1832)
+Reentrancy in VToken.repayBorrowFresh (/sb/VToken_19.sol#2158-2224):
+	External calls:
+	- allowed = comptroller.repayBorrowAllowed(address(this),payer,borrower,repayAmount) (/sb/VToken_19.sol#2160)
+	State variables written after the call(s):
+	- accountBorrows (/sb/VToken_19.sol#2213)
+	- accountBorrows (/sb/VToken_19.sol#2214)
+	- totalBorrows (/sb/VToken_19.sol#2215)
+Reentrancy in VToken.seizeInternal (/sb/VToken_19.sol#2353-2399):
+	External calls:
+	- allowed = comptroller.seizeAllowed(address(this),seizerToken,liquidator,borrower,seizeTokens) (/sb/VToken_19.sol#2355)
+	State variables written after the call(s):
+	- accountTokens (/sb/VToken_19.sol#2389)
+	- accountTokens (/sb/VToken_19.sol#2390)
+Reentrancy in VToken.transferTokens (/sb/VToken_19.sol#1350-1409):
+	External calls:
+	- allowed = comptroller.transferAllowed(address(this),src,dst,tokens) (/sb/VToken_19.sol#1352)
+	State variables written after the call(s):
+	- accountTokens (/sb/VToken_19.sol#1395)
+	- accountTokens (/sb/VToken_19.sol#1396)
+	- transferAllowances (/sb/VToken_19.sol#1400)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-2[0m
+INFO:Detectors:[92m
+VBep20Storage.underlying should be constant (/sb/VToken_19.sol#370)
+VDelegationStorage.implementation should be constant (/sb/VToken_19.sol#395)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#state-variables-that-could-be-declared-constant[0m
+INFO:Detectors:[92m
+VTokenInterface._setInterestRateModel (/sb/VToken_19.sol#363) should be declared external
+VToken._setInterestRateModel (/sb/VToken_19.sol#2656-2666) should be declared external
+VDelegatorInterface._setImplementation (/sb/VToken_19.sol#410) should be declared external
+VDelegateInterface._becomeImplementation (/sb/VToken_19.sol#419) should be declared external
+VDelegateInterface._resignImplementation (/sb/VToken_19.sol#424) should be declared external
+VToken.initialize (/sb/VToken_19.sol#1308-1339) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/VToken_19.sol:
+	- pragma solidity^0.5.16 (/sb/VToken_19.sol#1): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Constant 'ComptrollerInterfaceG1.isComptroller' (/sb/VToken_19.sol#6) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'InterestRateModel.isInterestRateModel' (/sb/VToken_19.sol#101) is not in UPPER_CASE_WITH_UNDERSCORES
+Variable 'VTokenStorage._notEntered' (/sb/VToken_19.sol#128) is not in mixedCase
+Constant 'VTokenStorage.borrowRateMaxMantissa' (/sb/VToken_19.sol#149) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'VTokenStorage.reserveFactorMaxMantissa' (/sb/VToken_19.sol#154) is not in UPPER_CASE_WITH_UNDERSCORES
+Function 'VTokenInterface._setPendingAdmin' (/sb/VToken_19.sol#358) is not in mixedCase
+Function 'VTokenInterface._acceptAdmin' (/sb/VToken_19.sol#359) is not in mixedCase
+Function 'VTokenInterface._setComptroller' (/sb/VToken_19.sol#360) is not in mixedCase
+Function 'VTokenInterface._setReserveFactor' (/sb/VToken_19.sol#361) is not in mixedCase
+Function 'VTokenInterface._reduceReserves' (/sb/VToken_19.sol#362) is not in mixedCase
+Function 'VTokenInterface._setInterestRateModel' (/sb/VToken_19.sol#363) is not in mixedCase
+Constant 'VTokenInterface.isVToken' (/sb/VToken_19.sol#241) is not in UPPER_CASE_WITH_UNDERSCORES
+Function 'VBep20Interface._addReserves' (/sb/VToken_19.sol#388) is not in mixedCase
+Function 'VDelegatorInterface._setImplementation' (/sb/VToken_19.sol#410) is not in mixedCase
+Function 'VDelegateInterface._becomeImplementation' (/sb/VToken_19.sol#419) is not in mixedCase
+Function 'VDelegateInterface._resignImplementation' (/sb/VToken_19.sol#424) is not in mixedCase
+Function 'ExponentialNoError.mul_ScalarTruncate' (/sb/VToken_19.sol#826-829) is not in mixedCase
+Function 'ExponentialNoError.mul_ScalarTruncateAddUInt' (/sb/VToken_19.sol#834-837) is not in mixedCase
+Constant 'ExponentialNoError.expScale' (/sb/VToken_19.sol#801) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'ExponentialNoError.doubleScale' (/sb/VToken_19.sol#802) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'ExponentialNoError.halfExpScale' (/sb/VToken_19.sol#803) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'ExponentialNoError.mantissaOne' (/sb/VToken_19.sol#804) is not in UPPER_CASE_WITH_UNDERSCORES
+Function 'VToken._setPendingAdmin' (/sb/VToken_19.sol#2410-2426) is not in mixedCase
+Function 'VToken._acceptAdmin' (/sb/VToken_19.sol#2433-2455) is not in mixedCase
+Function 'VToken._setComptroller' (/sb/VToken_19.sol#2460-2479) is not in mixedCase
+Function 'VToken._setReserveFactor' (/sb/VToken_19.sol#2484-2494) is not in mixedCase
+Function 'VToken._reduceReserves' (/sb/VToken_19.sol#2591-2601) is not in mixedCase
+Function 'VToken._setInterestRateModel' (/sb/VToken_19.sol#2656-2666) is not in mixedCase
+Function 'VToken._setReserveFactorFresh' (/sb/VToken_19.sol#2499-2523) is not in mixedCase
+Function 'VToken._addReservesInternal' (/sb/VToken_19.sol#2528-2540) is not in mixedCase
+Function 'VToken._addReservesFresh' (/sb/VToken_19.sol#2546-2586) is not in mixedCase
+Function 'VToken._reduceReservesFresh' (/sb/VToken_19.sol#2607-2650) is not in mixedCase
+Function 'VToken._setInterestRateModelFresh' (/sb/VToken_19.sol#2672-2702) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/VToken_19.sol analyzed (22 contracts), 67 result(s) found

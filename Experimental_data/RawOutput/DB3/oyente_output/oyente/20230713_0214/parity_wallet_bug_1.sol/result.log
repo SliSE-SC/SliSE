@@ -1,0 +1,35 @@
+INFO:CryticCompile:Compilation warnings/errors on /sb/parity_wallet_bug_1.sol:
+/sb/parity_wallet_bug_1.sol:246:11: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+          throw;
+          ^---^
+/sb/parity_wallet_bug_1.sol:280:11: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+          throw;
+          ^---^
+/sb/parity_wallet_bug_1.sol:84:5: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+    bytes data;
+    ^--------^
+/sb/parity_wallet_bug_1.sol:264:3: Warning: Variable is shadowed in inline assembly by an instruction of the same name
+  function create(uint _value, bytes _code) internal returns (address o_addr) {
+  ^
+Spanning multiple lines.
+/sb/parity_wallet_bug_1.sol:267:13: Error: Identifier not found.
+      jumpi(invalidJumpLabel, iszero(extcodesize(o_addr)))
+            ^--------------^
+/sb/parity_wallet_bug_1.sol:267:7: Warning: Jump instructions are low-level EVM features that can lead to incorrect stack access. Because of that they are discouraged. Please consider using "switch" or "for" statements instead.
+      jumpi(invalidJumpLabel, iszero(extcodesize(o_addr)))
+      ^---^
+/sb/parity_wallet_bug_1.sol:377:37: Warning: This looks like an address but has an invalid checksum. If this is not used as an address, please prepend '00'.
+  address constant _walletLibrary = 0xcafecafecafecafecafecafecafecafecafecafe;
+                                    ^----------------------------------------^
+/sb/parity_wallet_bug_1.sol:417:14: Error: Unbalanced stack at the end of a block: 1 surplus item(s).
+    assembly {
+             ^
+Spanning multiple lines.
+/sb/parity_wallet_bug_1.sol:437:7: Warning: Return value of low-level calls not used.
+      _walletLibrary.delegatecall(msg.data); //it should have whitelisted specific methods that the user is allowed to call
+      ^-----------------------------------^
+/sb/parity_wallet_bug_1.sol:456:37: Warning: This looks like an address but has an invalid checksum. If this is not used as an address, please prepend '00'.
+  address constant _walletLibrary = 0xcafecafecafecafecafecafecafecafecafecafe;
+                                    ^----------------------------------------^
+
+CRITICAL:root:Solidity compilation failed. Please use -ce flag to see the detail.

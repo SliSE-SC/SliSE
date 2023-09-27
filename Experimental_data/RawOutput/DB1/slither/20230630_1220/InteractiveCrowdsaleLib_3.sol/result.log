@@ -1,0 +1,259 @@
+INFO:Slither:Compilation warnings/errors on /sb/InteractiveCrowdsaleLib_3.sol:
+/sb/InteractiveCrowdsaleLib_3.sol:222:5: Warning: Use of the "var" keyword is deprecated.
+    var _allowance = self.allowed[_from][msg.sender];
+    ^------------^
+/sb/InteractiveCrowdsaleLib_3.sol:400:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function CrowdsaleToken(address owner,
+  ^ (Relevant source part starts here and spans across multiple lines).
+/sb/InteractiveCrowdsaleLib_3.sol:644:5: Warning: Use of the "var" keyword is deprecated.
+    var total = self.withdrawTokensMap[msg.sender];
+    ^-------^
+/sb/InteractiveCrowdsaleLib_3.sol:661:5: Warning: Use of the "var" keyword is deprecated.
+    var total = self.leftoverWei[msg.sender];
+    ^-------^
+/sb/InteractiveCrowdsaleLib_3.sol:205:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:237:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:259:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _value);
+    ^------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:301:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _newAllowed);
+    ^-----------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:313:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnerChange(msg.sender, _newOwner);
+    ^--------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:331:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(0x0, self.owner, _amount);
+    ^--------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:342:5: Warning: Invoking events without "emit" prefix is deprecated.
+    MintingClosed(true);
+    ^-----------------^
+/sb/InteractiveCrowdsaleLib_3.sol:359:7: Warning: Invoking events without "emit" prefix is deprecated.
+      Burn(msg.sender, _amount);
+      ^-----------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:360:7: Warning: Invoking events without "emit" prefix is deprecated.
+      Transfer(msg.sender, 0x0, _amount);
+      ^--------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:614:7: Warning: Invoking events without "emit" prefix is deprecated.
+[91m      LogErrorMsg(msg.value, "Invalid Purchase! Check start time and amount of ether.");[0m
+      ^-------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:626:7: Warning: Invoking events without "emit" prefix is deprecated.
+[91m      LogErrorMsg(0, "Sender has no tokens to withdraw!");[0m
+      ^-------------------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:632:9: Warning: Invoking events without "emit" prefix is deprecated.
+[91m        LogErrorMsg(0, "Owner cannot withdraw extra tokens until after the sale!");[0m
+        ^------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:648:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogTokensWithdrawn(msg.sender, total);
+    ^-----------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:657:7: Warning: Invoking events without "emit" prefix is deprecated.
+[91m      LogErrorMsg(0, "Sender has no extra wei to withdraw!");[0m
+      ^----------------------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:664:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogWeiWithdrawn(msg.sender, total);
+    ^--------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:673:7: Warning: Invoking events without "emit" prefix is deprecated.
+[91m      LogErrorMsg(0, "Cannot withdraw owner ether until after the sale!");[0m
+      ^-----------------------------------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:683:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogOwnerEthWithdrawn(msg.sender,amount,"Crowdsale owner has withdrawn all funds!");
+    ^--------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:1286:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogBidAccepted(msg.sender, _amount, _personalCap);
+    ^-----------------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:1287:5: Warning: Invoking events without "emit" prefix is deprecated.
+    BucketAndValuationAndCommitted(self.currentBucket, self.totalValuation, self.valueCommitted);
+    ^------------------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:1401:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogBidWithdrawn(msg.sender, refundWei, self.personalCaps[msg.sender]);
+    ^-------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:1402:5: Warning: Invoking events without "emit" prefix is deprecated.
+    BucketAndValuationAndCommitted(self.currentBucket, self.totalValuation, self.valueCommitted);
+    ^------------------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:1507:7: Warning: Invoking events without "emit" prefix is deprecated.
+[91m      LogErrorMsg(self.totalValuation, "Sale is canceled, all bids have been refunded!");[0m
+      ^--------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:1533:5: Warning: Invoking events without "emit" prefix is deprecated.
+[91m    LogErrorMsg(self.base.hasContributed[msg.sender],"contribution");[0m
+    ^--------------------------------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:1534:5: Warning: Invoking events without "emit" prefix is deprecated.
+[91m    LogErrorMsg(self.pricePurchasedAt[msg.sender],"price");[0m
+    ^----------------------------------------------------^
+/sb/InteractiveCrowdsaleLib_3.sol:1535:5: Warning: Invoking events without "emit" prefix is deprecated.
+[91m    LogErrorMsg(self.q,"percentage");[0m
+    ^------------------------------^
+
+INFO:Detectors:[93m
+BasicMathLib.times (/sb/InteractiveCrowdsaleLib_3.sol#39-48) is declared view but contains assembly code
+BasicMathLib.dividedBy (/sb/InteractiveCrowdsaleLib_3.sol#56-71) is declared view but contains assembly code
+BasicMathLib.plus (/sb/InteractiveCrowdsaleLib_3.sol#79-88) is declared view but contains assembly code
+BasicMathLib.minus (/sb/InteractiveCrowdsaleLib_3.sol#96-105) is declared view but contains assembly code
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#constant-functions-changing-the-state[0m
+INFO:Detectors:[93m
+InteractiveCrowdsaleLib.withdrawBid (/sb/InteractiveCrowdsaleLib_3.sol#1296-1404) uses a dangerous strict equality:
+	- _proposedValue == 0
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#dangerous-strict-equalities[0m
+INFO:Detectors:[93m
+loop in InteractiveCrowdsaleLib.submitBid (/sb/InteractiveCrowdsaleLib_3.sol#1232) is a local variable never initialiazed
+_newAllowed in TokenLib.approveChange (/sb/InteractiveCrowdsaleLib_3.sol#284) is a local variable never initialiazed
+_bonusPercent in InteractiveCrowdsaleLib.submitBid (/sb/InteractiveCrowdsaleLib_3.sol#1192) is a local variable never initialiazed
+loop in InteractiveCrowdsaleLib.withdrawBid (/sb/InteractiveCrowdsaleLib_3.sol#1347) is a local variable never initialiazed
+_proposedValue in InteractiveCrowdsaleLib.withdrawBid (/sb/InteractiveCrowdsaleLib_3.sol#1345) is a local variable never initialiazed
+index in CrowdsaleLib.getSaleData (/sb/InteractiveCrowdsaleLib_3.sol#732) is a local variable never initialiazed
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#uninitialized-local-variables[0m
+INFO:Detectors:[93m
+InteractiveCrowdsaleLib.submitBid (/sb/InteractiveCrowdsaleLib_3.sol#1182-1289) does not use the value returned by external calls:
+	-self.valuationsList.insert(_listSpot,_personalCap,PREV) (/sb/InteractiveCrowdsaleLib_3.sol#1216)
+InteractiveCrowdsaleLib.launchToken (/sb/InteractiveCrowdsaleLib_3.sol#1437-1471) does not use the value returned by external calls:
+	-self.base.token.transfer(self.base.owner,_ownerTokens) (/sb/InteractiveCrowdsaleLib_3.sol#1461)
+	-self.base.token.transfer(self.base.owner,_supply) (/sb/InteractiveCrowdsaleLib_3.sol#1463)
+	-self.base.token.burnToken(_bonusTokens) (/sb/InteractiveCrowdsaleLib_3.sol#1464)
+	-self.base.token.changeOwner(self.base.owner) (/sb/InteractiveCrowdsaleLib_3.sol#1467)
+InteractiveCrowdsaleLib.retreiveFinalResult (/sb/InteractiveCrowdsaleLib_3.sol#1491-1559) does not use the value returned by external calls:
+	-self.base.token.burnToken(_leftoverBonus) (/sb/InteractiveCrowdsaleLib_3.sol#1550)
+	-self.base.withdrawTokens() (/sb/InteractiveCrowdsaleLib_3.sol#1555)
+	-self.base.withdrawLeftoverWei() (/sb/InteractiveCrowdsaleLib_3.sol#1557)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-return[0m
+INFO:Detectors:[92m
+CrowdsaleToken.CrowdsaleToken.name (local variable @ /sb/InteractiveCrowdsaleLib_3.sol#401) shadows:
+	- CrowdsaleToken.name (function @ /sb/InteractiveCrowdsaleLib_3.sol#410-412)
+CrowdsaleToken.CrowdsaleToken.symbol (local variable @ /sb/InteractiveCrowdsaleLib_3.sol#402) shadows:
+	- CrowdsaleToken.symbol (function @ /sb/InteractiveCrowdsaleLib_3.sol#414-416)
+CrowdsaleToken.CrowdsaleToken.decimals (local variable @ /sb/InteractiveCrowdsaleLib_3.sol#403) shadows:
+	- CrowdsaleToken.decimals (function @ /sb/InteractiveCrowdsaleLib_3.sol#418-420)
+CrowdsaleToken.CrowdsaleToken.initialSupply (local variable @ /sb/InteractiveCrowdsaleLib_3.sol#404) shadows:
+	- CrowdsaleToken.initialSupply (function @ /sb/InteractiveCrowdsaleLib_3.sol#426-428)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#local-variable-shadowing[0m
+INFO:Detectors:[92m
+BasicMathLib.times uses assembly (/sb/InteractiveCrowdsaleLib_3.sol#39-48)
+	- /sb/InteractiveCrowdsaleLib_3.sol#40-48
+BasicMathLib.dividedBy uses assembly (/sb/InteractiveCrowdsaleLib_3.sol#56-71)
+	- /sb/InteractiveCrowdsaleLib_3.sol#58-71
+BasicMathLib.plus uses assembly (/sb/InteractiveCrowdsaleLib_3.sol#79-88)
+	- /sb/InteractiveCrowdsaleLib_3.sol#80-88
+BasicMathLib.minus uses assembly (/sb/InteractiveCrowdsaleLib_3.sol#96-105)
+	- /sb/InteractiveCrowdsaleLib_3.sol#97-105
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+BasicMathLib.times (/sb/InteractiveCrowdsaleLib_3.sol#39-48) should be declared external
+BasicMathLib.dividedBy (/sb/InteractiveCrowdsaleLib_3.sol#56-71) should be declared external
+BasicMathLib.plus (/sb/InteractiveCrowdsaleLib_3.sol#79-88) should be declared external
+BasicMathLib.minus (/sb/InteractiveCrowdsaleLib_3.sol#96-105) should be declared external
+TokenLib.init (/sb/InteractiveCrowdsaleLib_3.sol#169-188) should be declared external
+TokenLib.transfer (/sb/InteractiveCrowdsaleLib_3.sol#195-207) should be declared external
+TokenLib.transferFrom (/sb/InteractiveCrowdsaleLib_3.sol#215-239) should be declared external
+TokenLib.balanceOf (/sb/InteractiveCrowdsaleLib_3.sol#245-247) should be declared external
+TokenLib.approve (/sb/InteractiveCrowdsaleLib_3.sol#254-261) should be declared external
+TokenLib.allowance (/sb/InteractiveCrowdsaleLib_3.sol#268-273) should be declared external
+TokenLib.approveChange (/sb/InteractiveCrowdsaleLib_3.sol#281-303) should be declared external
+TokenLib.changeOwner (/sb/InteractiveCrowdsaleLib_3.sol#309-315) should be declared external
+TokenLib.mintToken (/sb/InteractiveCrowdsaleLib_3.sol#321-333) should be declared external
+TokenLib.closeMint (/sb/InteractiveCrowdsaleLib_3.sol#338-344) should be declared external
+TokenLib.burnToken (/sb/InteractiveCrowdsaleLib_3.sol#350-362) should be declared external
+CrowdsaleToken.name (/sb/InteractiveCrowdsaleLib_3.sol#410-412) should be declared external
+CrowdsaleToken.symbol (/sb/InteractiveCrowdsaleLib_3.sol#414-416) should be declared external
+CrowdsaleToken.decimals (/sb/InteractiveCrowdsaleLib_3.sol#418-420) should be declared external
+CrowdsaleToken.totalSupply (/sb/InteractiveCrowdsaleLib_3.sol#422-424) should be declared external
+CrowdsaleToken.initialSupply (/sb/InteractiveCrowdsaleLib_3.sol#426-428) should be declared external
+CrowdsaleToken.balanceOf (/sb/InteractiveCrowdsaleLib_3.sol#430-432) should be declared external
+CrowdsaleToken.allowance (/sb/InteractiveCrowdsaleLib_3.sol#434-436) should be declared external
+CrowdsaleToken.transfer (/sb/InteractiveCrowdsaleLib_3.sol#438-440) should be declared external
+CrowdsaleToken.transferFrom (/sb/InteractiveCrowdsaleLib_3.sol#442-444) should be declared external
+CrowdsaleToken.approve (/sb/InteractiveCrowdsaleLib_3.sol#446-448) should be declared external
+CrowdsaleToken.approveChange (/sb/InteractiveCrowdsaleLib_3.sol#450-454) should be declared external
+CrowdsaleToken.changeOwner (/sb/InteractiveCrowdsaleLib_3.sol#456-458) should be declared external
+CrowdsaleToken.mintToken (/sb/InteractiveCrowdsaleLib_3.sol#460-462) should be declared external
+CrowdsaleToken.closeMint (/sb/InteractiveCrowdsaleLib_3.sol#464-466) should be declared external
+CrowdsaleToken.burnToken (/sb/InteractiveCrowdsaleLib_3.sol#468-470) should be declared external
+CrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#558-590) should be declared external
+CrowdsaleLib.withdrawTokens (/sb/InteractiveCrowdsaleLib_3.sol#622-650) should be declared external
+CrowdsaleLib.withdrawLeftoverWei (/sb/InteractiveCrowdsaleLib_3.sol#655-666) should be declared external
+CrowdsaleLib.withdrawOwnerEth (/sb/InteractiveCrowdsaleLib_3.sol#671-686) should be declared external
+CrowdsaleLib.setTokens (/sb/InteractiveCrowdsaleLib_3.sol#707-720) should be declared external
+CrowdsaleLib.getSaleData (/sb/InteractiveCrowdsaleLib_3.sol#726-744) should be declared external
+CrowdsaleLib.getTokensSold (/sb/InteractiveCrowdsaleLib_3.sol#749-751) should be declared external
+InteractiveCrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#1080-1115) should be declared external
+InteractiveCrowdsaleLib.submitBid (/sb/InteractiveCrowdsaleLib_3.sol#1182-1289) should be declared external
+InteractiveCrowdsaleLib.withdrawBid (/sb/InteractiveCrowdsaleLib_3.sol#1296-1404) should be declared external
+InteractiveCrowdsaleLib.finalizeSale (/sb/InteractiveCrowdsaleLib_3.sol#1409-1431) should be declared external
+InteractiveCrowdsaleLib.retreiveFinalResult (/sb/InteractiveCrowdsaleLib_3.sol#1491-1559) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/InteractiveCrowdsaleLib_3.sol:
+	- pragma solidity^0.4.18 (/sb/InteractiveCrowdsaleLib_3.sol#2): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Parameter '_owner' of TokenLib.init (/sb/InteractiveCrowdsaleLib_3.sol#170) is not in mixedCase
+Parameter '_name' of TokenLib.init (/sb/InteractiveCrowdsaleLib_3.sol#171) is not in mixedCase
+Parameter '_symbol' of TokenLib.init (/sb/InteractiveCrowdsaleLib_3.sol#172) is not in mixedCase
+Parameter '_decimals' of TokenLib.init (/sb/InteractiveCrowdsaleLib_3.sol#173) is not in mixedCase
+Parameter '_initial_supply' of TokenLib.init (/sb/InteractiveCrowdsaleLib_3.sol#174) is not in mixedCase
+Parameter '_allowMinting' of TokenLib.init (/sb/InteractiveCrowdsaleLib_3.sol#175) is not in mixedCase
+Parameter '_to' of TokenLib.transfer (/sb/InteractiveCrowdsaleLib_3.sol#195) is not in mixedCase
+Parameter '_value' of TokenLib.transfer (/sb/InteractiveCrowdsaleLib_3.sol#195) is not in mixedCase
+Parameter '_from' of TokenLib.transferFrom (/sb/InteractiveCrowdsaleLib_3.sol#216) is not in mixedCase
+Parameter '_to' of TokenLib.transferFrom (/sb/InteractiveCrowdsaleLib_3.sol#217) is not in mixedCase
+Parameter '_value' of TokenLib.transferFrom (/sb/InteractiveCrowdsaleLib_3.sol#218) is not in mixedCase
+Parameter '_owner' of TokenLib.balanceOf (/sb/InteractiveCrowdsaleLib_3.sol#245) is not in mixedCase
+Parameter '_spender' of TokenLib.approve (/sb/InteractiveCrowdsaleLib_3.sol#254) is not in mixedCase
+Parameter '_value' of TokenLib.approve (/sb/InteractiveCrowdsaleLib_3.sol#254) is not in mixedCase
+Parameter '_owner' of TokenLib.allowance (/sb/InteractiveCrowdsaleLib_3.sol#268) is not in mixedCase
+Parameter '_spender' of TokenLib.allowance (/sb/InteractiveCrowdsaleLib_3.sol#268) is not in mixedCase
+Parameter '_spender' of TokenLib.approveChange (/sb/InteractiveCrowdsaleLib_3.sol#281) is not in mixedCase
+Parameter '_valueChange' of TokenLib.approveChange (/sb/InteractiveCrowdsaleLib_3.sol#281) is not in mixedCase
+Parameter '_increase' of TokenLib.approveChange (/sb/InteractiveCrowdsaleLib_3.sol#281) is not in mixedCase
+Parameter '_newOwner' of TokenLib.changeOwner (/sb/InteractiveCrowdsaleLib_3.sol#309) is not in mixedCase
+Parameter '_amount' of TokenLib.mintToken (/sb/InteractiveCrowdsaleLib_3.sol#321) is not in mixedCase
+Parameter '_amount' of TokenLib.burnToken (/sb/InteractiveCrowdsaleLib_3.sol#350) is not in mixedCase
+Function 'CrowdsaleToken.CrowdsaleToken' (/sb/InteractiveCrowdsaleLib_3.sol#400-408) is not in mixedCase
+Parameter '_owner' of CrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#559) is not in mixedCase
+Parameter '_saleData' of CrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#560) is not in mixedCase
+Parameter '_endTime' of CrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#561) is not in mixedCase
+Parameter '_percentBurn' of CrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#562) is not in mixedCase
+Parameter '_token' of CrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#563) is not in mixedCase
+Parameter '_tokensPerEth' of CrowdsaleLib.changeTokenPrice (/sb/InteractiveCrowdsaleLib_3.sol#693) is not in mixedCase
+Parameter '_node' of LinkedListLib.nodeExists (/sb/InteractiveCrowdsaleLib_3.sol#813) is not in mixedCase
+Parameter '_node' of LinkedListLib.getNode (/sb/InteractiveCrowdsaleLib_3.sol#844) is not in mixedCase
+Parameter '_node' of LinkedListLib.getAdjacent (/sb/InteractiveCrowdsaleLib_3.sol#858) is not in mixedCase
+Parameter '_direction' of LinkedListLib.getAdjacent (/sb/InteractiveCrowdsaleLib_3.sol#858) is not in mixedCase
+Parameter '_node' of LinkedListLib.getSortedSpot (/sb/InteractiveCrowdsaleLib_3.sol#874) is not in mixedCase
+Parameter '_value' of LinkedListLib.getSortedSpot (/sb/InteractiveCrowdsaleLib_3.sol#874) is not in mixedCase
+Parameter '_direction' of LinkedListLib.getSortedSpot (/sb/InteractiveCrowdsaleLib_3.sol#874) is not in mixedCase
+Parameter '_node' of LinkedListLib.createLink (/sb/InteractiveCrowdsaleLib_3.sol#890) is not in mixedCase
+Parameter '_link' of LinkedListLib.createLink (/sb/InteractiveCrowdsaleLib_3.sol#890) is not in mixedCase
+Parameter '_direction' of LinkedListLib.createLink (/sb/InteractiveCrowdsaleLib_3.sol#890) is not in mixedCase
+Parameter '_node' of LinkedListLib.insert (/sb/InteractiveCrowdsaleLib_3.sol#900) is not in mixedCase
+Parameter '_new' of LinkedListLib.insert (/sb/InteractiveCrowdsaleLib_3.sol#900) is not in mixedCase
+Parameter '_direction' of LinkedListLib.insert (/sb/InteractiveCrowdsaleLib_3.sol#900) is not in mixedCase
+Parameter '_node' of LinkedListLib.remove (/sb/InteractiveCrowdsaleLib_3.sol#914) is not in mixedCase
+Parameter '_node' of LinkedListLib.push (/sb/InteractiveCrowdsaleLib_3.sol#926) is not in mixedCase
+Parameter '_direction' of LinkedListLib.push (/sb/InteractiveCrowdsaleLib_3.sol#926) is not in mixedCase
+Parameter '_direction' of LinkedListLib.pop (/sb/InteractiveCrowdsaleLib_3.sol#933) is not in mixedCase
+Parameter '_owner' of InteractiveCrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#1081) is not in mixedCase
+Parameter '_saleData' of InteractiveCrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#1082) is not in mixedCase
+Parameter '_priceBonusPercent' of InteractiveCrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#1083) is not in mixedCase
+Parameter '_minimumRaise' of InteractiveCrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#1084) is not in mixedCase
+Parameter '_endWithdrawalTime' of InteractiveCrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#1085) is not in mixedCase
+Parameter '_endTime' of InteractiveCrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#1086) is not in mixedCase
+Parameter '_percentBeingSold' of InteractiveCrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#1087) is not in mixedCase
+Parameter '_tokenName' of InteractiveCrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#1088) is not in mixedCase
+Parameter '_tokenSymbol' of InteractiveCrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#1089) is not in mixedCase
+Parameter '_tokenDecimals' of InteractiveCrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#1090) is not in mixedCase
+Parameter '_allowMinting' of InteractiveCrowdsaleLib.init (/sb/InteractiveCrowdsaleLib_3.sol#1091) is not in mixedCase
+Parameter '_number' of InteractiveCrowdsaleLib.numDigits (/sb/InteractiveCrowdsaleLib_3.sol#1120) is not in mixedCase
+Parameter '_amount' of InteractiveCrowdsaleLib.calculateTokenPurchase (/sb/InteractiveCrowdsaleLib_3.sol#1135) is not in mixedCase
+Parameter '_price' of InteractiveCrowdsaleLib.calculateTokenPurchase (/sb/InteractiveCrowdsaleLib_3.sol#1136) is not in mixedCase
+Parameter '_amount' of InteractiveCrowdsaleLib.submitBid (/sb/InteractiveCrowdsaleLib_3.sol#1183) is not in mixedCase
+Parameter '_personalCap' of InteractiveCrowdsaleLib.submitBid (/sb/InteractiveCrowdsaleLib_3.sol#1184) is not in mixedCase
+Parameter '_valuePredict' of InteractiveCrowdsaleLib.submitBid (/sb/InteractiveCrowdsaleLib_3.sol#1185) is not in mixedCase
+Parameter '_bidder' of InteractiveCrowdsaleLib.getPersonalCap (/sb/InteractiveCrowdsaleLib_3.sol#1583) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Detectors:[92m
+InteractiveCrowdsaleLib.NULL (/sb/InteractiveCrowdsaleLib_3.sol#979) is never used in InteractiveCrowdsaleLib
+InteractiveCrowdsaleLib.HEAD (/sb/InteractiveCrowdsaleLib_3.sol#980) is never used in InteractiveCrowdsaleLib
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-state-variables[0m
+INFO:Slither:/sb/InteractiveCrowdsaleLib_3.sol analyzed (6 contracts), 130 result(s) found

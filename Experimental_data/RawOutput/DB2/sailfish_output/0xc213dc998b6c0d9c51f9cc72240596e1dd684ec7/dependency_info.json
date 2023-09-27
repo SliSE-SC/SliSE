@@ -1,0 +1,29 @@
+{
+    "0xc213dc998b6c0d9c51f9cc72240596e1dd684ec7.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "withdrawFunds",
+                "withdrawFunds"
+            ],
+            "from_function": "withdrawFunds",
+            "to_function": "withdrawFunds",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 12\nFunction: withdrawFunds\nNode: \nEXPRESSION require(bool)(balances[msg.sender] >= _weiToWithdraw)\nIRS: \nTMP_1 = SOLIDITY_CALL require(bool)(TMP_0)\"",
+                        "\"BlockID: 9\nFunction: withdrawFunds\nNode: \nEXPRESSION balances[msg.sender] -= _weiToWithdraw\nIRS: \nREF_5 = REF_5 - _weiToWithdraw\""
+                    ],
+                    "state_variable": "balances"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 14\nFunction: withdrawFunds\nNode: \nEXPRESSION require(bool)(now >= lastWithdrawTime[msg.sender] + 604800)\nIRS: \nTMP_6 = SOLIDITY_CALL require(bool)(TMP_5)\"",
+                        "\"BlockID: 10\nFunction: withdrawFunds\nNode: \nEXPRESSION lastWithdrawTime[msg.sender] = now\nIRS: \nREF_6 := now\""
+                    ],
+                    "state_variable": "lastWithdrawTime"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,616 @@
+{
+    "errors": [
+        "EXIT_CODE_70"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Medium",
+            "line": 99,
+            "line_end": 128,
+            "message": "BlockhashRegistry.getParentAndBlockhash (NodeRegistry_2.sol#99-128) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "NodeRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "onlyActiveState",
+            "impact": "Medium",
+            "line": 275,
+            "line_end": 283,
+            "message": "NodeRegistry.onlyActiveState (NodeRegistry_2.sol#275-283) uses a dangerous strict equality:\n\t- require(bool,string)(si.stage == Stages.Active,address is not an in3-signer)\n\t- require(bool,string)(si.stage == Stages.Active,address is not an in3-signer)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "NodeRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "revealConvict",
+            "impact": "Medium",
+            "line": 275,
+            "line_end": 283,
+            "message": "NodeRegistry.onlyActiveState (NodeRegistry_2.sol#275-283) uses a dangerous strict equality:\n\t- require(bool,string)(si.stage == Stages.Active,address is not an in3-signer)\n\t- require(bool,string)(si.stage == Stages.Active,address is not an in3-signer)\nNodeRegistry.revealConvict (NodeRegistry_2.sol#449-521) uses a dangerous strict equality:\n\t- require(bool,string)(ecrecover(bytes32,uint8,bytes32,bytes32)(keccak256(bytes)(abi.encodePacked(_blockhash,_blockNumber,registryId)),_v,_r,_s) == _signer,the block was not signed by the signer of the node)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "NodeRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "updateNode",
+            "impact": "Medium",
+            "line": 275,
+            "line_end": 283,
+            "message": "NodeRegistry.onlyActiveState (NodeRegistry_2.sol#275-283) uses a dangerous strict equality:\n\t- require(bool,string)(si.stage == Stages.Active,address is not an in3-signer)\n\t- require(bool,string)(si.stage == Stages.Active,address is not an in3-signer)\nNodeRegistry.revealConvict (NodeRegistry_2.sol#449-521) uses a dangerous strict equality:\n\t- require(bool,string)(ecrecover(bytes32,uint8,bytes32,bytes32)(keccak256(bytes)(abi.encodePacked(_blockhash,_blockNumber,registryId)),_v,_r,_s) == _signer,the block was not signed by the signer of the node)\nNodeRegistry.updateNode (NodeRegistry_2.sol#569-629) uses a dangerous strict equality:\n\t- require(bool,string)(si.owner == msg.sender,only for the owner)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "NodeRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "registerNodeInternal",
+            "impact": "Medium",
+            "line": 724,
+            "message": "ui in NodeRegistry.registerNodeInternal (NodeRegistry_2.sol#724) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "NodeRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "registerNodeInternal",
+            "impact": "Medium",
+            "line": 710,
+            "message": "m in NodeRegistry.registerNodeInternal (NodeRegistry_2.sol#710) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "NodeRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "updateNode",
+            "impact": "Medium",
+            "line": 596,
+            "message": "ui in NodeRegistry.updateNode (NodeRegistry_2.sol#596) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "NodeRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "convict",
+            "impact": "Medium",
+            "line": 304,
+            "message": "ci in NodeRegistry.convict (NodeRegistry_2.sol#304) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "NodeRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "revealConvict",
+            "impact": "Low",
+            "line": 449,
+            "line_end": 521,
+            "message": "Reentrancy in NodeRegistry.revealConvict (NodeRegistry_2.sol#449-521):\n\tExternal calls:\n\t- evmBlockhash = blockRegistry.blockhashMapping(_blockNumber) (NodeRegistry_2.sol#463)\n\tState variables written after the call(s):\n\t- convictMapping (NodeRegistry_2.sol#511)\n\t- nodes (NodeRegistry_2.sol#502)\n\t- signerIndex (NodeRegistry_2.sol#502)\n\t- signerIndex (NodeRegistry_2.sol#506)\n\t- signerIndex (NodeRegistry_2.sol#507)\n\t- signerIndex (NodeRegistry_2.sol#510)\n\t- urlIndex (NodeRegistry_2.sol#502)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "NodeRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "removeNodeFromRegistry",
+            "impact": "Low",
+            "line": 400,
+            "line_end": 414,
+            "message": "NodeRegistry.removeNodeFromRegistry (NodeRegistry_2.sol#400-414) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(block.timestamp < (blockTimeStampDeployment + YEAR_DEFINITION),only in 1st year) (NodeRegistry_2.sol#406)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "NodeRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "returnDeposit",
+            "impact": "Low",
+            "line": 422,
+            "line_end": 435,
+            "message": "NodeRegistry.returnDeposit (NodeRegistry_2.sol#422-435) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(block.timestamp > si.lockedTime,deposit still locked) (NodeRegistry_2.sol#430)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "NodeRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "updateNode",
+            "impact": "Low",
+            "line": 569,
+            "line_end": 629,
+            "message": "NodeRegistry.updateNode (NodeRegistry_2.sol#569-629) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(si.owner == msg.sender,only for the owner) (NodeRegistry_2.sol#581)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "NodeRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "checkNodeProperties",
+            "impact": "Low",
+            "line": 659,
+            "line_end": 666,
+            "message": "NodeRegistry.checkNodeProperties (NodeRegistry_2.sol#659-666) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- block.timestamp < (blockTimeStampDeployment + YEAR_DEFINITION) (NodeRegistry_2.sol#662-664)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "NodeRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "registerNodeInternal",
+            "impact": "Low",
+            "line": 680,
+            "line_end": 735,
+            "message": "NodeRegistry.registerNodeInternal (NodeRegistry_2.sol#680-735) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(! urlIndex[urlHash].used && signerIndex[_signer].stage == Stages.NotInUse,a node with the same url or signer is already registered) (NodeRegistry_2.sol#701-702)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "High",
+            "contract": "BlockhashRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "getParentAndBlockhash",
+            "impact": "Informational",
+            "line": 99,
+            "line_end": 128,
+            "message": "BlockhashRegistry.getParentAndBlockhash uses assembly (NodeRegistry_2.sol#99-128)\n\t- NodeRegistry_2.sol#112-126\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 21,
+            "message": "Different versions of Solidity is used in NodeRegistry_2.sol:\n\t- Version used: ['0.5.10', 'ABIEncoderV2']\n\t- NodeRegistry_2.sol#21 declares pragma solidity0.5.10\n\t- NodeRegistry_2.sol#22 declares pragma experimentalABIEncoderV2\n",
+            "name": "pragma"
+        },
+        {
+            "confidence": "High",
+            "contract": "BlockhashRegistry",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "function": "recreateBlockheaders",
+            "impact": "Informational",
+            "line": 62,
+            "line_end": 75,
+            "message": "BlockhashRegistry.recreateBlockheaders (NodeRegistry_2.sol#62-75) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 21,
+            "message": "Detected issues with version pragma in NodeRegistry_2.sol:\n\t- pragma solidity0.5.10 (NodeRegistry_2.sol#21): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 44,
+            "message": "Parameter '_startNumber' of BlockhashRegistry.searchForAvailableBlock (NodeRegistry_2.sol#44) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 44,
+            "message": "Parameter '_numBlocks' of BlockhashRegistry.searchForAvailableBlock (NodeRegistry_2.sol#44) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 62,
+            "message": "Parameter '_blockNumber' of BlockhashRegistry.recreateBlockheaders (NodeRegistry_2.sol#62) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 62,
+            "message": "Parameter '_blockheaders' of BlockhashRegistry.recreateBlockheaders (NodeRegistry_2.sol#62) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 80,
+            "message": "Parameter '_blockNumber' of BlockhashRegistry.saveBlockNumber (NodeRegistry_2.sol#80) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 99,
+            "message": "Parameter '_blockheader' of BlockhashRegistry.getParentAndBlockhash (NodeRegistry_2.sol#99) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 135,
+            "message": "Parameter '_blockheaders' of BlockhashRegistry.reCalculateBlockheaders (NodeRegistry_2.sol#135) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 135,
+            "message": "Parameter '_bHash' of BlockhashRegistry.reCalculateBlockheaders (NodeRegistry_2.sol#135) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 288,
+            "message": "Parameter '_blockRegistry' of NodeRegistry. (NodeRegistry_2.sol#288) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 302,
+            "message": "Parameter '_blockNumber' of NodeRegistry.convict (NodeRegistry_2.sol#302) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 302,
+            "message": "Parameter '_hash' of NodeRegistry.convict (NodeRegistry_2.sol#302) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 318,
+            "message": "Parameter '_url' of NodeRegistry.registerNode (NodeRegistry_2.sol#318) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 319,
+            "message": "Parameter '_props' of NodeRegistry.registerNode (NodeRegistry_2.sol#319) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 320,
+            "message": "Parameter '_timeout' of NodeRegistry.registerNode (NodeRegistry_2.sol#320) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 321,
+            "message": "Parameter '_weight' of NodeRegistry.registerNode (NodeRegistry_2.sol#321) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 351,
+            "message": "Parameter '_url' of NodeRegistry.registerNodeFor (NodeRegistry_2.sol#351) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 352,
+            "message": "Parameter '_props' of NodeRegistry.registerNodeFor (NodeRegistry_2.sol#352) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 353,
+            "message": "Parameter '_timeout' of NodeRegistry.registerNodeFor (NodeRegistry_2.sol#353) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 354,
+            "message": "Parameter '_signer' of NodeRegistry.registerNodeFor (NodeRegistry_2.sol#354) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 355,
+            "message": "Parameter '_weight' of NodeRegistry.registerNodeFor (NodeRegistry_2.sol#355) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 356,
+            "message": "Parameter '_v' of NodeRegistry.registerNodeFor (NodeRegistry_2.sol#356) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 357,
+            "message": "Parameter '_r' of NodeRegistry.registerNodeFor (NodeRegistry_2.sol#357) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 358,
+            "message": "Parameter '_s' of NodeRegistry.registerNodeFor (NodeRegistry_2.sol#358) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 400,
+            "message": "Parameter '_signer' of NodeRegistry.removeNodeFromRegistry (NodeRegistry_2.sol#400) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 422,
+            "message": "Parameter '_signer' of NodeRegistry.returnDeposit (NodeRegistry_2.sol#422) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 450,
+            "message": "Parameter '_signer' of NodeRegistry.revealConvict (NodeRegistry_2.sol#450) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 451,
+            "message": "Parameter '_blockhash' of NodeRegistry.revealConvict (NodeRegistry_2.sol#451) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 452,
+            "message": "Parameter '_blockNumber' of NodeRegistry.revealConvict (NodeRegistry_2.sol#452) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 453,
+            "message": "Parameter '_v' of NodeRegistry.revealConvict (NodeRegistry_2.sol#453) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 454,
+            "message": "Parameter '_r' of NodeRegistry.revealConvict (NodeRegistry_2.sol#454) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 455,
+            "message": "Parameter '_s' of NodeRegistry.revealConvict (NodeRegistry_2.sol#455) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 530,
+            "message": "Parameter '_signer' of NodeRegistry.transferOwnership (NodeRegistry_2.sol#530) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 530,
+            "message": "Parameter '_newOwner' of NodeRegistry.transferOwnership (NodeRegistry_2.sol#530) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 547,
+            "message": "Parameter '_signer' of NodeRegistry.unregisteringNode (NodeRegistry_2.sol#547) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 570,
+            "message": "Parameter '_signer' of NodeRegistry.updateNode (NodeRegistry_2.sol#570) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 571,
+            "message": "Parameter '_url' of NodeRegistry.updateNode (NodeRegistry_2.sol#571) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 572,
+            "message": "Parameter '_props' of NodeRegistry.updateNode (NodeRegistry_2.sol#572) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 573,
+            "message": "Parameter '_timeout' of NodeRegistry.updateNode (NodeRegistry_2.sol#573) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 574,
+            "message": "Parameter '_weight' of NodeRegistry.updateNode (NodeRegistry_2.sol#574) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 640,
+            "message": "Parameter '_node' of NodeRegistry.calcProofHash (NodeRegistry_2.sol#640) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 659,
+            "message": "Parameter '_deposit' of NodeRegistry.checkNodeProperties (NodeRegistry_2.sol#659) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 659,
+            "message": "Parameter '_timeout' of NodeRegistry.checkNodeProperties (NodeRegistry_2.sol#659) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 681,
+            "message": "Parameter '_url' of NodeRegistry.registerNodeInternal (NodeRegistry_2.sol#681) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 682,
+            "message": "Parameter '_props' of NodeRegistry.registerNodeInternal (NodeRegistry_2.sol#682) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 683,
+            "message": "Parameter '_timeout' of NodeRegistry.registerNodeInternal (NodeRegistry_2.sol#683) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 684,
+            "message": "Parameter '_signer' of NodeRegistry.registerNodeInternal (NodeRegistry_2.sol#684) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 685,
+            "message": "Parameter '_owner' of NodeRegistry.registerNodeInternal (NodeRegistry_2.sol#685) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 686,
+            "message": "Parameter '_deposit' of NodeRegistry.registerNodeInternal (NodeRegistry_2.sol#686) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 687,
+            "message": "Parameter '_weight' of NodeRegistry.registerNodeInternal (NodeRegistry_2.sol#687) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 740,
+            "message": "Parameter '_si' of NodeRegistry.unregisterNodeInternal (NodeRegistry_2.sol#740) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 740,
+            "message": "Parameter '_n' of NodeRegistry.unregisterNodeInternal (NodeRegistry_2.sol#740) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/NodeRegistry_2.sol",
+            "impact": "Informational",
+            "line": 752,
+            "message": "Parameter '_nodeIndex' of NodeRegistry.removeNode (NodeRegistry_2.sol#752) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

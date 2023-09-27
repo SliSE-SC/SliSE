@@ -1,0 +1,50 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 12,
+            "contract": "Migrations",
+            "exploit": {
+                "initialState": {
+                    "accounts": {
+                        "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe": {
+                            "balance": "0x2",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        },
+                        "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef": {
+                            "balance": "0x0",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        }
+                    }
+                },
+                "steps": [
+                    {
+                        "address": "",
+                        "calldata": "",
+                        "input": "0x608060405234801561000f575f80fd5b50335f806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506103788061005c5f395ff3fe608060405234801561000f575f80fd5b506004361061004a575f3560e01c80630900f0101461004e578063445df0ac1461006a5780638da5cb5b14610088578063fdacd576146100a6575b5f80fd5b61006860048036038101906100639190610269565b6100c2565b005b610072610185565b60405161007f91906102ac565b60405180910390f35b61009061018b565b60405161009d91906102d4565b60405180910390f35b6100c060048036038101906100bb9190610317565b6101ae565b005b5f8054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1603610182575f8190508073ffffffffffffffffffffffffffffffffffffffff1663fdacd5766001546040518263ffffffff1660e01b815260040161015391906102ac565b5f604051808303815f87803b15801561016a575f80fd5b505af115801561017c573d5f803e3d5ffd5b50505050505b50565b60015481565b5f8054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b5f8054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff160361020857806001819055505b50565b5f80fd5b5f73ffffffffffffffffffffffffffffffffffffffff82169050919050565b5f6102388261020f565b9050919050565b6102488161022e565b8114610252575f80fd5b50565b5f813590506102638161023f565b92915050565b5f6020828403121561027e5761027d61020b565b5b5f61028b84828501610255565b91505092915050565b5f819050919050565b6102a681610294565b82525050565b5f6020820190506102bf5f83018461029d565b92915050565b6102ce8161022e565b82525050565b5f6020820190506102e75f8301846102c5565b92915050565b6102f681610294565b8114610300575f80fd5b50565b5f81359050610311816102ed565b92915050565b5f6020828403121561032c5761032b61020b565b5b5f61033984828501610303565b9150509291505056fea264697066735822122067f784757f352c3c9205bcba90dee007412298319b4212828a98948842654fe064736f6c63430008140033",
+                        "name": "unknown",
+                        "origin": "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe",
+                        "value": "0x1"
+                    }
+                ]
+            },
+            "filename": "all_contract/Migrations_2.sol",
+            "function": "constructor",
+            "line": 8,
+            "message": "An assertion violation was triggered.\nIt is possible to trigger an assertion violation. Note that Solidity assert() statements should only be used to check invariants. Review the transaction trace generated for this issue and either make sure your program logic is correct, or use require() instead of assert() if your goal is to constrain user inputs or enforce preconditions. Remember to validate inputs from both callers (for instance, via passed arguments) and callees (for instance, via return values).\nClassification: SWC-110",
+            "name": "Exception State (SWC 110)",
+            "severity": "Medium"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "mythril-0.23.15",
+        "mode": "solidity",
+        "version": "2023/01/20"
+    }
+}

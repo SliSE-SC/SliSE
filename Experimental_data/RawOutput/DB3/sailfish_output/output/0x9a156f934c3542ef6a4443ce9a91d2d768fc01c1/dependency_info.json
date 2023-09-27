@@ -1,0 +1,104 @@
+{
+    "0x9a156f934c3542ef6a4443ce9a91d2d768fc01c1.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "executeProposal",
+                "transfer"
+            ],
+            "from_function": "transfer",
+            "to_function": "executeProposal",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 540\nFunction: transfer\nNode: \nIF_LOOP k < ActiveProposals.length\nIRS: \nCONDITION TMP_710\"",
+                        "\"BlockID: 734\nFunction: delProposal\nNode: \nEXPRESSION ActiveProposals[k] = ActiveProposals[ActiveProposals.length - 1]\nIRS: \nREF_576 := REF_578\""
+                    ],
+                    "state_variable": "ActiveProposals"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "executeProposal",
+                "transferFrom"
+            ],
+            "from_function": "transferFrom",
+            "to_function": "executeProposal",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 561\nFunction: transferFrom\nNode: \nIF_LOOP k < ActiveProposals.length\nIRS: \nCONDITION TMP_735\"",
+                        "\"BlockID: 734\nFunction: delProposal\nNode: \nEXPRESSION ActiveProposals[k] = ActiveProposals[ActiveProposals.length - 1]\nIRS: \nREF_576 := REF_578\""
+                    ],
+                    "state_variable": "ActiveProposals"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "executeProposal",
+                "addProposal"
+            ],
+            "from_function": "addProposal",
+            "to_function": "executeProposal",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 703\nFunction: addProposal\nNode: \nEXPRESSION ActiveProposals.push(_Prop(_propID,_endTime))\nIRS: \nPUSH TMP_774 in ActiveProposals\"",
+                        "\"BlockID: 730\nFunction: delProposal\nNode: \nIF_LOOP k < ActiveProposals.length\nIRS: \nCONDITION TMP_776\""
+                    ],
+                    "state_variable": "ActiveProposals"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 703\nFunction: addProposal\nNode: \nEXPRESSION ActiveProposals.push(_Prop(_propID,_endTime))\nIRS: \nPUSH TMP_774 in ActiveProposals\"",
+                        "\"BlockID: 735\nFunction: delProposal\nNode: \nEXPRESSION ActiveProposals.length = ActiveProposals.length - 1\nIRS: \nREF_579 := TMP_781\""
+                    ],
+                    "state_variable": "ActiveProposals"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "executeProposal",
+                "executeProposal"
+            ],
+            "from_function": "executeProposal",
+            "to_function": "executeProposal",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 827\nFunction: delProposal\nNode: \nEXPRESSION ActiveProposals[k] = ActiveProposals[ActiveProposals.length - 1]\nIRS: \nREF_576 := REF_578\"",
+                        "\"BlockID: 730\nFunction: delProposal\nNode: \nIF_LOOP k < ActiveProposals.length\nIRS: \nCONDITION TMP_776\""
+                    ],
+                    "state_variable": "ActiveProposals"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 827\nFunction: delProposal\nNode: \nEXPRESSION ActiveProposals[k] = ActiveProposals[ActiveProposals.length - 1]\nIRS: \nREF_576 := REF_578\"",
+                        "\"BlockID: 735\nFunction: delProposal\nNode: \nEXPRESSION ActiveProposals.length = ActiveProposals.length - 1\nIRS: \nREF_579 := TMP_781\""
+                    ],
+                    "state_variable": "ActiveProposals"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 823\nFunction: delProposal\nNode: \nIF_LOOP k < ActiveProposals.length\nIRS: \nCONDITION TMP_776\"",
+                        "\"BlockID: 734\nFunction: delProposal\nNode: \nEXPRESSION ActiveProposals[k] = ActiveProposals[ActiveProposals.length - 1]\nIRS: \nREF_576 := REF_578\""
+                    ],
+                    "state_variable": "ActiveProposals"
+                },
+                {
+                    "path": [
+                        "\"BlockID: 828\nFunction: delProposal\nNode: \nEXPRESSION ActiveProposals.length = ActiveProposals.length - 1\nIRS: \nREF_579 := TMP_781\"",
+                        "\"BlockID: 734\nFunction: delProposal\nNode: \nEXPRESSION ActiveProposals[k] = ActiveProposals[ActiveProposals.length - 1]\nIRS: \nREF_576 := REF_578\""
+                    ],
+                    "state_variable": "ActiveProposals"
+                }
+            ]
+        }
+    ]
+}

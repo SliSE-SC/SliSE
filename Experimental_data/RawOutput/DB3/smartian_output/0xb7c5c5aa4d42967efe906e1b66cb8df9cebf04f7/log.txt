@@ -1,0 +1,200 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/0xb7c5c5aa4d42967efe906e1b66cb8df9cebf04f7.bin
+[00:00:00:00] Fuzzing starts at 08:40:02
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = {  }, Use = {  }
+Constructor tainted: {  }
+[DEBUG] Analyzing balances(27e235e3) @ 9a
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x11d
+balances(27e235e3): Def = {  }, Use = { map_0 }
+[DEBUG] Analyzing withdraw(3ccfd60b) @ f1
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x176
+Found sstore(<T, { Sha(*, 0x0) }, { }>, <0x0, { }, { }>) @ 0x1ce
+withdraw(3ccfd60b): Def = { map_0 }, Use = { map_0 }
+[DEBUG] Analyzing fallback @ 0
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x90
+Found sstore(<T, { Sha(*, 0x0) }, { }>, <T, { }, { map_0 }>) @ 0x97
+fallback: Def = { map_0 }, Use = { map_0 }
+Pruning out ["fallback"]
+(5 candidate sequences)
+["withdraw(3ccfd60b)"; "withdraw(3ccfd60b)"]
+["withdraw(3ccfd60b)"; "fallback"; "withdraw(3ccfd60b)"]
+["withdraw(3ccfd60b)"; "fallback"; "fallback"]
+["withdraw(3ccfd60b)"; "fallback"; "balances(27e235e3)"]
+["withdraw(3ccfd60b)"; "balances(27e235e3)"]
+[00:00:00:00] Start main fuzzing phase
+[00:00:00:01] Tx#1 found MishandledException at 186
+[00:00:00:01] Tx#1 found MishandledExceptionMythril at 186
+[00:00:00:01] Tx#1 found MishandledExceptionManticore at 186
+[00:00:00:01] Tx#1 found ReentrancyMythril at 186
+[00:00:00:01] Tx#1 found ReentrancyManticore at 1ce
+[00:00:00:01] [*] Save bug seed id-00000-ME-ME_mant-ME_myth-RE_mant-RE_myth_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: withdraw(3ccfd60b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00000_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: withdraw(3ccfd60b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00001_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: withdraw(3ccfd60b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00002_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: balances(27e235e3), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] Tx#4 found ReentrancyILF at 1ce
+[00:00:00:03] [*] Save bug seed id-00001-RE_ilf_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: withdraw(3ccfd60b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000400
+(    TX 3    ) Function: balances(27e235e3), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: withdraw(3ccfd60b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 8000000000000000000000000000000000000000000000004000000000000000
+
+[00:00:00:09] Tx#5 found Reentrancy at 1ce
+[00:00:00:09] Tx#5 found ReentrancySFuzz at 186
+[00:00:00:09] [*] Save bug seed id-00002-RE-RE_sfuzz_00009: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: balances(27e235e3), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000004000000000000000000000000500
+( => TX 3 <= ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000019
+(    TX 4    ) Function: fallback, From: NormalUser2, UseAgent: true
+          Value : uint256
+                 2F00000000000000000040AC970000000000004100960000FA00000000000000
+(    TX 5    ) Function: withdraw(3ccfd60b), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: withdraw(3ccfd60b), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: withdraw(3ccfd60b), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 8    ) Function: withdraw(3ccfd60b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 9    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:07:27] Tx#8 found EtherLeak at 186
+[00:00:07:27] [*] Save bug seed id-00003-EL_00447: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 4000000000000000000000000000000000000000000000000000000000000011
+(    TX 2    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000009000000000000000000000000000200
+(    TX 3    ) Function: balances(27e235e3), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 000000000000000000000000000000000000000000000000000000000000003F
+(    TX 5    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 6    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000012000000000000000000000000000000000000000000
+(    TX 7    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 8000000000000000000000000000000000000000000000000000000000000000
+(    TX 8    ) Function: withdraw(3ccfd60b), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 9 <= ) Function: withdraw(3ccfd60b), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 1360103
+[00:01:00:00] Deployment failures: 0
+[00:01:00:00] Test Cases: 3
+[00:01:00:00] Covered Edges: 12
+[00:01:00:00] Covered Instructions: 216
+[00:01:00:00] Covered Def-Use Chains: 24
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 0
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 1
+[00:01:00:00]   Integer Bug: 0
+[00:01:00:00]   Mishandled Exception: 1
+[00:01:00:00]   Multiple Send: 0
+[00:01:00:00]   Reentrancy: 1
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

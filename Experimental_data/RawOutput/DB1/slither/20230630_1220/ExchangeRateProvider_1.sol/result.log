@@ -1,0 +1,239 @@
+INFO:Slither:Compilation warnings/errors on /sb/ExchangeRateProvider_1.sol:
+/sb/ExchangeRateProvider_1.sol:133:5: Warning: Function state mutability can be restricted to pure
+    function __callback(bytes32 myid, string result, bytes proof) public {
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+INFO:Detectors:[93m
+usingOraclize.getCodeSize (/sb/ExchangeRateProvider_1.sol#533-537) is declared view but contains assembly code
+usingOraclize.copyBytes (/sb/ExchangeRateProvider_1.sol#958-978) is declared view but contains assembly code
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#constant-functions-changing-the-state[0m
+INFO:Detectors:[93m
+Reentrancy in usingOraclize.oraclizeAPI (/sb/ExchangeRateProvider_1.sol#76-84):
+	External calls:
+	- address(oraclize) != OAR.getAddress() (/sb/ExchangeRateProvider_1.sol#80-81)
+	- oraclize = OraclizeI(OAR.getAddress()) (/sb/ExchangeRateProvider_1.sol#81)
+	State variables written after the call(s):
+	- oraclize (/sb/ExchangeRateProvider_1.sol#81)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[93m
+ExchangeRateProvider.setQueryId (/sb/ExchangeRateProvider_1.sol#1190-1200) does not use the value returned by external calls:
+	-_exchangeRates.setQueryId(_identifier,_queryType) (/sb/ExchangeRateProvider_1.sol#1199)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-return[0m
+INFO:Detectors:[92m
+Reentrancy in ExchangeRateProvider.__callback (/sb/ExchangeRateProvider_1.sol#1204-1239):
+	External calls:
+	- require(bool)(msg.sender == oraclize_cbAddress()) (/sb/ExchangeRateProvider_1.sol#1208)
+	- _exchangeRates = IExchangeRates(registry.getContractAddress(ExchangeRates)) (/sb/ExchangeRateProvider_1.sol#1210-1212)
+	- _ratesActive = _exchangeRates.ratesActive() (/sb/ExchangeRateProvider_1.sol#1214)
+	- _queryType = _exchangeRates.queryTypes(_queryId) (/sb/ExchangeRateProvider_1.sol#1218)
+	- (_callInterval,_callbackGasLimit,_queryString) = _exchangeRates.getCurrencySettings(_queryType) (/sb/ExchangeRateProvider_1.sol#1219-1223)
+	- require(bool)(_exchangeRates.setRate(_queryId,parseInt(_result,2))) (/sb/ExchangeRateProvider_1.sol#1227)
+	- sendQuery(_queryString,_callInterval,_callbackGasLimit,_queryType) (/sb/ExchangeRateProvider_1.sol#1232-1237)
+	External calls sending eth:
+	- sendQuery(_queryString,_callInterval,_callbackGasLimit,_queryType) (/sb/ExchangeRateProvider_1.sol#1232-1237)
+	State variables written after the call(s):
+	- oraclize_network_name (/sb/ExchangeRateProvider_1.sol#1232-1237)
+Reentrancy in usingOraclize.oraclize_newRandomDSQuery (/sb/ExchangeRateProvider_1.sol#768-811):
+	External calls:
+	- sessionKeyHash_bytes32 = oraclize_randomDS_getSessionPubKeyHash() (/sb/ExchangeRateProvider_1.sol#776)
+	- queryId = oraclize_query(random,args,_customGasLimit) (/sb/ExchangeRateProvider_1.sol#792)
+	External calls sending eth:
+	- queryId = oraclize_query(random,args,_customGasLimit) (/sb/ExchangeRateProvider_1.sol#792)
+	State variables written after the call(s):
+	- oraclize_network_name (/sb/ExchangeRateProvider_1.sol#792)
+	- oraclize_randomDS_args (/sb/ExchangeRateProvider_1.sol#809)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-2[0m
+INFO:Detectors:[92m
+usingOraclize.getCodeSize uses assembly (/sb/ExchangeRateProvider_1.sol#533-537)
+	- /sb/ExchangeRateProvider_1.sol#534-537
+usingOraclize.oraclize_newRandomDSQuery uses assembly (/sb/ExchangeRateProvider_1.sol#768-811)
+	- /sb/ExchangeRateProvider_1.sol#777-783
+	- /sb/ExchangeRateProvider_1.sol#784-788
+	- /sb/ExchangeRateProvider_1.sol#796-809
+usingOraclize.verifySig uses assembly (/sb/ExchangeRateProvider_1.sol#820-846)
+	- /sb/ExchangeRateProvider_1.sol#834-840
+usingOraclize.copyBytes uses assembly (/sb/ExchangeRateProvider_1.sol#958-978)
+	- /sb/ExchangeRateProvider_1.sol#969-973
+usingOraclize.safer_ecrecover uses assembly (/sb/ExchangeRateProvider_1.sol#982-1007)
+	- /sb/ExchangeRateProvider_1.sol#993-1006
+usingOraclize.ecrecovery uses assembly (/sb/ExchangeRateProvider_1.sol#1010-1048)
+	- /sb/ExchangeRateProvider_1.sol#1021-1041
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+OraclizeI.cbAddress should be constant (/sb/ExchangeRateProvider_1.sol#41)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#state-variables-that-could-be-declared-constant[0m
+INFO:Detectors:[92m
+OraclizeI.query2 (/sb/ExchangeRateProvider_1.sol#44) should be declared external
+OraclizeI.queryN (/sb/ExchangeRateProvider_1.sol#46) should be declared external
+OraclizeI.getPrice (/sb/ExchangeRateProvider_1.sol#48) should be declared external
+OraclizeI.getPrice (/sb/ExchangeRateProvider_1.sol#49) should be declared external
+OraclizeAddrResolverI.getAddress (/sb/ExchangeRateProvider_1.sol#55) should be declared external
+usingOraclize.__callback (/sb/ExchangeRateProvider_1.sol#130-132) should be declared external
+ExchangeRateProvider.__callback (/sb/ExchangeRateProvider_1.sol#1204-1239) should be declared external
+ExchangeRateProvider.selfDestruct (/sb/ExchangeRateProvider_1.sol#1242-1247) should be declared external
+ExchangeRateProvider.fallback (/sb/ExchangeRateProvider_1.sol#1250-1253) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/ExchangeRateProvider_1.sol:
+	- pragma solidity0.4.23 (/sb/ExchangeRateProvider_1.sol#1): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Function 'OraclizeI.query_withGasLimit' (/sb/ExchangeRateProvider_1.sol#43) is not in mixedCase
+Function 'OraclizeI.query2_withGasLimit' (/sb/ExchangeRateProvider_1.sol#45) is not in mixedCase
+Function 'OraclizeI.queryN_withGasLimit' (/sb/ExchangeRateProvider_1.sol#47) is not in mixedCase
+Function 'OraclizeI.randomDS_getSessionPubKeyHash' (/sb/ExchangeRateProvider_1.sol#52) is not in mixedCase
+Contract 'usingOraclize' (/sb/ExchangeRateProvider_1.sol#57-1050) is not in CapWords
+Function 'usingOraclize.oraclize_setNetwork' (/sb/ExchangeRateProvider_1.sol#90-93) is not in mixedCase
+Function 'usingOraclize.oraclize_setNetwork' (/sb/ExchangeRateProvider_1.sol#94-128) is not in mixedCase
+Function 'usingOraclize.__callback' (/sb/ExchangeRateProvider_1.sol#130-132) is not in mixedCase
+Function 'usingOraclize.__callback' (/sb/ExchangeRateProvider_1.sol#133-136) is not in mixedCase
+Function 'usingOraclize.oraclize_getPrice' (/sb/ExchangeRateProvider_1.sol#138-140) is not in mixedCase
+Function 'usingOraclize.oraclize_getPrice' (/sb/ExchangeRateProvider_1.sol#142-144) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#146-150) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#151-155) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#156-160) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#161-165) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#166-170) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#171-175) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#176-180) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#181-185) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#186-191) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#192-197) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#198-203) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#204-209) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#210-214) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#215-219) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#220-224) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#225-229) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#231-236) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#237-242) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#243-248) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#249-254) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#255-261) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#262-268) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#269-275) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#276-282) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#284-291) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#292-299) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#300-307) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#308-315) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#316-324) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#325-333) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#334-342) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#343-351) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#352-357) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#358-363) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#364-369) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#370-375) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#376-380) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#381-385) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#386-390) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#391-395) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#397-402) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#403-408) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#409-414) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#415-420) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#421-427) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#428-434) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#435-441) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#442-448) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#450-457) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#458-465) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#466-473) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#474-481) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#482-490) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#491-499) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#500-508) is not in mixedCase
+Function 'usingOraclize.oraclize_query' (/sb/ExchangeRateProvider_1.sol#509-517) is not in mixedCase
+Function 'usingOraclize.oraclize_cbAddress' (/sb/ExchangeRateProvider_1.sol#519-521) is not in mixedCase
+Function 'usingOraclize.oraclize_setProof' (/sb/ExchangeRateProvider_1.sol#522-524) is not in mixedCase
+Function 'usingOraclize.oraclize_setCustomGasPrice' (/sb/ExchangeRateProvider_1.sol#525-527) is not in mixedCase
+Function 'usingOraclize.oraclize_randomDS_getSessionPubKeyHash' (/sb/ExchangeRateProvider_1.sol#529-531) is not in mixedCase
+Parameter '_a' of usingOraclize.parseAddr (/sb/ExchangeRateProvider_1.sol#539) is not in mixedCase
+Parameter '_a' of usingOraclize.strCompare (/sb/ExchangeRateProvider_1.sol#559) is not in mixedCase
+Parameter '_b' of usingOraclize.strCompare (/sb/ExchangeRateProvider_1.sol#559) is not in mixedCase
+Parameter '_haystack' of usingOraclize.indexOf (/sb/ExchangeRateProvider_1.sol#577) is not in mixedCase
+Parameter '_needle' of usingOraclize.indexOf (/sb/ExchangeRateProvider_1.sol#577) is not in mixedCase
+Parameter '_a' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#604) is not in mixedCase
+Parameter '_b' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#604) is not in mixedCase
+Parameter '_c' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#604) is not in mixedCase
+Parameter '_d' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#604) is not in mixedCase
+Parameter '_e' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#604) is not in mixedCase
+Parameter '_a' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#621) is not in mixedCase
+Parameter '_b' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#621) is not in mixedCase
+Parameter '_c' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#621) is not in mixedCase
+Parameter '_d' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#621) is not in mixedCase
+Parameter '_a' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#625) is not in mixedCase
+Parameter '_b' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#625) is not in mixedCase
+Parameter '_c' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#625) is not in mixedCase
+Parameter '_a' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#629) is not in mixedCase
+Parameter '_b' of usingOraclize.strConcat (/sb/ExchangeRateProvider_1.sol#629) is not in mixedCase
+Parameter '_a' of usingOraclize.parseInt (/sb/ExchangeRateProvider_1.sol#634) is not in mixedCase
+Parameter '_a' of usingOraclize.parseInt (/sb/ExchangeRateProvider_1.sol#639) is not in mixedCase
+Parameter '_b' of usingOraclize.parseInt (/sb/ExchangeRateProvider_1.sol#639) is not in mixedCase
+Function 'usingOraclize.oraclize_setNetworkName' (/sb/ExchangeRateProvider_1.sol#760-762) is not in mixedCase
+Parameter '_network_name' of usingOraclize.oraclize_setNetworkName (/sb/ExchangeRateProvider_1.sol#760) is not in mixedCase
+Function 'usingOraclize.oraclize_getNetworkName' (/sb/ExchangeRateProvider_1.sol#764-766) is not in mixedCase
+Function 'usingOraclize.oraclize_newRandomDSQuery' (/sb/ExchangeRateProvider_1.sol#768-811) is not in mixedCase
+Parameter '_delay' of usingOraclize.oraclize_newRandomDSQuery (/sb/ExchangeRateProvider_1.sol#768) is not in mixedCase
+Parameter '_nbytes' of usingOraclize.oraclize_newRandomDSQuery (/sb/ExchangeRateProvider_1.sol#768) is not in mixedCase
+Parameter '_customGasLimit' of usingOraclize.oraclize_newRandomDSQuery (/sb/ExchangeRateProvider_1.sol#768) is not in mixedCase
+Function 'usingOraclize.oraclize_randomDS_setCommitment' (/sb/ExchangeRateProvider_1.sol#813-815) is not in mixedCase
+Function 'usingOraclize.oraclize_randomDS_proofVerify__sessionKeyValidity' (/sb/ExchangeRateProvider_1.sol#848-881) is not in mixedCase
+Function 'usingOraclize.oraclize_randomDS_proofVerify__returnCode' (/sb/ExchangeRateProvider_1.sol#893-901) is not in mixedCase
+Parameter '_queryId' of usingOraclize.oraclize_randomDS_proofVerify__returnCode (/sb/ExchangeRateProvider_1.sol#893) is not in mixedCase
+Parameter '_result' of usingOraclize.oraclize_randomDS_proofVerify__returnCode (/sb/ExchangeRateProvider_1.sol#893) is not in mixedCase
+Parameter '_proof' of usingOraclize.oraclize_randomDS_proofVerify__returnCode (/sb/ExchangeRateProvider_1.sol#893) is not in mixedCase
+Parameter 'n_random_bytes' of usingOraclize.matchBytes32Prefix (/sb/ExchangeRateProvider_1.sol#903) is not in mixedCase
+Function 'usingOraclize.oraclize_randomDS_proofVerify__main' (/sb/ExchangeRateProvider_1.sol#915-955) is not in mixedCase
+Parameter 'context_name' of usingOraclize.oraclize_randomDS_proofVerify__main (/sb/ExchangeRateProvider_1.sol#915) is not in mixedCase
+Function 'usingOraclize.safer_ecrecover' (/sb/ExchangeRateProvider_1.sol#982-1007) is not in mixedCase
+Constant 'usingOraclize.day' (/sb/ExchangeRateProvider_1.sol#58) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'usingOraclize.week' (/sb/ExchangeRateProvider_1.sol#59) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'usingOraclize.month' (/sb/ExchangeRateProvider_1.sol#60) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'usingOraclize.proofType_NONE' (/sb/ExchangeRateProvider_1.sol#61) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'usingOraclize.proofType_TLSNotary' (/sb/ExchangeRateProvider_1.sol#62) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'usingOraclize.proofType_Android' (/sb/ExchangeRateProvider_1.sol#63) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'usingOraclize.proofType_Ledger' (/sb/ExchangeRateProvider_1.sol#64) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'usingOraclize.proofType_Native' (/sb/ExchangeRateProvider_1.sol#65) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'usingOraclize.proofStorage_IPFS' (/sb/ExchangeRateProvider_1.sol#66) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'usingOraclize.networkID_auto' (/sb/ExchangeRateProvider_1.sol#67) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'usingOraclize.networkID_mainnet' (/sb/ExchangeRateProvider_1.sol#68) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'usingOraclize.networkID_testnet' (/sb/ExchangeRateProvider_1.sol#69) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'usingOraclize.networkID_morden' (/sb/ExchangeRateProvider_1.sol#70) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'usingOraclize.networkID_consensys' (/sb/ExchangeRateProvider_1.sol#71) is not in UPPER_CASE_WITH_UNDERSCORES
+Variable 'usingOraclize.OAR' (/sb/ExchangeRateProvider_1.sol#73) is not in mixedCase
+Variable 'usingOraclize.oraclize_network_name' (/sb/ExchangeRateProvider_1.sol#759) is not in mixedCase
+Variable 'usingOraclize.oraclize_randomDS_args' (/sb/ExchangeRateProvider_1.sol#817) is not in mixedCase
+Variable 'usingOraclize.oraclize_randomDS_sessionKeysHashVerified' (/sb/ExchangeRateProvider_1.sol#818) is not in mixedCase
+Modifier 'usingOraclize.oraclize_randomDS_proofVerify' (/sb/ExchangeRateProvider_1.sol#883-891) is not in mixedCase
+Function 'ExchangeRateProvider.__callback' (/sb/ExchangeRateProvider_1.sol#1204-1239) is not in mixedCase
+Parameter '_queryId' of ExchangeRateProvider.__callback (/sb/ExchangeRateProvider_1.sol#1204) is not in mixedCase
+Parameter '_result' of ExchangeRateProvider.__callback (/sb/ExchangeRateProvider_1.sol#1204) is not in mixedCase
+Parameter '_registryAddress' of ExchangeRateProvider. (/sb/ExchangeRateProvider_1.sol#1137) is not in mixedCase
+Parameter '_gasPrice' of ExchangeRateProvider.setCallbackGasPrice (/sb/ExchangeRateProvider_1.sol#1146) is not in mixedCase
+Parameter '_queryString' of ExchangeRateProvider.sendQuery (/sb/ExchangeRateProvider_1.sol#1159) is not in mixedCase
+Parameter '_callInterval' of ExchangeRateProvider.sendQuery (/sb/ExchangeRateProvider_1.sol#1161) is not in mixedCase
+Parameter '_callbackGasLimit' of ExchangeRateProvider.sendQuery (/sb/ExchangeRateProvider_1.sol#1162) is not in mixedCase
+Parameter '_queryType' of ExchangeRateProvider.sendQuery (/sb/ExchangeRateProvider_1.sol#1163) is not in mixedCase
+Parameter '_identifier' of ExchangeRateProvider.setQueryId (/sb/ExchangeRateProvider_1.sol#1190) is not in mixedCase
+Parameter '_queryType' of ExchangeRateProvider.setQueryId (/sb/ExchangeRateProvider_1.sol#1190) is not in mixedCase
+Parameter '_address' of ExchangeRateProvider.selfDestruct (/sb/ExchangeRateProvider_1.sol#1242) is not in mixedCase
+Constant 'ExchangeRateProvider.version' (/sb/ExchangeRateProvider_1.sol#1116) is not in UPPER_CASE_WITH_UNDERSCORES
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Detectors:[92m
+usingOraclize.day (/sb/ExchangeRateProvider_1.sol#58) is never used in ExchangeRateProvider
+usingOraclize.week (/sb/ExchangeRateProvider_1.sol#59) is never used in ExchangeRateProvider
+usingOraclize.month (/sb/ExchangeRateProvider_1.sol#60) is never used in ExchangeRateProvider
+usingOraclize.proofType_NONE (/sb/ExchangeRateProvider_1.sol#61) is never used in ExchangeRateProvider
+usingOraclize.proofType_TLSNotary (/sb/ExchangeRateProvider_1.sol#62) is never used in ExchangeRateProvider
+usingOraclize.proofType_Android (/sb/ExchangeRateProvider_1.sol#63) is never used in ExchangeRateProvider
+usingOraclize.proofType_Ledger (/sb/ExchangeRateProvider_1.sol#64) is never used in ExchangeRateProvider
+usingOraclize.proofType_Native (/sb/ExchangeRateProvider_1.sol#65) is never used in ExchangeRateProvider
+usingOraclize.proofStorage_IPFS (/sb/ExchangeRateProvider_1.sol#66) is never used in ExchangeRateProvider
+usingOraclize.networkID_mainnet (/sb/ExchangeRateProvider_1.sol#68) is never used in ExchangeRateProvider
+usingOraclize.networkID_testnet (/sb/ExchangeRateProvider_1.sol#69) is never used in ExchangeRateProvider
+usingOraclize.networkID_morden (/sb/ExchangeRateProvider_1.sol#70) is never used in ExchangeRateProvider
+usingOraclize.networkID_consensys (/sb/ExchangeRateProvider_1.sol#71) is never used in ExchangeRateProvider
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-state-variables[0m
+INFO:Slither:/sb/ExchangeRateProvider_1.sol analyzed (7 contracts), 166 result(s) found

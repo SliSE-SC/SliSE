@@ -1,0 +1,69 @@
+INFO:Detectors:[91m
+GnosisSafe.handlePayment (/sb/GnosisSafe_3.sol#694-712) sends eth to arbitrary user
+	Dangerous calls:
+	- require(bool,string)(receiver.send(amount),Could not pay gas costs with ether) (/sb/GnosisSafe_3.sol#708)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#functions-that-send-ether-to-arbitrary-destinations[0m
+INFO:Detectors:[93m
+SignatureDecoder.signatureSplit (/sb/GnosisSafe_3.sol#458-478) is declared view but contains assembly code
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#constant-functions-changing-the-state[0m
+INFO:Detectors:[93m
+Reentrancy in GnosisSafe.execTransaction (/sb/GnosisSafe_3.sol#656-692):
+	External calls:
+	- require(bool,string)(checkSignatures(keccak256(bytes)(txHashData),txHashData,signatures,true),Invalid signatures provided) (/sb/GnosisSafe_3.sol#677)
+	State variables written after the call(s):
+	- nonce (/sb/GnosisSafe_3.sol#680)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[92m
+GnosisSafe.checkSignatures has external calls inside a loop:
+	- ! ISignatureValidator(currentOwner).isValidSignature(data,contractSignature) (/sb/GnosisSafe_3.sol#750-752)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation/_edit#calls-inside-a-loop[0m
+INFO:Detectors:[92m
+Executor.executeCall uses assembly (/sb/GnosisSafe_3.sol#53-61)
+	- /sb/GnosisSafe_3.sol#58-60
+Executor.executeDelegateCall uses assembly (/sb/GnosisSafe_3.sol#63-71)
+	- /sb/GnosisSafe_3.sol#68-70
+Executor.executeCreate uses assembly (/sb/GnosisSafe_3.sol#73-81)
+	- /sb/GnosisSafe_3.sol#78-80
+SignatureDecoder.signatureSplit uses assembly (/sb/GnosisSafe_3.sol#458-478)
+	- /sb/GnosisSafe_3.sol#467-477
+SecuredTokenTransfer.transferToken uses assembly (/sb/GnosisSafe_3.sol#491-510)
+	- /sb/GnosisSafe_3.sol#501-509
+GnosisSafe.checkSignatures uses assembly (/sb/GnosisSafe_3.sol#722-775)
+	- /sb/GnosisSafe_3.sol#746-749
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+ModuleManager.enableModule (/sb/GnosisSafe_3.sol#122-133) should be declared external
+ModuleManager.disableModule (/sb/GnosisSafe_3.sol#139-149) should be declared external
+ModuleManager.execTransactionFromModule (/sb/GnosisSafe_3.sol#156-164) should be declared external
+ModuleManager.getModules (/sb/GnosisSafe_3.sol#168-191) should be declared external
+OwnerManager.addOwnerWithThreshold (/sb/GnosisSafe_3.sol#244-260) should be declared external
+OwnerManager.removeOwner (/sb/GnosisSafe_3.sol#267-285) should be declared external
+OwnerManager.swapOwner (/sb/GnosisSafe_3.sol#292-308) should be declared external
+OwnerManager.getThreshold (/sb/GnosisSafe_3.sol#325-331) should be declared external
+OwnerManager.isOwner (/sb/GnosisSafe_3.sol#333-339) should be declared external
+OwnerManager.getOwners (/sb/GnosisSafe_3.sol#343-359) should be declared external
+MasterCopy.changeMasterCopy (/sb/GnosisSafe_3.sol#394-401) should be declared external
+GnosisSafe.getTransactionHash (/sb/GnosisSafe_3.sol#907-924) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/GnosisSafe_3.sol:
+	- pragma solidity^0.5.0 (/sb/GnosisSafe_3.sol#2): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Parameter '_owners' of OwnerManager.setupOwners (/sb/GnosisSafe_3.sol#213) is not in mixedCase
+Parameter '_threshold' of OwnerManager.setupOwners (/sb/GnosisSafe_3.sol#213) is not in mixedCase
+Parameter '_threshold' of OwnerManager.addOwnerWithThreshold (/sb/GnosisSafe_3.sol#244) is not in mixedCase
+Parameter '_threshold' of OwnerManager.removeOwner (/sb/GnosisSafe_3.sol#267) is not in mixedCase
+Parameter '_threshold' of OwnerManager.changeThreshold (/sb/GnosisSafe_3.sol#313) is not in mixedCase
+Parameter '_owners' of BaseSafe.setupSafe (/sb/GnosisSafe_3.sol#374) is not in mixedCase
+Parameter '_threshold' of BaseSafe.setupSafe (/sb/GnosisSafe_3.sol#374) is not in mixedCase
+Parameter '_masterCopy' of MasterCopy.changeMasterCopy (/sb/GnosisSafe_3.sol#394) is not in mixedCase
+Parameter '_data' of GnosisSafe.isValidSignature (/sb/GnosisSafe_3.sol#830) is not in mixedCase
+Parameter '_signature' of GnosisSafe.isValidSignature (/sb/GnosisSafe_3.sol#830) is not in mixedCase
+Parameter '_owners' of GnosisSafe.setup (/sb/GnosisSafe_3.sol#635) is not in mixedCase
+Parameter '_threshold' of GnosisSafe.setup (/sb/GnosisSafe_3.sol#635) is not in mixedCase
+Parameter '_data' of GnosisSafe.signMessage (/sb/GnosisSafe_3.sol#817) is not in mixedCase
+Parameter '_nonce' of GnosisSafe.encodeTransactionData (/sb/GnosisSafe_3.sol#883) is not in mixedCase
+Parameter '_nonce' of GnosisSafe.getTransactionHash (/sb/GnosisSafe_3.sol#917) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/GnosisSafe_3.sol analyzed (14 contracts), 38 result(s) found

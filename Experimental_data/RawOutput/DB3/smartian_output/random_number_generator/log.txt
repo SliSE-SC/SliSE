@@ -1,0 +1,18 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/random_number_generator.bin
+[00:00:00:00] Fuzzing starts at 08:40:11
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found sstore(<0x0, { }, { }>, <T, { }, { }>) @ 0x8
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_0 }, Use = {  }
+Constructor tainted: {  }
+(0 candidate sequences)
+[00:00:00:00] Start main fuzzing phase
+Unhandled exception. Smartian.DurableQueue+EmptyException: Exception of type 'Smartian.DurableQueue+EmptyException' was thrown.
+   at Smartian.DurableQueue.fetch[a](DurableQueue`1 queue) in /home/test/tools/Smartian/src/Core/Queue.fs:line 115
+   at Smartian.Fuzz.randFuzzLoop(FuzzOption opt, ContractSpec contSpec, Queue`1 concQ, DurableQueue`1 randQ) in /home/test/tools/Smartian/src/Fuzz/Fuzz.fs:line 96
+   at Smartian.Fuzz.repeatRandFuzz(FuzzOption opt, ContractSpec contSpec, Queue`1 concQ, DurableQueue`1 randQ, Int32 randFuzzBudget) in /home/test/tools/Smartian/src/Fuzz/Fuzz.fs:line 103
+   at Smartian.Fuzz.fuzzLoop[a](FuzzOption opt, ContractSpec contSpec, Queue`1 concQ, DurableQueue`1 randQ) in /home/test/tools/Smartian/src/Fuzz/Fuzz.fs:line 120
+   at Smartian.Fuzz.run[a](String[] args) in /home/test/tools/Smartian/src/Fuzz/Fuzz.fs:line 149
+   at Smartian.Main.runMode(String mode, String[] optArgs) in /home/test/tools/Smartian/src/Main/Main.fs:line 14
+   at Smartian.Main.main(String[] args) in /home/test/tools/Smartian/src/Main/Main.fs:line 22

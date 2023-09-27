@@ -1,0 +1,57 @@
+INFO:Detectors:[93m
+LibBytes.rawAddress (/sb/MixinAssetProxyDispatcher_1.sol#98-107) is declared view but contains assembly code
+LibBytes.contentAddress (/sb/MixinAssetProxyDispatcher_1.sol#112-121) is declared view but contains assembly code
+LibBytes.memCopy (/sb/MixinAssetProxyDispatcher_1.sol#127-228) is declared view but contains assembly code
+LibBytes.sliceDestructive (/sb/MixinAssetProxyDispatcher_1.sol#268-292) is declared view but contains assembly code
+LibBytes.popLastByte (/sb/MixinAssetProxyDispatcher_1.sol#297-316) is declared view but contains assembly code
+LibBytes.popLast20Bytes (/sb/MixinAssetProxyDispatcher_1.sol#321-340) is declared view but contains assembly code
+LibBytes.readAddress (/sb/MixinAssetProxyDispatcher_1.sol#364-390) is declared view but contains assembly code
+LibBytes.writeAddress (/sb/MixinAssetProxyDispatcher_1.sol#396-436) is declared view but contains assembly code
+LibBytes.readBytes32 (/sb/MixinAssetProxyDispatcher_1.sol#442-463) is declared view but contains assembly code
+LibBytes.writeBytes32 (/sb/MixinAssetProxyDispatcher_1.sol#469-489) is declared view but contains assembly code
+LibBytes.readBytes4 (/sb/MixinAssetProxyDispatcher_1.sol#525-544) is declared view but contains assembly code
+LibBytes.readBytesWithLength (/sb/MixinAssetProxyDispatcher_1.sol#552-576) is declared view but contains assembly code
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#constant-functions-changing-the-state[0m
+INFO:Detectors:[92m
+Reentrancy in MixinAssetProxyDispatcher.registerAssetProxy (/sb/MixinAssetProxyDispatcher_1.sol#819-839):
+	External calls:
+	- assetProxyId = assetProxyContract.getProxyId() (/sb/MixinAssetProxyDispatcher_1.sol#826)
+	State variables written after the call(s):
+	- assetProxies (/sb/MixinAssetProxyDispatcher_1.sol#834)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-2[0m
+INFO:Detectors:[92m
+LibBytes.rawAddress uses assembly (/sb/MixinAssetProxyDispatcher_1.sol#98-107)
+	- /sb/MixinAssetProxyDispatcher_1.sol#103-106
+LibBytes.contentAddress uses assembly (/sb/MixinAssetProxyDispatcher_1.sol#112-121)
+	- /sb/MixinAssetProxyDispatcher_1.sol#117-120
+LibBytes.memCopy uses assembly (/sb/MixinAssetProxyDispatcher_1.sol#127-228)
+	- /sb/MixinAssetProxyDispatcher_1.sol#139-145
+	- /sb/MixinAssetProxyDispatcher_1.sol#167-195
+	- /sb/MixinAssetProxyDispatcher_1.sol#196-226
+LibBytes.sliceDestructive uses assembly (/sb/MixinAssetProxyDispatcher_1.sol#268-292)
+	- /sb/MixinAssetProxyDispatcher_1.sol#287-291
+LibBytes.popLastByte uses assembly (/sb/MixinAssetProxyDispatcher_1.sol#297-316)
+	- /sb/MixinAssetProxyDispatcher_1.sol#310-315
+LibBytes.popLast20Bytes uses assembly (/sb/MixinAssetProxyDispatcher_1.sol#321-340)
+	- /sb/MixinAssetProxyDispatcher_1.sol#334-339
+LibBytes.readAddress uses assembly (/sb/MixinAssetProxyDispatcher_1.sol#364-390)
+	- /sb/MixinAssetProxyDispatcher_1.sol#383-389
+LibBytes.writeAddress uses assembly (/sb/MixinAssetProxyDispatcher_1.sol#396-436)
+	- /sb/MixinAssetProxyDispatcher_1.sol#415-436
+LibBytes.readBytes32 uses assembly (/sb/MixinAssetProxyDispatcher_1.sol#442-463)
+	- /sb/MixinAssetProxyDispatcher_1.sol#459-462
+LibBytes.writeBytes32 uses assembly (/sb/MixinAssetProxyDispatcher_1.sol#469-489)
+	- /sb/MixinAssetProxyDispatcher_1.sol#486-489
+LibBytes.readBytes4 uses assembly (/sb/MixinAssetProxyDispatcher_1.sol#525-544)
+	- /sb/MixinAssetProxyDispatcher_1.sol#537-543
+LibBytes.readBytesWithLength uses assembly (/sb/MixinAssetProxyDispatcher_1.sol#552-576)
+	- /sb/MixinAssetProxyDispatcher_1.sol#572-575
+MixinAssetProxyDispatcher.dispatchTransferFrom uses assembly (/sb/MixinAssetProxyDispatcher_1.sol#857-956)
+	- /sb/MixinAssetProxyDispatcher_1.sol#875-881
+	- /sb/MixinAssetProxyDispatcher_1.sol#904-955
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+IOwnable.transferOwnership (/sb/MixinAssetProxyDispatcher_1.sol#38-39) should be declared external
+Ownable.transferOwnership (/sb/MixinAssetProxyDispatcher_1.sol#60-67) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Slither:/sb/MixinAssetProxyDispatcher_1.sol analyzed (8 contracts), 28 result(s) found

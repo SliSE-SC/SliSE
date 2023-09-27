@@ -1,0 +1,111 @@
+INFO:Detectors:[91m
+Reentrancy in Bank.work (/sb/Bank_1.sol#748-788):
+	External calls:
+	- require(bool,string)(config.isGoblin(goblin),not a goblin) (/sb/Bank_1.sol#764)
+	- require(bool,string)(loan == 0 || config.acceptDebt(goblin),goblin not accept more debt) (/sb/Bank_1.sol#765)
+	- Goblin(goblin).work.value(sendETH)(id,msg.sender,debt,data) (/sb/Bank_1.sol#773)
+	- require(bool,string)(debt >= config.minDebtSize(),too small debt size) (/sb/Bank_1.sol#780)
+	- health = Goblin(goblin).health(id) (/sb/Bank_1.sol#781)
+	- workFactor = config.workFactor(goblin,debt) (/sb/Bank_1.sol#782)
+	External calls sending eth:
+	- Goblin(goblin).work.value(sendETH)(id,msg.sender,debt,data) (/sb/Bank_1.sol#773)
+	State variables written after the call(s):
+	- glbDebtShare (/sb/Bank_1.sol#784)
+	- glbDebtVal (/sb/Bank_1.sol#784)
+	- positions (/sb/Bank_1.sol#784)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities[0m
+INFO:Detectors:[93m
+Bank.debtShareToVal (/sb/Bank_1.sol#703-706) uses a dangerous strict equality:
+	- glbDebtShare == 0
+Bank.debtShareToVal (/sb/Bank_1.sol#703-706) uses a dangerous strict equality:
+	- glbDebtShare == 0
+Bank.debtValToShare (/sb/Bank_1.sol#710-713) uses a dangerous strict equality:
+	- glbDebtShare == 0
+Bank.debtShareToVal (/sb/Bank_1.sol#703-706) uses a dangerous strict equality:
+	- glbDebtShare == 0
+Bank.debtValToShare (/sb/Bank_1.sol#710-713) uses a dangerous strict equality:
+	- glbDebtShare == 0
+Bank.work (/sb/Bank_1.sol#748-788) uses a dangerous strict equality:
+	- require(bool,string)(positions[id].goblin == goblin,bad position goblin)
+	- require(bool,string)(positions[id].owner == msg.sender,not position owner)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#dangerous-strict-equalities[0m
+INFO:Detectors:[93m
+Reentrancy in Bank.accrue (/sb/Bank_1.sol#672-681):
+	External calls:
+	- interest = pendingInterest(msgValue) (/sb/Bank_1.sol#674)
+	- toReserve = interest.mul(config.getReservePoolBps()).div(10000) (/sb/Bank_1.sol#675)
+	State variables written after the call(s):
+	- glbDebtVal (/sb/Bank_1.sol#677)
+	- lastAccrueTime (/sb/Bank_1.sol#678)
+Reentrancy in Bank.work (/sb/Bank_1.sol#748-788):
+	External calls:
+	- require(bool,string)(config.isGoblin(goblin),not a goblin) (/sb/Bank_1.sol#764)
+	- require(bool,string)(loan == 0 || config.acceptDebt(goblin),goblin not accept more debt) (/sb/Bank_1.sol#765)
+	State variables written after the call(s):
+	- positions (/sb/Bank_1.sol#766)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[92m
+Reentrancy in Bank.accrue (/sb/Bank_1.sol#672-681):
+	External calls:
+	- interest = pendingInterest(msgValue) (/sb/Bank_1.sol#674)
+	- toReserve = interest.mul(config.getReservePoolBps()).div(10000) (/sb/Bank_1.sol#675)
+	State variables written after the call(s):
+	- reservePool (/sb/Bank_1.sol#676)
+Reentrancy in Bank.work (/sb/Bank_1.sol#748-788):
+	External calls:
+	- require(bool,string)(config.isGoblin(goblin),not a goblin) (/sb/Bank_1.sol#764)
+	- require(bool,string)(loan == 0 || config.acceptDebt(goblin),goblin not accept more debt) (/sb/Bank_1.sol#765)
+	State variables written after the call(s):
+	- glbDebtShare (/sb/Bank_1.sol#766)
+	- glbDebtVal (/sb/Bank_1.sol#766)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-2[0m
+INFO:Detectors:[92m
+Bank.decimals should be constant (/sb/Bank_1.sol#648)
+Bank.name should be constant (/sb/Bank_1.sol#646)
+Bank.symbol should be constant (/sb/Bank_1.sol#647)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#state-variables-that-could-be-declared-constant[0m
+INFO:Detectors:[92m
+Ownable.owner (/sb/Bank_1.sol#105-107) should be declared external
+Ownable.renounceOwnership (/sb/Bank_1.sol#131-134) should be declared external
+Ownable.transferOwnership (/sb/Bank_1.sol#140-142) should be declared external
+IERC20.balanceOf (/sb/Bank_1.sol#17) should be declared external
+ERC20.balanceOf (/sb/Bank_1.sol#198-200) should be declared external
+IERC20.transfer (/sb/Bank_1.sol#26) should be declared external
+ERC20.transfer (/sb/Bank_1.sol#210-213) should be declared external
+ERC20.allowance (/sb/Bank_1.sol#218-220) should be declared external
+IERC20.allowance (/sb/Bank_1.sol#35) should be declared external
+IERC20.approve (/sb/Bank_1.sol#51) should be declared external
+ERC20.approve (/sb/Bank_1.sol#229-232) should be declared external
+IERC20.transferFrom (/sb/Bank_1.sol#62) should be declared external
+ERC20.transferFrom (/sb/Bank_1.sol#246-250) should be declared external
+ERC20.increaseAllowance (/sb/Bank_1.sol#264-267) should be declared external
+ERC20.decreaseAllowance (/sb/Bank_1.sol#283-286) should be declared external
+Bank.positionInfo (/sb/Bank_1.sol#717-720) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/Bank_1.sol:
+	- pragma solidity^0.5.0 (/sb/Bank_1.sol#2): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Low level call in SafeToken.safeApprove (/sb/Bank_1.sol#610-614):
+	-(success,data) = token.call(abi.encodeWithSelector(0x095ea7b3,to,value)) /sb/Bank_1.sol#612
+Low level call in SafeToken.safeTransfer (/sb/Bank_1.sol#616-620):
+	-(success,data) = token.call(abi.encodeWithSelector(0xa9059cbb,to,value)) /sb/Bank_1.sol#618
+Low level call in SafeToken.safeTransferFrom (/sb/Bank_1.sol#622-626):
+	-(success,data) = token.call(abi.encodeWithSelector(0x23b872dd,from,to,value)) /sb/Bank_1.sol#624
+Low level call in SafeToken.safeTransferETH (/sb/Bank_1.sol#628-631):
+	-(success) = to.call.value(value)(new bytes(0)) /sb/Bank_1.sol#629
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#low-level-calls[0m
+INFO:Detectors:[92m
+Function 'Ownable._transferOwnership' (/sb/Bank_1.sol#147-151) is not in mixedCase
+Function 'ERC20._transfer' (/sb/Bank_1.sol#302-309) is not in mixedCase
+Function 'ERC20._mint' (/sb/Bank_1.sol#320-326) is not in mixedCase
+Function 'ERC20._burn' (/sb/Bank_1.sol#339-345) is not in mixedCase
+Function 'ERC20._approve' (/sb/Bank_1.sol#360-366) is not in mixedCase
+Function 'ERC20._burnFrom' (/sb/Bank_1.sol#374-377) is not in mixedCase
+Parameter '_config' of Bank. (/sb/Bank_1.sol#683) is not in mixedCase
+Function 'Bank._addDebt' (/sb/Bank_1.sol#814-821) is not in mixedCase
+Function 'Bank._removeDebt' (/sb/Bank_1.sol#824-837) is not in mixedCase
+Parameter '_config' of Bank.updateConfig (/sb/Bank_1.sol#841) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/Bank_1.sol analyzed (11 contracts), 40 result(s) found

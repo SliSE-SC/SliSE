@@ -1,0 +1,66 @@
+2023-07-03 16:17:04,633: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:17:04,633: [11] m.main:INFO: Beginning analysis
+2023-07-03 16:17:04,636: [11] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:17:26,091: [11] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:17:28,930: [11] m.e.manticore:INFO: 0 alive states, 1 terminated states
+Traceback (most recent call last):
+  File "/usr/local/bin/manticore", line 8, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.7/dist-packages/manticore/__main__.py", line 42, in main
+    ethereum_main(args, logger)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/cli.py", line 145, in ethereum_main
+    m.finalize(only_alive_states=args.only_alive_testcases)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/manticore.py", line 177, in newFunction
+    return func(self, *args, **kw)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1811, in finalize
+    "{:x}: {:2.2f}%\n".format(int(address), self.global_coverage(address))
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/manticore.py", line 1888, in global_coverage
+    runtime_bytecode = state.solve_one(code)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/state.py", line 483, in solve_one
+    return self.solve_one_n(expr, constrain=constrain)[0]
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/state.py", line 494, in solve_one_n
+    return self.solve_one_n_batched(exprs, constrain)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/state.py", line 509, in solve_one_n_batched
+    values = self._solver.get_value_in_batch(self._constraints, exprs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/smtlib/solver.py", line 745, in get_value_in_batch
+    "Solver could not find a value for expression under current constraint set"
+manticore.exceptions.SolverError: Solver could not find a value for expression under current constraint set
+2023-07-03 16:17:31,241: [70] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:17:31,242: [70] m.main:INFO: Beginning analysis
+2023-07-03 16:17:31,244: [70] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:17:33,455: [70] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:17:52,819: [70] m.e.manticore:INFO: 1 alive states, 3 terminated states
+2023-07-03 16:17:55,160: [70] m.e.manticore:INFO: Starting symbolic transaction: 1
+2023-07-03 16:18:14,684: [70] m.e.manticore:INFO: 1 alive states, 5 terminated states
+2023-07-03 16:18:17,184: [139] m.c.manticore:INFO: Generated testcase No. 0 - RETURN(3 txs)
+2023-07-03 16:18:17,185: [139] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2023-07-03 16:18:25,365: [70] m.c.manticore:INFO: Results in /mcore_sywgd7vk
+2023-07-03 16:18:25,365: [70] m.c.manticore:INFO: Total time: 30.12303614616394
+2023-07-03 16:18:26,040: [170] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:18:26,040: [170] m.main:INFO: Beginning analysis
+2023-07-03 16:18:26,043: [170] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:18:27,534: [170] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:18:56,958: [170] m.e.manticore:INFO: 2 alive states, 3 terminated states
+2023-07-03 16:18:57,799: [170] m.e.manticore:INFO: Starting symbolic transaction: 1
+2023-07-03 16:20:04,168: [170] m.e.manticore:INFO: 4 alive states, 7 terminated states
+2023-07-03 16:20:05,176: [245] m.c.manticore:INFO: Generated testcase No. 0 - RETURN(3 txs)
+2023-07-03 16:20:05,176: [245] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2023-07-03 16:20:05,187: [246] m.c.manticore:INFO: Generated testcase No. 1 - RETURN(3 txs)
+2023-07-03 16:20:05,188: [246] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2023-07-03 16:20:05,197: [247] m.c.manticore:INFO: Generated testcase No. 2 - RETURN(3 txs)
+2023-07-03 16:20:05,198: [247] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2023-07-03 16:20:05,209: [248] m.c.manticore:INFO: Generated testcase No. 3 - RETURN(3 txs)
+2023-07-03 16:20:05,210: [248] m.c.plugin:WARNING: Caught will_solve in state None, but failed to capture its initialization
+2023-07-03 16:20:09,016: [170] m.c.manticore:INFO: Results in /mcore_w_2ovl9g
+2023-07-03 16:20:09,017: [170] m.c.manticore:INFO: Total time: 71.13341784477234
+2023-07-03 16:20:09,741: [291] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:20:09,741: [291] m.main:INFO: Beginning analysis
+2023-07-03 16:20:09,743: [291] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:20:10,229: [291] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:20:10,308: [291] m.e.manticore:INFO: 0 alive states, 2 terminated states
+2023-07-03 16:20:10,476: [291] m.c.manticore:INFO: Results in /mcore_kr3qdukz
+2023-07-03 16:20:10,476: [291] m.c.manticore:INFO: Total time: 0.24351930618286133
+2023-07-03 16:20:11,211: [353] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:20:11,212: [353] m.main:INFO: Beginning analysis
+2023-07-03 16:20:11,214: [353] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:20:17,670: [353] m.e.manticore:INFO: Starting symbolic transaction: 0

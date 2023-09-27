@@ -1,0 +1,362 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/0xf70d589d76eebdd7c12cc5eec99f8f6fa4233b9e.bin
+[00:00:00:00] Fuzzing starts at 08:40:06
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found sload(<0x0, { }, { }>) @ 0xe
+Found sstore(<0x0, { }, { }>, <T, { }, { CALLER, var_0 }>) @ 0x43
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_0 }, Use = { var_0 }
+Constructor tainted: { var_0 }
+[DEBUG] Analyzing withdraw(3ccfd60b) @ 64
+Found sload(<0x0, { }, { }>) @ 0x1b1
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x1e6
+Found sload(<0x0, { }, { }>) @ 0x1ed
+Found sload(<0x0, { }, { }>) @ 0x248
+withdraw(3ccfd60b): (onlyOwner) Def = { var_0 }, Use = { var_0 }
+[DEBUG] Analyzing GetFreebie(6ea3f1cb) @ 6e
+Found sload(<0x0, { }, { }>) @ 0x2d9
+GetFreebie(6ea3f1cb): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing Owner(b4a99a4e) @ 78
+Found sload(<0x0, { }, { }>) @ 0x3b9
+Owner(b4a99a4e): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing Command(ba21d62a) @ cf
+Found sload(<0x0, { }, { }>) @ 0x3de
+Command(ba21d62a): (onlyOwner) Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing fallback @ 0
+fallback: Def = {  }, Use = {  }
+(4 candidate sequences)
+["withdraw(3ccfd60b)"; "withdraw(3ccfd60b)"]
+["withdraw(3ccfd60b)"; "Owner(b4a99a4e)"]
+["withdraw(3ccfd60b)"; "GetFreebie(6ea3f1cb)"]
+["withdraw(3ccfd60b)"; "Command(ba21d62a)"]
+[00:00:00:00] Start main fuzzing phase
+[00:00:00:01] [*] Save new seed id-00000_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00001_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Owner(b4a99a4e), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00002_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: GetFreebie(6ea3f1cb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] Tx#2 found MishandledException at 4b8
+[00:00:00:01] Tx#2 found MishandledExceptionMythril at 4b8
+[00:00:00:01] Tx#2 found MishandledExceptionManticore at 4b8
+[00:00:00:01] [*] Save bug seed id-00000-ME-ME_mant-ME_myth_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Command(ba21d62a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : bytes
+                 00
+                 00
+                 00
+                 00
+
+[00:00:00:01] [*] Save new seed id-00003_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Command(ba21d62a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : bytes
+                 00
+                 00
+                 00
+                 00
+
+[00:00:00:02] [*] Save new seed id-00004_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: GetFreebie(6ea3f1cb), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 80000000000000002F000008000000000000000000000000003F000000E90001
+(    TX 2    ) Function: Command(ba21d62a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : bytes
+                 00
+                 FF
+                 00
+                 00
+(    TX 3    ) Function: fallback, From: NormalUser1, UseAgent: true
+          Value : uint256
+                 8000000000000000000000000000000000000000000000000000000000000001
+(    TX 4    ) Function: withdraw(3ccfd60b), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 3F92FFFFFFFFFF0FFFFFFFFFFFFFFFFFFFFF00FFFF81FFFFFFFFFFFFFFFFFFFF
+(    TX 5    ) Function: withdraw(3ccfd60b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+
+[00:00:00:02] [*] Save new seed id-00005_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 00003E0000100000000000750000000000000000000000000000000000000001
+(    TX 2    ) Function: fallback, From: NormalUser1, UseAgent: true
+          Value : uint256
+                 3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF81FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+(    TX 3    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: Command(ba21d62a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : bytes
+                 00
+                 00
+                 00
+                 00
+(    TX 5    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+[00:00:00:02] [*] Save new seed id-00006_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: withdraw(3ccfd60b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 8000000000000000004000000000000000000000000000000000000000000001
+(    TX 2    ) Function: Command(ba21d62a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : bytes
+                 80
+                 00
+                 00
+                 00
+(    TX 3    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 000000000000000000000000000000000000000000000000000000000000001D
+(    TX 4    ) Function: Command(ba21d62a), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : bytes
+                 00
+                 00
+                 00
+                 00
+
+[00:00:00:02] [*] Save new seed id-00007_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: withdraw(3ccfd60b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 C842000000FF3F000000000000000000000000EB000000000800000D00810000
+(    TX 2    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 4000000000000000000000000000000081000000810000000000000000000001
+(    TX 3    ) Function: Command(ba21d62a), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 000000000000000000000000000000000C000000
+          Arg2 : bytes
+                 00
+                 00
+                 00
+                 00
+(    TX 4    ) Function: Owner(b4a99a4e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00008_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: GetFreebie(6ea3f1cb), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000A50000000000000000
+(    TX 3    ) Function: Owner(b4a99a4e), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] Tx#1 found ReentrancyMythril at 4b8
+[00:00:00:03] [*] Save bug seed id-00001-RE_myth_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Command(ba21d62a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 00000000000000000000000000000000000000000000000000000000003F0000
+          Arg1 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+          Arg2 : bytes
+                 00
+                 00
+                 00
+                 00
+(    TX 2    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000001000000000000000005A00160000000000000000000000000000
+(    TX 3    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 40001E0000000000000000000000000000000000000000000000000000000001
+(    TX 4    ) Function: GetFreebie(6ea3f1cb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+( => TX 5 <= ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 4000000053000000000000400000810000000000000000000000000000000000
+
+[00:00:00:05] [*] Save new seed id-00009_00005: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: GetFreebie(6ea3f1cb), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000001CD0000000000000000
+(    TX 2    ) Function: withdraw(3ccfd60b), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:06] [*] Save new seed id-00010_00006: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: Command(ba21d62a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 6B773032D99FB9AAD6FC267651C446FA7F9301AF
+          Arg2 : bytes
+                 00
+                 00
+                 00
+                 00
+
+[00:00:00:16] [*] Save new seed id-00011_00016: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000001400000000CF0000000000000000000000000000
+(    TX 2    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 3 <= ) Function: GetFreebie(6ea3f1cb), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000FC0000000000000000
+(    TX 4    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0008000000000000000000000000000000000000000000000000FC0000004000
+(    TX 5    ) Function: Owner(b4a99a4e), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:21] Tx#4 found ReentrancySFuzz at 4b8
+[00:00:00:21] [*] Save bug seed id-00002-RE_sfuzz_00021: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(3ccfd60b), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 8000000000000000004000000000000000000000000000000000000000000001
+(    TX 2    ) Function: Command(ba21d62a), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000C20000
+          Arg2 : bytes
+                 80
+                 FF
+                 00
+                 00
+(    TX 3    ) Function: withdraw(3ccfd60b), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 00000000000000000000000000000000000000000000000000000000B700001C
+( => TX 4 <= ) Function: Command(ba21d62a), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 000000000000000000000000000000000000000000000000EB00000000000000
+          Arg1 : address
+                 24CD2EDBA056B7C654A50E8201B619D4F624FDDA
+          Arg2 : bytes
+                 00
+                 00
+                 10
+                 00
+(    TX 5    ) Function: GetFreebie(6ea3f1cb), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 7A000000FF00000000000000000000000000B200000000000000000000000000
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 1708278
+[00:01:00:00] Deployment failures: 0
+[00:01:00:00] Test Cases: 12
+[00:01:00:00] Covered Edges: 37
+[00:01:00:00] Covered Instructions: 536
+[00:01:00:00] Covered Def-Use Chains: 0
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 0
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 0
+[00:01:00:00]   Integer Bug: 0
+[00:01:00:00]   Mishandled Exception: 1
+[00:01:00:00]   Multiple Send: 0
+[00:01:00:00]   Reentrancy: 0
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

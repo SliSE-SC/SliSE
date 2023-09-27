@@ -1,0 +1,203 @@
+{
+    "errors": [
+        "EXIT_CODE_22"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "GolemNetworkToken",
+            "filename": "all_contract/Faucet_1.sol",
+            "function": "finalize",
+            "impact": "High",
+            "line": 173,
+            "line_end": 196,
+            "message": "GolemNetworkToken.finalize (Faucet_1.sol#173-196) sends eth to arbitrary user\n\tDangerous calls:\n\t- ! golemFactory.send(this.balance) (Faucet_1.sol#195)\n",
+            "name": "arbitrary-send"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Faucet",
+            "filename": "all_contract/Faucet_1.sol",
+            "function": "create",
+            "impact": "Medium",
+            "line": 229,
+            "line_end": 233,
+            "message": "Faucet.create (Faucet_1.sol#229-233) does not use the value returned by external calls:\n\t-token.transfer(msg.sender,tokens) (Faucet_1.sol#232)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "High",
+            "contract": "MigrationAgent",
+            "filename": "all_contract/Faucet_1.sol",
+            "function": "migrateFrom",
+            "impact": "Informational",
+            "line": 7,
+            "message": "MigrationAgent.migrateFrom (Faucet_1.sol#7) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "GolemNetworkToken",
+            "filename": "all_contract/Faucet_1.sol",
+            "function": "transfer",
+            "impact": "Informational",
+            "line": 76,
+            "line_end": 89,
+            "message": "GolemNetworkToken.transfer (Faucet_1.sol#76-89) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in Faucet_1.sol:\n\t- pragma solidity^0.4.16 (Faucet_1.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 11,
+            "message": "Function 'GNTAllocation.GNTAllocation' (Faucet_1.sol#11) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 52,
+            "line_end": 67,
+            "message": "Function 'GolemNetworkToken.GolemNetworkToken' (Faucet_1.sol#52-67) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 52,
+            "message": "Parameter '_golemFactory' of GolemNetworkToken.GolemNetworkToken (Faucet_1.sol#52) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 53,
+            "message": "Parameter '_migrationMaster' of GolemNetworkToken.GolemNetworkToken (Faucet_1.sol#53) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 54,
+            "message": "Parameter '_fundingStartBlock' of GolemNetworkToken.GolemNetworkToken (Faucet_1.sol#54) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 55,
+            "message": "Parameter '_fundingEndBlock' of GolemNetworkToken.GolemNetworkToken (Faucet_1.sol#55) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 76,
+            "message": "Parameter '_to' of GolemNetworkToken.transfer (Faucet_1.sol#76) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 76,
+            "message": "Parameter '_value' of GolemNetworkToken.transfer (Faucet_1.sol#76) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 95,
+            "message": "Parameter '_owner' of GolemNetworkToken.balanceOf (Faucet_1.sol#95) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 104,
+            "message": "Parameter '_value' of GolemNetworkToken.migrate (Faucet_1.sol#104) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 125,
+            "message": "Parameter '_agent' of GolemNetworkToken.setMigrationAgent (Faucet_1.sol#125) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 133,
+            "message": "Parameter '_master' of GolemNetworkToken.setMigrationMaster (Faucet_1.sol#133) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 20,
+            "message": "Constant 'GolemNetworkToken.tokenCreationRate' (Faucet_1.sol#20) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 23,
+            "message": "Constant 'GolemNetworkToken.tokenCreationCap' (Faucet_1.sol#23) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 24,
+            "message": "Constant 'GolemNetworkToken.tokenCreationMin' (Faucet_1.sol#24) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 223,
+            "line_end": 225,
+            "message": "Function 'Faucet.Faucet' (Faucet_1.sol#223-225) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Faucet_1.sol",
+            "impact": "Informational",
+            "line": 223,
+            "message": "Parameter '_token' of Faucet.Faucet (Faucet_1.sol#223) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

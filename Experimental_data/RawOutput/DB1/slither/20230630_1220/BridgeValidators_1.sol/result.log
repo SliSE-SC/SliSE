@@ -1,0 +1,35 @@
+INFO:Slither:Compilation warnings/errors on /sb/BridgeValidators_1.sol:
+/sb/BridgeValidators_1.sol:70:5: Warning: Functions in interfaces should be declared external.
+    function isValidator(address _validator) public view returns(bool);
+    ^-----------------------------------------------------------------^
+/sb/BridgeValidators_1.sol:71:5: Warning: Functions in interfaces should be declared external.
+    function requiredSignatures() public view returns(uint256);
+    ^---------------------------------------------------------^
+/sb/BridgeValidators_1.sol:72:5: Warning: Functions in interfaces should be declared external.
+    function owner() public view returns(address);
+    ^--------------------------------------------^
+
+INFO:Detectors:[92m
+Ownable.transferOwnership (/sb/BridgeValidators_1.sol#54-57) should be declared external
+BridgeValidators.initialize (/sb/BridgeValidators_1.sol#129-149) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Parameter '_validator' of BridgeValidators.isValidator (/sb/BridgeValidators_1.sol#186) is not in mixedCase
+Parameter '_requiredSignatures' of BridgeValidators.initialize (/sb/BridgeValidators_1.sol#129) is not in mixedCase
+Parameter '_initialValidators' of BridgeValidators.initialize (/sb/BridgeValidators_1.sol#129) is not in mixedCase
+Parameter '_owner' of BridgeValidators.initialize (/sb/BridgeValidators_1.sol#129) is not in mixedCase
+Parameter '_validator' of BridgeValidators.addValidator (/sb/BridgeValidators_1.sol#151) is not in mixedCase
+Parameter '_validator' of BridgeValidators.removeValidator (/sb/BridgeValidators_1.sol#159) is not in mixedCase
+Parameter '_requiredSignatures' of BridgeValidators.setRequiredSignatures (/sb/BridgeValidators_1.sol#167) is not in mixedCase
+Parameter '_validator' of BridgeValidators.validators (/sb/BridgeValidators_1.sol#182) is not in mixedCase
+Parameter '_validatorCount' of BridgeValidators.setValidatorCount (/sb/BridgeValidators_1.sol#194) is not in mixedCase
+Parameter '_validator' of BridgeValidators.setValidator (/sb/BridgeValidators_1.sol#198) is not in mixedCase
+Parameter '_status' of BridgeValidators.setValidator (/sb/BridgeValidators_1.sol#198) is not in mixedCase
+Parameter '_status' of BridgeValidators.setInitialize (/sb/BridgeValidators_1.sol#202) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Detectors:[92m
+EternalStorage.stringStorage (/sb/BridgeValidators_1.sol#13) is never used in BridgeValidators
+EternalStorage.bytesStorage (/sb/BridgeValidators_1.sol#15) is never used in BridgeValidators
+EternalStorage.intStorage (/sb/BridgeValidators_1.sol#17) is never used in BridgeValidators
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-state-variables[0m
+INFO:Slither:/sb/BridgeValidators_1.sol analyzed (5 contracts), 15 result(s) found

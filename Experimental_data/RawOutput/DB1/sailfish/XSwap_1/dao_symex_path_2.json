@@ -1,0 +1,1846 @@
+{
+    "file": "XSwap_1.sol",
+    "global_structs": [
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x87"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x88"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x89"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "OFFSET",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x3"
+            ]
+        },
+        {
+            "name": "authority",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "newOwner",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "actived",
+            "type": [
+                "boolean"
+            ],
+            "init": []
+        },
+        {
+            "name": "lendFMe",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "isOpen",
+            "type": [
+                "boolean"
+            ],
+            "init": []
+        },
+        {
+            "name": "prices",
+            "type": [
+                "array",
+                "integer",
+                [
+                    "array",
+                    "integer",
+                    "integer"
+                ]
+            ],
+            "init": []
+        },
+        {
+            "name": "fee",
+            "type": [
+                "array",
+                "integer",
+                [
+                    "array",
+                    "integer",
+                    "integer"
+                ]
+            ],
+            "init": []
+        },
+        {
+            "name": "supportLending",
+            "type": [
+                "array",
+                "integer",
+                "boolean"
+            ],
+            "init": []
+        },
+        {
+            "name": "decimals",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "dai",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x17"
+            ]
+        },
+        {
+            "name": "owner",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x9"
+            ]
+        },
+        {
+            "name": "chai",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x16"
+            ]
+        },
+        {
+            "name": "DSAuthority",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "DSAuthEvents",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "DSAuth",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "IERC20Token",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "NonStandardIERC20Token",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ILendFMe",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "IChai",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "DSMath",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "XSwap",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x3",
+            "instructions": [
+                "OFFSET = 1000000000000000000"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x9",
+            "instructions": [
+                "owner = msg_sender"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x16",
+            "instructions": [
+                "chai = 789894819389809168608338277773840522646645627264"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x17",
+            "instructions": [
+                "dai = 934257876225688379897579371651910957691047862592"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x44",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x45",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x46",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x87",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x88",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x89",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "owner",
+            "addrs": [
+                "0x2",
+                "0xb",
+                "0xf",
+                "0x21"
+            ]
+        },
+        {
+            "name": "newOwner",
+            "addrs": [
+                "0x2",
+                "0xd",
+                "0x22"
+            ]
+        },
+        {
+            "name": "isOpen",
+            "addrs": [
+                "0x2",
+                "0x11",
+                "0x2f"
+            ]
+        },
+        {
+            "name": "lendFMe",
+            "addrs": [
+                "0x2",
+                "0x13",
+                "0x25"
+            ]
+        },
+        {
+            "name": "actived",
+            "addrs": [
+                "0x2",
+                "0x15"
+            ]
+        },
+        {
+            "name": "supportLending",
+            "addrs": [
+                "0x2",
+                "0x1c",
+                "0x1f"
+            ]
+        },
+        {
+            "name": "authority",
+            "addrs": [
+                "0x2",
+                "0x23"
+            ]
+        },
+        {
+            "name": "prices",
+            "addrs": [
+                "0x2",
+                "0x27",
+                "0x31",
+                "0x34",
+                "0x37",
+                "0x3b"
+            ]
+        },
+        {
+            "name": "fee",
+            "addrs": [
+                "0x2",
+                "0x29",
+                "0x2b",
+                "0x3f",
+                "0x42"
+            ]
+        },
+        {
+            "name": "decimals",
+            "addrs": [
+                "0x2",
+                "0x2d"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb",
+            "instructions": [
+                "CLR_0 = msg.sender",
+                "RTMP_311 = CLR_0 == newOwner",
+                "CONDITION RTMP_311 0xa 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa",
+            "instructions": [
+                "owner = newOwner"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd",
+            "instructions": [
+                "CLR_1 = msg.sender",
+                "RTMP_312 = CLR_1 == newOwner",
+                "CONDITION RTMP_312 0xc 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc",
+            "instructions": [
+                "newOwner = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xf",
+            "instructions": [
+                "RTMP_313 = actived == false",
+                "CONDITION RTMP_313 0xe 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xe",
+            "instructions": [
+                "CLR_2 = msg.sender",
+                "owner = CLR_2"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11",
+            "instructions": [
+                "RTMP_314 = actived == false",
+                "CONDITION RTMP_314 0x10 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10",
+            "instructions": [
+                "isOpen = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13",
+            "instructions": [
+                "RTMP_315 = actived == false",
+                "CONDITION RTMP_315 0x12 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12",
+            "instructions": [
+                "lendFMe = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15",
+            "instructions": [
+                "RTMP_316 = actived == false",
+                "CONDITION RTMP_316 0x14 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14",
+            "instructions": [
+                "actived = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1c",
+            "instructions": [
+                "CLR_3 = supportLending[U]",
+                "REF_80 = CLR_3",
+                "RTMP_317 = ! REF_80",
+                "CONDITION RTMP_317 0x1d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1d",
+            "instructions": [
+                "RTMP_318 = authority == 0",
+                "CONDITION RTMP_318 0x1 0x1b"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1b",
+            "instructions": [
+                "CLR_4 = supportLending[U]",
+                "REF_79 = CLR_4",
+                "supportLending[0] = true",
+                "supportLending[1] = true",
+                "supportLending[2] = true",
+                "supportLending[3] = true",
+                "supportLending[4] = true",
+                "supportLending[5] = true",
+                "supportLending[6] = true",
+                "supportLending[7] = true",
+                "supportLending[8] = true",
+                "supportLending[9] = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1f",
+            "instructions": [
+                "CLR_5 = supportLending[U]",
+                "REF_82 = CLR_5",
+                "RTMP_319 = REF_82 == true",
+                "CONDITION RTMP_319 0x20 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x20",
+            "instructions": [
+                "RTMP_320 = authority == 0",
+                "CONDITION RTMP_320 0x1 0x1e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1e",
+            "instructions": [
+                "CLR_6 = supportLending[U]",
+                "REF_81 = CLR_6",
+                "supportLending[0] = false",
+                "supportLending[1] = false",
+                "supportLending[2] = false",
+                "supportLending[3] = false",
+                "supportLending[4] = false",
+                "supportLending[5] = false",
+                "supportLending[6] = false",
+                "supportLending[7] = false",
+                "supportLending[8] = false",
+                "supportLending[9] = false"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x21",
+            "instructions": [
+                "owner = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x22",
+            "instructions": [
+                "newOwner = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x23",
+            "instructions": [
+                "authority = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x25",
+            "instructions": [
+                "RTMP_321 = authority == 0",
+                "CONDITION RTMP_321 0x1 0x24"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x24",
+            "instructions": [
+                "lendFMe = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x27",
+            "instructions": [
+                "RTMP_322 = authority == 0",
+                "CONDITION RTMP_322 0x1 0x26"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x26",
+            "instructions": [
+                "CLR_7 = prices[U]",
+                "REF_83 = CLR_7",
+                "CLR_8 = REF_83[U]",
+                "REF_84 = CLR_8",
+                "REF_83[0] = U",
+                "REF_83[1] = U",
+                "REF_83[2] = U",
+                "REF_83[3] = U",
+                "REF_83[4] = U",
+                "REF_83[5] = U",
+                "REF_83[6] = U",
+                "REF_83[7] = U",
+                "REF_83[8] = U",
+                "REF_83[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x29",
+            "instructions": [
+                "RTMP_323 = authority == 0",
+                "CONDITION RTMP_323 0x1 0x28"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x28",
+            "instructions": [
+                "CLR_9 = fee[U]",
+                "REF_85 = CLR_9",
+                "CLR_10 = REF_85[U]",
+                "REF_86 = CLR_10",
+                "REF_85[0] = U",
+                "REF_85[1] = U",
+                "REF_85[2] = U",
+                "REF_85[3] = U",
+                "REF_85[4] = U",
+                "REF_85[5] = U",
+                "REF_85[6] = U",
+                "REF_85[7] = U",
+                "REF_85[8] = U",
+                "REF_85[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2b",
+            "instructions": [
+                "RTMP_324 = authority == 0",
+                "CONDITION RTMP_324 0x1 0x2a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2a",
+            "instructions": [
+                "CLR_11 = fee[U]",
+                "REF_87 = CLR_11",
+                "CLR_12 = REF_87[U]",
+                "REF_88 = CLR_12",
+                "REF_87[0] = U",
+                "REF_87[1] = U",
+                "REF_87[2] = U",
+                "REF_87[3] = U",
+                "REF_87[4] = U",
+                "REF_87[5] = U",
+                "REF_87[6] = U",
+                "REF_87[7] = U",
+                "REF_87[8] = U",
+                "REF_87[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2d",
+            "instructions": [
+                "RTMP_325 = authority == 0",
+                "CONDITION RTMP_325 0x1 0x2c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2c",
+            "instructions": [
+                "CLR_13 = decimals[U]",
+                "REF_89 = CLR_13",
+                "decimals[0] = U",
+                "decimals[1] = U",
+                "decimals[2] = U",
+                "decimals[3] = U",
+                "decimals[4] = U",
+                "decimals[5] = U",
+                "decimals[6] = U",
+                "decimals[7] = U",
+                "decimals[8] = U",
+                "decimals[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2f",
+            "instructions": [
+                "RTMP_326 = authority == 0",
+                "CONDITION RTMP_326 0x1 0x2e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2e",
+            "instructions": [
+                "isOpen = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x34",
+            "instructions": [
+                "RTMP_322 = authority == 0",
+                "CONDITION RTMP_322 0x1 0x35"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x35",
+            "instructions": [
+                "RTMP_328 = authority == 0",
+                "CONDITION RTMP_328 0x1 0x33"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x33",
+            "instructions": [
+                "CLR_14 = prices[U]",
+                "REF_83 = CLR_14",
+                "CLR_15 = REF_83[U]",
+                "REF_84 = CLR_15",
+                "REF_83[0] = U",
+                "REF_83[1] = U",
+                "REF_83[2] = U",
+                "REF_83[3] = U",
+                "REF_83[4] = U",
+                "REF_83[5] = U",
+                "REF_83[6] = U",
+                "REF_83[7] = U",
+                "REF_83[8] = U",
+                "REF_83[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3b",
+            "instructions": [
+                "RTMP_322 = authority == 0",
+                "CONDITION RTMP_322 0x1 0x3c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3c",
+            "instructions": [
+                "RTMP_328 = authority == 0",
+                "CONDITION RTMP_328 0x1 0x3d"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3d",
+            "instructions": [
+                "RTMP_330 = authority == 0",
+                "CONDITION RTMP_330 0x1 0x3a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3a",
+            "instructions": [
+                "CLR_16 = prices[U]",
+                "REF_83 = CLR_16",
+                "CLR_17 = REF_83[U]",
+                "REF_84 = CLR_17",
+                "REF_83[0] = U",
+                "REF_83[1] = U",
+                "REF_83[2] = U",
+                "REF_83[3] = U",
+                "REF_83[4] = U",
+                "REF_83[5] = U",
+                "REF_83[6] = U",
+                "REF_83[7] = U",
+                "REF_83[8] = U",
+                "REF_83[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3f",
+            "instructions": [
+                "RTMP_323 = authority == 0",
+                "CONDITION RTMP_323 0x1 0x40"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x40",
+            "instructions": [
+                "RTMP_331 = authority == 0",
+                "CONDITION RTMP_331 0x1 0x3e"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3e",
+            "instructions": [
+                "CLR_18 = fee[U]",
+                "REF_85 = CLR_18",
+                "CLR_19 = REF_85[U]",
+                "REF_86 = CLR_19",
+                "REF_85[0] = U",
+                "REF_85[1] = U",
+                "REF_85[2] = U",
+                "REF_85[3] = U",
+                "REF_85[4] = U",
+                "REF_85[5] = U",
+                "REF_85[6] = U",
+                "REF_85[7] = U",
+                "REF_85[8] = U",
+                "REF_85[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x42",
+            "instructions": [
+                "RTMP_324 = authority == 0",
+                "CONDITION RTMP_324 0x1 0x43"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x43",
+            "instructions": [
+                "RTMP_332 = authority == 0",
+                "CONDITION RTMP_332 0x1 0x41"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x41",
+            "instructions": [
+                "CLR_20 = fee[U]",
+                "REF_87 = CLR_20",
+                "CLR_21 = REF_87[U]",
+                "REF_88 = CLR_21",
+                "REF_87[0] = U",
+                "REF_87[1] = U",
+                "REF_87[2] = U",
+                "REF_87[3] = U",
+                "REF_87[4] = U",
+                "REF_87[5] = U",
+                "REF_87[6] = U",
+                "REF_87[7] = U",
+                "REF_87[8] = U",
+                "REF_87[9] = U"
+            ]
+        }
+    ],
+    "root_addr": "0x8a",
+    "dest_addrs": [
+        "0x9f"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "trade",
+            "addr": "0x8a",
+            "instructions": [
+                "NOP",
+                "_output = NEW_VAL integer",
+                "x = NEW_VAL integer",
+                "_tokenAmount = NEW_VAL integer",
+                "_inputAmount = NEW_VAL integer",
+                "y = NEW_VAL integer",
+                "_fee = NEW_VAL integer",
+                "_amountToUser = NEW_VAL integer",
+                "z = NEW_VAL integer",
+                "_input = NEW_VAL integer",
+                "x = NEW_VAL integer",
+                "_output = NEW_VAL integer",
+                "y = NEW_VAL integer",
+                "n = NEW_VAL integer",
+                "_inputAmount = NEW_VAL integer",
+                "z = NEW_VAL integer",
+                "_receiver = NEW_VAL integer",
+                "_token = NEW_VAL integer",
+                "_amount = NEW_VAL integer",
+                "x = NEW_VAL integer",
+                "_token = NEW_VAL integer",
+                "y = NEW_VAL integer",
+                "_amount = NEW_VAL integer",
+                "n = NEW_VAL integer",
+                "_input = NEW_VAL integer",
+                "z = NEW_VAL integer",
+                "JUMP 0x8b"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x8c",
+            "instructions": [
+                "NOP",
+                "JUMP 0x8d"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x8d",
+            "instructions": [
+                "CONDITION isOpen 0x8d_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x8d_r0",
+            "instructions": [
+                "JUMP 0x8e"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x8e",
+            "instructions": [
+                "CLR_22 = prices[_input]",
+                "REF_2 = CLR_22",
+                "CLR_23 = REF_2[_output]",
+                "REF_3 = CLR_23",
+                "TMP_75 = REF_3 != 0",
+                "CONDITION TMP_75 0x8e_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x8e_r0",
+            "instructions": [
+                "JUMP 0x8f"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x90",
+            "instructions": [
+                "CLR_24 = decimals[_output]",
+                "REF_5 = CLR_24",
+                "TMP_79 = REF_5 != 0",
+                "CONDITION TMP_79 0x90_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x90_r0",
+            "instructions": [
+                "JUMP 0x91"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x8f",
+            "instructions": [
+                "CLR_25 = decimals[_input]",
+                "REF_4 = CLR_25",
+                "TMP_77 = REF_4 != 0",
+                "CONDITION TMP_77 0x8f_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x8f_r0",
+            "instructions": [
+                "JUMP 0x90"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x8b",
+            "instructions": [
+                "_input = _input",
+                "_output = _output",
+                "_inputAmount = _inputAmount",
+                "CLR_26 = msg.sender",
+                "_receiver = CLR_26",
+                "JUMP 0x8c"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x91",
+            "instructions": [
+                "TMP_81 = NEW_VAL unknown",
+                "TMP_82 = NEW_VAL unknown",
+                "ATTACK",
+                "JUMP 0x92"
+            ]
+        },
+        {
+            "scope": "active",
+            "addr": "0x92",
+            "instructions": [
+                "NOP",
+                "_lendFMe = NEW_VAL integer",
+                "JUMP 0x93"
+            ]
+        },
+        {
+            "scope": "active",
+            "addr": "0x93",
+            "instructions": [
+                "TMP_71 = actived == false",
+                "CONDITION TMP_71 0x93_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "active",
+            "addr": "0x93_r0",
+            "instructions": [
+                "JUMP 0x94"
+            ]
+        },
+        {
+            "scope": "active",
+            "addr": "0x94",
+            "instructions": [
+                "CLR_27 = msg.sender",
+                "owner = CLR_27",
+                "isOpen = true",
+                "lendFMe = _lendFMe",
+                "actived = true",
+                "JUMP 0x95"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x95",
+            "instructions": [
+                "CLR_28 = supportLending[_input]",
+                "REF_7 = CLR_28",
+                "CONDITION REF_7 0x96 0x97"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x96",
+            "instructions": [
+                "TMP_84 = _input == dai",
+                "CONDITION TMP_84 0x98 0x99"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x9a",
+            "instructions": [
+                "NOP",
+                "JUMP 0x9b"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x9c",
+            "instructions": [
+                "_amountToUser = TMP_100",
+                "CLR_29 = supportLending[_output]",
+                "REF_21 = CLR_29",
+                "CONDITION REF_21 0x9d 0x97"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x9d",
+            "instructions": [
+                "TMP_101 = _output == dai",
+                "CONDITION TMP_101 0x97 0x9e"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x9f",
+            "instructions": [
+                "TMP_109 = NEW_VAL integer"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x98",
+            "instructions": [
+                "TMP_85 = NEW_VAL unknown",
+                "TMP_86 = NEW_VAL unknown",
+                "NOP",
+                "JUMP 0xa0"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x99",
+            "instructions": [
+                "TMP_93 = NEW_VAL unknown",
+                "TMP_94 = NEW_VAL integer",
+                "JUMP 0xa1"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xa1",
+            "instructions": [
+                "NOP",
+                "JUMP 0x9a"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xa0",
+            "instructions": [
+                "TMP_88 = NEW_VAL unknown",
+                "TMP_89 = NEW_VAL unknown",
+                "TMP_90 = NEW_VAL unknown",
+                "TMP_91 = NEW_VAL integer",
+                "JUMP 0xa2"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xa2",
+            "instructions": [
+                "TMP_92 = NEW_VAL integer",
+                "JUMP 0xa1"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xa3",
+            "instructions": [
+                "NOP",
+                "JUMP 0xa4"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xa5",
+            "instructions": [
+                "TMP_305 = TMP_253",
+                "JUMP 0xa6"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xa7",
+            "instructions": [
+                "NOP",
+                "JUMP 0xa8"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xa8",
+            "instructions": [
+                "TMP_33 = x - y",
+                "z = TMP_33",
+                "TMP_34 = z <= x",
+                "CONDITION TMP_34 0xa8_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xa8_r0",
+            "instructions": [
+                "JUMP 0xa9"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xa9",
+            "instructions": [
+                "TMP_278 = z",
+                "JUMP 0xaa"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xa4",
+            "instructions": [
+                "n = 18",
+                "CLR_30 = decimals[_token]",
+                "REF_75 = CLR_30",
+                "x = n",
+                "y = REF_75",
+                "JUMP 0xa7"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xaa",
+            "instructions": [
+                "TMP_251 = TMP_278",
+                "JUMP 0xab"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xac",
+            "instructions": [
+                "NOP",
+                "JUMP 0xad"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xad",
+            "instructions": [
+                "TMP_36 = y == 0",
+                "TMP_37 = x * y",
+                "z = TMP_37",
+                "TMP_38 = z \/ y",
+                "TMP_39 = TMP_38 == x",
+                "TMP_40 = TMP_36 || TMP_39",
+                "CONDITION TMP_40 0xad_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xad_r0",
+            "instructions": [
+                "JUMP 0xae"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xae",
+            "instructions": [
+                "TMP_279 = z",
+                "JUMP 0xaf"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xab",
+            "instructions": [
+                "TMP_252 = 10 ** TMP_251",
+                "x = _amount",
+                "y = TMP_252",
+                "JUMP 0xac"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xaf",
+            "instructions": [
+                "TMP_253 = TMP_279",
+                "JUMP 0xa5"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x9b",
+            "instructions": [
+                "_token = _input",
+                "_amount = _inputAmount",
+                "JUMP 0xa3"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xa6",
+            "instructions": [
+                "TMP_95 = TMP_305",
+                "JUMP 0xb0"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xb1",
+            "instructions": [
+                "NOP",
+                "JUMP 0xb2"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xb2",
+            "instructions": [
+                "TMP_36 = y == 0",
+                "TMP_37 = x * y",
+                "z = TMP_37",
+                "TMP_38 = z \/ y",
+                "TMP_39 = TMP_38 == x",
+                "TMP_40 = TMP_36 || TMP_39",
+                "CONDITION TMP_40 0xb2_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xb2_r0",
+            "instructions": [
+                "JUMP 0xb3"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xb3",
+            "instructions": [
+                "TMP_279 = z",
+                "JUMP 0xb4"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xb0",
+            "instructions": [
+                "CLR_31 = prices[_input]",
+                "REF_13 = CLR_31",
+                "CLR_32 = REF_13[_output]",
+                "REF_14 = CLR_32",
+                "x = TMP_95",
+                "y = REF_14",
+                "JUMP 0xb1"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xb4",
+            "instructions": [
+                "TMP_96 = TMP_279",
+                "JUMP 0xb5"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xb6",
+            "instructions": [
+                "NOP",
+                "JUMP 0xb7"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xb7",
+            "instructions": [
+                "TMP_42 = y > 0",
+                "CONDITION TMP_42 0xb7_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xb7_r0",
+            "instructions": [
+                "JUMP 0xb8"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xb8",
+            "instructions": [
+                "TMP_44 = x \/ y",
+                "z = TMP_44",
+                "JUMP 0xb9"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xb9",
+            "instructions": [
+                "TMP_280 = z",
+                "JUMP 0xba"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xb5",
+            "instructions": [
+                "x = TMP_96",
+                "y = OFFSET",
+                "JUMP 0xb6"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xba",
+            "instructions": [
+                "TMP_97 = TMP_280",
+                "JUMP 0xbb"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xbc",
+            "instructions": [
+                "NOP",
+                "JUMP 0xbd"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xbd",
+            "instructions": [
+                "TMP_36 = y == 0",
+                "TMP_37 = x * y",
+                "z = TMP_37",
+                "TMP_38 = z \/ y",
+                "TMP_39 = TMP_38 == x",
+                "TMP_40 = TMP_36 || TMP_39",
+                "CONDITION TMP_40 0xbd_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xbd_r0",
+            "instructions": [
+                "JUMP 0xbe"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xbe",
+            "instructions": [
+                "TMP_279 = z",
+                "JUMP 0xbf"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xbb",
+            "instructions": [
+                "_tokenAmount = TMP_97",
+                "CLR_33 = fee[_input]",
+                "REF_17 = CLR_33",
+                "CLR_34 = REF_17[_output]",
+                "REF_18 = CLR_34",
+                "x = _tokenAmount",
+                "y = REF_18",
+                "JUMP 0xbc"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xbf",
+            "instructions": [
+                "TMP_98 = TMP_279",
+                "JUMP 0xc0"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xc1",
+            "instructions": [
+                "NOP",
+                "JUMP 0xc2"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xc2",
+            "instructions": [
+                "TMP_42 = y > 0",
+                "CONDITION TMP_42 0xc2_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xc2_r0",
+            "instructions": [
+                "JUMP 0xc3"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xc3",
+            "instructions": [
+                "TMP_44 = x \/ y",
+                "z = TMP_44",
+                "JUMP 0xc4"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xc4",
+            "instructions": [
+                "TMP_280 = z",
+                "JUMP 0xc5"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xc0",
+            "instructions": [
+                "x = TMP_98",
+                "y = OFFSET",
+                "JUMP 0xc1"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xc5",
+            "instructions": [
+                "TMP_99 = TMP_280",
+                "JUMP 0xc6"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xc7",
+            "instructions": [
+                "NOP",
+                "JUMP 0xc8"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xc8",
+            "instructions": [
+                "TMP_33 = x - y",
+                "z = TMP_33",
+                "TMP_34 = z <= x",
+                "CONDITION TMP_34 0xc8_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xc8_r0",
+            "instructions": [
+                "JUMP 0xc9"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xc9",
+            "instructions": [
+                "TMP_278 = z",
+                "JUMP 0xca"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xc6",
+            "instructions": [
+                "_fee = TMP_99",
+                "x = _tokenAmount",
+                "y = _fee",
+                "JUMP 0xc7"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xca",
+            "instructions": [
+                "TMP_100 = TMP_278",
+                "JUMP 0x9c"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xcb",
+            "instructions": [
+                "NOP",
+                "JUMP 0xcc"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xcd",
+            "instructions": [
+                "TMP_306 = TMP_256",
+                "JUMP 0xce"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xcf",
+            "instructions": [
+                "NOP",
+                "JUMP 0xd0"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xd0",
+            "instructions": [
+                "TMP_33 = x - y",
+                "z = TMP_33",
+                "TMP_34 = z <= x",
+                "CONDITION TMP_34 0xd0_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xd0_r0",
+            "instructions": [
+                "JUMP 0xd1"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xd1",
+            "instructions": [
+                "TMP_278 = z",
+                "JUMP 0xd2"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xcc",
+            "instructions": [
+                "n = 18",
+                "CLR_35 = decimals[_token]",
+                "REF_78 = CLR_35",
+                "x = n",
+                "y = REF_78",
+                "JUMP 0xcf"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xd2",
+            "instructions": [
+                "TMP_254 = TMP_278",
+                "JUMP 0xd3"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xd4",
+            "instructions": [
+                "NOP",
+                "JUMP 0xd5"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xd5",
+            "instructions": [
+                "TMP_42 = y > 0",
+                "CONDITION TMP_42 0xd5_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xd5_r0",
+            "instructions": [
+                "JUMP 0xd6"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xd6",
+            "instructions": [
+                "TMP_44 = x \/ y",
+                "z = TMP_44",
+                "JUMP 0xd7"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xd7",
+            "instructions": [
+                "TMP_280 = z",
+                "JUMP 0xd8"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xd3",
+            "instructions": [
+                "TMP_255 = 10 ** TMP_254",
+                "x = _amount",
+                "y = TMP_255",
+                "JUMP 0xd4"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xd8",
+            "instructions": [
+                "TMP_256 = TMP_280",
+                "JUMP 0xcd"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0x9e",
+            "instructions": [
+                "TMP_107 = NEW_VAL unknown",
+                "_token = _output",
+                "_amount = _amountToUser",
+                "JUMP 0xcb"
+            ]
+        },
+        {
+            "scope": "trade",
+            "addr": "0xce",
+            "instructions": [
+                "TMP_108 = TMP_306",
+                "JUMP 0x9f"
+            ]
+        },
+        {
+            "scope": "trap",
+            "addr": "0x97",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

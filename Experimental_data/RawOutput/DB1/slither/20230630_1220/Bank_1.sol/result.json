@@ -1,0 +1,421 @@
+{
+    "errors": [
+        "EXIT_CODE_40"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "Bank",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "work",
+            "impact": "High",
+            "line": 748,
+            "line_end": 788,
+            "message": "Reentrancy in Bank.work (Bank_1.sol#748-788):\n\tExternal calls:\n\t- require(bool,string)(config.isGoblin(goblin),not a goblin) (Bank_1.sol#764)\n\t- require(bool,string)(loan == 0 || config.acceptDebt(goblin),goblin not accept more debt) (Bank_1.sol#765)\n\t- Goblin(goblin).work.value(sendETH)(id,msg.sender,debt,data) (Bank_1.sol#773)\n\t- require(bool,string)(debt >= config.minDebtSize(),too small debt size) (Bank_1.sol#780)\n\t- health = Goblin(goblin).health(id) (Bank_1.sol#781)\n\t- workFactor = config.workFactor(goblin,debt) (Bank_1.sol#782)\n\tExternal calls sending eth:\n\t- Goblin(goblin).work.value(sendETH)(id,msg.sender,debt,data) (Bank_1.sol#773)\n\tState variables written after the call(s):\n\t- glbDebtShare (Bank_1.sol#784)\n\t- glbDebtVal (Bank_1.sol#784)\n\t- positions (Bank_1.sol#784)\n",
+            "name": "reentrancy-eth"
+        },
+        {
+            "confidence": "High",
+            "contract": "Bank",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "debtShareToVal",
+            "impact": "Medium",
+            "line": 703,
+            "line_end": 706,
+            "message": "Bank.debtShareToVal (Bank_1.sol#703-706) uses a dangerous strict equality:\n\t- glbDebtShare == 0\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "Bank",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "debtValToShare",
+            "impact": "Medium",
+            "line": 703,
+            "line_end": 706,
+            "message": "Bank.debtShareToVal (Bank_1.sol#703-706) uses a dangerous strict equality:\n\t- glbDebtShare == 0\nBank.debtValToShare (Bank_1.sol#710-713) uses a dangerous strict equality:\n\t- glbDebtShare == 0\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "Bank",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "work",
+            "impact": "Medium",
+            "line": 703,
+            "line_end": 706,
+            "message": "Bank.debtShareToVal (Bank_1.sol#703-706) uses a dangerous strict equality:\n\t- glbDebtShare == 0\nBank.debtValToShare (Bank_1.sol#710-713) uses a dangerous strict equality:\n\t- glbDebtShare == 0\nBank.work (Bank_1.sol#748-788) uses a dangerous strict equality:\n\t- require(bool,string)(positions[id].goblin == goblin,bad position goblin)\n\t- require(bool,string)(positions[id].owner == msg.sender,not position owner)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Bank",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "accrue",
+            "impact": "Medium",
+            "line": 672,
+            "line_end": 681,
+            "message": "Reentrancy in Bank.accrue (Bank_1.sol#672-681):\n\tExternal calls:\n\t- interest = pendingInterest(msgValue) (Bank_1.sol#674)\n\t- toReserve = interest.mul(config.getReservePoolBps()).div(10000) (Bank_1.sol#675)\n\tState variables written after the call(s):\n\t- glbDebtVal (Bank_1.sol#677)\n\t- lastAccrueTime (Bank_1.sol#678)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Bank",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "work",
+            "impact": "Medium",
+            "line": 748,
+            "line_end": 788,
+            "message": "Reentrancy in Bank.work (Bank_1.sol#748-788):\n\tExternal calls:\n\t- require(bool,string)(config.isGoblin(goblin),not a goblin) (Bank_1.sol#764)\n\t- require(bool,string)(loan == 0 || config.acceptDebt(goblin),goblin not accept more debt) (Bank_1.sol#765)\n\tState variables written after the call(s):\n\t- positions (Bank_1.sol#766)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Bank",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "accrue",
+            "impact": "Low",
+            "line": 672,
+            "line_end": 681,
+            "message": "Reentrancy in Bank.accrue (Bank_1.sol#672-681):\n\tExternal calls:\n\t- interest = pendingInterest(msgValue) (Bank_1.sol#674)\n\t- toReserve = interest.mul(config.getReservePoolBps()).div(10000) (Bank_1.sol#675)\n\tState variables written after the call(s):\n\t- reservePool (Bank_1.sol#676)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Bank",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "work",
+            "impact": "Low",
+            "line": 748,
+            "line_end": 788,
+            "message": "Reentrancy in Bank.work (Bank_1.sol#748-788):\n\tExternal calls:\n\t- require(bool,string)(config.isGoblin(goblin),not a goblin) (Bank_1.sol#764)\n\t- require(bool,string)(loan == 0 || config.acceptDebt(goblin),goblin not accept more debt) (Bank_1.sol#765)\n\tState variables written after the call(s):\n\t- glbDebtShare (Bank_1.sol#766)\n\t- glbDebtVal (Bank_1.sol#766)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Bank_1.sol",
+            "impact": "Informational",
+            "line": 648,
+            "message": "Bank.decimals should be constant (Bank_1.sol#648)\nBank.name should be constant (Bank_1.sol#646)\nBank.symbol should be constant (Bank_1.sol#647)\n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "Ownable",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "owner",
+            "impact": "Informational",
+            "line": 105,
+            "line_end": 107,
+            "message": "Ownable.owner (Bank_1.sol#105-107) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Ownable",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "renounceOwnership",
+            "impact": "Informational",
+            "line": 131,
+            "line_end": 134,
+            "message": "Ownable.renounceOwnership (Bank_1.sol#131-134) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Ownable",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "transferOwnership",
+            "impact": "Informational",
+            "line": 140,
+            "line_end": 142,
+            "message": "Ownable.transferOwnership (Bank_1.sol#140-142) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "balanceOf",
+            "impact": "Informational",
+            "line": 17,
+            "message": "IERC20.balanceOf (Bank_1.sol#17) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "balanceOf",
+            "impact": "Informational",
+            "line": 198,
+            "line_end": 200,
+            "message": "ERC20.balanceOf (Bank_1.sol#198-200) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "transfer",
+            "impact": "Informational",
+            "line": 26,
+            "message": "IERC20.transfer (Bank_1.sol#26) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "transfer",
+            "impact": "Informational",
+            "line": 210,
+            "line_end": 213,
+            "message": "ERC20.transfer (Bank_1.sol#210-213) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "allowance",
+            "impact": "Informational",
+            "line": 218,
+            "line_end": 220,
+            "message": "ERC20.allowance (Bank_1.sol#218-220) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "allowance",
+            "impact": "Informational",
+            "line": 35,
+            "message": "IERC20.allowance (Bank_1.sol#35) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "approve",
+            "impact": "Informational",
+            "line": 51,
+            "message": "IERC20.approve (Bank_1.sol#51) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "approve",
+            "impact": "Informational",
+            "line": 229,
+            "line_end": 232,
+            "message": "ERC20.approve (Bank_1.sol#229-232) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "transferFrom",
+            "impact": "Informational",
+            "line": 62,
+            "message": "IERC20.transferFrom (Bank_1.sol#62) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "transferFrom",
+            "impact": "Informational",
+            "line": 246,
+            "line_end": 250,
+            "message": "ERC20.transferFrom (Bank_1.sol#246-250) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "increaseAllowance",
+            "impact": "Informational",
+            "line": 264,
+            "line_end": 267,
+            "message": "ERC20.increaseAllowance (Bank_1.sol#264-267) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "decreaseAllowance",
+            "impact": "Informational",
+            "line": 283,
+            "line_end": 286,
+            "message": "ERC20.decreaseAllowance (Bank_1.sol#283-286) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Bank",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "positionInfo",
+            "impact": "Informational",
+            "line": 717,
+            "line_end": 720,
+            "message": "Bank.positionInfo (Bank_1.sol#717-720) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Bank_1.sol",
+            "impact": "Informational",
+            "line": 2,
+            "message": "Detected issues with version pragma in Bank_1.sol:\n\t- pragma solidity^0.5.0 (Bank_1.sol#2): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "contract": "SafeToken",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "safeApprove",
+            "impact": "Informational",
+            "line": 610,
+            "line_end": 614,
+            "message": "Low level call in SafeToken.safeApprove (Bank_1.sol#610-614):\n\t-(success,data) = token.call(abi.encodeWithSelector(0x095ea7b3,to,value)) Bank_1.sol#612\n",
+            "name": "low-level-calls"
+        },
+        {
+            "confidence": "High",
+            "contract": "SafeToken",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "safeTransfer",
+            "impact": "Informational",
+            "line": 616,
+            "line_end": 620,
+            "message": "Low level call in SafeToken.safeTransfer (Bank_1.sol#616-620):\n\t-(success,data) = token.call(abi.encodeWithSelector(0xa9059cbb,to,value)) Bank_1.sol#618\n",
+            "name": "low-level-calls"
+        },
+        {
+            "confidence": "High",
+            "contract": "SafeToken",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "safeTransferFrom",
+            "impact": "Informational",
+            "line": 622,
+            "line_end": 626,
+            "message": "Low level call in SafeToken.safeTransferFrom (Bank_1.sol#622-626):\n\t-(success,data) = token.call(abi.encodeWithSelector(0x23b872dd,from,to,value)) Bank_1.sol#624\n",
+            "name": "low-level-calls"
+        },
+        {
+            "confidence": "High",
+            "contract": "SafeToken",
+            "filename": "all_contract/Bank_1.sol",
+            "function": "safeTransferETH",
+            "impact": "Informational",
+            "line": 628,
+            "line_end": 631,
+            "message": "Low level call in SafeToken.safeTransferETH (Bank_1.sol#628-631):\n\t-(success) = to.call.value(value)(new bytes(0)) Bank_1.sol#629\n",
+            "name": "low-level-calls"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Bank_1.sol",
+            "impact": "Informational",
+            "line": 147,
+            "line_end": 151,
+            "message": "Function 'Ownable._transferOwnership' (Bank_1.sol#147-151) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Bank_1.sol",
+            "impact": "Informational",
+            "line": 302,
+            "line_end": 309,
+            "message": "Function 'ERC20._transfer' (Bank_1.sol#302-309) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Bank_1.sol",
+            "impact": "Informational",
+            "line": 320,
+            "line_end": 326,
+            "message": "Function 'ERC20._mint' (Bank_1.sol#320-326) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Bank_1.sol",
+            "impact": "Informational",
+            "line": 339,
+            "line_end": 345,
+            "message": "Function 'ERC20._burn' (Bank_1.sol#339-345) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Bank_1.sol",
+            "impact": "Informational",
+            "line": 360,
+            "line_end": 366,
+            "message": "Function 'ERC20._approve' (Bank_1.sol#360-366) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Bank_1.sol",
+            "impact": "Informational",
+            "line": 374,
+            "line_end": 377,
+            "message": "Function 'ERC20._burnFrom' (Bank_1.sol#374-377) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Bank_1.sol",
+            "impact": "Informational",
+            "line": 683,
+            "message": "Parameter '_config' of Bank. (Bank_1.sol#683) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Bank_1.sol",
+            "impact": "Informational",
+            "line": 814,
+            "line_end": 821,
+            "message": "Function 'Bank._addDebt' (Bank_1.sol#814-821) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Bank_1.sol",
+            "impact": "Informational",
+            "line": 824,
+            "line_end": 837,
+            "message": "Function 'Bank._removeDebt' (Bank_1.sol#824-837) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Bank_1.sol",
+            "impact": "Informational",
+            "line": 841,
+            "message": "Parameter '_config' of Bank.updateConfig (Bank_1.sol#841) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

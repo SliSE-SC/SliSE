@@ -1,0 +1,75 @@
+WARNING:root:You are using solc version 0.4.23, The latest supported version is 0.4.19
+INFO:CryticCompile:Compilation warnings/errors on /sb/ExchangeRateProvider_1.sol:
+/sb/ExchangeRateProvider_1.sol:133:5: Warning: Function state mutability can be restricted to pure
+    function __callback(bytes32 myid, string result, bytes proof) public {
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+INFO:root:contract /sb/ExchangeRateProvider_1.sol:ExchangeRateProvider:
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM Code Coverage: 			 21.4%
+INFO:symExec:	  Integer Underflow: 			 True
+INFO:symExec:	  Integer Overflow: 			 True
+INFO:symExec:	  Parity Multisig Bug 2: 		 False
+INFO:symExec:	  Callstack Depth Attack Vulnerability:  False
+INFO:symExec:	  Transaction-Ordering Dependence (TOD): False
+INFO:symExec:	  Timestamp Dependency: 		 False
+INFO:symExec:	  Re-Entrancy Vulnerability: 		 False
+INFO:symExec:/sb/ExchangeRateProvider_1.sol:1115:1: Warning: Integer Underflow.
+contract ExchangeRateProvider is usingOraclize {
+^
+Spanning multiple lines.
+Integer Underflow occurs if:
+    OAR = 0
+INFO:symExec:/sb/ExchangeRateProvider_1.sol:1204:3: Warning: Integer Overflow.
+  function __callback(bytes32 _queryId, string _result)
+  ^
+Spanning multiple lines.
+Integer Overflow occurs if:
+    _result = 115792089237316195423570985008687907853269984665640564039457584007913129639932
+/sb/ExchangeRateProvider_1.sol:133:5: Warning: Integer Overflow.
+    function __callback(bytes32 myid, string result, bytes proof) public {
+    ^
+Spanning multiple lines.
+Integer Overflow occurs if:
+    _result = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+/sb/ExchangeRateProvider_1.sol:1158:3: Warning: Integer Overflow.
+  function sendQuery(
+  ^
+Spanning multiple lines.
+Integer Overflow occurs if:
+    _queryString = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:contract /sb/ExchangeRateProvider_1.sol:usingOraclize:
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM Code Coverage: 			 40.6%
+INFO:symExec:	  Integer Underflow: 			 False
+INFO:symExec:	  Integer Overflow: 			 True
+INFO:symExec:	  Parity Multisig Bug 2: 		 False
+INFO:symExec:	  Callstack Depth Attack Vulnerability:  False
+INFO:symExec:	  Transaction-Ordering Dependence (TOD): False
+INFO:symExec:	  Timestamp Dependency: 		 False
+INFO:symExec:	  Re-Entrancy Vulnerability: 		 False
+INFO:symExec:/sb/ExchangeRateProvider_1.sol:130:5: Warning: Integer Overflow.
+    function __callback(bytes32 myid, string result) public {
+    ^
+Spanning multiple lines.
+Integer Overflow occurs if:
+    result = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+/sb/ExchangeRateProvider_1.sol:133:5: Warning: Integer Overflow.
+    function __callback(bytes32 myid, string result, bytes proof) public {
+    ^
+Spanning multiple lines.
+Integer Overflow occurs if:
+    result = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:contract /sb/ExchangeRateProvider_1.sol:OraclizeAPI:
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM Code Coverage: 			 100.0%
+INFO:symExec:	  Integer Underflow: 			 False
+INFO:symExec:	  Integer Overflow: 			 False
+INFO:symExec:	  Parity Multisig Bug 2: 		 False
+INFO:symExec:	  Callstack Depth Attack Vulnerability:  False
+INFO:symExec:	  Transaction-Ordering Dependence (TOD): False
+INFO:symExec:	  Timestamp Dependency: 		 False
+INFO:symExec:	  Re-Entrancy Vulnerability: 		 False
+INFO:symExec:	====== Analysis Completed ======

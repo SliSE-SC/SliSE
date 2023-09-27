@@ -1,0 +1,49 @@
+INFO:Detectors:[93m
+Reentrancy in BPool.unbind (/sb/BPool_2.sol#945-976):
+	External calls:
+	- _tokens.pop() (/sb/BPool_2.sol#966)
+	State variables written after the call(s):
+	- _records (/sb/BPool_2.sol#967-972)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[93m
+BPool.unbind (/sb/BPool_2.sol#945-976) does not use the value returned by external calls:
+	-_tokens.pop() (/sb/BPool_2.sol#966)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-return[0m
+INFO:Detectors:[92m
+BToken._decimals should be constant (/sb/BPool_2.sol#310)
+BToken._name should be constant (/sb/BPool_2.sol#308)
+BToken._symbol should be constant (/sb/BPool_2.sol#309)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#state-variables-that-could-be-declared-constant[0m
+INFO:Detectors:[92m
+BToken.name (/sb/BPool_2.sol#312-314) should be declared external
+BToken.symbol (/sb/BPool_2.sol#316-318) should be declared external
+BToken.decimals (/sb/BPool_2.sol#320-322) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/BPool_2.sol:
+	- pragma solidity0.5.12 (/sb/BPool_2.sol#15): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Function 'BTokenBase._mint' (/sb/BPool_2.sol#277-281) is not in mixedCase
+Function 'BTokenBase._burn' (/sb/BPool_2.sol#283-288) is not in mixedCase
+Function 'BTokenBase._move' (/sb/BPool_2.sol#290-295) is not in mixedCase
+Function 'BTokenBase._push' (/sb/BPool_2.sol#297-299) is not in mixedCase
+Function 'BTokenBase._pull' (/sb/BPool_2.sol#301-303) is not in mixedCase
+Variable 'BTokenBase._balance' (/sb/BPool_2.sol#270) is not in mixedCase
+Variable 'BTokenBase._allowance' (/sb/BPool_2.sol#271) is not in mixedCase
+Variable 'BTokenBase._totalSupply' (/sb/BPool_2.sol#272) is not in mixedCase
+Event 'BPool.LOG_SWAP' (/sb/BPool_2.sol#672-678) is not in CapWords
+Event 'BPool.LOG_JOIN' (/sb/BPool_2.sol#680-684) is not in CapWords
+Event 'BPool.LOG_EXIT' (/sb/BPool_2.sol#686-690) is not in CapWords
+Event 'BPool.LOG_CALL' (/sb/BPool_2.sol#692-696) is not in CapWords
+Function 'BPool._pullUnderlying' (/sb/BPool_2.sol#1340-1345) is not in mixedCase
+Function 'BPool._pushUnderlying' (/sb/BPool_2.sol#1347-1352) is not in mixedCase
+Function 'BPool._pullPoolShare' (/sb/BPool_2.sol#1354-1358) is not in mixedCase
+Function 'BPool._pushPoolShare' (/sb/BPool_2.sol#1360-1364) is not in mixedCase
+Function 'BPool._mintPoolShare' (/sb/BPool_2.sol#1366-1370) is not in mixedCase
+Function 'BPool._burnPoolShare' (/sb/BPool_2.sol#1372-1376) is not in mixedCase
+Modifier 'BPool._logs_' (/sb/BPool_2.sol#698-701) is not in mixedCase
+Modifier 'BPool._lock_' (/sb/BPool_2.sol#703-708) is not in mixedCase
+Modifier 'BPool._viewlock_' (/sb/BPool_2.sol#710-713) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/BPool_2.sol analyzed (9 contracts), 28 result(s) found

@@ -1,0 +1,596 @@
+{
+    "errors": [
+        "EXIT_CODE_60"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Medium",
+            "line": 206,
+            "line_end": 212,
+            "message": "Address.isContract (bVault_1.sol#206-212) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "bVault",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "withdrawETH",
+            "impact": "Medium",
+            "line": 388,
+            "line_end": 411,
+            "message": "Reentrancy in bVault.withdrawETH (bVault_1.sol#388-411):\n\tExternal calls:\n\t- r = (balance().mul(_shares)).div(totalSupply()) (bVault_1.sol#389)\n\tState variables written after the call(s):\n\t- _totalSupply (bVault_1.sol#390)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20Detailed",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "name",
+            "impact": "Low",
+            "line": 144,
+            "message": "ERC20Detailed.constructor.name (local variable @ bVault_1.sol#144) shadows:\n\t- ERC20Detailed.name (function @ bVault_1.sol#149-151)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20Detailed",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "symbol",
+            "impact": "Low",
+            "line": 144,
+            "message": "ERC20Detailed.constructor.symbol (local variable @ bVault_1.sol#144) shadows:\n\t- ERC20Detailed.symbol (function @ bVault_1.sol#152-154)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20Detailed",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "decimals",
+            "impact": "Low",
+            "line": 144,
+            "message": "ERC20Detailed.constructor.decimals (local variable @ bVault_1.sol#144) shadows:\n\t- ERC20Detailed.decimals (function @ bVault_1.sol#155-157)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "bVault",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "depositETH",
+            "impact": "Low",
+            "line": 364,
+            "line_end": 382,
+            "message": "Reentrancy in bVault.depositETH (bVault_1.sol#364-382):\n\tExternal calls:\n\t- _pool = balance() (bVault_1.sol#365)\n\t- _before = IERC20(weth).balanceOf(address(this)) (bVault_1.sol#366)\n\t- WETH(address(weth)).deposit.value(_amount)() (bVault_1.sol#368)\n\t- _after = IERC20(weth).balanceOf(address(this)) (bVault_1.sol#369)\n\tExternal calls sending eth:\n\t- WETH(address(weth)).deposit.value(_amount)() (bVault_1.sol#368)\n\tState variables written after the call(s):\n\t- _balances (bVault_1.sol#377)\n\t- _totalSupply (bVault_1.sol#377)\n\t- userDepoistTime (bVault_1.sol#378)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "bVault",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "withdrawETH",
+            "impact": "Low",
+            "line": 388,
+            "line_end": 411,
+            "message": "Reentrancy in bVault.withdrawETH (bVault_1.sol#388-411):\n\tExternal calls:\n\t- r = (balance().mul(_shares)).div(totalSupply()) (bVault_1.sol#389)\n\tState variables written after the call(s):\n\t- _balances (bVault_1.sol#390)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "High",
+            "contract": "Address",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "isContract",
+            "impact": "Informational",
+            "line": 206,
+            "line_end": 212,
+            "message": "Address.isContract uses assembly (bVault_1.sol#206-212)\n\t- bVault_1.sol#210\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 296,
+            "message": "bVault.feeMax should be constant (bVault_1.sol#296)\n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "Ownable",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "owner",
+            "impact": "Informational",
+            "line": 42,
+            "line_end": 44,
+            "message": "Ownable.owner (bVault_1.sol#42-44) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Ownable",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "renounceOwnership",
+            "impact": "Informational",
+            "line": 52,
+            "line_end": 55,
+            "message": "Ownable.renounceOwnership (bVault_1.sol#52-55) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Ownable",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "transferOwnership",
+            "impact": "Informational",
+            "line": 56,
+            "line_end": 58,
+            "message": "Ownable.transferOwnership (bVault_1.sol#56-58) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "transfer",
+            "impact": "Informational",
+            "line": 80,
+            "line_end": 83,
+            "message": "ERC20.transfer (bVault_1.sol#80-83) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "transfer",
+            "impact": "Informational",
+            "line": 12,
+            "message": "IERC20.transfer (bVault_1.sol#12) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "allowance",
+            "impact": "Informational",
+            "line": 84,
+            "line_end": 86,
+            "message": "ERC20.allowance (bVault_1.sol#84-86) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "allowance",
+            "impact": "Informational",
+            "line": 13,
+            "message": "IERC20.allowance (bVault_1.sol#13) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "approve",
+            "impact": "Informational",
+            "line": 14,
+            "message": "IERC20.approve (bVault_1.sol#14) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "approve",
+            "impact": "Informational",
+            "line": 87,
+            "line_end": 90,
+            "message": "ERC20.approve (bVault_1.sol#87-90) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "transferFrom",
+            "impact": "Informational",
+            "line": 91,
+            "line_end": 95,
+            "message": "ERC20.transferFrom (bVault_1.sol#91-95) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "transferFrom",
+            "impact": "Informational",
+            "line": 15,
+            "message": "IERC20.transferFrom (bVault_1.sol#15) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "increaseAllowance",
+            "impact": "Informational",
+            "line": 96,
+            "line_end": 99,
+            "message": "ERC20.increaseAllowance (bVault_1.sol#96-99) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "decreaseAllowance",
+            "impact": "Informational",
+            "line": 100,
+            "line_end": 103,
+            "message": "ERC20.decreaseAllowance (bVault_1.sol#100-103) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20Detailed",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "name",
+            "impact": "Informational",
+            "line": 149,
+            "line_end": 151,
+            "message": "ERC20Detailed.name (bVault_1.sol#149-151) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20Detailed",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "symbol",
+            "impact": "Informational",
+            "line": 152,
+            "line_end": 154,
+            "message": "ERC20Detailed.symbol (bVault_1.sol#152-154) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20Detailed",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "decimals",
+            "impact": "Informational",
+            "line": 155,
+            "line_end": 157,
+            "message": "ERC20Detailed.decimals (bVault_1.sol#155-157) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "bVault",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "setGovernance",
+            "impact": "Informational",
+            "line": 338,
+            "line_end": 341,
+            "message": "bVault.setGovernance (bVault_1.sol#338-341) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "bVault",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "setController",
+            "impact": "Informational",
+            "line": 343,
+            "line_end": 346,
+            "message": "bVault.setController (bVault_1.sol#343-346) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "bVault",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "setEarnLowerlimit",
+            "impact": "Informational",
+            "line": 347,
+            "line_end": 350,
+            "message": "bVault.setEarnLowerlimit (bVault_1.sol#347-350) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "bVault",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "getPricePerFullShare",
+            "impact": "Informational",
+            "line": 425,
+            "line_end": 430,
+            "message": "bVault.getPricePerFullShare (bVault_1.sol#425-430) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "bVault",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "setFeeRatio",
+            "impact": "Informational",
+            "line": 432,
+            "line_end": 439,
+            "message": "bVault.setFeeRatio (bVault_1.sol#432-439) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "bVault",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "setFeeAddress",
+            "impact": "Informational",
+            "line": 441,
+            "line_end": 445,
+            "message": "bVault.setFeeAddress (bVault_1.sol#441-445) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "bVault",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "setTimeLock",
+            "impact": "Informational",
+            "line": 447,
+            "line_end": 451,
+            "message": "bVault.setTimeLock (bVault_1.sol#447-451) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "bVault",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "setRestrictContractCall",
+            "impact": "Informational",
+            "line": 453,
+            "line_end": 456,
+            "message": "bVault.setRestrictContractCall (bVault_1.sol#453-456) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 7,
+            "message": "Detected issues with version pragma in bVault_1.sol:\n\t- pragma solidity^0.5.16 (bVault_1.sol#7): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "contract": "Address",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "sendValue",
+            "impact": "Informational",
+            "line": 216,
+            "line_end": 222,
+            "message": "Low level call in Address.sendValue (bVault_1.sol#216-222):\n\t-(success) = recipient.call.value(amount)() bVault_1.sol#220\n",
+            "name": "low-level-calls"
+        },
+        {
+            "confidence": "High",
+            "contract": "SafeERC20",
+            "filename": "all_contract/bVault_1.sol",
+            "function": "callOptionalReturn",
+            "impact": "Informational",
+            "line": 253,
+            "line_end": 264,
+            "message": "Low level call in SafeERC20.callOptionalReturn (bVault_1.sol#253-264):\n\t-(success,returndata) = address(token).call(data) bVault_1.sol#257\n",
+            "name": "low-level-calls"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 24,
+            "line_end": 26,
+            "message": "Function 'Context._msgSender' (bVault_1.sol#24-26) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 28,
+            "line_end": 31,
+            "message": "Function 'Context._msgData' (bVault_1.sol#28-31) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 59,
+            "line_end": 63,
+            "message": "Function 'Ownable._transferOwnership' (bVault_1.sol#59-63) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 104,
+            "line_end": 111,
+            "message": "Function 'ERC20._transfer' (bVault_1.sol#104-111) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 112,
+            "line_end": 118,
+            "message": "Function 'ERC20._mint' (bVault_1.sol#112-118) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 119,
+            "line_end": 125,
+            "message": "Function 'ERC20._burn' (bVault_1.sol#119-125) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 126,
+            "line_end": 132,
+            "message": "Function 'ERC20._approve' (bVault_1.sol#126-132) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 133,
+            "line_end": 136,
+            "message": "Function 'ERC20._burnFrom' (bVault_1.sol#133-136) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 276,
+            "message": "Parameter '' of Controller.withdraw (bVault_1.sol#276) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 276,
+            "message": "Parameter '_scope_0' of Controller.withdraw (bVault_1.sol#276) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 277,
+            "message": "Parameter '' of Controller.balanceOf (bVault_1.sol#277) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 278,
+            "message": "Parameter '' of Controller.earn (bVault_1.sol#278) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 278,
+            "message": "Parameter '_scope_0' of Controller.earn (bVault_1.sol#278) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 281,
+            "line_end": 457,
+            "message": "Contract 'bVault' (bVault_1.sol#281-457) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 318,
+            "message": "Parameter '_earnLowerlimit' of bVault. (bVault_1.sol#318) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 333,
+            "message": "Parameter '_min' of bVault.setMin (bVault_1.sol#333) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 338,
+            "message": "Parameter '_governance' of bVault.setGovernance (bVault_1.sol#338) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 343,
+            "message": "Parameter '_controller' of bVault.setController (bVault_1.sol#343) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 347,
+            "message": "Parameter '_earnLowerlimit' of bVault.setEarnLowerlimit (bVault_1.sol#347) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 388,
+            "message": "Parameter '_shares' of bVault.withdrawETH (bVault_1.sol#388) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 447,
+            "message": "Parameter '_timelock' of bVault.setTimeLock (bVault_1.sol#447) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 287,
+            "message": "Constant 'bVault.max' (bVault_1.sol#287) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 298,
+            "message": "Constant 'bVault.weth' (bVault_1.sol#298) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/bVault_1.sol",
+            "impact": "Informational",
+            "line": 304,
+            "message": "Variable 'bVault.RestrictContractCall' (bVault_1.sol#304) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

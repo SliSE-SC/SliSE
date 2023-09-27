@@ -1,0 +1,129 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/guess_the_random_number.bin
+[00:00:00:00] Fuzzing starts at 08:40:07
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found sload(<0x0, { }, { }>) @ 0x51
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x60
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_0 }, Use = { var_0 }
+Constructor tainted: {  }
+[DEBUG] Analyzing guess(4ba4c16b) @ 51
+Found sload(<0x0, { }, { }>) @ 0xbe
+guess(4ba4c16b): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing isComplete(b2fa1c9e) @ 74
+isComplete(b2fa1c9e): Def = {  }, Use = {  }
+(0 candidate sequences)
+[00:00:00:00] Start main fuzzing phase
+[00:00:00:01] Tx#1 found BlockstateDependencySFuzz at 1d
+[00:00:00:01] Tx#1 found BlockstateDependencySFuzz at 20
+[00:00:00:01] Tx#1 found BlockstateDependencyManticore at 1d
+[00:00:00:01] Tx#1 found BlockstateDependencyManticore at 1f
+[00:00:00:01] Tx#1 found BlockstateDependencyManticore at 20
+[00:00:00:01] [*] Save bug seed id-00000-BD_mant-BD_sfuzz_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+(    TX 1    ) Function: guess(4ba4c16b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint8
+                 00
+
+[00:00:00:01] [*] Save new seed id-00000_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+(    TX 1    ) Function: guess(4ba4c16b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint8
+                 00
+
+[00:00:00:01] [*] Save new seed id-00001_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: guess(4ba4c16b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint8
+                 00
+
+[00:00:00:01] [*] Save new seed id-00002_00001: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+( => TX 1 <= ) Function: guess(4ba4c16b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+          Arg1 : uint8
+                 00
+
+[00:00:00:01] Tx#1 found BlockstateDependency at 10d
+[00:00:00:01] Tx#1 found BlockstateDependencyILF at 10d
+[00:00:00:01] [*] Save bug seed id-00001-BD-BD_ilf_00001: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+( => TX 1 <= ) Function: guess(4ba4c16b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+          Arg1 : uint8
+                 C3
+
+[00:00:00:01] [*] Save new seed id-00003_00001: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+( => TX 1 <= ) Function: guess(4ba4c16b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+          Arg1 : uint8
+                 C3
+
+[00:00:00:03] [*] Save new seed id-00004_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+(    TX 1    ) Function: guess(4ba4c16b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint8
+                 7F
+( => TX 2 <= ) Function: isComplete(b2fa1c9e), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:23:39] [*] Save new seed id-00005_01419: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+( => TX 1 <= ) Function: guess(4ba4c16b), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+          Arg1 : uint8
+                 00
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 2985477
+[00:01:00:00] Deployment failures: 2629589
+[00:01:00:00] Test Cases: 6
+[00:01:00:00] Covered Edges: 17
+[00:01:00:00] Covered Instructions: 218
+[00:01:00:00] Covered Def-Use Chains: 0
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 1
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 0
+[00:01:00:00]   Integer Bug: 0
+[00:01:00:00]   Mishandled Exception: 0
+[00:01:00:00]   Multiple Send: 0
+[00:01:00:00]   Reentrancy: 0
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

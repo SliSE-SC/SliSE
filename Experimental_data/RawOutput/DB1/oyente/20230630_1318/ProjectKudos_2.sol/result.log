@@ -1,0 +1,181 @@
+WARNING:root:You are using solc version 0.4.26, The latest supported version is 0.4.19
+INFO:CryticCompile:Compilation warnings/errors on /sb/ProjectKudos_2.sol:
+/sb/ProjectKudos_2.sol:84:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function ProjectKudos() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/ProjectKudos_2.sol:105:34: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (user.kudosLimit > 0) throw;
+                                 ^---^
+/sb/ProjectKudos_2.sol:129:58: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (giver.kudosGiven + kudos > giver.kudosLimit) throw;
+                                                         ^---^
+/sb/ProjectKudos_2.sol:160:49: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+            grantReason != GrantReason.Twitter) throw;
+                                                ^---^
+/sb/ProjectKudos_2.sol:165:27: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (user.isJudge) throw;
+                          ^---^
+/sb/ProjectKudos_2.sol:168:33: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (user.grant[reason]) throw;
+                                ^---^
+/sb/ProjectKudos_2.sol:315:37: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (bytes(str).length > 32) throw;
+                                    ^---^
+/sb/ProjectKudos_2.sol:331:37: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (now < votePeriod.start) throw;
+                                    ^---^
+/sb/ProjectKudos_2.sol:332:36: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (now >= votePeriod.end) throw;
+                                   ^---^
+/sb/ProjectKudos_2.sol:340:34: Warning: "throw" is deprecated in favour of "revert()", "require()" and "assert()".
+        if (msg.sender != owner) throw;
+                                 ^---^
+/sb/ProjectKudos_2.sol:204:57: Warning: This declaration shadows an existing declaration.
+    function getProjectKudosByUsers(string projectCode, address[] users) constant returns(uint[]) {
+                                                        ^-------------^
+/sb/ProjectKudos_2.sol:61:5: The shadowed declaration is here:
+    mapping(address => UserInfo) users;
+    ^--------------------------------^
+
+/sb/ProjectKudos_2.sol:225:66: Warning: This declaration shadows an existing declaration.
+    function getKudosPerProject(address giver) constant returns (bytes32[] projects, uint[] kudos) {
+                                                                 ^----------------^
+/sb/ProjectKudos_2.sol:68:5: The shadowed declaration is here:
+    mapping(bytes32 => ProjectInfo) projects;
+    ^--------------------------------------^
+
+/sb/ProjectKudos_2.sol:103:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        UserInfo user = users[userAddres];
+        ^-----------^
+/sb/ProjectKudos_2.sol:127:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        UserInfo giver = users[msg.sender];
+        ^------------^
+/sb/ProjectKudos_2.sol:132:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        ProjectInfo project = projects[code];
+        ^-----------------^
+/sb/ProjectKudos_2.sol:155:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        UserInfo user = users[userToGrant];
+        ^-----------^
+/sb/ProjectKudos_2.sol:191:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        ProjectInfo project = projects[code];
+        ^-----------------^
+/sb/ProjectKudos_2.sol:206:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        ProjectInfo project = projects[code];
+        ^-----------------^
+/sb/ProjectKudos_2.sol:226:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        UserIndex idx = usersIndex[giver];
+        ^-----------^
+/sb/ProjectKudos_2.sol:238:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        UserInfo user = users[addr];
+        ^-----------^
+/sb/ProjectKudos_2.sol:249:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        UserInfo user = users[addr];
+        ^-----------^
+/sb/ProjectKudos_2.sol:266:9: Warning: Variable is declared as a storage pointer. Use an explicit "storage" keyword to silence this warning.
+        UserIndex idx = usersIndex[msg.sender];
+        ^-----------^
+/sb/ProjectKudos_2.sol:141:26: Warning: "sha3" has been deprecated in favour of "keccak256"
+        Vote(msg.sender, sha3(projectCode), kudos);
+                         ^---------------^
+/sb/ProjectKudos_2.sol:141:26: Warning: This function only accepts a single "bytes" argument. Please use "abi.encodePacked(...)" or a similar function to encode the data.
+        Vote(msg.sender, sha3(projectCode), kudos);
+                         ^---------------^
+/sb/ProjectKudos_2.sol:141:26: Warning: The provided argument of type string memory is not implicitly convertible to expected type bytes memory.
+        Vote(msg.sender, sha3(projectCode), kudos);
+                         ^---------------^
+/sb/ProjectKudos_2.sol:141:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Vote(msg.sender, sha3(projectCode), kudos);
+        ^----------------------------------------^
+/sb/ProjectKudos_2.sol:84:5: Warning: No visibility specified. Defaulting to "public". 
+    function ProjectKudos() {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/ProjectKudos_2.sol:101:5: Warning: No visibility specified. Defaulting to "public". 
+    function register(address userAddres, bool isJudge) onlyOwner {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/ProjectKudos_2.sol:125:5: Warning: No visibility specified. Defaulting to "public". 
+    function giveKudos(string projectCode, uint kudos) duringVote {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/ProjectKudos_2.sol:153:5: Warning: No visibility specified. Defaulting to "public". 
+    function grantKudos(address userToGrant, uint reason) onlyOwner {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/ProjectKudos_2.sol:189:5: Warning: No visibility specified. Defaulting to "public". 
+    function getProjectKudos(string projectCode) constant returns(uint) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/ProjectKudos_2.sol:204:5: Warning: No visibility specified. Defaulting to "public". 
+    function getProjectKudosByUsers(string projectCode, address[] users) constant returns(uint[]) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/ProjectKudos_2.sol:225:5: Warning: No visibility specified. Defaulting to "public". 
+    function getKudosPerProject(address giver) constant returns (bytes32[] projects, uint[] kudos) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/ProjectKudos_2.sol:237:5: Warning: No visibility specified. Defaulting to "public". 
+    function getKudosLeft(address addr) constant returns(uint) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/ProjectKudos_2.sol:248:5: Warning: No visibility specified. Defaulting to "public". 
+    function getKudosGiven(address addr) constant returns(uint) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/ProjectKudos_2.sol:190:24: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+        bytes32 code = strToBytes(projectCode);
+                       ^---------------------^
+/sb/ProjectKudos_2.sol:205:24: Warning: Function declared as view, but this expression (potentially) modifies the state and thus requires non-payable (the default) or payable.
+        bytes32 code = strToBytes(projectCode);
+                       ^---------------------^
+/sb/ProjectKudos_2.sol:287:5: Warning: Function state mutability can be restricted to pure
+    function grantUintToReason(uint reason) private returns (GrantReason result) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/ProjectKudos_2.sol:299:5: Warning: Function state mutability can be restricted to pure
+    function grantReasonToUint(GrantReason reason) private returns (uint result) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/ProjectKudos_2.sol:313:5: Warning: Function state mutability can be restricted to pure
+    function strToBytes(string str) private returns (bytes32 ret) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+INFO:root:contract /sb/ProjectKudos_2.sol:ProjectKudos:
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM Code Coverage: 			 38.4%
+INFO:symExec:	  Integer Underflow: 			 True
+INFO:symExec:	  Integer Overflow: 			 True
+INFO:symExec:	  Parity Multisig Bug 2: 		 False
+INFO:symExec:	  Callstack Depth Attack Vulnerability:  False
+INFO:symExec:	  Transaction-Ordering Dependence (TOD): False
+INFO:symExec:	  Timestamp Dependency: 		 False
+INFO:symExec:	  Re-Entrancy Vulnerability: 		 False
+INFO:symExec:/sb/ProjectKudos_2.sol:239:16: Warning: Integer Underflow.
+        return user.kudosLimit - user.kudosGiven
+INFO:symExec:/sb/ProjectKudos_2.sol:189:5: Warning: Integer Overflow.
+    function getProjectKudos(string projectCode) constant returns(uint) {
+    ^
+Spanning multiple lines.
+Integer Overflow occurs if:
+    projectCode = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+/sb/ProjectKudos_2.sol:125:5: Warning: Integer Overflow.
+    function giveKudos(string projectCode, uint kudos) duringVote {
+    ^
+Spanning multiple lines.
+Integer Overflow occurs if:
+    projectCode = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+/sb/ProjectKudos_2.sol:239:34: Warning: Integer Overflow.
+        return user.kudosLimit - user.kudosGiven
+/sb/ProjectKudos_2.sol:171:9: Warning: Integer Overflow.
+        user.kudosLimit += 100
+Integer Overflow occurs if:
+    owner = 0
+    reason = 1
+/sb/ProjectKudos_2.sol:174:9: Warning: Integer Overflow.
+        user.grant
+Integer Overflow occurs if:
+    owner = 0
+    reason = 1
+/sb/ProjectKudos_2.sol:112:9: Warning: Integer Overflow.
+        user.isJudge
+Integer Overflow occurs if:
+    owner = 0
+    isJudge = 0
+/sb/ProjectKudos_2.sol:204:5: Warning: Integer Overflow.
+    function getProjectKudosByUsers(string projectCode, address[] users) constant returns(uint[]) {
+    ^
+Spanning multiple lines.
+Integer Overflow occurs if:
+    projectCode = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+/sb/ProjectKudos_2.sol:250:16: Warning: Integer Overflow.
+        return user.kudosGiven
+INFO:symExec:	====== Analysis Completed ======

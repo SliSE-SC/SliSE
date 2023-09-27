@@ -1,0 +1,123 @@
+INFO:Slither:Compilation warnings/errors on /sb/HomeBridgeNativeToErc_1.sol:
+/sb/HomeBridgeNativeToErc_1.sol:52:5: Warning: Functions in interfaces should be declared external.
+    function isValidator(address _validator) public view returns(bool);
+    ^-----------------------------------------------------------------^
+/sb/HomeBridgeNativeToErc_1.sol:53:5: Warning: Functions in interfaces should be declared external.
+    function requiredSignatures() public view returns(uint256);
+    ^---------------------------------------------------------^
+/sb/HomeBridgeNativeToErc_1.sol:54:5: Warning: Functions in interfaces should be declared external.
+    function owner() public view returns(address);
+    ^--------------------------------------------^
+/sb/HomeBridgeNativeToErc_1.sol:388:5: Warning: Function state mutability can be restricted to pure
+    function onExecuteAffirmation(address, uint256) internal returns(bool) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+INFO:Detectors:[93m
+Message.parseMessage (/sb/HomeBridgeNativeToErc_1.sol#103-114) is declared view but contains assembly code
+Message.recoverAddressFromSignedMessage (/sb/HomeBridgeNativeToErc_1.sol#124-136) is declared view but contains assembly code
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#constant-functions-changing-the-state[0m
+INFO:Detectors:[93m
+Reentrancy in BasicHomeBridge.executeAffirmation (/sb/HomeBridgeNativeToErc_1.sol#326-349):
+	External calls:
+	- signed >= requiredSignatures() (/sb/HomeBridgeNativeToErc_1.sol#342-348)
+	State variables written after the call(s):
+	- uintStorage (/sb/HomeBridgeNativeToErc_1.sol#345)
+Reentrancy in BasicHomeBridge.submitSignature (/sb/HomeBridgeNativeToErc_1.sol#351-382):
+	External calls:
+	- reqSigs = requiredSignatures() (/sb/HomeBridgeNativeToErc_1.sol#377)
+	State variables written after the call(s):
+	- uintStorage (/sb/HomeBridgeNativeToErc_1.sol#379)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[92m
+BasicHomeBridge.submitSignature.signature (local variable @ /sb/HomeBridgeNativeToErc_1.sol#351) shadows:
+	- BasicHomeBridge.signature (function @ /sb/HomeBridgeNativeToErc_1.sol#407-410)
+BasicHomeBridge.submitSignature.message (local variable @ /sb/HomeBridgeNativeToErc_1.sol#351) shadows:
+	- BasicHomeBridge.message (function @ /sb/HomeBridgeNativeToErc_1.sol#432-434)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#local-variable-shadowing[0m
+INFO:Detectors:[92m
+Message.hasEnoughValidSignatures has external calls inside a loop:
+	- require(bool)(_validatorContract.isValidator(recoveredAddress)) (/sb/HomeBridgeNativeToErc_1.sol#159)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation/_edit#calls-inside-a-loop[0m
+INFO:Detectors:[92m
+Message.parseMessage uses assembly (/sb/HomeBridgeNativeToErc_1.sol#103-114)
+	- /sb/HomeBridgeNativeToErc_1.sol#109-114
+Message.recoverAddressFromSignedMessage uses assembly (/sb/HomeBridgeNativeToErc_1.sol#124-136)
+	- /sb/HomeBridgeNativeToErc_1.sol#130-135
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+IBridgeValidators.isValidator (/sb/HomeBridgeNativeToErc_1.sol#52) should be declared external
+IBridgeValidators.requiredSignatures (/sb/HomeBridgeNativeToErc_1.sol#53) should be declared external
+IBridgeValidators.owner (/sb/HomeBridgeNativeToErc_1.sol#54) should be declared external
+ERC20Basic.totalSupply (/sb/HomeBridgeNativeToErc_1.sol#213) should be declared external
+ERC20Basic.balanceOf (/sb/HomeBridgeNativeToErc_1.sol#214) should be declared external
+ERC20Basic.transfer (/sb/HomeBridgeNativeToErc_1.sol#215) should be declared external
+BasicBridge.setGasPrice (/sb/HomeBridgeNativeToErc_1.sol#226-230) should be declared external
+BasicBridge.gasPrice (/sb/HomeBridgeNativeToErc_1.sol#232-234) should be declared external
+BasicBridge.setRequiredBlockConfirmations (/sb/HomeBridgeNativeToErc_1.sol#236-240) should be declared external
+BasicBridge.requiredBlockConfirmations (/sb/HomeBridgeNativeToErc_1.sol#242-244) should be declared external
+BasicBridge.deployedAtBlock (/sb/HomeBridgeNativeToErc_1.sol#246-248) should be declared external
+BasicBridge.setDailyLimit (/sb/HomeBridgeNativeToErc_1.sol#278-281) should be declared external
+BasicBridge.claimTokens (/sb/HomeBridgeNativeToErc_1.sol#302-312) should be declared external
+BasicHomeBridge.signature (/sb/HomeBridgeNativeToErc_1.sol#407-410) should be declared external
+BasicHomeBridge.message (/sb/HomeBridgeNativeToErc_1.sol#432-434) should be declared external
+HomeBridgeNativeToErc.initialize (/sb/HomeBridgeNativeToErc_1.sol#457-481) should be declared external
+HomeBridgeNativeToErc.fallback (/sb/HomeBridgeNativeToErc_1.sol#483-489) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Parameter '_msg' of Message.isMessageValid (/sb/HomeBridgeNativeToErc_1.sol#116) is not in mixedCase
+Parameter '_message' of Message.hasEnoughValidSignatures (/sb/HomeBridgeNativeToErc_1.sol#146) is not in mixedCase
+Parameter '_vs' of Message.hasEnoughValidSignatures (/sb/HomeBridgeNativeToErc_1.sol#147) is not in mixedCase
+Parameter '_rs' of Message.hasEnoughValidSignatures (/sb/HomeBridgeNativeToErc_1.sol#148) is not in mixedCase
+Parameter '_ss' of Message.hasEnoughValidSignatures (/sb/HomeBridgeNativeToErc_1.sol#149) is not in mixedCase
+Parameter '_validatorContract' of Message.hasEnoughValidSignatures (/sb/HomeBridgeNativeToErc_1.sol#150) is not in mixedCase
+Parameter '_gasPrice' of BasicBridge.setGasPrice (/sb/HomeBridgeNativeToErc_1.sol#226) is not in mixedCase
+Parameter '_blockConfirmations' of BasicBridge.setRequiredBlockConfirmations (/sb/HomeBridgeNativeToErc_1.sol#236) is not in mixedCase
+Parameter '_day' of BasicBridge.setTotalSpentPerDay (/sb/HomeBridgeNativeToErc_1.sol#250) is not in mixedCase
+Parameter '_value' of BasicBridge.setTotalSpentPerDay (/sb/HomeBridgeNativeToErc_1.sol#250) is not in mixedCase
+Parameter '_day' of BasicBridge.totalSpentPerDay (/sb/HomeBridgeNativeToErc_1.sol#254) is not in mixedCase
+Parameter '_status' of BasicBridge.setInitialize (/sb/HomeBridgeNativeToErc_1.sol#266) is not in mixedCase
+Parameter '_dailyLimit' of BasicBridge.setDailyLimit (/sb/HomeBridgeNativeToErc_1.sol#278) is not in mixedCase
+Parameter '_maxPerTx' of BasicBridge.setMaxPerTx (/sb/HomeBridgeNativeToErc_1.sol#287) is not in mixedCase
+Parameter '_minPerTx' of BasicBridge.setMinPerTx (/sb/HomeBridgeNativeToErc_1.sol#292) is not in mixedCase
+Parameter '_amount' of BasicBridge.withinLimit (/sb/HomeBridgeNativeToErc_1.sol#297) is not in mixedCase
+Parameter '_token' of BasicBridge.claimTokens (/sb/HomeBridgeNativeToErc_1.sol#302) is not in mixedCase
+Parameter '_to' of BasicBridge.claimTokens (/sb/HomeBridgeNativeToErc_1.sol#302) is not in mixedCase
+Parameter '_hash' of BasicHomeBridge.setMessagesSigned (/sb/HomeBridgeNativeToErc_1.sol#384) is not in mixedCase
+Parameter '_status' of BasicHomeBridge.setMessagesSigned (/sb/HomeBridgeNativeToErc_1.sol#384) is not in mixedCase
+Parameter '' of BasicHomeBridge.onExecuteAffirmation (/sb/HomeBridgeNativeToErc_1.sol#388) is not in mixedCase
+Parameter '_scope_0' of BasicHomeBridge.onExecuteAffirmation (/sb/HomeBridgeNativeToErc_1.sol#388) is not in mixedCase
+Parameter '_withdrawal' of BasicHomeBridge.numAffirmationsSigned (/sb/HomeBridgeNativeToErc_1.sol#391) is not in mixedCase
+Parameter '_withdrawal' of BasicHomeBridge.setAffirmationsSigned (/sb/HomeBridgeNativeToErc_1.sol#395) is not in mixedCase
+Parameter '_status' of BasicHomeBridge.setAffirmationsSigned (/sb/HomeBridgeNativeToErc_1.sol#395) is not in mixedCase
+Parameter '_withdrawal' of BasicHomeBridge.setNumAffirmationsSigned (/sb/HomeBridgeNativeToErc_1.sol#399) is not in mixedCase
+Parameter '_number' of BasicHomeBridge.setNumAffirmationsSigned (/sb/HomeBridgeNativeToErc_1.sol#399) is not in mixedCase
+Parameter '_withdrawal' of BasicHomeBridge.affirmationsSigned (/sb/HomeBridgeNativeToErc_1.sol#403) is not in mixedCase
+Parameter '_hash' of BasicHomeBridge.signature (/sb/HomeBridgeNativeToErc_1.sol#407) is not in mixedCase
+Parameter '_index' of BasicHomeBridge.signature (/sb/HomeBridgeNativeToErc_1.sol#407) is not in mixedCase
+Parameter '_message' of BasicHomeBridge.messagesSigned (/sb/HomeBridgeNativeToErc_1.sol#412) is not in mixedCase
+Parameter '_hash' of BasicHomeBridge.messages (/sb/HomeBridgeNativeToErc_1.sol#416) is not in mixedCase
+Parameter '_hash' of BasicHomeBridge.signatures (/sb/HomeBridgeNativeToErc_1.sol#420) is not in mixedCase
+Parameter '_hash' of BasicHomeBridge.setSignatures (/sb/HomeBridgeNativeToErc_1.sol#424) is not in mixedCase
+Parameter '_signature' of BasicHomeBridge.setSignatures (/sb/HomeBridgeNativeToErc_1.sol#424) is not in mixedCase
+Parameter '_hash' of BasicHomeBridge.setMessages (/sb/HomeBridgeNativeToErc_1.sol#428) is not in mixedCase
+Parameter '_message' of BasicHomeBridge.setMessages (/sb/HomeBridgeNativeToErc_1.sol#428) is not in mixedCase
+Parameter '_hash' of BasicHomeBridge.message (/sb/HomeBridgeNativeToErc_1.sol#432) is not in mixedCase
+Parameter '_message' of BasicHomeBridge.setNumMessagesSigned (/sb/HomeBridgeNativeToErc_1.sol#436) is not in mixedCase
+Parameter '_number' of BasicHomeBridge.setNumMessagesSigned (/sb/HomeBridgeNativeToErc_1.sol#436) is not in mixedCase
+Parameter '_v' of BasicHomeBridge.markAsProcessed (/sb/HomeBridgeNativeToErc_1.sol#440) is not in mixedCase
+Parameter '_number' of BasicHomeBridge.isAlreadyProcessed (/sb/HomeBridgeNativeToErc_1.sol#444) is not in mixedCase
+Parameter '_message' of BasicHomeBridge.numMessagesSigned (/sb/HomeBridgeNativeToErc_1.sol#448) is not in mixedCase
+Parameter '_recipient' of HomeBridgeNativeToErc.onExecuteAffirmation (/sb/HomeBridgeNativeToErc_1.sol#491) is not in mixedCase
+Parameter '_value' of HomeBridgeNativeToErc.onExecuteAffirmation (/sb/HomeBridgeNativeToErc_1.sol#491) is not in mixedCase
+Parameter '_validatorContract' of HomeBridgeNativeToErc.initialize (/sb/HomeBridgeNativeToErc_1.sol#458) is not in mixedCase
+Parameter '_dailyLimit' of HomeBridgeNativeToErc.initialize (/sb/HomeBridgeNativeToErc_1.sol#459) is not in mixedCase
+Parameter '_maxPerTx' of HomeBridgeNativeToErc.initialize (/sb/HomeBridgeNativeToErc_1.sol#460) is not in mixedCase
+Parameter '_minPerTx' of HomeBridgeNativeToErc.initialize (/sb/HomeBridgeNativeToErc_1.sol#461) is not in mixedCase
+Parameter '_homeGasPrice' of HomeBridgeNativeToErc.initialize (/sb/HomeBridgeNativeToErc_1.sol#462) is not in mixedCase
+Parameter '_requiredBlockConfirmations' of HomeBridgeNativeToErc.initialize (/sb/HomeBridgeNativeToErc_1.sol#463) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Detectors:[92m
+EternalStorage.stringStorage (/sb/HomeBridgeNativeToErc_1.sol#176) is never used in HomeBridgeNativeToErc
+EternalStorage.intStorage (/sb/HomeBridgeNativeToErc_1.sol#180) is never used in HomeBridgeNativeToErc
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-state-variables[0m
+INFO:Slither:/sb/HomeBridgeNativeToErc_1.sol analyzed (9 contracts), 78 result(s) found

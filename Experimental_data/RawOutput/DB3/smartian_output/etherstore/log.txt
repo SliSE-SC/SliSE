@@ -1,0 +1,346 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/etherstore.bin
+[00:00:00:00] Fuzzing starts at 08:40:07
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found sstore(<0x0, { }, { }>, <0x0DE0B6B3A7640000, { }, { }>) @ 0x10
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_0 }, Use = {  }
+Constructor tainted: {  }
+[DEBUG] Analyzing lastWithdrawTime(1031ec31) @ 72
+Found sload(<T, { Sha(*, 0x1) }, { }>) @ 0x197
+lastWithdrawTime(1031ec31): Def = {  }, Use = { map_1 }
+[DEBUG] Analyzing withdrawFunds(155dd5ee) @ c9
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x1db
+Found sload(<0x0, { }, { }>) @ 0x1eb
+Found sload(<T, { Sha(*, 0x1) }, { }>) @ 0x23d
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x2c8
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { map_2 }>) @ 0x2cf
+Found sstore(<T, { Sha(*, 0x1) }, { }>, <T, { }, { }>) @ 0x313
+withdrawFunds(155dd5ee): Def = { map_1, map_2 }, Use = { map_1, map_2, var_0 }
+[DEBUG] Analyzing balances(27e235e3) @ f6
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x32c
+balances(27e235e3): Def = {  }, Use = { map_2 }
+[DEBUG] Analyzing withdrawalLimit(7ddfe78d) @ 14d
+Found sload(<0x0, { }, { }>) @ 0x332
+withdrawalLimit(7ddfe78d): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing depositFunds(e2c41dbc) @ 178
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x37a
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { map_2 }>) @ 0x381
+depositFunds(e2c41dbc): Def = { map_2 }, Use = { map_2 }
+Pruning out ["depositFunds(e2c41dbc)"]
+(6 candidate sequences)
+["withdrawFunds(155dd5ee)"; "withdrawFunds(155dd5ee)"]
+["withdrawFunds(155dd5ee)"; "lastWithdrawTime(1031ec31)"]
+["withdrawFunds(155dd5ee)"; "depositFunds(e2c41dbc)"; "withdrawFunds(155dd5ee)"]
+["withdrawFunds(155dd5ee)"; "depositFunds(e2c41dbc)"; "depositFunds(e2c41dbc)"]
+["withdrawFunds(155dd5ee)"; "depositFunds(e2c41dbc)"; "balances(27e235e3)"]
+["withdrawFunds(155dd5ee)"; "balances(27e235e3)"]
+[00:00:00:00] Start main fuzzing phase
+[00:00:00:01] Tx#1 found BlockstateDependencyMythril at 247
+[00:00:00:01] Tx#1 found BlockstateDependencyManticore at 23f
+[00:00:00:01] Tx#1 found BlockstateDependencyManticore at 2d1
+[00:00:00:01] Tx#1 found ReentrancyMythril at 274
+[00:00:00:01] Tx#1 found ReentrancyManticore at 2cf
+[00:00:00:01] Tx#1 found ReentrancyManticore at 313
+[00:00:00:01] [*] Save bug seed id-00000-BD_mant-BD_myth-RE_mant-RE_myth_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdrawFunds(155dd5ee), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: withdrawFunds(155dd5ee), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00000_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdrawFunds(155dd5ee), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: withdrawFunds(155dd5ee), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00001_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdrawFunds(155dd5ee), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: lastWithdrawTime(1031ec31), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00002_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdrawFunds(155dd5ee), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: depositFunds(e2c41dbc), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: withdrawFunds(155dd5ee), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00003_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdrawFunds(155dd5ee), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: depositFunds(e2c41dbc), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: balances(27e235e3), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00004_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: withdrawFunds(155dd5ee), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000019
+(    TX 2    ) Function: withdrawFunds(155dd5ee), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00005_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: withdrawFunds(155dd5ee), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+(    TX 2    ) Function: withdrawalLimit(7ddfe78d), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: withdrawFunds(155dd5ee), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 000000001A000000000000000000600000002000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00006_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdrawFunds(155dd5ee), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: withdrawFunds(155dd5ee), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:15] [*] Save new seed id-00007_00015: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdrawFunds(155dd5ee), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: depositFunds(e2c41dbc), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: depositFunds(e2c41dbc), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 00000000000000000000000000000000000000000000001A0000000000000000
+( => TX 4 <= ) Function: withdrawFunds(155dd5ee), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000008600000000000000
+
+[00:00:00:15] Tx#4 found BlockstateDependency at 274
+[00:00:00:15] Tx#4 found BlockstateDependencySFuzz at 23f
+[00:00:00:15] Tx#4 found BlockstateDependencySFuzz at 2d1
+[00:00:00:15] Tx#4 found BlockstateDependencyILF at 274
+[00:00:00:15] Tx#4 found ReentrancyILF at 313
+[00:00:00:15] [*] Save bug seed id-00001-BD-BD_ilf-BD_sfuzz-RE_ilf_00015: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdrawFunds(155dd5ee), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: depositFunds(e2c41dbc), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: depositFunds(e2c41dbc), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 00000000000000000000000000000000000000000000001A0000000000000000
+( => TX 4 <= ) Function: withdrawFunds(155dd5ee), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000600000000000000
+
+[00:00:05:20] Tx#2 found Reentrancy at 2cf
+[00:00:05:20] Tx#2 found Reentrancy at 313
+[00:00:05:20] Tx#2 found ReentrancySFuzz at 274
+[00:00:05:20] [*] Save bug seed id-00002-RE-RE_sfuzz_00320: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: depositFunds(e2c41dbc), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000200000000000000
+(    TX 2    ) Function: withdrawFunds(155dd5ee), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+( => TX 3 <= ) Function: withdrawFunds(155dd5ee), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000210000000000000023000000000000000000000000000000000000000000
+
+[00:00:18:33] [*] Save new seed id-00008_01113: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdrawFunds(155dd5ee), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000810000000000FF000000000000000000000000000000000000000040
+(    TX 2    ) Function: depositFunds(e2c41dbc), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000001000000000000000000000000000000000000000000000000000001
+(    TX 3    ) Function: depositFunds(e2c41dbc), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 4    ) Function: withdrawFunds(155dd5ee), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 5    ) Function: withdrawFunds(155dd5ee), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+[00:00:34:42] Tx#6 found IntegerBug at 2c9
+[00:00:34:42] Tx#6 found IntegerBugSFuzz at 2c9
+[00:00:34:42] Tx#6 found IntegerBugMythril at 2c9
+[00:00:34:42] Tx#6 found IntegerBugManticore at 2c9
+[00:00:34:42] [*] Save bug seed id-00003-IB-IB_mant-IB_myth-IB_sfuzz_02082: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdrawFunds(155dd5ee), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000810000000000FF000000000000000000000000000000000000000040
+(    TX 2    ) Function: depositFunds(e2c41dbc), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000001000000000000000000000000000000000000000000000000000001
+(    TX 3    ) Function: depositFunds(e2c41dbc), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+( => TX 4 <= ) Function: depositFunds(e2c41dbc), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 000000000000000000000000000000000000000000000000D000000000000000
+(    TX 5    ) Function: withdrawalLimit(7ddfe78d), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: withdrawFunds(155dd5ee), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+
+[00:00:42:25] Tx#4 found EtherLeak at 274
+[00:00:42:25] [*] Save bug seed id-00004-EL_02545: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: depositFunds(e2c41dbc), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000001000000000000000000000000000000000000000000000000000001
+(    TX 2    ) Function: depositFunds(e2c41dbc), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 3    ) Function: depositFunds(e2c41dbc), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 4    ) Function: withdrawFunds(155dd5ee), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 5    ) Function: withdrawFunds(155dd5ee), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 1290693
+[00:01:00:00] Deployment failures: 0
+[00:01:00:00] Test Cases: 9
+[00:01:00:00] Covered Edges: 33
+[00:01:00:00] Covered Instructions: 463
+[00:01:00:00] Covered Def-Use Chains: 40
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 1
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 1
+[00:01:00:00]   Integer Bug: 1
+[00:01:00:00]   Mishandled Exception: 0
+[00:01:00:00]   Multiple Send: 0
+[00:01:00:00]   Reentrancy: 2
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

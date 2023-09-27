@@ -1,0 +1,206 @@
+{
+    "errors": [
+        "EXIT_CODE_18"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "transferFunds",
+            "impact": "High",
+            "line": 522,
+            "line_end": 563,
+            "message": "Escrow_v1_0.transferFunds (Escrow_v1_0_2.sol#522-563) sends eth to arbitrary user\n\tDangerous calls:\n\t- destinations[i].transfer(amounts[i]) (Escrow_v1_0_2.sol#541)\n",
+            "name": "arbitrary-send"
+        },
+        {
+            "confidence": "High",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "checkTransactionType",
+            "impact": "Medium",
+            "line": 154,
+            "line_end": 163,
+            "message": "Escrow_v1_0.checkTransactionType (Escrow_v1_0_2.sol#154-163) uses a dangerous strict equality:\n\t- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)\n\t- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "execute",
+            "impact": "Medium",
+            "line": 154,
+            "line_end": 163,
+            "message": "Escrow_v1_0.checkTransactionType (Escrow_v1_0_2.sol#154-163) uses a dangerous strict equality:\n\t- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)\n\t- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)\nEscrow_v1_0.execute (Escrow_v1_0_2.sol#393-427) uses a dangerous strict equality:\n\t- require(bool,string)(transferFunds(scriptHash,destinations,amounts) == transactions[scriptHash].value,Total value to be released must be equal to the transaction escrow value)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "inFundedState",
+            "impact": "Medium",
+            "line": 154,
+            "line_end": 163,
+            "message": "Escrow_v1_0.checkTransactionType (Escrow_v1_0_2.sol#154-163) uses a dangerous strict equality:\n\t- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)\n\t- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)\nEscrow_v1_0.execute (Escrow_v1_0_2.sol#393-427) uses a dangerous strict equality:\n\t- require(bool,string)(transferFunds(scriptHash,destinations,amounts) == transactions[scriptHash].value,Total value to be released must be equal to the transaction escrow value)\nEscrow_v1_0.inFundedState (Escrow_v1_0_2.sol#142-147) uses a dangerous strict equality:\n\t- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)\n\t- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "isTimeLockExpired",
+            "impact": "Medium",
+            "line": 154,
+            "line_end": 163,
+            "message": "Escrow_v1_0.checkTransactionType (Escrow_v1_0_2.sol#154-163) uses a dangerous strict equality:\n\t- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)\n\t- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)\nEscrow_v1_0.execute (Escrow_v1_0_2.sol#393-427) uses a dangerous strict equality:\n\t- require(bool,string)(transferFunds(scriptHash,destinations,amounts) == transactions[scriptHash].value,Total value to be released must be equal to the transaction escrow value)\nEscrow_v1_0.inFundedState (Escrow_v1_0_2.sol#142-147) uses a dangerous strict equality:\n\t- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)\n\t- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)\nEscrow_v1_0.isTimeLockExpired (Escrow_v1_0_2.sol#622-634) uses a dangerous strict equality:\n\t- timeoutHours == 0\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "onlyBuyer",
+            "impact": "Medium",
+            "line": 154,
+            "line_end": 163,
+            "message": "Escrow_v1_0.checkTransactionType (Escrow_v1_0_2.sol#154-163) uses a dangerous strict equality:\n\t- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)\n\t- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)\nEscrow_v1_0.execute (Escrow_v1_0_2.sol#393-427) uses a dangerous strict equality:\n\t- require(bool,string)(transferFunds(scriptHash,destinations,amounts) == transactions[scriptHash].value,Total value to be released must be equal to the transaction escrow value)\nEscrow_v1_0.inFundedState (Escrow_v1_0_2.sol#142-147) uses a dangerous strict equality:\n\t- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)\n\t- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)\nEscrow_v1_0.isTimeLockExpired (Escrow_v1_0_2.sol#622-634) uses a dangerous strict equality:\n\t- timeoutHours == 0\nEscrow_v1_0.onlyBuyer (Escrow_v1_0_2.sol#165-170) uses a dangerous strict equality:\n\t- require(bool,string)(msg.sender == transactions[scriptHash].buyer,The initiator of the transaction is not buyer)\n\t- require(bool,string)(msg.sender == transactions[scriptHash].buyer,The initiator of the transaction is not buyer)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "High",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "transactionDoesNotExists",
+            "impact": "Medium",
+            "line": 154,
+            "line_end": 163,
+            "message": "Escrow_v1_0.checkTransactionType (Escrow_v1_0_2.sol#154-163) uses a dangerous strict equality:\n\t- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)\n\t- require(bool,string)(transactions[scriptHash].transactionType == transactionType,Transaction type does not match)\nEscrow_v1_0.execute (Escrow_v1_0_2.sol#393-427) uses a dangerous strict equality:\n\t- require(bool,string)(transferFunds(scriptHash,destinations,amounts) == transactions[scriptHash].value,Total value to be released must be equal to the transaction escrow value)\nEscrow_v1_0.inFundedState (Escrow_v1_0_2.sol#142-147) uses a dangerous strict equality:\n\t- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)\n\t- require(bool,string)(transactions[scriptHash].status == Status.FUNDED,Transaction is either in dispute or released state)\nEscrow_v1_0.isTimeLockExpired (Escrow_v1_0_2.sol#622-634) uses a dangerous strict equality:\n\t- timeoutHours == 0\nEscrow_v1_0.onlyBuyer (Escrow_v1_0_2.sol#165-170) uses a dangerous strict equality:\n\t- require(bool,string)(msg.sender == transactions[scriptHash].buyer,The initiator of the transaction is not buyer)\n\t- require(bool,string)(msg.sender == transactions[scriptHash].buyer,The initiator of the transaction is not buyer)\nEscrow_v1_0.transactionDoesNotExists (Escrow_v1_0_2.sol#137-140) uses a dangerous strict equality:\n\t- require(bool,string)(transactions[scriptHash].value == 0,Transaction exists)\n\t- require(bool,string)(transactions[scriptHash].value == 0,Transaction exists)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "addTokensToTransaction",
+            "impact": "Medium",
+            "line": 339,
+            "line_end": 367,
+            "message": "Reentrancy in Escrow_v1_0.addTokensToTransaction (Escrow_v1_0_2.sol#339-367):\n\tExternal calls:\n\t- require(bool,string)(token.transferFrom(transactions[scriptHash].buyer,this,value),Token transfer failed, maybe you did not approve escrow contract to spend on behalf of buyer) (Escrow_v1_0_2.sol#357-360)\n\tState variables written after the call(s):\n\t- transactions (Escrow_v1_0_2.sol#362-363)\n\t- transactions (Escrow_v1_0_2.sol#364)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "transferFunds",
+            "impact": "Low",
+            "line": 541,
+            "message": "Escrow_v1_0.transferFunds has external calls inside a loop:\n\t- destinations[i].transfer(amounts[i]) (Escrow_v1_0_2.sol#541)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "transferFunds",
+            "impact": "Low",
+            "line": 556,
+            "message": "Escrow_v1_0.transferFunds has external calls inside a loop:\n\t- require(bool,string)(token.transfer(destinations[j],amounts[j]),Token transfer failed.) (Escrow_v1_0_2.sol#556)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "addTokensToTransaction",
+            "impact": "Low",
+            "line": 339,
+            "line_end": 367,
+            "message": "Escrow_v1_0.addTokensToTransaction (Escrow_v1_0_2.sol#339-367) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(token.transferFrom(transactions[scriptHash].buyer,this,value),Token transfer failed, maybe you did not approve escrow contract to spend on behalf of buyer) (Escrow_v1_0_2.sol#357-360)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "execute",
+            "impact": "Low",
+            "line": 393,
+            "line_end": 427,
+            "message": "Escrow_v1_0.execute (Escrow_v1_0_2.sol#393-427) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(transferFunds(scriptHash,destinations,amounts) == transactions[scriptHash].value,Total value to be released must be equal to the transaction escrow value) (Escrow_v1_0_2.sol#421-424)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "verifyTransaction",
+            "impact": "Low",
+            "line": 485,
+            "line_end": 517,
+            "message": "Escrow_v1_0.verifyTransaction (Escrow_v1_0_2.sol#485-517) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- sigV.length < transactions[scriptHash].threshold && (! timeLockExpired || lastRecovered != transactions[scriptHash].seller) (Escrow_v1_0_2.sol#510-515)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "verifySignatures",
+            "impact": "Low",
+            "line": 567,
+            "line_end": 620,
+            "message": "Escrow_v1_0.verifySignatures (Escrow_v1_0_2.sol#567-620) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(transactions[scriptHash].isOwner[recovered],Invalid signature) (Escrow_v1_0_2.sol#609-612)\n\t- require(bool,string)(! transactions[scriptHash].voted[recovered],Same signature sent twice) (Escrow_v1_0_2.sol#613-616)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "isTimeLockExpired",
+            "impact": "Low",
+            "line": 622,
+            "line_end": 634,
+            "message": "Escrow_v1_0.isTimeLockExpired (Escrow_v1_0_2.sol#622-634) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- expired = (timeSince > uint256(timeoutHours).mul(3600)) (Escrow_v1_0_2.sol#631-633)\n\t- timeoutHours == 0 (Escrow_v1_0_2.sol#631-633)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Escrow_v1_0",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "function": "_addTransaction",
+            "impact": "Low",
+            "line": 639,
+            "line_end": 711,
+            "message": "Escrow_v1_0._addTransaction (Escrow_v1_0_2.sol#639-711) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(! transactions[scriptHash].isOwner[moderator],Either buyer or seller is passed as moderator) (Escrow_v1_0_2.sol#699-702)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "impact": "Informational",
+            "line": 83,
+            "line_end": 712,
+            "message": "Contract 'Escrow_v1_0' (Escrow_v1_0_2.sol#83-712) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Escrow_v1_0_2.sol",
+            "impact": "Informational",
+            "line": 639,
+            "line_end": 711,
+            "message": "Function 'Escrow_v1_0._addTransaction' (Escrow_v1_0_2.sol#639-711) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

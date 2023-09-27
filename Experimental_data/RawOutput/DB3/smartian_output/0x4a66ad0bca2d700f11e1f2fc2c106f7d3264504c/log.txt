@@ -1,0 +1,80 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/0x4a66ad0bca2d700f11e1f2fc2c106f7d3264504c.bin
+[00:00:00:00] Fuzzing starts at 08:39:57
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found sload(<0x0, { }, { }>) @ 0x22
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x57
+Found sload(<0x1, { }, { }>) @ 0x77
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1 }>) @ 0xac
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_0, var_1 }, Use = { var_0, var_1 }
+Constructor tainted: {  }
+[DEBUG] Analyzing caddress(b9e722cd) @ 5c
+Found sload(<0x1, { }, { }>) @ 0x1d1
+caddress(b9e722cd): Def = {  }, Use = { var_1 }
+[DEBUG] Analyzing from(d5ce3389) @ b3
+Found sload(<0x0, { }, { }>) @ 0x1f6
+from(d5ce3389): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing transfer(ffc3a769) @ 10a
+Found sload(<0x1, { }, { }>) @ 0x2eb
+Found sload(<0x0, { }, { }>) @ 0x344
+transfer(ffc3a769): Def = {  }, Use = { var_0, var_1 }
+(0 candidate sequences)
+[00:00:00:01] Start main fuzzing phase
+[00:00:00:01] [*] Save new seed id-00000_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: caddress(b9e722cd), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00001_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: from(d5ce3389), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00002_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: transfer(ffc3a769), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address[]
+                 0000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256[]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 1105476
+[00:01:00:00] Deployment failures: 0
+[00:01:00:00] Test Cases: 3
+[00:01:00:00] Covered Edges: 16
+[00:01:00:00] Covered Instructions: 316
+[00:01:00:00] Covered Def-Use Chains: 0
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 0
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 0
+[00:01:00:00]   Integer Bug: 0
+[00:01:00:00]   Mishandled Exception: 0
+[00:01:00:00]   Multiple Send: 0
+[00:01:00:00]   Reentrancy: 0
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

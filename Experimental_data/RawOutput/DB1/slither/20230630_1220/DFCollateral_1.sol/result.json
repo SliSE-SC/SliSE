@@ -1,0 +1,235 @@
+{
+    "errors": [
+        "EXIT_CODE_22"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "DFCollateral",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "transferOut",
+            "impact": "Medium",
+            "line": 227,
+            "line_end": 238,
+            "message": "DFCollateral.transferOut (DFCollateral_1.sol#227-238) uses a dangerous strict equality:\n\t- assert(bool)(sub(IERC20Token(_tokenID).balanceOf(_to),_balance) == _amount)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFCollateral",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "transferOut",
+            "impact": "Medium",
+            "line": 227,
+            "line_end": 238,
+            "message": "DFCollateral.transferOut (DFCollateral_1.sol#227-238) does not use the value returned by external calls:\n\t-IERC20Token(_tokenID).transfer(_to,_amount) (DFCollateral_1.sol#234)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFCollateral",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "approveToEngine",
+            "impact": "Medium",
+            "line": 240,
+            "line_end": 242,
+            "message": "DFCollateral.approveToEngine (DFCollateral_1.sol#240-242) does not use the value returned by external calls:\n\t-IERC20Token(_tokenIdx).approve(_engineAddress,uint256(- 1)) (DFCollateral_1.sol#241)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "balanceOf",
+            "impact": "Informational",
+            "line": 8,
+            "message": "IERC20Token.balanceOf (DFCollateral_1.sol#8) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "allowance",
+            "impact": "Informational",
+            "line": 9,
+            "message": "IERC20Token.allowance (DFCollateral_1.sol#9) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "transfer",
+            "impact": "Informational",
+            "line": 10,
+            "message": "IERC20Token.transfer (DFCollateral_1.sol#10) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "transferFrom",
+            "impact": "Informational",
+            "line": 11,
+            "message": "IERC20Token.transferFrom (DFCollateral_1.sol#11) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "approve",
+            "impact": "Informational",
+            "line": 12,
+            "message": "IERC20Token.approve (DFCollateral_1.sol#12) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "totalSupply",
+            "impact": "Informational",
+            "line": 13,
+            "message": "IERC20Token.totalSupply (DFCollateral_1.sol#13) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSMath",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "pow",
+            "impact": "Informational",
+            "line": 107,
+            "line_end": 123,
+            "message": "DSMath.pow (DFCollateral_1.sol#107-123) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuthority",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "canCall",
+            "impact": "Informational",
+            "line": 140,
+            "line_end": 142,
+            "message": "DSAuthority.canCall (DFCollateral_1.sol#140-142) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuth",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "disableOwnership",
+            "impact": "Informational",
+            "line": 162,
+            "line_end": 165,
+            "message": "DSAuth.disableOwnership (DFCollateral_1.sol#162-165) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuth",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "transferOwnership",
+            "impact": "Informational",
+            "line": 167,
+            "line_end": 170,
+            "message": "DSAuth.transferOwnership (DFCollateral_1.sol#167-170) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuth",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "acceptOwnership",
+            "impact": "Informational",
+            "line": 172,
+            "line_end": 177,
+            "message": "DSAuth.acceptOwnership (DFCollateral_1.sol#172-177) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuth",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "setAuthority",
+            "impact": "Informational",
+            "line": 180,
+            "line_end": 186,
+            "message": "DSAuth.setAuthority (DFCollateral_1.sol#180-186) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DFCollateral",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "transferOut",
+            "impact": "Informational",
+            "line": 227,
+            "line_end": 238,
+            "message": "DFCollateral.transferOut (DFCollateral_1.sol#227-238) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DFCollateral",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "function": "approveToEngine",
+            "impact": "Informational",
+            "line": 240,
+            "line_end": 242,
+            "message": "DFCollateral.approveToEngine (DFCollateral_1.sol#240-242) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "impact": "Informational",
+            "line": 227,
+            "message": "Parameter '_tokenID' of DFCollateral.transferOut (DFCollateral_1.sol#227) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "impact": "Informational",
+            "line": 227,
+            "message": "Parameter '_to' of DFCollateral.transferOut (DFCollateral_1.sol#227) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "impact": "Informational",
+            "line": 227,
+            "message": "Parameter '_amount' of DFCollateral.transferOut (DFCollateral_1.sol#227) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "impact": "Informational",
+            "line": 240,
+            "message": "Parameter '_tokenIdx' of DFCollateral.approveToEngine (DFCollateral_1.sol#240) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFCollateral_1.sol",
+            "impact": "Informational",
+            "line": 240,
+            "message": "Parameter '_engineAddress' of DFCollateral.approveToEngine (DFCollateral_1.sol#240) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

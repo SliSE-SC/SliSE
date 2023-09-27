@@ -1,0 +1,58 @@
+{
+    "0xf6dbe88ba55f1793ff0773c9b1275300f830914f.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "withdraw",
+                "transfer"
+            ],
+            "from_function": "transfer",
+            "to_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 63\nFunction: transfer\nNode: \nEXPRESSION require(bool)(_value <= balances[msg.sender])\nIRS: \nTMP_56 = SOLIDITY_CALL require(bool)(TMP_55)\"",
+                        "\"BlockID: 105\nFunction: withdraw\nNode: \nEXPRESSION balances[msg.sender] -= _amount\nIRS: \nREF_100 = REF_100 - _amount\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "withdraw",
+                "transferFrom"
+            ],
+            "from_function": "transferFrom",
+            "to_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 72\nFunction: transferFrom\nNode: \nEXPRESSION require(bool)(_value <= balances[_from])\nIRS: \nTMP_64 = SOLIDITY_CALL require(bool)(TMP_63)\"",
+                        "\"BlockID: 105\nFunction: withdraw\nNode: \nEXPRESSION balances[msg.sender] -= _amount\nIRS: \nREF_100 = REF_100 - _amount\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "withdraw",
+                "withdraw"
+            ],
+            "from_function": "withdraw",
+            "to_function": "withdraw",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 107\nFunction: withdraw\nNode: \nIF balances[msg.sender] >= _amount\nIRS: \nCONDITION TMP_78\"",
+                        "\"BlockID: 105\nFunction: withdraw\nNode: \nEXPRESSION balances[msg.sender] -= _amount\nIRS: \nREF_100 = REF_100 - _amount\""
+                    ],
+                    "state_variable": "balances"
+                }
+            ]
+        }
+    ]
+}

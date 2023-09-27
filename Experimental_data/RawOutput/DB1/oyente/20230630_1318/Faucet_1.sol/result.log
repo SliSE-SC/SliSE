@@ -1,0 +1,63 @@
+WARNING:root:You are using solc version 0.4.26, The latest supported version is 0.4.19
+INFO:CryticCompile:Compilation warnings/errors on /sb/Faucet_1.sol:
+/sb/Faucet_1.sol:11:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function GNTAllocation(address _golemFactory) {}
+    ^----------------------------------------------^
+/sb/Faucet_1.sol:52:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function GolemNetworkToken(address _golemFactory,
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/Faucet_1.sol:80:9: Warning: Use of the "var" keyword is deprecated.
+        var senderBalance = balances[msg.sender];
+        ^---------------^
+/sb/Faucet_1.sol:157:9: Warning: Use of the "var" keyword is deprecated.
+        var numTokens = msg.value * tokenCreationRate;
+        ^-----------^
+/sb/Faucet_1.sol:207:9: Warning: Use of the "var" keyword is deprecated.
+        var gntValue = balances[msg.sender];
+        ^----------^
+/sb/Faucet_1.sol:212:9: Warning: Use of the "var" keyword is deprecated.
+        var ethValue = gntValue / tokenCreationRate;
+        ^----------^
+/sb/Faucet_1.sol:223:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function Faucet(address _token) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/Faucet_1.sol:85:13: Warning: Invoking events without "emit" prefix is deprecated.
+            Transfer(msg.sender, _to, _value);
+            ^-------------------------------^
+/sb/Faucet_1.sol:117:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Migrate(msg.sender, migrationAgent, _value);
+        ^-----------------------------------------^
+/sb/Faucet_1.sol:164:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(0, msg.sender, numTokens);
+        ^--------------------------------^
+/sb/Faucet_1.sol:192:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(0, lockedAllocation, additionalTokens);
+        ^---------------------------------------------^
+/sb/Faucet_1.sol:195:32: Warning: Using contract member "balance" inherited from the address type is deprecated. Convert the contract to "address" type to access the member, for example use "address(contract).balance" instead.
+        if (!golemFactory.send(this.balance)) revert();
+                               ^----------^
+/sb/Faucet_1.sol:213:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Refund(msg.sender, ethValue);
+        ^--------------------------^
+/sb/Faucet_1.sol:7:5: Warning: No visibility specified. Defaulting to "public". 
+    function migrateFrom(address _from, uint256 _value);
+    ^--------------------------------------------------^
+/sb/Faucet_1.sol:11:5: Warning: No visibility specified. Defaulting to "public". 
+    function GNTAllocation(address _golemFactory) {}
+    ^----------------------------------------------^
+/sb/Faucet_1.sol:11:28: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+    function GNTAllocation(address _golemFactory) {}
+                           ^-------------------^
+/sb/Faucet_1.sol:52:5: Warning: No visibility specified. Defaulting to "public". 
+    function GolemNetworkToken(address _golemFactory,
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/Faucet_1.sol:76:5: Warning: No visibility specified. Defaulting to "public". 
+    function transfer(address _to, uint256 _value) returns (bool) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/Faucet_1.sol:223:5: Warning: No visibility specified. Defaulting to "public". 
+    function Faucet(address _token) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+INFO:root:contract /sb/Faucet_1.sol:GolemNetworkToken:
+INFO:symExec:	============ Results ===========
+Segmentation fault (core dumped)

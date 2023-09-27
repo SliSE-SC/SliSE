@@ -1,0 +1,75 @@
+WARNING:root:You are using solc version 0.4.26. The supported version is 0.4.21.
+INFO:root:Contract /sb/GolemNetworkToken_1.sol:GNTAllocation:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 100.0%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 0.0168809890747 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/GolemNetworkToken_1.sol:GolemNetworkToken:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 96.3%
+INFO:symExec:	  Arithmetic bugs: 	 True
+INFO:symExec:	  └> Overflow bugs: 	 True
+/sb/GolemNetworkToken_1.sol:GolemNetworkToken:189:9
+balances[lockedAllocation] += additionalTokens
+^
+/sb/GolemNetworkToken_1.sol:GolemNetworkToken:113:9
+totalMigrated += _value
+^
+/sb/GolemNetworkToken_1.sol:GolemNetworkToken:187:13
+totalTokens * percentOfTotal
+^
+/sb/GolemNetworkToken_1.sol:GolemNetworkToken:82:13
+balances[_to] += _value
+^
+INFO:symExec:	  └> Underflow bugs: 	 True
+/sb/GolemNetworkToken_1.sol:GolemNetworkToken:152:26
+tokenCreationCap - totalTokens
+^
+/sb/GolemNetworkToken_1.sol:GolemNetworkToken:208:9
+totalTokens -= gntValue
+^
+/sb/GolemNetworkToken_1.sol:GolemNetworkToken:112:9
+totalTokens -= _value
+^
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 True
+Flow 1:
+/sb/GolemNetworkToken_1.sol:GolemNetworkToken:193:14
+golemFactory.send(this.balance)
+^
+Flow 2:
+/sb/GolemNetworkToken_1.sol:GolemNetworkToken:193:14
+golemFactory.send(this.balance)
+^
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 92.4164299965 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+
+  .oooooo.             o8o            o8o          
+ d8P'  `Y8b            `"'            `"'          
+888      888  .oooo.o oooo  oooo d8b oooo   .oooo.o
+888      888 d88(  "8 `888  `888""8P `888  d88(  "8
+888      888 `"Y88b.   888   888      888  `"Y88b. 
+`88b    d88' o.  )88b  888   888      888  o.  )88b
+ `Y8bood8P'  8""888P' o888o d888b    o888o 8""888P'
+
+
+

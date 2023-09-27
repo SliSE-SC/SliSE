@@ -1,0 +1,672 @@
+{
+    "errors": [
+        "EXIT_CODE_69"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "EIP20NonStandardInterface",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "transfer",
+            "impact": "Medium",
+            "line": 288,
+            "line_end": 350,
+            "message": "EIP20NonStandardInterface (RToken_10.sol#288-350) has incorrect ERC20 function interface(s):\n\t-transfer (RToken_10.sol#314)\n\t-transferFrom (RToken_10.sol#328)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "High",
+            "contract": "RBinance",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "getCashPrior",
+            "impact": "Medium",
+            "line": 2752,
+            "line_end": 2758,
+            "message": "RBinance.getCashPrior (RToken_10.sol#2752-2758) uses a dangerous strict equality:\n\t- require(bool)(err == MathError.NO_ERROR)\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "_addReservesInternal",
+            "impact": "Medium",
+            "line": 2421,
+            "line_end": 2433,
+            "message": "Reentrancy in RToken._addReservesInternal (RToken_10.sol#2421-2433):\n\tExternal calls:\n\t- error = accrueInterest() (RToken_10.sol#2422-2423)\n\tState variables written after the call(s):\n\t- totalReserves (RToken_10.sol#2429-2430)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "_reduceReserves",
+            "impact": "Medium",
+            "line": 2484,
+            "line_end": 2494,
+            "message": "Reentrancy in RToken._reduceReserves (RToken_10.sol#2484-2494):\n\tExternal calls:\n\t- error = accrueInterest() (RToken_10.sol#2485-2486)\n\tState variables written after the call(s):\n\t- totalReserves (RToken_10.sol#2491-2492)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "_setCointroller",
+            "impact": "Medium",
+            "line": 2353,
+            "line_end": 2372,
+            "message": "Reentrancy in RToken._setCointroller (RToken_10.sol#2353-2372):\n\tExternal calls:\n\t- require(bool,string)(newCointroller.isCointroller(),marker method returned false) (RToken_10.sol#2361-2362)\n\tState variables written after the call(s):\n\t- cointroller (RToken_10.sol#2364-2365)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "_setInterestRateModel",
+            "impact": "Medium",
+            "line": 2549,
+            "line_end": 2559,
+            "message": "Reentrancy in RToken._setInterestRateModel (RToken_10.sol#2549-2559):\n\tExternal calls:\n\t- error = accrueInterest() (RToken_10.sol#2550-2551)\n\t- _setInterestRateModelFresh(newInterestRateModel) (RToken_10.sol#2556-2557)\n\tState variables written after the call(s):\n\t- interestRateModel (RToken_10.sol#2556-2557)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "_setInterestRateModelFresh",
+            "impact": "Medium",
+            "line": 2565,
+            "line_end": 2595,
+            "message": "Reentrancy in RToken._setInterestRateModelFresh (RToken_10.sol#2565-2595):\n\tExternal calls:\n\t- require(bool,string)(newInterestRateModel.isInterestRateModel(),marker method returned false) (RToken_10.sol#2584-2586)\n\tState variables written after the call(s):\n\t- interestRateModel (RToken_10.sol#2587-2589)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "_setReserveFactor",
+            "impact": "Medium",
+            "line": 2377,
+            "line_end": 2387,
+            "message": "Reentrancy in RToken._setReserveFactor (RToken_10.sol#2377-2387):\n\tExternal calls:\n\t- error = accrueInterest() (RToken_10.sol#2378-2379)\n\tState variables written after the call(s):\n\t- reserveFactorMantissa (RToken_10.sol#2384-2385)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "accrueInterest",
+            "impact": "Medium",
+            "line": 1579,
+            "line_end": 1657,
+            "message": "Reentrancy in RToken.accrueInterest (RToken_10.sol#1579-1657):\n\tExternal calls:\n\t- borrowRateMantissa = interestRateModel.getBorrowRate(cashPrior,borrowsPrior,reservesPrior) (RToken_10.sol#1596)\n\tState variables written after the call(s):\n\t- accrualBlockNumber (RToken_10.sol#1648)\n\t- borrowIndex (RToken_10.sol#1649)\n\t- totalBorrows (RToken_10.sol#1650)\n\t- totalReserves (RToken_10.sol#1651)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "borrowInternal",
+            "impact": "Medium",
+            "line": 1910,
+            "line_end": 1918,
+            "message": "Reentrancy in RToken.borrowInternal (RToken_10.sol#1910-1918):\n\tExternal calls:\n\t- error = accrueInterest() (RToken_10.sol#1911)\n\t- borrowFresh(msg.sender,borrowAmount) (RToken_10.sol#1917)\n\tState variables written after the call(s):\n\t- totalBorrows (RToken_10.sol#1917)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RBinance",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "constructor",
+            "impact": "Medium",
+            "line": 2649,
+            "line_end": 2666,
+            "message": "Reentrancy in RBinance.constructor (RToken_10.sol#2649-2666):\n\tExternal calls:\n\t- initialize(cointroller_,interestRateModel_,initialExchangeRateMantissa_,name_,symbol_,decimals_) (RToken_10.sol#2659-2661)\n\tState variables written after the call(s):\n\t- admin (RToken_10.sol#2662-2663)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "initialize",
+            "impact": "Medium",
+            "line": 1220,
+            "line_end": 1251,
+            "message": "Reentrancy in RToken.initialize (RToken_10.sol#1220-1251):\n\tExternal calls:\n\t- err = _setCointroller(cointroller_) (RToken_10.sol#1234)\n\tState variables written after the call(s):\n\t- accrualBlockNumber (RToken_10.sol#1238)\n\t- borrowIndex (RToken_10.sol#1239)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "liquidateBorrowInternal",
+            "impact": "Medium",
+            "line": 2125,
+            "line_end": 2140,
+            "message": "Reentrancy in RToken.liquidateBorrowInternal (RToken_10.sol#2125-2140):\n\tExternal calls:\n\t- error = accrueInterest() (RToken_10.sol#2126)\n\t- error = rTokenCollateral.accrueInterest() (RToken_10.sol#2132)\n\t- liquidateBorrowFresh(msg.sender,borrower,repayAmount,rTokenCollateral) (RToken_10.sol#2139)\n\tState variables written after the call(s):\n\t- totalBorrows (RToken_10.sol#2139)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "redeemFresh",
+            "impact": "Medium",
+            "line": 1809,
+            "line_end": 1903,
+            "message": "Reentrancy in RToken.redeemFresh (RToken_10.sol#1809-1903):\n\tExternal calls:\n\t- allowed = cointroller.redeemAllowed(address(this),redeemer,vars.redeemTokens) (RToken_10.sol#1849)\n\tState variables written after the call(s):\n\t- totalSupply (RToken_10.sol#1892)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "repayBorrowBehalfInternal",
+            "impact": "Medium",
+            "line": 2020,
+            "line_end": 2028,
+            "message": "Reentrancy in RToken.repayBorrowBehalfInternal (RToken_10.sol#2020-2028):\n\tExternal calls:\n\t- error = accrueInterest() (RToken_10.sol#2021)\n\t- repayBorrowFresh(msg.sender,borrower,repayAmount) (RToken_10.sol#2027)\n\tState variables written after the call(s):\n\t- totalBorrows (RToken_10.sol#2027)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "repayBorrowInternal",
+            "impact": "Medium",
+            "line": 2004,
+            "line_end": 2012,
+            "message": "Reentrancy in RToken.repayBorrowInternal (RToken_10.sol#2004-2012):\n\tExternal calls:\n\t- error = accrueInterest() (RToken_10.sol#2005)\n\t- repayBorrowFresh(msg.sender,msg.sender,repayAmount) (RToken_10.sol#2011)\n\tState variables written after the call(s):\n\t- totalBorrows (RToken_10.sol#2011)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "mintFresh",
+            "impact": "Medium",
+            "line": 1704,
+            "message": "vars in RToken.mintFresh (RToken_10.sol#1704) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "borrowFresh",
+            "impact": "Medium",
+            "line": 1950,
+            "message": "vars in RToken.borrowFresh (RToken_10.sol#1950) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "redeemFresh",
+            "impact": "Medium",
+            "line": 1812,
+            "message": "vars in RToken.redeemFresh (RToken_10.sol#1812) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "_addReservesFresh",
+            "impact": "Medium",
+            "line": 2442,
+            "line_end": 2444,
+            "message": "actualAddAmount in RToken._addReservesFresh (RToken_10.sol#2442-2444) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "repayBorrowFresh",
+            "impact": "Medium",
+            "line": 2060,
+            "message": "vars in RToken.repayBorrowFresh (RToken_10.sol#2060) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExponentialNoError",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "fraction",
+            "impact": "Low",
+            "line": 1050,
+            "message": "Exponential.divScalarByExpTruncate.fraction (local variable @ RToken_10.sol#1050) shadows:\n\t- ExponentialNoError.fraction (function @ RToken_10.sol#277-279)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "borrowFresh",
+            "impact": "Low",
+            "line": 1933,
+            "line_end": 1997,
+            "message": "Reentrancy in RToken.borrowFresh (RToken_10.sol#1933-1997):\n\tExternal calls:\n\t- allowed = cointroller.borrowAllowed(address(this),borrower,borrowAmount) (RToken_10.sol#1935)\n\tState variables written after the call(s):\n\t- accountBorrows (RToken_10.sol#1985)\n\t- accountBorrows (RToken_10.sol#1986)\n\t- totalBorrows (RToken_10.sol#1987)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "initialize",
+            "impact": "Low",
+            "line": 1220,
+            "line_end": 1251,
+            "message": "Reentrancy in RToken.initialize (RToken_10.sol#1220-1251):\n\tExternal calls:\n\t- err = _setCointroller(cointroller_) (RToken_10.sol#1234)\n\t- err = _setInterestRateModelFresh(interestRateModel_) (RToken_10.sol#1242)\n\tState variables written after the call(s):\n\t- _notEntered (RToken_10.sol#1250)\n\t- decimals (RToken_10.sol#1247)\n\t- name (RToken_10.sol#1245)\n\t- symbol (RToken_10.sol#1246)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "mintFresh",
+            "impact": "Low",
+            "line": 1692,
+            "line_end": 1757,
+            "message": "Reentrancy in RToken.mintFresh (RToken_10.sol#1692-1757):\n\tExternal calls:\n\t- allowed = cointroller.mintAllowed(address(this),minter,mintAmount) (RToken_10.sol#1694)\n\tState variables written after the call(s):\n\t- accountTokens (RToken_10.sol#1746)\n\t- totalSupply (RToken_10.sol#1745)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "redeemFresh",
+            "impact": "Low",
+            "line": 1809,
+            "line_end": 1903,
+            "message": "Reentrancy in RToken.redeemFresh (RToken_10.sol#1809-1903):\n\tExternal calls:\n\t- allowed = cointroller.redeemAllowed(address(this),redeemer,vars.redeemTokens) (RToken_10.sol#1849)\n\tState variables written after the call(s):\n\t- accountTokens (RToken_10.sol#1893)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "repayBorrowFresh",
+            "impact": "Low",
+            "line": 2048,
+            "line_end": 2115,
+            "message": "Reentrancy in RToken.repayBorrowFresh (RToken_10.sol#2048-2115):\n\tExternal calls:\n\t- allowed = cointroller.repayBorrowAllowed(address(this),payer,borrower,repayAmount) (RToken_10.sol#2050)\n\tState variables written after the call(s):\n\t- accountBorrows (RToken_10.sol#2103)\n\t- accountBorrows (RToken_10.sol#2104)\n\t- totalBorrows (RToken_10.sol#2105)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "seizeInternal",
+            "impact": "Low",
+            "line": 2245,
+            "line_end": 2292,
+            "message": "Reentrancy in RToken.seizeInternal (RToken_10.sol#2245-2292):\n\tExternal calls:\n\t- allowed = cointroller.seizeAllowed(address(this),seizerToken,liquidator,borrower,seizeTokens) (RToken_10.sol#2247)\n\tState variables written after the call(s):\n\t- accountTokens (RToken_10.sol#2281)\n\t- accountTokens (RToken_10.sol#2282)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "transferTokens",
+            "impact": "Low",
+            "line": 1262,
+            "line_end": 1322,
+            "message": "Reentrancy in RToken.transferTokens (RToken_10.sol#1262-1322):\n\tExternal calls:\n\t- allowed = cointroller.transferAllowed(address(this),src,dst,tokens) (RToken_10.sol#1264)\n\tState variables written after the call(s):\n\t- accountTokens (RToken_10.sol#1307)\n\t- accountTokens (RToken_10.sol#1308)\n\t- transferAllowances (RToken_10.sol#1312)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 666,
+            "message": "RBep20Storage.underlying should be constant (RToken_10.sol#666)\nRDelegationStorage.implementation should be constant (RToken_10.sol#692)\n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "RTokenInterface",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "_setInterestRateModel",
+            "impact": "Informational",
+            "line": 659,
+            "message": "RTokenInterface._setInterestRateModel (RToken_10.sol#659) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "RToken",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "_setInterestRateModel",
+            "impact": "Informational",
+            "line": 2549,
+            "line_end": 2559,
+            "message": "RToken._setInterestRateModel (RToken_10.sol#2549-2559) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "RDelegatorInterface",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "_setImplementation",
+            "impact": "Informational",
+            "line": 707,
+            "message": "RDelegatorInterface._setImplementation (RToken_10.sol#707) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "RDelegateInterface",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "_becomeImplementation",
+            "impact": "Informational",
+            "line": 716,
+            "message": "RDelegateInterface._becomeImplementation (RToken_10.sol#716) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "RDelegateInterface",
+            "filename": "all_contract/RToken_10.sol",
+            "function": "_resignImplementation",
+            "impact": "Informational",
+            "line": 721,
+            "message": "RDelegateInterface._resignImplementation (RToken_10.sol#721) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 2,
+            "message": "Detected issues with version pragma in RToken_10.sol:\n\t- pragma solidity^0.5.16 (RToken_10.sol#2): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 121,
+            "line_end": 124,
+            "message": "Function 'ExponentialNoError.mul_ScalarTruncate' (RToken_10.sol#121-124) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 129,
+            "line_end": 132,
+            "message": "Function 'ExponentialNoError.mul_ScalarTruncateAddUInt' (RToken_10.sol#129-132) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 96,
+            "message": "Constant 'ExponentialNoError.expScale' (RToken_10.sol#96) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 97,
+            "message": "Constant 'ExponentialNoError.doubleScale' (RToken_10.sol#97) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 98,
+            "message": "Constant 'ExponentialNoError.halfExpScale' (RToken_10.sol#98) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 99,
+            "message": "Constant 'ExponentialNoError.mantissaOne' (RToken_10.sol#99) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 355,
+            "message": "Constant 'CointrollerInterface.isCointroller' (RToken_10.sol#355) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 429,
+            "message": "Variable 'RTokenStorage._notEntered' (RToken_10.sol#429) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 450,
+            "message": "Constant 'RTokenStorage.borrowRateMaxMantissa' (RToken_10.sol#450) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 455,
+            "message": "Constant 'RTokenStorage.reserveFactorMaxMantissa' (RToken_10.sol#455) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 654,
+            "message": "Function 'RTokenInterface._setPendingAdmin' (RToken_10.sol#654) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 655,
+            "message": "Function 'RTokenInterface._acceptAdmin' (RToken_10.sol#655) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 656,
+            "message": "Function 'RTokenInterface._setCointroller' (RToken_10.sol#656) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 657,
+            "message": "Function 'RTokenInterface._setReserveFactor' (RToken_10.sol#657) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 658,
+            "message": "Function 'RTokenInterface._reduceReserves' (RToken_10.sol#658) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 659,
+            "message": "Function 'RTokenInterface._setInterestRateModel' (RToken_10.sol#659) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 542,
+            "message": "Constant 'RTokenInterface.isRToken' (RToken_10.sol#542) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 685,
+            "message": "Function 'RBep20Interface._addReserves' (RToken_10.sol#685) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 707,
+            "message": "Function 'RDelegatorInterface._setImplementation' (RToken_10.sol#707) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 716,
+            "message": "Function 'RDelegateInterface._becomeImplementation' (RToken_10.sol#716) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 721,
+            "message": "Function 'RDelegateInterface._resignImplementation' (RToken_10.sol#721) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 1180,
+            "message": "Constant 'InterestRateModel.isInterestRateModel' (RToken_10.sol#1180) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 2303,
+            "line_end": 2319,
+            "message": "Function 'RToken._setPendingAdmin' (RToken_10.sol#2303-2319) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 2326,
+            "line_end": 2348,
+            "message": "Function 'RToken._acceptAdmin' (RToken_10.sol#2326-2348) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 2353,
+            "line_end": 2372,
+            "message": "Function 'RToken._setCointroller' (RToken_10.sol#2353-2372) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 2377,
+            "line_end": 2387,
+            "message": "Function 'RToken._setReserveFactor' (RToken_10.sol#2377-2387) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 2484,
+            "line_end": 2494,
+            "message": "Function 'RToken._reduceReserves' (RToken_10.sol#2484-2494) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 2549,
+            "line_end": 2559,
+            "message": "Function 'RToken._setInterestRateModel' (RToken_10.sol#2549-2559) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 2392,
+            "line_end": 2416,
+            "message": "Function 'RToken._setReserveFactorFresh' (RToken_10.sol#2392-2416) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 2421,
+            "line_end": 2433,
+            "message": "Function 'RToken._addReservesInternal' (RToken_10.sol#2421-2433) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 2439,
+            "line_end": 2479,
+            "message": "Function 'RToken._addReservesFresh' (RToken_10.sol#2439-2479) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 2500,
+            "line_end": 2543,
+            "message": "Function 'RToken._reduceReservesFresh' (RToken_10.sol#2500-2543) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/RToken_10.sol",
+            "impact": "Informational",
+            "line": 2565,
+            "line_end": 2595,
+            "message": "Function 'RToken._setInterestRateModelFresh' (RToken_10.sol#2565-2595) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

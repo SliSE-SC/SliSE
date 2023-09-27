@@ -1,0 +1,66 @@
+WARNING:root:You are using solc version 0.4.26. The supported version is 0.4.21.
+INFO:root:Contract /sb/InteractiveCrowdsaleTestContract_1.sol:BasicMathLib:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 89.9%
+INFO:symExec:	  Arithmetic bugs: 	 True
+INFO:symExec:	  └> Overflow bugs: 	 True
+/sb/InteractiveCrowdsaleTestContract_1.sol:BasicMathLib:76:14
+mul(a,b)
+^
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 True
+/sb/InteractiveCrowdsaleTestContract_1.sol:BasicMathLib:77:31
+div(res,b)
+^
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 11.6246581078 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/InteractiveCrowdsaleTestContract_1.sol:CrowdsaleLib:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 79.7%
+INFO:symExec:	  Arithmetic bugs: 	 True
+INFO:symExec:	  └> Overflow bugs: 	 True
+/sb/InteractiveCrowdsaleTestContract_1.sol:CrowdsaleLib:668:34
+self.withdrawTokensMap[msg.sender] * self.percentBurn
+^
+INFO:symExec:	  └> Underflow bugs: 	 True
+/sb/InteractiveCrowdsaleTestContract_1.sol:CrowdsaleLib:782:12
+self.startingTokenBalance - self.withdrawTokensMap[self.owner]
+^
+/sb/InteractiveCrowdsaleTestContract_1.sol:CrowdsaleLib:669:48
+self.withdrawTokensMap[msg.sender] - _burnAmount
+^
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 True
+Flow 1:
+/sb/InteractiveCrowdsaleTestContract_1.sol:CrowdsaleLib:695:5
+msg.sender.transfer(total)
+^
+Flow 2:
+/sb/InteractiveCrowdsaleTestContract_1.sol:CrowdsaleLib:714:5
+self.owner.transfer(amount)
+^
+INFO:symExec:	  Time dependency bug: 	 True
+/sb/InteractiveCrowdsaleTestContract_1.sol:CrowdsaleLib:704:9
+(!crowdsaleEnded(self)) && (self.token.balanceOf(this)>0)
+^
+/sb/InteractiveCrowdsaleTestContract_1.sol:CrowdsaleLib:704:5
+if ((!crowdsaleEnded(self)) && (self.token.balanceOf(this)>0)) {
+^
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 220.802397966 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/InteractiveCrowdsaleTestContract_1.sol:CrowdsaleToken:
+INFO:symExec:Running, please wait...

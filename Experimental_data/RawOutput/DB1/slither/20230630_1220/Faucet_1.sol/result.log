@@ -1,0 +1,96 @@
+INFO:Slither:Compilation warnings/errors on /sb/Faucet_1.sol:
+/sb/Faucet_1.sol:11:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function GNTAllocation(address _golemFactory) {}
+    ^----------------------------------------------^
+/sb/Faucet_1.sol:52:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function GolemNetworkToken(address _golemFactory,
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/Faucet_1.sol:80:9: Warning: Use of the "var" keyword is deprecated.
+        var senderBalance = balances[msg.sender];
+        ^---------------^
+/sb/Faucet_1.sol:157:9: Warning: Use of the "var" keyword is deprecated.
+        var numTokens = msg.value * tokenCreationRate;
+        ^-----------^
+/sb/Faucet_1.sol:207:9: Warning: Use of the "var" keyword is deprecated.
+        var gntValue = balances[msg.sender];
+        ^----------^
+/sb/Faucet_1.sol:212:9: Warning: Use of the "var" keyword is deprecated.
+        var ethValue = gntValue / tokenCreationRate;
+        ^----------^
+/sb/Faucet_1.sol:223:5: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+    function Faucet(address _token) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/Faucet_1.sol:85:13: Warning: Invoking events without "emit" prefix is deprecated.
+            Transfer(msg.sender, _to, _value);
+            ^-------------------------------^
+/sb/Faucet_1.sol:117:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Migrate(msg.sender, migrationAgent, _value);
+        ^-----------------------------------------^
+/sb/Faucet_1.sol:164:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(0, msg.sender, numTokens);
+        ^--------------------------------^
+/sb/Faucet_1.sol:192:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Transfer(0, lockedAllocation, additionalTokens);
+        ^---------------------------------------------^
+/sb/Faucet_1.sol:195:32: Warning: Using contract member "balance" inherited from the address type is deprecated. Convert the contract to "address" type to access the member, for example use "address(contract).balance" instead.
+        if (!golemFactory.send(this.balance)) revert();
+                               ^----------^
+/sb/Faucet_1.sol:213:9: Warning: Invoking events without "emit" prefix is deprecated.
+        Refund(msg.sender, ethValue);
+        ^--------------------------^
+/sb/Faucet_1.sol:7:5: Warning: No visibility specified. Defaulting to "public". 
+    function migrateFrom(address _from, uint256 _value);
+    ^--------------------------------------------------^
+/sb/Faucet_1.sol:11:5: Warning: No visibility specified. Defaulting to "public". 
+    function GNTAllocation(address _golemFactory) {}
+    ^----------------------------------------------^
+/sb/Faucet_1.sol:11:28: Warning: Unused function parameter. Remove or comment out the variable name to silence this warning.
+    function GNTAllocation(address _golemFactory) {}
+                           ^-------------------^
+/sb/Faucet_1.sol:52:5: Warning: No visibility specified. Defaulting to "public". 
+    function GolemNetworkToken(address _golemFactory,
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/Faucet_1.sol:76:5: Warning: No visibility specified. Defaulting to "public". 
+    function transfer(address _to, uint256 _value) returns (bool) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+/sb/Faucet_1.sol:223:5: Warning: No visibility specified. Defaulting to "public". 
+    function Faucet(address _token) {
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+INFO:Detectors:[91m
+GolemNetworkToken.finalize (/sb/Faucet_1.sol#173-196) sends eth to arbitrary user
+	Dangerous calls:
+	- ! golemFactory.send(this.balance) (/sb/Faucet_1.sol#195)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#functions-that-send-ether-to-arbitrary-destinations[0m
+INFO:Detectors:[93m
+Faucet.create (/sb/Faucet_1.sol#229-233) does not use the value returned by external calls:
+	-token.transfer(msg.sender,tokens) (/sb/Faucet_1.sol#232)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-return[0m
+INFO:Detectors:[92m
+MigrationAgent.migrateFrom (/sb/Faucet_1.sol#7) should be declared external
+GolemNetworkToken.transfer (/sb/Faucet_1.sol#76-89) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/Faucet_1.sol:
+	- pragma solidity^0.4.16 (/sb/Faucet_1.sol#1): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Function 'GNTAllocation.GNTAllocation' (/sb/Faucet_1.sol#11) is not in mixedCase
+Function 'GolemNetworkToken.GolemNetworkToken' (/sb/Faucet_1.sol#52-67) is not in mixedCase
+Parameter '_golemFactory' of GolemNetworkToken.GolemNetworkToken (/sb/Faucet_1.sol#52) is not in mixedCase
+Parameter '_migrationMaster' of GolemNetworkToken.GolemNetworkToken (/sb/Faucet_1.sol#53) is not in mixedCase
+Parameter '_fundingStartBlock' of GolemNetworkToken.GolemNetworkToken (/sb/Faucet_1.sol#54) is not in mixedCase
+Parameter '_fundingEndBlock' of GolemNetworkToken.GolemNetworkToken (/sb/Faucet_1.sol#55) is not in mixedCase
+Parameter '_to' of GolemNetworkToken.transfer (/sb/Faucet_1.sol#76) is not in mixedCase
+Parameter '_value' of GolemNetworkToken.transfer (/sb/Faucet_1.sol#76) is not in mixedCase
+Parameter '_owner' of GolemNetworkToken.balanceOf (/sb/Faucet_1.sol#95) is not in mixedCase
+Parameter '_value' of GolemNetworkToken.migrate (/sb/Faucet_1.sol#104) is not in mixedCase
+Parameter '_agent' of GolemNetworkToken.setMigrationAgent (/sb/Faucet_1.sol#125) is not in mixedCase
+Parameter '_master' of GolemNetworkToken.setMigrationMaster (/sb/Faucet_1.sol#133) is not in mixedCase
+Constant 'GolemNetworkToken.tokenCreationRate' (/sb/Faucet_1.sol#20) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'GolemNetworkToken.tokenCreationCap' (/sb/Faucet_1.sol#23) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'GolemNetworkToken.tokenCreationMin' (/sb/Faucet_1.sol#24) is not in UPPER_CASE_WITH_UNDERSCORES
+Function 'Faucet.Faucet' (/sb/Faucet_1.sol#223-225) is not in mixedCase
+Parameter '_token' of Faucet.Faucet (/sb/Faucet_1.sol#223) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/Faucet_1.sol analyzed (4 contracts), 22 result(s) found

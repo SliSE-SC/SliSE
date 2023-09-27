@@ -1,0 +1,50 @@
+INFO:Detectors:[93m
+LibBytes.rawAddress (/sb/MixinSignatureValidator_2.sol#50-59) is declared view but contains assembly code
+LibBytes.contentAddress (/sb/MixinSignatureValidator_2.sol#64-73) is declared view but contains assembly code
+LibBytes.memCopy (/sb/MixinSignatureValidator_2.sol#79-180) is declared view but contains assembly code
+LibBytes.sliceDestructive (/sb/MixinSignatureValidator_2.sol#220-244) is declared view but contains assembly code
+LibBytes.popLastByte (/sb/MixinSignatureValidator_2.sol#249-268) is declared view but contains assembly code
+LibBytes.popLast20Bytes (/sb/MixinSignatureValidator_2.sol#273-292) is declared view but contains assembly code
+LibBytes.readAddress (/sb/MixinSignatureValidator_2.sol#316-342) is declared view but contains assembly code
+LibBytes.writeAddress (/sb/MixinSignatureValidator_2.sol#348-388) is declared view but contains assembly code
+LibBytes.readBytes32 (/sb/MixinSignatureValidator_2.sol#394-415) is declared view but contains assembly code
+LibBytes.writeBytes32 (/sb/MixinSignatureValidator_2.sol#421-441) is declared view but contains assembly code
+LibBytes.readBytes4 (/sb/MixinSignatureValidator_2.sol#477-496) is declared view but contains assembly code
+LibBytes.readBytesWithLength (/sb/MixinSignatureValidator_2.sol#504-528) is declared view but contains assembly code
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#constant-functions-changing-the-state[0m
+INFO:Detectors:[93m
+Reentrancy in MixinSignatureValidator.preSign (/sb/MixinSignatureValidator_2.sol#836-853):
+	External calls:
+	- require(bool,string)(isValidSignature(hash,signerAddress,signature),INVALID_SIGNATURE) (/sb/MixinSignatureValidator_2.sol#844-851)
+	State variables written after the call(s):
+	- preSigned (/sb/MixinSignatureValidator_2.sol#852)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[92m
+LibBytes.rawAddress uses assembly (/sb/MixinSignatureValidator_2.sol#50-59)
+	- /sb/MixinSignatureValidator_2.sol#55-58
+LibBytes.contentAddress uses assembly (/sb/MixinSignatureValidator_2.sol#64-73)
+	- /sb/MixinSignatureValidator_2.sol#69-72
+LibBytes.memCopy uses assembly (/sb/MixinSignatureValidator_2.sol#79-180)
+	- /sb/MixinSignatureValidator_2.sol#91-97
+	- /sb/MixinSignatureValidator_2.sol#119-147
+	- /sb/MixinSignatureValidator_2.sol#148-178
+LibBytes.sliceDestructive uses assembly (/sb/MixinSignatureValidator_2.sol#220-244)
+	- /sb/MixinSignatureValidator_2.sol#239-243
+LibBytes.popLastByte uses assembly (/sb/MixinSignatureValidator_2.sol#249-268)
+	- /sb/MixinSignatureValidator_2.sol#262-267
+LibBytes.popLast20Bytes uses assembly (/sb/MixinSignatureValidator_2.sol#273-292)
+	- /sb/MixinSignatureValidator_2.sol#286-291
+LibBytes.readAddress uses assembly (/sb/MixinSignatureValidator_2.sol#316-342)
+	- /sb/MixinSignatureValidator_2.sol#335-341
+LibBytes.writeAddress uses assembly (/sb/MixinSignatureValidator_2.sol#348-388)
+	- /sb/MixinSignatureValidator_2.sol#367-388
+LibBytes.readBytes32 uses assembly (/sb/MixinSignatureValidator_2.sol#394-415)
+	- /sb/MixinSignatureValidator_2.sol#411-414
+LibBytes.writeBytes32 uses assembly (/sb/MixinSignatureValidator_2.sol#421-441)
+	- /sb/MixinSignatureValidator_2.sol#438-441
+LibBytes.readBytes4 uses assembly (/sb/MixinSignatureValidator_2.sol#477-496)
+	- /sb/MixinSignatureValidator_2.sol#489-495
+LibBytes.readBytesWithLength uses assembly (/sb/MixinSignatureValidator_2.sol#504-528)
+	- /sb/MixinSignatureValidator_2.sol#524-527
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Slither:/sb/MixinSignatureValidator_2.sol analyzed (8 contracts), 25 result(s) found

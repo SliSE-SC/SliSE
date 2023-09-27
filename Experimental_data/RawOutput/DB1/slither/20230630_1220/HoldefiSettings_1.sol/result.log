@@ -1,0 +1,112 @@
+INFO:Slither:Compilation warnings/errors on /sb/HoldefiSettings_1.sol:
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> /sb/HoldefiSettings_1.sol
+
+
+INFO:Detectors:[93m
+Contract locking ether found in /sb/HoldefiSettings_1.sol:
+	Contract HoldefiSettings has payable functions:
+	 - fallback (/sb/HoldefiSettings_1.sol#501-503)
+	But does not have a function to withdraw the ether
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#contracts-that-lock-ether[0m
+INFO:Detectors:[93m
+Reentrancy in HoldefiSettings.addMarket (/sb/HoldefiSettings_1.sol#670-689):
+	External calls:
+	- setBorrowRateInternal(market,borrowRate) (/sb/HoldefiSettings_1.sol#685)
+	- setSuppliersShareRateInternal(market,suppliersShareRate) (/sb/HoldefiSettings_1.sol#686)
+	State variables written after the call(s):
+	- marketAssets (/sb/HoldefiSettings_1.sol#686)
+	- marketAssets (/sb/HoldefiSettings_1.sol#688)
+Reentrancy in HoldefiSettings.setBorrowRateInternal (/sb/HoldefiSettings_1.sol#764-784):
+	External calls:
+	- holdefiContract.beforeChangeBorrowRate(market) (/sb/HoldefiSettings_1.sol#777)
+	State variables written after the call(s):
+	- marketAssets (/sb/HoldefiSettings_1.sol#782)
+	- marketAssets (/sb/HoldefiSettings_1.sol#783)
+Reentrancy in HoldefiSettings.setSuppliersShareRateInternal (/sb/HoldefiSettings_1.sol#787-817):
+	External calls:
+	- holdefiContract.beforeChangeSupplyRate(market) (/sb/HoldefiSettings_1.sol#806)
+	State variables written after the call(s):
+	- marketAssets (/sb/HoldefiSettings_1.sol#815)
+	- marketAssets (/sb/HoldefiSettings_1.sol#816)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[93m
+index in HoldefiSettings.removeMarket (/sb/HoldefiSettings_1.sol#701) is a local variable never initialiazed
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#uninitialized-local-variables[0m
+INFO:Detectors:[93m
+HoldefiSettings.removeMarket (/sb/HoldefiSettings_1.sol#694-718) does not use the value returned by external calls:
+	-marketsList.pop() (/sb/HoldefiSettings_1.sol#715)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-return[0m
+INFO:Detectors:[92m
+Reentrancy in HoldefiSettings.removeMarket (/sb/HoldefiSettings_1.sol#694-718):
+	External calls:
+	- totalBorrow = holdefiContract.marketAssets(market).totalBorrow (/sb/HoldefiSettings_1.sol#695)
+	- holdefiContract.beforeChangeBorrowRate(market) (/sb/HoldefiSettings_1.sol#698)
+	State variables written after the call(s):
+	- marketsList (/sb/HoldefiSettings_1.sol#711)
+Reentrancy in HoldefiSettings.removeMarket (/sb/HoldefiSettings_1.sol#694-718):
+	External calls:
+	- totalBorrow = holdefiContract.marketAssets(market).totalBorrow (/sb/HoldefiSettings_1.sol#695)
+	- holdefiContract.beforeChangeBorrowRate(market) (/sb/HoldefiSettings_1.sol#698)
+	- marketsList.pop() (/sb/HoldefiSettings_1.sol#715)
+	State variables written after the call(s):
+	- marketAssets (/sb/HoldefiSettings_1.sol#716)
+Reentrancy in HoldefiSettings.setHoldefiContract (/sb/HoldefiSettings_1.sol#544-550):
+	External calls:
+	- require(bool,string)(holdefiContractAddress.holdefiSettings() == address(this),Conflict with Holdefi contract address) (/sb/HoldefiSettings_1.sol#545-547)
+	State variables written after the call(s):
+	- holdefiContract (/sb/HoldefiSettings_1.sol#549)
+Reentrancy in HoldefiSettings.setPromotionRate (/sb/HoldefiSettings_1.sol#584-592):
+	External calls:
+	- holdefiContract.beforeChangeSupplyRate(market) (/sb/HoldefiSettings_1.sol#587)
+	- holdefiContract.reserveSettlement(market) (/sb/HoldefiSettings_1.sol#588)
+	State variables written after the call(s):
+	- marketAssets (/sb/HoldefiSettings_1.sol#591)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-2[0m
+INFO:Detectors:[92m
+HoldefiSettings.setBorrowRateInternal (/sb/HoldefiSettings_1.sol#764-784) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(deltaTime >= periodBetweenUpdates,Increasing rate is not allowed at this time) (/sb/HoldefiSettings_1.sol#771)
+HoldefiSettings.setSuppliersShareRateInternal (/sb/HoldefiSettings_1.sol#787-817) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(deltaTime >= periodBetweenUpdates,Decreasing rate is not allowed at this time) (/sb/HoldefiSettings_1.sol#797)
+HoldefiSettings.setValueToLoanRateInternal (/sb/HoldefiSettings_1.sol#820-847) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(deltaTime >= periodBetweenUpdates,Increasing rate is not allowed at this time) (/sb/HoldefiSettings_1.sol#833)
+HoldefiSettings.setPenaltyRateInternal (/sb/HoldefiSettings_1.sol#850-873) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(deltaTime >= periodBetweenUpdates,Increasing rate is not allowed at this time) (/sb/HoldefiSettings_1.sol#864)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#block-timestamp[0m
+INFO:Detectors:[92m
+Different versions of Solidity is used in /sb/HoldefiSettings_1.sol:
+	- Version used: ['0.6.12', 'ABIEncoderV2']
+	- /sb/HoldefiSettings_1.sol#1 declares pragma solidity0.6.12
+	- /sb/HoldefiSettings_1.sol#3 declares pragma experimentalABIEncoderV2
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#different-pragma-directives-are-used[0m
+INFO:Detectors:[92m
+HoldefiSettings.activateMarket (/sb/HoldefiSettings_1.sol#508-510) should be declared external
+HoldefiSettings.deactivateMarket (/sb/HoldefiSettings_1.sol#515-518) should be declared external
+HoldefiSettings.activateCollateral (/sb/HoldefiSettings_1.sol#523-525) should be declared external
+HoldefiSettings.deactivateCollateral (/sb/HoldefiSettings_1.sol#530-533) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/HoldefiSettings_1.sol:
+	- pragma solidity0.6.12 (/sb/HoldefiSettings_1.sol#1): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Constant 'HoldefiSettings.rateDecimals' (/sb/HoldefiSettings_1.sol#416) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'HoldefiSettings.ethAddress' (/sb/HoldefiSettings_1.sol#418) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'HoldefiSettings.periodBetweenUpdates' (/sb/HoldefiSettings_1.sol#420) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'HoldefiSettings.maxBorrowRate' (/sb/HoldefiSettings_1.sol#422) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'HoldefiSettings.borrowRateMaxIncrease' (/sb/HoldefiSettings_1.sol#424) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'HoldefiSettings.minSuppliersShareRate' (/sb/HoldefiSettings_1.sol#426) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'HoldefiSettings.suppliersShareRateMaxDecrease' (/sb/HoldefiSettings_1.sol#428) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'HoldefiSettings.maxValueToLoanRate' (/sb/HoldefiSettings_1.sol#430) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'HoldefiSettings.valueToLoanRateMaxIncrease' (/sb/HoldefiSettings_1.sol#432) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'HoldefiSettings.maxPenaltyRate' (/sb/HoldefiSettings_1.sol#434) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'HoldefiSettings.penaltyRateMaxIncrease' (/sb/HoldefiSettings_1.sol#436) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'HoldefiSettings.maxPromotionRate' (/sb/HoldefiSettings_1.sol#438) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'HoldefiSettings.maxListsLength' (/sb/HoldefiSettings_1.sol#440) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'HoldefiSettings.fivePercentLiquidationGap' (/sb/HoldefiSettings_1.sol#444) is not in UPPER_CASE_WITH_UNDERSCORES
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/HoldefiSettings_1.sol analyzed (5 contracts), 34 result(s) found

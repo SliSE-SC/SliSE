@@ -1,0 +1,359 @@
+{
+    "errors": [
+        "EXIT_CODE_34"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "impact": "Medium",
+            "line": 1092,
+            "line_end": 1110,
+            "message": "Require.stringify (AdminImpl_4.sol#1092-1110) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "impact": "Medium",
+            "line": 1926,
+            "line_end": 1958,
+            "message": "Token.checkSuccess (AdminImpl_4.sol#1926-1958) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IErc20",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "approve",
+            "impact": "Medium",
+            "line": 277,
+            "line_end": 345,
+            "message": "IErc20 (AdminImpl_4.sol#277-345) has incorrect ERC20 function interface(s):\n\t-transfer (AdminImpl_4.sol#311-315)\n\t-transferFrom (AdminImpl_4.sol#318-323)\n\t-approve (AdminImpl_4.sol#325-329)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Storage",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "getAccountValues",
+            "impact": "Medium",
+            "line": 1471,
+            "message": "supplyValue in Storage.getAccountValues (AdminImpl_4.sol#1471) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Storage",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "getAccountValues",
+            "impact": "Medium",
+            "line": 1472,
+            "message": "borrowValue in Storage.getAccountValues (AdminImpl_4.sol#1472) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Types",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "add",
+            "impact": "Medium",
+            "line": 2165,
+            "message": "result in Types.add (AdminImpl_4.sol#2165) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Types",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "add",
+            "impact": "Medium",
+            "line": 2052,
+            "message": "result in Types.add (AdminImpl_4.sol#2052) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "_setInterestSetter",
+            "impact": "Medium",
+            "line": 2507,
+            "line_end": 2519,
+            "message": "AdminImpl._setInterestSetter (AdminImpl_4.sol#2507-2519) does not use the value returned by external calls:\n\t-interestSetter.getInterestRate(token,0,0) (AdminImpl_4.sol#2518)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "High",
+            "contract": "Require",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "stringify",
+            "impact": "Informational",
+            "line": 1092,
+            "line_end": 1110,
+            "message": "Require.stringify uses assembly (AdminImpl_4.sol#1092-1110)\n\t- AdminImpl_4.sol#1103-1106\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "Token",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "checkSuccess",
+            "impact": "Informational",
+            "line": 1926,
+            "line_end": 1958,
+            "message": "Token.checkSuccess uses assembly (AdminImpl_4.sol#1926-1958)\n\t- AdminImpl_4.sol#1935-1957\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "impact": "Informational",
+            "line": 20,
+            "message": "Different versions of Solidity is used in AdminImpl_4.sol:\n\t- Version used: ['0.5.4', 'ABIEncoderV2']\n\t- AdminImpl_4.sol#20 declares pragma solidity0.5.4\n\t- AdminImpl_4.sol#21 declares pragma experimentalABIEncoderV2\n",
+            "name": "pragma"
+        },
+        {
+            "confidence": "High",
+            "contract": "IInterestSetter",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "getInterestRate",
+            "impact": "Informational",
+            "line": 603,
+            "line_end": 610,
+            "message": "IInterestSetter.getInterestRate (AdminImpl_4.sol#603-610) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IPriceOracle",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "getPrice",
+            "impact": "Informational",
+            "line": 652,
+            "line_end": 657,
+            "message": "IPriceOracle.getPrice (AdminImpl_4.sol#652-657) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "ownerWithdrawExcessTokens",
+            "impact": "Informational",
+            "line": 2280,
+            "line_end": 2307,
+            "message": "AdminImpl.ownerWithdrawExcessTokens (AdminImpl_4.sol#2280-2307) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "ownerWithdrawUnsupportedTokens",
+            "impact": "Informational",
+            "line": 2309,
+            "line_end": 2322,
+            "message": "AdminImpl.ownerWithdrawUnsupportedTokens (AdminImpl_4.sol#2309-2322) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "ownerAddMarket",
+            "impact": "Informational",
+            "line": 2326,
+            "line_end": 2348,
+            "message": "AdminImpl.ownerAddMarket (AdminImpl_4.sol#2326-2348) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "ownerSetIsClosing",
+            "impact": "Informational",
+            "line": 2350,
+            "line_end": 2359,
+            "message": "AdminImpl.ownerSetIsClosing (AdminImpl_4.sol#2350-2359) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "ownerSetPriceOracle",
+            "impact": "Informational",
+            "line": 2361,
+            "line_end": 2370,
+            "message": "AdminImpl.ownerSetPriceOracle (AdminImpl_4.sol#2361-2370) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "ownerSetInterestSetter",
+            "impact": "Informational",
+            "line": 2372,
+            "line_end": 2381,
+            "message": "AdminImpl.ownerSetInterestSetter (AdminImpl_4.sol#2372-2381) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "ownerSetMarginPremium",
+            "impact": "Informational",
+            "line": 2383,
+            "line_end": 2392,
+            "message": "AdminImpl.ownerSetMarginPremium (AdminImpl_4.sol#2383-2392) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "ownerSetSpreadPremium",
+            "impact": "Informational",
+            "line": 2394,
+            "line_end": 2403,
+            "message": "AdminImpl.ownerSetSpreadPremium (AdminImpl_4.sol#2394-2403) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "ownerSetMarginRatio",
+            "impact": "Informational",
+            "line": 2407,
+            "line_end": 2424,
+            "message": "AdminImpl.ownerSetMarginRatio (AdminImpl_4.sol#2407-2424) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "ownerSetLiquidationSpread",
+            "impact": "Informational",
+            "line": 2426,
+            "line_end": 2443,
+            "message": "AdminImpl.ownerSetLiquidationSpread (AdminImpl_4.sol#2426-2443) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "ownerSetEarningsRate",
+            "impact": "Informational",
+            "line": 2445,
+            "line_end": 2457,
+            "message": "AdminImpl.ownerSetEarningsRate (AdminImpl_4.sol#2445-2457) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "ownerSetMinBorrowedValue",
+            "impact": "Informational",
+            "line": 2459,
+            "line_end": 2471,
+            "message": "AdminImpl.ownerSetMinBorrowedValue (AdminImpl_4.sol#2459-2471) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AdminImpl",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "function": "ownerSetGlobalOperator",
+            "impact": "Informational",
+            "line": 2475,
+            "line_end": 2483,
+            "message": "AdminImpl.ownerSetGlobalOperator (AdminImpl_4.sol#2475-2483) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "impact": "Informational",
+            "line": 20,
+            "message": "Detected issues with version pragma in AdminImpl_4.sol:\n\t- pragma solidity0.5.4 (AdminImpl_4.sol#20): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "impact": "Informational",
+            "line": 2488,
+            "line_end": 2505,
+            "message": "Function 'AdminImpl._setPriceOracle' (AdminImpl_4.sol#2488-2505) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "impact": "Informational",
+            "line": 2507,
+            "line_end": 2519,
+            "message": "Function 'AdminImpl._setInterestSetter' (AdminImpl_4.sol#2507-2519) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "impact": "Informational",
+            "line": 2521,
+            "line_end": 2534,
+            "message": "Function 'AdminImpl._setMarginPremium' (AdminImpl_4.sol#2521-2534) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "impact": "Informational",
+            "line": 2536,
+            "line_end": 2549,
+            "message": "Function 'AdminImpl._setSpreadPremium' (AdminImpl_4.sol#2536-2549) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "impact": "Informational",
+            "line": 2551,
+            "line_end": 2574,
+            "message": "Function 'AdminImpl._requireNoMarket' (AdminImpl_4.sol#2551-2574) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "impact": "Informational",
+            "line": 2576,
+            "line_end": 2589,
+            "message": "Function 'AdminImpl._validateMarketId' (AdminImpl_4.sol#2576-2589) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AdminImpl_4.sol",
+            "impact": "Informational",
+            "line": 778,
+            "message": "Interest.FILE (AdminImpl_4.sol#778) is never used in Interest\n",
+            "name": "unused-state"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

@@ -1,0 +1,120 @@
+WARNING:root:You are using solc version 0.4.26. The supported version is 0.4.21.
+INFO:root:Contract /sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:ClockAuction:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 99.9%
+INFO:symExec:	  Arithmetic bugs: 	 True
+INFO:symExec:	  └> Overflow bugs: 	 True
+/sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:ClockAuction:1386:41
+totalPriceChange * int256(_secondsPassed)
+^
+/sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:ClockAuction:1404:16
+_price * ownerCut
+^
+INFO:symExec:	  └> Underflow bugs: 	 True
+/sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:ClockAuction:1381:39
+int256(_endingPrice) - int256(_startingPrice)
+^
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 True
+/sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:ClockAuction:1350:13
+_auction.duration
+^
+/sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:ClockAuction:1348:13
+_auction.startingPrice
+^
+/sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:ClockAuction:1344:35
+_auction.startedAt
+^
+/sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:ClockAuction:1597:13
+auction.startedAt
+^
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 True
+Flow 1:
+/sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:ClockAuction:1307:9
+msg.sender.transfer(bidExcess)
+^
+Flow 2:
+/sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:ClockAuction:1295:13
+seller.transfer(sellerProceeds)
+^
+INFO:symExec:	  Time dependency bug: 	 True
+/sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:ClockAuction:1343:9
+if (now > _auction.startedAt) {
+^
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 135.886871099 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:ClockAuctionBase:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 99.2%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 0.174134016037 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:ERC721Metadata:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 99.6%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 7.41523098946 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:Ownable:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 99.4%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 0.323492050171 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:PandaAccessControl:
+INFO:symExec:Running, please wait...
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 99.9%
+INFO:symExec:	  Arithmetic bugs: 	 False
+INFO:symExec:	  └> Overflow bugs: 	 False
+INFO:symExec:	  └> Underflow bugs: 	 False
+INFO:symExec:	  └> Division bugs: 	 False
+INFO:symExec:	  └> Modulo bugs:   	 False
+INFO:symExec:	  └> Truncation bugs: 	 False
+INFO:symExec:	  └> Signedness bugs: 	 False
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Concurrency bug: 	 False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+INFO:symExec:	 --- 1.84712910652 seconds ---
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:Contract /sb/0x663e4229142a27f00bafb5d087e1e730648314c3.sol:PandaAuction:
+INFO:symExec:Running, please wait...

@@ -1,0 +1,491 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/old_blockhash.bin
+[00:00:00:00] Fuzzing starts at 08:40:10
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = {  }, Use = {  }
+Constructor tainted: {  }
+[DEBUG] Analyzing settle(11da60b4) @ 51
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0xd0
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x11f
+Found sstore(<T, { Sha(*, 0x0) }, { }>, <0x0, { }, { }>) @ 0x168
+Found sload(<T, { Sha(*, 0x0) + 0x1 }, { }>) @ 0x1b0
+settle(11da60b4): Def = { map_0 }, Use = { map_0, map_0.off_1 }
+[DEBUG] Analyzing lockInGuess(ed7f559c) @ 68
+Found sload(<T, { Sha(*, 0x0) }, { }>) @ 0x251
+Found sstore(<T, { Sha(*, 0x0) + 0x1 }, { }>, <T, { }, { }>) @ 0x2bc
+Found sstore(<T, { Sha(*, 0x0) }, { }>, <T, { }, { }>) @ 0x305
+lockInGuess(ed7f559c): Def = { map_0, map_0.off_1 }, Use = { map_0 }
+Pruning out ["lockInGuess(ed7f559c)"]
+(3 candidate sequences)
+["settle(11da60b4)"; "settle(11da60b4)"]
+["settle(11da60b4)"; "lockInGuess(ed7f559c)"; "settle(11da60b4)"]
+["settle(11da60b4)"; "lockInGuess(ed7f559c)"; "lockInGuess(ed7f559c)"]
+[00:00:00:00] Start main fuzzing phase
+[00:00:00:01] Tx#1 found BlockstateDependency at 1f2
+[00:00:00:01] Tx#1 found BlockstateDependencySFuzz at d1
+[00:00:00:01] Tx#1 found BlockstateDependencyILF at 1f2
+[00:00:00:01] Tx#1 found BlockstateDependencyMythril at d8
+[00:00:00:01] Tx#1 found BlockstateDependencyMythril at 1ba
+[00:00:00:01] Tx#1 found BlockstateDependencyManticore at d1
+[00:00:00:01] Tx#1 found BlockstateDependencyManticore at 120
+[00:00:00:01] [*] Save bug seed id-00000-BD-BD_ilf-BD_mant-BD_myth-BD_sfuzz_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+(    TX 1    ) Function: settle(11da60b4), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: settle(11da60b4), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00000_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+(    TX 1    ) Function: settle(11da60b4), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: settle(11da60b4), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00001_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: settle(11da60b4), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: settle(11da60b4), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00002_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+(    TX 1    ) Function: settle(11da60b4), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: lockInGuess(ed7f559c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+(    TX 3    ) Function: settle(11da60b4), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] Tx#2 found BlockstateDependencySFuzz at 2c0
+[00:00:00:02] Tx#2 found BlockstateDependencyManticore at 2c0
+[00:00:00:02] [*] Save bug seed id-00001-BD_mant-BD_sfuzz_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+(    TX 1    ) Function: settle(11da60b4), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: lockInGuess(ed7f559c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+          Arg1 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+(    TX 3    ) Function: settle(11da60b4), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00003_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+(    TX 1    ) Function: settle(11da60b4), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: lockInGuess(ed7f559c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+          Arg1 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+(    TX 3    ) Function: settle(11da60b4), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:16] Tx#2 found EtherLeak at 1f2
+[00:00:00:16] [*] Save bug seed id-00002-EL_00016: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+(    TX 1    ) Function: lockInGuess(ed7f559c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+          Arg1 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 E8
+                 00
+                 00
+                 00
+                 00
+( => TX 2 <= ) Function: settle(11da60b4), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: settle(11da60b4), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:16] [*] Save new seed id-00004_00016: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+(    TX 1    ) Function: settle(11da60b4), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: lockInGuess(ed7f559c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+          Arg1 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+( => TX 3 <= ) Function: settle(11da60b4), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: lockInGuess(ed7f559c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 3F
+                 00
+
+[00:00:00:17] [*] Save new seed id-00005_00017: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+(    TX 1    ) Function: settle(11da60b4), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: lockInGuess(ed7f559c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+          Arg1 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+( => TX 3 <= ) Function: settle(11da60b4), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: lockInGuess(ed7f559c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 3F
+                 00
+
+[00:00:00:23] [*] Save new seed id-00006_00023: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+(    TX 1    ) Function: settle(11da60b4), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: lockInGuess(ed7f559c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000DE0B6B3A7640000
+          Arg1 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 7F
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+(    TX 3    ) Function: settle(11da60b4), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 1724279
+[00:01:00:00] Deployment failures: 1191620
+[00:01:00:00] Test Cases: 7
+[00:01:00:00] Covered Edges: 21
+[00:01:00:00] Covered Instructions: 341
+[00:01:00:00] Covered Def-Use Chains: 28
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 1
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 1
+[00:01:00:00]   Integer Bug: 0
+[00:01:00:00]   Mishandled Exception: 0
+[00:01:00:00]   Multiple Send: 0
+[00:01:00:00]   Reentrancy: 0
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

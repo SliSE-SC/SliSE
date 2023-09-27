@@ -1,0 +1,514 @@
+{
+    "errors": [
+        "EXIT_CODE_58"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "High",
+            "line": 563,
+            "message": "AccessToken.balances (AccessToken_2.sol#563) shadows:\n\t- BasicToken.balances (AccessToken_2.sol#141)\n",
+            "name": "shadowing-state"
+        },
+        {
+            "confidence": "High",
+            "contract": "AccessToken",
+            "filename": "all_contract/AccessToken_2.sol",
+            "function": "fallback",
+            "impact": "Medium",
+            "line": 789,
+            "line_end": 794,
+            "message": "Contract locking ether found in AccessToken_2.sol:\n\tContract AccessToken has payable functions:\n\t - fallback (AccessToken_2.sol#789-794)\n\tBut does not have a function to withdraw the ether\n",
+            "name": "locked-ether"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "AccessToken",
+            "filename": "all_contract/AccessToken_2.sol",
+            "function": "lockBBK",
+            "impact": "Low",
+            "line": 617,
+            "line_end": 633,
+            "message": "Reentrancy in AccessToken.lockBBK (AccessToken_2.sol#617-633):\n\tExternal calls:\n\t- _bbk = IBrickblockToken(registry.getContractAddress(BrickblockToken)) (AccessToken_2.sol#623-625)\n\tState variables written after the call(s):\n\t- distributedPerBBK (AccessToken_2.sol#627)\n\t- lockedBBK (AccessToken_2.sol#628)\n\t- securedTokenDistributions (AccessToken_2.sol#627)\n\t- totalLockedBBK (AccessToken_2.sol#629)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "AccessToken",
+            "filename": "all_contract/AccessToken_2.sol",
+            "function": "unlockBBK",
+            "impact": "Low",
+            "line": 638,
+            "line_end": 654,
+            "message": "Reentrancy in AccessToken.unlockBBK (AccessToken_2.sol#638-654):\n\tExternal calls:\n\t- _bbk = IBrickblockToken(registry.getContractAddress(BrickblockToken)) (AccessToken_2.sol#644-646)\n\tState variables written after the call(s):\n\t- distributedPerBBK (AccessToken_2.sol#648)\n\t- lockedBBK (AccessToken_2.sol#649)\n\t- securedTokenDistributions (AccessToken_2.sol#648)\n\t- totalLockedBBK (AccessToken_2.sol#650)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20Basic",
+            "filename": "all_contract/AccessToken_2.sol",
+            "function": "totalSupply",
+            "impact": "Informational",
+            "line": 63,
+            "message": "ERC20Basic.totalSupply (AccessToken_2.sol#63) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicToken",
+            "filename": "all_contract/AccessToken_2.sol",
+            "function": "totalSupply",
+            "impact": "Informational",
+            "line": 148,
+            "line_end": 150,
+            "message": "BasicToken.totalSupply (AccessToken_2.sol#148-150) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Ownable",
+            "filename": "all_contract/AccessToken_2.sol",
+            "function": "renounceOwnership",
+            "impact": "Informational",
+            "line": 106,
+            "line_end": 109,
+            "message": "Ownable.renounceOwnership (AccessToken_2.sol#106-109) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Ownable",
+            "filename": "all_contract/AccessToken_2.sol",
+            "function": "transferOwnership",
+            "impact": "Informational",
+            "line": 115,
+            "line_end": 117,
+            "message": "Ownable.transferOwnership (AccessToken_2.sol#115-117) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20",
+            "filename": "all_contract/AccessToken_2.sol",
+            "function": "allowance",
+            "impact": "Informational",
+            "line": 186,
+            "line_end": 187,
+            "message": "ERC20.allowance (AccessToken_2.sol#186-187) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "StandardToken",
+            "filename": "all_contract/AccessToken_2.sol",
+            "function": "allowance",
+            "impact": "Informational",
+            "line": 262,
+            "line_end": 271,
+            "message": "StandardToken.allowance (AccessToken_2.sol#262-271) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Pausable",
+            "filename": "all_contract/AccessToken_2.sol",
+            "function": "pause",
+            "impact": "Informational",
+            "line": 359,
+            "line_end": 362,
+            "message": "Pausable.pause (AccessToken_2.sol#359-362) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Pausable",
+            "filename": "all_contract/AccessToken_2.sol",
+            "function": "unpause",
+            "impact": "Informational",
+            "line": 367,
+            "line_end": 370,
+            "message": "Pausable.unpause (AccessToken_2.sol#367-370) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "AccessToken",
+            "filename": "all_contract/AccessToken_2.sol",
+            "function": "fallback",
+            "impact": "Informational",
+            "line": 789,
+            "line_end": 794,
+            "message": "AccessToken.fallback (AccessToken_2.sol#789-794) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 2,
+            "message": "Detected issues with version pragma in AccessToken_2.sol:\n\t- pragma solidity^0.4.23 (AccessToken_2.sol#2): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 115,
+            "message": "Parameter '_newOwner' of Ownable.transferOwnership (AccessToken_2.sol#115) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 123,
+            "line_end": 127,
+            "message": "Function 'Ownable._transferOwnership' (AccessToken_2.sol#123-127) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 123,
+            "message": "Parameter '_newOwner' of Ownable._transferOwnership (AccessToken_2.sol#123) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 172,
+            "message": "Parameter '_owner' of BasicToken.balanceOf (AccessToken_2.sol#172) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 157,
+            "message": "Parameter '_to' of BasicToken.transfer (AccessToken_2.sol#157) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 157,
+            "message": "Parameter '_value' of BasicToken.transfer (AccessToken_2.sol#157) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 263,
+            "message": "Parameter '_owner' of StandardToken.allowance (AccessToken_2.sol#263) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 264,
+            "message": "Parameter '_spender' of StandardToken.allowance (AccessToken_2.sol#264) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 222,
+            "message": "Parameter '_from' of StandardToken.transferFrom (AccessToken_2.sol#222) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 223,
+            "message": "Parameter '_to' of StandardToken.transferFrom (AccessToken_2.sol#223) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 224,
+            "message": "Parameter '_value' of StandardToken.transferFrom (AccessToken_2.sol#224) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 250,
+            "message": "Parameter '_spender' of StandardToken.approve (AccessToken_2.sol#250) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 250,
+            "message": "Parameter '_value' of StandardToken.approve (AccessToken_2.sol#250) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 284,
+            "message": "Parameter '_spender' of StandardToken.increaseApproval (AccessToken_2.sol#284) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 285,
+            "message": "Parameter '_addedValue' of StandardToken.increaseApproval (AccessToken_2.sol#285) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 307,
+            "message": "Parameter '_spender' of StandardToken.decreaseApproval (AccessToken_2.sol#307) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 308,
+            "message": "Parameter '_subtractedValue' of StandardToken.decreaseApproval (AccessToken_2.sol#308) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 383,
+            "message": "Parameter '_to' of PausableToken.transfer (AccessToken_2.sol#383) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 384,
+            "message": "Parameter '_value' of PausableToken.transfer (AccessToken_2.sol#384) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 394,
+            "message": "Parameter '_from' of PausableToken.transferFrom (AccessToken_2.sol#394) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 395,
+            "message": "Parameter '_to' of PausableToken.transferFrom (AccessToken_2.sol#395) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 396,
+            "message": "Parameter '_value' of PausableToken.transferFrom (AccessToken_2.sol#396) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 406,
+            "message": "Parameter '_spender' of PausableToken.approve (AccessToken_2.sol#406) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 407,
+            "message": "Parameter '_value' of PausableToken.approve (AccessToken_2.sol#407) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 417,
+            "message": "Parameter '_spender' of PausableToken.increaseApproval (AccessToken_2.sol#417) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 418,
+            "message": "Parameter '_addedValue' of PausableToken.increaseApproval (AccessToken_2.sol#418) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 428,
+            "message": "Parameter '_spender' of PausableToken.decreaseApproval (AccessToken_2.sol#428) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 429,
+            "message": "Parameter '_subtractedValue' of PausableToken.decreaseApproval (AccessToken_2.sol#429) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 707,
+            "message": "Parameter '_address' of AccessToken.balanceOf (AccessToken_2.sol#707) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 728,
+            "message": "Parameter '_to' of AccessToken.transfer (AccessToken_2.sol#728) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 729,
+            "message": "Parameter '_value' of AccessToken.transfer (AccessToken_2.sol#729) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 747,
+            "message": "Parameter '_from' of AccessToken.transferFrom (AccessToken_2.sol#747) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 748,
+            "message": "Parameter '_to' of AccessToken.transferFrom (AccessToken_2.sol#748) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 749,
+            "message": "Parameter '_value' of AccessToken.transferFrom (AccessToken_2.sol#749) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 594,
+            "message": "Parameter '_registryAddress' of AccessToken. (AccessToken_2.sol#594) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 605,
+            "message": "Parameter '_address' of AccessToken.lockedBbkOf (AccessToken_2.sol#605) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 618,
+            "message": "Parameter '_amount' of AccessToken.lockBBK (AccessToken_2.sol#618) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 639,
+            "message": "Parameter '_amount' of AccessToken.unlockBBK (AccessToken_2.sol#639) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 660,
+            "message": "Parameter '_amount' of AccessToken.distribute (AccessToken_2.sol#660) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 683,
+            "message": "Parameter '_address' of AccessToken.settlePerTokenToSecured (AccessToken_2.sol#683) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 773,
+            "message": "Parameter '_address' of AccessToken.burn (AccessToken_2.sol#773) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 774,
+            "message": "Parameter '_value' of AccessToken.burn (AccessToken_2.sol#774) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 540,
+            "message": "Constant 'AccessToken.version' (AccessToken_2.sol#540) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/AccessToken_2.sol",
+            "impact": "Informational",
+            "line": 563,
+            "message": "AccessToken.balances (AccessToken_2.sol#563) is never used in AccessToken\n",
+            "name": "unused-state"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

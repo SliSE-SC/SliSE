@@ -1,0 +1,90 @@
+INFO:Detectors:[93m
+GuildBank.fairShare (/sb/Moloch_2.sol#139-151) uses a dangerous strict equality:
+	- balance == 0
+	- prod / balance == shares
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#dangerous-strict-equalities[0m
+INFO:Detectors:[93m
+Reentrancy in Moloch.processProposal (/sb/Moloch_2.sol#493-568):
+	External calls:
+	- ! emergencyProcessing && proposal.paymentToken != IERC20(0) && proposal.paymentRequested > proposal.paymentToken.balanceOf(address(guildBank)) (/sb/Moloch_2.sol#511-513)
+	State variables written after the call(s):
+	- members (/sb/Moloch_2.sol#521)
+	- members (/sb/Moloch_2.sol#522)
+	- members (/sb/Moloch_2.sol#530)
+	- members (/sb/Moloch_2.sol#534)
+	- proposals (/sb/Moloch_2.sol#517)
+	- totalLoot (/sb/Moloch_2.sol#540)
+	- totalShares (/sb/Moloch_2.sol#539)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[93m
+flags in Moloch.submitProposal (/sb/Moloch_2.sol#349) is a local variable never initialiazed
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#uninitialized-local-variables[0m
+INFO:Detectors:[92m
+GuildBank.withdraw has external calls inside a loop:
+	- amount = fairShare(approvedTokens[i].balanceOf(address(this)),shares,totalShares) (/sb/Moloch_2.sol#127)
+GuildBank.withdraw has external calls inside a loop:
+	- require(bool)(approvedTokens[i].transfer(receiver,amount)) (/sb/Moloch_2.sol#129)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation/_edit#calls-inside-a-loop[0m
+INFO:Detectors:[92m
+Reentrancy in Moloch.processProposal (/sb/Moloch_2.sol#493-568):
+	External calls:
+	- ! emergencyProcessing && proposal.paymentToken != IERC20(0) && proposal.paymentRequested > proposal.paymentToken.balanceOf(address(guildBank)) (/sb/Moloch_2.sol#511-513)
+	State variables written after the call(s):
+	- memberAddressByDelegateKey (/sb/Moloch_2.sol#529)
+	- memberAddressByDelegateKey (/sb/Moloch_2.sol#535)
+Reentrancy in Moloch.sponsorProposal (/sb/Moloch_2.sol#415-454):
+	External calls:
+	- require(bool,string)(depositToken.transferFrom(msg.sender,address(this),proposalDeposit),proposal deposit token transfer failed) (/sb/Moloch_2.sol#417)
+	State variables written after the call(s):
+	- proposalQueue (/sb/Moloch_2.sol#452)
+	- proposals (/sb/Moloch_2.sol#444)
+	- proposals (/sb/Moloch_2.sol#447)
+	- proposals (/sb/Moloch_2.sol#449)
+	- proposedToKick (/sb/Moloch_2.sol#435)
+	- proposedToWhitelist (/sb/Moloch_2.sol#430)
+Reentrancy in Moloch.submitProposal (/sb/Moloch_2.sol#330-353):
+	External calls:
+	- require(bool,string)(IERC20(tributeToken).transferFrom(msg.sender,address(this),tributeOffered),tribute token transfer failed) (/sb/Moloch_2.sol#347)
+	State variables written after the call(s):
+	- proposalCount (/sb/Moloch_2.sol#351)
+	- proposals (/sb/Moloch_2.sol#351)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-2[0m
+INFO:Detectors:[92m
+GuildBank.withdraw (/sb/Moloch_2.sol#125-132) should be declared external
+GuildBank.withdrawToken (/sb/Moloch_2.sol#134-137) should be declared external
+Moloch.submitProposal (/sb/Moloch_2.sol#330-353) should be declared external
+Moloch.submitWhitelistProposal (/sb/Moloch_2.sol#355-364) should be declared external
+Moloch.submitGuildKickProposal (/sb/Moloch_2.sol#366-378) should be declared external
+Moloch.sponsorProposal (/sb/Moloch_2.sol#415-454) should be declared external
+Moloch.submitVote (/sb/Moloch_2.sol#456-491) should be declared external
+Moloch.processProposal (/sb/Moloch_2.sol#493-568) should be declared external
+Moloch.processWhitelistProposal (/sb/Moloch_2.sol#570-594) should be declared external
+Moloch.processGuildKickProposal (/sb/Moloch_2.sol#596-625) should be declared external
+Moloch.ragequit (/sb/Moloch_2.sol#684-686) should be declared external
+Moloch.safeRagequit (/sb/Moloch_2.sol#688-699) should be declared external
+Moloch.ragekick (/sb/Moloch_2.sol#728-737) should be declared external
+Moloch.bailout (/sb/Moloch_2.sol#739-748) should be declared external
+Moloch.cancelProposal (/sb/Moloch_2.sol#750-764) should be declared external
+Moloch.updateDelegateKey (/sb/Moloch_2.sol#766-781) should be declared external
+Moloch.getProposalQueueLength (/sb/Moloch_2.sol#795-797) should be declared external
+Moloch.getProposalFlags (/sb/Moloch_2.sol#799-801) should be declared external
+Moloch.getMemberProposalVote (/sb/Moloch_2.sol#826-830) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Parameter '_summoner' of Moloch. (/sb/Moloch_2.sol#272) is not in mixedCase
+Parameter '_approvedTokens' of Moloch. (/sb/Moloch_2.sol#273) is not in mixedCase
+Parameter '_periodDuration' of Moloch. (/sb/Moloch_2.sol#274) is not in mixedCase
+Parameter '_votingPeriodLength' of Moloch. (/sb/Moloch_2.sol#275) is not in mixedCase
+Parameter '_gracePeriodLength' of Moloch. (/sb/Moloch_2.sol#276) is not in mixedCase
+Parameter '_emergencyProcessingWait' of Moloch. (/sb/Moloch_2.sol#277) is not in mixedCase
+Parameter '_bailoutWait' of Moloch. (/sb/Moloch_2.sol#278) is not in mixedCase
+Parameter '_proposalDeposit' of Moloch. (/sb/Moloch_2.sol#279) is not in mixedCase
+Parameter '_dilutionBound' of Moloch. (/sb/Moloch_2.sol#280) is not in mixedCase
+Parameter '_processingReward' of Moloch. (/sb/Moloch_2.sol#281) is not in mixedCase
+Function 'Moloch._submitProposal' (/sb/Moloch_2.sol#380-413) is not in mixedCase
+Function 'Moloch._didPass' (/sb/Moloch_2.sol#627-661) is not in mixedCase
+Function 'Moloch._validateProposalForProcessing' (/sb/Moloch_2.sol#663-670) is not in mixedCase
+Function 'Moloch._returnDeposit' (/sb/Moloch_2.sol#672-682) is not in mixedCase
+Function 'Moloch._ragequit' (/sb/Moloch_2.sol#701-726) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/Moloch_2.sol analyzed (5 contracts), 42 result(s) found

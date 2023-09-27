@@ -1,0 +1,236 @@
+{
+    "errors": [
+        "EXIT_CODE_21"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "fallback",
+            "impact": "Medium",
+            "line": 223,
+            "line_end": 225,
+            "message": "Contract locking ether found in Degens_2.sol:\n\tContract Degens has payable functions:\n\t - fallback (Degens_2.sol#223-225)\n\tBut does not have a function to withdraw the ether\n",
+            "name": "locked-ether"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "matchOrders",
+            "impact": "Medium",
+            "line": 255,
+            "line_end": 316,
+            "message": "Reentrancy in Degens.matchOrders (Degens_2.sol#255-316):\n\tExternal calls:\n\t- (leftMaxPosition,leftAmount) = computeMaxPosition(leftOrder) (Degens_2.sol#267)\n\t- (rightMaxPosition,rightAmount) = computeMaxPosition(rightOrder) (Degens_2.sol#268)\n\t- rightTrade = tradeCore(rightAmount,rightOrder,true) (Degens_2.sol#277)\n\tState variables written after the call(s):\n\t- matches (Degens_2.sol#284)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "matchOrders",
+            "impact": "Medium",
+            "line": 255,
+            "line_end": 316,
+            "message": "Reentrancy in Degens.matchOrders (Degens_2.sol#255-316):\n\tExternal calls:\n\t- (leftMaxPosition,leftAmount) = computeMaxPosition(leftOrder) (Degens_2.sol#267)\n\t- (rightMaxPosition,rightAmount) = computeMaxPosition(rightOrder) (Degens_2.sol#268)\n\t- rightTrade = tradeCore(rightAmount,rightOrder,true) (Degens_2.sol#277)\n\t- leftTrade = tradeCore(leftAmount,leftOrder,true) (Degens_2.sol#286)\n\tState variables written after the call(s):\n\t- matches (Degens_2.sol#290)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "matchOrders",
+            "impact": "Medium",
+            "line": 255,
+            "line_end": 316,
+            "message": "Reentrancy in Degens.matchOrders (Degens_2.sol#255-316):\n\tExternal calls:\n\t- (leftMaxPosition,leftAmount) = computeMaxPosition(leftOrder) (Degens_2.sol#267)\n\t- (rightMaxPosition,rightAmount) = computeMaxPosition(rightOrder) (Degens_2.sol#268)\n\t- rightTrade = tradeCore(rightAmount,rightOrder,true) (Degens_2.sol#277)\n\t- leftTrade = tradeCore(leftAmount,leftOrder,true) (Degens_2.sol#286)\n\t- adjustBalance(leftOrder.token,msg.sender,takerBalanceDelta) (Degens_2.sol#304)\n\t- applyTrade(leftOrder,leftTrade) (Degens_2.sol#307)\n\tState variables written after the call(s):\n\t- filledAmounts (Degens_2.sol#307)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "matchOrders",
+            "impact": "Medium",
+            "line": 255,
+            "line_end": 316,
+            "message": "Reentrancy in Degens.matchOrders (Degens_2.sol#255-316):\n\tExternal calls:\n\t- (leftMaxPosition,leftAmount) = computeMaxPosition(leftOrder) (Degens_2.sol#267)\n\t- (rightMaxPosition,rightAmount) = computeMaxPosition(rightOrder) (Degens_2.sol#268)\n\t- rightTrade = tradeCore(rightAmount,rightOrder,true) (Degens_2.sol#277)\n\t- leftTrade = tradeCore(leftAmount,leftOrder,true) (Degens_2.sol#286)\n\t- adjustBalance(leftOrder.token,msg.sender,takerBalanceDelta) (Degens_2.sol#304)\n\t- applyTrade(leftOrder,leftTrade) (Degens_2.sol#307)\n\t- applyTrade(rightOrder,rightTrade) (Degens_2.sol#308)\n\tState variables written after the call(s):\n\t- filledAmounts (Degens_2.sol#308)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "matchOrders",
+            "impact": "Medium",
+            "line": 255,
+            "line_end": 316,
+            "message": "Reentrancy in Degens.matchOrders (Degens_2.sol#255-316):\n\tExternal calls:\n\t- (leftMaxPosition,leftAmount) = computeMaxPosition(leftOrder) (Degens_2.sol#267)\n\t- (rightMaxPosition,rightAmount) = computeMaxPosition(rightOrder) (Degens_2.sol#268)\n\t- rightTrade = tradeCore(rightAmount,rightOrder,true) (Degens_2.sol#277)\n\t- leftTrade = tradeCore(leftAmount,leftOrder,true) (Degens_2.sol#286)\n\t- adjustBalance(leftOrder.token,msg.sender,takerBalanceDelta) (Degens_2.sol#304)\n\t- applyTrade(rightOrder,rightTrade) (Degens_2.sol#310)\n\tState variables written after the call(s):\n\t- filledAmounts (Degens_2.sol#310)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "matchOrders",
+            "impact": "Medium",
+            "line": 255,
+            "line_end": 316,
+            "message": "Reentrancy in Degens.matchOrders (Degens_2.sol#255-316):\n\tExternal calls:\n\t- (leftMaxPosition,leftAmount) = computeMaxPosition(leftOrder) (Degens_2.sol#267)\n\t- (rightMaxPosition,rightAmount) = computeMaxPosition(rightOrder) (Degens_2.sol#268)\n\t- rightTrade = tradeCore(rightAmount,rightOrder,true) (Degens_2.sol#277)\n\t- leftTrade = tradeCore(leftAmount,leftOrder,true) (Degens_2.sol#286)\n\t- adjustBalance(leftOrder.token,msg.sender,takerBalanceDelta) (Degens_2.sol#304)\n\t- applyTrade(rightOrder,rightTrade) (Degens_2.sol#310)\n\t- applyTrade(leftOrder,leftTrade) (Degens_2.sol#311)\n\tState variables written after the call(s):\n\t- filledAmounts (Degens_2.sol#311)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "trade",
+            "impact": "Medium",
+            "line": 227,
+            "line_end": 253,
+            "message": "Reentrancy in Degens.trade (Degens_2.sol#227-253):\n\tExternal calls:\n\t- t = tradeCore(amountRemaining,o,false) (Degens_2.sol#241)\n\tState variables written after the call(s):\n\t- matches (Degens_2.sol#244)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "trade",
+            "impact": "Medium",
+            "line": 227,
+            "line_end": 253,
+            "message": "Reentrancy in Degens.trade (Degens_2.sol#227-253):\n\tExternal calls:\n\t- t = tradeCore(amountRemaining,o,false) (Degens_2.sol#241)\n\t- applyTrade(o,t) (Degens_2.sol#245)\n\tState variables written after the call(s):\n\t- filledAmounts (Degens_2.sol#245)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "computeMaxPosition",
+            "impact": "Medium",
+            "line": 667,
+            "message": "longAmount_scope_1 in Degens.computeMaxPosition (Degens_2.sol#667) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "computeMaxPosition",
+            "impact": "Medium",
+            "line": 667,
+            "message": "shortAmount_scope_2 in Degens.computeMaxPosition (Degens_2.sol#667) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "applyTrade",
+            "impact": "Low",
+            "line": 431,
+            "line_end": 445,
+            "message": "Reentrancy in Degens.applyTrade (Degens_2.sol#431-445):\n\tExternal calls:\n\t- adjustBalance(o.token,t.longAddr,t.longBalanceDelta) (Degens_2.sol#435)\n\t- adjustBalance(o.token,t.shortAddr,t.shortBalanceDelta) (Degens_2.sol#436)\n\t- adjustBalance(o.token,t.shortAddr,t.shortBalanceDelta) (Degens_2.sol#438)\n\t- adjustBalance(o.token,t.longAddr,t.longBalanceDelta) (Degens_2.sol#439)\n\tState variables written after the call(s):\n\t- filledAmounts (Degens_2.sol#442)\n\t- filledAmounts (Degens_2.sol#442)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "trade",
+            "impact": "Low",
+            "line": 227,
+            "line_end": 253,
+            "message": "Degens.trade (Degens_2.sol#227-253) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- expiry != 0 && block.timestamp >= expiry (Degens_2.sol#229-232)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "recoverFunds",
+            "impact": "Low",
+            "line": 378,
+            "line_end": 393,
+            "message": "Degens.recoverFunds (Degens_2.sol#378-393) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(recoveryTime < block.timestamp,DERR_TOO_SOON_TO_RECOVER) (Degens_2.sol#385)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "tradeCore",
+            "impact": "Low",
+            "line": 517,
+            "line_end": 645,
+            "message": "Degens.tradeCore (Degens_2.sol#517-645) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- cancelTimestamps[o.maker] >= o.timestamp || orderFilledAmount == uint256(- 1) (Degens_2.sol#527-530)\n\t- block.timestamp >= o.expiry (Degens_2.sol#520-523)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Degens",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "getOrderAmount",
+            "impact": "Low",
+            "line": 647,
+            "line_end": 659,
+            "message": "Degens.getOrderAmount (Degens_2.sol#647-659) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- block.timestamp >= o.expiry || cancelTimestamps[o.maker] >= o.timestamp (Degens_2.sol#648)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "balanceOf",
+            "impact": "Informational",
+            "line": 6,
+            "message": "IERC20Token.balanceOf (Degens_2.sol#6) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "allowance",
+            "impact": "Informational",
+            "line": 7,
+            "message": "IERC20Token.allowance (Degens_2.sol#7) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "transfer",
+            "impact": "Informational",
+            "line": 8,
+            "message": "IERC20Token.transfer (Degens_2.sol#8) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/Degens_2.sol",
+            "function": "transferFrom",
+            "impact": "Informational",
+            "line": 9,
+            "message": "IERC20Token.transferFrom (Degens_2.sol#9) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Degens_2.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in Degens_2.sol:\n\t- pragma solidity^0.5.10 (Degens_2.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

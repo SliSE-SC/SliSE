@@ -1,0 +1,188 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/lottery.bin
+[00:00:00:00] Fuzzing starts at 08:40:09
+[00:00:00:00] Time limit : 3600 s
+Stack lift offset not found @ 87
+Stack lift offset not found @ 87
+[DEBUG] Analyzing constructor @ 0
+Found sload(<0x0, { }, { }>) @ 0x1b
+Found sstore(<0x0, { }, { }>, <T, { }, { CALLER, var_0 }>) @ 0x50
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_0 }, Use = { var_0 }
+Constructor tainted: { var_0 }
+[DEBUG] Analyzing makeBet(561e91a1) @ 69
+Found sload(<0x1, { }, { }>) @ 0xda
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1 }>) @ 0xde
+Found sstore(<T, { Sha(0x1) }, { var_1 }>, <_, { }, { }>) @ 0x109
+Found sstore(<T, { Sha(0x1) + 0x1 }, { var_1 }>, <_, { }, { }>) @ 0x113
+Found sload(<T, { Sha(0x1) + 0x2 }, { var_1 }>) @ 0x124
+Found sstore(<T, { Sha(0x1) + 0x2 }, { var_1 }>, <T, { }, { arr_1.off_2 }>) @ 0x132
+makeBet(561e91a1): Def = { arr_1, arr_1.off_1, arr_1.off_2, var_1 }, Use = { arr_1.off_2, var_1 }
+[DEBUG] Analyzing destroy(83197ef0) @ 73
+Found sload(<0x0, { }, { }>) @ 0x185
+Found sload(<0x0, { }, { }>) @ 0x1e0
+destroy(83197ef0): (onlyOwner) Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing getBets(a6afd5fd) @ 8a
+Found sload(<0x0, { }, { }>) @ 0x21c
+Found sload(<0x1, { }, { }>) @ 0x27b
+Found sload(<0x1, { }, { }>) @ 0x2aa
+Found sload(<T, { Sha(0x1) }, { }>) @ 0x2c6
+Found sload(<0x1, { }, { }>) @ 0x2cb
+Found sload(<T, { Sha(0x1) + 0x1 }, { }>) @ 0x2e7
+Found sload(<0x1, { }, { }>) @ 0x2ec
+Found sload(<T, { Sha(0x1) + 0x2 }, { }>) @ 0x30b
+getBets(a6afd5fd): (onlyOwner) Def = {  }, Use = { arr_1, arr_1.off_1, arr_1.off_2, var_0, var_1 }
+[DEBUG] Analyzing fallback @ 0
+fallback: Def = {  }, Use = {  }
+(2 candidate sequences)
+["makeBet(561e91a1)"; "makeBet(561e91a1)"]
+["makeBet(561e91a1)"; "getBets(a6afd5fd)"]
+[00:00:00:00] Start main fuzzing phase
+[00:00:00:01] Tx#1 found BlockstateDependencyMythril at 13c
+[00:00:00:01] Tx#1 found BlockstateDependencyManticore at a7
+[00:00:00:01] Tx#1 found BlockstateDependencyManticore at c9
+[00:00:00:01] [*] Save bug seed id-00000-BD_mant-BD_myth_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: makeBet(561e91a1), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: makeBet(561e91a1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00000_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: makeBet(561e91a1), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: makeBet(561e91a1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00001_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: makeBet(561e91a1), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getBets(a6afd5fd), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] Tx#1 found BlockstateDependency at 16c
+[00:00:00:01] Tx#1 found BlockstateDependencySFuzz at a7
+[00:00:00:01] Tx#1 found BlockstateDependencySFuzz at c9
+[00:00:00:01] Tx#1 found BlockstateDependencyILF at 16c
+[00:00:00:01] [*] Save bug seed id-00001-BD-BD_ilf-BD_sfuzz_00001: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: makeBet(561e91a1), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000019
+(    TX 2    ) Function: makeBet(561e91a1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00002_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getBets(a6afd5fd), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: makeBet(561e91a1), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+( => TX 3 <= ) Function: destroy(83197ef0), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00003_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: makeBet(561e91a1), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0048000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: makeBet(561e91a1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000080000000000
+(    TX 3    ) Function: makeBet(561e91a1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00004_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: makeBet(561e91a1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000008100000000000001
+(    TX 2    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00005_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: makeBet(561e91a1), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000014000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: destroy(83197ef0), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: makeBet(561e91a1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 000000000DC00000000000000000000000F80000000400000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00006_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getBets(a6afd5fd), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00007_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: makeBet(561e91a1), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getBets(a6afd5fd), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 297812
+[00:01:00:00] Deployment failures: 0
+[00:01:00:00] Test Cases: 8
+[00:01:00:00] Covered Edges: 31
+[00:01:00:00] Covered Instructions: 466
+[00:01:00:00] Covered Def-Use Chains: 97
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 1
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 0
+[00:01:00:00]   Integer Bug: 0
+[00:01:00:00]   Mishandled Exception: 0
+[00:01:00:00]   Multiple Send: 0
+[00:01:00:00]   Reentrancy: 0
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

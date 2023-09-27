@@ -1,0 +1,79 @@
+INFO:Slither:Compilation warnings/errors on /sb/Exchange_1.sol:
+/sb/Exchange_1.sol:2:1: Warning: Experimental features are turned on. Do not use experimental features on live deployments.
+pragma experimental ABIEncoderV2; // to enable structure-type parameter
+^-------------------------------^
+
+INFO:Detectors:[93m
+LibOrder.hashOrder (/sb/Exchange_1.sol#561-573) is declared view but contains assembly code
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#constant-functions-changing-the-state[0m
+INFO:Detectors:[93m
+Reentrancy in Exchange.matchOrderWithAMM (/sb/Exchange_1.sol#911-944):
+	External calls:
+	- amm = IAMM(perpetual.amm()) (/sb/Exchange_1.sol#917-918)
+	- require(bool,string)(amount.mod(perpetual.getGovernance().tradingLotSize) == 0,invalid trading lot size) (/sb/Exchange_1.sol#918-921)
+	- takerOrderHash = validateOrderParam(perpetual,takerOrderParam) (/sb/Exchange_1.sol#922-924)
+	- takerOpened = amm.sellFromWhitelisted(takerOrderParam.trader,amount,price,takerOrderParam.getExpiredAt()) (/sb/Exchange_1.sol#931-938)
+	- takerOpened = amm.buyFromWhitelisted(takerOrderParam.trader,amount,price,takerOrderParam.getExpiredAt()) (/sb/Exchange_1.sol#939-940)
+	State variables written after the call(s):
+	- filled (/sb/Exchange_1.sol#940-943)
+Reentrancy in Exchange.matchOrders (/sb/Exchange_1.sol#834-882):
+	External calls:
+	- require(bool,string)(perpetual.status() == LibTypes.Status.NORMAL,wrong perpetual status) (/sb/Exchange_1.sol#840-841)
+	- tradingLotSize = perpetual.getGovernance().tradingLotSize (/sb/Exchange_1.sol#841-842)
+	- takerOrderHash = validateOrderParam(perpetual,takerOrderParam) (/sb/Exchange_1.sol#842-844)
+	- makerOrderHash = validateOrderParam(perpetual,makerOrderParams[i]) (/sb/Exchange_1.sol#855-856)
+	- opened = fillOrder(perpetual,takerOrderParam,makerOrderParams[i],amounts[i]) (/sb/Exchange_1.sol#866-868)
+	State variables written after the call(s):
+	- filled (/sb/Exchange_1.sol#872-873)
+Reentrancy in Exchange.matchOrders (/sb/Exchange_1.sol#834-882):
+	External calls:
+	- require(bool,string)(perpetual.status() == LibTypes.Status.NORMAL,wrong perpetual status) (/sb/Exchange_1.sol#840-841)
+	- tradingLotSize = perpetual.getGovernance().tradingLotSize (/sb/Exchange_1.sol#841-842)
+	- takerOrderHash = validateOrderParam(perpetual,takerOrderParam) (/sb/Exchange_1.sol#842-844)
+	- require(bool,string)(perpetual.isIMSafe(takerOrderParam.trader),taker margin) (/sb/Exchange_1.sol#878)
+	- require(bool,string)(perpetual.isSafe(takerOrderParam.trader),maker unsafe) (/sb/Exchange_1.sol#878-879)
+	- require(bool,string)(perpetual.isSafe(msg.sender),broker unsafe) (/sb/Exchange_1.sol#879-881)
+	State variables written after the call(s):
+	- filled (/sb/Exchange_1.sol#881-882)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[93m
+recovered in LibSignature.isValidSignature (/sb/Exchange_1.sol#369-370) is a local variable never initialiazed
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#uninitialized-local-variables[0m
+INFO:Detectors:[92m
+Exchange.validateOrderParam (/sb/Exchange_1.sol#954-974) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(orderParam.getExpiredAt() >= block.timestamp,order expired) (/sb/Exchange_1.sol#963-964)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#block-timestamp[0m
+INFO:Detectors:[92m
+LibOrder.hashOrder uses assembly (/sb/Exchange_1.sol#561-573)
+	- /sb/Exchange_1.sol#568-573
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+Different versions of Solidity is used in /sb/Exchange_1.sol:
+	- Version used: ['ABIEncoderV2', '^0.5.2']
+	- /sb/Exchange_1.sol#1 declares pragma solidity^0.5.2
+	- /sb/Exchange_1.sol#2 declares pragma experimentalABIEncoderV2
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#different-pragma-directives-are-used[0m
+INFO:Detectors:[92m
+Exchange.matchOrders (/sb/Exchange_1.sol#834-882) should be declared external
+Exchange.matchOrderWithAMM (/sb/Exchange_1.sol#911-944) should be declared external
+Exchange.cancelOrder (/sb/Exchange_1.sol#988-993) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Function 'LibMathSigned.WAD' (/sb/Exchange_1.sol#10-12) is not in mixedCase
+Constant 'LibMathSigned.fixed_digits' (/sb/Exchange_1.sol#120) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'LibMathSigned.fixed_1' (/sb/Exchange_1.sol#121) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'LibMathSigned.fixed_e' (/sb/Exchange_1.sol#122) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'LibMathSigned.longer_digits' (/sb/Exchange_1.sol#123) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'LibMathSigned.longer_fixed_log_e_1_5' (/sb/Exchange_1.sol#124) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'LibMathSigned.longer_fixed_1' (/sb/Exchange_1.sol#125) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'LibMathSigned.longer_fixed_log_e_10' (/sb/Exchange_1.sol#126) is not in UPPER_CASE_WITH_UNDERSCORES
+Function 'LibMathUnsigned.WAD' (/sb/Exchange_1.sol#234-238) is not in mixedCase
+Parameter '_perpetual' of Exchange.matchOrders (/sb/Exchange_1.sol#838) is not in mixedCase
+Parameter '_perpetual' of Exchange.matchOrderWithAMM (/sb/Exchange_1.sol#913) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Detectors:[92m
+LibEIP712.DOMAIN_NAME (/sb/Exchange_1.sol#314-316) is never used in LibEIP712
+LibEIP712.EIP712_DOMAIN_TYPEHASH (/sb/Exchange_1.sol#325-327) is never used in LibEIP712
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-state-variables[0m
+INFO:Slither:/sb/Exchange_1.sol analyzed (10 contracts), 23 result(s) found

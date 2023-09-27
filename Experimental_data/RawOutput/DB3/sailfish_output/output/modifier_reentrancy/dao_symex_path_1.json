@@ -1,0 +1,508 @@
+{
+    "file": "modifier_reentrancy.sol",
+    "global_structs": [
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0xd"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0xe"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0xf"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "name",
+            "type": [
+                "unknown"
+            ],
+            "init": [
+                "0x3"
+            ]
+        },
+        {
+            "name": "tokenBalance",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "hasBeenCalled",
+            "type": [
+                "boolean"
+            ],
+            "init": []
+        },
+        {
+            "name": "ModifierEntrancy",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "Bank",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "attack",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x3",
+            "instructions": [
+                "name = NEW_VAL unknown"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xd",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xe",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0xf",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "tokenBalance",
+            "addrs": [
+                "0x2",
+                "0x5"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5",
+            "instructions": [
+                "CLR_0 = msg.sender",
+                "CLR_1 = tokenBalance[CLR_0]",
+                "REF_9 = CLR_1",
+                "RTMP_29 = REF_9 == 0",
+                "CONDITION RTMP_29 0x4 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4",
+            "instructions": [
+                "CLR_2 = msg.sender",
+                "CLR_3 = tokenBalance[CLR_2]",
+                "REF_8 = CLR_3",
+                "TMP_28 = REF_8 + 20",
+                "CLR_4 = msg.sender",
+                "tokenBalance[CLR_4] = TMP_28"
+            ]
+        }
+    ],
+    "root_addr": "0x10",
+    "dest_addrs": [
+        "0x21"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "airDrop_v1",
+            "addr": "0x10",
+            "instructions": [
+                "NOP",
+                "JUMP 0x11"
+            ]
+        },
+        {
+            "scope": "airDrop_v1",
+            "addr": "0x11",
+            "instructions": [
+                "CLR_5 = msg.sender",
+                "CLR_6 = tokenBalance[CLR_5]",
+                "REF_3 = CLR_6",
+                "TMP_10 = REF_3 == 0",
+                "CONDITION TMP_10 0x11_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "airDrop_v1",
+            "addr": "0x11_r0",
+            "instructions": [
+                "JUMP 0x12"
+            ]
+        },
+        {
+            "scope": "airDrop_v1",
+            "addr": "0x13",
+            "instructions": [
+                "NOP",
+                "JUMP 0x14"
+            ]
+        },
+        {
+            "scope": "airDrop_v1",
+            "addr": "0x14",
+            "instructions": [
+                "TMP_4 = NEW_VAL integer",
+                "TMP_5 = CALL1 keccak TMP_4",
+                "TMP_6 = NEW_VAL unknown",
+                "ATTACK",
+                "TMP_7 = NEW_VAL integer",
+                "JUMP 0x15"
+            ]
+        },
+        {
+            "scope": "airDrop_v1",
+            "addr": "0x12",
+            "instructions": [
+                "NOP",
+                "JUMP 0x13"
+            ]
+        },
+        {
+            "scope": "airDrop_v2",
+            "addr": "0x15",
+            "instructions": [
+                "NOP",
+                "JUMP 0x16"
+            ]
+        },
+        {
+            "scope": "airDrop_v2",
+            "addr": "0x17",
+            "instructions": [
+                "NOP",
+                "JUMP 0x18"
+            ]
+        },
+        {
+            "scope": "airDrop_v2",
+            "addr": "0x18",
+            "instructions": [
+                "CLR_7 = msg.sender",
+                "CLR_8 = tokenBalance[CLR_7]",
+                "REF_0 = CLR_8",
+                "CLR_9 = msg.sender",
+                "WRP_0 = REF_0 + 20",
+                "tokenBalance[CLR_9] = WRP_0",
+                "JUMP 0x19"
+            ]
+        },
+        {
+            "scope": "airDrop_v2",
+            "addr": "0x16",
+            "instructions": [
+                "CLR_10 = msg.sender",
+                "CLR_11 = tokenBalance[CLR_10]",
+                "REF_3 = CLR_11",
+                "TMP_10 = REF_3 == 0",
+                "CONDITION TMP_10 0x16_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "airDrop_v2",
+            "addr": "0x16_r0",
+            "instructions": [
+                "JUMP 0x1a"
+            ]
+        },
+        {
+            "scope": "airDrop_v2",
+            "addr": "0x1b",
+            "instructions": [
+                "NOP",
+                "JUMP 0x1c"
+            ]
+        },
+        {
+            "scope": "airDrop_v2",
+            "addr": "0x1c",
+            "instructions": [
+                "TMP_4 = NEW_VAL integer",
+                "TMP_5 = CALL1 keccak TMP_4",
+                "TMP_6 = NEW_VAL unknown",
+                "TMP_7 = NEW_VAL integer",
+                "JUMP 0x1d"
+            ]
+        },
+        {
+            "scope": "airDrop_v2",
+            "addr": "0x1d",
+            "instructions": [
+                "TMP_8 = TMP_5 == TMP_7",
+                "CONDITION TMP_8 0x1d_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "airDrop_v2",
+            "addr": "0x1d_r0",
+            "instructions": [
+                "JUMP 0x1e"
+            ]
+        },
+        {
+            "scope": "airDrop_v2",
+            "addr": "0x1a",
+            "instructions": [
+                "NOP",
+                "JUMP 0x1b"
+            ]
+        },
+        {
+            "scope": "airDrop_v2",
+            "addr": "0x1e",
+            "instructions": [
+                "NOP",
+                "JUMP 0x17"
+            ]
+        },
+        {
+            "scope": "airDrop_v1",
+            "addr": "0x1f",
+            "instructions": [
+                "NOP",
+                "JUMP 0x20"
+            ]
+        },
+        {
+            "scope": "airDrop_v1",
+            "addr": "0x19",
+            "instructions": [
+                "TMP_8 = TMP_5 == TMP_7",
+                "CONDITION TMP_8 0x19_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "airDrop_v1",
+            "addr": "0x19_r0",
+            "instructions": [
+                "JUMP 0x1f"
+            ]
+        },
+        {
+            "scope": "airDrop_v1",
+            "addr": "0x21",
+            "instructions": [
+                "CLR_12 = msg.sender",
+                "CLR_13 = tokenBalance[CLR_12]",
+                "REF_0 = CLR_13",
+                "CLR_14 = msg.sender",
+                "WRP_1 = REF_0 + 20",
+                "tokenBalance[CLR_14] = WRP_1"
+            ]
+        },
+        {
+            "scope": "airDrop_v1",
+            "addr": "0x20",
+            "instructions": [
+                "NOP",
+                "JUMP 0x21"
+            ]
+        },
+        {
+            "scope": "trap",
+            "addr": "0x22",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

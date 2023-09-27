@@ -1,0 +1,35 @@
+INFO:Slither:Compilation warnings/errors on /sb/DharmaAccountRecoveryManager_1.sol:
+/sb/DharmaAccountRecoveryManager_1.sol:528:33: Warning: "this" used in constructor. Note that external functions of a contract cannot be called while it is being constructed.
+    _setInitialTimelockInterval(this.modifyTimelockInterval.selector, 4 weeks);
+                                ^--^
+/sb/DharmaAccountRecoveryManager_1.sol:529:33: Warning: "this" used in constructor. Note that external functions of a contract cannot be called while it is being constructed.
+    _setInitialTimelockInterval(this.recover.selector, 7 days);
+                                ^--^
+/sb/DharmaAccountRecoveryManager_1.sol:530:33: Warning: "this" used in constructor. Note that external functions of a contract cannot be called while it is being constructed.
+    _setInitialTimelockInterval(this.disableAccountRecovery.selector, 3 days);
+                                ^--^
+
+INFO:Detectors:[92m
+Timelocker._setInitialTimelockInterval uses assembly (/sb/DharmaAccountRecoveryManager_1.sol#425-434)
+	- /sb/DharmaAccountRecoveryManager_1.sol#430
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+Ownable.renounceOwnership (/sb/DharmaAccountRecoveryManager_1.sol#41-44) should be declared external
+Ownable.transferOwnership (/sb/DharmaAccountRecoveryManager_1.sol#50-52) should be declared external
+Timelocker.getTimelock (/sb/DharmaAccountRecoveryManager_1.sol#349-359) should be declared external
+Timelocker.getTimelockInterval (/sb/DharmaAccountRecoveryManager_1.sol#367-371) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/DharmaAccountRecoveryManager_1.sol:
+	- pragma solidity0.5.11 (/sb/DharmaAccountRecoveryManager_1.sol#1): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Parameter '_newOwner' of Ownable.transferOwnership (/sb/DharmaAccountRecoveryManager_1.sol#50) is not in mixedCase
+Function 'Ownable._transferOwnership' (/sb/DharmaAccountRecoveryManager_1.sol#58-62) is not in mixedCase
+Parameter '_newOwner' of Ownable._transferOwnership (/sb/DharmaAccountRecoveryManager_1.sol#58) is not in mixedCase
+Function 'Timelocker._setTimelock' (/sb/DharmaAccountRecoveryManager_1.sol#386-415) is not in mixedCase
+Function 'Timelocker._setInitialTimelockInterval' (/sb/DharmaAccountRecoveryManager_1.sol#425-434) is not in mixedCase
+Function 'Timelocker._enforceTimelock' (/sb/DharmaAccountRecoveryManager_1.sol#442-460) is not in mixedCase
+Function 'Timelocker._setTimelockInterval' (/sb/DharmaAccountRecoveryManager_1.sol#470-484) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/DharmaAccountRecoveryManager_1.sol analyzed (5 contracts), 13 result(s) found

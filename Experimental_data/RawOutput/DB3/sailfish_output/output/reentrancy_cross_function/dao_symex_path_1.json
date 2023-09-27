@@ -1,0 +1,386 @@
+{
+    "file": "reentrancy_cross_function.sol",
+    "global_structs": [
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x6"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x7"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x8"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "userBalances",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "Reentrancy_cross_function",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x6",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x7",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x8",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "userBalances",
+            "addrs": [
+                "0x2",
+                "0x3",
+                "0x4",
+                "0x5"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3",
+            "instructions": [
+                "userBalances[0] = U",
+                "userBalances[1] = U",
+                "userBalances[2] = U",
+                "userBalances[3] = U",
+                "userBalances[4] = U",
+                "userBalances[5] = U",
+                "userBalances[6] = U",
+                "userBalances[7] = U",
+                "userBalances[8] = U",
+                "userBalances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4",
+            "instructions": [
+                "CLR_0 = msg.sender",
+                "userBalances[CLR_0] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5",
+            "instructions": [
+                "CLR_1 = msg.sender",
+                "CLR_2 = userBalances[CLR_1]",
+                "REF_7 = CLR_2",
+                "CLR_3 = msg.sender",
+                "userBalances[CLR_3] = 0"
+            ]
+        }
+    ],
+    "root_addr": "0x9",
+    "dest_addrs": [
+        "0x11"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "withdrawBalance",
+            "addr": "0x9",
+            "instructions": [
+                "NOP",
+                "amountToWithdraw = NEW_VAL integer",
+                "JUMP 0xa"
+            ]
+        },
+        {
+            "scope": "withdrawBalance",
+            "addr": "0xa",
+            "instructions": [
+                "CLR_4 = msg.sender",
+                "CLR_5 = userBalances[CLR_4]",
+                "REF_3 = CLR_5",
+                "amountToWithdraw = REF_3",
+                "NOP",
+                "ATTACK",
+                "TMP_2 = NEW_VAL boolean",
+                "JUMP 0xb"
+            ]
+        },
+        {
+            "scope": "transfer",
+            "addr": "0xb",
+            "instructions": [
+                "NOP",
+                "amount = NEW_VAL integer",
+                "to = NEW_VAL integer",
+                "JUMP 0xc"
+            ]
+        },
+        {
+            "scope": "transfer",
+            "addr": "0xc",
+            "instructions": [
+                "CLR_6 = msg.sender",
+                "CLR_7 = userBalances[CLR_6]",
+                "REF_0 = CLR_7",
+                "TMP_0 = REF_0 >= amount",
+                "CONDITION TMP_0 0xd 0xe"
+            ]
+        },
+        {
+            "scope": "transfer",
+            "addr": "0xd",
+            "instructions": [
+                "CLR_8 = userBalances[to]",
+                "REF_1 = CLR_8",
+                "WRP_0 = REF_1 + amount",
+                "userBalances[to] = WRP_0",
+                "CLR_9 = msg.sender",
+                "CLR_10 = userBalances[CLR_9]",
+                "REF_2 = CLR_10",
+                "CLR_11 = msg.sender",
+                "WRP_1 = REF_2 - amount",
+                "userBalances[CLR_11] = WRP_1",
+                "JUMP 0xf"
+            ]
+        },
+        {
+            "scope": "transfer",
+            "addr": "0xf",
+            "instructions": [
+                "NOP",
+                "JUMP 0x10"
+            ]
+        },
+        {
+            "scope": "withdrawBalance",
+            "addr": "0x10",
+            "instructions": [
+                "success = TMP_2",
+                "CONDITION success 0x10_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "withdrawBalance",
+            "addr": "0x10_r0",
+            "instructions": [
+                "JUMP 0x11"
+            ]
+        },
+        {
+            "scope": "withdrawBalance",
+            "addr": "0x11",
+            "instructions": [
+                "CLR_12 = msg.sender",
+                "CLR_13 = userBalances[CLR_12]",
+                "REF_6 = CLR_13",
+                "CLR_14 = msg.sender",
+                "userBalances[CLR_14] = 0"
+            ]
+        },
+        {
+            "scope": "trap",
+            "addr": "0xe",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

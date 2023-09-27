@@ -1,0 +1,171 @@
+{
+    "errors": [
+        "EXIT_CODE_17"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "OneSwapBuyback",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "function": "removeMainToken",
+            "impact": "Medium",
+            "line": 206,
+            "line_end": 221,
+            "message": "OneSwapBuyback.removeMainToken (OneSwapBuyback_1.sol#206-221) does not use the value returned by external calls:\n\t-_mainTokenArr.pop() (OneSwapBuyback_1.sol#219)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "OneSwapBuyback",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "function": "_removeLiquidity",
+            "impact": "Medium",
+            "line": 238,
+            "line_end": 255,
+            "message": "OneSwapBuyback._removeLiquidity (OneSwapBuyback_1.sol#238-255) does not use the value returned by external calls:\n\t-IERC20(pair).approve(router,amt) (OneSwapBuyback_1.sol#245)\n\t-IOneSwapRouter(router).removeLiquidity(pair,amt,0,0,address(this),_MAX_UINT256) (OneSwapBuyback_1.sol#246-247)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "OneSwapBuyback",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "function": "_swapForMainToken",
+            "impact": "Medium",
+            "line": 263,
+            "line_end": 287,
+            "message": "OneSwapBuyback._swapForMainToken (OneSwapBuyback_1.sol#263-287) does not use the value returned by external calls:\n\t-IERC20(minorToken).approve(router,minorTokenAmt) (OneSwapBuyback_1.sol#284)\n\t-IOneSwapRouter(router).swapToken(minorToken,minorTokenAmt,0,path,address(this),_MAX_UINT256) (OneSwapBuyback_1.sol#285-286)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "OneSwapBuyback",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "function": "_swapForOnesAndBurn",
+            "impact": "Medium",
+            "line": 300,
+            "line_end": 317,
+            "message": "OneSwapBuyback._swapForOnesAndBurn (OneSwapBuyback_1.sol#300-317) does not use the value returned by external calls:\n\t-IERC20(token).approve(router,tokenAmt) (OneSwapBuyback_1.sol#314)\n\t-IOneSwapRouter(router).swapToken(token,tokenAmt,0,path,address(this),_MAX_UINT256) (OneSwapBuyback_1.sol#315-316)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "OneSwapBuyback",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "function": "addMainToken",
+            "impact": "Low",
+            "line": 197,
+            "line_end": 203,
+            "message": "Reentrancy in OneSwapBuyback.addMainToken (OneSwapBuyback_1.sol#197-203):\n\tExternal calls:\n\t- require(bool,string)(msg.sender == IOneSwapToken(ones).owner(),OneSwapBuyback: NOT_ONES_OWNER) (OneSwapBuyback_1.sol#198)\n\tState variables written after the call(s):\n\t- _mainTokenArr (OneSwapBuyback_1.sol#201)\n\t- _mainTokens (OneSwapBuyback_1.sol#200)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "OneSwapBuyback",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "function": "removeMainToken",
+            "impact": "Low",
+            "line": 206,
+            "line_end": 221,
+            "message": "Reentrancy in OneSwapBuyback.removeMainToken (OneSwapBuyback_1.sol#206-221):\n\tExternal calls:\n\t- require(bool,string)(msg.sender == IOneSwapToken(ones).owner(),OneSwapBuyback: NOT_ONES_OWNER) (OneSwapBuyback_1.sol#207)\n\tState variables written after the call(s):\n\t- _mainTokenArr (OneSwapBuyback_1.sol#215)\n\t- _mainTokens (OneSwapBuyback_1.sol#211)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in OneSwapBuyback_1.sol:\n\t- pragma solidity^0.6.6 (OneSwapBuyback_1.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "impact": "Informational",
+            "line": 30,
+            "message": "Parameter '' of IOneSwapBlackList.isBlackListed (OneSwapBuyback_1.sol#30) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "impact": "Informational",
+            "line": 50,
+            "message": "Parameter '' of IOneSwapFactory.setFeeTo (OneSwapBuyback_1.sol#50) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "impact": "Informational",
+            "line": 51,
+            "message": "Parameter '' of IOneSwapFactory.setFeeToSetter (OneSwapBuyback_1.sol#51) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "impact": "Informational",
+            "line": 183,
+            "message": "Parameter '_weth' of OneSwapBuyback. (OneSwapBuyback_1.sol#183) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "impact": "Informational",
+            "line": 183,
+            "message": "Parameter '_ones' of OneSwapBuyback. (OneSwapBuyback_1.sol#183) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "impact": "Informational",
+            "line": 183,
+            "message": "Parameter '_router' of OneSwapBuyback. (OneSwapBuyback_1.sol#183) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "impact": "Informational",
+            "line": 183,
+            "message": "Parameter '_factory' of OneSwapBuyback. (OneSwapBuyback_1.sol#183) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "impact": "Informational",
+            "line": 238,
+            "line_end": 255,
+            "message": "Function 'OneSwapBuyback._removeLiquidity' (OneSwapBuyback_1.sol#238-255) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "impact": "Informational",
+            "line": 263,
+            "line_end": 287,
+            "message": "Function 'OneSwapBuyback._swapForMainToken' (OneSwapBuyback_1.sol#263-287) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/OneSwapBuyback_1.sol",
+            "impact": "Informational",
+            "line": 300,
+            "line_end": 317,
+            "message": "Function 'OneSwapBuyback._swapForOnesAndBurn' (OneSwapBuyback_1.sol#300-317) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

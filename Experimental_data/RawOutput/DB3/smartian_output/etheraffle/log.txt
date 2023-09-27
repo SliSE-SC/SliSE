@@ -1,0 +1,787 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/etheraffle.bin
+[00:00:00:00] Fuzzing starts at 08:40:06
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found sload(<0x0, { }, { }>) @ 0xf
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x1d
+Found sstore(<0x1, { }, { }>, <0x1, { }, { }>) @ 0x22
+Found sstore(<0x2, { }, { }>, <T, { }, { }>) @ 0x26
+Found sstore(<0x3, { }, { }>, <0x0, { }, { }>) @ 0x2b
+Found sload(<0x0, { }, { }>) @ 0x42
+Found sstore(<0x0, { }, { }>, <T, { }, { CALLER, var_0 }>) @ 0x77
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_0, var_1, var_2, var_3 }, Use = { var_0 }
+Constructor tainted: { var_0 }
+[DEBUG] Analyzing kill(41c0e1b5) @ c4
+Found sload(<0x0, { }, { }>) @ 0x4fb
+Found sload(<0x0, { }, { }>) @ 0x550
+kill(41c0e1b5): (onlyOwner) Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing blockNumber(57e871e7) @ db
+Found sload(<0x2, { }, { }>) @ 0x58a
+blockNumber(57e871e7): Def = {  }, Use = { var_2 }
+[DEBUG] Analyzing paused(5c975abb) @ 106
+Found sload(<0x0, { }, { }>) @ 0x593
+paused(5c975abb): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing getRefund(b2d5ae44) @ 135
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x5cf
+Found sload(<T, { Sha(*, 0x4) + 0x1 }, { }>) @ 0x638
+Found sload(<0x1, { }, { }>) @ 0x63b
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x6b5
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <_, { }, { map_4 }>) @ 0x6ea
+Found sstore(<T, { Sha(*, 0x4) + 0x1 }, { }>, <_, { }, { }>) @ 0x6f5
+Found sload(<0x5, { }, { }>) @ 0x701
+Found sstore(<0x5, { }, { }>, <T, { }, { var_5 }>) @ 0x705
+Found sstore(<T, { Sha(0x5) }, { var_5 }>, <0x0, { }, { }>) @ 0x723
+Found sload(<0x1, { }, { }>) @ 0x748
+getRefund(b2d5ae44): Def = { arr_5, map_4, map_4.off_1, var_5 }, Use = { map_4, map_4.off_1, var_1, var_5 }
+[DEBUG] Analyzing raffleId(b375603c) @ 14c
+Found sload(<0x1, { }, { }>) @ 0x7ff
+raffleId(b375603c): Def = {  }, Use = { var_1 }
+[DEBUG] Analyzing togglePause(c4ae3168) @ 177
+Found sload(<0x0, { }, { }>) @ 0x807
+Found sload(<0x0, { }, { }>) @ 0x85d
+Found sload(<0x0, { }, { }>) @ 0x872
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x880
+togglePause(c4ae3168): (onlyOwner) Def = { var_0 }, Use = { var_0 }
+[DEBUG] Analyzing buyTickets(c8199826) @ 18e
+Found sload(<0x0, { }, { }>) @ 0x264
+Found sload(<0x3, { }, { }>) @ 0x2f0
+Found sload(<0x3, { }, { }>) @ 0x491
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0xc26
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0xc81
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0xd6e
+Found sload(<0x1, { }, { }>) @ 0xdb1
+Found sload(<0x1, { }, { }>) @ 0xe88
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1 }>) @ 0xe93
+Found sstore(<0x3, { }, { }>, <0x0, { }, { }>) @ 0xe9b
+Found sstore(<0x2, { }, { }>, <T, { }, { }>) @ 0xea2
+Found sload(<0x0, { }, { }>) @ 0xef7
+Found sload(<0x5, { }, { }>) @ 0x301
+Found sload(<0x3, { }, { }>) @ 0x34e
+Found sstore(<0x3, { }, { }>, <T, { }, { var_3 }>) @ 0x359
+Found sload(<0x5, { }, { }>) @ 0x311
+Found sload(<0x5, { }, { }>) @ 0x316
+Found sload(<T, { Sha(0x5) }, { var_5 }>) @ 0x32b
+Found sload(<0x5, { }, { }>) @ 0x331
+Found sload(<0x5, { }, { }>) @ 0xf6b
+Found sstore(<0x5, { }, { }>, <T, { }, { var_5 }>) @ 0xf6e
+Found sstore(<T, { Sha(0x5) }, { var_5 }>, <0x0, { }, { }>) @ 0xfaa
+Found sload(<0x1, { }, { }>) @ 0x386
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x3ad
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <_, { }, { map_4 }>) @ 0x3e2
+Found sstore(<T, { Sha(*, 0x4) + 0x1 }, { }>, <_, { }, { }>) @ 0x3ed
+Found sload(<0x1, { }, { }>) @ 0x414
+buyTickets(c8199826): Def = { arr_5, map_4, map_4.off_1, var_1, var_2, var_3, var_5 }, Use = { arr_5, map_4, var_0, var_1, var_3, var_5 }
+[DEBUG] Analyzing totalTickets(dd11247e) @ 198
+totalTickets(dd11247e): Def = {  }, Use = {  }
+[DEBUG] Analyzing fee(ddca3f43) @ 1c3
+fee(ddca3f43): Def = {  }, Use = {  }
+[DEBUG] Analyzing prize(e3ac5d26) @ 1ee
+prize(e3ac5d26): Def = {  }, Use = {  }
+[DEBUG] Analyzing pricePerTicket(e9874106) @ 219
+pricePerTicket(e9874106): Def = {  }, Use = {  }
+[DEBUG] Analyzing endRaffle(ee095c0e) @ 244
+Found sload(<0x0, { }, { }>) @ 0x8c8
+Found sload(<0x0, { }, { }>) @ 0x924
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x932
+Found sload(<0x1, { }, { }>) @ 0xad8
+Found sload(<0x1, { }, { }>) @ 0xbb2
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1 }>) @ 0xbbd
+Found sstore(<0x3, { }, { }>, <0x0, { }, { }>) @ 0xbc5
+Found sstore(<0x2, { }, { }>, <T, { }, { }>) @ 0xbcc
+Found sload(<0x5, { }, { }>) @ 0xf6b
+Found sstore(<0x5, { }, { }>, <0x0, { }, { }>) @ 0xf6e
+Found sstore(<T, { Sha(0x5) }, { }>, <0x0, { }, { }>) @ 0xfaa
+Found sload(<T, { Sha(*, 0x4) + 0x1 }, { }>) @ 0x958
+Found sload(<0x1, { }, { }>) @ 0x95b
+Found sload(<0x1, { }, { }>) @ 0x985
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x99f
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0xa26
+endRaffle(ee095c0e): (onlyOwner) Def = { arr_5, var_0, var_1, var_2, var_3, var_5 }, Use = { map_4, map_4.off_1, var_0, var_1, var_5 }
+[DEBUG] Analyzing fallback @ 0
+Found sload(<0x0, { }, { }>) @ 0x264
+Found sload(<0x3, { }, { }>) @ 0x2f0
+Found sload(<0x3, { }, { }>) @ 0x491
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0xc26
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0xc81
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0xd6e
+Found sload(<0x1, { }, { }>) @ 0xdb1
+Found sload(<0x1, { }, { }>) @ 0xe88
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1 }>) @ 0xe93
+Found sstore(<0x3, { }, { }>, <0x0, { }, { }>) @ 0xe9b
+Found sstore(<0x2, { }, { }>, <T, { }, { }>) @ 0xea2
+Found sload(<0x0, { }, { }>) @ 0xef7
+Found sload(<0x5, { }, { }>) @ 0x301
+Found sload(<0x3, { }, { }>) @ 0x34e
+Found sstore(<0x3, { }, { }>, <T, { }, { var_3 }>) @ 0x359
+Found sload(<0x5, { }, { }>) @ 0x311
+Found sload(<0x5, { }, { }>) @ 0x316
+Found sload(<T, { Sha(0x5) }, { var_5 }>) @ 0x32b
+Found sload(<0x5, { }, { }>) @ 0x331
+Found sload(<0x5, { }, { }>) @ 0xf6b
+Found sstore(<0x5, { }, { }>, <T, { }, { var_5 }>) @ 0xf6e
+Found sstore(<T, { Sha(0x5) }, { var_5 }>, <0x0, { }, { }>) @ 0xfaa
+Found sload(<0x1, { }, { }>) @ 0x386
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x3ad
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <_, { }, { map_4 }>) @ 0x3e2
+Found sstore(<T, { Sha(*, 0x4) + 0x1 }, { }>, <_, { }, { }>) @ 0x3ed
+Found sload(<0x1, { }, { }>) @ 0x414
+fallback: Def = { arr_5, map_4, map_4.off_1, var_1, var_2, var_3, var_5 }, Use = { arr_5, map_4, var_0, var_1, var_3, var_5 }
+Pruning out ["buyTickets(c8199826)"]
+Pruning out ["endRaffle(ee095c0e)"]
+Pruning out ["fallback"]
+Pruning out ["togglePause(c4ae3168)"]
+(27 candidate sequences)
+["getRefund(b2d5ae44)"; "getRefund(b2d5ae44)"]
+["getRefund(b2d5ae44)"; "fallback"]
+["getRefund(b2d5ae44)"; "endRaffle(ee095c0e)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "raffleId(b375603c)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "getRefund(b2d5ae44)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "fallback"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "togglePause(c4ae3168)"; "togglePause(c4ae3168)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "togglePause(c4ae3168)"; "paused(5c975abb)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "togglePause(c4ae3168)"; "kill(41c0e1b5)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "togglePause(c4ae3168)"; "fallback"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "togglePause(c4ae3168)"; "endRaffle(ee095c0e)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "togglePause(c4ae3168)"; "buyTickets(c8199826)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "raffleId(b375603c)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "paused(5c975abb)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "kill(41c0e1b5)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "getRefund(b2d5ae44)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "fallback"; "raffleId(b375603c)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "fallback"; "getRefund(b2d5ae44)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "fallback"; "fallback"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "fallback"; "endRaffle(ee095c0e)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "fallback"; "buyTickets(c8199826)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "fallback"; "blockNumber(57e871e7)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "endRaffle(ee095c0e)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "buyTickets(c8199826)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "endRaffle(ee095c0e)";
+ "blockNumber(57e871e7)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "buyTickets(c8199826)"]
+["getRefund(b2d5ae44)"; "buyTickets(c8199826)"; "blockNumber(57e871e7)"]
+[00:00:00:01] Start main fuzzing phase
+[00:00:00:02] Tx#1 found BlockstateDependencyManticore at 23
+[00:00:00:02] [*] Save bug seed id-00000-BD_mant_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00000_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00001_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] Tx#2 found BlockstateDependencyManticore at bc7
+[00:00:00:03] [*] Save bug seed id-00001-BD_mant_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00002_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00003_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: buyTickets(c8199826), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: raffleId(b375603c), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:04] [*] Save new seed id-00004_00004: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: buyTickets(c8199826), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: togglePause(c4ae3168), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: togglePause(c4ae3168), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:04] [*] Save new seed id-00005_00004: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: buyTickets(c8199826), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: togglePause(c4ae3168), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: paused(5c975abb), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:05] [*] Save new seed id-00006_00005: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: buyTickets(c8199826), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: togglePause(c4ae3168), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: kill(41c0e1b5), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:05] [*] Save new seed id-00007_00005: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: blockNumber(57e871e7), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getRefund(b2d5ae44), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 4 <= ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:05] [*] Save new seed id-00008_00005: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: pricePerTicket(e9874106), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: totalTickets(dd11247e), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:06] [*] Save new seed id-00009_00006: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: togglePause(c4ae3168), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:06] [*] Save new seed id-00010_00006: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fee(ddca3f43), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getRefund(b2d5ae44), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:06] [*] Save new seed id-00011_00006: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: totalTickets(dd11247e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: getRefund(b2d5ae44), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: raffleId(b375603c), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: prize(e3ac5d26), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: togglePause(c4ae3168), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:06] [*] Save new seed id-00012_00006: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: getRefund(b2d5ae44), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: buyTickets(c8199826), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000004100
+
+[00:00:00:07] [*] Save new seed id-00013_00007: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: blockNumber(57e871e7), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: kill(41c0e1b5), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 3 <= ) Function: paused(5c975abb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: buyTickets(c8199826), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 00CA000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:07] [*] Save new seed id-00014_00007: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: paused(5c975abb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: buyTickets(c8199826), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 4000000000000000000000000000000000000000000000000000000000000001
+(    TX 5    ) Function: pricePerTicket(e9874106), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: endRaffle(ee095c0e), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: getRefund(b2d5ae44), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:07] [*] Save new seed id-00015_00007: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 00000000000000000000000000000000000000000000000000FF00007F000000
+
+[00:00:00:08] Tx#2 found BlockstateDependency at edb
+[00:00:00:08] Tx#2 found BlockstateDependencySFuzz at e9d
+[00:00:00:08] Tx#2 found BlockstateDependencyManticore at bf1
+[00:00:00:08] Tx#2 found BlockstateDependencyManticore at ca1
+[00:00:00:08] Tx#2 found BlockstateDependencyManticore at e9d
+[00:00:00:08] Tx#2 found MultipleSend at 4d9
+[00:00:00:08] Tx#2 found MultipleSend at f4a
+[00:00:00:08] [*] Save bug seed id-00002-BD-BD_mant-BD_sfuzz-MS_00008: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000D00000000000000001
+
+[00:00:00:08] [*] Save new seed id-00016_00008: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000D00000000000000001
+
+[00:00:00:10] [*] Save new seed id-00017_00010: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: buyTickets(c8199826), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: fallback, From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: raffleId(b375603c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:11] [*] Save new seed id-00018_00011: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: buyTickets(c8199826), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: getRefund(b2d5ae44), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:11] Tx#4 found BlockstateDependencySFuzz at bc7
+[00:00:00:11] [*] Save bug seed id-00003-BD_sfuzz_00011: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: paused(5c975abb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: buyTickets(c8199826), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 00000000000000000000000000000000000000000000000000E1000000000000
+(    TX 4    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:11] [*] Save new seed id-00019_00011: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: paused(5c975abb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: buyTickets(c8199826), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 00000000000000000000000000000000000000000000000000E1000000000000
+(    TX 4    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:13] [*] Save new seed id-00020_00013: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: buyTickets(c8199826), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 4000000000004000009000000000000000000000000000000000000000004100
+(    TX 2    ) Function: getRefund(b2d5ae44), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: blockNumber(57e871e7), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 4 <= ) Function: buyTickets(c8199826), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000800000000000000
+
+[00:00:00:18] [*] Save new seed id-00021_00018: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: buyTickets(c8199826), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 3FFFFFFFFFFFFFFFFFFFD6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3FFFFFFF
+(    TX 2    ) Function: prize(e3ac5d26), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000FF007F000000000000
+( => TX 4 <= ) Function: prize(e3ac5d26), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: getRefund(b2d5ae44), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: togglePause(c4ae3168), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: getRefund(b2d5ae44), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:01:01] [*] Save new seed id-00022_00061: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: paused(5c975abb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000007F00000000000000
+(    TX 3    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: buyTickets(c8199826), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 4000000000000000000000000000000000000000000000000000000000000001
+(    TX 5    ) Function: pricePerTicket(e9874106), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: endRaffle(ee095c0e), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: getRefund(b2d5ae44), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:01:05] Tx#3 found MultipleSend at a8f
+[00:00:01:05] [*] Save bug seed id-00004-MS_00065: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: buyTickets(c8199826), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000200000010000000
+(    TX 3    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: togglePause(c4ae3168), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: kill(41c0e1b5), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: togglePause(c4ae3168), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:01:50] [*] Save new seed id-00023_00110: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: paused(5c975abb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000200000000000000
+(    TX 3    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 4 <= ) Function: buyTickets(c8199826), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 4000000000000000200000000000000000000000000000000000000000000001
+(    TX 5    ) Function: pricePerTicket(e9874106), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: endRaffle(ee095c0e), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: getRefund(b2d5ae44), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:03:08] [*] Save new seed id-00024_00188: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getRefund(b2d5ae44), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: buyTickets(c8199826), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000002300000000000000
+(    TX 3    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: togglePause(c4ae3168), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: togglePause(c4ae3168), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:05:42] [*] Save new seed id-00025_00342: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: togglePause(c4ae3168), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: buyTickets(c8199826), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000200000010000000
+(    TX 3    ) Function: paused(5c975abb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: endRaffle(ee095c0e), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 5 <= ) Function: getRefund(b2d5ae44), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: kill(41c0e1b5), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000020000000000000000000000000000000000000000
+(    TX 8    ) Function: togglePause(c4ae3168), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:54:45] Tx#4 found EtherLeak at 4d9
+[00:00:54:45] [*] Save bug seed id-00005-EL_03285: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: paused(5c975abb), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getRefund(b2d5ae44), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000200000000000000
+(    TX 4    ) Function: buyTickets(c8199826), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000002600000000000000
+(    TX 5    ) Function: pricePerTicket(e9874106), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 6 <= ) Function: endRaffle(ee095c0e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: getRefund(b2d5ae44), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 157654
+[00:01:00:00] Deployment failures: 0
+[00:01:00:00] Test Cases: 26
+[00:01:00:00] Covered Edges: 126
+[00:01:00:00] Covered Instructions: 1938
+[00:01:00:00] Covered Def-Use Chains: 710
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 1
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 1
+[00:01:00:00]   Integer Bug: 0
+[00:01:00:00]   Mishandled Exception: 0
+[00:01:00:00]   Multiple Send: 3
+[00:01:00:00]   Reentrancy: 0
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

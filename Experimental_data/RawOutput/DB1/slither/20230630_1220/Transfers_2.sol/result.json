@@ -1,0 +1,33 @@
+{
+    "errors": [
+        "EXIT_CODE_2"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "filename": "all_contract/Transfers_2.sol",
+            "impact": "Informational",
+            "line": 2,
+            "message": "Detected issues with version pragma in Transfers_2.sol:\n\t- pragma solidity>=0.5.0 (Transfers_2.sol#2): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "contract": "Transfers",
+            "filename": "all_contract/Transfers_2.sol",
+            "function": "safeTransfer",
+            "impact": "Informational",
+            "line": 37,
+            "line_end": 46,
+            "message": "Low level call in Transfers.safeTransfer (Transfers_2.sol#37-46):\n\t-(success,returnData) = address(token).call(abi.encodeWithSelector(token.transfer.selector,to,value)) Transfers_2.sol#42-44\n",
+            "name": "low-level-calls"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

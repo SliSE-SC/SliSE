@@ -1,0 +1,271 @@
+{
+    "errors": [
+        "EXIT_CODE_28"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "BPool",
+            "filename": "all_contract/BPool_1.sol",
+            "function": "unbind",
+            "impact": "Medium",
+            "line": 945,
+            "line_end": 976,
+            "message": "Reentrancy in BPool.unbind (BPool_1.sol#945-976):\n\tExternal calls:\n\t- _tokens.pop() (BPool_1.sol#966)\n\tState variables written after the call(s):\n\t- _records (BPool_1.sol#967-972)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "BPool",
+            "filename": "all_contract/BPool_1.sol",
+            "function": "unbind",
+            "impact": "Medium",
+            "line": 945,
+            "line_end": 976,
+            "message": "BPool.unbind (BPool_1.sol#945-976) does not use the value returned by external calls:\n\t-_tokens.pop() (BPool_1.sol#966)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 310,
+            "message": "BToken._decimals should be constant (BPool_1.sol#310)\nBToken._name should be constant (BPool_1.sol#308)\nBToken._symbol should be constant (BPool_1.sol#309)\n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "BToken",
+            "filename": "all_contract/BPool_1.sol",
+            "function": "name",
+            "impact": "Informational",
+            "line": 312,
+            "line_end": 314,
+            "message": "BToken.name (BPool_1.sol#312-314) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BToken",
+            "filename": "all_contract/BPool_1.sol",
+            "function": "symbol",
+            "impact": "Informational",
+            "line": 316,
+            "line_end": 318,
+            "message": "BToken.symbol (BPool_1.sol#316-318) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BToken",
+            "filename": "all_contract/BPool_1.sol",
+            "function": "decimals",
+            "impact": "Informational",
+            "line": 320,
+            "line_end": 322,
+            "message": "BToken.decimals (BPool_1.sol#320-322) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 15,
+            "message": "Detected issues with version pragma in BPool_1.sol:\n\t- pragma solidity0.5.12 (BPool_1.sol#15): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 277,
+            "line_end": 281,
+            "message": "Function 'BTokenBase._mint' (BPool_1.sol#277-281) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 283,
+            "line_end": 288,
+            "message": "Function 'BTokenBase._burn' (BPool_1.sol#283-288) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 290,
+            "line_end": 295,
+            "message": "Function 'BTokenBase._move' (BPool_1.sol#290-295) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 297,
+            "line_end": 299,
+            "message": "Function 'BTokenBase._push' (BPool_1.sol#297-299) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 301,
+            "line_end": 303,
+            "message": "Function 'BTokenBase._pull' (BPool_1.sol#301-303) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 270,
+            "message": "Variable 'BTokenBase._balance' (BPool_1.sol#270) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 271,
+            "message": "Variable 'BTokenBase._allowance' (BPool_1.sol#271) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 272,
+            "message": "Variable 'BTokenBase._totalSupply' (BPool_1.sol#272) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 672,
+            "line_end": 678,
+            "message": "Event 'BPool.LOG_SWAP' (BPool_1.sol#672-678) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 680,
+            "line_end": 684,
+            "message": "Event 'BPool.LOG_JOIN' (BPool_1.sol#680-684) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 686,
+            "line_end": 690,
+            "message": "Event 'BPool.LOG_EXIT' (BPool_1.sol#686-690) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 692,
+            "line_end": 696,
+            "message": "Event 'BPool.LOG_CALL' (BPool_1.sol#692-696) is not in CapWords\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 1340,
+            "line_end": 1345,
+            "message": "Function 'BPool._pullUnderlying' (BPool_1.sol#1340-1345) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 1347,
+            "line_end": 1352,
+            "message": "Function 'BPool._pushUnderlying' (BPool_1.sol#1347-1352) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 1354,
+            "line_end": 1358,
+            "message": "Function 'BPool._pullPoolShare' (BPool_1.sol#1354-1358) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 1360,
+            "line_end": 1364,
+            "message": "Function 'BPool._pushPoolShare' (BPool_1.sol#1360-1364) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 1366,
+            "line_end": 1370,
+            "message": "Function 'BPool._mintPoolShare' (BPool_1.sol#1366-1370) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 1372,
+            "line_end": 1376,
+            "message": "Function 'BPool._burnPoolShare' (BPool_1.sol#1372-1376) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 698,
+            "line_end": 701,
+            "message": "Modifier 'BPool._logs_' (BPool_1.sol#698-701) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 703,
+            "line_end": 708,
+            "message": "Modifier 'BPool._lock_' (BPool_1.sol#703-708) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/BPool_1.sol",
+            "impact": "Informational",
+            "line": 710,
+            "line_end": 713,
+            "message": "Modifier 'BPool._viewlock_' (BPool_1.sol#710-713) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

@@ -1,0 +1,127 @@
+INFO:Slither:Compilation warnings/errors on /sb/Pool_1.sol:
+Warning: Function state mutability can be restricted to pure
+  --> /sb/Pool_1.sol:21:5:
+   |
+21 |     function _msgData() internal view virtual returns (bytes calldata) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning: Contract code size exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+    --> /sb/Pool_1.sol:1816:1:
+     |
+1816 | contract Pool is IPool, ERC20, Delegable {
+     | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+INFO:Detectors:[93m
+Reentrancy in Pool.burn (/sb/Pool_1.sol#1953-1976):
+	External calls:
+	- daiReserves = dai.balanceOf(address(this)) (/sb/Pool_1.sol#1956)
+	- yDaiReserves = yDai.balanceOf(address(this)) (/sb/Pool_1.sol#1959-1961)
+	State variables written after the call(s):
+	- _totalSupply (/sb/Pool_1.sol#1968)
+Reentrancy in Pool.init (/sb/Pool_1.sol#1914-1920):
+	External calls:
+	- dai.transferFrom(msg.sender,address(this),daiIn) (/sb/Pool_1.sol#1918-1919)
+	State variables written after the call(s):
+	- _totalSupply (/sb/Pool_1.sol#1920)
+Reentrancy in Pool.mint (/sb/Pool_1.sol#1931-1950):
+	External calls:
+	- daiReserves = dai.balanceOf(address(this)) (/sb/Pool_1.sol#1935)
+	- yDaiReserves = yDai.balanceOf(address(this)) (/sb/Pool_1.sol#1937)
+	- require(bool)(dai.transferFrom(msg.sender,address(this),daiOffered)) (/sb/Pool_1.sol#1941-1942)
+	- require(bool)(yDai.transferFrom(msg.sender,address(this),yDaiRequired)) (/sb/Pool_1.sol#1943)
+	State variables written after the call(s):
+	- _totalSupply (/sb/Pool_1.sol#1943)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[93m
+Pool.sellDai (/sb/Pool_1.sol#1990-2001) does not use the value returned by external calls:
+	-dai.transferFrom(from,address(this),daiIn) (/sb/Pool_1.sol#1998)
+	-yDai.transfer(to,yDaiOut) (/sb/Pool_1.sol#1999)
+Pool.buyDai (/sb/Pool_1.sol#2036-2044) does not use the value returned by external calls:
+	-yDai.transferFrom(from,address(this),yDaiIn) (/sb/Pool_1.sol#2039-2040)
+	-dai.transfer(to,daiOut) (/sb/Pool_1.sol#2040-2041)
+Pool.sellYDai (/sb/Pool_1.sol#2074-2083) does not use the value returned by external calls:
+	-yDai.transferFrom(from,address(this),yDaiIn) (/sb/Pool_1.sol#2078)
+	-dai.transfer(to,daiOut) (/sb/Pool_1.sol#2078-2079)
+Pool.buyYDai (/sb/Pool_1.sol#2115-2134) does not use the value returned by external calls:
+	-dai.transferFrom(from,address(this),daiIn) (/sb/Pool_1.sol#2126-2127)
+	-yDai.transfer(to,yDaiOut) (/sb/Pool_1.sol#2129)
+Pool.init (/sb/Pool_1.sol#1914-1920) does not use the value returned by external calls:
+	-dai.transferFrom(msg.sender,address(this),daiIn) (/sb/Pool_1.sol#1918-1919)
+Pool.burn (/sb/Pool_1.sol#1953-1976) does not use the value returned by external calls:
+	-dai.transfer(msg.sender,daiReturned) (/sb/Pool_1.sol#1968-1969)
+	-yDai.transfer(msg.sender,yDaiReturned) (/sb/Pool_1.sol#1969-1970)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-return[0m
+INFO:Detectors:[92m
+Reentrancy in Pool.burn (/sb/Pool_1.sol#1953-1976):
+	External calls:
+	- daiReserves = dai.balanceOf(address(this)) (/sb/Pool_1.sol#1956)
+	- yDaiReserves = yDai.balanceOf(address(this)) (/sb/Pool_1.sol#1959-1961)
+	State variables written after the call(s):
+	- _balances (/sb/Pool_1.sol#1968)
+Reentrancy in Pool.init (/sb/Pool_1.sol#1914-1920):
+	External calls:
+	- dai.transferFrom(msg.sender,address(this),daiIn) (/sb/Pool_1.sol#1918-1919)
+	State variables written after the call(s):
+	- _balances (/sb/Pool_1.sol#1920)
+Reentrancy in Pool.mint (/sb/Pool_1.sol#1931-1950):
+	External calls:
+	- daiReserves = dai.balanceOf(address(this)) (/sb/Pool_1.sol#1935)
+	- yDaiReserves = yDai.balanceOf(address(this)) (/sb/Pool_1.sol#1937)
+	- require(bool)(dai.transferFrom(msg.sender,address(this),daiOffered)) (/sb/Pool_1.sol#1941-1942)
+	- require(bool)(yDai.transferFrom(msg.sender,address(this),yDaiRequired)) (/sb/Pool_1.sol#1943)
+	State variables written after the call(s):
+	- _balances (/sb/Pool_1.sol#1943)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-2[0m
+INFO:Detectors:[92m
+ERC20.balanceOf (/sb/Pool_1.sol#1077-1084) should be declared external
+IERC20.balanceOf (/sb/Pool_1.sol#914-917) should be declared external
+IERC20.transfer (/sb/Pool_1.sol#921-922) should be declared external
+ERC20.transfer (/sb/Pool_1.sol#1092-1095) should be declared external
+IERC20.allowance (/sb/Pool_1.sol#928-930) should be declared external
+ERC20.allowance (/sb/Pool_1.sol#1099-1101) should be declared external
+IERC20.approve (/sb/Pool_1.sol#949-952) should be declared external
+ERC20.approve (/sb/Pool_1.sol#1104-1106) should be declared external
+ERC20.transferFrom (/sb/Pool_1.sol#1120-1128) should be declared external
+IERC20.transferFrom (/sb/Pool_1.sol#964-965) should be declared external
+ERC20.name (/sb/Pool_1.sol#1037-1038) should be declared external
+ERC20.symbol (/sb/Pool_1.sol#1040-1042) should be declared external
+ERC20.decimals (/sb/Pool_1.sol#1067-1069) should be declared external
+ERC20.increaseAllowance (/sb/Pool_1.sol#1141-1142) should be declared external
+ERC20.decreaseAllowance (/sb/Pool_1.sol#1158-1162) should be declared external
+Delegable.addDelegate (/sb/Pool_1.sol#1790-1793) should be declared external
+Delegable.revokeDelegate (/sb/Pool_1.sol#1794-1797) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/Pool_1.sol:
+	- pragma solidity>=0.6.0<0.8.0 (/sb/Pool_1.sol#4): is has a complex pragma
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Function 'Context._msgSender' (/sb/Pool_1.sol#17-19) is not in mixedCase
+Function 'Context._msgData' (/sb/Pool_1.sol#21-23) is not in mixedCase
+Function 'ABDKMath64x64.log_2' (/sb/Pool_1.sol#557-587) is not in mixedCase
+Function 'ABDKMath64x64.exp_2' (/sb/Pool_1.sol#602-751) is not in mixedCase
+Constant 'ABDKMath64x64.MIN_64x64' (/sb/Pool_1.sol#201-204) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'ABDKMath64x64.MAX_64x64' (/sb/Pool_1.sol#206-209) is not in UPPER_CASE_WITH_UNDERSCORES
+Function 'ERC20._transfer' (/sb/Pool_1.sol#1174-1191) is not in mixedCase
+Function 'ERC20._mint' (/sb/Pool_1.sol#1201-1208) is not in mixedCase
+Function 'ERC20._burn' (/sb/Pool_1.sol#1218-1228) is not in mixedCase
+Function 'ERC20._approve' (/sb/Pool_1.sol#1239-1251) is not in mixedCase
+Function 'ERC20._setupDecimals' (/sb/Pool_1.sol#1257-1261) is not in mixedCase
+Function 'ERC20._beforeTokenTransfer' (/sb/Pool_1.sol#1279-1280) is not in mixedCase
+Function 'YieldMath.log_2' (/sb/Pool_1.sol#1474-1617) is not in mixedCase
+Function 'YieldMath.pow_2' (/sb/Pool_1.sol#1619-1773) is not in mixedCase
+Parameter '' of IPot.pie (/sb/Pool_1.sol#1803) is not in mixedCase
+Parameter '' of IPot.join (/sb/Pool_1.sol#1806) is not in mixedCase
+Parameter '' of IPot.exit (/sb/Pool_1.sol#1806) is not in mixedCase
+Parameter '' of IYDai.mint (/sb/Pool_1.sol#1818) is not in mixedCase
+Parameter '_scope_0' of IYDai.mint (/sb/Pool_1.sol#1818) is not in mixedCase
+Parameter '' of IYDai.burn (/sb/Pool_1.sol#1818) is not in mixedCase
+Parameter '_scope_0' of IYDai.burn (/sb/Pool_1.sol#1818) is not in mixedCase
+Parameter '' of IYDai.flashMint (/sb/Pool_1.sol#1818) is not in mixedCase
+Parameter '_scope_0' of IYDai.flashMint (/sb/Pool_1.sol#1818-1819) is not in mixedCase
+Parameter '_scope_1' of IYDai.flashMint (/sb/Pool_1.sol#1819) is not in mixedCase
+Constant 'Pool.k' (/sb/Pool_1.sol#1859-1860) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'Pool.g' (/sb/Pool_1.sol#1863-1866) is not in UPPER_CASE_WITH_UNDERSCORES
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/Pool_1.sol analyzed (11 contracts), 56 result(s) found

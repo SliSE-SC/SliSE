@@ -1,0 +1,104 @@
+INFO:Slither:Compilation warnings/errors on /sb/GovernorAlpha_1.sol:
+/sb/GovernorAlpha_1.sol:3:1: Warning: Experimental features are turned on. Do not use experimental features on live deployments.
+pragma experimental ABIEncoderV2;
+^-------------------------------^
+
+INFO:Detectors:[91m
+GovernorAlpha.execute (/sb/GovernorAlpha_1.sol#195-203) sends eth to arbitrary user
+	Dangerous calls:
+	- timelock.executeTransaction.value(proposal.values[i])(proposal.targets[i],proposal.values[i],proposal.signatures[i],proposal.calldatas[i],proposal.eta) (/sb/GovernorAlpha_1.sol#200)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#functions-that-send-ether-to-arbitrary-destinations[0m
+INFO:Detectors:[93m
+GovernorAlpha.getChainId (/sb/GovernorAlpha_1.sol#295-299) is declared view but contains assembly code
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#constant-functions-changing-the-state[0m
+INFO:Detectors:[93m
+Reentrancy in GovernorAlpha._castVote (/sb/GovernorAlpha_1.sol#264-282):
+	External calls:
+	- require(bool,string)(state(proposalId) == ProposalState.Active,GovernorAlpha::_castVote: voting is closed) (/sb/GovernorAlpha_1.sol#265)
+	- votes = gtc.getPriorVotes(voter,proposal.startBlock) (/sb/GovernorAlpha_1.sol#269)
+	State variables written after the call(s):
+	- proposals (/sb/GovernorAlpha_1.sol#272)
+	- proposals (/sb/GovernorAlpha_1.sol#274)
+Reentrancy in GovernorAlpha.cancel (/sb/GovernorAlpha_1.sol#205-218):
+	External calls:
+	- state = state(proposalId) (/sb/GovernorAlpha_1.sol#206)
+	- require(bool,string)(gtc.getPriorVotes(proposal.proposer,sub256(block.number,1)) < proposalThreshold(),GovernorAlpha::cancel: proposer above threshold) (/sb/GovernorAlpha_1.sol#210)
+	State variables written after the call(s):
+	- proposals (/sb/GovernorAlpha_1.sol#212)
+Reentrancy in GovernorAlpha.execute (/sb/GovernorAlpha_1.sol#195-203):
+	External calls:
+	- require(bool,string)(state(proposalId) == ProposalState.Queued,GovernorAlpha::execute: proposal can only be executed if it is queued) (/sb/GovernorAlpha_1.sol#196)
+	State variables written after the call(s):
+	- proposals (/sb/GovernorAlpha_1.sol#198)
+Reentrancy in GovernorAlpha.propose (/sb/GovernorAlpha_1.sol#139-177):
+	External calls:
+	- require(bool,string)(gtc.getPriorVotes(msg.sender,sub256(block.number,1)) > proposalThreshold(),GovernorAlpha::propose: proposer votes below proposal threshold) (/sb/GovernorAlpha_1.sol#140)
+	- proposersLatestProposalState = state(latestProposalId) (/sb/GovernorAlpha_1.sol#147)
+	State variables written after the call(s):
+	- latestProposalIds (/sb/GovernorAlpha_1.sol#173)
+	- proposalCount (/sb/GovernorAlpha_1.sol#155)
+	- proposals (/sb/GovernorAlpha_1.sol#172)
+Reentrancy in GovernorAlpha.queue (/sb/GovernorAlpha_1.sol#179-188):
+	External calls:
+	- require(bool,string)(state(proposalId) == ProposalState.Succeeded,GovernorAlpha::queue: proposal can only be queued if it is succeeded) (/sb/GovernorAlpha_1.sol#180)
+	- eta = add256(block.timestamp,timelock.delay()) (/sb/GovernorAlpha_1.sol#182)
+	State variables written after the call(s):
+	- proposals (/sb/GovernorAlpha_1.sol#186)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[93m
+GovernorAlpha._queueOrRevert (/sb/GovernorAlpha_1.sol#190-193) does not use the value returned by external calls:
+	-timelock.queueTransaction(target,value,signature,data,eta) (/sb/GovernorAlpha_1.sol#192)
+GovernorAlpha.execute (/sb/GovernorAlpha_1.sol#195-203) does not use the value returned by external calls:
+	-timelock.executeTransaction.value(proposal.values[i])(proposal.targets[i],proposal.values[i],proposal.signatures[i],proposal.calldatas[i],proposal.eta) (/sb/GovernorAlpha_1.sol#200)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-return[0m
+INFO:Detectors:[92m
+GovernorAlpha.cancel.state (local variable @ /sb/GovernorAlpha_1.sol#206) shadows:
+	- GovernorAlpha.state (function @ /sb/GovernorAlpha_1.sol#229-249)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#local-variable-shadowing[0m
+INFO:Detectors:[92m
+GovernorAlpha.execute has external calls inside a loop:
+	- timelock.executeTransaction.value(proposal.values[i])(proposal.targets[i],proposal.values[i],proposal.signatures[i],proposal.calldatas[i],proposal.eta) (/sb/GovernorAlpha_1.sol#200)
+GovernorAlpha.cancel has external calls inside a loop:
+	- timelock.cancelTransaction(proposal.targets[i],proposal.values[i],proposal.signatures[i],proposal.calldatas[i],proposal.eta) (/sb/GovernorAlpha_1.sol#214)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation/_edit#calls-inside-a-loop[0m
+INFO:Detectors:[92m
+GovernorAlpha._queueOrRevert (/sb/GovernorAlpha_1.sol#190-193) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(! timelock.queuedTransactions(keccak256(bytes)(abi.encode(target,value,signature,data,eta))),GovernorAlpha::_queueOrRevert: proposal action already queued at eta) (/sb/GovernorAlpha_1.sol#191)
+GovernorAlpha.state (/sb/GovernorAlpha_1.sol#229-249) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp >= add256(proposal.eta,timelock.GRACE_PERIOD()) (/sb/GovernorAlpha_1.sol#244-248)
+GovernorAlpha.add256 (/sb/GovernorAlpha_1.sol#284-288) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(c >= a,addition overflow) (/sb/GovernorAlpha_1.sol#286)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#block-timestamp[0m
+INFO:Detectors:[92m
+GovernorAlpha.getChainId uses assembly (/sb/GovernorAlpha_1.sol#295-299)
+	- /sb/GovernorAlpha_1.sol#297
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+Different versions of Solidity is used in /sb/GovernorAlpha_1.sol:
+	- Version used: ['ABIEncoderV2', '^0.5.16']
+	- /sb/GovernorAlpha_1.sol#1 declares pragma solidity^0.5.16
+	- /sb/GovernorAlpha_1.sol#3 declares pragma experimentalABIEncoderV2
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#different-pragma-directives-are-used[0m
+INFO:Detectors:[92m
+GovernorAlpha.propose (/sb/GovernorAlpha_1.sol#139-177) should be declared external
+GovernorAlpha.queue (/sb/GovernorAlpha_1.sol#179-188) should be declared external
+GovernorAlpha.execute (/sb/GovernorAlpha_1.sol#195-203) should be declared external
+GovernorAlpha.cancel (/sb/GovernorAlpha_1.sol#205-218) should be declared external
+GovernorAlpha.getActions (/sb/GovernorAlpha_1.sol#220-223) should be declared external
+GovernorAlpha.getReceipt (/sb/GovernorAlpha_1.sol#225-227) should be declared external
+GovernorAlpha.castVote (/sb/GovernorAlpha_1.sol#251-253) should be declared external
+GovernorAlpha.castVoteBySig (/sb/GovernorAlpha_1.sol#255-262) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/GovernorAlpha_1.sol:
+	- pragma solidity^0.5.16 (/sb/GovernorAlpha_1.sol#1): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Function 'GovernorAlpha._queueOrRevert' (/sb/GovernorAlpha_1.sol#190-193) is not in mixedCase
+Function 'GovernorAlpha._castVote' (/sb/GovernorAlpha_1.sol#264-282) is not in mixedCase
+Function 'TimelockInterface.GRACE_PERIOD' (/sb/GovernorAlpha_1.sol#304) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/GovernorAlpha_1.sol analyzed (3 contracts), 29 result(s) found

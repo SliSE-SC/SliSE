@@ -1,0 +1,158 @@
+WARNING:root:You are using solc version 0.4.24, The latest supported version is 0.4.19
+INFO:CryticCompile:Compilation warnings/errors on /sb/BridgeValidators_1.sol:
+/sb/BridgeValidators_1.sol:70:5: Warning: Functions in interfaces should be declared external.
+    function isValidator(address _validator) public view returns(bool);
+    ^-----------------------------------------------------------------^
+/sb/BridgeValidators_1.sol:71:5: Warning: Functions in interfaces should be declared external.
+    function requiredSignatures() public view returns(uint256);
+    ^---------------------------------------------------------^
+/sb/BridgeValidators_1.sol:72:5: Warning: Functions in interfaces should be declared external.
+    function owner() public view returns(address);
+    ^--------------------------------------------^
+
+INFO:root:contract /sb/BridgeValidators_1.sol:SafeMath:
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM Code Coverage: 			 100.0%
+INFO:symExec:	  Integer Underflow: 			 False
+INFO:symExec:	  Integer Overflow: 			 False
+INFO:symExec:	  Parity Multisig Bug 2: 		 False
+INFO:symExec:	  Callstack Depth Attack Vulnerability:  False
+INFO:symExec:	  Transaction-Ordering Dependence (TOD): False
+INFO:symExec:	  Timestamp Dependency: 		 False
+INFO:symExec:	  Re-Entrancy Vulnerability: 		 False
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:contract /sb/BridgeValidators_1.sol:BridgeValidators:
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM Code Coverage: 			 44.3%
+INFO:symExec:	  Integer Underflow: 			 True
+INFO:symExec:	  Integer Overflow: 			 True
+INFO:symExec:	  Parity Multisig Bug 2: 		 False
+INFO:symExec:	  Callstack Depth Attack Vulnerability:  False
+INFO:symExec:	  Transaction-Ordering Dependence (TOD): False
+INFO:symExec:	  Timestamp Dependency: 		 False
+INFO:symExec:	  Re-Entrancy Vulnerability: 		 False
+INFO:symExec:/sb/BridgeValidators_1.sol:179:28: Warning: Integer Underflow.
+        return uintStorage[keccak256(abi.encodePacked("validatorCount"))
+/sb/BridgeValidators_1.sol:191:28: Warning: Integer Underflow.
+        return boolStorage[keccak256(abi.encodePacked("isInitialized"))
+/sb/BridgeValidators_1.sol:47:31: Warning: Integer Underflow.
+        return addressStorage[keccak256(abi.encodePacked("owner"))
+/sb/BridgeValidators_1.sol:4:1: Warning: Integer Underflow.
+
+^
+Spanning multiple lines.
+Integer Underflow occurs if:
+    _validator = 1461501637330902918203684832716283019655932542975
+    addressStorage[keccak256(abi.encodePacked("owner"))] = 0
+/sb/BridgeValidators_1.sol:13:1: Warning: Integer Underflow.
+    mapping(bytes32 => string)
+Integer Underflow occurs if:
+    _validator = 1461501637330902918203684832716283019655932542975
+    addressStorage[keccak256(abi.encodePacked("owner"))] = 0
+/sb/BridgeValidators_1.sol:175:28: Warning: Integer Underflow.
+        return uintStorage[keccak256(abi.encodePacked("requiredSignatures"))
+/sb/BridgeValidators_1.sol:183:28: Warning: Integer Underflow.
+        return boolStorage[keccak256(abi.encodePacked("validators", _validator))
+INFO:symExec:/sb/BridgeValidators_1.sol:178:5: Warning: Integer Overflow.
+    function validatorCount() public view returns(uint256) {
+    ^
+Spanning multiple lines.
+/sb/BridgeValidators_1.sol:190:5: Warning: Integer Overflow.
+    function isInitialized() public view returns(bool) {
+    ^
+Spanning multiple lines.
+/sb/BridgeValidators_1.sol:175:38: Warning: Integer Overflow.
+        return uintStorage[keccak256(abi.encodePacked("requiredSignatures")
+Integer Overflow occurs if:
+    addressStorage[keccak256(abi.encodePacked("owner"))] = 0
+/sb/BridgeValidators_1.sol:183:38: Warning: Integer Overflow.
+        return boolStorage[keccak256(abi.encodePacked("validators", _validator)
+Integer Overflow occurs if:
+    _validator = 1461501637330902918203684832716283019655932542975
+    addressStorage[keccak256(abi.encodePacked("owner"))] = 0
+/sb/BridgeValidators_1.sol:183:28: Warning: Integer Overflow.
+        return boolStorage[keccak256(abi.encodePacked("validators", _validator))
+Integer Overflow occurs if:
+    _validator = 1461501637330902918203684832716283019655932542975
+    addressStorage[keccak256(abi.encodePacked("owner"))] = 0
+/sb/BridgeValidators_1.sol:129:5: Warning: Integer Overflow.
+    function initialize(uint256 _requiredSignatures, address[] _initialValidators, address _owner)
+    ^
+Spanning multiple lines.
+Integer Overflow occurs if:
+    _initialValidators = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+/sb/BridgeValidators_1.sol:179:38: Warning: Integer Overflow.
+        return uintStorage[keccak256(abi.encodePacked("validatorCount")
+Integer Overflow occurs if:
+    addressStorage[keccak256(abi.encodePacked("owner"))] = 0
+/sb/BridgeValidators_1.sol:174:5: Warning: Integer Overflow.
+    function requiredSignatures() public view returns(uint256) {
+    ^
+Spanning multiple lines.
+/sb/BridgeValidators_1.sol:46:5: Warning: Integer Overflow.
+    function owner() public view returns (address) {
+    ^
+Spanning multiple lines.
+/sb/BridgeValidators_1.sol:47:41: Warning: Integer Overflow.
+        return addressStorage[keccak256(abi.encodePacked("owner")
+Integer Overflow occurs if:
+    addressStorage[keccak256(abi.encodePacked("owner"))] = 0
+/sb/BridgeValidators_1.sol:182:5: Warning: Integer Overflow.
+    function validators(address _validator) public view returns(bool) {
+    ^
+Spanning multiple lines.
+/sb/BridgeValidators_1.sol:186:5: Warning: Integer Overflow.
+    function isValidator(address _validator) public view returns(bool) {
+    ^
+Spanning multiple lines.
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:contract /sb/BridgeValidators_1.sol:Ownable:
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM Code Coverage: 			 57.1%
+INFO:symExec:	  Integer Underflow: 			 True
+INFO:symExec:	  Integer Overflow: 			 True
+INFO:symExec:	  Parity Multisig Bug 2: 		 False
+INFO:symExec:	  Callstack Depth Attack Vulnerability:  False
+INFO:symExec:	  Transaction-Ordering Dependence (TOD): False
+INFO:symExec:	  Timestamp Dependency: 		 False
+INFO:symExec:	  Re-Entrancy Vulnerability: 		 False
+INFO:symExec:/sb/BridgeValidators_1.sol:47:31: Warning: Integer Underflow.
+        return addressStorage[keccak256(abi.encodePacked("owner"))
+/sb/BridgeValidators_1.sol:4:1: Warning: Integer Underflow.
+
+^
+Spanning multiple lines.
+Integer Underflow occurs if:
+    newOwner = 1461501637330902918203684832716283019655932542975
+    addressStorage[keccak256(abi.encodePacked("owner"))] = 0
+/sb/BridgeValidators_1.sol:13:1: Warning: Integer Underflow.
+    mapping(bytes32 => string)
+Integer Underflow occurs if:
+    newOwner = 1461501637330902918203684832716283019655932542975
+    addressStorage[keccak256(abi.encodePacked("owner"))] = 0
+INFO:symExec:/sb/BridgeValidators_1.sol:46:5: Warning: Integer Overflow.
+    function owner() public view returns (address) {
+    ^
+Spanning multiple lines.
+/sb/BridgeValidators_1.sol:47:41: Warning: Integer Overflow.
+        return addressStorage[keccak256(abi.encodePacked("owner")
+Integer Overflow occurs if:
+    newOwner = 1461501637330902918203684832716283019655932542975
+    addressStorage[keccak256(abi.encodePacked("owner"))] = 0
+/sb/BridgeValidators_1.sol:47:31: Warning: Integer Overflow.
+        return addressStorage[keccak256(abi.encodePacked("owner"))
+Integer Overflow occurs if:
+    newOwner = 1461501637330902918203684832716283019655932542975
+    addressStorage[keccak256(abi.encodePacked("owner"))] = 0
+INFO:symExec:	====== Analysis Completed ======
+INFO:root:contract /sb/BridgeValidators_1.sol:EternalStorage:
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM Code Coverage: 			 100.0%
+INFO:symExec:	  Integer Underflow: 			 False
+INFO:symExec:	  Integer Overflow: 			 False
+INFO:symExec:	  Parity Multisig Bug 2: 		 False
+INFO:symExec:	  Callstack Depth Attack Vulnerability:  False
+INFO:symExec:	  Transaction-Ordering Dependence (TOD): False
+INFO:symExec:	  Timestamp Dependency: 		 False
+INFO:symExec:	  Re-Entrancy Vulnerability: 		 False
+INFO:symExec:	====== Analysis Completed ======

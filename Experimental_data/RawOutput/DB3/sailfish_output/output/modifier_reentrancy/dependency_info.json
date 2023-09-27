@@ -1,0 +1,22 @@
+{
+    "modifier_reentrancy.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "airDrop",
+                "airDrop"
+            ],
+            "from_function": "airDrop",
+            "to_function": "airDrop",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 29\nFunction: hasNoBalance\nNode: \nEXPRESSION require(bool)(tokenBalance[msg.sender] == 0)\nIRS: \nTMP_11 = SOLIDITY_CALL require(bool)(TMP_10)\"",
+                        "\"BlockID: 1\nFunction: airDrop\nNode: \nEXPRESSION tokenBalance[msg.sender] += 20\nIRS: \nREF_0 = REF_0 + 20\""
+                    ],
+                    "state_variable": "tokenBalance"
+                }
+            ]
+        }
+    ]
+}

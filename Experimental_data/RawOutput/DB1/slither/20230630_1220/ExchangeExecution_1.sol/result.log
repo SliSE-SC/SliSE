@@ -1,0 +1,114 @@
+INFO:Slither:Compilation warnings/errors on /sb/ExchangeExecution_1.sol:
+/sb/ExchangeExecution_1.sol:19:1: Warning: Experimental features are turned on. Do not use experimental features on live deployments.
+pragma experimental "ABIEncoderV2";
+^---------------------------------^
+/sb/ExchangeExecution_1.sol:1749:5: Warning: Function state mutability can be restricted to pure
+    function validateReceiveTokens(
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+INFO:Detectors:[93m
+LibBytes.contentAddress (/sb/ExchangeExecution_1.sol#74-83) is declared view but contains assembly code
+LibBytes.readBytes4 (/sb/ExchangeExecution_1.sol#89-107) is declared view but contains assembly code
+LibBytes.readBytes32 (/sb/ExchangeExecution_1.sol#114-135) is declared view but contains assembly code
+LibBytes.memCopy (/sb/ExchangeExecution_1.sol#141-240) is declared view but contains assembly code
+ExchangeHeaderLibrary.parseExchangeHeader (/sb/ExchangeExecution_1.sol#1626-1645) is declared view but contains assembly code
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#constant-functions-changing-the-state[0m
+INFO:Detectors:[93m
+ISetToken (/sb/ExchangeExecution_1.sol#1972-2056) has incorrect ERC20 function interface(s):
+	-transfer (/sb/ExchangeExecution_1.sol#2051-2055)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-erc20-interface[0m
+INFO:Detectors:[92m
+ExchangeIssuanceLibrary.validatePostExchangeReceiveTokenBalances has external calls inside a loop:
+	- currentBal = vault.getOwnerBalance(_receiveTokens[i],_userToCheck) (/sb/ExchangeExecution_1.sol#1807-1810)
+ExchangeIssuanceLibrary.validateSendTokenParams has external calls inside a loop:
+	- require(bool,string)(core.exchangeIds(_sendTokenExchangeIds[i]) != address(0),ExchangeIssuanceLibrary.validateSendTokenParams: Must be valid exchange) (/sb/ExchangeExecution_1.sol#1853-1856)
+ExchangeExecution.executeExchangeOrders has external calls inside a loop:
+	- exchangeWrapper = coreInstance.exchangeIds(header.exchange) (/sb/ExchangeExecution_1.sol#2183)
+ExchangeExecution.calculateReceiveTokenBalances has external calls inside a loop:
+	- tokenBalance = vaultInstance.getOwnerBalance(_exchangeIssuanceParams.receiveTokens[i],msg.sender) (/sb/ExchangeExecution_1.sol#2251-2254)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation/_edit#calls-inside-a-loop[0m
+INFO:Detectors:[92m
+LibBytes.contentAddress uses assembly (/sb/ExchangeExecution_1.sol#74-83)
+	- /sb/ExchangeExecution_1.sol#79-82
+LibBytes.readBytes4 uses assembly (/sb/ExchangeExecution_1.sol#89-107)
+	- /sb/ExchangeExecution_1.sol#100-106
+LibBytes.readBytes32 uses assembly (/sb/ExchangeExecution_1.sol#114-135)
+	- /sb/ExchangeExecution_1.sol#131-134
+LibBytes.memCopy uses assembly (/sb/ExchangeExecution_1.sol#141-240)
+	- /sb/ExchangeExecution_1.sol#153-159
+	- /sb/ExchangeExecution_1.sol#181-208
+	- /sb/ExchangeExecution_1.sol#209-238
+ExchangeHeaderLibrary.parseExchangeHeader uses assembly (/sb/ExchangeExecution_1.sol#1626-1645)
+	- /sb/ExchangeExecution_1.sol#1638-1644
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+Different versions of Solidity is used in /sb/ExchangeExecution_1.sol:
+	- Version used: ['0.5.4', 'ABIEncoderV2']
+	- /sb/ExchangeExecution_1.sol#18 declares pragma solidity0.5.4
+	- /sb/ExchangeExecution_1.sol#19 declares pragma experimentalABIEncoderV2
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#different-pragma-directives-are-used[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/ExchangeExecution_1.sol:
+	- pragma solidity0.5.4 (/sb/ExchangeExecution_1.sol#18): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Parameter 'A' of AddressArrayUtils.indexOf (/sb/ExchangeExecution_1.sol#285) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.contains (/sb/ExchangeExecution_1.sol#301) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.indexOfFromEnd (/sb/ExchangeExecution_1.sol#309) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.extend (/sb/ExchangeExecution_1.sol#325) is not in mixedCase
+Parameter 'B' of AddressArrayUtils.extend (/sb/ExchangeExecution_1.sol#325) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.append (/sb/ExchangeExecution_1.sol#344) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.sExtend (/sb/ExchangeExecution_1.sol#359) is not in mixedCase
+Parameter 'B' of AddressArrayUtils.sExtend (/sb/ExchangeExecution_1.sol#359) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.intersect (/sb/ExchangeExecution_1.sol#372) is not in mixedCase
+Parameter 'B' of AddressArrayUtils.intersect (/sb/ExchangeExecution_1.sol#372) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.union (/sb/ExchangeExecution_1.sol#399) is not in mixedCase
+Parameter 'B' of AddressArrayUtils.union (/sb/ExchangeExecution_1.sol#399) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.unionB (/sb/ExchangeExecution_1.sol#410) is not in mixedCase
+Parameter 'B' of AddressArrayUtils.unionB (/sb/ExchangeExecution_1.sol#410) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.difference (/sb/ExchangeExecution_1.sol#446) is not in mixedCase
+Parameter 'B' of AddressArrayUtils.difference (/sb/ExchangeExecution_1.sol#446) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.sReverse (/sb/ExchangeExecution_1.sol#472) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.pop (/sb/ExchangeExecution_1.sol#487) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.remove (/sb/ExchangeExecution_1.sol#506) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.sPop (/sb/ExchangeExecution_1.sol#520) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.sPopCheap (/sb/ExchangeExecution_1.sol#538) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.sRemoveCheap (/sb/ExchangeExecution_1.sol#557) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.hasDuplicate (/sb/ExchangeExecution_1.sol#573) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.isEqual (/sb/ExchangeExecution_1.sol#593) is not in mixedCase
+Parameter 'B' of AddressArrayUtils.isEqual (/sb/ExchangeExecution_1.sol#593) is not in mixedCase
+Parameter 'A' of AddressArrayUtils.argGet (/sb/ExchangeExecution_1.sol#611) is not in mixedCase
+Parameter '' of ICore.validSets (/sb/ExchangeExecution_1.sol#689) is not in mixedCase
+Parameter '' of ICore.validModules (/sb/ExchangeExecution_1.sol#699) is not in mixedCase
+Parameter '_principal' of CommonMath.getPartialAmount (/sb/ExchangeExecution_1.sol#1541) is not in mixedCase
+Parameter '_numerator' of CommonMath.getPartialAmount (/sb/ExchangeExecution_1.sol#1542) is not in mixedCase
+Parameter '_denominator' of CommonMath.getPartialAmount (/sb/ExchangeExecution_1.sol#1543) is not in mixedCase
+Function 'ExchangeHeaderLibrary.EXCHANGE_HEADER_LENGTH' (/sb/ExchangeExecution_1.sol#1610-1616) is not in mixedCase
+Parameter '_orderData' of ExchangeHeaderLibrary.parseExchangeHeader (/sb/ExchangeExecution_1.sol#1627) is not in mixedCase
+Parameter '_offset' of ExchangeHeaderLibrary.parseExchangeHeader (/sb/ExchangeExecution_1.sol#1628) is not in mixedCase
+Parameter '_orderData' of ExchangeHeaderLibrary.sliceBodyData (/sb/ExchangeExecution_1.sol#1656) is not in mixedCase
+Parameter '_scannedBytes' of ExchangeHeaderLibrary.sliceBodyData (/sb/ExchangeExecution_1.sol#1657) is not in mixedCase
+Parameter '_exchangeDataLength' of ExchangeHeaderLibrary.sliceBodyData (/sb/ExchangeExecution_1.sol#1658) is not in mixedCase
+Parameter '_set' of ExchangeIssuanceLibrary.validateQuantity (/sb/ExchangeExecution_1.sol#1723) is not in mixedCase
+Parameter '_quantity' of ExchangeIssuanceLibrary.validateQuantity (/sb/ExchangeExecution_1.sol#1724) is not in mixedCase
+Parameter '_receiveTokens' of ExchangeIssuanceLibrary.validateReceiveTokens (/sb/ExchangeExecution_1.sol#1750) is not in mixedCase
+Parameter '_receiveTokenAmounts' of ExchangeIssuanceLibrary.validateReceiveTokens (/sb/ExchangeExecution_1.sol#1751) is not in mixedCase
+Parameter '_vault' of ExchangeIssuanceLibrary.validatePostExchangeReceiveTokenBalances (/sb/ExchangeExecution_1.sol#1794) is not in mixedCase
+Parameter '_receiveTokens' of ExchangeIssuanceLibrary.validatePostExchangeReceiveTokenBalances (/sb/ExchangeExecution_1.sol#1795) is not in mixedCase
+Parameter '_requiredBalances' of ExchangeIssuanceLibrary.validatePostExchangeReceiveTokenBalances (/sb/ExchangeExecution_1.sol#1796) is not in mixedCase
+Parameter '_userToCheck' of ExchangeIssuanceLibrary.validatePostExchangeReceiveTokenBalances (/sb/ExchangeExecution_1.sol#1797) is not in mixedCase
+Parameter '_core' of ExchangeIssuanceLibrary.validateSendTokenParams (/sb/ExchangeExecution_1.sol#1830) is not in mixedCase
+Parameter '_sendTokenExchangeIds' of ExchangeIssuanceLibrary.validateSendTokenParams (/sb/ExchangeExecution_1.sol#1831) is not in mixedCase
+Parameter '_sendTokens' of ExchangeIssuanceLibrary.validateSendTokenParams (/sb/ExchangeExecution_1.sol#1832) is not in mixedCase
+Parameter '_sendTokenAmounts' of ExchangeIssuanceLibrary.validateSendTokenParams (/sb/ExchangeExecution_1.sol#1833) is not in mixedCase
+Parameter '_core' of ExchangeWrapperLibrary.callExchange (/sb/ExchangeExecution_1.sol#1925) is not in mixedCase
+Parameter '_exchangeData' of ExchangeWrapperLibrary.callExchange (/sb/ExchangeExecution_1.sol#1926) is not in mixedCase
+Parameter '_exchangeWrapper' of ExchangeWrapperLibrary.callExchange (/sb/ExchangeExecution_1.sol#1927) is not in mixedCase
+Parameter '_bodyData' of ExchangeWrapperLibrary.callExchange (/sb/ExchangeExecution_1.sol#1928) is not in mixedCase
+Parameter '_core' of ModuleCoreState. (/sb/ExchangeExecution_1.sol#2108) is not in mixedCase
+Parameter '_vault' of ModuleCoreState. (/sb/ExchangeExecution_1.sol#2109) is not in mixedCase
+Parameter '_orderData' of ExchangeExecution.executeExchangeOrders (/sb/ExchangeExecution_1.sol#2167) is not in mixedCase
+Parameter '_exchangeIssuanceParams' of ExchangeExecution.calculateReceiveTokenBalances (/sb/ExchangeExecution_1.sol#2241) is not in mixedCase
+Parameter '_exchangeIssuanceParams' of ExchangeExecution.validateExchangeIssuanceParams (/sb/ExchangeExecution_1.sol#2272) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/ExchangeExecution_1.sol analyzed (14 contracts), 75 result(s) found

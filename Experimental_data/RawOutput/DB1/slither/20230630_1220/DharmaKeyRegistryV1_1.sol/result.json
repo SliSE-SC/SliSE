@@ -1,0 +1,89 @@
+{
+    "errors": [
+        "EXIT_CODE_8"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/DharmaKeyRegistryV1_1.sol",
+            "impact": "Medium",
+            "line": 87,
+            "line_end": 108,
+            "message": "ECDSA.recover (DharmaKeyRegistryV1_1.sol#87-108) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ECDSA",
+            "filename": "all_contract/DharmaKeyRegistryV1_1.sol",
+            "function": "recover",
+            "impact": "Informational",
+            "line": 87,
+            "line_end": 108,
+            "message": "ECDSA.recover uses assembly (DharmaKeyRegistryV1_1.sol#87-108)\n\t- DharmaKeyRegistryV1_1.sol#101-105\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "Ownable",
+            "filename": "all_contract/DharmaKeyRegistryV1_1.sol",
+            "function": "renounceOwnership",
+            "impact": "Informational",
+            "line": 40,
+            "line_end": 43,
+            "message": "Ownable.renounceOwnership (DharmaKeyRegistryV1_1.sol#40-43) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Ownable",
+            "filename": "all_contract/DharmaKeyRegistryV1_1.sol",
+            "function": "transferOwnership",
+            "impact": "Informational",
+            "line": 49,
+            "line_end": 51,
+            "message": "Ownable.transferOwnership (DharmaKeyRegistryV1_1.sol#49-51) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DharmaKeyRegistryV1_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in DharmaKeyRegistryV1_1.sol:\n\t- pragma solidity0.5.11 (DharmaKeyRegistryV1_1.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DharmaKeyRegistryV1_1.sol",
+            "impact": "Informational",
+            "line": 49,
+            "message": "Parameter '_newOwner' of Ownable.transferOwnership (DharmaKeyRegistryV1_1.sol#49) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DharmaKeyRegistryV1_1.sol",
+            "impact": "Informational",
+            "line": 57,
+            "line_end": 61,
+            "message": "Function 'Ownable._transferOwnership' (DharmaKeyRegistryV1_1.sol#57-61) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DharmaKeyRegistryV1_1.sol",
+            "impact": "Informational",
+            "line": 57,
+            "message": "Parameter '_newOwner' of Ownable._transferOwnership (DharmaKeyRegistryV1_1.sol#57) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

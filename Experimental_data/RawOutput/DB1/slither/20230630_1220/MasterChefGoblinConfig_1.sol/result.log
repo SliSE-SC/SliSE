@@ -1,0 +1,43 @@
+INFO:Slither:Compilation warnings/errors on /sb/MasterChefGoblinConfig_1.sol:
+/sb/MasterChefGoblinConfig_1.sol:294:1: Warning: Experimental features are turned on. Do not use experimental features on live deployments.
+pragma experimental ABIEncoderV2;
+^-------------------------------^
+
+INFO:Detectors:[92m
+Different versions of Solidity is used in /sb/MasterChefGoblinConfig_1.sol:
+	- Version used: ['ABIEncoderV2', '^0.5.0']
+	- /sb/MasterChefGoblinConfig_1.sol#2 declares pragma solidity^0.5.0
+	- /sb/MasterChefGoblinConfig_1.sol#294 declares pragma experimentalABIEncoderV2
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#different-pragma-directives-are-used[0m
+INFO:Detectors:[92m
+Ownable.owner (/sb/MasterChefGoblinConfig_1.sol#29-31) should be declared external
+Ownable.renounceOwnership (/sb/MasterChefGoblinConfig_1.sol#55-58) should be declared external
+Ownable.transferOwnership (/sb/MasterChefGoblinConfig_1.sol#64-66) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/MasterChefGoblinConfig_1.sol:
+	- pragma solidity^0.5.0 (/sb/MasterChefGoblinConfig_1.sol#2): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Low level call in SafeToken.safeApprove (/sb/MasterChefGoblinConfig_1.sol#270-274):
+	-(success,data) = token.call(abi.encodeWithSelector(0x095ea7b3,to,value)) /sb/MasterChefGoblinConfig_1.sol#272
+Low level call in SafeToken.safeTransfer (/sb/MasterChefGoblinConfig_1.sol#276-280):
+	-(success,data) = token.call(abi.encodeWithSelector(0xa9059cbb,to,value)) /sb/MasterChefGoblinConfig_1.sol#278
+Low level call in SafeToken.safeTransferFrom (/sb/MasterChefGoblinConfig_1.sol#282-286):
+	-(success,data) = token.call(abi.encodeWithSelector(0x23b872dd,from,to,value)) /sb/MasterChefGoblinConfig_1.sol#284
+Low level call in SafeToken.safeTransferETH (/sb/MasterChefGoblinConfig_1.sol#288-291):
+	-(success) = to.call.value(value)(new bytes(0)) /sb/MasterChefGoblinConfig_1.sol#289
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#low-level-calls[0m
+INFO:Detectors:[92m
+Function 'Ownable._transferOwnership' (/sb/MasterChefGoblinConfig_1.sol#71-75) is not in mixedCase
+Function 'IUniswapV2Pair.DOMAIN_SEPARATOR' (/sb/MasterChefGoblinConfig_1.sol#201) is not in mixedCase
+Function 'IUniswapV2Pair.PERMIT_TYPEHASH' (/sb/MasterChefGoblinConfig_1.sol#202) is not in mixedCase
+Function 'IUniswapV2Pair.MINIMUM_LIQUIDITY' (/sb/MasterChefGoblinConfig_1.sol#219) is not in mixedCase
+Parameter '' of IUniswapV2Pair.initialize (/sb/MasterChefGoblinConfig_1.sol#234) is not in mixedCase
+Parameter '_scope_0' of IUniswapV2Pair.initialize (/sb/MasterChefGoblinConfig_1.sol#234) is not in mixedCase
+Parameter '' of MasterChefGoblinConfig.workFactor (/sb/MasterChefGoblinConfig_1.sol#367) is not in mixedCase
+Parameter '' of MasterChefGoblinConfig.killFactor (/sb/MasterChefGoblinConfig_1.sol#373) is not in mixedCase
+Parameter '_oracle' of MasterChefGoblinConfig. (/sb/MasterChefGoblinConfig_1.sol#314) is not in mixedCase
+Parameter '_oracle' of MasterChefGoblinConfig.setOracle (/sb/MasterChefGoblinConfig_1.sol#319) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/MasterChefGoblinConfig_1.sol analyzed (9 contracts), 19 result(s) found

@@ -1,0 +1,22 @@
+WARNING:root:You are using solc version 0.8.4, The latest supported version is 0.4.19
+INFO:CryticCompile:Compilation warnings/errors on /sb/EventToken_2.sol:
+Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing "SPDX-License-Identifier: <SPDX-License>" to each source file. Use "SPDX-License-Identifier: UNLICENSED" for non-open-source code. Please see https://spdx.org for more information.
+--> /sb/EventToken_2.sol
+
+
+Traceback (most recent call last):
+  File "/oyente/oyente/oyente.py", line 232, in <module>
+    main()
+  File "/oyente/oyente/oyente.py", line 227, in main
+    exit_code = analyze_solidity()
+  File "/oyente/oyente/oyente.py", line 109, in analyze_solidity
+    inputs = helper.get_inputs(global_params.TARGET_CONTRACTS)
+  File "/oyente/oyente/input_helper.py", line 78, in get_inputs
+    source_map = SourceMap(contract, self.source, 'solidity', self.root_path, self.remap, self.allow_paths)
+  File "/oyente/oyente/source_map.py", line 53, in __init__
+    self.var_names = self._get_var_names()
+  File "/oyente/oyente/source_map.py", line 146, in _get_var_names
+    return SourceMap.ast_helper.extract_state_variable_names(self.cname)
+  File "/oyente/oyente/ast_helper.py", line 97, in extract_state_variable_names
+    state_variables = self.extract_states_definitions()[c_name]
+KeyError: '/sb/EventToken_2.sol:EventToken'

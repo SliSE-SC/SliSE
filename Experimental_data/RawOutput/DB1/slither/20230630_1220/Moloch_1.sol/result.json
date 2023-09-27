@@ -1,0 +1,433 @@
+{
+    "errors": [
+        "EXIT_CODE_42"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "GuildBank",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "fairShare",
+            "impact": "Medium",
+            "line": 139,
+            "line_end": 151,
+            "message": "GuildBank.fairShare (Moloch_1.sol#139-151) uses a dangerous strict equality:\n\t- balance == 0\n\t- prod / balance == shares\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "processProposal",
+            "impact": "Medium",
+            "line": 493,
+            "line_end": 568,
+            "message": "Reentrancy in Moloch.processProposal (Moloch_1.sol#493-568):\n\tExternal calls:\n\t- ! emergencyProcessing && proposal.paymentToken != IERC20(0) && proposal.paymentRequested > proposal.paymentToken.balanceOf(address(guildBank)) (Moloch_1.sol#511-513)\n\tState variables written after the call(s):\n\t- members (Moloch_1.sol#521)\n\t- members (Moloch_1.sol#522)\n\t- members (Moloch_1.sol#530)\n\t- members (Moloch_1.sol#534)\n\t- proposals (Moloch_1.sol#517)\n\t- totalLoot (Moloch_1.sol#540)\n\t- totalShares (Moloch_1.sol#539)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "submitProposal",
+            "impact": "Medium",
+            "line": 349,
+            "message": "flags in Moloch.submitProposal (Moloch_1.sol#349) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GuildBank",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "withdraw",
+            "impact": "Low",
+            "line": 127,
+            "message": "GuildBank.withdraw has external calls inside a loop:\n\t- amount = fairShare(approvedTokens[i].balanceOf(address(this)),shares,totalShares) (Moloch_1.sol#127)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GuildBank",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "withdraw",
+            "impact": "Low",
+            "line": 129,
+            "message": "GuildBank.withdraw has external calls inside a loop:\n\t- require(bool)(approvedTokens[i].transfer(receiver,amount)) (Moloch_1.sol#129)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "processProposal",
+            "impact": "Low",
+            "line": 493,
+            "line_end": 568,
+            "message": "Reentrancy in Moloch.processProposal (Moloch_1.sol#493-568):\n\tExternal calls:\n\t- ! emergencyProcessing && proposal.paymentToken != IERC20(0) && proposal.paymentRequested > proposal.paymentToken.balanceOf(address(guildBank)) (Moloch_1.sol#511-513)\n\tState variables written after the call(s):\n\t- memberAddressByDelegateKey (Moloch_1.sol#529)\n\t- memberAddressByDelegateKey (Moloch_1.sol#535)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "sponsorProposal",
+            "impact": "Low",
+            "line": 415,
+            "line_end": 454,
+            "message": "Reentrancy in Moloch.sponsorProposal (Moloch_1.sol#415-454):\n\tExternal calls:\n\t- require(bool,string)(depositToken.transferFrom(msg.sender,address(this),proposalDeposit),proposal deposit token transfer failed) (Moloch_1.sol#417)\n\tState variables written after the call(s):\n\t- proposalQueue (Moloch_1.sol#452)\n\t- proposals (Moloch_1.sol#444)\n\t- proposals (Moloch_1.sol#447)\n\t- proposals (Moloch_1.sol#449)\n\t- proposedToKick (Moloch_1.sol#435)\n\t- proposedToWhitelist (Moloch_1.sol#430)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "submitProposal",
+            "impact": "Low",
+            "line": 330,
+            "line_end": 353,
+            "message": "Reentrancy in Moloch.submitProposal (Moloch_1.sol#330-353):\n\tExternal calls:\n\t- require(bool,string)(IERC20(tributeToken).transferFrom(msg.sender,address(this),tributeOffered),tribute token transfer failed) (Moloch_1.sol#347)\n\tState variables written after the call(s):\n\t- proposalCount (Moloch_1.sol#351)\n\t- proposals (Moloch_1.sol#351)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "High",
+            "contract": "GuildBank",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "withdraw",
+            "impact": "Informational",
+            "line": 125,
+            "line_end": 132,
+            "message": "GuildBank.withdraw (Moloch_1.sol#125-132) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "GuildBank",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "withdrawToken",
+            "impact": "Informational",
+            "line": 134,
+            "line_end": 137,
+            "message": "GuildBank.withdrawToken (Moloch_1.sol#134-137) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "submitProposal",
+            "impact": "Informational",
+            "line": 330,
+            "line_end": 353,
+            "message": "Moloch.submitProposal (Moloch_1.sol#330-353) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "submitWhitelistProposal",
+            "impact": "Informational",
+            "line": 355,
+            "line_end": 364,
+            "message": "Moloch.submitWhitelistProposal (Moloch_1.sol#355-364) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "submitGuildKickProposal",
+            "impact": "Informational",
+            "line": 366,
+            "line_end": 378,
+            "message": "Moloch.submitGuildKickProposal (Moloch_1.sol#366-378) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "sponsorProposal",
+            "impact": "Informational",
+            "line": 415,
+            "line_end": 454,
+            "message": "Moloch.sponsorProposal (Moloch_1.sol#415-454) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "submitVote",
+            "impact": "Informational",
+            "line": 456,
+            "line_end": 491,
+            "message": "Moloch.submitVote (Moloch_1.sol#456-491) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "processProposal",
+            "impact": "Informational",
+            "line": 493,
+            "line_end": 568,
+            "message": "Moloch.processProposal (Moloch_1.sol#493-568) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "processWhitelistProposal",
+            "impact": "Informational",
+            "line": 570,
+            "line_end": 594,
+            "message": "Moloch.processWhitelistProposal (Moloch_1.sol#570-594) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "processGuildKickProposal",
+            "impact": "Informational",
+            "line": 596,
+            "line_end": 625,
+            "message": "Moloch.processGuildKickProposal (Moloch_1.sol#596-625) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "ragequit",
+            "impact": "Informational",
+            "line": 684,
+            "line_end": 686,
+            "message": "Moloch.ragequit (Moloch_1.sol#684-686) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "safeRagequit",
+            "impact": "Informational",
+            "line": 688,
+            "line_end": 699,
+            "message": "Moloch.safeRagequit (Moloch_1.sol#688-699) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "ragekick",
+            "impact": "Informational",
+            "line": 728,
+            "line_end": 737,
+            "message": "Moloch.ragekick (Moloch_1.sol#728-737) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "bailout",
+            "impact": "Informational",
+            "line": 739,
+            "line_end": 748,
+            "message": "Moloch.bailout (Moloch_1.sol#739-748) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "cancelProposal",
+            "impact": "Informational",
+            "line": 750,
+            "line_end": 764,
+            "message": "Moloch.cancelProposal (Moloch_1.sol#750-764) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "updateDelegateKey",
+            "impact": "Informational",
+            "line": 766,
+            "line_end": 781,
+            "message": "Moloch.updateDelegateKey (Moloch_1.sol#766-781) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "getProposalQueueLength",
+            "impact": "Informational",
+            "line": 795,
+            "line_end": 797,
+            "message": "Moloch.getProposalQueueLength (Moloch_1.sol#795-797) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "getProposalFlags",
+            "impact": "Informational",
+            "line": 799,
+            "line_end": 801,
+            "message": "Moloch.getProposalFlags (Moloch_1.sol#799-801) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Moloch",
+            "filename": "all_contract/Moloch_1.sol",
+            "function": "getMemberProposalVote",
+            "impact": "Informational",
+            "line": 826,
+            "line_end": 830,
+            "message": "Moloch.getMemberProposalVote (Moloch_1.sol#826-830) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 272,
+            "message": "Parameter '_summoner' of Moloch. (Moloch_1.sol#272) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 273,
+            "message": "Parameter '_approvedTokens' of Moloch. (Moloch_1.sol#273) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 274,
+            "message": "Parameter '_periodDuration' of Moloch. (Moloch_1.sol#274) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 275,
+            "message": "Parameter '_votingPeriodLength' of Moloch. (Moloch_1.sol#275) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 276,
+            "message": "Parameter '_gracePeriodLength' of Moloch. (Moloch_1.sol#276) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 277,
+            "message": "Parameter '_emergencyProcessingWait' of Moloch. (Moloch_1.sol#277) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 278,
+            "message": "Parameter '_bailoutWait' of Moloch. (Moloch_1.sol#278) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 279,
+            "message": "Parameter '_proposalDeposit' of Moloch. (Moloch_1.sol#279) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 280,
+            "message": "Parameter '_dilutionBound' of Moloch. (Moloch_1.sol#280) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 281,
+            "message": "Parameter '_processingReward' of Moloch. (Moloch_1.sol#281) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 380,
+            "line_end": 413,
+            "message": "Function 'Moloch._submitProposal' (Moloch_1.sol#380-413) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 627,
+            "line_end": 661,
+            "message": "Function 'Moloch._didPass' (Moloch_1.sol#627-661) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 663,
+            "line_end": 670,
+            "message": "Function 'Moloch._validateProposalForProcessing' (Moloch_1.sol#663-670) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 672,
+            "line_end": 682,
+            "message": "Function 'Moloch._returnDeposit' (Moloch_1.sol#672-682) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Moloch_1.sol",
+            "impact": "Informational",
+            "line": 701,
+            "line_end": 726,
+            "message": "Function 'Moloch._ragequit' (Moloch_1.sol#701-726) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

@@ -1,0 +1,50 @@
+2023-07-03 16:27:14,334: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:27:14,335: [11] m.main:INFO: Beginning analysis
+2023-07-03 16:27:14,340: [11] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:27:14,767: [11] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:27:14,881: [11] m.e.manticore:INFO: 0 alive states, 2 terminated states
+2023-07-03 16:27:15,040: [11] m.c.manticore:INFO: Results in /mcore_csbp4lpu
+2023-07-03 16:27:15,040: [11] m.c.manticore:INFO: Total time: 0.26964783668518066
+2023-07-03 16:27:15,773: [76] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:27:15,773: [76] m.main:INFO: Beginning analysis
+2023-07-03 16:27:15,778: [76] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:27:16,159: [76] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:27:16,265: [76] m.e.manticore:INFO: 0 alive states, 2 terminated states
+2023-07-03 16:27:16,394: [76] m.c.manticore:INFO: Results in /mcore_6nzgclzu
+2023-07-03 16:27:16,394: [76] m.c.manticore:INFO: Total time: 0.23178696632385254
+2023-07-03 16:27:17,059: [141] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:27:17,059: [141] m.main:INFO: Beginning analysis
+2023-07-03 16:27:17,062: [141] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:27:17,890: [141] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:27:20,369: [141] m.c.worker:ERROR: Exception in state 0: ManticoreError('Forking on unfeasible constraint set')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/worker.py", line 137, in run
+    current_state.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/state.py", line 8, in execute
+    return self._platform.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 3106, in execute
+    self.current_vm.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 1322, in execute
+    raise Concretize("Symbolic PC", expression=expression, setstate=setstate, policy="ALL")
+manticore.core.state.Concretize
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/worker.py", line 158, in run
+    m._fork(current_state, exc.expression, exc.policy, exc.setstate, exc.values)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/manticore.py", line 518, in _fork
+    raise ManticoreError("Forking on unfeasible constraint set")
+manticore.exceptions.ManticoreError: Forking on unfeasible constraint set
+ 
+2023-07-03 16:27:20,385: [141] m.e.manticore:INFO: 0 alive states, 1 terminated states
+2023-07-03 16:27:20,508: [141] m.c.manticore:INFO: Results in /mcore_ua7u7m03
+2023-07-03 16:27:20,508: [141] m.c.manticore:INFO: Total time: 2.604633331298828
+2023-07-03 16:27:21,249: [203] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:27:21,249: [203] m.main:INFO: Beginning analysis
+2023-07-03 16:27:21,252: [203] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:27:21,854: [203] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:27:22,015: [203] m.e.manticore:INFO: 0 alive states, 1 terminated states
+2023-07-03 16:27:22,065: [203] m.e.manticore:INFO: Starting symbolic transaction: 1
+2023-07-03 16:27:22,262: [203] m.c.manticore:INFO: Results in /mcore_7w916oqn
+2023-07-03 16:27:22,262: [203] m.c.manticore:INFO: Total time: 0.40339183807373047

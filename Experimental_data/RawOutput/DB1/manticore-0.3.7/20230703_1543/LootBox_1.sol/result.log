@@ -1,0 +1,36 @@
+2023-07-03 15:43:53,483: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 15:43:53,484: [11] m.main:INFO: Beginning analysis
+2023-07-03 15:43:53,486: [11] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 15:43:58,831: [11] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 15:43:59,616: [11] m.u.event:WARNING: Exception raised in callback: 'executeCalls(tuple[])'
+2023-07-03 15:43:59,617: [11] m.c.worker:ERROR: Exception in state 0: KeyError('executeCalls(tuple[])')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/worker.py", line 137, in run
+    current_state.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/state.py", line 8, in execute
+    return self._platform.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 3102, in execute
+    self._process_pending_transaction()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 3394, in _process_pending_transaction
+    self._open_transaction(sort, address, price, data, caller, value, gas=gas)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 2660, in _open_transaction
+    self._publish("will_open_transaction", tx)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 148, in _publish
+    self._publish_impl(_name, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 175, in _publish_impl
+    sink._publish_impl(_name, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 173, in _publish_impl
+    sink._publish_impl(_name, self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 166, in _publish_impl
+    callback(robj(), *new_args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/plugin.py", line 25, in g
+    return f(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/plugins.py", line 71, in will_open_transaction_callback
+    abi = md.get_abi(func_hsh)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/solidity.py", line 223, in get_abi
+    return dict(self._function_abi_items_by_signature[sig])
+KeyError: 'executeCalls(tuple[])'
+ 
+2023-07-03 15:43:59,767: [11] m.e.manticore:INFO: 0 alive states, 1 terminated states
+2023-07-03 15:44:00,004: [11] m.c.manticore:INFO: Results in /mcore_wm9qb8sp
+2023-07-03 15:44:00,005: [11] m.c.manticore:INFO: Total time: 1.1035187244415283

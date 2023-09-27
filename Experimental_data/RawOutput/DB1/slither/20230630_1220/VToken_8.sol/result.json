@@ -1,0 +1,650 @@
+{
+    "errors": [
+        "EXIT_CODE_67"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "EIP20NonStandardInterface",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "transfer",
+            "impact": "Medium",
+            "line": 1230,
+            "line_end": 1291,
+            "message": "EIP20NonStandardInterface (VToken_8.sol#1230-1291) has incorrect ERC20 function interface(s):\n\t-transfer (VToken_8.sol#1256)\n\t-transferFrom (VToken_8.sol#1270)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "_addReservesInternal",
+            "impact": "Medium",
+            "line": 2528,
+            "line_end": 2540,
+            "message": "Reentrancy in VToken._addReservesInternal (VToken_8.sol#2528-2540):\n\tExternal calls:\n\t- error = accrueInterest() (VToken_8.sol#2529-2530)\n\tState variables written after the call(s):\n\t- totalReserves (VToken_8.sol#2536-2537)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "_reduceReserves",
+            "impact": "Medium",
+            "line": 2591,
+            "line_end": 2601,
+            "message": "Reentrancy in VToken._reduceReserves (VToken_8.sol#2591-2601):\n\tExternal calls:\n\t- error = accrueInterest() (VToken_8.sol#2592-2593)\n\tState variables written after the call(s):\n\t- totalReserves (VToken_8.sol#2598-2599)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "_setComptroller",
+            "impact": "Medium",
+            "line": 2460,
+            "line_end": 2479,
+            "message": "Reentrancy in VToken._setComptroller (VToken_8.sol#2460-2479):\n\tExternal calls:\n\t- require(bool,string)(newComptroller.isComptroller(),marker method returned false) (VToken_8.sol#2468-2469)\n\tState variables written after the call(s):\n\t- comptroller (VToken_8.sol#2471-2472)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "_setInterestRateModel",
+            "impact": "Medium",
+            "line": 2656,
+            "line_end": 2666,
+            "message": "Reentrancy in VToken._setInterestRateModel (VToken_8.sol#2656-2666):\n\tExternal calls:\n\t- error = accrueInterest() (VToken_8.sol#2657-2658)\n\t- _setInterestRateModelFresh(newInterestRateModel) (VToken_8.sol#2663-2664)\n\tState variables written after the call(s):\n\t- interestRateModel (VToken_8.sol#2663-2664)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "_setInterestRateModelFresh",
+            "impact": "Medium",
+            "line": 2672,
+            "line_end": 2702,
+            "message": "Reentrancy in VToken._setInterestRateModelFresh (VToken_8.sol#2672-2702):\n\tExternal calls:\n\t- require(bool,string)(newInterestRateModel.isInterestRateModel(),marker method returned false) (VToken_8.sol#2691-2693)\n\tState variables written after the call(s):\n\t- interestRateModel (VToken_8.sol#2694-2696)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "_setReserveFactor",
+            "impact": "Medium",
+            "line": 2484,
+            "line_end": 2494,
+            "message": "Reentrancy in VToken._setReserveFactor (VToken_8.sol#2484-2494):\n\tExternal calls:\n\t- error = accrueInterest() (VToken_8.sol#2485-2486)\n\tState variables written after the call(s):\n\t- reserveFactorMantissa (VToken_8.sol#2491-2492)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "accrueInterest",
+            "impact": "Medium",
+            "line": 1666,
+            "line_end": 1744,
+            "message": "Reentrancy in VToken.accrueInterest (VToken_8.sol#1666-1744):\n\tExternal calls:\n\t- borrowRateMantissa = interestRateModel.getBorrowRate(cashPrior,borrowsPrior,reservesPrior) (VToken_8.sol#1683)\n\tState variables written after the call(s):\n\t- accrualBlockNumber (VToken_8.sol#1735)\n\t- borrowIndex (VToken_8.sol#1736)\n\t- totalBorrows (VToken_8.sol#1737)\n\t- totalReserves (VToken_8.sol#1738)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "borrowInternal",
+            "impact": "Medium",
+            "line": 2022,
+            "line_end": 2030,
+            "message": "Reentrancy in VToken.borrowInternal (VToken_8.sol#2022-2030):\n\tExternal calls:\n\t- error = accrueInterest() (VToken_8.sol#2023)\n\t- borrowFresh(msg.sender,borrowAmount) (VToken_8.sol#2029)\n\tState variables written after the call(s):\n\t- totalBorrows (VToken_8.sol#2029)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "initialize",
+            "impact": "Medium",
+            "line": 1308,
+            "line_end": 1339,
+            "message": "Reentrancy in VToken.initialize (VToken_8.sol#1308-1339):\n\tExternal calls:\n\t- err = _setComptroller(comptroller_) (VToken_8.sol#1322)\n\tState variables written after the call(s):\n\t- accrualBlockNumber (VToken_8.sol#1326)\n\t- borrowIndex (VToken_8.sol#1327)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "liquidateBorrowInternal",
+            "impact": "Medium",
+            "line": 2234,
+            "line_end": 2249,
+            "message": "Reentrancy in VToken.liquidateBorrowInternal (VToken_8.sol#2234-2249):\n\tExternal calls:\n\t- error = accrueInterest() (VToken_8.sol#2235)\n\t- error = vTokenCollateral.accrueInterest() (VToken_8.sol#2241)\n\t- liquidateBorrowFresh(msg.sender,borrower,repayAmount,vTokenCollateral) (VToken_8.sol#2248)\n\tState variables written after the call(s):\n\t- totalBorrows (VToken_8.sol#2248)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "redeemFresh",
+            "impact": "Medium",
+            "line": 1895,
+            "line_end": 2015,
+            "message": "Reentrancy in VToken.redeemFresh (VToken_8.sol#1895-2015):\n\tExternal calls:\n\t- allowed = comptroller.redeemAllowed(address(this),redeemer,vars.redeemTokens) (VToken_8.sol#1935)\n\t- IComptroller(address(comptroller)).treasuryPercent() != 0 (VToken_8.sol#1978-1999)\n\t- (vars.mathErr,feeAmount) = mulUInt(vars.redeemAmount,IComptroller(address(comptroller)).treasuryPercent()) (VToken_8.sol#1979)\n\t- doTransferOut(address(uint160(IComptroller(address(comptroller)).treasuryAddress())),feeAmount) (VToken_8.sol#1994)\n\tState variables written after the call(s):\n\t- accountTokens (VToken_8.sol#2005)\n\t- totalSupply (VToken_8.sol#2004)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "repayBorrowBehalfInternal",
+            "impact": "Medium",
+            "line": 2130,
+            "line_end": 2138,
+            "message": "Reentrancy in VToken.repayBorrowBehalfInternal (VToken_8.sol#2130-2138):\n\tExternal calls:\n\t- error = accrueInterest() (VToken_8.sol#2131)\n\t- repayBorrowFresh(msg.sender,borrower,repayAmount) (VToken_8.sol#2137)\n\tState variables written after the call(s):\n\t- totalBorrows (VToken_8.sol#2137)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "repayBorrowInternal",
+            "impact": "Medium",
+            "line": 2114,
+            "line_end": 2122,
+            "message": "Reentrancy in VToken.repayBorrowInternal (VToken_8.sol#2114-2122):\n\tExternal calls:\n\t- error = accrueInterest() (VToken_8.sol#2115)\n\t- repayBorrowFresh(msg.sender,msg.sender,repayAmount) (VToken_8.sol#2121)\n\tState variables written after the call(s):\n\t- totalBorrows (VToken_8.sol#2121)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "redeemFresh",
+            "impact": "Medium",
+            "line": 1898,
+            "message": "vars in VToken.redeemFresh (VToken_8.sol#1898) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "borrowFresh",
+            "impact": "Medium",
+            "line": 2061,
+            "message": "vars in VToken.borrowFresh (VToken_8.sol#2061) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "_addReservesFresh",
+            "impact": "Medium",
+            "line": 2549,
+            "line_end": 2551,
+            "message": "actualAddAmount in VToken._addReservesFresh (VToken_8.sol#2549-2551) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "repayBorrowFresh",
+            "impact": "Medium",
+            "line": 2170,
+            "message": "vars in VToken.repayBorrowFresh (VToken_8.sol#2170) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "mintFresh",
+            "impact": "Medium",
+            "line": 1791,
+            "message": "vars in VToken.mintFresh (VToken_8.sol#1791) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExponentialNoError",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "fraction",
+            "impact": "Low",
+            "line": 1104,
+            "message": "Exponential.divScalarByExpTruncate.fraction (local variable @ VToken_8.sol#1104) shadows:\n\t- ExponentialNoError.fraction (function @ VToken_8.sol#982-984)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "borrowFresh",
+            "impact": "Low",
+            "line": 2044,
+            "line_end": 2107,
+            "message": "Reentrancy in VToken.borrowFresh (VToken_8.sol#2044-2107):\n\tExternal calls:\n\t- allowed = comptroller.borrowAllowed(address(this),borrower,borrowAmount) (VToken_8.sol#2046)\n\tState variables written after the call(s):\n\t- accountBorrows (VToken_8.sol#2096)\n\t- accountBorrows (VToken_8.sol#2097)\n\t- totalBorrows (VToken_8.sol#2098)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "initialize",
+            "impact": "Low",
+            "line": 1308,
+            "line_end": 1339,
+            "message": "Reentrancy in VToken.initialize (VToken_8.sol#1308-1339):\n\tExternal calls:\n\t- err = _setComptroller(comptroller_) (VToken_8.sol#1322)\n\t- err = _setInterestRateModelFresh(interestRateModel_) (VToken_8.sol#1330)\n\tState variables written after the call(s):\n\t- _notEntered (VToken_8.sol#1338)\n\t- decimals (VToken_8.sol#1335)\n\t- name (VToken_8.sol#1333)\n\t- symbol (VToken_8.sol#1334)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "mintFresh",
+            "impact": "Low",
+            "line": 1779,
+            "line_end": 1843,
+            "message": "Reentrancy in VToken.mintFresh (VToken_8.sol#1779-1843):\n\tExternal calls:\n\t- allowed = comptroller.mintAllowed(address(this),minter,mintAmount) (VToken_8.sol#1781)\n\tState variables written after the call(s):\n\t- accountTokens (VToken_8.sol#1833)\n\t- totalSupply (VToken_8.sol#1832)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "repayBorrowFresh",
+            "impact": "Low",
+            "line": 2158,
+            "line_end": 2224,
+            "message": "Reentrancy in VToken.repayBorrowFresh (VToken_8.sol#2158-2224):\n\tExternal calls:\n\t- allowed = comptroller.repayBorrowAllowed(address(this),payer,borrower,repayAmount) (VToken_8.sol#2160)\n\tState variables written after the call(s):\n\t- accountBorrows (VToken_8.sol#2213)\n\t- accountBorrows (VToken_8.sol#2214)\n\t- totalBorrows (VToken_8.sol#2215)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "seizeInternal",
+            "impact": "Low",
+            "line": 2353,
+            "line_end": 2399,
+            "message": "Reentrancy in VToken.seizeInternal (VToken_8.sol#2353-2399):\n\tExternal calls:\n\t- allowed = comptroller.seizeAllowed(address(this),seizerToken,liquidator,borrower,seizeTokens) (VToken_8.sol#2355)\n\tState variables written after the call(s):\n\t- accountTokens (VToken_8.sol#2389)\n\t- accountTokens (VToken_8.sol#2390)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "transferTokens",
+            "impact": "Low",
+            "line": 1350,
+            "line_end": 1409,
+            "message": "Reentrancy in VToken.transferTokens (VToken_8.sol#1350-1409):\n\tExternal calls:\n\t- allowed = comptroller.transferAllowed(address(this),src,dst,tokens) (VToken_8.sol#1352)\n\tState variables written after the call(s):\n\t- accountTokens (VToken_8.sol#1395)\n\t- accountTokens (VToken_8.sol#1396)\n\t- transferAllowances (VToken_8.sol#1400)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 370,
+            "message": "VBep20Storage.underlying should be constant (VToken_8.sol#370)\nVDelegationStorage.implementation should be constant (VToken_8.sol#395)\n",
+            "name": "constable-states"
+        },
+        {
+            "confidence": "High",
+            "contract": "VTokenInterface",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "_setInterestRateModel",
+            "impact": "Informational",
+            "line": 363,
+            "message": "VTokenInterface._setInterestRateModel (VToken_8.sol#363) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "_setInterestRateModel",
+            "impact": "Informational",
+            "line": 2656,
+            "line_end": 2666,
+            "message": "VToken._setInterestRateModel (VToken_8.sol#2656-2666) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "VDelegatorInterface",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "_setImplementation",
+            "impact": "Informational",
+            "line": 410,
+            "message": "VDelegatorInterface._setImplementation (VToken_8.sol#410) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "VDelegateInterface",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "_becomeImplementation",
+            "impact": "Informational",
+            "line": 419,
+            "message": "VDelegateInterface._becomeImplementation (VToken_8.sol#419) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "VDelegateInterface",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "_resignImplementation",
+            "impact": "Informational",
+            "line": 424,
+            "message": "VDelegateInterface._resignImplementation (VToken_8.sol#424) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "VToken",
+            "filename": "all_contract/VToken_8.sol",
+            "function": "initialize",
+            "impact": "Informational",
+            "line": 1308,
+            "line_end": 1339,
+            "message": "VToken.initialize (VToken_8.sol#1308-1339) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in VToken_8.sol:\n\t- pragma solidity^0.5.16 (VToken_8.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 6,
+            "message": "Constant 'ComptrollerInterfaceG1.isComptroller' (VToken_8.sol#6) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 101,
+            "message": "Constant 'InterestRateModel.isInterestRateModel' (VToken_8.sol#101) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 128,
+            "message": "Variable 'VTokenStorage._notEntered' (VToken_8.sol#128) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 149,
+            "message": "Constant 'VTokenStorage.borrowRateMaxMantissa' (VToken_8.sol#149) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 154,
+            "message": "Constant 'VTokenStorage.reserveFactorMaxMantissa' (VToken_8.sol#154) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 358,
+            "message": "Function 'VTokenInterface._setPendingAdmin' (VToken_8.sol#358) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 359,
+            "message": "Function 'VTokenInterface._acceptAdmin' (VToken_8.sol#359) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 360,
+            "message": "Function 'VTokenInterface._setComptroller' (VToken_8.sol#360) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 361,
+            "message": "Function 'VTokenInterface._setReserveFactor' (VToken_8.sol#361) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 362,
+            "message": "Function 'VTokenInterface._reduceReserves' (VToken_8.sol#362) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 363,
+            "message": "Function 'VTokenInterface._setInterestRateModel' (VToken_8.sol#363) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 241,
+            "message": "Constant 'VTokenInterface.isVToken' (VToken_8.sol#241) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 388,
+            "message": "Function 'VBep20Interface._addReserves' (VToken_8.sol#388) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 410,
+            "message": "Function 'VDelegatorInterface._setImplementation' (VToken_8.sol#410) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 419,
+            "message": "Function 'VDelegateInterface._becomeImplementation' (VToken_8.sol#419) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 424,
+            "message": "Function 'VDelegateInterface._resignImplementation' (VToken_8.sol#424) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 826,
+            "line_end": 829,
+            "message": "Function 'ExponentialNoError.mul_ScalarTruncate' (VToken_8.sol#826-829) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 834,
+            "line_end": 837,
+            "message": "Function 'ExponentialNoError.mul_ScalarTruncateAddUInt' (VToken_8.sol#834-837) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 801,
+            "message": "Constant 'ExponentialNoError.expScale' (VToken_8.sol#801) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 802,
+            "message": "Constant 'ExponentialNoError.doubleScale' (VToken_8.sol#802) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 803,
+            "message": "Constant 'ExponentialNoError.halfExpScale' (VToken_8.sol#803) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 804,
+            "message": "Constant 'ExponentialNoError.mantissaOne' (VToken_8.sol#804) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 2410,
+            "line_end": 2426,
+            "message": "Function 'VToken._setPendingAdmin' (VToken_8.sol#2410-2426) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 2433,
+            "line_end": 2455,
+            "message": "Function 'VToken._acceptAdmin' (VToken_8.sol#2433-2455) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 2460,
+            "line_end": 2479,
+            "message": "Function 'VToken._setComptroller' (VToken_8.sol#2460-2479) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 2484,
+            "line_end": 2494,
+            "message": "Function 'VToken._setReserveFactor' (VToken_8.sol#2484-2494) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 2591,
+            "line_end": 2601,
+            "message": "Function 'VToken._reduceReserves' (VToken_8.sol#2591-2601) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 2656,
+            "line_end": 2666,
+            "message": "Function 'VToken._setInterestRateModel' (VToken_8.sol#2656-2666) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 2499,
+            "line_end": 2523,
+            "message": "Function 'VToken._setReserveFactorFresh' (VToken_8.sol#2499-2523) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 2528,
+            "line_end": 2540,
+            "message": "Function 'VToken._addReservesInternal' (VToken_8.sol#2528-2540) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 2546,
+            "line_end": 2586,
+            "message": "Function 'VToken._addReservesFresh' (VToken_8.sol#2546-2586) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 2607,
+            "line_end": 2650,
+            "message": "Function 'VToken._reduceReservesFresh' (VToken_8.sol#2607-2650) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/VToken_8.sol",
+            "impact": "Informational",
+            "line": 2672,
+            "line_end": 2702,
+            "message": "Function 'VToken._setInterestRateModelFresh' (VToken_8.sol#2672-2702) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

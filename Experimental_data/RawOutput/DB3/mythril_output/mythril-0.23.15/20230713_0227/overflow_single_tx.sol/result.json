@@ -1,0 +1,170 @@
+{
+    "errors": [],
+    "fails": [],
+    "findings": [
+        {
+            "address": 476,
+            "contract": "IntegerOverflowSingleTransaction",
+            "exploit": {
+                "initialState": {
+                    "accounts": {
+                        "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe": {
+                            "balance": "0x0",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        },
+                        "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef": {
+                            "balance": "0x0",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        }
+                    }
+                },
+                "steps": [
+                    {
+                        "address": "",
+                        "calldata": "",
+                        "input": "0x6080604052600160005534801561001557600080fd5b50610250806100256000396000f300608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630642f32a1461008857806306661abd146100b55780634c4f50f3146100e05780635c68bc061461010d57806369fb0f5d1461013a578063def92d6814610167578063e6dca5ea14610194575b600080fd5b34801561009457600080fd5b506100b3600480360381019080803590602001909291905050506101c1565b005b3480156100c157600080fd5b506100ca6101ce565b6040518082815260200191505060405180910390f35b3480156100ec57600080fd5b5061010b600480360381019080803590602001909291905050506101d4565b005b34801561011957600080fd5b50610138600480360381019080803590602001909291905050506101e6565b005b34801561014657600080fd5b50610165600480360381019080803590602001909291905050506101f8565b005b34801561017357600080fd5b5061019260048036038101908080359060200190929190505050610205565b005b3480156101a057600080fd5b506101bf60048036038101908080359060200190929190505050610217565b005b6000816000540190505050565b60005481565b80600080828254039250508190555050565b80600080828254029250508190555050565b6000816000540390505050565b80600080828254019250508190555050565b60008160005402905050505600a165627a7a723058202446b339f4a7c40c69640d08791940d00e7c5ba6c3049f228519efee232530c90029",
+                        "name": "unknown",
+                        "origin": "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe",
+                        "value": "0x0"
+                    },
+                    {
+                        "address": "0x901d12ebe1b195e5aa8748e62bd7734ae19b51f",
+                        "calldata": "0x4c4f50f301",
+                        "input": "0x4c4f50f301",
+                        "name": "underflowtostate(uint256)",
+                        "origin": "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+                        "resolved_input": [
+                            452312848583266388373324160190187140051835877600158453279131187530910662656
+                        ],
+                        "value": "0x0"
+                    }
+                ]
+            },
+            "filename": "smartbugs_all/overflow_single_tx.sol",
+            "function": "underflowtostate(uint256)",
+            "line": 30,
+            "message": "The arithmetic operator can underflow.\nIt is possible to cause an integer overflow or underflow in the arithmetic operation. \nClassification: SWC-101",
+            "name": "Integer Arithmetic Bugs (SWC 101)",
+            "severity": "High"
+        },
+        {
+            "address": 494,
+            "contract": "IntegerOverflowSingleTransaction",
+            "exploit": {
+                "initialState": {
+                    "accounts": {
+                        "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe": {
+                            "balance": "0x0",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        },
+                        "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef": {
+                            "balance": "0x0",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        }
+                    }
+                },
+                "steps": [
+                    {
+                        "address": "",
+                        "calldata": "",
+                        "input": "0x6080604052600160005534801561001557600080fd5b50610250806100256000396000f300608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630642f32a1461008857806306661abd146100b55780634c4f50f3146100e05780635c68bc061461010d57806369fb0f5d1461013a578063def92d6814610167578063e6dca5ea14610194575b600080fd5b34801561009457600080fd5b506100b3600480360381019080803590602001909291905050506101c1565b005b3480156100c157600080fd5b506100ca6101ce565b6040518082815260200191505060405180910390f35b3480156100ec57600080fd5b5061010b600480360381019080803590602001909291905050506101d4565b005b34801561011957600080fd5b50610138600480360381019080803590602001909291905050506101e6565b005b34801561014657600080fd5b50610165600480360381019080803590602001909291905050506101f8565b005b34801561017357600080fd5b5061019260048036038101908080359060200190929190505050610205565b005b3480156101a057600080fd5b506101bf60048036038101908080359060200190929190505050610217565b005b6000816000540190505050565b60005481565b80600080828254039250508190555050565b80600080828254029250508190555050565b6000816000540390505050565b80600080828254019250508190555050565b60008160005402905050505600a165627a7a723058202446b339f4a7c40c69640d08791940d00e7c5ba6c3049f228519efee232530c90029",
+                        "name": "unknown",
+                        "origin": "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe",
+                        "value": "0x0"
+                    },
+                    {
+                        "address": "0x901d12ebe1b195e5aa8748e62bd7734ae19b51f",
+                        "calldata": "0xdef92d6864",
+                        "input": "0xdef92d6864",
+                        "name": "overflowaddtostate(uint256)",
+                        "origin": "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe",
+                        "resolved_input": [
+                            45231284858326638837332416019018714005183587760015845327913118753091066265600
+                        ],
+                        "value": "0x0"
+                    },
+                    {
+                        "address": "0x901d12ebe1b195e5aa8748e62bd7734ae19b51f",
+                        "calldata": "0x5c68bc0640",
+                        "input": "0x5c68bc0640",
+                        "name": "overflowmultostate(uint256)",
+                        "origin": "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe",
+                        "resolved_input": [
+                            28948022309329048855892746252171976963317496166410141009864396001978282409984
+                        ],
+                        "value": "0x0"
+                    }
+                ]
+            },
+            "filename": "smartbugs_all/overflow_single_tx.sol",
+            "function": "overflowmultostate(uint256)",
+            "line": 24,
+            "message": "The arithmetic operator can overflow.\nIt is possible to cause an integer overflow or underflow in the arithmetic operation. \nClassification: SWC-101",
+            "name": "Integer Arithmetic Bugs (SWC 101)",
+            "severity": "High"
+        },
+        {
+            "address": 525,
+            "contract": "IntegerOverflowSingleTransaction",
+            "exploit": {
+                "initialState": {
+                    "accounts": {
+                        "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe": {
+                            "balance": "0x0",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        },
+                        "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef": {
+                            "balance": "0x0",
+                            "code": "",
+                            "nonce": 0,
+                            "storage": "{}"
+                        }
+                    }
+                },
+                "steps": [
+                    {
+                        "address": "",
+                        "calldata": "",
+                        "input": "0x6080604052600160005534801561001557600080fd5b50610250806100256000396000f300608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630642f32a1461008857806306661abd146100b55780634c4f50f3146100e05780635c68bc061461010d57806369fb0f5d1461013a578063def92d6814610167578063e6dca5ea14610194575b600080fd5b34801561009457600080fd5b506100b3600480360381019080803590602001909291905050506101c1565b005b3480156100c157600080fd5b506100ca6101ce565b6040518082815260200191505060405180910390f35b3480156100ec57600080fd5b5061010b600480360381019080803590602001909291905050506101d4565b005b34801561011957600080fd5b50610138600480360381019080803590602001909291905050506101e6565b005b34801561014657600080fd5b50610165600480360381019080803590602001909291905050506101f8565b005b34801561017357600080fd5b5061019260048036038101908080359060200190929190505050610205565b005b3480156101a057600080fd5b506101bf60048036038101908080359060200190929190505050610217565b005b6000816000540190505050565b60005481565b80600080828254039250508190555050565b80600080828254029250508190555050565b6000816000540390505050565b80600080828254019250508190555050565b60008160005402905050505600a165627a7a723058202446b339f4a7c40c69640d08791940d00e7c5ba6c3049f228519efee232530c90029",
+                        "name": "unknown",
+                        "origin": "0xaffeaffeaffeaffeaffeaffeaffeaffeaffeaffe",
+                        "value": "0x0"
+                    },
+                    {
+                        "address": "0x901d12ebe1b195e5aa8748e62bd7734ae19b51f",
+                        "calldata": "0xdef92d68ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+                        "input": "0xdef92d68ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+                        "name": "overflowaddtostate(uint256)",
+                        "origin": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        "resolved_input": [
+                            115792089237316195423570985008687907853269984665640564039457584007913129639935
+                        ],
+                        "value": "0x0"
+                    }
+                ]
+            },
+            "filename": "smartbugs_all/overflow_single_tx.sol",
+            "function": "overflowaddtostate(uint256)",
+            "line": 18,
+            "message": "The arithmetic operator can overflow.\nIt is possible to cause an integer overflow or underflow in the arithmetic operation. \nClassification: SWC-101",
+            "name": "Integer Arithmetic Bugs (SWC 101)",
+            "severity": "High"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "mythril-0.23.15",
+        "mode": "solidity",
+        "version": "2023/01/20"
+    }
+}

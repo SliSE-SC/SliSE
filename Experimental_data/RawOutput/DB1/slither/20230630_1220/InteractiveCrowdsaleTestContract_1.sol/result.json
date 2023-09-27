@@ -1,0 +1,1583 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_RECEIVED_SIGNAL_36"
+    ],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Medium",
+            "line": 74,
+            "line_end": 83,
+            "message": "BasicMathLib.times (InteractiveCrowdsaleTestContract_1.sol#74-83) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Medium",
+            "line": 91,
+            "line_end": 106,
+            "message": "BasicMathLib.dividedBy (InteractiveCrowdsaleTestContract_1.sol#91-106) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Medium",
+            "line": 114,
+            "line_end": 123,
+            "message": "BasicMathLib.plus (InteractiveCrowdsaleTestContract_1.sol#114-123) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Medium",
+            "line": 131,
+            "line_end": 140,
+            "message": "BasicMathLib.minus (InteractiveCrowdsaleTestContract_1.sol#131-140) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "withdrawBid",
+            "impact": "Medium",
+            "line": 1298,
+            "line_end": 1406,
+            "message": "InteractiveCrowdsaleLib.withdrawBid (InteractiveCrowdsaleTestContract_1.sol#1298-1406) uses a dangerous strict equality:\n\t- _proposedValue == 0\n",
+            "name": "incorrect-equality"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "InteractiveCrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "withdrawBid",
+            "impact": "Medium",
+            "line": 1347,
+            "message": "_proposedValue in InteractiveCrowdsaleLib.withdrawBid (InteractiveCrowdsaleTestContract_1.sol#1347) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "InteractiveCrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "withdrawBid",
+            "impact": "Medium",
+            "line": 1349,
+            "message": "loop in InteractiveCrowdsaleLib.withdrawBid (InteractiveCrowdsaleTestContract_1.sol#1349) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "InteractiveCrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "submitBid",
+            "impact": "Medium",
+            "line": 1234,
+            "message": "loop in InteractiveCrowdsaleLib.submitBid (InteractiveCrowdsaleTestContract_1.sol#1234) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "TokenLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "approveChange",
+            "impact": "Medium",
+            "line": 318,
+            "message": "_newAllowed in TokenLib.approveChange (InteractiveCrowdsaleTestContract_1.sol#318) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "InteractiveCrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "submitBid",
+            "impact": "Medium",
+            "line": 1194,
+            "message": "_bonusPercent in InteractiveCrowdsaleLib.submitBid (InteractiveCrowdsaleTestContract_1.sol#1194) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "CrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getSaleData",
+            "impact": "Medium",
+            "line": 764,
+            "message": "index in CrowdsaleLib.getSaleData (InteractiveCrowdsaleTestContract_1.sol#764) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "InteractiveCrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "submitBid",
+            "impact": "Medium",
+            "line": 1184,
+            "line_end": 1291,
+            "message": "InteractiveCrowdsaleLib.submitBid (InteractiveCrowdsaleTestContract_1.sol#1184-1291) does not use the value returned by external calls:\n\t-self.valuationsList.insert(_listSpot,_personalCap,PREV) (InteractiveCrowdsaleTestContract_1.sol#1218)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "InteractiveCrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "launchToken",
+            "impact": "Medium",
+            "line": 1439,
+            "line_end": 1473,
+            "message": "InteractiveCrowdsaleLib.launchToken (InteractiveCrowdsaleTestContract_1.sol#1439-1473) does not use the value returned by external calls:\n\t-self.base.token.transfer(self.base.owner,_ownerTokens) (InteractiveCrowdsaleTestContract_1.sol#1463)\n\t-self.base.token.transfer(self.base.owner,_supply) (InteractiveCrowdsaleTestContract_1.sol#1465)\n\t-self.base.token.burnToken(_bonusTokens) (InteractiveCrowdsaleTestContract_1.sol#1466)\n\t-self.base.token.changeOwner(self.base.owner) (InteractiveCrowdsaleTestContract_1.sol#1469)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "InteractiveCrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "retreiveFinalResult",
+            "impact": "Medium",
+            "line": 1493,
+            "line_end": 1561,
+            "message": "InteractiveCrowdsaleLib.retreiveFinalResult (InteractiveCrowdsaleTestContract_1.sol#1493-1561) does not use the value returned by external calls:\n\t-self.base.token.burnToken(_leftoverBonus) (InteractiveCrowdsaleTestContract_1.sol#1552)\n\t-self.base.withdrawTokens() (InteractiveCrowdsaleTestContract_1.sol#1557)\n\t-self.base.withdrawLeftoverWei() (InteractiveCrowdsaleTestContract_1.sol#1559)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "name",
+            "impact": "Low",
+            "line": 434,
+            "message": "CrowdsaleToken.CrowdsaleToken.name (local variable @ InteractiveCrowdsaleTestContract_1.sol#434) shadows:\n\t- CrowdsaleToken.name (function @ InteractiveCrowdsaleTestContract_1.sol#443-445)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "symbol",
+            "impact": "Low",
+            "line": 435,
+            "message": "CrowdsaleToken.CrowdsaleToken.symbol (local variable @ InteractiveCrowdsaleTestContract_1.sol#435) shadows:\n\t- CrowdsaleToken.symbol (function @ InteractiveCrowdsaleTestContract_1.sol#447-449)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "decimals",
+            "impact": "Low",
+            "line": 436,
+            "message": "CrowdsaleToken.CrowdsaleToken.decimals (local variable @ InteractiveCrowdsaleTestContract_1.sol#436) shadows:\n\t- CrowdsaleToken.decimals (function @ InteractiveCrowdsaleTestContract_1.sol#451-453)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "initialSupply",
+            "impact": "Low",
+            "line": 437,
+            "message": "CrowdsaleToken.CrowdsaleToken.initialSupply (local variable @ InteractiveCrowdsaleTestContract_1.sol#437) shadows:\n\t- CrowdsaleToken.initialSupply (function @ InteractiveCrowdsaleTestContract_1.sol#459-461)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicMathLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "times",
+            "impact": "Informational",
+            "line": 74,
+            "line_end": 83,
+            "message": "BasicMathLib.times uses assembly (InteractiveCrowdsaleTestContract_1.sol#74-83)\n\t- InteractiveCrowdsaleTestContract_1.sol#75-83\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicMathLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "dividedBy",
+            "impact": "Informational",
+            "line": 91,
+            "line_end": 106,
+            "message": "BasicMathLib.dividedBy uses assembly (InteractiveCrowdsaleTestContract_1.sol#91-106)\n\t- InteractiveCrowdsaleTestContract_1.sol#93-106\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicMathLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "plus",
+            "impact": "Informational",
+            "line": 114,
+            "line_end": 123,
+            "message": "BasicMathLib.plus uses assembly (InteractiveCrowdsaleTestContract_1.sol#114-123)\n\t- InteractiveCrowdsaleTestContract_1.sol#115-123\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicMathLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "minus",
+            "impact": "Informational",
+            "line": 131,
+            "line_end": 140,
+            "message": "BasicMathLib.minus uses assembly (InteractiveCrowdsaleTestContract_1.sol#131-140)\n\t- InteractiveCrowdsaleTestContract_1.sol#132-140\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicMathLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "times",
+            "impact": "Informational",
+            "line": 74,
+            "line_end": 83,
+            "message": "BasicMathLib.times (InteractiveCrowdsaleTestContract_1.sol#74-83) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicMathLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "dividedBy",
+            "impact": "Informational",
+            "line": 91,
+            "line_end": 106,
+            "message": "BasicMathLib.dividedBy (InteractiveCrowdsaleTestContract_1.sol#91-106) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicMathLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "plus",
+            "impact": "Informational",
+            "line": 114,
+            "line_end": 123,
+            "message": "BasicMathLib.plus (InteractiveCrowdsaleTestContract_1.sol#114-123) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BasicMathLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "minus",
+            "impact": "Informational",
+            "line": 131,
+            "line_end": 140,
+            "message": "BasicMathLib.minus (InteractiveCrowdsaleTestContract_1.sol#131-140) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "TokenLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "init",
+            "impact": "Informational",
+            "line": 203,
+            "line_end": 222,
+            "message": "TokenLib.init (InteractiveCrowdsaleTestContract_1.sol#203-222) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "TokenLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "transfer",
+            "impact": "Informational",
+            "line": 229,
+            "line_end": 241,
+            "message": "TokenLib.transfer (InteractiveCrowdsaleTestContract_1.sol#229-241) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "TokenLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "transferFrom",
+            "impact": "Informational",
+            "line": 249,
+            "line_end": 273,
+            "message": "TokenLib.transferFrom (InteractiveCrowdsaleTestContract_1.sol#249-273) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "TokenLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "balanceOf",
+            "impact": "Informational",
+            "line": 279,
+            "line_end": 281,
+            "message": "TokenLib.balanceOf (InteractiveCrowdsaleTestContract_1.sol#279-281) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "TokenLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "approve",
+            "impact": "Informational",
+            "line": 288,
+            "line_end": 295,
+            "message": "TokenLib.approve (InteractiveCrowdsaleTestContract_1.sol#288-295) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "TokenLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "allowance",
+            "impact": "Informational",
+            "line": 302,
+            "line_end": 307,
+            "message": "TokenLib.allowance (InteractiveCrowdsaleTestContract_1.sol#302-307) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "TokenLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "approveChange",
+            "impact": "Informational",
+            "line": 315,
+            "line_end": 337,
+            "message": "TokenLib.approveChange (InteractiveCrowdsaleTestContract_1.sol#315-337) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "TokenLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "changeOwner",
+            "impact": "Informational",
+            "line": 343,
+            "line_end": 349,
+            "message": "TokenLib.changeOwner (InteractiveCrowdsaleTestContract_1.sol#343-349) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "TokenLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "mintToken",
+            "impact": "Informational",
+            "line": 355,
+            "line_end": 367,
+            "message": "TokenLib.mintToken (InteractiveCrowdsaleTestContract_1.sol#355-367) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "TokenLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "closeMint",
+            "impact": "Informational",
+            "line": 372,
+            "line_end": 378,
+            "message": "TokenLib.closeMint (InteractiveCrowdsaleTestContract_1.sol#372-378) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "TokenLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "burnToken",
+            "impact": "Informational",
+            "line": 384,
+            "line_end": 396,
+            "message": "TokenLib.burnToken (InteractiveCrowdsaleTestContract_1.sol#384-396) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "name",
+            "impact": "Informational",
+            "line": 443,
+            "line_end": 445,
+            "message": "CrowdsaleToken.name (InteractiveCrowdsaleTestContract_1.sol#443-445) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "symbol",
+            "impact": "Informational",
+            "line": 447,
+            "line_end": 449,
+            "message": "CrowdsaleToken.symbol (InteractiveCrowdsaleTestContract_1.sol#447-449) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "decimals",
+            "impact": "Informational",
+            "line": 451,
+            "line_end": 453,
+            "message": "CrowdsaleToken.decimals (InteractiveCrowdsaleTestContract_1.sol#451-453) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "totalSupply",
+            "impact": "Informational",
+            "line": 455,
+            "line_end": 457,
+            "message": "CrowdsaleToken.totalSupply (InteractiveCrowdsaleTestContract_1.sol#455-457) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "initialSupply",
+            "impact": "Informational",
+            "line": 459,
+            "line_end": 461,
+            "message": "CrowdsaleToken.initialSupply (InteractiveCrowdsaleTestContract_1.sol#459-461) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "balanceOf",
+            "impact": "Informational",
+            "line": 463,
+            "line_end": 465,
+            "message": "CrowdsaleToken.balanceOf (InteractiveCrowdsaleTestContract_1.sol#463-465) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "allowance",
+            "impact": "Informational",
+            "line": 467,
+            "line_end": 469,
+            "message": "CrowdsaleToken.allowance (InteractiveCrowdsaleTestContract_1.sol#467-469) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "transfer",
+            "impact": "Informational",
+            "line": 471,
+            "line_end": 473,
+            "message": "CrowdsaleToken.transfer (InteractiveCrowdsaleTestContract_1.sol#471-473) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "transferFrom",
+            "impact": "Informational",
+            "line": 475,
+            "line_end": 477,
+            "message": "CrowdsaleToken.transferFrom (InteractiveCrowdsaleTestContract_1.sol#475-477) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "approve",
+            "impact": "Informational",
+            "line": 479,
+            "line_end": 481,
+            "message": "CrowdsaleToken.approve (InteractiveCrowdsaleTestContract_1.sol#479-481) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "approveChange",
+            "impact": "Informational",
+            "line": 483,
+            "line_end": 487,
+            "message": "CrowdsaleToken.approveChange (InteractiveCrowdsaleTestContract_1.sol#483-487) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "changeOwner",
+            "impact": "Informational",
+            "line": 489,
+            "line_end": 491,
+            "message": "CrowdsaleToken.changeOwner (InteractiveCrowdsaleTestContract_1.sol#489-491) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "mintToken",
+            "impact": "Informational",
+            "line": 493,
+            "line_end": 495,
+            "message": "CrowdsaleToken.mintToken (InteractiveCrowdsaleTestContract_1.sol#493-495) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "closeMint",
+            "impact": "Informational",
+            "line": 497,
+            "line_end": 499,
+            "message": "CrowdsaleToken.closeMint (InteractiveCrowdsaleTestContract_1.sol#497-499) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleToken",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "burnToken",
+            "impact": "Informational",
+            "line": 501,
+            "line_end": 503,
+            "message": "CrowdsaleToken.burnToken (InteractiveCrowdsaleTestContract_1.sol#501-503) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "init",
+            "impact": "Informational",
+            "line": 590,
+            "line_end": 622,
+            "message": "CrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#590-622) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "withdrawTokens",
+            "impact": "Informational",
+            "line": 654,
+            "line_end": 682,
+            "message": "CrowdsaleLib.withdrawTokens (InteractiveCrowdsaleTestContract_1.sol#654-682) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "withdrawLeftoverWei",
+            "impact": "Informational",
+            "line": 687,
+            "line_end": 698,
+            "message": "CrowdsaleLib.withdrawLeftoverWei (InteractiveCrowdsaleTestContract_1.sol#687-698) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "withdrawOwnerEth",
+            "impact": "Informational",
+            "line": 703,
+            "line_end": 718,
+            "message": "CrowdsaleLib.withdrawOwnerEth (InteractiveCrowdsaleTestContract_1.sol#703-718) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "setTokens",
+            "impact": "Informational",
+            "line": 739,
+            "line_end": 752,
+            "message": "CrowdsaleLib.setTokens (InteractiveCrowdsaleTestContract_1.sol#739-752) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getSaleData",
+            "impact": "Informational",
+            "line": 758,
+            "line_end": 776,
+            "message": "CrowdsaleLib.getSaleData (InteractiveCrowdsaleTestContract_1.sol#758-776) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "CrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getTokensSold",
+            "impact": "Informational",
+            "line": 781,
+            "line_end": 783,
+            "message": "CrowdsaleLib.getTokensSold (InteractiveCrowdsaleTestContract_1.sol#781-783) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "init",
+            "impact": "Informational",
+            "line": 1082,
+            "line_end": 1117,
+            "message": "InteractiveCrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#1082-1117) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "submitBid",
+            "impact": "Informational",
+            "line": 1184,
+            "line_end": 1291,
+            "message": "InteractiveCrowdsaleLib.submitBid (InteractiveCrowdsaleTestContract_1.sol#1184-1291) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "withdrawBid",
+            "impact": "Informational",
+            "line": 1298,
+            "line_end": 1406,
+            "message": "InteractiveCrowdsaleLib.withdrawBid (InteractiveCrowdsaleTestContract_1.sol#1298-1406) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "finalizeSale",
+            "impact": "Informational",
+            "line": 1411,
+            "line_end": 1433,
+            "message": "InteractiveCrowdsaleLib.finalizeSale (InteractiveCrowdsaleTestContract_1.sol#1411-1433) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleLib",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "retreiveFinalResult",
+            "impact": "Informational",
+            "line": 1493,
+            "line_end": 1561,
+            "message": "InteractiveCrowdsaleLib.retreiveFinalResult (InteractiveCrowdsaleTestContract_1.sol#1493-1561) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "fallback",
+            "impact": "Informational",
+            "line": 1629,
+            "line_end": 1631,
+            "message": "InteractiveCrowdsaleTestContract.fallback (InteractiveCrowdsaleTestContract_1.sol#1629-1631) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "submitBid",
+            "impact": "Informational",
+            "line": 1633,
+            "line_end": 1635,
+            "message": "InteractiveCrowdsaleTestContract.submitBid (InteractiveCrowdsaleTestContract_1.sol#1633-1635) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "withdrawBid",
+            "impact": "Informational",
+            "line": 1637,
+            "line_end": 1639,
+            "message": "InteractiveCrowdsaleTestContract.withdrawBid (InteractiveCrowdsaleTestContract_1.sol#1637-1639) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "withdrawLeftoverWei",
+            "impact": "Informational",
+            "line": 1641,
+            "line_end": 1643,
+            "message": "InteractiveCrowdsaleTestContract.withdrawLeftoverWei (InteractiveCrowdsaleTestContract_1.sol#1641-1643) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "retreiveFinalResult",
+            "impact": "Informational",
+            "line": 1645,
+            "line_end": 1647,
+            "message": "InteractiveCrowdsaleTestContract.retreiveFinalResult (InteractiveCrowdsaleTestContract_1.sol#1645-1647) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "finalizeSale",
+            "impact": "Informational",
+            "line": 1649,
+            "line_end": 1651,
+            "message": "InteractiveCrowdsaleTestContract.finalizeSale (InteractiveCrowdsaleTestContract_1.sol#1649-1651) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "withdrawOwnerEth",
+            "impact": "Informational",
+            "line": 1653,
+            "line_end": 1655,
+            "message": "InteractiveCrowdsaleTestContract.withdrawOwnerEth (InteractiveCrowdsaleTestContract_1.sol#1653-1655) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "crowdsaleActive",
+            "impact": "Informational",
+            "line": 1657,
+            "line_end": 1659,
+            "message": "InteractiveCrowdsaleTestContract.crowdsaleActive (InteractiveCrowdsaleTestContract_1.sol#1657-1659) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "crowdsaleEnded",
+            "impact": "Informational",
+            "line": 1661,
+            "line_end": 1663,
+            "message": "InteractiveCrowdsaleTestContract.crowdsaleEnded (InteractiveCrowdsaleTestContract_1.sol#1661-1663) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getOwner",
+            "impact": "Informational",
+            "line": 1665,
+            "line_end": 1667,
+            "message": "InteractiveCrowdsaleTestContract.getOwner (InteractiveCrowdsaleTestContract_1.sol#1665-1667) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getTokensPerEth",
+            "impact": "Informational",
+            "line": 1669,
+            "line_end": 1671,
+            "message": "InteractiveCrowdsaleTestContract.getTokensPerEth (InteractiveCrowdsaleTestContract_1.sol#1669-1671) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getStartTime",
+            "impact": "Informational",
+            "line": 1673,
+            "line_end": 1675,
+            "message": "InteractiveCrowdsaleTestContract.getStartTime (InteractiveCrowdsaleTestContract_1.sol#1673-1675) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getEndTime",
+            "impact": "Informational",
+            "line": 1677,
+            "line_end": 1679,
+            "message": "InteractiveCrowdsaleTestContract.getEndTime (InteractiveCrowdsaleTestContract_1.sol#1677-1679) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getMinimumRaise",
+            "impact": "Informational",
+            "line": 1681,
+            "line_end": 1683,
+            "message": "InteractiveCrowdsaleTestContract.getMinimumRaise (InteractiveCrowdsaleTestContract_1.sol#1681-1683) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getEndWithdrawlTime",
+            "impact": "Informational",
+            "line": 1685,
+            "line_end": 1687,
+            "message": "InteractiveCrowdsaleTestContract.getEndWithdrawlTime (InteractiveCrowdsaleTestContract_1.sol#1685-1687) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getCommittedCapital",
+            "impact": "Informational",
+            "line": 1689,
+            "line_end": 1691,
+            "message": "InteractiveCrowdsaleTestContract.getCommittedCapital (InteractiveCrowdsaleTestContract_1.sol#1689-1691) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getContribution",
+            "impact": "Informational",
+            "line": 1693,
+            "line_end": 1695,
+            "message": "InteractiveCrowdsaleTestContract.getContribution (InteractiveCrowdsaleTestContract_1.sol#1693-1695) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getLeftoverWei",
+            "impact": "Informational",
+            "line": 1697,
+            "line_end": 1699,
+            "message": "InteractiveCrowdsaleTestContract.getLeftoverWei (InteractiveCrowdsaleTestContract_1.sol#1697-1699) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getPersonalCap",
+            "impact": "Informational",
+            "line": 1701,
+            "line_end": 1703,
+            "message": "InteractiveCrowdsaleTestContract.getPersonalCap (InteractiveCrowdsaleTestContract_1.sol#1701-1703) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getPrice",
+            "impact": "Informational",
+            "line": 1705,
+            "line_end": 1707,
+            "message": "InteractiveCrowdsaleTestContract.getPrice (InteractiveCrowdsaleTestContract_1.sol#1705-1707) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getTokensSold",
+            "impact": "Informational",
+            "line": 1709,
+            "line_end": 1711,
+            "message": "InteractiveCrowdsaleTestContract.getTokensSold (InteractiveCrowdsaleTestContract_1.sol#1709-1711) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getPercentBeingSold",
+            "impact": "Informational",
+            "line": 1713,
+            "line_end": 1715,
+            "message": "InteractiveCrowdsaleTestContract.getPercentBeingSold (InteractiveCrowdsaleTestContract_1.sol#1713-1715) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getCurrentBucket",
+            "impact": "Informational",
+            "line": 1717,
+            "line_end": 1719,
+            "message": "InteractiveCrowdsaleTestContract.getCurrentBucket (InteractiveCrowdsaleTestContract_1.sol#1717-1719) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getTotalValuation",
+            "impact": "Informational",
+            "line": 1721,
+            "line_end": 1723,
+            "message": "InteractiveCrowdsaleTestContract.getTotalValuation (InteractiveCrowdsaleTestContract_1.sol#1721-1723) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getTokenAddress",
+            "impact": "Informational",
+            "line": 1725,
+            "line_end": 1727,
+            "message": "InteractiveCrowdsaleTestContract.getTokenAddress (InteractiveCrowdsaleTestContract_1.sol#1725-1727) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getValueCommitement",
+            "impact": "Informational",
+            "line": 1729,
+            "line_end": 1731,
+            "message": "InteractiveCrowdsaleTestContract.getValueCommitement (InteractiveCrowdsaleTestContract_1.sol#1729-1731) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "InteractiveCrowdsaleTestContract",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "function": "getOwnerBalance",
+            "impact": "Informational",
+            "line": 1733,
+            "line_end": 1735,
+            "message": "InteractiveCrowdsaleTestContract.getOwnerBalance (InteractiveCrowdsaleTestContract_1.sol#1733-1735) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in InteractiveCrowdsaleTestContract_1.sol:\n\t- pragma solidity^0.4.18 (InteractiveCrowdsaleTestContract_1.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 204,
+            "message": "Parameter '_owner' of TokenLib.init (InteractiveCrowdsaleTestContract_1.sol#204) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 205,
+            "message": "Parameter '_name' of TokenLib.init (InteractiveCrowdsaleTestContract_1.sol#205) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 206,
+            "message": "Parameter '_symbol' of TokenLib.init (InteractiveCrowdsaleTestContract_1.sol#206) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 207,
+            "message": "Parameter '_decimals' of TokenLib.init (InteractiveCrowdsaleTestContract_1.sol#207) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 208,
+            "message": "Parameter '_initial_supply' of TokenLib.init (InteractiveCrowdsaleTestContract_1.sol#208) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 209,
+            "message": "Parameter '_allowMinting' of TokenLib.init (InteractiveCrowdsaleTestContract_1.sol#209) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 229,
+            "message": "Parameter '_to' of TokenLib.transfer (InteractiveCrowdsaleTestContract_1.sol#229) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 229,
+            "message": "Parameter '_value' of TokenLib.transfer (InteractiveCrowdsaleTestContract_1.sol#229) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 250,
+            "message": "Parameter '_from' of TokenLib.transferFrom (InteractiveCrowdsaleTestContract_1.sol#250) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 251,
+            "message": "Parameter '_to' of TokenLib.transferFrom (InteractiveCrowdsaleTestContract_1.sol#251) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 252,
+            "message": "Parameter '_value' of TokenLib.transferFrom (InteractiveCrowdsaleTestContract_1.sol#252) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 279,
+            "message": "Parameter '_owner' of TokenLib.balanceOf (InteractiveCrowdsaleTestContract_1.sol#279) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 288,
+            "message": "Parameter '_spender' of TokenLib.approve (InteractiveCrowdsaleTestContract_1.sol#288) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 288,
+            "message": "Parameter '_value' of TokenLib.approve (InteractiveCrowdsaleTestContract_1.sol#288) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 302,
+            "message": "Parameter '_owner' of TokenLib.allowance (InteractiveCrowdsaleTestContract_1.sol#302) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 302,
+            "message": "Parameter '_spender' of TokenLib.allowance (InteractiveCrowdsaleTestContract_1.sol#302) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 315,
+            "message": "Parameter '_spender' of TokenLib.approveChange (InteractiveCrowdsaleTestContract_1.sol#315) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 315,
+            "message": "Parameter '_valueChange' of TokenLib.approveChange (InteractiveCrowdsaleTestContract_1.sol#315) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 315,
+            "message": "Parameter '_increase' of TokenLib.approveChange (InteractiveCrowdsaleTestContract_1.sol#315) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 343,
+            "message": "Parameter '_newOwner' of TokenLib.changeOwner (InteractiveCrowdsaleTestContract_1.sol#343) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 355,
+            "message": "Parameter '_amount' of TokenLib.mintToken (InteractiveCrowdsaleTestContract_1.sol#355) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 384,
+            "message": "Parameter '_amount' of TokenLib.burnToken (InteractiveCrowdsaleTestContract_1.sol#384) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 433,
+            "line_end": 441,
+            "message": "Function 'CrowdsaleToken.CrowdsaleToken' (InteractiveCrowdsaleTestContract_1.sol#433-441) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 591,
+            "message": "Parameter '_owner' of CrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#591) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 592,
+            "message": "Parameter '_saleData' of CrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#592) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 593,
+            "message": "Parameter '_endTime' of CrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#593) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 594,
+            "message": "Parameter '_percentBurn' of CrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#594) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 595,
+            "message": "Parameter '_token' of CrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#595) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 725,
+            "message": "Parameter '_tokensPerEth' of CrowdsaleLib.changeTokenPrice (InteractiveCrowdsaleTestContract_1.sol#725) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 844,
+            "message": "Parameter '_node' of LinkedListLib.nodeExists (InteractiveCrowdsaleTestContract_1.sol#844) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 875,
+            "message": "Parameter '_node' of LinkedListLib.getNode (InteractiveCrowdsaleTestContract_1.sol#875) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 889,
+            "message": "Parameter '_node' of LinkedListLib.getAdjacent (InteractiveCrowdsaleTestContract_1.sol#889) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 889,
+            "message": "Parameter '_direction' of LinkedListLib.getAdjacent (InteractiveCrowdsaleTestContract_1.sol#889) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 905,
+            "message": "Parameter '_node' of LinkedListLib.getSortedSpot (InteractiveCrowdsaleTestContract_1.sol#905) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 905,
+            "message": "Parameter '_value' of LinkedListLib.getSortedSpot (InteractiveCrowdsaleTestContract_1.sol#905) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 905,
+            "message": "Parameter '_direction' of LinkedListLib.getSortedSpot (InteractiveCrowdsaleTestContract_1.sol#905) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 921,
+            "message": "Parameter '_node' of LinkedListLib.createLink (InteractiveCrowdsaleTestContract_1.sol#921) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 921,
+            "message": "Parameter '_link' of LinkedListLib.createLink (InteractiveCrowdsaleTestContract_1.sol#921) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 921,
+            "message": "Parameter '_direction' of LinkedListLib.createLink (InteractiveCrowdsaleTestContract_1.sol#921) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 931,
+            "message": "Parameter '_node' of LinkedListLib.insert (InteractiveCrowdsaleTestContract_1.sol#931) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 931,
+            "message": "Parameter '_new' of LinkedListLib.insert (InteractiveCrowdsaleTestContract_1.sol#931) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 931,
+            "message": "Parameter '_direction' of LinkedListLib.insert (InteractiveCrowdsaleTestContract_1.sol#931) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 945,
+            "message": "Parameter '_node' of LinkedListLib.remove (InteractiveCrowdsaleTestContract_1.sol#945) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 957,
+            "message": "Parameter '_node' of LinkedListLib.push (InteractiveCrowdsaleTestContract_1.sol#957) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 957,
+            "message": "Parameter '_direction' of LinkedListLib.push (InteractiveCrowdsaleTestContract_1.sol#957) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 964,
+            "message": "Parameter '_direction' of LinkedListLib.pop (InteractiveCrowdsaleTestContract_1.sol#964) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1083,
+            "message": "Parameter '_owner' of InteractiveCrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#1083) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1084,
+            "message": "Parameter '_saleData' of InteractiveCrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#1084) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1085,
+            "message": "Parameter '_priceBonusPercent' of InteractiveCrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#1085) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1086,
+            "message": "Parameter '_minimumRaise' of InteractiveCrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#1086) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1087,
+            "message": "Parameter '_endWithdrawalTime' of InteractiveCrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#1087) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1088,
+            "message": "Parameter '_endTime' of InteractiveCrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#1088) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1089,
+            "message": "Parameter '_percentBeingSold' of InteractiveCrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#1089) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1090,
+            "message": "Parameter '_tokenName' of InteractiveCrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#1090) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1091,
+            "message": "Parameter '_tokenSymbol' of InteractiveCrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#1091) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1092,
+            "message": "Parameter '_tokenDecimals' of InteractiveCrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#1092) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1093,
+            "message": "Parameter '_allowMinting' of InteractiveCrowdsaleLib.init (InteractiveCrowdsaleTestContract_1.sol#1093) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1122,
+            "message": "Parameter '_number' of InteractiveCrowdsaleLib.numDigits (InteractiveCrowdsaleTestContract_1.sol#1122) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1137,
+            "message": "Parameter '_amount' of InteractiveCrowdsaleLib.calculateTokenPurchase (InteractiveCrowdsaleTestContract_1.sol#1137) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1138,
+            "message": "Parameter '_price' of InteractiveCrowdsaleLib.calculateTokenPurchase (InteractiveCrowdsaleTestContract_1.sol#1138) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1185,
+            "message": "Parameter '_amount' of InteractiveCrowdsaleLib.submitBid (InteractiveCrowdsaleTestContract_1.sol#1185) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1186,
+            "message": "Parameter '_personalCap' of InteractiveCrowdsaleLib.submitBid (InteractiveCrowdsaleTestContract_1.sol#1186) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1187,
+            "message": "Parameter '_valuePredict' of InteractiveCrowdsaleLib.submitBid (InteractiveCrowdsaleTestContract_1.sol#1187) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1585,
+            "message": "Parameter '_bidder' of InteractiveCrowdsaleLib.getPersonalCap (InteractiveCrowdsaleTestContract_1.sol#1585) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1602,
+            "line_end": 1627,
+            "message": "Function 'InteractiveCrowdsaleTestContract.InteractiveCrowdsaleTestContract' (InteractiveCrowdsaleTestContract_1.sol#1602-1627) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1633,
+            "message": "Parameter '_personalValuation' of InteractiveCrowdsaleTestContract.submitBid (InteractiveCrowdsaleTestContract_1.sol#1633) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1633,
+            "message": "Parameter '_listPredict' of InteractiveCrowdsaleTestContract.submitBid (InteractiveCrowdsaleTestContract_1.sol#1633) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1693,
+            "message": "Parameter '_buyer' of InteractiveCrowdsaleTestContract.getContribution (InteractiveCrowdsaleTestContract_1.sol#1693) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1697,
+            "message": "Parameter '_buyer' of InteractiveCrowdsaleTestContract.getLeftoverWei (InteractiveCrowdsaleTestContract_1.sol#1697) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1701,
+            "message": "Parameter '_bidder' of InteractiveCrowdsaleTestContract.getPersonalCap (InteractiveCrowdsaleTestContract_1.sol#1701) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 1705,
+            "message": "Parameter '_bidder' of InteractiveCrowdsaleTestContract.getPrice (InteractiveCrowdsaleTestContract_1.sol#1705) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/InteractiveCrowdsaleTestContract_1.sol",
+            "impact": "Informational",
+            "line": 981,
+            "message": "InteractiveCrowdsaleLib.NULL (InteractiveCrowdsaleTestContract_1.sol#981) is never used in InteractiveCrowdsaleLib\nInteractiveCrowdsaleLib.HEAD (InteractiveCrowdsaleTestContract_1.sol#982) is never used in InteractiveCrowdsaleLib\n",
+            "name": "unused-state"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

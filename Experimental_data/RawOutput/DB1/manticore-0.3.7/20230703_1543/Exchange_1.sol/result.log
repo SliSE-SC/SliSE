@@ -1,0 +1,104 @@
+2023-07-03 16:26:51,055: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:26:51,055: [11] m.main:INFO: Beginning analysis
+2023-07-03 16:26:51,061: [11] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:27:09,223: [11] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:27:12,384: [11] m.u.event:WARNING: Exception raised in callback: 'cancelOrder(tuple)'
+2023-07-03 16:27:12,386: [11] m.c.worker:ERROR: Exception in state 1: KeyError('cancelOrder(tuple)')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/worker.py", line 137, in run
+    current_state.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/state.py", line 8, in execute
+    return self._platform.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 3102, in execute
+    self._process_pending_transaction()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 3394, in _process_pending_transaction
+    self._open_transaction(sort, address, price, data, caller, value, gas=gas)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 2660, in _open_transaction
+    self._publish("will_open_transaction", tx)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 148, in _publish
+    self._publish_impl(_name, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 175, in _publish_impl
+    sink._publish_impl(_name, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 173, in _publish_impl
+    sink._publish_impl(_name, self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/utils/event.py", line 166, in _publish_impl
+    callback(robj(), *new_args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/plugin.py", line 25, in g
+    return f(self, *args, **kwargs)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/plugins.py", line 71, in will_open_transaction_callback
+    abi = md.get_abi(func_hsh)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/solidity.py", line 223, in get_abi
+    return dict(self._function_abi_items_by_signature[sig])
+KeyError: 'cancelOrder(tuple)'
+ 
+2023-07-03 16:27:12,924: [11] m.e.manticore:INFO: 0 alive states, 1 terminated states
+2023-07-03 16:27:13,296: [11] m.c.manticore:INFO: Results in /mcore_jta2k6eh
+2023-07-03 16:27:13,297: [11] m.c.manticore:INFO: Total time: 3.579324722290039
+2023-07-03 16:27:14,228: [70] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:27:14,229: [70] m.main:INFO: Beginning analysis
+2023-07-03 16:27:14,232: [70] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:27:15,330: [70] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:27:15,440: [70] m.e.manticore:INFO: 0 alive states, 1 terminated states
+2023-07-03 16:27:15,503: [70] m.e.manticore:INFO: Starting symbolic transaction: 1
+2023-07-03 16:27:15,693: [70] m.c.manticore:INFO: Results in /mcore_kqcp7r_p
+2023-07-03 16:27:15,693: [70] m.c.manticore:INFO: Total time: 0.35899853706359863
+2023-07-03 16:27:16,437: [129] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:27:16,437: [129] m.main:INFO: Beginning analysis
+2023-07-03 16:27:16,440: [129] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:27:17,579: [129] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:27:17,722: [129] m.e.manticore:INFO: 0 alive states, 1 terminated states
+2023-07-03 16:27:17,792: [129] m.e.manticore:INFO: Starting symbolic transaction: 1
+2023-07-03 16:27:17,984: [129] m.c.manticore:INFO: Results in /mcore_y05m5t8h
+2023-07-03 16:27:17,984: [129] m.c.manticore:INFO: Total time: 0.4024498462677002
+2023-07-03 16:27:18,816: [188] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:27:18,816: [188] m.main:INFO: Beginning analysis
+2023-07-03 16:27:18,818: [188] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:27:19,842: [188] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:27:20,025: [188] m.e.manticore:INFO: 0 alive states, 1 terminated states
+2023-07-03 16:27:20,085: [188] m.e.manticore:INFO: Starting symbolic transaction: 1
+2023-07-03 16:27:20,273: [188] m.c.manticore:INFO: Results in /mcore_oywqj11h
+2023-07-03 16:27:20,274: [188] m.c.manticore:INFO: Total time: 0.426987886428833
+2023-07-03 16:27:21,072: [247] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:27:21,072: [247] m.main:INFO: Beginning analysis
+2023-07-03 16:27:21,074: [247] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:27:28,747: [247] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:27:30,833: [247] m.c.worker:ERROR: Exception in state 0: ManticoreError('Forking on unfeasible constraint set')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/worker.py", line 137, in run
+    current_state.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/state.py", line 8, in execute
+    return self._platform.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 3106, in execute
+    self.current_vm.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 1322, in execute
+    raise Concretize("Symbolic PC", expression=expression, setstate=setstate, policy="ALL")
+manticore.core.state.Concretize
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/worker.py", line 158, in run
+    m._fork(current_state, exc.expression, exc.policy, exc.setstate, exc.values)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/manticore.py", line 518, in _fork
+    raise ManticoreError("Forking on unfeasible constraint set")
+manticore.exceptions.ManticoreError: Forking on unfeasible constraint set
+ 
+2023-07-03 16:27:30,845: [247] m.e.manticore:INFO: 0 alive states, 0 terminated states
+2023-07-03 16:27:30,909: [247] m.c.manticore:INFO: Results in /mcore_vqcw3ki4
+2023-07-03 16:27:30,909: [247] m.c.manticore:INFO: Total time: 2.14924693107605
+2023-07-03 16:27:31,574: [302] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:27:31,575: [302] m.main:INFO: Beginning analysis
+2023-07-03 16:27:31,577: [302] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:27:32,602: [302] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:27:32,759: [302] m.e.manticore:INFO: 0 alive states, 1 terminated states
+2023-07-03 16:27:32,812: [302] m.e.manticore:INFO: Starting symbolic transaction: 1
+2023-07-03 16:27:33,009: [302] m.c.manticore:INFO: Results in /mcore_4hb3zws3
+2023-07-03 16:27:33,009: [302] m.c.manticore:INFO: Total time: 0.4025602340698242
+2023-07-03 16:27:33,688: [361] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 16:27:33,688: [361] m.main:INFO: Beginning analysis
+2023-07-03 16:27:33,690: [361] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 16:27:34,763: [361] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 16:27:34,927: [361] m.e.manticore:INFO: 0 alive states, 1 terminated states
+2023-07-03 16:27:34,996: [361] m.e.manticore:INFO: Starting symbolic transaction: 1
+2023-07-03 16:27:35,183: [361] m.c.manticore:INFO: Results in /mcore_0c045ulk
+2023-07-03 16:27:35,184: [361] m.c.manticore:INFO: Total time: 0.41662001609802246

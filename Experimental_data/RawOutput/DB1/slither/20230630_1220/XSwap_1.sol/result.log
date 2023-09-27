@@ -1,0 +1,110 @@
+INFO:Detectors:[93m
+NonStandardIERC20Token (/sb/XSwap_1.sol#103-109) has incorrect ERC20 function interface(s):
+	-transfer (/sb/XSwap_1.sol#106)
+	-transferFrom (/sb/XSwap_1.sol#107)
+	-approve (/sb/XSwap_1.sol#108)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-erc20-interface[0m
+INFO:Detectors:[93m
+XSwap.trade (/sb/XSwap_1.sol#176-205) does not use the value returned by external calls:
+	-ILendFMe(lendFMe).supply(chai,IERC20Token(chai).balanceOf(address(this))) (/sb/XSwap_1.sol#186)
+	-ILendFMe(lendFMe).supply(_input,_inputAmount) (/sb/XSwap_1.sol#189)
+	-ILendFMe(lendFMe).withdraw(chai,_amountToUser) (/sb/XSwap_1.sol#197)
+	-ILendFMe(lendFMe).withdraw(_output,denormalizedToken(_output,_amountToUser)) (/sb/XSwap_1.sol#201)
+XSwap.enableLending (/sb/XSwap_1.sol#217-239) does not use the value returned by external calls:
+	-IERC20Token(_token).approve(chai,uint256(- 1)) (/sb/XSwap_1.sol#222)
+	-IERC20Token(chai).approve(lendFMe,uint256(- 1)) (/sb/XSwap_1.sol#223)
+	-ILendFMe(lendFMe).supply(chai,IERC20Token(chai).balanceOf(address(this))) (/sb/XSwap_1.sol#233)
+	-ILendFMe(lendFMe).supply(_token,_balance) (/sb/XSwap_1.sol#236)
+XSwap.disableLending (/sb/XSwap_1.sol#241-253) does not use the value returned by external calls:
+	-ILendFMe(lendFMe).withdraw(chai,uint256(- 1)) (/sb/XSwap_1.sol#246)
+	-ILendFMe(lendFMe).withdraw(_token,uint256(- 1)) (/sb/XSwap_1.sol#250)
+XSwap.transferOut (/sb/XSwap_1.sol#290-305) does not use the value returned by external calls:
+	-ILendFMe(lendFMe).withdraw(chai,_amount) (/sb/XSwap_1.sol#293)
+	-ILendFMe(lendFMe).withdraw(_token,_amount) (/sb/XSwap_1.sol#297)
+XSwap.transferOutALL (/sb/XSwap_1.sol#307-322) does not use the value returned by external calls:
+	-ILendFMe(lendFMe).withdraw(chai,uint256(- 1)) (/sb/XSwap_1.sol#310)
+	-ILendFMe(lendFMe).withdraw(_token,uint256(- 1)) (/sb/XSwap_1.sol#314)
+XSwap.transferIn (/sb/XSwap_1.sol#324-335) does not use the value returned by external calls:
+	-ILendFMe(lendFMe).supply(chai,IERC20Token(chai).balanceOf(address(this))) (/sb/XSwap_1.sol#329)
+	-ILendFMe(lendFMe).supply(_token,NonStandardIERC20Token(_token).balanceOf(address(this))) (/sb/XSwap_1.sol#332)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-return[0m
+INFO:Detectors:[92m
+Reentrancy in XSwap.createPair (/sb/XSwap_1.sol#256-260):
+	External calls:
+	- setPrices(_input,_output,_priceInOut,_priceOutIn) (/sb/XSwap_1.sol#257)
+	- setFee(_input,_output,_fee) (/sb/XSwap_1.sol#258)
+	State variables written after the call(s):
+	- fee (/sb/XSwap_1.sol#258)
+Reentrancy in XSwap.setPrices (/sb/XSwap_1.sol#262-266):
+	External calls:
+	- setPrices(_input,_output,_priceInOut) (/sb/XSwap_1.sol#263)
+	- setPrices(_output,_input,_priceOutIn) (/sb/XSwap_1.sol#264)
+	State variables written after the call(s):
+	- prices (/sb/XSwap_1.sol#264)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-2[0m
+INFO:Detectors:[92m
+XSwap.chai should be constant (/sb/XSwap_1.sol#149)
+XSwap.dai should be constant (/sb/XSwap_1.sol#150)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#state-variables-that-could-be-declared-constant[0m
+INFO:Detectors:[92m
+DSAuthority.canCall (/sb/XSwap_1.sol#18-20) should be declared external
+DSAuth.disableOwnership (/sb/XSwap_1.sol#40-43) should be declared external
+DSAuth.transferOwnership (/sb/XSwap_1.sol#45-48) should be declared external
+DSAuth.acceptOwnership (/sb/XSwap_1.sol#50-55) should be declared external
+DSAuth.setAuthority (/sb/XSwap_1.sol#58-64) should be declared external
+XSwap.active (/sb/XSwap_1.sol#163-169) should be declared external
+XSwap.trade (/sb/XSwap_1.sol#172-174) should be declared external
+XSwap.getTokenLiquidation (/sb/XSwap_1.sol#207-210) should be declared external
+XSwap.setLendFMe (/sb/XSwap_1.sol#212-215) should be declared external
+XSwap.enableLending (/sb/XSwap_1.sol#217-239) should be declared external
+XSwap.disableLending (/sb/XSwap_1.sol#241-253) should be declared external
+XSwap.setTokenDecimals (/sb/XSwap_1.sol#279-283) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/XSwap_1.sol:
+	- pragma solidity^0.5.4 (/sb/XSwap_1.sol#15): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Parameter '_lendFMe' of XSwap.active (/sb/XSwap_1.sol#163) is not in mixedCase
+Parameter '_input' of XSwap.trade (/sb/XSwap_1.sol#172) is not in mixedCase
+Parameter '_output' of XSwap.trade (/sb/XSwap_1.sol#172) is not in mixedCase
+Parameter '_inputAmount' of XSwap.trade (/sb/XSwap_1.sol#172) is not in mixedCase
+Parameter '_input' of XSwap.trade (/sb/XSwap_1.sol#176) is not in mixedCase
+Parameter '_output' of XSwap.trade (/sb/XSwap_1.sol#176) is not in mixedCase
+Parameter '_inputAmount' of XSwap.trade (/sb/XSwap_1.sol#176) is not in mixedCase
+Parameter '_receiver' of XSwap.trade (/sb/XSwap_1.sol#176) is not in mixedCase
+Parameter '_token' of XSwap.getTokenLiquidation (/sb/XSwap_1.sol#207) is not in mixedCase
+Parameter '_lendFMe' of XSwap.setLendFMe (/sb/XSwap_1.sol#212) is not in mixedCase
+Parameter '_token' of XSwap.enableLending (/sb/XSwap_1.sol#217) is not in mixedCase
+Parameter '_token' of XSwap.disableLending (/sb/XSwap_1.sol#241) is not in mixedCase
+Parameter '_input' of XSwap.createPair (/sb/XSwap_1.sol#256) is not in mixedCase
+Parameter '_output' of XSwap.createPair (/sb/XSwap_1.sol#256) is not in mixedCase
+Parameter '_priceInOut' of XSwap.createPair (/sb/XSwap_1.sol#256) is not in mixedCase
+Parameter '_priceOutIn' of XSwap.createPair (/sb/XSwap_1.sol#256) is not in mixedCase
+Parameter '_fee' of XSwap.createPair (/sb/XSwap_1.sol#256) is not in mixedCase
+Parameter '_input' of XSwap.setPrices (/sb/XSwap_1.sol#262) is not in mixedCase
+Parameter '_output' of XSwap.setPrices (/sb/XSwap_1.sol#262) is not in mixedCase
+Parameter '_priceInOut' of XSwap.setPrices (/sb/XSwap_1.sol#262) is not in mixedCase
+Parameter '_priceOutIn' of XSwap.setPrices (/sb/XSwap_1.sol#262) is not in mixedCase
+Parameter '_input' of XSwap.setPrices (/sb/XSwap_1.sol#268) is not in mixedCase
+Parameter '_output' of XSwap.setPrices (/sb/XSwap_1.sol#268) is not in mixedCase
+Parameter '_price' of XSwap.setPrices (/sb/XSwap_1.sol#268) is not in mixedCase
+Parameter '_input' of XSwap.setFee (/sb/XSwap_1.sol#273) is not in mixedCase
+Parameter '_output' of XSwap.setFee (/sb/XSwap_1.sol#273) is not in mixedCase
+Parameter '_fee' of XSwap.setFee (/sb/XSwap_1.sol#273) is not in mixedCase
+Parameter '_token' of XSwap.setTokenDecimals (/sb/XSwap_1.sol#279) is not in mixedCase
+Parameter '_decimals' of XSwap.setTokenDecimals (/sb/XSwap_1.sol#279) is not in mixedCase
+Parameter '_open' of XSwap.emergencyStop (/sb/XSwap_1.sol#285) is not in mixedCase
+Parameter '_token' of XSwap.transferOut (/sb/XSwap_1.sol#290) is not in mixedCase
+Parameter '_receiver' of XSwap.transferOut (/sb/XSwap_1.sol#290) is not in mixedCase
+Parameter '_amount' of XSwap.transferOut (/sb/XSwap_1.sol#290) is not in mixedCase
+Parameter '_token' of XSwap.transferOutALL (/sb/XSwap_1.sol#307) is not in mixedCase
+Parameter '_receiver' of XSwap.transferOutALL (/sb/XSwap_1.sol#307) is not in mixedCase
+Parameter '_token' of XSwap.transferIn (/sb/XSwap_1.sol#324) is not in mixedCase
+Parameter '_amount' of XSwap.transferIn (/sb/XSwap_1.sol#324) is not in mixedCase
+Parameter '_token' of XSwap.normalizeToken (/sb/XSwap_1.sol#337) is not in mixedCase
+Parameter '_amount' of XSwap.normalizeToken (/sb/XSwap_1.sol#337) is not in mixedCase
+Parameter '_token' of XSwap.denormalizedToken (/sb/XSwap_1.sol#342) is not in mixedCase
+Parameter '_amount' of XSwap.denormalizedToken (/sb/XSwap_1.sol#342) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/XSwap_1.sol analyzed (9 contracts), 64 result(s) found

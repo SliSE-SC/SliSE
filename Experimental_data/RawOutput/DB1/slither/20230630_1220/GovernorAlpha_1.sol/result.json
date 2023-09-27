@@ -1,0 +1,315 @@
+{
+    "errors": [
+        "EXIT_CODE_29"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "execute",
+            "impact": "High",
+            "line": 195,
+            "line_end": 203,
+            "message": "GovernorAlpha.execute (GovernorAlpha_1.sol#195-203) sends eth to arbitrary user\n\tDangerous calls:\n\t- timelock.executeTransaction.value(proposal.values[i])(proposal.targets[i],proposal.values[i],proposal.signatures[i],proposal.calldatas[i],proposal.eta) (GovernorAlpha_1.sol#200)\n",
+            "name": "arbitrary-send"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "impact": "Medium",
+            "line": 295,
+            "line_end": 299,
+            "message": "GovernorAlpha.getChainId (GovernorAlpha_1.sol#295-299) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "_castVote",
+            "impact": "Medium",
+            "line": 264,
+            "line_end": 282,
+            "message": "Reentrancy in GovernorAlpha._castVote (GovernorAlpha_1.sol#264-282):\n\tExternal calls:\n\t- require(bool,string)(state(proposalId) == ProposalState.Active,GovernorAlpha::_castVote: voting is closed) (GovernorAlpha_1.sol#265)\n\t- votes = gtc.getPriorVotes(voter,proposal.startBlock) (GovernorAlpha_1.sol#269)\n\tState variables written after the call(s):\n\t- proposals (GovernorAlpha_1.sol#272)\n\t- proposals (GovernorAlpha_1.sol#274)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "cancel",
+            "impact": "Medium",
+            "line": 205,
+            "line_end": 218,
+            "message": "Reentrancy in GovernorAlpha.cancel (GovernorAlpha_1.sol#205-218):\n\tExternal calls:\n\t- state = state(proposalId) (GovernorAlpha_1.sol#206)\n\t- require(bool,string)(gtc.getPriorVotes(proposal.proposer,sub256(block.number,1)) < proposalThreshold(),GovernorAlpha::cancel: proposer above threshold) (GovernorAlpha_1.sol#210)\n\tState variables written after the call(s):\n\t- proposals (GovernorAlpha_1.sol#212)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "execute",
+            "impact": "Medium",
+            "line": 195,
+            "line_end": 203,
+            "message": "Reentrancy in GovernorAlpha.execute (GovernorAlpha_1.sol#195-203):\n\tExternal calls:\n\t- require(bool,string)(state(proposalId) == ProposalState.Queued,GovernorAlpha::execute: proposal can only be executed if it is queued) (GovernorAlpha_1.sol#196)\n\tState variables written after the call(s):\n\t- proposals (GovernorAlpha_1.sol#198)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "propose",
+            "impact": "Medium",
+            "line": 139,
+            "line_end": 177,
+            "message": "Reentrancy in GovernorAlpha.propose (GovernorAlpha_1.sol#139-177):\n\tExternal calls:\n\t- require(bool,string)(gtc.getPriorVotes(msg.sender,sub256(block.number,1)) > proposalThreshold(),GovernorAlpha::propose: proposer votes below proposal threshold) (GovernorAlpha_1.sol#140)\n\t- proposersLatestProposalState = state(latestProposalId) (GovernorAlpha_1.sol#147)\n\tState variables written after the call(s):\n\t- latestProposalIds (GovernorAlpha_1.sol#173)\n\t- proposalCount (GovernorAlpha_1.sol#155)\n\t- proposals (GovernorAlpha_1.sol#172)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "queue",
+            "impact": "Medium",
+            "line": 179,
+            "line_end": 188,
+            "message": "Reentrancy in GovernorAlpha.queue (GovernorAlpha_1.sol#179-188):\n\tExternal calls:\n\t- require(bool,string)(state(proposalId) == ProposalState.Succeeded,GovernorAlpha::queue: proposal can only be queued if it is succeeded) (GovernorAlpha_1.sol#180)\n\t- eta = add256(block.timestamp,timelock.delay()) (GovernorAlpha_1.sol#182)\n\tState variables written after the call(s):\n\t- proposals (GovernorAlpha_1.sol#186)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "_queueOrRevert",
+            "impact": "Medium",
+            "line": 190,
+            "line_end": 193,
+            "message": "GovernorAlpha._queueOrRevert (GovernorAlpha_1.sol#190-193) does not use the value returned by external calls:\n\t-timelock.queueTransaction(target,value,signature,data,eta) (GovernorAlpha_1.sol#192)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "execute",
+            "impact": "Medium",
+            "line": 195,
+            "line_end": 203,
+            "message": "GovernorAlpha.execute (GovernorAlpha_1.sol#195-203) does not use the value returned by external calls:\n\t-timelock.executeTransaction.value(proposal.values[i])(proposal.targets[i],proposal.values[i],proposal.signatures[i],proposal.calldatas[i],proposal.eta) (GovernorAlpha_1.sol#200)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "High",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "state",
+            "impact": "Low",
+            "line": 206,
+            "message": "GovernorAlpha.cancel.state (local variable @ GovernorAlpha_1.sol#206) shadows:\n\t- GovernorAlpha.state (function @ GovernorAlpha_1.sol#229-249)\n",
+            "name": "shadowing-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "execute",
+            "impact": "Low",
+            "line": 200,
+            "message": "GovernorAlpha.execute has external calls inside a loop:\n\t- timelock.executeTransaction.value(proposal.values[i])(proposal.targets[i],proposal.values[i],proposal.signatures[i],proposal.calldatas[i],proposal.eta) (GovernorAlpha_1.sol#200)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "cancel",
+            "impact": "Low",
+            "line": 214,
+            "message": "GovernorAlpha.cancel has external calls inside a loop:\n\t- timelock.cancelTransaction(proposal.targets[i],proposal.values[i],proposal.signatures[i],proposal.calldatas[i],proposal.eta) (GovernorAlpha_1.sol#214)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "_queueOrRevert",
+            "impact": "Low",
+            "line": 190,
+            "line_end": 193,
+            "message": "GovernorAlpha._queueOrRevert (GovernorAlpha_1.sol#190-193) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(! timelock.queuedTransactions(keccak256(bytes)(abi.encode(target,value,signature,data,eta))),GovernorAlpha::_queueOrRevert: proposal action already queued at eta) (GovernorAlpha_1.sol#191)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "state",
+            "impact": "Low",
+            "line": 229,
+            "line_end": 249,
+            "message": "GovernorAlpha.state (GovernorAlpha_1.sol#229-249) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- block.timestamp >= add256(proposal.eta,timelock.GRACE_PERIOD()) (GovernorAlpha_1.sol#244-248)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "add256",
+            "impact": "Low",
+            "line": 284,
+            "line_end": 288,
+            "message": "GovernorAlpha.add256 (GovernorAlpha_1.sol#284-288) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(c >= a,addition overflow) (GovernorAlpha_1.sol#286)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "High",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "getChainId",
+            "impact": "Informational",
+            "line": 295,
+            "line_end": 299,
+            "message": "GovernorAlpha.getChainId uses assembly (GovernorAlpha_1.sol#295-299)\n\t- GovernorAlpha_1.sol#297\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Different versions of Solidity is used in GovernorAlpha_1.sol:\n\t- Version used: ['ABIEncoderV2', '^0.5.16']\n\t- GovernorAlpha_1.sol#1 declares pragma solidity^0.5.16\n\t- GovernorAlpha_1.sol#3 declares pragma experimentalABIEncoderV2\n",
+            "name": "pragma"
+        },
+        {
+            "confidence": "High",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "propose",
+            "impact": "Informational",
+            "line": 139,
+            "line_end": 177,
+            "message": "GovernorAlpha.propose (GovernorAlpha_1.sol#139-177) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "queue",
+            "impact": "Informational",
+            "line": 179,
+            "line_end": 188,
+            "message": "GovernorAlpha.queue (GovernorAlpha_1.sol#179-188) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "execute",
+            "impact": "Informational",
+            "line": 195,
+            "line_end": 203,
+            "message": "GovernorAlpha.execute (GovernorAlpha_1.sol#195-203) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "cancel",
+            "impact": "Informational",
+            "line": 205,
+            "line_end": 218,
+            "message": "GovernorAlpha.cancel (GovernorAlpha_1.sol#205-218) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "getActions",
+            "impact": "Informational",
+            "line": 220,
+            "line_end": 223,
+            "message": "GovernorAlpha.getActions (GovernorAlpha_1.sol#220-223) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "getReceipt",
+            "impact": "Informational",
+            "line": 225,
+            "line_end": 227,
+            "message": "GovernorAlpha.getReceipt (GovernorAlpha_1.sol#225-227) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "castVote",
+            "impact": "Informational",
+            "line": 251,
+            "line_end": 253,
+            "message": "GovernorAlpha.castVote (GovernorAlpha_1.sol#251-253) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "GovernorAlpha",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "function": "castVoteBySig",
+            "impact": "Informational",
+            "line": 255,
+            "line_end": 262,
+            "message": "GovernorAlpha.castVoteBySig (GovernorAlpha_1.sol#255-262) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in GovernorAlpha_1.sol:\n\t- pragma solidity^0.5.16 (GovernorAlpha_1.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "impact": "Informational",
+            "line": 190,
+            "line_end": 193,
+            "message": "Function 'GovernorAlpha._queueOrRevert' (GovernorAlpha_1.sol#190-193) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "impact": "Informational",
+            "line": 264,
+            "line_end": 282,
+            "message": "Function 'GovernorAlpha._castVote' (GovernorAlpha_1.sol#264-282) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/GovernorAlpha_1.sol",
+            "impact": "Informational",
+            "line": 304,
+            "message": "Function 'TimelockInterface.GRACE_PERIOD' (GovernorAlpha_1.sol#304) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

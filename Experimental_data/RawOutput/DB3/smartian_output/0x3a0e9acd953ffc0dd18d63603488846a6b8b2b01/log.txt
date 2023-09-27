@@ -1,0 +1,692 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/0x3a0e9acd953ffc0dd18d63603488846a6b8b2b01.bin
+[00:00:00:00] Fuzzing starts at 08:39:56
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found sload(<0x1, { }, { }>) @ 0xf
+Found sstore(<0x1, { }, { }>, <T, { }, { CALLER, var_1 }>) @ 0x44
+Found sload(<0x2, { }, { }>) @ 0x50
+Found sstore(<0x2, { }, { }>, <T, { }, { CALLER, var_2 }>) @ 0x85
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_1, var_2 }, Use = { var_1, var_2 }
+Constructor tainted: { var_1, var_2 }
+[DEBUG] Analyzing MinDeposit(11bcd830) @ ae
+Found sload(<0x3, { }, { }>) @ 0x34d
+MinDeposit(11bcd830): Def = {  }, Use = { var_3 }
+[DEBUG] Analyzing initTokenBank(290b1e5f) @ d9
+Found sload(<0x2, { }, { }>) @ 0x35b
+Found sstore(<0x2, { }, { }>, <T, { }, { CALLER, var_2 }>) @ 0x390
+Found sstore(<0x3, { }, { }>, <0x0DE0B6B3A7640000, { }, { }>) @ 0x39f
+initTokenBank(290b1e5f): Def = { var_2, var_3 }, Use = { var_2 }
+[DEBUG] Analyzing WitdrawTokenToHolder(2e2a51bd) @ f0
+Found sload(<0x1, { }, { }>) @ 0x3bf
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x43a
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <0x0, { }, { }>) @ 0x484
+Found sload(<0x1, { }, { }>) @ 0x627
+WitdrawTokenToHolder(2e2a51bd): (onlyOwner) Def = { map_4 }, Use = { map_4, var_1 }
+[DEBUG] Analyzing changeOwner(a6f9dae1) @ 15d
+Found sload(<0x1, { }, { }>) @ 0x4b4
+Found sload(<0x0, { }, { }>) @ 0x4f7
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x52c
+changeOwner(a6f9dae1): (onlyOwner) Def = { var_0 }, Use = { var_0, var_1 }
+[DEBUG] Analyzing confirmOwner(bd9b6d86) @ 1a0
+Found sload(<0x0, { }, { }>) @ 0x536
+Found sload(<0x0, { }, { }>) @ 0x58b
+Found sload(<0x1, { }, { }>) @ 0x5b2
+Found sstore(<0x1, { }, { }>, <T, { }, { var_0, var_1 }>) @ 0x5e7
+confirmOwner(bd9b6d86): Def = { var_1 }, Use = { var_0, var_1 }
+[DEBUG] Analyzing Bal(bea69bb9) @ 1b7
+Bal(bea69bb9): Def = {  }, Use = {  }
+[DEBUG] Analyzing WithdrawToken(c7de2d13) @ 1e2
+Found sload(<0x1, { }, { }>) @ 0x627
+WithdrawToken(c7de2d13): (onlyOwner) Def = {  }, Use = { var_1 }
+[DEBUG] Analyzing Deposit(ed21248c) @ 24f
+Found sload(<0x3, { }, { }>) @ 0x2f3
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x33f
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <T, { }, { map_4 }>) @ 0x346
+Deposit(ed21248c): Def = { map_4 }, Use = { map_4, var_3 }
+[DEBUG] Analyzing Holders(eec0ddd7) @ 259
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x768
+Holders(eec0ddd7): Def = {  }, Use = { map_4 }
+[DEBUG] Analyzing WithdrawToHolder(f8ff612e) @ 2b0
+Found sload(<0x1, { }, { }>) @ 0x788
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x803
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x84a
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x896
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <T, { }, { map_4 }>) @ 0x89d
+WithdrawToHolder(f8ff612e): (onlyOwner) Def = { map_4 }, Use = { map_4, var_1 }
+[DEBUG] Analyzing fallback @ 0
+Found sload(<0x3, { }, { }>) @ 0x2f3
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x33f
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <T, { }, { map_4 }>) @ 0x346
+fallback: Def = { map_4 }, Use = { map_4, var_3 }
+Pruning out ["Deposit(ed21248c)"]
+Pruning out ["fallback"]
+Pruning out ["WitdrawTokenToHolder(2e2a51bd)"]
+Pruning out ["WithdrawToHolder(f8ff612e)"]
+Pruning out ["confirmOwner(bd9b6d86)"]
+(26 candidate sequences)
+["changeOwner(a6f9dae1)"; "confirmOwner(bd9b6d86)"; "confirmOwner(bd9b6d86)"]
+["changeOwner(a6f9dae1)"; "confirmOwner(bd9b6d86)"; "changeOwner(a6f9dae1)"]
+["changeOwner(a6f9dae1)"; "confirmOwner(bd9b6d86)"; "WithdrawToken(c7de2d13)"]
+["changeOwner(a6f9dae1)"; "confirmOwner(bd9b6d86)"; "WithdrawToHolder(f8ff612e)"]
+["changeOwner(a6f9dae1)"; "confirmOwner(bd9b6d86)";
+ "WitdrawTokenToHolder(2e2a51bd)"]
+["changeOwner(a6f9dae1)"; "changeOwner(a6f9dae1)"]
+["initTokenBank(290b1e5f)"; "initTokenBank(290b1e5f)"]
+["initTokenBank(290b1e5f)"; "fallback"]
+["initTokenBank(290b1e5f)"; "MinDeposit(11bcd830)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)"; "fallback"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)"; "WithdrawToHolder(f8ff612e)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)";
+ "WitdrawTokenToHolder(2e2a51bd)"; "fallback"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)";
+ "WitdrawTokenToHolder(2e2a51bd)"; "WithdrawToHolder(f8ff612e)"; "fallback";
+ "fallback"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)";
+ "WitdrawTokenToHolder(2e2a51bd)"; "WithdrawToHolder(f8ff612e)"; "fallback";
+ "WithdrawToHolder(f8ff612e)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)";
+ "WitdrawTokenToHolder(2e2a51bd)"; "WithdrawToHolder(f8ff612e)"; "fallback";
+ "WitdrawTokenToHolder(2e2a51bd)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)";
+ "WitdrawTokenToHolder(2e2a51bd)"; "WithdrawToHolder(f8ff612e)"; "fallback";
+ "Holders(eec0ddd7)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)";
+ "WitdrawTokenToHolder(2e2a51bd)"; "WithdrawToHolder(f8ff612e)"; "fallback";
+ "Deposit(ed21248c)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)";
+ "WitdrawTokenToHolder(2e2a51bd)"; "WithdrawToHolder(f8ff612e)";
+ "WithdrawToHolder(f8ff612e)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)";
+ "WitdrawTokenToHolder(2e2a51bd)"; "WithdrawToHolder(f8ff612e)";
+ "WitdrawTokenToHolder(2e2a51bd)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)";
+ "WitdrawTokenToHolder(2e2a51bd)"; "WithdrawToHolder(f8ff612e)";
+ "Holders(eec0ddd7)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)";
+ "WitdrawTokenToHolder(2e2a51bd)"; "WithdrawToHolder(f8ff612e)";
+ "Deposit(ed21248c)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)";
+ "WitdrawTokenToHolder(2e2a51bd)"; "WitdrawTokenToHolder(2e2a51bd)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)";
+ "WitdrawTokenToHolder(2e2a51bd)"; "Holders(eec0ddd7)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)";
+ "WitdrawTokenToHolder(2e2a51bd)"; "Deposit(ed21248c)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)"; "Holders(eec0ddd7)"]
+["initTokenBank(290b1e5f)"; "Deposit(ed21248c)"; "Deposit(ed21248c)"]
+[00:00:00:01] Start main fuzzing phase
+[00:00:00:01] [*] Save new seed id-00000_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: confirmOwner(bd9b6d86), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: confirmOwner(bd9b6d86), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] Tx#3 found MishandledException at 748
+[00:00:00:02] Tx#3 found MishandledExceptionMythril at 748
+[00:00:00:02] Tx#3 found MishandledExceptionManticore at 748
+[00:00:00:02] [*] Save bug seed id-00000-ME-ME_mant-ME_myth_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: confirmOwner(bd9b6d86), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: WithdrawToken(c7de2d13), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00001_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: confirmOwner(bd9b6d86), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: WithdrawToken(c7de2d13), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00002_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: confirmOwner(bd9b6d86), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: WithdrawToHolder(f8ff612e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00003_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: confirmOwner(bd9b6d86), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: WitdrawTokenToHolder(2e2a51bd), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+          Arg3 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00004_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: initTokenBank(290b1e5f), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: initTokenBank(290b1e5f), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00005_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: initTokenBank(290b1e5f), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00006_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: initTokenBank(290b1e5f), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: MinDeposit(11bcd830), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00007_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: initTokenBank(290b1e5f), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Deposit(ed21248c), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00008_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: WithdrawToHolder(f8ff612e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 226CC61B3EAC93CC2CC9D6CB8D58856670D50FAD
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 2    ) Function: Holders(eec0ddd7), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000010000
+(    TX 3    ) Function: confirmOwner(bd9b6d86), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: WithdrawToken(c7de2d13), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00009_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: initTokenBank(290b1e5f), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: confirmOwner(bd9b6d86), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: changeOwner(a6f9dae1), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000008100000000009000190000
+( => TX 4 <= ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000020100000000FA0000000000003100001000000000
+
+[00:00:00:03] [*] Save new seed id-00010_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: Bal(bea69bb9), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0010000000000000001400000000000000000000000000000000000000000000
+(    TX 3    ) Function: WithdrawToken(c7de2d13), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00011_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+(    TX 2    ) Function: confirmOwner(bd9b6d86), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: initTokenBank(290b1e5f), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: changeOwner(a6f9dae1), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 6B773032D99FB9AAD6FC268151C446FA7F9301AF
+(    TX 5    ) Function: WitdrawTokenToHolder(2e2a51bd), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000081000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+          Arg3 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000080
+( => TX 6 <= ) Function: Bal(bea69bb9), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00012_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: confirmOwner(bd9b6d86), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: Bal(bea69bb9), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: WithdrawToHolder(f8ff612e), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 226CC61BFFAC93CC2CC9D6CB8D40856670D50FAD
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: changeOwner(a6f9dae1), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 24CD2EDBA056B7E6548C0E8201B619D4F624FDDA
+( => TX 5 <= ) Function: WithdrawToken(c7de2d13), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00013_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: confirmOwner(bd9b6d86), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: WithdrawToken(c7de2d13), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : address
+                 6B773032D99FB9AAD6FC267651C446FA7F9301AF
+
+[00:00:00:05] [*] Save new seed id-00014_00005: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000E00000000000
+(    TX 2    ) Function: Bal(bea69bb9), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: confirmOwner(bd9b6d86), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: WitdrawTokenToHolder(2e2a51bd), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000100
+          Arg2 : address
+                 000000000000008000EF00000000000000000000
+          Arg3 : uint256
+                 58000000000000030C0000000000004000000000000000000000000000000057
+(    TX 5    ) Function: Deposit(ed21248c), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000010000000000
+(    TX 6    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 800000000000000000000000000000000000FE00000000000001000000000001
+( => TX 7 <= ) Function: WithdrawToHolder(f8ff612e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000001000000000000000000000000000000000000000000000000000
+
+[00:00:00:05] Tx#2 found ReentrancyMythril at 748
+[00:00:00:05] [*] Save bug seed id-00001-RE_myth_00005: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: confirmOwner(bd9b6d86), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: WithdrawToken(c7de2d13), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : address
+                 24CD2EDBA056B7C654A50E8201B619D4F624FDDA
+
+[00:00:00:15] [*] Save new seed id-00015_00015: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: initTokenBank(290b1e5f), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: WithdrawToken(c7de2d13), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 6B773032D99FB9AAD6FC267651C446FA7F9301AF
+          Arg2 : uint256
+                 0000000000000020000000000000000000000000000000000000000000000000
+          Arg3 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: WithdrawToHolder(f8ff612e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 000000000000000000000000000002E300000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000004000000000000000000000000000
+(    TX 4    ) Function: WitdrawTokenToHolder(2e2a51bd), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000002000000810000000000
+          Arg2 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+          Arg3 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 5 <= ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 4000000000000000000000000000000000000000000000000000000000000001
+(    TX 6    ) Function: Deposit(ed21248c), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 000000000000000000000000000000A600F60000000000000000000000000000
+
+[00:00:00:15] [*] Save new seed id-00016_00015: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: Deposit(ed21248c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF1D0CFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+(    TX 2    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 00000000000000000000000000000000000000000000000000F0000000000000
+(    TX 3    ) Function: WitdrawTokenToHolder(2e2a51bd), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+          Arg3 : uint256
+                 0000000000000000000000000000000000000000000000EA0000000000000000
+(    TX 4    ) Function: MinDeposit(11bcd830), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 4000003300000000000000000000000000000000000000000000000000000001
+(    TX 6    ) Function: WithdrawToHolder(f8ff612e), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000040000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: WithdrawToHolder(f8ff612e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000810000000080000000000000009300
+          Arg2 : uint256
+                 4000000000000000000019000000000000000000000000000000000000000000
+
+[00:00:00:39] [*] Save new seed id-00017_00039: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Deposit(ed21248c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 7FFFFFFFFF3FFFFFFFFFFFFFFFFFFFFF1D0CFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+(    TX 2    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 00000000000000000000000000000000000000000000000000F0000000000000
+(    TX 4    ) Function: WitdrawTokenToHolder(2e2a51bd), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+          Arg3 : uint256
+                 0000000000000000000000000000000000000000000000EA0000000000000000
+( => TX 5 <= ) Function: MinDeposit(11bcd830), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 400000FC00000000000000000000000000008000000000000000000000000001
+(    TX 7    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 8    ) Function: WithdrawToHolder(f8ff612e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000040000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 9    ) Function: WithdrawToHolder(f8ff612e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000810000000080000000000000009300
+          Arg2 : uint256
+                 4000000000000000000019000000000000000000000000000000000000000000
+
+[00:00:01:15] [*] Save new seed id-00018_00075: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: Deposit(ed21248c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 7FFFFFFFFF3FFFFFFFFFFFFFFFFFFFFF8C0CFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+(    TX 2    ) Function: confirmOwner(bd9b6d86), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 00000000000000000000000000000000000000000000000140F0000000000000
+( => TX 4 <= ) Function: WitdrawTokenToHolder(2e2a51bd), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 24CD2EDBA056B7C654A50E8201B619D4F624FDDA
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+          Arg3 : uint256
+                 0000000000000000000000000000000000000000000000EA0000000000000000
+(    TX 5    ) Function: MinDeposit(11bcd830), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: Bal(bea69bb9), From: NormalUser3, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 4000000000003F0000000000BF00000000000016000000000000000000000801
+(    TX 8    ) Function: WithdrawToHolder(f8ff612e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000040000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 9    ) Function: WithdrawToHolder(f8ff612e), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000810000000080000000000000009300
+          Arg2 : uint256
+                 4000000000000000000019000000000000000000000000000000000000000010
+(    TX 10    ) Function: WithdrawToken(c7de2d13), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 000000000000009D000000000000000000000000
+          Arg2 : uint256
+                 000000000000000000000000000000FF00000000000000000000000000000000
+          Arg3 : address
+                 0000000000000000000000000000000000000000
+(    TX 11    ) Function: WithdrawToHolder(f8ff612e), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 508101
+[00:01:00:00] Deployment failures: 0
+[00:01:00:00] Test Cases: 19
+[00:01:00:00] Covered Edges: 73
+[00:01:00:00] Covered Instructions: 919
+[00:01:00:00] Covered Def-Use Chains: 62
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 0
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 0
+[00:01:00:00]   Integer Bug: 0
+[00:01:00:00]   Mishandled Exception: 1
+[00:01:00:00]   Multiple Send: 0
+[00:01:00:00]   Reentrancy: 0
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

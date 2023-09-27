@@ -1,0 +1,229 @@
+{
+    "errors": [
+        "EXIT_CODE_23"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Medium",
+            "line": 561,
+            "line_end": 573,
+            "message": "LibOrder.hashOrder (Exchange_1.sol#561-573) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Exchange",
+            "filename": "all_contract/Exchange_1.sol",
+            "function": "matchOrderWithAMM",
+            "impact": "Medium",
+            "line": 911,
+            "line_end": 944,
+            "message": "Reentrancy in Exchange.matchOrderWithAMM (Exchange_1.sol#911-944):\n\tExternal calls:\n\t- amm = IAMM(perpetual.amm()) (Exchange_1.sol#917-918)\n\t- require(bool,string)(amount.mod(perpetual.getGovernance().tradingLotSize) == 0,invalid trading lot size) (Exchange_1.sol#918-921)\n\t- takerOrderHash = validateOrderParam(perpetual,takerOrderParam) (Exchange_1.sol#922-924)\n\t- takerOpened = amm.sellFromWhitelisted(takerOrderParam.trader,amount,price,takerOrderParam.getExpiredAt()) (Exchange_1.sol#931-938)\n\t- takerOpened = amm.buyFromWhitelisted(takerOrderParam.trader,amount,price,takerOrderParam.getExpiredAt()) (Exchange_1.sol#939-940)\n\tState variables written after the call(s):\n\t- filled (Exchange_1.sol#940-943)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Exchange",
+            "filename": "all_contract/Exchange_1.sol",
+            "function": "matchOrders",
+            "impact": "Medium",
+            "line": 834,
+            "line_end": 882,
+            "message": "Reentrancy in Exchange.matchOrders (Exchange_1.sol#834-882):\n\tExternal calls:\n\t- require(bool,string)(perpetual.status() == LibTypes.Status.NORMAL,wrong perpetual status) (Exchange_1.sol#840-841)\n\t- tradingLotSize = perpetual.getGovernance().tradingLotSize (Exchange_1.sol#841-842)\n\t- takerOrderHash = validateOrderParam(perpetual,takerOrderParam) (Exchange_1.sol#842-844)\n\t- makerOrderHash = validateOrderParam(perpetual,makerOrderParams[i]) (Exchange_1.sol#855-856)\n\t- opened = fillOrder(perpetual,takerOrderParam,makerOrderParams[i],amounts[i]) (Exchange_1.sol#866-868)\n\tState variables written after the call(s):\n\t- filled (Exchange_1.sol#872-873)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Exchange",
+            "filename": "all_contract/Exchange_1.sol",
+            "function": "matchOrders",
+            "impact": "Medium",
+            "line": 834,
+            "line_end": 882,
+            "message": "Reentrancy in Exchange.matchOrders (Exchange_1.sol#834-882):\n\tExternal calls:\n\t- require(bool,string)(perpetual.status() == LibTypes.Status.NORMAL,wrong perpetual status) (Exchange_1.sol#840-841)\n\t- tradingLotSize = perpetual.getGovernance().tradingLotSize (Exchange_1.sol#841-842)\n\t- takerOrderHash = validateOrderParam(perpetual,takerOrderParam) (Exchange_1.sol#842-844)\n\t- require(bool,string)(perpetual.isIMSafe(takerOrderParam.trader),taker margin) (Exchange_1.sol#878)\n\t- require(bool,string)(perpetual.isSafe(takerOrderParam.trader),maker unsafe) (Exchange_1.sol#878-879)\n\t- require(bool,string)(perpetual.isSafe(msg.sender),broker unsafe) (Exchange_1.sol#879-881)\n\tState variables written after the call(s):\n\t- filled (Exchange_1.sol#881-882)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "LibSignature",
+            "filename": "all_contract/Exchange_1.sol",
+            "function": "isValidSignature",
+            "impact": "Medium",
+            "line": 369,
+            "line_end": 370,
+            "message": "recovered in LibSignature.isValidSignature (Exchange_1.sol#369-370) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Exchange",
+            "filename": "all_contract/Exchange_1.sol",
+            "function": "validateOrderParam",
+            "impact": "Low",
+            "line": 954,
+            "line_end": 974,
+            "message": "Exchange.validateOrderParam (Exchange_1.sol#954-974) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(orderParam.getExpiredAt() >= block.timestamp,order expired) (Exchange_1.sol#963-964)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibOrder",
+            "filename": "all_contract/Exchange_1.sol",
+            "function": "hashOrder",
+            "impact": "Informational",
+            "line": 561,
+            "line_end": 573,
+            "message": "LibOrder.hashOrder uses assembly (Exchange_1.sol#561-573)\n\t- Exchange_1.sol#568-573\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Different versions of Solidity is used in Exchange_1.sol:\n\t- Version used: ['ABIEncoderV2', '^0.5.2']\n\t- Exchange_1.sol#1 declares pragma solidity^0.5.2\n\t- Exchange_1.sol#2 declares pragma experimentalABIEncoderV2\n",
+            "name": "pragma"
+        },
+        {
+            "confidence": "High",
+            "contract": "Exchange",
+            "filename": "all_contract/Exchange_1.sol",
+            "function": "matchOrders",
+            "impact": "Informational",
+            "line": 834,
+            "line_end": 882,
+            "message": "Exchange.matchOrders (Exchange_1.sol#834-882) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Exchange",
+            "filename": "all_contract/Exchange_1.sol",
+            "function": "matchOrderWithAMM",
+            "impact": "Informational",
+            "line": 911,
+            "line_end": 944,
+            "message": "Exchange.matchOrderWithAMM (Exchange_1.sol#911-944) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Exchange",
+            "filename": "all_contract/Exchange_1.sol",
+            "function": "cancelOrder",
+            "impact": "Informational",
+            "line": 988,
+            "line_end": 993,
+            "message": "Exchange.cancelOrder (Exchange_1.sol#988-993) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Informational",
+            "line": 10,
+            "line_end": 12,
+            "message": "Function 'LibMathSigned.WAD' (Exchange_1.sol#10-12) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Informational",
+            "line": 120,
+            "message": "Constant 'LibMathSigned.fixed_digits' (Exchange_1.sol#120) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Informational",
+            "line": 121,
+            "message": "Constant 'LibMathSigned.fixed_1' (Exchange_1.sol#121) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Informational",
+            "line": 122,
+            "message": "Constant 'LibMathSigned.fixed_e' (Exchange_1.sol#122) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Informational",
+            "line": 123,
+            "message": "Constant 'LibMathSigned.longer_digits' (Exchange_1.sol#123) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Informational",
+            "line": 124,
+            "message": "Constant 'LibMathSigned.longer_fixed_log_e_1_5' (Exchange_1.sol#124) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Informational",
+            "line": 125,
+            "message": "Constant 'LibMathSigned.longer_fixed_1' (Exchange_1.sol#125) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Informational",
+            "line": 126,
+            "message": "Constant 'LibMathSigned.longer_fixed_log_e_10' (Exchange_1.sol#126) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Informational",
+            "line": 234,
+            "line_end": 238,
+            "message": "Function 'LibMathUnsigned.WAD' (Exchange_1.sol#234-238) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Informational",
+            "line": 838,
+            "message": "Parameter '_perpetual' of Exchange.matchOrders (Exchange_1.sol#838) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Informational",
+            "line": 913,
+            "message": "Parameter '_perpetual' of Exchange.matchOrderWithAMM (Exchange_1.sol#913) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/Exchange_1.sol",
+            "impact": "Informational",
+            "line": 314,
+            "line_end": 316,
+            "message": "LibEIP712.DOMAIN_NAME (Exchange_1.sol#314-316) is never used in LibEIP712\nLibEIP712.EIP712_DOMAIN_TYPEHASH (Exchange_1.sol#325-327) is never used in LibEIP712\n",
+            "name": "unused-state"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

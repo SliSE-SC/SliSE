@@ -1,0 +1,265 @@
+{
+    "errors": [
+        "EXIT_CODE_25"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "impact": "Medium",
+            "line": 50,
+            "line_end": 59,
+            "message": "LibBytes.rawAddress (MixinSignatureValidator_2.sol#50-59) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "impact": "Medium",
+            "line": 64,
+            "line_end": 73,
+            "message": "LibBytes.contentAddress (MixinSignatureValidator_2.sol#64-73) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "impact": "Medium",
+            "line": 79,
+            "line_end": 180,
+            "message": "LibBytes.memCopy (MixinSignatureValidator_2.sol#79-180) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "impact": "Medium",
+            "line": 220,
+            "line_end": 244,
+            "message": "LibBytes.sliceDestructive (MixinSignatureValidator_2.sol#220-244) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "impact": "Medium",
+            "line": 249,
+            "line_end": 268,
+            "message": "LibBytes.popLastByte (MixinSignatureValidator_2.sol#249-268) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "impact": "Medium",
+            "line": 273,
+            "line_end": 292,
+            "message": "LibBytes.popLast20Bytes (MixinSignatureValidator_2.sol#273-292) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "impact": "Medium",
+            "line": 316,
+            "line_end": 342,
+            "message": "LibBytes.readAddress (MixinSignatureValidator_2.sol#316-342) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "impact": "Medium",
+            "line": 348,
+            "line_end": 388,
+            "message": "LibBytes.writeAddress (MixinSignatureValidator_2.sol#348-388) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "impact": "Medium",
+            "line": 394,
+            "line_end": 415,
+            "message": "LibBytes.readBytes32 (MixinSignatureValidator_2.sol#394-415) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "impact": "Medium",
+            "line": 421,
+            "line_end": 441,
+            "message": "LibBytes.writeBytes32 (MixinSignatureValidator_2.sol#421-441) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "impact": "Medium",
+            "line": 477,
+            "line_end": 496,
+            "message": "LibBytes.readBytes4 (MixinSignatureValidator_2.sol#477-496) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "impact": "Medium",
+            "line": 504,
+            "line_end": 528,
+            "message": "LibBytes.readBytesWithLength (MixinSignatureValidator_2.sol#504-528) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "MixinSignatureValidator",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "function": "preSign",
+            "impact": "Medium",
+            "line": 836,
+            "line_end": 853,
+            "message": "Reentrancy in MixinSignatureValidator.preSign (MixinSignatureValidator_2.sol#836-853):\n\tExternal calls:\n\t- require(bool,string)(isValidSignature(hash,signerAddress,signature),INVALID_SIGNATURE) (MixinSignatureValidator_2.sol#844-851)\n\tState variables written after the call(s):\n\t- preSigned (MixinSignatureValidator_2.sol#852)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "function": "rawAddress",
+            "impact": "Informational",
+            "line": 50,
+            "line_end": 59,
+            "message": "LibBytes.rawAddress uses assembly (MixinSignatureValidator_2.sol#50-59)\n\t- MixinSignatureValidator_2.sol#55-58\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "function": "contentAddress",
+            "impact": "Informational",
+            "line": 64,
+            "line_end": 73,
+            "message": "LibBytes.contentAddress uses assembly (MixinSignatureValidator_2.sol#64-73)\n\t- MixinSignatureValidator_2.sol#69-72\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "function": "memCopy",
+            "impact": "Informational",
+            "line": 79,
+            "line_end": 180,
+            "message": "LibBytes.memCopy uses assembly (MixinSignatureValidator_2.sol#79-180)\n\t- MixinSignatureValidator_2.sol#91-97\n\t- MixinSignatureValidator_2.sol#119-147\n\t- MixinSignatureValidator_2.sol#148-178\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "function": "sliceDestructive",
+            "impact": "Informational",
+            "line": 220,
+            "line_end": 244,
+            "message": "LibBytes.sliceDestructive uses assembly (MixinSignatureValidator_2.sol#220-244)\n\t- MixinSignatureValidator_2.sol#239-243\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "function": "popLastByte",
+            "impact": "Informational",
+            "line": 249,
+            "line_end": 268,
+            "message": "LibBytes.popLastByte uses assembly (MixinSignatureValidator_2.sol#249-268)\n\t- MixinSignatureValidator_2.sol#262-267\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "function": "popLast20Bytes",
+            "impact": "Informational",
+            "line": 273,
+            "line_end": 292,
+            "message": "LibBytes.popLast20Bytes uses assembly (MixinSignatureValidator_2.sol#273-292)\n\t- MixinSignatureValidator_2.sol#286-291\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "function": "readAddress",
+            "impact": "Informational",
+            "line": 316,
+            "line_end": 342,
+            "message": "LibBytes.readAddress uses assembly (MixinSignatureValidator_2.sol#316-342)\n\t- MixinSignatureValidator_2.sol#335-341\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "function": "writeAddress",
+            "impact": "Informational",
+            "line": 348,
+            "line_end": 388,
+            "message": "LibBytes.writeAddress uses assembly (MixinSignatureValidator_2.sol#348-388)\n\t- MixinSignatureValidator_2.sol#367-388\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "function": "readBytes32",
+            "impact": "Informational",
+            "line": 394,
+            "line_end": 415,
+            "message": "LibBytes.readBytes32 uses assembly (MixinSignatureValidator_2.sol#394-415)\n\t- MixinSignatureValidator_2.sol#411-414\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "function": "writeBytes32",
+            "impact": "Informational",
+            "line": 421,
+            "line_end": 441,
+            "message": "LibBytes.writeBytes32 uses assembly (MixinSignatureValidator_2.sol#421-441)\n\t- MixinSignatureValidator_2.sol#438-441\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "function": "readBytes4",
+            "impact": "Informational",
+            "line": 477,
+            "line_end": 496,
+            "message": "LibBytes.readBytes4 uses assembly (MixinSignatureValidator_2.sol#477-496)\n\t- MixinSignatureValidator_2.sol#489-495\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/MixinSignatureValidator_2.sol",
+            "function": "readBytesWithLength",
+            "impact": "Informational",
+            "line": 504,
+            "line_end": 528,
+            "message": "LibBytes.readBytesWithLength uses assembly (MixinSignatureValidator_2.sol#504-528)\n\t- MixinSignatureValidator_2.sol#524-527\n",
+            "name": "assembly"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "0x96edbe868531bd23a6c05e9d0c424ea64fb1b78b.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "Collect",
+                "SetLogFile"
+            ],
+            "from_function": "SetLogFile",
+            "to_function": "Collect",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 6\nFunction: SetLogFile\nNode: \nEXPRESSION Log = LogFile(_log)\nIRS: \nLog := TMP_0\"",
+                        "\"BlockID: 17\nFunction: Collect\nNode: \nEXPRESSION Log.AddMessage(msg.sender,_am,Collect)\nIRS: \nHIGH_LEVEL_CALL, dest:Log(LogFile), function:AddMessage, arguments:['msg.sender', '_am', 'Collect']  \""
+                    ],
+                    "state_variable": "Log"
+                }
+            ]
+        }
+    ]
+}

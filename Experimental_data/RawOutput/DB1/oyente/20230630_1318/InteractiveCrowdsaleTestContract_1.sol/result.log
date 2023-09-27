@@ -1,0 +1,218 @@
+WARNING:root:You are using solc version 0.4.26, The latest supported version is 0.4.19
+INFO:CryticCompile:Compilation warnings/errors on /sb/InteractiveCrowdsaleTestContract_1.sol:
+/sb/InteractiveCrowdsaleTestContract_1.sol:256:5: Warning: Use of the "var" keyword is deprecated.
+    var _allowance = self.allowed[_from][msg.sender];
+    ^------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:433:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function CrowdsaleToken(address owner,
+  ^ (Relevant source part starts here and spans across multiple lines).
+/sb/InteractiveCrowdsaleTestContract_1.sol:676:5: Warning: Use of the "var" keyword is deprecated.
+    var total = self.withdrawTokensMap[msg.sender];
+    ^-------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:693:5: Warning: Use of the "var" keyword is deprecated.
+    var total = self.leftoverWei[msg.sender];
+    ^-------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1602:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function InteractiveCrowdsaleTestContract(
+  ^ (Relevant source part starts here and spans across multiple lines).
+/sb/InteractiveCrowdsaleTestContract_1.sol:239:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:271:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:293:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _value);
+    ^------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:335:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _newAllowed);
+    ^-----------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:347:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnerChange(msg.sender, _newOwner);
+    ^--------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:365:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(0x0, self.owner, _amount);
+    ^--------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:376:5: Warning: Invoking events without "emit" prefix is deprecated.
+    MintingClosed(true);
+    ^-----------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:393:7: Warning: Invoking events without "emit" prefix is deprecated.
+      Burn(msg.sender, _amount);
+      ^-----------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:394:7: Warning: Invoking events without "emit" prefix is deprecated.
+      Transfer(msg.sender, 0x0, _amount);
+      ^--------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:646:7: Warning: Invoking events without "emit" prefix is deprecated.
+      LogErrorMsg(msg.value, "Invalid Purchase! Check start time and amount of ether.");
+      ^-------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:658:7: Warning: Invoking events without "emit" prefix is deprecated.
+      LogErrorMsg(0, "Sender has no tokens to withdraw!");
+      ^-------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:664:9: Warning: Invoking events without "emit" prefix is deprecated.
+        LogErrorMsg(0, "Owner cannot withdraw extra tokens until after the sale!");
+        ^------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:680:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogTokensWithdrawn(msg.sender, total);
+    ^-----------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:689:7: Warning: Invoking events without "emit" prefix is deprecated.
+      LogErrorMsg(0, "Sender has no extra wei to withdraw!");
+      ^----------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:696:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogWeiWithdrawn(msg.sender, total);
+    ^--------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:705:7: Warning: Invoking events without "emit" prefix is deprecated.
+      LogErrorMsg(0, "Cannot withdraw owner ether until after the sale!");
+      ^-----------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:715:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogOwnerEthWithdrawn(msg.sender,amount,"Crowdsale owner has withdrawn all funds!");
+    ^--------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1288:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogBidAccepted(msg.sender, _amount, _personalCap);
+    ^-----------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1289:5: Warning: Invoking events without "emit" prefix is deprecated.
+    BucketAndValuationAndCommitted(self.currentBucket, self.totalValuation, self.valueCommitted);
+    ^------------------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1403:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogBidWithdrawn(msg.sender, refundWei, self.personalCaps[msg.sender]);
+    ^-------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1404:5: Warning: Invoking events without "emit" prefix is deprecated.
+    BucketAndValuationAndCommitted(self.currentBucket, self.totalValuation, self.valueCommitted);
+    ^------------------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1509:7: Warning: Invoking events without "emit" prefix is deprecated.
+      LogErrorMsg(self.totalValuation, "Sale is canceled, all bids have been refunded!");
+      ^--------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1535:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogErrorMsg(self.base.hasContributed[msg.sender],"contribution");
+    ^--------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1536:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogErrorMsg(self.pricePurchasedAt[msg.sender],"price");
+    ^----------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1537:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogErrorMsg(self.q,"percentage");
+    ^------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1630:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogErrorMsg(0, 'Did not send correct data!');
+    ^------------------------------------------^
+
+INFO:CryticCompile:Compilation warnings/errors on /sb/InteractiveCrowdsaleTestContract_1.sol:
+/sb/InteractiveCrowdsaleTestContract_1.sol:256:5: Warning: Use of the "var" keyword is deprecated.
+    var _allowance = self.allowed[_from][msg.sender];
+    ^------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:433:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function CrowdsaleToken(address owner,
+  ^ (Relevant source part starts here and spans across multiple lines).
+/sb/InteractiveCrowdsaleTestContract_1.sol:676:5: Warning: Use of the "var" keyword is deprecated.
+    var total = self.withdrawTokensMap[msg.sender];
+    ^-------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:693:5: Warning: Use of the "var" keyword is deprecated.
+    var total = self.leftoverWei[msg.sender];
+    ^-------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1602:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function InteractiveCrowdsaleTestContract(
+  ^ (Relevant source part starts here and spans across multiple lines).
+/sb/InteractiveCrowdsaleTestContract_1.sol:239:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:271:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:293:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _value);
+    ^------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:335:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _newAllowed);
+    ^-----------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:347:5: Warning: Invoking events without "emit" prefix is deprecated.
+    OwnerChange(msg.sender, _newOwner);
+    ^--------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:365:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(0x0, self.owner, _amount);
+    ^--------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:376:5: Warning: Invoking events without "emit" prefix is deprecated.
+    MintingClosed(true);
+    ^-----------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:393:7: Warning: Invoking events without "emit" prefix is deprecated.
+      Burn(msg.sender, _amount);
+      ^-----------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:394:7: Warning: Invoking events without "emit" prefix is deprecated.
+      Transfer(msg.sender, 0x0, _amount);
+      ^--------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:646:7: Warning: Invoking events without "emit" prefix is deprecated.
+      LogErrorMsg(msg.value, "Invalid Purchase! Check start time and amount of ether.");
+      ^-------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:658:7: Warning: Invoking events without "emit" prefix is deprecated.
+      LogErrorMsg(0, "Sender has no tokens to withdraw!");
+      ^-------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:664:9: Warning: Invoking events without "emit" prefix is deprecated.
+        LogErrorMsg(0, "Owner cannot withdraw extra tokens until after the sale!");
+        ^------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:680:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogTokensWithdrawn(msg.sender, total);
+    ^-----------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:689:7: Warning: Invoking events without "emit" prefix is deprecated.
+      LogErrorMsg(0, "Sender has no extra wei to withdraw!");
+      ^----------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:696:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogWeiWithdrawn(msg.sender, total);
+    ^--------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:705:7: Warning: Invoking events without "emit" prefix is deprecated.
+      LogErrorMsg(0, "Cannot withdraw owner ether until after the sale!");
+      ^-----------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:715:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogOwnerEthWithdrawn(msg.sender,amount,"Crowdsale owner has withdrawn all funds!");
+    ^--------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1288:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogBidAccepted(msg.sender, _amount, _personalCap);
+    ^-----------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1289:5: Warning: Invoking events without "emit" prefix is deprecated.
+    BucketAndValuationAndCommitted(self.currentBucket, self.totalValuation, self.valueCommitted);
+    ^------------------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1403:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogBidWithdrawn(msg.sender, refundWei, self.personalCaps[msg.sender]);
+    ^-------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1404:5: Warning: Invoking events without "emit" prefix is deprecated.
+    BucketAndValuationAndCommitted(self.currentBucket, self.totalValuation, self.valueCommitted);
+    ^------------------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1509:7: Warning: Invoking events without "emit" prefix is deprecated.
+      LogErrorMsg(self.totalValuation, "Sale is canceled, all bids have been refunded!");
+      ^--------------------------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1535:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogErrorMsg(self.base.hasContributed[msg.sender],"contribution");
+    ^--------------------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1536:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogErrorMsg(self.pricePurchasedAt[msg.sender],"price");
+    ^----------------------------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1537:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogErrorMsg(self.q,"percentage");
+    ^------------------------------^
+/sb/InteractiveCrowdsaleTestContract_1.sol:1630:5: Warning: Invoking events without "emit" prefix is deprecated.
+    LogErrorMsg(0, 'Did not send correct data!');
+    ^------------------------------------------^
+
+encoding/hex: invalid byte: U+005F '_'
+encoding/hex: invalid byte: U+005F '_'
+encoding/hex: invalid byte: U+005F '_'
+encoding/hex: invalid byte: U+005F '_'
+INFO:root:contract /sb/InteractiveCrowdsaleTestContract_1.sol:InteractiveCrowdsaleTestContract:
+INFO:symExec:	============ Results ===========
+INFO:symExec:	  EVM code coverage: 	 0/0
+INFO:symExec:	  Callstack bug: 	 False
+INFO:symExec:	  Money concurrency bug: False
+INFO:symExec:	  Time dependency bug: 	 False
+INFO:symExec:	  Reentrancy bug: 	 False
+Traceback (most recent call last):
+  File "/oyente/oyente/oyente.py", line 232, in <module>
+    main()
+  File "/oyente/oyente/oyente.py", line 227, in main
+    exit_code = analyze_solidity()
+  File "/oyente/oyente/oyente.py", line 110, in analyze_solidity
+    results, exit_code = run_solidity_analysis(inputs)
+  File "/oyente/oyente/oyente.py", line 87, in run_solidity_analysis
+    result, return_code = symExec.run(disasm_file=inp['disasm_file'], source_map=inp['source_map'], source_file=inp['source'])
+  File "/oyente/oyente/symExec.py", line 2459, in run
+    ret = detect_vulnerabilities()
+  File "/oyente/oyente/symExec.py", line 2316, in detect_vulnerabilities
+    return results, vulnerability_found()
+  File "/oyente/oyente/symExec.py", line 2347, in vulnerability_found
+    vulnerabilities = [callstack, money_concurrency, time_dependency, reentrancy]
+NameError: name 'callstack' is not defined

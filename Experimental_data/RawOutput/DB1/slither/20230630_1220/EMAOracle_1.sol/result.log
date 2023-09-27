@@ -1,0 +1,30 @@
+INFO:Detectors:[93m
+Reentrancy in EMAOracle.updateAndQuery (/sb/EMAOracle_1.sol#310-328):
+	External calls:
+	- newIncomeIndex = moneyMarket.incomeIndex() (/sb/EMAOracle_1.sol#320)
+	State variables written after the call(s):
+	- emaStored (/sb/EMAOracle_1.sol#325)
+	- lastIncomeIndex (/sb/EMAOracle_1.sol#326)
+	- lastUpdateTimestamp (/sb/EMAOracle_1.sol#327)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[92m
+EMAOracle.updateAndQuery (/sb/EMAOracle_1.sol#310-328) should be declared external
+IInterestOracle.updateAndQuery (/sb/EMAOracle_1.sol#259) should be declared external
+IInterestOracle.query (/sb/EMAOracle_1.sol#261) should be declared external
+EMAOracle.query (/sb/EMAOracle_1.sol#330-332) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/EMAOracle_1.sol:
+	- pragma solidity0.5.17 (/sb/EMAOracle_1.sol#1): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Parameter '_emaInitial' of EMAOracle. (/sb/EMAOracle_1.sol#292) is not in mixedCase
+Parameter '_updateInterval' of EMAOracle. (/sb/EMAOracle_1.sol#293) is not in mixedCase
+Parameter '_smoothingFactor' of EMAOracle. (/sb/EMAOracle_1.sol#294) is not in mixedCase
+Parameter '_averageWindowInIntervals' of EMAOracle. (/sb/EMAOracle_1.sol#295) is not in mixedCase
+Parameter '_moneyMarket' of EMAOracle. (/sb/EMAOracle_1.sol#296) is not in mixedCase
+Variable 'EMAOracle.UPDATE_INTERVAL' (/sb/EMAOracle_1.sol#275) is not in mixedCase
+Variable 'EMAOracle.UPDATE_MULTIPLIER' (/sb/EMAOracle_1.sol#276) is not in mixedCase
+Variable 'EMAOracle.ONE_MINUS_UPDATE_MULTIPLIER' (/sb/EMAOracle_1.sol#277) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/EMAOracle_1.sol analyzed (5 contracts), 14 result(s) found

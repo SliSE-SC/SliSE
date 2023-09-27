@@ -1,0 +1,4926 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B3/bin/0x37304b0ab297f13f5520c523102797121182fb5b.bin
+[00:00:00:00] Fuzzing starts at 03:38:52
+[00:00:00:00] Time limit : 300 s
+[DEBUG] Analyzing constructor @ 0
+Found sload(<0x0, { }, { }>) @ 0x1b
+Found sstore(<0x0, { }, { }>, <T, { }, { CALLER, var_0 }>) @ 0x50
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_0 }, Use = { var_0 }
+Constructor tainted: { var_0 }
+[DEBUG] Analyzing removeAdmin(1785f53c) @ f6
+Found sload(<0x0, { }, { }>) @ 0x6da
+Found sload(<T, { Sha(*, 0x1) }, { }>) @ 0x779
+Found sstore(<T, { Sha(*, 0x1) }, { }>, <T, { }, { map_1 }>) @ 0x787
+removeAdmin(1785f53c): (onlyOwner) Def = { map_1 }, Use = { map_1, var_0 }
+[DEBUG] Analyzing isAdmin(24d7806c) @ 139
+Found sload(<T, { Sha(*, 0x1) }, { }>) @ 0x7d0
+isAdmin(24d7806c): Def = {  }, Use = { map_1 }
+[DEBUG] Analyzing withdraw(2e1a7d4d) @ 194
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x826
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { map_2 }>) @ 0x885
+withdraw(2e1a7d4d): Def = { map_2 }, Use = { map_2 }
+[DEBUG] Analyzing checkMatchBatch(3448ec4a) @ 1c1
+Found codecopy(<_, { }, { }>, _, _), arg# = 2
+Found codecopy(<_, { }, { }>, _, _), arg# = 2
+Found codecopy(<_, { }, { }>, _, _), arg# = 2
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0xa1f
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xa3e
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xa6d
+checkMatchBatch(3448ec4a): Def = {  }, Use = { map_3, map_3.off_1 }
+[DEBUG] Analyzing recoverFunds(4ab358c7) @ 2a9
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xace
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xae8
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xb23
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xb79
+Found sstore(<T, { Sha(*, 0x3) + 0x1 }, { }>, <T, { }, { map_3.off_1 }>) @ 0xb87
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xb95
+Found sstore(<T, { Sha(*, 0x3) + 0x1 }, { }>, <T, { }, { map_3.off_1 }>) @ 0xba4
+recoverFunds(4ab358c7): Def = { map_3.off_1 }, Use = { map_3.off_1 }
+[DEBUG] Analyzing getMatchInfo(4b561a16) @ 2d6
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xc0e
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xc27
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xc39
+getMatchInfo(4b561a16): Def = {  }, Use = { map_3.off_1 }
+[DEBUG] Analyzing claim(641bbdfe) @ 343
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xc76
+Found sload(<T, { Sha(*, 0x1) }, { }>) @ 0xe41
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xe77
+Found sstore(<T, { Sha(*, 0x3) + 0x1 }, { }>, <T, { }, { map_3.off_1 }>) @ 0xe85
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xe93
+Found sstore(<T, { Sha(*, 0x3) + 0x1 }, { }>, <T, { }, { map_3.off_1 }>) @ 0xea2
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0xc91
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0xf28
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <0x0, { }, { }>) @ 0xfbd
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x1e4a
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { map_2, map_3 }>) @ 0x1eb7
+claim(641bbdfe): Def = { map_2, map_3, map_3.off_1 }, Use = { map_1, map_2, map_3, map_3.off_1 }
+[DEBUG] Analyzing addAdmin(70480275) @ 3a6
+Found sload(<0x0, { }, { }>) @ 0x1029
+Found sload(<T, { Sha(*, 0x1) }, { }>) @ 0x10c7
+Found sstore(<T, { Sha(*, 0x1) }, { }>, <T, { }, { map_1 }>) @ 0x10d5
+addAdmin(70480275): (onlyOwner) Def = { map_1 }, Use = { map_1, var_0 }
+[DEBUG] Analyzing cancelOrder(8671b894) @ 3e9
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <_, { }, { }>) @ 0x1191
+cancelOrder(8671b894): Def = { map_4 }, Use = {  }
+[DEBUG] Analyzing getOwner(893d20e8) @ 43f
+Found sload(<0x0, { }, { }>) @ 0x11f8
+getOwner(893d20e8): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing changeOwner(a6f9dae1) @ 496
+Found sload(<0x0, { }, { }>) @ 0x121f
+Found sload(<0x0, { }, { }>) @ 0x127f
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x12b4
+changeOwner(a6f9dae1): (onlyOwner) Def = { var_0 }, Use = { var_0 }
+[DEBUG] Analyzing getFilledAmount(ab47f1bf) @ 4d9
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x12ce
+getFilledAmount(ab47f1bf): Def = {  }, Use = { map_4 }
+[DEBUG] Analyzing trade(b15a3647) @ 51a
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0x228e
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x2498
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x2430
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x2521
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x2569
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x25b6
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x2615
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0x1547
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0x1581
+Found sstore(<T, { Sha(*, 0x3) + 0x1 }, { }>, <T, { }, { map_3.off_1 }>) @ 0x159e
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <_, { }, { }>) @ 0x15ed
+Found sstore(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>, <_, { }, { }>) @ 0x163b
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x1e4a
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <_, { }, { map_2 }>) @ 0x1eb7
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x1e4a
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <_, { }, { map_2 }>) @ 0x1eb7
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x169c
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <_, { }, { map_4 }>) @ 0x16a3
+trade(b15a3647): Def = { map_2, map_3, map_3.off_1, map_4 }, Use = { map_2, map_3, map_3.off_1, map_4 }
+[DEBUG] Analyzing checkOrderBatch(cb1579ec) @ 57a
+Found codecopy(<_, { }, { }>, _, _), arg# = 1
+Found codecopy(<_, { }, { }>, _, _), arg# = 1
+Found codecopy(<_, { }, { }>, _, _), arg# = 1
+Found sload(<T, { Sha(*, 0x3) + 0x1 }, { }>) @ 0x18e2
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x1aaa
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x1b09
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x1b4f
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x196d
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x19cc
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x1a12
+checkOrderBatch(cb1579ec): Def = {  }, Use = { map_2, map_3, map_3.off_1, map_4 }
+[DEBUG] Analyzing deposit(d0e30db0) @ 613
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x1c28
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { map_2 }>) @ 0x1c79
+deposit(d0e30db0): Def = { map_2 }, Use = { map_2 }
+[DEBUG] Analyzing getPosition(d29f541d) @ 61d
+Found sload(<T, { Sha(... (Sha(*, 0x3)) ...) + ? }, { }>) @ 0x1d6e
+getPosition(d29f541d): Def = {  }, Use = { map_3 }
+[DEBUG] Analyzing getBalance(f8b2cb4f) @ 67e
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x1db8
+getBalance(f8b2cb4f): Def = {  }, Use = { map_2 }
+[DEBUG] Analyzing fallback @ 0
+fallback: Def = {  }, Use = {  }
+Pruning out ["trade(b15a3647)"]
+Pruning out ["claim(641bbdfe)"]
+Pruning out ["deposit(d0e30db0)"]
+Pruning out ["recoverFunds(4ab358c7)"]
+Pruning out ["withdraw(2e1a7d4d)"]
+Pruning out ["addAdmin(70480275)"]
+(48 candidate sequences)
+["changeOwner(a6f9dae1)"; "removeAdmin(1785f53c)"]
+["changeOwner(a6f9dae1)"; "getOwner(893d20e8)"]
+["changeOwner(a6f9dae1)"; "changeOwner(a6f9dae1)"]
+["changeOwner(a6f9dae1)"; "addAdmin(70480275)"]
+["removeAdmin(1785f53c)"; "removeAdmin(1785f53c)"]
+["removeAdmin(1785f53c)"; "isAdmin(24d7806c)"]
+["removeAdmin(1785f53c)"; "claim(641bbdfe)"]
+["removeAdmin(1785f53c)"; "addAdmin(70480275)"; "removeAdmin(1785f53c)"]
+["removeAdmin(1785f53c)"; "addAdmin(70480275)"; "isAdmin(24d7806c)"]
+["removeAdmin(1785f53c)"; "addAdmin(70480275)"; "claim(641bbdfe)"]
+["removeAdmin(1785f53c)"; "addAdmin(70480275)"; "addAdmin(70480275)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "withdraw(2e1a7d4d)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "trade(b15a3647)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "recoverFunds(4ab358c7)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "getPosition(d29f541d)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "getMatchInfo(4b561a16)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "getFilledAmount(ab47f1bf)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "getBalance(f8b2cb4f)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "deposit(d0e30db0)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "withdraw(2e1a7d4d)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "trade(b15a3647)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "recoverFunds(4ab358c7)"; "trade(b15a3647)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "recoverFunds(4ab358c7)"; "recoverFunds(4ab358c7)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "recoverFunds(4ab358c7)"; "getMatchInfo(4b561a16)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "recoverFunds(4ab358c7)"; "claim(641bbdfe)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "recoverFunds(4ab358c7)"; "checkOrderBatch(cb1579ec)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "recoverFunds(4ab358c7)"; "checkMatchBatch(3448ec4a)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "getPosition(d29f541d)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "getMatchInfo(4b561a16)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "getBalance(f8b2cb4f)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "deposit(d0e30db0)"; "withdraw(2e1a7d4d)"; "withdraw(2e1a7d4d)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "deposit(d0e30db0)"; "withdraw(2e1a7d4d)"; "trade(b15a3647)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "deposit(d0e30db0)"; "withdraw(2e1a7d4d)"; "getBalance(f8b2cb4f)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "deposit(d0e30db0)"; "withdraw(2e1a7d4d)"; "deposit(d0e30db0)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "deposit(d0e30db0)"; "withdraw(2e1a7d4d)"; "claim(641bbdfe)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "deposit(d0e30db0)"; "withdraw(2e1a7d4d)"; "checkOrderBatch(cb1579ec)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "deposit(d0e30db0)"; "trade(b15a3647)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "deposit(d0e30db0)"; "getBalance(f8b2cb4f)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "deposit(d0e30db0)"; "deposit(d0e30db0)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "deposit(d0e30db0)"; "claim(641bbdfe)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "deposit(d0e30db0)"; "checkOrderBatch(cb1579ec)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "claim(641bbdfe)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "checkOrderBatch(cb1579ec)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "claim(641bbdfe)";
+ "checkMatchBatch(3448ec4a)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "checkOrderBatch(cb1579ec)"]
+["cancelOrder(8671b894)"; "trade(b15a3647)"; "checkMatchBatch(3448ec4a)"]
+["cancelOrder(8671b894)"; "getFilledAmount(ab47f1bf)"]
+["cancelOrder(8671b894)"; "checkOrderBatch(cb1579ec)"]
+[00:00:00:02] Start main fuzzing phase
+[00:00:00:02] [*] Save new seed id-00000_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00001_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: getOwner(893d20e8), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00002_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00003_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00004_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00005_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: isAdmin(24d7806c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00006_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: claim(641bbdfe), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint8
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+
+[00:00:00:03] [*] Save new seed id-00007_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00008_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: claim(641bbdfe), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint8
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+
+[00:00:00:03] [*] Save new seed id-00009_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: getBalance(f8b2cb4f), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 6B773032D99FB9AAD6FC267651C446FA7F9301AF
+(    TX 2    ) Function: getBalance(f8b2cb4f), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000001AF8100000000008100000000000000
+
+[00:00:00:03] [*] Save new seed id-00010_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 00410003000000000000000000DD000000000000
+(    TX 2    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 02000000001500000000000004000000001E0000
+(    TX 3    ) Function: recoverFunds(4ab358c7), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000010000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00011_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: withdraw(2e1a7d4d), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+(    TX 2    ) Function: withdraw(2e1a7d4d), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 000000000000400000000000000000000000FA00000000000000000000000000
+(    TX 3    ) Function: changeOwner(a6f9dae1), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+( => TX 4 <= ) Function: removeAdmin(1785f53c), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 33B808A5AE24C410E8739B5CA2D5EF3931D3E09F
+(    TX 5    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00012_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: getPosition(d29f541d), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 4000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: deposit(d0e30db0), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+[00:00:00:03] [*] Save new seed id-00013_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000FE0000000000000000000000000000
+(    TX 2    ) Function: withdraw(2e1a7d4d), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 3 <= ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000081000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00014_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 118A2C24805934116E6AB4C00FF48145D23B0918
+(    TX 2    ) Function: checkOrderBatch(cb1579ec), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[48]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: changeOwner(a6f9dae1), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: trade(b15a3647), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+
+[00:00:00:03] [*] Save new seed id-00015_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getBalance(f8b2cb4f), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000800000000000000000000000
+(    TX 2    ) Function: checkMatchBatch(3448ec4a), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 6B773032D99FB9AAD6FC267651C446FA7F9301AF
+          Arg2 : uint256[16]
+                 0000000000000000410000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000100000000000000000000
+                 0000000000000000000000040000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000008000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000003F00000000000000000000000000000000
+                 3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 3 <= ) Function: checkOrderBatch(cb1579ec), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[48]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 00000000B0000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 1100000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000002000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0200000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 4000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000040000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: changeOwner(a6f9dae1), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 00000000003F0000EB0000000000000000004100
+(    TX 5    ) Function: recoverFunds(4ab358c7), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFF
+
+[00:00:00:03] [*] Save new seed id-00016_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: checkOrderBatch(cb1579ec), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[48]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 8000000000000000000000000000000000000000000000000000000000000001
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000800000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000001
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000004000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: getFilledAmount(ab47f1bf), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 000000000000000000000000000000001D000000000000000000000000000000
+( => TX 3 <= ) Function: changeOwner(a6f9dae1), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 24CD2EDBA05641C654A50E8201B619D4F624FDDA
+(    TX 4    ) Function: checkOrderBatch(cb1579ec), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[48]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+(    TX 6    ) Function: checkMatchBatch(3448ec4a), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+          Arg2 : uint256[16]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: getOwner(893d20e8), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00017_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getMatchInfo(4b561a16), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 8000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: checkOrderBatch(cb1579ec), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[48]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: isAdmin(24d7806c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00018_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: removeAdmin(1785f53c), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 24CD2EDBA056B7C6447F0E8201B619D4F624FDE7
+(    TX 2    ) Function: checkOrderBatch(cb1579ec), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[48]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: changeOwner(a6f9dae1), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000010000
+(    TX 4    ) Function: getFilledAmount(ab47f1bf), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000260000000000000000000000000000000000
+(    TX 5    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 6    ) Function: addAdmin(70480275), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000004100000000000000000000000000
+(    TX 7    ) Function: cancelOrder(8671b894), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : uint8
+                 00
+
+[00:00:00:03] [*] Save new seed id-00019_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: recoverFunds(4ab358c7), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 000D000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: deposit(d0e30db0), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000008100000000000000
+(    TX 4    ) Function: checkOrderBatch(cb1579ec), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[48]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 4000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000200000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000004000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000001000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 5 <= ) Function: removeAdmin(1785f53c), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 118A2C24808934116E6AB4C00FF48145D23B09E1
+
+[00:00:00:03] [*] Save new seed id-00020_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: trade(b15a3647), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000800000000000000000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 01
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 10
+                 02
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 2    ) Function: trade(b15a3647), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 3    ) Function: deposit(d0e30db0), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 3FFFFFFFFFFFFF00FFFFFFFFFFFFFFFDFFFFFFFFFF3AFFFFFFFFFFFFFFF7F7FF
+(    TX 4    ) Function: getMatchInfo(4b561a16), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 8000000000000000000000000000000000008000000000000000000000000001
+(    TX 5    ) Function: isAdmin(24d7806c), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000100000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00021_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 3F00000000000000007F000000000000006B0000
+(    TX 2    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00022_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+( => TX 2 <= ) Function: cancelOrder(8671b894), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 10
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : uint8
+                 00
+(    TX 3    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:04] [*] Save new seed id-00023_00004: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: getOwner(893d20e8), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: deposit(d0e30db0), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000200000080000000000
+(    TX 3    ) Function: changeOwner(a6f9dae1), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000410000000000
+
+[00:00:00:09] [*] Save new seed id-00024_00009: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 000000002300000000000000F800000000000000
+(    TX 2    ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: claim(641bbdfe), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint8
+                 DE
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 3F
+                 00
+                 00
+                 00
+                 10
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 02
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+
+[00:00:00:12] [*] Save new seed id-00025_00012: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0001000000000000000000000000000000000000005F00000000000000000000
+(    TX 2    ) Function: getMatchInfo(4b561a16), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: claim(641bbdfe), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint8
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 4    ) Function: trade(b15a3647), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 00000000000000000000F7000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 5    ) Function: checkOrderBatch(cb1579ec), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[48]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000DE0000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 000000000000000000000000000000000000000000000000003E000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 4000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 6 <= ) Function: deposit(d0e30db0), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 6B133032D99FB9AAD6FC267651C446FA7F9324AF
+
+[00:00:00:19] Tx#2 found BlockstateDependencyMythril at 225e
+[00:00:00:19] Tx#2 found BlockstateDependencyManticore at 2257
+[00:00:00:19] [*] Save bug seed id-00000-BD_mant-BD_myth_00019: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: cancelOrder(8671b894), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 D5
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : uint8
+                 BE
+(    TX 2    ) Function: trade(b15a3647), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 000000000000000000000E000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 3    ) Function: getFilledAmount(ab47f1bf), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: deposit(d0e30db0), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000080000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:19] [*] Save new seed id-00026_00019: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: cancelOrder(8671b894), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 D5
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : uint8
+                 BE
+(    TX 2    ) Function: trade(b15a3647), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 000000000000000000000E000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 3    ) Function: getFilledAmount(ab47f1bf), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: deposit(d0e30db0), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000080000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:27] [*] Save new seed id-00027_00027: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: recoverFunds(4ab358c7), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+(    TX 2    ) Function: cancelOrder(8671b894), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 3F
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : uint8
+                 5D
+(    TX 3    ) Function: getBalance(f8b2cb4f), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: checkOrderBatch(cb1579ec), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[48]
+                 000000000000000000000000000000000000000000000000000000000000EC00
+                 0000000000000000000000000000000000000000000000000000000000200000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 8000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000003F00000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 00000000000000000000000000000000F8000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000100000000000000000000000000
+                 0000000000000000000000008000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 4000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: getFilledAmount(ab47f1bf), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000E60000000000000000000000000000000000000000000000000000DF
+(    TX 6    ) Function: checkOrderBatch(cb1579ec), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[48]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:34] [*] Save new seed id-00028_00034: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: cancelOrder(8671b894), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 E7
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : uint8
+                 00
+(    TX 2    ) Function: removeAdmin(1785f53c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: trade(b15a3647), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 7FFFFFFFFFFFFF80FF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 08
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 4    ) Function: claim(641bbdfe), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000010000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint8
+                 E6
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 FB
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 08
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 5    ) Function: deposit(d0e30db0), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000010000FB0000000000
+(    TX 6    ) Function: withdraw(2e1a7d4d), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 00000000000000CE0000F0000000000000000000008300000000004000000000
+( => TX 7 <= ) Function: withdraw(2e1a7d4d), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000040000000000000000000000000000000000
+
+[00:00:00:35] [*] Save new seed id-00029_00035: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: cancelOrder(8671b894), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 05
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 F8
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : uint8
+                 00
+(    TX 2    ) Function: trade(b15a3647), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000200000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 E3
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 3    ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: trade(b15a3647), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 5    ) Function: deposit(d0e30db0), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 8000000000000000000000000000000000000000000000000000000000000000
+(    TX 6    ) Function: claim(641bbdfe), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint8
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 7    ) Function: withdraw(2e1a7d4d), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 8    ) Function: claim(641bbdfe), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint8
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 41
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 9    ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:52] [*] Save new seed id-00030_00052: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: claim(641bbdfe), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint8
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 3    ) Function: getMatchInfo(4b561a16), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: cancelOrder(8671b894), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000018000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : uint8
+                 00
+(    TX 5    ) Function: getMatchInfo(4b561a16), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 000000000000000000000000000000000000000000000000000000BE00000000
+(    TX 6    ) Function: claim(641bbdfe), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint8
+                 84
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 03
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 04
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 EA
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 80
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 C8
+(    TX 7    ) Function: getMatchInfo(4b561a16), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000030000FF0000420000000000000000000000000000
+(    TX 8    ) Function: recoverFunds(4ab358c7), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:01:15] [*] Save new seed id-00031_00075: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: trade(b15a3647), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 000000000000000000ED00000000000000000000000000000000000000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000100000000000000000000000000000
+                 000000000000000000000E0000000000000000000000F6000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 01
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+( => TX 2 <= ) Function: withdraw(2e1a7d4d), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: cancelOrder(8671b894), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000003800000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 FF
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : uint8
+                 00
+(    TX 4    ) Function: cancelOrder(8671b894), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000200000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 DF
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 DD
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 D5
+                 00
+                 00
+                 00
+                 00
+                 80
+                 00
+                 00
+          Arg4 : uint8
+                 01
+(    TX 5    ) Function: deposit(d0e30db0), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 00000000000000800000000000000000DE000000000000000000000000000000
+(    TX 6    ) Function: getOwner(893d20e8), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:01:15] [*] Save new seed id-00032_00075: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: cancelOrder(8671b894), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 41
+                 00
+                 00
+                 00
+                 00
+                 D5
+                 00
+                 00
+                 00
+                 00
+                 00
+                 01
+                 00
+          Arg4 : uint8
+                 BE
+( => TX 2 <= ) Function: removeAdmin(1785f53c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 00002000000B0000000000000000000059E60000
+(    TX 3    ) Function: getPosition(d29f541d), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: deposit(d0e30db0), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 4000000000000000000000000000000000000000000000000000000000000001
+(    TX 5    ) Function: trade(b15a3647), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000020000000100000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 000100000000000000000E000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 E8
+                 00
+                 0E
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 A0
+                 00
+                 00
+                 EF
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+
+[00:00:01:39] [*] Save new seed id-00033_00099: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000004008100000000000000000000000000
+(    TX 2    ) Function: cancelOrder(8671b894), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 00000000000000000000000000000000000000000000000000000000D9000000
+                 0000200000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 FF
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 01
+                 80
+                 41
+                 00
+                 00
+                 00
+                 00
+                 D5
+                 00
+                 00
+                 00
+                 00
+                 00
+                 01
+                 00
+          Arg4 : uint8
+                 BE
+(    TX 3    ) Function: cancelOrder(8671b894), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 04
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : uint8
+                 82
+(    TX 4    ) Function: trade(b15a3647), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000030000000000000020000000500000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000064
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 000100000000000000000E000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 E8
+                 00
+                 0E
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 40
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 A0
+                 00
+                 00
+                 EF
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 02
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 7F
+          Arg5 : uint8
+                 F8
+
+[00:00:01:40] [*] Save new seed id-00034_00100: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: deposit(d0e30db0), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 2    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 4000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: removeAdmin(1785f53c), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 00002000000B0000000000000000000059E60000
+(    TX 5    ) Function: getPosition(d29f541d), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+(    TX 6    ) Function: getOwner(893d20e8), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 7    ) Function: cancelOrder(8671b894), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 8000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 41
+                 00
+                 00
+                 00
+                 00
+                 D5
+                 00
+                 00
+                 00
+                 00
+                 00
+                 01
+                 00
+          Arg4 : uint8
+                 BE
+( => TX 8 <= ) Function: trade(b15a3647), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000020000000100000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 000100000000000000000E000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 E8
+                 00
+                 0E
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 A0
+                 00
+                 00
+                 EF
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 2D
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 02
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+
+[00:00:02:26] [*] Save new seed id-00035_00146: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 6B773032C99FB9AAD6FC267651C446FA7F9301AF
+(    TX 2    ) Function: cancelOrder(8671b894), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 20
+                 00
+                 41
+                 00
+                 3F
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 04
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 41
+          Arg4 : uint8
+                 63
+(    TX 3    ) Function: trade(b15a3647), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000030000100000000020000000500000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000064
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 000100000000000000000E100000000000000000000000008000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 E8
+                 00
+                 0E
+                 00
+                 00
+                 7F
+                 00
+                 00
+                 00
+                 00
+                 40
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 ED
+                 00
+                 A0
+                 00
+                 00
+                 EF
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 02
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 7F
+          Arg5 : uint8
+                 F8
+(    TX 4    ) Function: withdraw(2e1a7d4d), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 40000000EA000000000000000000000000000000000000000000000000000001
+(    TX 5    ) Function: isAdmin(24d7806c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000040000000000000
+(    TX 6    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000F40000000000000000000000000000000000000000
+(    TX 7    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000800000000000003F00000000
+(    TX 8    ) Function: getBalance(f8b2cb4f), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 00000000000000000000000000000000F9000000
+(    TX 9    ) Function: cancelOrder(8671b894), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 00000000000000000000000000000000003F00000000000000000000D9000000
+                 0000200000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 10
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 FF
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 81
+                 00
+                 00
+                 00
+                 00
+                 01
+                 80
+                 41
+                 00
+                 00
+                 00
+                 00
+                 D5
+                 00
+                 00
+                 00
+                 00
+                 00
+                 01
+                 00
+          Arg4 : uint8
+                 D2
+
+[00:00:02:29] [*] Save new seed id-00036_00149: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: deposit(d0e30db0), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 2    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 4000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: removeAdmin(1785f53c), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 00002000000B0000000000000000000059E60000
+( => TX 5 <= ) Function: claim(641bbdfe), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : uint8
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+(    TX 6    ) Function: getPosition(d29f541d), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : address
+                 0000000000000000000000000000000000000000
+(    TX 7    ) Function: getOwner(893d20e8), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 8    ) Function: cancelOrder(8671b894), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 8000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 41
+                 00
+                 00
+                 00
+                 00
+                 D5
+                 00
+                 00
+                 00
+                 00
+                 00
+                 01
+                 00
+          Arg4 : uint8
+                 BE
+(    TX 9    ) Function: trade(b15a3647), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000020000000100000000000
+          Arg2 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 000100000000000000000E000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 E8
+                 00
+                 0E
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 A0
+                 00
+                 00
+                 EF
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 2D
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 02
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 00
+
+[00:00:02:44] [*] Save new seed id-00037_00164: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: cancelOrder(8671b894), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256[3]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000070000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg2 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 05
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 69
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 3F
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 86
+                 00
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 F8
+                 01
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : uint8
+                 00
+(    TX 2    ) Function: trade(b15a3647), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000001000000000000000000000000000000000
+          Arg2 : uint256[3]
+                 00000000000000D8000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg3 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 5B
+                 00
+                 00
+                 00
+                 00
+                 40
+                 00
+                 00
+                 00
+                 00
+                 00
+                 1D
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg4 : bytes32
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+                 00
+          Arg5 : uint8
+                 F7
+(    TX 3    ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: isAdmin(24d7806c), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 000000000000000000E800000000000000000000
+(    TX 5    ) Function: isAdmin(24d7806c), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000EB0000000000000000000000002000000000
+(    TX 6    ) Function: addAdmin(70480275), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 6B773032D99FB9AAD6FC267651C446FA7F9301AF
+(    TX 7    ) Function: withdraw(2e1a7d4d), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 000000000000000000000000000000000000000000000000002000000000007F
+(    TX 8    ) Function: deposit(d0e30db0), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000001
+(    TX 9    ) Function: withdraw(2e1a7d4d), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000BA0000000000000005000000002100000000000000000001
+(    TX 10    ) Function: addAdmin(70480275), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000004100000000000000
+(    TX 11    ) Function: withdraw(2e1a7d4d), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 12 <= ) Function: checkMatchBatch(3448ec4a), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 000000000000D600000000170000000000000000
+          Arg2 : uint256[16]
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+Fuzzing timeout expired.
+[00:00:05:00] ===== Statistics =====
+[00:00:05:00] Total Executions: 33322
+[00:00:05:00] Deployment failures: 0
+[00:00:05:00] Test Cases: 38
+[00:00:05:00] Covered Edges: 299
+[00:00:05:00] Covered Instructions: 4563
+[00:00:05:00] Covered Def-Use Chains: 533
+[00:00:05:00] Found Bugs:
+[00:00:05:00]   Assertion Failure: 0
+[00:00:05:00]   Arbitrary Write: 0
+[00:00:05:00]   Block state Dependency: 0
+[00:00:05:00]   Control Hijack: 0
+[00:00:05:00]   Ether Leak: 0
+[00:00:05:00]   Integer Bug: 0
+[00:00:05:00]   Mishandled Exception: 0
+[00:00:05:00]   Multiple Send: 0
+[00:00:05:00]   Reentrancy: 0
+[00:00:05:00]   Suicidal Contract: 0
+[00:00:05:00]   Transaction Origin Use: 0
+[00:00:05:00]   Freezing Ether: 0
+[00:00:05:00]   Requirement Violation: 0
+[00:00:05:00] Done, clean up and exit...

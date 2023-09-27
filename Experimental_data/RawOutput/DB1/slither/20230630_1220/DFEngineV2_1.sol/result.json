@@ -1,0 +1,1644 @@
+{
+    "errors": [],
+    "fails": [
+        "DOCKER_RECEIVED_SIGNAL_42"
+    ],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "IERC20",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "approve",
+            "impact": "Medium",
+            "line": 8,
+            "line_end": 85,
+            "message": "IERC20 (DFEngineV2_1.sol#8-85) has incorrect ERC20 function interface(s):\n\t-transfer (DFEngineV2_1.sol#24)\n\t-approve (DFEngineV2_1.sol#50)\n\t-transferFrom (DFEngineV2_1.sol#59-63)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "deposit",
+            "impact": "Medium",
+            "line": 621,
+            "line_end": 678,
+            "message": "DFEngineV2.deposit (DFEngineV2_1.sol#621-678) does not use the value returned by external calls:\n\t-dfPool.transferFromSender(_srcToken,_depositor,IDSWrappedToken(_tokenID).reverseByMultiple(_amount)) (DFEngineV2_1.sol#627)\n\t-dfPool.transferOut(address(usdxToken),_depositor,_tokenBalance[1]) (DFEngineV2_1.sol#672)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "withdraw",
+            "impact": "Medium",
+            "line": 680,
+            "line_end": 701,
+            "message": "DFEngineV2.withdraw (DFEngineV2_1.sol#680-701) does not use the value returned by external calls:\n\t-IDSWrappedToken(_tokenID).unwrap(address(dfPool),_withdrawAmount) (DFEngineV2_1.sol#696)\n\t-dfPool.transferOut(_srcToken,_depositor,_srcWithdrawAmount) (DFEngineV2_1.sol#698)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "claim",
+            "impact": "Medium",
+            "line": 703,
+            "line_end": 729,
+            "message": "DFEngineV2.claim (DFEngineV2_1.sol#703-729) does not use the value returned by external calls:\n\t-dfPool.transferOut(address(usdxToken),_depositor,_mintAmount) (DFEngineV2_1.sol#727)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "destroy",
+            "impact": "Medium",
+            "line": 731,
+            "line_end": 785,
+            "message": "DFEngineV2.destroy (DFEngineV2_1.sol#731-785) does not use the value returned by external calls:\n\t-IDSWrappedToken(_tokens[i_scope_0]).unwrap(dfCol,_tokenAmount) (DFEngineV2_1.sol#771)\n\t-dfPool.transferOutSrc(IDSWrappedToken(_tokens[i_scope_0]).getSrcERC20(),_depositor,IDSWrappedToken(_tokens[i_scope_0]).reverseByMultiple(_tokenAmount)) (DFEngineV2_1.sol#772-775)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "oneClickMinting",
+            "impact": "Medium",
+            "line": 787,
+            "line_end": 814,
+            "message": "DFEngineV2.oneClickMinting (DFEngineV2_1.sol#787-814) does not use the value returned by external calls:\n\t-dfPool.transferFromSenderOneClick(IDSWrappedToken(_tokens[i_scope_0]).getSrcERC20(),_depositor,_srcAmount) (DFEngineV2_1.sol#805)\n\t-IDSWrappedToken(_tokens[i_scope_0]).wrap(dfCol,_srcAmount) (DFEngineV2_1.sol#807)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "_convert",
+            "impact": "Medium",
+            "line": 816,
+            "line_end": 856,
+            "message": "DFEngineV2._convert (DFEngineV2_1.sol#816-856) does not use the value returned by external calls:\n\t-dfPool.transferToCol(_tokens[i],_mintAmount) (DFEngineV2_1.sol#836)\n\t-dfPool.transferOut(address(usdxToken),_depositor,_depositorMintTotal) (DFEngineV2_1.sol#854)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "deposit",
+            "impact": "Low",
+            "line": 661,
+            "message": "DFEngineV2.deposit has external calls inside a loop:\n\t- dfStore.setDepositorBalance(_depositor,_tokens[i_scope_0],_depositorBalance[i_scope_0]) (DFEngineV2_1.sol#661)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "deposit",
+            "impact": "Low",
+            "line": 666,
+            "message": "DFEngineV2.deposit has external calls inside a loop:\n\t- dfStore.setDepositorBalance(_depositor,_tokens[i_scope_0],sub(_depositorBalance[i_scope_0],_tokenBalance[0])) (DFEngineV2_1.sol#666)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "deposit",
+            "impact": "Low",
+            "line": 667,
+            "message": "DFEngineV2.deposit has external calls inside a loop:\n\t- dfStore.setResUSDXBalance(_tokens[i_scope_0],sub(_resUSDXBalance[i_scope_0],_tokenBalance[0])) (DFEngineV2_1.sol#667)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "deposit",
+            "impact": "Low",
+            "line": 641,
+            "message": "DFEngineV2.deposit has external calls inside a loop:\n\t- _tokenBalance[i] = dfStore.getTokenBalance(_tokens[i]) (DFEngineV2_1.sol#641)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "deposit",
+            "impact": "Low",
+            "line": 642,
+            "message": "DFEngineV2.deposit has external calls inside a loop:\n\t- _resUSDXBalance[i] = dfStore.getResUSDXBalance(_tokens[i]) (DFEngineV2_1.sol#642)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "deposit",
+            "impact": "Low",
+            "line": 643,
+            "message": "DFEngineV2.deposit has external calls inside a loop:\n\t- _depositorBalance[i] = dfStore.getDepositorBalance(_depositor,_tokens[i]) (DFEngineV2_1.sol#643)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "claim",
+            "impact": "Low",
+            "line": 711,
+            "message": "DFEngineV2.claim has external calls inside a loop:\n\t- _resUSDXBalance = dfStore.getResUSDXBalance(_tokens[i]) (DFEngineV2_1.sol#711)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "claim",
+            "impact": "Low",
+            "line": 712,
+            "message": "DFEngineV2.claim has external calls inside a loop:\n\t- _depositorBalance = dfStore.getDepositorBalance(_depositor,_tokens[i]) (DFEngineV2_1.sol#712)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "claim",
+            "impact": "Low",
+            "line": 718,
+            "message": "DFEngineV2.claim has external calls inside a loop:\n\t- dfStore.setResUSDXBalance(_tokens[i],sub(_resUSDXBalance,_depositorMintAmount)) (DFEngineV2_1.sol#718)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "claim",
+            "impact": "Low",
+            "line": 719,
+            "message": "DFEngineV2.claim has external calls inside a loop:\n\t- dfStore.setDepositorBalance(_depositor,_tokens[i],sub(_depositorBalance,_depositorMintAmount)) (DFEngineV2_1.sol#719)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "destroy",
+            "impact": "Low",
+            "line": 747,
+            "message": "DFEngineV2.destroy has external calls inside a loop:\n\t- (_minted,_burned,None,_tokens,_burnCW) = dfStore.getSectionData(dfStore.getBurnPosition()) (DFEngineV2_1.sol#747)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "destroy",
+            "impact": "Low",
+            "line": 771,
+            "message": "DFEngineV2.destroy has external calls inside a loop:\n\t- IDSWrappedToken(_tokens[i_scope_0]).unwrap(dfCol,_tokenAmount) (DFEngineV2_1.sol#771)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "destroy",
+            "impact": "Low",
+            "line": 772,
+            "line_end": 775,
+            "message": "DFEngineV2.destroy has external calls inside a loop:\n\t- dfPool.transferOutSrc(IDSWrappedToken(_tokens[i_scope_0]).getSrcERC20(),_depositor,IDSWrappedToken(_tokens[i_scope_0]).reverseByMultiple(_tokenAmount)) (DFEngineV2_1.sol#772-775)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "destroy",
+            "impact": "Low",
+            "line": 776,
+            "message": "DFEngineV2.destroy has external calls inside a loop:\n\t- dfStore.setTotalCol(sub(dfStore.getTotalCol(),_tokenAmount)) (DFEngineV2_1.sol#776)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "oneClickMinting",
+            "impact": "Low",
+            "line": 804,
+            "message": "DFEngineV2.oneClickMinting has external calls inside a loop:\n\t- _srcAmount = IDSWrappedToken(_tokens[i_scope_0]).reverseByMultiple(div(mul(_amount,_mintCW[i_scope_0]),_sumMintCW)) (DFEngineV2_1.sol#804)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "oneClickMinting",
+            "impact": "Low",
+            "line": 805,
+            "message": "DFEngineV2.oneClickMinting has external calls inside a loop:\n\t- dfPool.transferFromSenderOneClick(IDSWrappedToken(_tokens[i_scope_0]).getSrcERC20(),_depositor,_srcAmount) (DFEngineV2_1.sol#805)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "oneClickMinting",
+            "impact": "Low",
+            "line": 806,
+            "message": "DFEngineV2.oneClickMinting has external calls inside a loop:\n\t- dfStore.setTotalCol(add(dfStore.getTotalCol(),div(mul(_amount,_mintCW[i_scope_0]),_sumMintCW))) (DFEngineV2_1.sol#806)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "oneClickMinting",
+            "impact": "Low",
+            "line": 807,
+            "message": "DFEngineV2.oneClickMinting has external calls inside a loop:\n\t- IDSWrappedToken(_tokens[i_scope_0]).wrap(dfCol,_srcAmount) (DFEngineV2_1.sol#807)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "_convert",
+            "impact": "Low",
+            "line": 835,
+            "message": "DFEngineV2._convert has external calls inside a loop:\n\t- dfStore.setTokenBalance(_tokens[i],sub(_tokenBalance[i],_mintAmount)) (DFEngineV2_1.sol#835)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "_convert",
+            "impact": "Low",
+            "line": 836,
+            "message": "DFEngineV2._convert has external calls inside a loop:\n\t- dfPool.transferToCol(_tokens[i],_mintAmount) (DFEngineV2_1.sol#836)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "_convert",
+            "impact": "Low",
+            "line": 837,
+            "message": "DFEngineV2._convert has external calls inside a loop:\n\t- dfStore.setTotalCol(add(dfStore.getTotalCol(),_mintAmount)) (DFEngineV2_1.sol#837)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "_convert",
+            "impact": "Low",
+            "line": 841,
+            "message": "DFEngineV2._convert has external calls inside a loop:\n\t- dfStore.setResUSDXBalance(_tokens[i],add(_resUSDXBalance[i],_mintAmount)) (DFEngineV2_1.sol#841)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "_convert",
+            "impact": "Low",
+            "line": 845,
+            "message": "DFEngineV2._convert has external calls inside a loop:\n\t- dfStore.setDepositorBalance(_depositor,_tokens[i],sub(_depositorBalance[i],_depositorMintAmount)) (DFEngineV2_1.sol#845)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "_convert",
+            "impact": "Low",
+            "line": 846,
+            "message": "DFEngineV2._convert has external calls inside a loop:\n\t- dfStore.setResUSDXBalance(_tokens[i],sub(add(_resUSDXBalance[i],_mintAmount),_depositorMintAmount)) (DFEngineV2_1.sol#846)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "checkUSDXTotalAndColTotal",
+            "impact": "Low",
+            "line": 863,
+            "message": "DFEngineV2.checkUSDXTotalAndColTotal has external calls inside a loop:\n\t- _colTotal = add(_colTotal,IDSToken(_tokens[i]).balanceOf(_dfCol)) (DFEngineV2_1.sol#863)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20SafeTransfer",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "doTransferOut",
+            "impact": "Informational",
+            "line": 119,
+            "line_end": 143,
+            "message": "ERC20SafeTransfer.doTransferOut uses assembly (DFEngineV2_1.sol#119-143)\n\t- DFEngineV2_1.sol#129-141\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20SafeTransfer",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "doTransferFrom",
+            "impact": "Informational",
+            "line": 145,
+            "line_end": 170,
+            "message": "ERC20SafeTransfer.doTransferFrom uses assembly (DFEngineV2_1.sol#145-170)\n\t- DFEngineV2_1.sol#156-168\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "ERC20SafeTransfer",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "doApprove",
+            "impact": "Informational",
+            "line": 172,
+            "line_end": 196,
+            "message": "ERC20SafeTransfer.doApprove uses assembly (DFEngineV2_1.sol#172-196)\n\t- DFEngineV2_1.sol#182-194\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "balanceOf",
+            "impact": "Informational",
+            "line": 92,
+            "message": "IERC20Token.balanceOf (DFEngineV2_1.sol#92) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "allowance",
+            "impact": "Informational",
+            "line": 93,
+            "message": "IERC20Token.allowance (DFEngineV2_1.sol#93) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "transfer",
+            "impact": "Informational",
+            "line": 94,
+            "message": "IERC20Token.transfer (DFEngineV2_1.sol#94) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "transferFrom",
+            "impact": "Informational",
+            "line": 95,
+            "message": "IERC20Token.transferFrom (DFEngineV2_1.sol#95) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "approve",
+            "impact": "Informational",
+            "line": 96,
+            "message": "IERC20Token.approve (DFEngineV2_1.sol#96) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IERC20Token",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "totalSupply",
+            "impact": "Informational",
+            "line": 97,
+            "message": "IERC20Token.totalSupply (DFEngineV2_1.sol#97) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDSToken",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "mint",
+            "impact": "Informational",
+            "line": 102,
+            "message": "IDSToken.mint (DFEngineV2_1.sol#102) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDSToken",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "burn",
+            "impact": "Informational",
+            "line": 103,
+            "message": "IDSToken.burn (DFEngineV2_1.sol#103) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDSWrappedToken",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "mint",
+            "impact": "Informational",
+            "line": 108,
+            "message": "IDSWrappedToken.mint (DFEngineV2_1.sol#108) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDSWrappedToken",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "burn",
+            "impact": "Informational",
+            "line": 109,
+            "message": "IDSWrappedToken.burn (DFEngineV2_1.sol#109) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDSWrappedToken",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "wrap",
+            "impact": "Informational",
+            "line": 110,
+            "message": "IDSWrappedToken.wrap (DFEngineV2_1.sol#110) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDSWrappedToken",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "unwrap",
+            "impact": "Informational",
+            "line": 111,
+            "message": "IDSWrappedToken.unwrap (DFEngineV2_1.sol#111) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDSWrappedToken",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "changeByMultiple",
+            "impact": "Informational",
+            "line": 112,
+            "message": "IDSWrappedToken.changeByMultiple (DFEngineV2_1.sol#112) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDSWrappedToken",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "reverseByMultiple",
+            "impact": "Informational",
+            "line": 113,
+            "message": "IDSWrappedToken.reverseByMultiple (DFEngineV2_1.sol#113) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDSWrappedToken",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getSrcERC20",
+            "impact": "Informational",
+            "line": 114,
+            "message": "IDSWrappedToken.getSrcERC20 (DFEngineV2_1.sol#114) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getSectionMinted",
+            "impact": "Informational",
+            "line": 202,
+            "message": "IDFStore.getSectionMinted (DFEngineV2_1.sol#202) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "addSectionMinted",
+            "impact": "Informational",
+            "line": 203,
+            "message": "IDFStore.addSectionMinted (DFEngineV2_1.sol#203) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "addSectionMinted",
+            "impact": "Informational",
+            "line": 204,
+            "message": "IDFStore.addSectionMinted (DFEngineV2_1.sol#204) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setSectionMinted",
+            "impact": "Informational",
+            "line": 205,
+            "message": "IDFStore.setSectionMinted (DFEngineV2_1.sol#205) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setSectionMinted",
+            "impact": "Informational",
+            "line": 206,
+            "message": "IDFStore.setSectionMinted (DFEngineV2_1.sol#206) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getSectionBurned",
+            "impact": "Informational",
+            "line": 208,
+            "message": "IDFStore.getSectionBurned (DFEngineV2_1.sol#208) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "addSectionBurned",
+            "impact": "Informational",
+            "line": 209,
+            "message": "IDFStore.addSectionBurned (DFEngineV2_1.sol#209) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "addSectionBurned",
+            "impact": "Informational",
+            "line": 210,
+            "message": "IDFStore.addSectionBurned (DFEngineV2_1.sol#210) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setSectionBurned",
+            "impact": "Informational",
+            "line": 211,
+            "message": "IDFStore.setSectionBurned (DFEngineV2_1.sol#211) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setSectionBurned",
+            "impact": "Informational",
+            "line": 212,
+            "message": "IDFStore.setSectionBurned (DFEngineV2_1.sol#212) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getSectionToken",
+            "impact": "Informational",
+            "line": 214,
+            "message": "IDFStore.getSectionToken (DFEngineV2_1.sol#214) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getSectionWeight",
+            "impact": "Informational",
+            "line": 215,
+            "message": "IDFStore.getSectionWeight (DFEngineV2_1.sol#215) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getSectionData",
+            "impact": "Informational",
+            "line": 216,
+            "message": "IDFStore.getSectionData (DFEngineV2_1.sol#216) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getBackupSectionData",
+            "impact": "Informational",
+            "line": 217,
+            "message": "IDFStore.getBackupSectionData (DFEngineV2_1.sol#217) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getBackupSectionIndex",
+            "impact": "Informational",
+            "line": 218,
+            "message": "IDFStore.getBackupSectionIndex (DFEngineV2_1.sol#218) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setBackupSectionIndex",
+            "impact": "Informational",
+            "line": 219,
+            "message": "IDFStore.setBackupSectionIndex (DFEngineV2_1.sol#219) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setSection",
+            "impact": "Informational",
+            "line": 221,
+            "message": "IDFStore.setSection (DFEngineV2_1.sol#221) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setBackupSection",
+            "impact": "Informational",
+            "line": 222,
+            "message": "IDFStore.setBackupSection (DFEngineV2_1.sol#222) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "burnSectionMoveon",
+            "impact": "Informational",
+            "line": 223,
+            "message": "IDFStore.burnSectionMoveon (DFEngineV2_1.sol#223) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getMintingToken",
+            "impact": "Informational",
+            "line": 225,
+            "message": "IDFStore.getMintingToken (DFEngineV2_1.sol#225) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setMintingToken",
+            "impact": "Informational",
+            "line": 226,
+            "message": "IDFStore.setMintingToken (DFEngineV2_1.sol#226) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getMintedToken",
+            "impact": "Informational",
+            "line": 227,
+            "message": "IDFStore.getMintedToken (DFEngineV2_1.sol#227) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setMintedToken",
+            "impact": "Informational",
+            "line": 228,
+            "message": "IDFStore.setMintedToken (DFEngineV2_1.sol#228) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getBackupToken",
+            "impact": "Informational",
+            "line": 229,
+            "message": "IDFStore.getBackupToken (DFEngineV2_1.sol#229) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setBackupToken",
+            "impact": "Informational",
+            "line": 230,
+            "message": "IDFStore.setBackupToken (DFEngineV2_1.sol#230) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getMintedTokenList",
+            "impact": "Informational",
+            "line": 231,
+            "message": "IDFStore.getMintedTokenList (DFEngineV2_1.sol#231) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getMintPosition",
+            "impact": "Informational",
+            "line": 233,
+            "message": "IDFStore.getMintPosition (DFEngineV2_1.sol#233) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getBurnPosition",
+            "impact": "Informational",
+            "line": 234,
+            "message": "IDFStore.getBurnPosition (DFEngineV2_1.sol#234) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getTotalMinted",
+            "impact": "Informational",
+            "line": 236,
+            "message": "IDFStore.getTotalMinted (DFEngineV2_1.sol#236) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "addTotalMinted",
+            "impact": "Informational",
+            "line": 237,
+            "message": "IDFStore.addTotalMinted (DFEngineV2_1.sol#237) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setTotalMinted",
+            "impact": "Informational",
+            "line": 238,
+            "message": "IDFStore.setTotalMinted (DFEngineV2_1.sol#238) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getTotalBurned",
+            "impact": "Informational",
+            "line": 239,
+            "message": "IDFStore.getTotalBurned (DFEngineV2_1.sol#239) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "addTotalBurned",
+            "impact": "Informational",
+            "line": 240,
+            "message": "IDFStore.addTotalBurned (DFEngineV2_1.sol#240) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setTotalBurned",
+            "impact": "Informational",
+            "line": 241,
+            "message": "IDFStore.setTotalBurned (DFEngineV2_1.sol#241) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getMinBurnAmount",
+            "impact": "Informational",
+            "line": 242,
+            "message": "IDFStore.getMinBurnAmount (DFEngineV2_1.sol#242) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setMinBurnAmount",
+            "impact": "Informational",
+            "line": 243,
+            "message": "IDFStore.setMinBurnAmount (DFEngineV2_1.sol#243) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getTokenBalance",
+            "impact": "Informational",
+            "line": 245,
+            "message": "IDFStore.getTokenBalance (DFEngineV2_1.sol#245) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setTokenBalance",
+            "impact": "Informational",
+            "line": 246,
+            "message": "IDFStore.setTokenBalance (DFEngineV2_1.sol#246) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getResUSDXBalance",
+            "impact": "Informational",
+            "line": 247,
+            "message": "IDFStore.getResUSDXBalance (DFEngineV2_1.sol#247) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setResUSDXBalance",
+            "impact": "Informational",
+            "line": 248,
+            "message": "IDFStore.setResUSDXBalance (DFEngineV2_1.sol#248) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getDepositorBalance",
+            "impact": "Informational",
+            "line": 249,
+            "message": "IDFStore.getDepositorBalance (DFEngineV2_1.sol#249) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setDepositorBalance",
+            "impact": "Informational",
+            "line": 250,
+            "message": "IDFStore.setDepositorBalance (DFEngineV2_1.sol#250) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getFeeRate",
+            "impact": "Informational",
+            "line": 252,
+            "message": "IDFStore.getFeeRate (DFEngineV2_1.sol#252) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setFeeRate",
+            "impact": "Informational",
+            "line": 253,
+            "message": "IDFStore.setFeeRate (DFEngineV2_1.sol#253) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getTypeToken",
+            "impact": "Informational",
+            "line": 254,
+            "message": "IDFStore.getTypeToken (DFEngineV2_1.sol#254) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setTypeToken",
+            "impact": "Informational",
+            "line": 255,
+            "message": "IDFStore.setTypeToken (DFEngineV2_1.sol#255) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getTokenMedian",
+            "impact": "Informational",
+            "line": 256,
+            "message": "IDFStore.getTokenMedian (DFEngineV2_1.sol#256) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setTokenMedian",
+            "impact": "Informational",
+            "line": 257,
+            "message": "IDFStore.setTokenMedian (DFEngineV2_1.sol#257) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setTotalCol",
+            "impact": "Informational",
+            "line": 259,
+            "message": "IDFStore.setTotalCol (DFEngineV2_1.sol#259) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getTotalCol",
+            "impact": "Informational",
+            "line": 260,
+            "message": "IDFStore.getTotalCol (DFEngineV2_1.sol#260) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setWrappedToken",
+            "impact": "Informational",
+            "line": 262,
+            "message": "IDFStore.setWrappedToken (DFEngineV2_1.sol#262) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFStore",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getWrappedToken",
+            "impact": "Informational",
+            "line": 263,
+            "message": "IDFStore.getWrappedToken (DFEngineV2_1.sol#263) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFPoolV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "transferOut",
+            "impact": "Informational",
+            "line": 268,
+            "message": "IDFPoolV2.transferOut (DFEngineV2_1.sol#268) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFPoolV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "transferOutSrc",
+            "impact": "Informational",
+            "line": 269,
+            "message": "IDFPoolV2.transferOutSrc (DFEngineV2_1.sol#269) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFPoolV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "transferFromSender",
+            "impact": "Informational",
+            "line": 270,
+            "message": "IDFPoolV2.transferFromSender (DFEngineV2_1.sol#270) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFPoolV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "transferFromSenderOneClick",
+            "impact": "Informational",
+            "line": 271,
+            "message": "IDFPoolV2.transferFromSenderOneClick (DFEngineV2_1.sol#271) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFPoolV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "transferToCol",
+            "impact": "Informational",
+            "line": 272,
+            "message": "IDFPoolV2.transferToCol (DFEngineV2_1.sol#272) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFPoolV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "transferFromSenderToCol",
+            "impact": "Informational",
+            "line": 273,
+            "message": "IDFPoolV2.transferFromSenderToCol (DFEngineV2_1.sol#273) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFPoolV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "approveToEngine",
+            "impact": "Informational",
+            "line": 274,
+            "message": "IDFPoolV2.approveToEngine (DFEngineV2_1.sol#274) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFPoolV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getInterestByXToken",
+            "impact": "Informational",
+            "line": 275,
+            "message": "IDFPoolV2.getInterestByXToken (DFEngineV2_1.sol#275) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IDFPoolV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "getUnderlying",
+            "impact": "Informational",
+            "line": 276,
+            "message": "IDFPoolV2.getUnderlying (DFEngineV2_1.sol#276) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "IMedianizer",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "read",
+            "impact": "Informational",
+            "line": 281,
+            "message": "IMedianizer.read (DFEngineV2_1.sol#281) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuthority",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "canCall",
+            "impact": "Informational",
+            "line": 298,
+            "line_end": 300,
+            "message": "DSAuthority.canCall (DFEngineV2_1.sol#298-300) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuth",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "disableOwnership",
+            "impact": "Informational",
+            "line": 320,
+            "line_end": 323,
+            "message": "DSAuth.disableOwnership (DFEngineV2_1.sol#320-323) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuth",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "transferOwnership",
+            "impact": "Informational",
+            "line": 325,
+            "line_end": 328,
+            "message": "DSAuth.transferOwnership (DFEngineV2_1.sol#325-328) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuth",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "acceptOwnership",
+            "impact": "Informational",
+            "line": 330,
+            "line_end": 335,
+            "message": "DSAuth.acceptOwnership (DFEngineV2_1.sol#330-335) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSAuth",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "setAuthority",
+            "impact": "Informational",
+            "line": 338,
+            "line_end": 344,
+            "message": "DSAuth.setAuthority (DFEngineV2_1.sol#338-344) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DSMath",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "pow",
+            "impact": "Informational",
+            "line": 465,
+            "line_end": 481,
+            "message": "DSMath.pow (DFEngineV2_1.sol#465-481) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "deposit",
+            "impact": "Informational",
+            "line": 621,
+            "line_end": 678,
+            "message": "DFEngineV2.deposit (DFEngineV2_1.sol#621-678) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "withdraw",
+            "impact": "Informational",
+            "line": 680,
+            "line_end": 701,
+            "message": "DFEngineV2.withdraw (DFEngineV2_1.sol#680-701) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "claim",
+            "impact": "Informational",
+            "line": 703,
+            "line_end": 729,
+            "message": "DFEngineV2.claim (DFEngineV2_1.sol#703-729) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "destroy",
+            "impact": "Informational",
+            "line": 731,
+            "line_end": 785,
+            "message": "DFEngineV2.destroy (DFEngineV2_1.sol#731-785) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "DFEngineV2",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "function": "oneClickMinting",
+            "impact": "Informational",
+            "line": 787,
+            "line_end": 814,
+            "message": "DFEngineV2.oneClickMinting (DFEngineV2_1.sol#787-814) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 120,
+            "message": "Parameter '_token' of ERC20SafeTransfer.doTransferOut (DFEngineV2_1.sol#120) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 121,
+            "message": "Parameter '_to' of ERC20SafeTransfer.doTransferOut (DFEngineV2_1.sol#121) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 122,
+            "message": "Parameter '_amount' of ERC20SafeTransfer.doTransferOut (DFEngineV2_1.sol#122) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 146,
+            "message": "Parameter '_token' of ERC20SafeTransfer.doTransferFrom (DFEngineV2_1.sol#146) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 147,
+            "message": "Parameter '_from' of ERC20SafeTransfer.doTransferFrom (DFEngineV2_1.sol#147) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 148,
+            "message": "Parameter '_to' of ERC20SafeTransfer.doTransferFrom (DFEngineV2_1.sol#148) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 149,
+            "message": "Parameter '_amount' of ERC20SafeTransfer.doTransferFrom (DFEngineV2_1.sol#149) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 173,
+            "message": "Parameter '_token' of ERC20SafeTransfer.doApprove (DFEngineV2_1.sol#173) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 174,
+            "message": "Parameter '_to' of ERC20SafeTransfer.doApprove (DFEngineV2_1.sol#174) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 175,
+            "message": "Parameter '_amount' of ERC20SafeTransfer.doApprove (DFEngineV2_1.sol#175) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 568,
+            "message": "Parameter '_usdxToken' of DFEngineV2. (DFEngineV2_1.sol#568) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 569,
+            "message": "Parameter '_dfStore' of DFEngineV2. (DFEngineV2_1.sol#569) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 570,
+            "message": "Parameter '_dfPool' of DFEngineV2. (DFEngineV2_1.sol#570) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 571,
+            "message": "Parameter '_dfCol' of DFEngineV2. (DFEngineV2_1.sol#571) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 572,
+            "message": "Parameter '_dfFunds' of DFEngineV2. (DFEngineV2_1.sol#572) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 580,
+            "message": "Parameter '_usdxToken' of DFEngineV2.initialize (DFEngineV2_1.sol#580) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 581,
+            "message": "Parameter '_dfStore' of DFEngineV2.initialize (DFEngineV2_1.sol#581) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 582,
+            "message": "Parameter '_dfPool' of DFEngineV2.initialize (DFEngineV2_1.sol#582) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 583,
+            "message": "Parameter '_dfCol' of DFEngineV2.initialize (DFEngineV2_1.sol#583) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 584,
+            "message": "Parameter '_dfFunds' of DFEngineV2.initialize (DFEngineV2_1.sol#584) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 602,
+            "line_end": 619,
+            "message": "Function 'DFEngineV2._unifiedCommission' (DFEngineV2_1.sol#602-619) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 602,
+            "message": "Parameter '_feeTokenIdx' of DFEngineV2._unifiedCommission (DFEngineV2_1.sol#602) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 602,
+            "message": "Parameter '_amount' of DFEngineV2._unifiedCommission (DFEngineV2_1.sol#602) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 621,
+            "message": "Parameter '_depositor' of DFEngineV2.deposit (DFEngineV2_1.sol#621) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 621,
+            "message": "Parameter '_srcToken' of DFEngineV2.deposit (DFEngineV2_1.sol#621) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 621,
+            "message": "Parameter '_feeTokenIdx' of DFEngineV2.deposit (DFEngineV2_1.sol#621) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 621,
+            "message": "Parameter '_srcAmount' of DFEngineV2.deposit (DFEngineV2_1.sol#621) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 680,
+            "message": "Parameter '_depositor' of DFEngineV2.withdraw (DFEngineV2_1.sol#680) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 680,
+            "message": "Parameter '_srcToken' of DFEngineV2.withdraw (DFEngineV2_1.sol#680) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 680,
+            "message": "Parameter '_feeTokenIdx' of DFEngineV2.withdraw (DFEngineV2_1.sol#680) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 680,
+            "message": "Parameter '_srcAmount' of DFEngineV2.withdraw (DFEngineV2_1.sol#680) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 703,
+            "message": "Parameter '_depositor' of DFEngineV2.claim (DFEngineV2_1.sol#703) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 703,
+            "message": "Parameter '_feeTokenIdx' of DFEngineV2.claim (DFEngineV2_1.sol#703) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 731,
+            "message": "Parameter '_depositor' of DFEngineV2.destroy (DFEngineV2_1.sol#731) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 731,
+            "message": "Parameter '_feeTokenIdx' of DFEngineV2.destroy (DFEngineV2_1.sol#731) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 731,
+            "message": "Parameter '_amount' of DFEngineV2.destroy (DFEngineV2_1.sol#731) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 787,
+            "message": "Parameter '_depositor' of DFEngineV2.oneClickMinting (DFEngineV2_1.sol#787) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 787,
+            "message": "Parameter '_feeTokenIdx' of DFEngineV2.oneClickMinting (DFEngineV2_1.sol#787) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 787,
+            "message": "Parameter '_amount' of DFEngineV2.oneClickMinting (DFEngineV2_1.sol#787) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 816,
+            "line_end": 856,
+            "message": "Function 'DFEngineV2._convert' (DFEngineV2_1.sol#816-856) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 817,
+            "message": "Parameter '_depositor' of DFEngineV2._convert (DFEngineV2_1.sol#817) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 818,
+            "message": "Parameter '_tokens' of DFEngineV2._convert (DFEngineV2_1.sol#818) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 819,
+            "message": "Parameter '_mintCW' of DFEngineV2._convert (DFEngineV2_1.sol#819) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 820,
+            "message": "Parameter '_tokenBalance' of DFEngineV2._convert (DFEngineV2_1.sol#820) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 821,
+            "message": "Parameter '_resUSDXBalance' of DFEngineV2._convert (DFEngineV2_1.sol#821) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 822,
+            "message": "Parameter '_depositorBalance' of DFEngineV2._convert (DFEngineV2_1.sol#822) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/DFEngineV2_1.sol",
+            "impact": "Informational",
+            "line": 823,
+            "message": "Parameter '_step' of DFEngineV2._convert (DFEngineV2_1.sol#823) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

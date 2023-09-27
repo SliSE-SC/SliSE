@@ -1,0 +1,616 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B3/bin/0xa5409ec958c83c3f309868babaca7c86dcb077c1.bin
+[00:00:00:00] Fuzzing starts at 03:49:59
+[00:00:00:00] Time limit : 300 s
+[DEBUG] Analyzing constructor @ 0
+Found sstore(<0x5, { }, { }>, <0x127500, { }, { }>) @ 0xb
+Found sload(<0x6, { }, { }>) @ 0x17
+Found sstore(<0x6, { }, { }>, <T, { }, { var_6 }>) @ 0x25
+Found sload(<0x0, { }, { }>) @ 0x3d
+Found sstore(<0x0, { }, { }>, <T, { }, { CALLER, var_0 }>) @ 0x72
+Found codecopy(<0x080, { }, { }>, _, _), arg# = 0
+Found sload(<0x1, { }, { }>) @ 0xa2
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1 }>) @ 0xd7
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_0, var_1, var_5, var_6 }, Use = { var_0, var_1, var_6 }
+Constructor tainted: { var_0 }
+[DEBUG] Analyzing name(06fdde03) @ e0
+name(06fdde03): Def = {  }, Use = {  }
+[DEBUG] Analyzing initialAddressSet(1a86ac4f) @ 170
+Found sload(<0x6, { }, { }>) @ 0x5a9
+initialAddressSet(1a86ac4f): Def = {  }, Use = { var_6 }
+[DEBUG] Analyzing endGrantAuthentication(38b6e407) @ 19f
+Found sload(<0x0, { }, { }>) @ 0x5bb
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x654
+Found sload(<T, { Sha(*, 0x3) }, { }>) @ 0x6a8
+Found sload(<0x5, { }, { }>) @ 0x6b6
+Found sload(<T, { Sha(*, 0x3) }, { }>) @ 0x6f6
+Found sstore(<T, { Sha(*, 0x3) }, { }>, <0x0, { }, { }>) @ 0x748
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x792
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <T, { }, { map_4 }>) @ 0x7a0
+endGrantAuthentication(38b6e407): (onlyOwner) Def = { map_3, map_4 }, Use = { map_3, map_4, var_0, var_5 }
+[DEBUG] Analyzing revokeAuthentication(53376d1f) @ 1e2
+Found sload(<0x0, { }, { }>) @ 0x7a9
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x848
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <T, { }, { map_4 }>) @ 0x856
+revokeAuthentication(53376d1f): (onlyOwner) Def = { map_4 }, Use = { map_4, var_0 }
+[DEBUG] Analyzing pending(5eebea20) @ 225
+Found sload(<T, { Sha(*, 0x3) }, { }>) @ 0x86f
+pending(5eebea20): Def = {  }, Use = { map_3 }
+[DEBUG] Analyzing contracts(69dc9ff3) @ 27c
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x885
+contracts(69dc9ff3): Def = {  }, Use = { map_4 }
+[DEBUG] Analyzing renounceOwnership(715018a6) @ 2d7
+Found sload(<0x0, { }, { }>) @ 0x897
+Found sload(<0x0, { }, { }>) @ 0x8f2
+Found sload(<0x0, { }, { }>) @ 0x95c
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x991
+renounceOwnership(715018a6): (onlyOwner) Def = { var_0 }, Use = { var_0 }
+[DEBUG] Analyzing owner(8da5cb5b) @ 2ee
+Found sload(<0x0, { }, { }>) @ 0x999
+owner(8da5cb5b): Def = {  }, Use = { var_0 }
+[DEBUG] Analyzing delegateProxyImplementation(97204d8e) @ 345
+Found sload(<0x1, { }, { }>) @ 0x9bf
+delegateProxyImplementation(97204d8e): Def = {  }, Use = { var_1 }
+[DEBUG] Analyzing proxies(c4552791) @ 39c
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0x9f2
+proxies(c4552791): Def = {  }, Use = { map_2 }
+[DEBUG] Analyzing startGrantAuthentication(d4e8e063) @ 41f
+Found sload(<0x0, { }, { }>) @ 0xa17
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0xab0
+Found sload(<T, { Sha(*, 0x3) }, { }>) @ 0xb04
+Found sstore(<T, { Sha(*, 0x3) }, { }>, <T, { }, { }>) @ 0xb54
+startGrantAuthentication(d4e8e063): (onlyOwner) Def = { map_3 }, Use = { map_3, map_4, var_0 }
+[DEBUG] Analyzing registerProxy(ddd81f82) @ 462
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0xbb4
+Found sload(<0x1, { }, { }>) @ 0xbfa
+Found codecopy(<_, { }, { }>, _, _), arg# = 0
+Found sload(<T, { Sha(*, 0x2) }, { }>) @ 0xe49
+Found sstore(<T, { Sha(*, 0x2) }, { }>, <T, { }, { map_2 }>) @ 0xe7e
+registerProxy(ddd81f82): Def = { map_2 }, Use = { map_2, var_1 }
+[DEBUG] Analyzing DELAY_PERIOD(e71a02e1) @ 4b9
+Found sload(<0x5, { }, { }>) @ 0xe88
+DELAY_PERIOD(e71a02e1): Def = {  }, Use = { var_5 }
+[DEBUG] Analyzing grantInitialAuthentication(ef7f3834) @ 4e4
+Found sload(<0x0, { }, { }>) @ 0xe90
+Found sload(<0x6, { }, { }>) @ 0xeec
+Found sload(<0x6, { }, { }>) @ 0xf0e
+Found sstore(<0x6, { }, { }>, <T, { }, { var_6 }>) @ 0xf1c
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0xf66
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <T, { }, { map_4 }>) @ 0xf74
+grantInitialAuthentication(ef7f3834): (onlyOwner) Def = { map_4, var_6 }, Use = { map_4, var_0, var_6 }
+[DEBUG] Analyzing transferOwnership(f2fde38b) @ 527
+Found sload(<0x0, { }, { }>) @ 0xf7d
+Found sload(<0x0, { }, { }>) @ 0x102b
+Found sload(<0x0, { }, { }>) @ 0x1094
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x10c9
+transferOwnership(f2fde38b): (onlyOwner) Def = { var_0 }, Use = { var_0 }
+Pruning out ["grantInitialAuthentication(ef7f3834)"]
+Pruning out ["revokeAuthentication(53376d1f)"]
+Pruning out ["startGrantAuthentication(d4e8e063)"]
+Pruning out ["transferOwnership(f2fde38b)"]
+(32 candidate sequences)
+["registerProxy(ddd81f82)"; "registerProxy(ddd81f82)"]
+["registerProxy(ddd81f82)"; "proxies(c4552791)"]
+["renounceOwnership(715018a6)"; "transferOwnership(f2fde38b)";
+ "transferOwnership(f2fde38b)"]
+["renounceOwnership(715018a6)"; "transferOwnership(f2fde38b)";
+ "startGrantAuthentication(d4e8e063)"]
+["renounceOwnership(715018a6)"; "transferOwnership(f2fde38b)";
+ "revokeAuthentication(53376d1f)"]
+["renounceOwnership(715018a6)"; "transferOwnership(f2fde38b)";
+ "renounceOwnership(715018a6)"]
+["renounceOwnership(715018a6)"; "transferOwnership(f2fde38b)"; "owner(8da5cb5b)"]
+["renounceOwnership(715018a6)"; "transferOwnership(f2fde38b)";
+ "grantInitialAuthentication(ef7f3834)"]
+["renounceOwnership(715018a6)"; "transferOwnership(f2fde38b)";
+ "endGrantAuthentication(38b6e407)"]
+["renounceOwnership(715018a6)"; "startGrantAuthentication(d4e8e063)"]
+["renounceOwnership(715018a6)"; "revokeAuthentication(53376d1f)"]
+["renounceOwnership(715018a6)"; "renounceOwnership(715018a6)"]
+["renounceOwnership(715018a6)"; "owner(8da5cb5b)"]
+["renounceOwnership(715018a6)"; "grantInitialAuthentication(ef7f3834)"]
+["renounceOwnership(715018a6)"; "endGrantAuthentication(38b6e407)"]
+["endGrantAuthentication(38b6e407)"; "startGrantAuthentication(d4e8e063)"]
+["endGrantAuthentication(38b6e407)"; "revokeAuthentication(53376d1f)"]
+["endGrantAuthentication(38b6e407)"; "pending(5eebea20)"]
+["endGrantAuthentication(38b6e407)"; "grantInitialAuthentication(ef7f3834)";
+ "startGrantAuthentication(d4e8e063)"]
+["endGrantAuthentication(38b6e407)"; "grantInitialAuthentication(ef7f3834)";
+ "revokeAuthentication(53376d1f)"; "startGrantAuthentication(d4e8e063)";
+ "startGrantAuthentication(d4e8e063)"]
+["endGrantAuthentication(38b6e407)"; "grantInitialAuthentication(ef7f3834)";
+ "revokeAuthentication(53376d1f)"; "startGrantAuthentication(d4e8e063)";
+ "pending(5eebea20)"]
+["endGrantAuthentication(38b6e407)"; "grantInitialAuthentication(ef7f3834)";
+ "revokeAuthentication(53376d1f)"; "startGrantAuthentication(d4e8e063)";
+ "endGrantAuthentication(38b6e407)"]
+["endGrantAuthentication(38b6e407)"; "grantInitialAuthentication(ef7f3834)";
+ "revokeAuthentication(53376d1f)"; "revokeAuthentication(53376d1f)"]
+["endGrantAuthentication(38b6e407)"; "grantInitialAuthentication(ef7f3834)";
+ "revokeAuthentication(53376d1f)"; "grantInitialAuthentication(ef7f3834)"]
+["endGrantAuthentication(38b6e407)"; "grantInitialAuthentication(ef7f3834)";
+ "revokeAuthentication(53376d1f)"; "endGrantAuthentication(38b6e407)"]
+["endGrantAuthentication(38b6e407)"; "grantInitialAuthentication(ef7f3834)";
+ "revokeAuthentication(53376d1f)"; "contracts(69dc9ff3)"]
+["endGrantAuthentication(38b6e407)"; "grantInitialAuthentication(ef7f3834)";
+ "initialAddressSet(1a86ac4f)"]
+["endGrantAuthentication(38b6e407)"; "grantInitialAuthentication(ef7f3834)";
+ "grantInitialAuthentication(ef7f3834)"]
+["endGrantAuthentication(38b6e407)"; "grantInitialAuthentication(ef7f3834)";
+ "endGrantAuthentication(38b6e407)"]
+["endGrantAuthentication(38b6e407)"; "grantInitialAuthentication(ef7f3834)";
+ "contracts(69dc9ff3)"]
+["endGrantAuthentication(38b6e407)"; "endGrantAuthentication(38b6e407)"]
+["endGrantAuthentication(38b6e407)"; "contracts(69dc9ff3)"]
+[00:00:00:00] Start main fuzzing phase
+[00:00:00:00] [*] Save new seed id-00000_00000: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: registerProxy(ddd81f82), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: registerProxy(ddd81f82), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00001_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: registerProxy(ddd81f82), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: proxies(c4552791), From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00002_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: renounceOwnership(715018a6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00003_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: renounceOwnership(715018a6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: startGrantAuthentication(d4e8e063), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00004_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: renounceOwnership(715018a6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: revokeAuthentication(53376d1f), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00005_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: renounceOwnership(715018a6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: renounceOwnership(715018a6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00006_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: renounceOwnership(715018a6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: owner(8da5cb5b), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00007_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: renounceOwnership(715018a6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: grantInitialAuthentication(ef7f3834), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00008_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: renounceOwnership(715018a6), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: endGrantAuthentication(38b6e407), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00009_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: revokeAuthentication(53376d1f), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: contracts(69dc9ff3), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: registerProxy(ddd81f82), From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: registerProxy(ddd81f82), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00010_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: initialAddressSet(1a86ac4f), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: DELAY_PERIOD(e71a02e1), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: revokeAuthentication(53376d1f), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00011_00001: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: endGrantAuthentication(38b6e407), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 118A2C24808934116E6AB4C00FF48145D23B09E1
+( => TX 2 <= ) Function: registerProxy(ddd81f82), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: registerProxy(ddd81f82), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: proxies(c4552791), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 6B773032C69FB9BCD6FC267651C446FA7F9301AF
+(    TX 5    ) Function: delegateProxyImplementation(97204d8e), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00012_00001: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: proxies(c4552791), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000010000000000000000000000000000000000
+(    TX 2    ) Function: DELAY_PERIOD(e71a02e1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 3 <= ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 24CDD2DBA056B7C654A50E8201B619D4F624FDDA
+
+[00:00:00:01] Tx#1 found BlockstateDependencyManticore at b12
+[00:00:00:01] [*] Save bug seed id-00000-BD_mant_00001: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: startGrantAuthentication(d4e8e063), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000040000000000000
+( => TX 2 <= ) Function: registerProxy(ddd81f82), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: proxies(c4552791), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00013_00001: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: startGrantAuthentication(d4e8e063), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000040000000000000
+( => TX 2 <= ) Function: registerProxy(ddd81f82), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: proxies(c4552791), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00014_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: registerProxy(ddd81f82), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: transferOwnership(f2fde38b), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: pending(5eebea20), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00015_00001: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: registerProxy(ddd81f82), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: name(06fdde03), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 3 <= ) Function: delegateProxyImplementation(97204d8e), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00016_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: registerProxy(ddd81f82), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: registerProxy(ddd81f82), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00017_00001: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: registerProxy(ddd81f82), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: grantInitialAuthentication(ef7f3834), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000E20000000000000000000000000000
+(    TX 3    ) Function: registerProxy(ddd81f82), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00018_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: endGrantAuthentication(38b6e407), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: grantInitialAuthentication(ef7f3834), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: startGrantAuthentication(d4e8e063), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] Tx#5 found BlockstateDependencyMythril at 6ff
+[00:00:00:03] Tx#5 found BlockstateDependencyManticore at 6b3
+[00:00:00:03] [*] Save bug seed id-00001-BD_mant-BD_myth_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: endGrantAuthentication(38b6e407), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: grantInitialAuthentication(ef7f3834), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: revokeAuthentication(53376d1f), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: startGrantAuthentication(d4e8e063), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 5    ) Function: endGrantAuthentication(38b6e407), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00019_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: endGrantAuthentication(38b6e407), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: grantInitialAuthentication(ef7f3834), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: revokeAuthentication(53376d1f), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: startGrantAuthentication(d4e8e063), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 5    ) Function: endGrantAuthentication(38b6e407), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:03] [*] Save new seed id-00020_00003: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: endGrantAuthentication(38b6e407), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: grantInitialAuthentication(ef7f3834), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: revokeAuthentication(53376d1f), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 4    ) Function: grantInitialAuthentication(ef7f3834), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:04] [*] Save new seed id-00021_00004: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: endGrantAuthentication(38b6e407), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: grantInitialAuthentication(ef7f3834), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: endGrantAuthentication(38b6e407), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+Fuzzing timeout expired.
+[00:00:05:00] ===== Statistics =====
+[00:00:05:00] Total Executions: 57133
+[00:00:05:00] Deployment failures: 0
+[00:00:05:00] Test Cases: 22
+[00:00:05:00] Covered Edges: 118
+[00:00:05:00] Covered Instructions: 1809
+[00:00:05:00] Covered Def-Use Chains: 80
+[00:00:05:00] Found Bugs:
+[00:00:05:00]   Assertion Failure: 0
+[00:00:05:00]   Arbitrary Write: 0
+[00:00:05:00]   Block state Dependency: 0
+[00:00:05:00]   Control Hijack: 0
+[00:00:05:00]   Ether Leak: 0
+[00:00:05:00]   Integer Bug: 0
+[00:00:05:00]   Mishandled Exception: 0
+[00:00:05:00]   Multiple Send: 0
+[00:00:05:00]   Reentrancy: 0
+[00:00:05:00]   Suicidal Contract: 0
+[00:00:05:00]   Transaction Origin Use: 0
+[00:00:05:00]   Freezing Ether: 0
+[00:00:05:00]   Requirement Violation: 0
+[00:00:05:00] Done, clean up and exit...

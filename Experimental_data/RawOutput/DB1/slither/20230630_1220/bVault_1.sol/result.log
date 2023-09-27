@@ -1,0 +1,112 @@
+INFO:Slither:Compilation warnings/errors on /sb/bVault_1.sol:
+/sb/bVault_1.sol:413:5: Warning: Function state mutability can be restricted to view
+    function getFeeRatio() internal returns(uint)
+    ^ (Relevant source part starts here and spans across multiple lines).
+
+INFO:Detectors:[93m
+Address.isContract (/sb/bVault_1.sol#206-212) is declared view but contains assembly code
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#constant-functions-changing-the-state[0m
+INFO:Detectors:[93m
+Reentrancy in bVault.withdrawETH (/sb/bVault_1.sol#388-411):
+	External calls:
+	- r = (balance().mul(_shares)).div(totalSupply()) (/sb/bVault_1.sol#389)
+	State variables written after the call(s):
+	- _totalSupply (/sb/bVault_1.sol#390)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-1[0m
+INFO:Detectors:[92m
+ERC20Detailed.constructor.name (local variable @ /sb/bVault_1.sol#144) shadows:
+	- ERC20Detailed.name (function @ /sb/bVault_1.sol#149-151)
+ERC20Detailed.constructor.symbol (local variable @ /sb/bVault_1.sol#144) shadows:
+	- ERC20Detailed.symbol (function @ /sb/bVault_1.sol#152-154)
+ERC20Detailed.constructor.decimals (local variable @ /sb/bVault_1.sol#144) shadows:
+	- ERC20Detailed.decimals (function @ /sb/bVault_1.sol#155-157)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#local-variable-shadowing[0m
+INFO:Detectors:[92m
+Reentrancy in bVault.depositETH (/sb/bVault_1.sol#364-382):
+	External calls:
+	- _pool = balance() (/sb/bVault_1.sol#365)
+	- _before = IERC20(weth).balanceOf(address(this)) (/sb/bVault_1.sol#366)
+	- WETH(address(weth)).deposit.value(_amount)() (/sb/bVault_1.sol#368)
+	- _after = IERC20(weth).balanceOf(address(this)) (/sb/bVault_1.sol#369)
+	External calls sending eth:
+	- WETH(address(weth)).deposit.value(_amount)() (/sb/bVault_1.sol#368)
+	State variables written after the call(s):
+	- _balances (/sb/bVault_1.sol#377)
+	- _totalSupply (/sb/bVault_1.sol#377)
+	- userDepoistTime (/sb/bVault_1.sol#378)
+Reentrancy in bVault.withdrawETH (/sb/bVault_1.sol#388-411):
+	External calls:
+	- r = (balance().mul(_shares)).div(totalSupply()) (/sb/bVault_1.sol#389)
+	State variables written after the call(s):
+	- _balances (/sb/bVault_1.sol#390)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-2[0m
+INFO:Detectors:[92m
+Address.isContract uses assembly (/sb/bVault_1.sol#206-212)
+	- /sb/bVault_1.sol#210
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+bVault.feeMax should be constant (/sb/bVault_1.sol#296)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#state-variables-that-could-be-declared-constant[0m
+INFO:Detectors:[92m
+Ownable.owner (/sb/bVault_1.sol#42-44) should be declared external
+Ownable.renounceOwnership (/sb/bVault_1.sol#52-55) should be declared external
+Ownable.transferOwnership (/sb/bVault_1.sol#56-58) should be declared external
+ERC20.transfer (/sb/bVault_1.sol#80-83) should be declared external
+IERC20.transfer (/sb/bVault_1.sol#12) should be declared external
+ERC20.allowance (/sb/bVault_1.sol#84-86) should be declared external
+IERC20.allowance (/sb/bVault_1.sol#13) should be declared external
+IERC20.approve (/sb/bVault_1.sol#14) should be declared external
+ERC20.approve (/sb/bVault_1.sol#87-90) should be declared external
+ERC20.transferFrom (/sb/bVault_1.sol#91-95) should be declared external
+IERC20.transferFrom (/sb/bVault_1.sol#15) should be declared external
+ERC20.increaseAllowance (/sb/bVault_1.sol#96-99) should be declared external
+ERC20.decreaseAllowance (/sb/bVault_1.sol#100-103) should be declared external
+ERC20Detailed.name (/sb/bVault_1.sol#149-151) should be declared external
+ERC20Detailed.symbol (/sb/bVault_1.sol#152-154) should be declared external
+ERC20Detailed.decimals (/sb/bVault_1.sol#155-157) should be declared external
+bVault.setGovernance (/sb/bVault_1.sol#338-341) should be declared external
+bVault.setController (/sb/bVault_1.sol#343-346) should be declared external
+bVault.setEarnLowerlimit (/sb/bVault_1.sol#347-350) should be declared external
+bVault.getPricePerFullShare (/sb/bVault_1.sol#425-430) should be declared external
+bVault.setFeeRatio (/sb/bVault_1.sol#432-439) should be declared external
+bVault.setFeeAddress (/sb/bVault_1.sol#441-445) should be declared external
+bVault.setTimeLock (/sb/bVault_1.sol#447-451) should be declared external
+bVault.setRestrictContractCall (/sb/bVault_1.sol#453-456) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/bVault_1.sol:
+	- pragma solidity^0.5.16 (/sb/bVault_1.sol#7): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Low level call in Address.sendValue (/sb/bVault_1.sol#216-222):
+	-(success) = recipient.call.value(amount)() /sb/bVault_1.sol#220
+Low level call in SafeERC20.callOptionalReturn (/sb/bVault_1.sol#253-264):
+	-(success,returndata) = address(token).call(data) /sb/bVault_1.sol#257
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#low-level-calls[0m
+INFO:Detectors:[92m
+Function 'Context._msgSender' (/sb/bVault_1.sol#24-26) is not in mixedCase
+Function 'Context._msgData' (/sb/bVault_1.sol#28-31) is not in mixedCase
+Function 'Ownable._transferOwnership' (/sb/bVault_1.sol#59-63) is not in mixedCase
+Function 'ERC20._transfer' (/sb/bVault_1.sol#104-111) is not in mixedCase
+Function 'ERC20._mint' (/sb/bVault_1.sol#112-118) is not in mixedCase
+Function 'ERC20._burn' (/sb/bVault_1.sol#119-125) is not in mixedCase
+Function 'ERC20._approve' (/sb/bVault_1.sol#126-132) is not in mixedCase
+Function 'ERC20._burnFrom' (/sb/bVault_1.sol#133-136) is not in mixedCase
+Parameter '' of Controller.withdraw (/sb/bVault_1.sol#276) is not in mixedCase
+Parameter '_scope_0' of Controller.withdraw (/sb/bVault_1.sol#276) is not in mixedCase
+Parameter '' of Controller.balanceOf (/sb/bVault_1.sol#277) is not in mixedCase
+Parameter '' of Controller.earn (/sb/bVault_1.sol#278) is not in mixedCase
+Parameter '_scope_0' of Controller.earn (/sb/bVault_1.sol#278) is not in mixedCase
+Contract 'bVault' (/sb/bVault_1.sol#281-457) is not in CapWords
+Parameter '_earnLowerlimit' of bVault. (/sb/bVault_1.sol#318) is not in mixedCase
+Parameter '_min' of bVault.setMin (/sb/bVault_1.sol#333) is not in mixedCase
+Parameter '_governance' of bVault.setGovernance (/sb/bVault_1.sol#338) is not in mixedCase
+Parameter '_controller' of bVault.setController (/sb/bVault_1.sol#343) is not in mixedCase
+Parameter '_earnLowerlimit' of bVault.setEarnLowerlimit (/sb/bVault_1.sol#347) is not in mixedCase
+Parameter '_shares' of bVault.withdrawETH (/sb/bVault_1.sol#388) is not in mixedCase
+Parameter '_timelock' of bVault.setTimeLock (/sb/bVault_1.sol#447) is not in mixedCase
+Constant 'bVault.max' (/sb/bVault_1.sol#287) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'bVault.weth' (/sb/bVault_1.sol#298) is not in UPPER_CASE_WITH_UNDERSCORES
+Variable 'bVault.RestrictContractCall' (/sb/bVault_1.sol#304) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/bVault_1.sol analyzed (11 contracts), 60 result(s) found

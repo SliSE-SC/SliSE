@@ -1,0 +1,65 @@
+INFO:Detectors:[92m
+RecoverableWallet.finish_recovery (/sb/recoverable-wallet_2.sol#122-130) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp > active_recovery_end_time,You must wait until the recovery delay is over before finishing the recovery.) (/sb/recoverable-wallet_2.sol#125)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#block-timestamp[0m
+INFO:Detectors:[92m
+RecoverableWallet.deploy uses assembly (/sb/recoverable-wallet_2.sol#132-141)
+	- /sb/recoverable-wallet_2.sol#136-138
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/recoverable-wallet_2.sol:
+	- pragma solidity0.5.8 (/sb/recoverable-wallet_2.sol#1): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Low level call in RecoverableWallet.execute (/sb/recoverable-wallet_2.sol#143-147):
+	-(_success,_result) = _to.call.value(_value)(_data) /sb/recoverable-wallet_2.sol#144
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#low-level-calls[0m
+INFO:Detectors:[92m
+Parameter '' of Erc777TokensRecipient.tokensReceived (/sb/recoverable-wallet_2.sol#11) is not in mixedCase
+Parameter '_scope_0' of Erc777TokensRecipient.tokensReceived (/sb/recoverable-wallet_2.sol#11) is not in mixedCase
+Parameter '_scope_1' of Erc777TokensRecipient.tokensReceived (/sb/recoverable-wallet_2.sol#11) is not in mixedCase
+Parameter '_scope_2' of Erc777TokensRecipient.tokensReceived (/sb/recoverable-wallet_2.sol#11) is not in mixedCase
+Parameter '_scope_3' of Erc777TokensRecipient.tokensReceived (/sb/recoverable-wallet_2.sol#11) is not in mixedCase
+Parameter '_scope_4' of Erc777TokensRecipient.tokensReceived (/sb/recoverable-wallet_2.sol#11) is not in mixedCase
+Parameter '' of Erc777TokensRecipient.canImplementInterfaceForAddress (/sb/recoverable-wallet_2.sol#12) is not in mixedCase
+Parameter '_scope_0' of Erc777TokensRecipient.canImplementInterfaceForAddress (/sb/recoverable-wallet_2.sol#12) is not in mixedCase
+Event 'Ownable.ownership_transfer_started' (/sb/recoverable-wallet_2.sol#16) is not in CapWords
+Event 'Ownable.ownership_transfer_cancelled' (/sb/recoverable-wallet_2.sol#17) is not in CapWords
+Event 'Ownable.ownership_transfer_finished' (/sb/recoverable-wallet_2.sol#18) is not in CapWords
+Parameter '_owner' of Ownable. (/sb/recoverable-wallet_2.sol#23) is not in mixedCase
+Function 'Ownable.start_ownership_transfer' (/sb/recoverable-wallet_2.sol#39-43) is not in mixedCase
+Parameter '_pending_owner' of Ownable.start_ownership_transfer (/sb/recoverable-wallet_2.sol#39) is not in mixedCase
+Function 'Ownable.cancel_ownership_transfer' (/sb/recoverable-wallet_2.sol#45-49) is not in mixedCase
+Function 'Ownable.accept_ownership' (/sb/recoverable-wallet_2.sol#51-56) is not in mixedCase
+Variable 'Ownable.pending_owner' (/sb/recoverable-wallet_2.sol#21) is not in mixedCase
+Modifier 'Ownable.only_owner' (/sb/recoverable-wallet_2.sol#28-31) is not in mixedCase
+Modifier 'Ownable.only_pending_owner' (/sb/recoverable-wallet_2.sol#33-36) is not in mixedCase
+Event 'RecoverableWallet.recovery_address_added' (/sb/recoverable-wallet_2.sol#60) is not in CapWords
+Event 'RecoverableWallet.recovery_address_removed' (/sb/recoverable-wallet_2.sol#61) is not in CapWords
+Event 'RecoverableWallet.recovery_started' (/sb/recoverable-wallet_2.sol#62) is not in CapWords
+Event 'RecoverableWallet.recovery_cancelled' (/sb/recoverable-wallet_2.sol#63) is not in CapWords
+Event 'RecoverableWallet.recovery_finished' (/sb/recoverable-wallet_2.sol#64) is not in CapWords
+Parameter '_initial_owner' of RecoverableWallet. (/sb/recoverable-wallet_2.sol#81) is not in mixedCase
+Function 'RecoverableWallet.add_recovery_address' (/sb/recoverable-wallet_2.sol#90-94) is not in mixedCase
+Parameter '_new_recovery_address' of RecoverableWallet.add_recovery_address (/sb/recoverable-wallet_2.sol#90) is not in mixedCase
+Parameter '_recovery_delay_in_days' of RecoverableWallet.add_recovery_address (/sb/recoverable-wallet_2.sol#90) is not in mixedCase
+Function 'RecoverableWallet.remove_recovery_address' (/sb/recoverable-wallet_2.sol#96-99) is not in mixedCase
+Parameter '_old_recovery_address' of RecoverableWallet.remove_recovery_address (/sb/recoverable-wallet_2.sol#96) is not in mixedCase
+Function 'RecoverableWallet.start_recovery' (/sb/recoverable-wallet_2.sol#101-115) is not in mixedCase
+Function 'RecoverableWallet.cancel_recovery' (/sb/recoverable-wallet_2.sol#117-120) is not in mixedCase
+Function 'RecoverableWallet.finish_recovery' (/sb/recoverable-wallet_2.sol#122-130) is not in mixedCase
+Parameter '_data' of RecoverableWallet.deploy (/sb/recoverable-wallet_2.sol#132) is not in mixedCase
+Parameter '_to' of RecoverableWallet.execute (/sb/recoverable-wallet_2.sol#143) is not in mixedCase
+Parameter '_value' of RecoverableWallet.execute (/sb/recoverable-wallet_2.sol#143) is not in mixedCase
+Parameter '_data' of RecoverableWallet.execute (/sb/recoverable-wallet_2.sol#143) is not in mixedCase
+Function 'RecoverableWallet.reset_recovery' (/sb/recoverable-wallet_2.sol#149-153) is not in mixedCase
+Variable 'RecoverableWallet.recovery_delays' (/sb/recoverable-wallet_2.sol#66) is not in mixedCase
+Variable 'RecoverableWallet.active_recovery_address' (/sb/recoverable-wallet_2.sol#67) is not in mixedCase
+Variable 'RecoverableWallet.active_recovery_end_time' (/sb/recoverable-wallet_2.sol#69) is not in mixedCase
+Modifier 'RecoverableWallet.only_during_recovery' (/sb/recoverable-wallet_2.sol#71-74) is not in mixedCase
+Modifier 'RecoverableWallet.only_outside_recovery' (/sb/recoverable-wallet_2.sol#76-79) is not in mixedCase
+Event 'RecoverableWalletFactory.wallet_created' (/sb/recoverable-wallet_2.sol#157) is not in CapWords
+Function 'RecoverableWalletFactory.create_wallet' (/sb/recoverable-wallet_2.sol#159-163) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/recoverable-wallet_2.sol analyzed (5 contracts), 49 result(s) found

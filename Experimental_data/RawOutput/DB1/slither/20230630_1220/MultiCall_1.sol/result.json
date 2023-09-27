@@ -1,0 +1,139 @@
+{
+    "errors": [
+        "EXIT_CODE_12"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "Multicall",
+            "filename": "all_contract/MultiCall_1.sol",
+            "function": "aggregate",
+            "impact": "Low",
+            "line": 25,
+            "message": "Multicall.aggregate has external calls inside a loop:\n\t- (success,ret) = calls[i].target.call(calls[i].callData) (MultiCall_1.sol#25)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/MultiCall_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Different versions of Solidity is used in MultiCall_1.sol:\n\t- Version used: ['>=0.5.0', 'ABIEncoderV2']\n\t- MultiCall_1.sol#1 declares pragma solidity>=0.5.0\n\t- MultiCall_1.sol#8 declares pragma experimentalABIEncoderV2\n",
+            "name": "pragma"
+        },
+        {
+            "confidence": "High",
+            "contract": "Multicall",
+            "filename": "all_contract/MultiCall_1.sol",
+            "function": "aggregate",
+            "impact": "Informational",
+            "line": 21,
+            "line_end": 29,
+            "message": "Multicall.aggregate (MultiCall_1.sol#21-29) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Multicall",
+            "filename": "all_contract/MultiCall_1.sol",
+            "function": "getEthBalance",
+            "impact": "Informational",
+            "line": 32,
+            "line_end": 34,
+            "message": "Multicall.getEthBalance (MultiCall_1.sol#32-34) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Multicall",
+            "filename": "all_contract/MultiCall_1.sol",
+            "function": "getBlockHash",
+            "impact": "Informational",
+            "line": 36,
+            "line_end": 38,
+            "message": "Multicall.getBlockHash (MultiCall_1.sol#36-38) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Multicall",
+            "filename": "all_contract/MultiCall_1.sol",
+            "function": "getLastBlockHash",
+            "impact": "Informational",
+            "line": 40,
+            "line_end": 42,
+            "message": "Multicall.getLastBlockHash (MultiCall_1.sol#40-42) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Multicall",
+            "filename": "all_contract/MultiCall_1.sol",
+            "function": "getCurrentBlockTimestamp",
+            "impact": "Informational",
+            "line": 44,
+            "line_end": 46,
+            "message": "Multicall.getCurrentBlockTimestamp (MultiCall_1.sol#44-46) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Multicall",
+            "filename": "all_contract/MultiCall_1.sol",
+            "function": "getCurrentBlockDifficulty",
+            "impact": "Informational",
+            "line": 48,
+            "line_end": 50,
+            "message": "Multicall.getCurrentBlockDifficulty (MultiCall_1.sol#48-50) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Multicall",
+            "filename": "all_contract/MultiCall_1.sol",
+            "function": "getCurrentBlockGasLimit",
+            "impact": "Informational",
+            "line": 52,
+            "line_end": 54,
+            "message": "Multicall.getCurrentBlockGasLimit (MultiCall_1.sol#52-54) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "Multicall",
+            "filename": "all_contract/MultiCall_1.sol",
+            "function": "getCurrentBlockCoinbase",
+            "impact": "Informational",
+            "line": 56,
+            "line_end": 58,
+            "message": "Multicall.getCurrentBlockCoinbase (MultiCall_1.sol#56-58) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/MultiCall_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in MultiCall_1.sol:\n\t- pragma solidity>=0.5.0 (MultiCall_1.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "contract": "Multicall",
+            "filename": "all_contract/MultiCall_1.sol",
+            "function": "aggregate",
+            "impact": "Informational",
+            "line": 21,
+            "line_end": 29,
+            "message": "Low level call in Multicall.aggregate (MultiCall_1.sol#21-29):\n\t-(success,ret) = calls[i].target.call(calls[i].callData) MultiCall_1.sol#25\n",
+            "name": "low-level-calls"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

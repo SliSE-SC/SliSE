@@ -1,0 +1,37 @@
+2023-07-03 15:43:54,989: [11] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 15:43:54,990: [11] m.main:INFO: Beginning analysis
+2023-07-03 15:43:54,992: [11] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 15:43:57,915: [11] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 15:43:58,072: [11] m.e.manticore:INFO: 0 alive states, 1 terminated states
+2023-07-03 15:43:58,126: [11] m.e.manticore:INFO: Starting symbolic transaction: 1
+2023-07-03 15:43:58,303: [11] m.c.manticore:INFO: Results in /mcore_tkr7jvtv
+2023-07-03 15:43:58,304: [11] m.c.manticore:INFO: Total time: 0.3848273754119873
+2023-07-03 15:43:58,968: [70] m.main:INFO: Registered plugins: IntrospectionAPIPlugin, <class 'manticore.ethereum.plugins.SkipRevertBasicBlocks'>, <class 'manticore.ethereum.plugins.FilterFunctions'>
+2023-07-03 15:43:58,969: [70] m.main:INFO: Beginning analysis
+2023-07-03 15:43:58,971: [70] m.e.manticore:INFO: Starting symbolic create contract
+2023-07-03 15:44:03,055: [70] m.e.manticore:INFO: Starting symbolic transaction: 0
+2023-07-03 15:44:19,540: [70] m.e.manticore:INFO: Found a concrete globalsha3 b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02' -> 103897324152558924508739690356745203242964415294502778034921468049474951696033
+2023-07-03 15:44:45,686: [70] m.c.worker:ERROR: Exception in state 2: ManticoreError('Forking on unfeasible constraint set')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/worker.py", line 137, in run
+    current_state.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/ethereum/state.py", line 8, in execute
+    return self._platform.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 3106, in execute
+    self.current_vm.execute()
+  File "/usr/local/lib/python3.7/dist-packages/manticore/platforms/evm.py", line 1322, in execute
+    raise Concretize("Symbolic PC", expression=expression, setstate=setstate, policy="ALL")
+manticore.core.state.Concretize
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/worker.py", line 158, in run
+    m._fork(current_state, exc.expression, exc.policy, exc.setstate, exc.values)
+  File "/usr/local/lib/python3.7/dist-packages/manticore/core/manticore.py", line 518, in _fork
+    raise ManticoreError("Forking on unfeasible constraint set")
+manticore.exceptions.ManticoreError: Forking on unfeasible constraint set
+ 
+2023-07-03 15:45:00,465: [70] m.e.manticore:INFO: Found a concrete globalsha3 b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01' -> 27376155845717860833342594873357525089589924219251518322086369159840883582034
+2023-07-03 15:48:20,370: [70] m.e.manticore:INFO: 5 alive states, 1 terminated states
+2023-07-03 15:48:23,657: [70] m.e.manticore:INFO: Starting symbolic transaction: 1

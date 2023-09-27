@@ -1,0 +1,48 @@
+INFO:Slither:Compilation warnings/errors on /sb/LendingPair_3.sol:
+Warning: Contract code size exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+   --> /sb/LendingPair_3.sol:245:1:
+    |
+245 | contract LendingPair is ERC20, Ownable, IMasterContract {
+    | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+ERROR:root:Error in /sb/LendingPair_3.sol
+ERROR:root:Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/__main__.py", line 564, in main_impl
+    (results, number_contracts) = process(filename, args, detector_classes, printer_classes)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/__main__.py", line 53, in process
+    triage_mode=args.triage_mode)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/slither.py", line 58, in __init__
+    self._analyze_contracts()
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/slitherSolc.py", line 253, in _analyze_contracts
+    self._analyze_third_part(contracts_to_be_analyzed, libraries)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/slitherSolc.py", line 332, in _analyze_third_part
+    self._analyze_variables_modifiers_functions(contract)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/slitherSolc.py", line 372, in _analyze_variables_modifiers_functions
+    contract.analyze_content_functions()
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/declarations/contract.py", line 279, in analyze_content_functions
+    function.analyze_content()
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/declarations/function.py", line 218, in analyze_content
+    node.analyze_expressions(self)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/cfg/node.py", line 31, in analyze_expressions
+    expression = parse_expression(self._unparsed_expression, caller_context)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/expressions/expression_parsing.py", line 442, in parse_expression
+    right_expression = parse_expression(expression['rightHandSide'], caller_context)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/expressions/expression_parsing.py", line 389, in parse_expression
+    return  parse_call(expression, caller_context)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/expressions/expression_parsing.py", line 290, in parse_call
+    arguments = [parse_expression(a, caller_context) for a in expression['arguments']]
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/expressions/expression_parsing.py", line 290, in <listcomp>
+    arguments = [parse_expression(a, caller_context) for a in expression['arguments']]
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/expressions/expression_parsing.py", line 404, in parse_expression
+    expressions = [parse_expression(e, caller_context) if e else None for e in expression['components']]
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/expressions/expression_parsing.py", line 404, in <listcomp>
+    expressions = [parse_expression(e, caller_context) if e else None for e in expression['components']]
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/expressions/expression_parsing.py", line 569, in parse_expression
+    t = parse_type(UnknownType(value), caller_context)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/solidity_types/type_parsing.py", line 153, in parse_type
+    return _find_from_type_name(t.name, contract, contracts, structures, enums)
+  File "/usr/local/lib/python3.6/dist-packages/slither_analyzer-0.6.1-py3.6.egg/slither/solc_parsing/solidity_types/type_parsing.py", line 29, in _find_from_type_name
+    name_elementary = name.split(' ')[0]
+AttributeError: 'dict' object has no attribute 'split'
+

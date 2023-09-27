@@ -1,0 +1,492 @@
+{
+    "errors": [
+        "EXIT_CODE_53"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "contract": "ExitGameController",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "processExits",
+            "impact": "Medium",
+            "line": 756,
+            "line_end": 787,
+            "message": "ExitGameController.processExits (PlasmaFramework_7.sol#756-787) does not use the value returned by external calls:\n\t-queue.delMin() (PlasmaFramework_7.sol#772)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "ExitGameController",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "enqueue",
+            "impact": "Low",
+            "line": 722,
+            "line_end": 745,
+            "message": "Reentrancy in ExitGameController.enqueue (PlasmaFramework_7.sol#722-745):\n\tExternal calls:\n\t- queue.insert(priority) (PlasmaFramework_7.sol#740)\n\tState variables written after the call(s):\n\t- delegations (PlasmaFramework_7.sol#741)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "ExitGameController",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "processExits",
+            "impact": "Low",
+            "line": 756,
+            "line_end": 787,
+            "message": "Reentrancy in ExitGameController.processExits (PlasmaFramework_7.sol#756-787):\n\tExternal calls:\n\t- require(bool,string)(queue.currentSize() > 0,Exit queue is empty) (PlasmaFramework_7.sol#760)\n\t- uniquePriority = queue.getMin() (PlasmaFramework_7.sol#762)\n\tState variables written after the call(s):\n\t- delegations (PlasmaFramework_7.sol#771)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "Quarantine",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "isQuarantined",
+            "impact": "Low",
+            "line": 34,
+            "line_end": 36,
+            "message": "Quarantine.isQuarantined (PlasmaFramework_7.sol#34-36) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- block.timestamp < _self.store[_contractAddress] (PlasmaFramework_7.sol#35)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "ExitGameController",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "processExits",
+            "impact": "Low",
+            "line": 756,
+            "line_end": 787,
+            "message": "ExitGameController.processExits (PlasmaFramework_7.sol#756-787) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- processedNum < maxExitsToProcess && ExitPriority.parseExitableAt(uniquePriority) < block.timestamp (PlasmaFramework_7.sol#770-784)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Different versions of Solidity is used in PlasmaFramework_7.sol:\n\t- Version used: ['0.5.11', 'ABIEncoderV2']\n\t- PlasmaFramework_7.sol#1 declares pragma solidity0.5.11\n\t- PlasmaFramework_7.sol#2 declares pragma experimentalABIEncoderV2\n",
+            "name": "pragma"
+        },
+        {
+            "confidence": "High",
+            "contract": "VaultRegistry",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "getMaintainer",
+            "impact": "Informational",
+            "line": 89,
+            "message": "VaultRegistry.getMaintainer (PlasmaFramework_7.sol#89) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "PlasmaFramework",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "getMaintainer",
+            "impact": "Informational",
+            "line": 871,
+            "line_end": 873,
+            "message": "PlasmaFramework.getMaintainer (PlasmaFramework_7.sol#871-873) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "VaultRegistry",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "registerVault",
+            "impact": "Informational",
+            "line": 106,
+            "line_end": 117,
+            "message": "VaultRegistry.registerVault (PlasmaFramework_7.sol#106-117) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "VaultRegistry",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "vaults",
+            "impact": "Informational",
+            "line": 122,
+            "line_end": 124,
+            "message": "VaultRegistry.vaults (PlasmaFramework_7.sol#122-124) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "VaultRegistry",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "vaultToId",
+            "impact": "Informational",
+            "line": 129,
+            "line_end": 131,
+            "message": "VaultRegistry.vaultToId (PlasmaFramework_7.sol#129-131) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "BlockController",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "submitDepositBlock",
+            "impact": "Informational",
+            "line": 229,
+            "line_end": 241,
+            "message": "BlockController.submitDepositBlock (PlasmaFramework_7.sol#229-241) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExitGameRegistry",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "getMaintainer",
+            "impact": "Informational",
+            "line": 326,
+            "message": "ExitGameRegistry.getMaintainer (PlasmaFramework_7.sol#326) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExitGameRegistry",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "isExitGameSafeToUse",
+            "impact": "Informational",
+            "line": 334,
+            "line_end": 336,
+            "message": "ExitGameRegistry.isExitGameSafeToUse (PlasmaFramework_7.sol#334-336) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExitGameRegistry",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "registerExitGame",
+            "impact": "Informational",
+            "line": 345,
+            "line_end": 358,
+            "message": "ExitGameRegistry.registerExitGame (PlasmaFramework_7.sol#345-358) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExitGameRegistry",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "protocols",
+            "impact": "Informational",
+            "line": 363,
+            "line_end": 365,
+            "message": "ExitGameRegistry.protocols (PlasmaFramework_7.sol#363-365) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExitGameRegistry",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "exitGames",
+            "impact": "Informational",
+            "line": 370,
+            "line_end": 372,
+            "message": "ExitGameRegistry.exitGames (PlasmaFramework_7.sol#370-372) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExitGameRegistry",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "exitGameToTxType",
+            "impact": "Informational",
+            "line": 377,
+            "line_end": 379,
+            "message": "ExitGameRegistry.exitGameToTxType (PlasmaFramework_7.sol#377-379) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExitGameController",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "function": "hasExitQueue",
+            "impact": "Informational",
+            "line": 690,
+            "line_end": 693,
+            "message": "ExitGameController.hasExitQueue (PlasmaFramework_7.sol#690-693) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in PlasmaFramework_7.sol:\n\t- pragma solidity0.5.11 (PlasmaFramework_7.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 34,
+            "message": "Parameter '_self' of Quarantine.isQuarantined (PlasmaFramework_7.sol#34) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 34,
+            "message": "Parameter '_contractAddress' of Quarantine.isQuarantined (PlasmaFramework_7.sol#34) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 42,
+            "message": "Parameter '_self' of Quarantine.quarantine (PlasmaFramework_7.sol#42) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 42,
+            "message": "Parameter '_contractAddress' of Quarantine.quarantine (PlasmaFramework_7.sol#42) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 78,
+            "message": "Parameter '_minExitPeriod' of VaultRegistry. (PlasmaFramework_7.sol#78) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 78,
+            "message": "Parameter '_initialImmuneVaults' of VaultRegistry. (PlasmaFramework_7.sol#78) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 106,
+            "message": "Parameter '_vaultId' of VaultRegistry.registerVault (PlasmaFramework_7.sol#106) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 106,
+            "message": "Parameter '_vaultAddress' of VaultRegistry.registerVault (PlasmaFramework_7.sol#106) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 122,
+            "message": "Parameter '_vaultId' of VaultRegistry.vaults (PlasmaFramework_7.sol#122) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 129,
+            "message": "Parameter '_vaultAddress' of VaultRegistry.vaultToId (PlasmaFramework_7.sol#129) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 162,
+            "message": "Parameter '_interval' of BlockController. (PlasmaFramework_7.sol#162) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 165,
+            "message": "Parameter '_authority' of BlockController. (PlasmaFramework_7.sol#165) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 208,
+            "message": "Parameter '_blockRoot' of BlockController.submitBlock (PlasmaFramework_7.sol#208) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 229,
+            "message": "Parameter '_blockRoot' of BlockController.submitDepositBlock (PlasmaFramework_7.sol#229) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 273,
+            "line_end": 275,
+            "message": "Function 'Protocol.MVP' (PlasmaFramework_7.sol#273-275) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 278,
+            "line_end": 280,
+            "message": "Function 'Protocol.MORE_VP' (PlasmaFramework_7.sol#278-280) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 306,
+            "message": "Parameter '_minExitPeriod' of ExitGameRegistry. (PlasmaFramework_7.sol#306) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 306,
+            "message": "Parameter '_initialImmuneExitGames' of ExitGameRegistry. (PlasmaFramework_7.sol#306) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 334,
+            "message": "Parameter '_contract' of ExitGameRegistry.isExitGameSafeToUse (PlasmaFramework_7.sol#334) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 345,
+            "message": "Parameter '_txType' of ExitGameRegistry.registerExitGame (PlasmaFramework_7.sol#345) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 345,
+            "message": "Parameter '_contract' of ExitGameRegistry.registerExitGame (PlasmaFramework_7.sol#345) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 345,
+            "message": "Parameter '_protocol' of ExitGameRegistry.registerExitGame (PlasmaFramework_7.sol#345) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 363,
+            "message": "Parameter '_txType' of ExitGameRegistry.protocols (PlasmaFramework_7.sol#363) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 370,
+            "message": "Parameter '_txType' of ExitGameRegistry.exitGames (PlasmaFramework_7.sol#370) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 377,
+            "message": "Parameter '_exitGame' of ExitGameRegistry.exitGameToTxType (PlasmaFramework_7.sol#377) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 477,
+            "message": "Parameter '_element' of PriorityQueue.insert (PlasmaFramework_7.sol#477) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 563,
+            "message": "Parameter '_txPos' of TxPosLib.blockNum (PlasmaFramework_7.sol#563) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 576,
+            "message": "Parameter '_txPos' of TxPosLib.txIndex (PlasmaFramework_7.sol#576) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 793,
+            "message": "Parameter '_outputIds' of ExitGameController.isAnyOutputsSpent (PlasmaFramework_7.sol#793) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 806,
+            "message": "Parameter '_outputIds' of ExitGameController.batchFlagOutputsSpent (PlasmaFramework_7.sol#806) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 817,
+            "message": "Parameter '_outputId' of ExitGameController.flagOutputSpent (PlasmaFramework_7.sol#817) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 857,
+            "message": "Parameter '_minExitPeriod' of PlasmaFramework. (PlasmaFramework_7.sol#857) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/PlasmaFramework_7.sol",
+            "impact": "Informational",
+            "line": 861,
+            "message": "Parameter '_maintainer' of PlasmaFramework. (PlasmaFramework_7.sol#861) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

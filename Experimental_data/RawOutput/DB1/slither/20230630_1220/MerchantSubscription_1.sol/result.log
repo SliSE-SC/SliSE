@@ -1,0 +1,64 @@
+INFO:Slither:Compilation warnings/errors on /sb/MerchantSubscription_1.sol:
+/sb/MerchantSubscription_1.sol:84:2: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+	function MerchantSubscription(address _merchant, string _name) {
+ ^ (Relevant source part starts here and spans across multiple lines).
+/sb/MerchantSubscription_1.sol:94:3: Warning: Invoking events without "emit" prefix is deprecated.
+		SubscriptionPaymentMade(msg.sender, msg.value);
+		^--------------------------------------------^
+/sb/MerchantSubscription_1.sol:104:3: Warning: Invoking events without "emit" prefix is deprecated.
+		WithdrawalMade(merchant, owner, withdrawalAmount);
+		^-----------------------------------------------^
+/sb/MerchantSubscription_1.sol:112:3: Warning: Invoking events without "emit" prefix is deprecated.
+		SubscriptionActivated();
+		^---------------------^
+/sb/MerchantSubscription_1.sol:120:3: Warning: Invoking events without "emit" prefix is deprecated.
+		SubscriptionPaused();
+		^------------------^
+/sb/MerchantSubscription_1.sol:128:3: Warning: Invoking events without "emit" prefix is deprecated.
+		SubscriptionResumed();
+		^-------------------^
+/sb/MerchantSubscription_1.sol:136:3: Warning: Invoking events without "emit" prefix is deprecated.
+		SubscriptionClosed();
+		^------------------^
+/sb/MerchantSubscription_1.sol:149:3: Warning: Invoking events without "emit" prefix is deprecated.
+		OwnerChanged(owner);
+		^-----------------^
+/sb/MerchantSubscription_1.sol:84:2: Warning: No visibility specified. Defaulting to "public". 
+	function MerchantSubscription(address _merchant, string _name) {
+ ^ (Relevant source part starts here and spans across multiple lines).
+/sb/MerchantSubscription_1.sol:91:2: Warning: No visibility specified. Defaulting to "public". 
+	function() allowDeposit payable {
+ ^ (Relevant source part starts here and spans across multiple lines).
+/sb/MerchantSubscription_1.sol:145:2: Warning: No visibility specified. Defaulting to "public". 
+	function claimOwnership() onlyPendingOwner {
+ ^ (Relevant source part starts here and spans across multiple lines).
+/sb/MerchantSubscription_1.sol:6:2: Warning: Function state mutability can be restricted to pure
+	function add(uint256 a, uint256 b) internal constant returns (uint256) {
+ ^ (Relevant source part starts here and spans across multiple lines).
+/sb/MerchantSubscription_1.sol:12:2: Warning: Function state mutability can be restricted to pure
+	function sub(uint256 a, uint256 b) internal constant returns (uint256) {
+ ^ (Relevant source part starts here and spans across multiple lines).
+
+INFO:Detectors:[92m
+MerchantSubscription.version should be constant (/sb/MerchantSubscription_1.sol#40)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#state-variables-that-could-be-declared-constant[0m
+INFO:Detectors:[92m
+MerchantSubscription.fallback (/sb/MerchantSubscription_1.sol#91-95) should be declared external
+MerchantSubscription.withdrawal (/sb/MerchantSubscription_1.sol#97-105) should be declared external
+MerchantSubscription.activate (/sb/MerchantSubscription_1.sol#107-113) should be declared external
+MerchantSubscription.pause (/sb/MerchantSubscription_1.sol#115-121) should be declared external
+MerchantSubscription.resume (/sb/MerchantSubscription_1.sol#123-129) should be declared external
+MerchantSubscription.close (/sb/MerchantSubscription_1.sol#131-137) should be declared external
+MerchantSubscription.transferOwnership (/sb/MerchantSubscription_1.sol#139-143) should be declared external
+MerchantSubscription.claimOwnership (/sb/MerchantSubscription_1.sol#145-150) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/MerchantSubscription_1.sol:
+	- pragma solidity^0.4.11 (/sb/MerchantSubscription_1.sol#1): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Function 'MerchantSubscription.MerchantSubscription' (/sb/MerchantSubscription_1.sol#84-88) is not in mixedCase
+Parameter '_merchant' of MerchantSubscription.MerchantSubscription (/sb/MerchantSubscription_1.sol#84) is not in mixedCase
+Parameter '_name' of MerchantSubscription.MerchantSubscription (/sb/MerchantSubscription_1.sol#84) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/MerchantSubscription_1.sol analyzed (2 contracts), 13 result(s) found

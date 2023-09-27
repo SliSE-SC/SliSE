@@ -1,0 +1,54 @@
+{
+    "errors": [
+        "EXIT_CODE_4"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "SimpleMultiSig",
+            "filename": "all_contract/SimpleMultiSig_1.sol",
+            "function": "fallback",
+            "impact": "Medium",
+            "line": 75,
+            "message": "Contract locking ether found in SimpleMultiSig_1.sol:\n\tContract SimpleMultiSig has payable functions:\n\t - fallback (SimpleMultiSig_1.sol#75)\n\tBut does not have a function to withdraw the ether\n",
+            "name": "locked-ether"
+        },
+        {
+            "confidence": "High",
+            "contract": "SimpleMultiSig",
+            "filename": "all_contract/SimpleMultiSig_1.sol",
+            "function": "execute",
+            "impact": "Informational",
+            "line": 50,
+            "line_end": 73,
+            "message": "SimpleMultiSig.execute uses assembly (SimpleMultiSig_1.sol#50-73)\n\t- SimpleMultiSig_1.sol#71-72\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "SimpleMultiSig",
+            "filename": "all_contract/SimpleMultiSig_1.sol",
+            "function": "execute",
+            "impact": "Informational",
+            "line": 50,
+            "line_end": 73,
+            "message": "SimpleMultiSig.execute (SimpleMultiSig_1.sol#50-73) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/SimpleMultiSig_1.sol",
+            "impact": "Informational",
+            "line": 26,
+            "message": "Variable 'SimpleMultiSig.DOMAIN_SEPARATOR' (SimpleMultiSig_1.sol#26) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

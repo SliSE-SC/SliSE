@@ -1,0 +1,649 @@
+{
+    "errors": [
+        "EXIT_CODE_75"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Medium",
+            "line": 74,
+            "line_end": 83,
+            "message": "LibBytes.contentAddress (ExchangeExecution_2.sol#74-83) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Medium",
+            "line": 89,
+            "line_end": 107,
+            "message": "LibBytes.readBytes4 (ExchangeExecution_2.sol#89-107) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Medium",
+            "line": 114,
+            "line_end": 135,
+            "message": "LibBytes.readBytes32 (ExchangeExecution_2.sol#114-135) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Medium",
+            "line": 141,
+            "line_end": 240,
+            "message": "LibBytes.memCopy (ExchangeExecution_2.sol#141-240) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "Medium",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Medium",
+            "line": 1626,
+            "line_end": 1645,
+            "message": "ExchangeHeaderLibrary.parseExchangeHeader (ExchangeExecution_2.sol#1626-1645) is declared view but contains assembly code\n",
+            "name": "constant-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "ISetToken",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "function": "transfer",
+            "impact": "Medium",
+            "line": 1972,
+            "line_end": 2056,
+            "message": "ISetToken (ExchangeExecution_2.sol#1972-2056) has incorrect ERC20 function interface(s):\n\t-transfer (ExchangeExecution_2.sol#2051-2055)\n",
+            "name": "erc20-interface"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "ExchangeIssuanceLibrary",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "function": "validatePostExchangeReceiveTokenBalances",
+            "impact": "Low",
+            "line": 1807,
+            "line_end": 1810,
+            "message": "ExchangeIssuanceLibrary.validatePostExchangeReceiveTokenBalances has external calls inside a loop:\n\t- currentBal = vault.getOwnerBalance(_receiveTokens[i],_userToCheck) (ExchangeExecution_2.sol#1807-1810)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "ExchangeIssuanceLibrary",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "function": "validateSendTokenParams",
+            "impact": "Low",
+            "line": 1853,
+            "line_end": 1856,
+            "message": "ExchangeIssuanceLibrary.validateSendTokenParams has external calls inside a loop:\n\t- require(bool,string)(core.exchangeIds(_sendTokenExchangeIds[i]) != address(0),ExchangeIssuanceLibrary.validateSendTokenParams: Must be valid exchange) (ExchangeExecution_2.sol#1853-1856)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "ExchangeExecution",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "function": "executeExchangeOrders",
+            "impact": "Low",
+            "line": 2183,
+            "message": "ExchangeExecution.executeExchangeOrders has external calls inside a loop:\n\t- exchangeWrapper = coreInstance.exchangeIds(header.exchange) (ExchangeExecution_2.sol#2183)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "ExchangeExecution",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "function": "calculateReceiveTokenBalances",
+            "impact": "Low",
+            "line": 2251,
+            "line_end": 2254,
+            "message": "ExchangeExecution.calculateReceiveTokenBalances has external calls inside a loop:\n\t- tokenBalance = vaultInstance.getOwnerBalance(_exchangeIssuanceParams.receiveTokens[i],msg.sender) (ExchangeExecution_2.sol#2251-2254)\n",
+            "name": "calls-loop"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "function": "contentAddress",
+            "impact": "Informational",
+            "line": 74,
+            "line_end": 83,
+            "message": "LibBytes.contentAddress uses assembly (ExchangeExecution_2.sol#74-83)\n\t- ExchangeExecution_2.sol#79-82\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "function": "readBytes4",
+            "impact": "Informational",
+            "line": 89,
+            "line_end": 107,
+            "message": "LibBytes.readBytes4 uses assembly (ExchangeExecution_2.sol#89-107)\n\t- ExchangeExecution_2.sol#100-106\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "function": "readBytes32",
+            "impact": "Informational",
+            "line": 114,
+            "line_end": 135,
+            "message": "LibBytes.readBytes32 uses assembly (ExchangeExecution_2.sol#114-135)\n\t- ExchangeExecution_2.sol#131-134\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "LibBytes",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "function": "memCopy",
+            "impact": "Informational",
+            "line": 141,
+            "line_end": 240,
+            "message": "LibBytes.memCopy uses assembly (ExchangeExecution_2.sol#141-240)\n\t- ExchangeExecution_2.sol#153-159\n\t- ExchangeExecution_2.sol#181-208\n\t- ExchangeExecution_2.sol#209-238\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "contract": "ExchangeHeaderLibrary",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "function": "parseExchangeHeader",
+            "impact": "Informational",
+            "line": 1626,
+            "line_end": 1645,
+            "message": "ExchangeHeaderLibrary.parseExchangeHeader uses assembly (ExchangeExecution_2.sol#1626-1645)\n\t- ExchangeExecution_2.sol#1638-1644\n",
+            "name": "assembly"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 18,
+            "message": "Different versions of Solidity is used in ExchangeExecution_2.sol:\n\t- Version used: ['0.5.4', 'ABIEncoderV2']\n\t- ExchangeExecution_2.sol#18 declares pragma solidity0.5.4\n\t- ExchangeExecution_2.sol#19 declares pragma experimentalABIEncoderV2\n",
+            "name": "pragma"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 18,
+            "message": "Detected issues with version pragma in ExchangeExecution_2.sol:\n\t- pragma solidity0.5.4 (ExchangeExecution_2.sol#18): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 285,
+            "message": "Parameter 'A' of AddressArrayUtils.indexOf (ExchangeExecution_2.sol#285) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 301,
+            "message": "Parameter 'A' of AddressArrayUtils.contains (ExchangeExecution_2.sol#301) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 309,
+            "message": "Parameter 'A' of AddressArrayUtils.indexOfFromEnd (ExchangeExecution_2.sol#309) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 325,
+            "message": "Parameter 'A' of AddressArrayUtils.extend (ExchangeExecution_2.sol#325) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 325,
+            "message": "Parameter 'B' of AddressArrayUtils.extend (ExchangeExecution_2.sol#325) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 344,
+            "message": "Parameter 'A' of AddressArrayUtils.append (ExchangeExecution_2.sol#344) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 359,
+            "message": "Parameter 'A' of AddressArrayUtils.sExtend (ExchangeExecution_2.sol#359) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 359,
+            "message": "Parameter 'B' of AddressArrayUtils.sExtend (ExchangeExecution_2.sol#359) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 372,
+            "message": "Parameter 'A' of AddressArrayUtils.intersect (ExchangeExecution_2.sol#372) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 372,
+            "message": "Parameter 'B' of AddressArrayUtils.intersect (ExchangeExecution_2.sol#372) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 399,
+            "message": "Parameter 'A' of AddressArrayUtils.union (ExchangeExecution_2.sol#399) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 399,
+            "message": "Parameter 'B' of AddressArrayUtils.union (ExchangeExecution_2.sol#399) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 410,
+            "message": "Parameter 'A' of AddressArrayUtils.unionB (ExchangeExecution_2.sol#410) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 410,
+            "message": "Parameter 'B' of AddressArrayUtils.unionB (ExchangeExecution_2.sol#410) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 446,
+            "message": "Parameter 'A' of AddressArrayUtils.difference (ExchangeExecution_2.sol#446) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 446,
+            "message": "Parameter 'B' of AddressArrayUtils.difference (ExchangeExecution_2.sol#446) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 472,
+            "message": "Parameter 'A' of AddressArrayUtils.sReverse (ExchangeExecution_2.sol#472) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 487,
+            "message": "Parameter 'A' of AddressArrayUtils.pop (ExchangeExecution_2.sol#487) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 506,
+            "message": "Parameter 'A' of AddressArrayUtils.remove (ExchangeExecution_2.sol#506) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 520,
+            "message": "Parameter 'A' of AddressArrayUtils.sPop (ExchangeExecution_2.sol#520) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 538,
+            "message": "Parameter 'A' of AddressArrayUtils.sPopCheap (ExchangeExecution_2.sol#538) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 557,
+            "message": "Parameter 'A' of AddressArrayUtils.sRemoveCheap (ExchangeExecution_2.sol#557) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 573,
+            "message": "Parameter 'A' of AddressArrayUtils.hasDuplicate (ExchangeExecution_2.sol#573) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 593,
+            "message": "Parameter 'A' of AddressArrayUtils.isEqual (ExchangeExecution_2.sol#593) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 593,
+            "message": "Parameter 'B' of AddressArrayUtils.isEqual (ExchangeExecution_2.sol#593) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 611,
+            "message": "Parameter 'A' of AddressArrayUtils.argGet (ExchangeExecution_2.sol#611) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 689,
+            "message": "Parameter '' of ICore.validSets (ExchangeExecution_2.sol#689) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 699,
+            "message": "Parameter '' of ICore.validModules (ExchangeExecution_2.sol#699) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1541,
+            "message": "Parameter '_principal' of CommonMath.getPartialAmount (ExchangeExecution_2.sol#1541) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1542,
+            "message": "Parameter '_numerator' of CommonMath.getPartialAmount (ExchangeExecution_2.sol#1542) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1543,
+            "message": "Parameter '_denominator' of CommonMath.getPartialAmount (ExchangeExecution_2.sol#1543) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1610,
+            "line_end": 1616,
+            "message": "Function 'ExchangeHeaderLibrary.EXCHANGE_HEADER_LENGTH' (ExchangeExecution_2.sol#1610-1616) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1627,
+            "message": "Parameter '_orderData' of ExchangeHeaderLibrary.parseExchangeHeader (ExchangeExecution_2.sol#1627) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1628,
+            "message": "Parameter '_offset' of ExchangeHeaderLibrary.parseExchangeHeader (ExchangeExecution_2.sol#1628) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1656,
+            "message": "Parameter '_orderData' of ExchangeHeaderLibrary.sliceBodyData (ExchangeExecution_2.sol#1656) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1657,
+            "message": "Parameter '_scannedBytes' of ExchangeHeaderLibrary.sliceBodyData (ExchangeExecution_2.sol#1657) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1658,
+            "message": "Parameter '_exchangeDataLength' of ExchangeHeaderLibrary.sliceBodyData (ExchangeExecution_2.sol#1658) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1723,
+            "message": "Parameter '_set' of ExchangeIssuanceLibrary.validateQuantity (ExchangeExecution_2.sol#1723) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1724,
+            "message": "Parameter '_quantity' of ExchangeIssuanceLibrary.validateQuantity (ExchangeExecution_2.sol#1724) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1750,
+            "message": "Parameter '_receiveTokens' of ExchangeIssuanceLibrary.validateReceiveTokens (ExchangeExecution_2.sol#1750) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1751,
+            "message": "Parameter '_receiveTokenAmounts' of ExchangeIssuanceLibrary.validateReceiveTokens (ExchangeExecution_2.sol#1751) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1794,
+            "message": "Parameter '_vault' of ExchangeIssuanceLibrary.validatePostExchangeReceiveTokenBalances (ExchangeExecution_2.sol#1794) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1795,
+            "message": "Parameter '_receiveTokens' of ExchangeIssuanceLibrary.validatePostExchangeReceiveTokenBalances (ExchangeExecution_2.sol#1795) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1796,
+            "message": "Parameter '_requiredBalances' of ExchangeIssuanceLibrary.validatePostExchangeReceiveTokenBalances (ExchangeExecution_2.sol#1796) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1797,
+            "message": "Parameter '_userToCheck' of ExchangeIssuanceLibrary.validatePostExchangeReceiveTokenBalances (ExchangeExecution_2.sol#1797) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1830,
+            "message": "Parameter '_core' of ExchangeIssuanceLibrary.validateSendTokenParams (ExchangeExecution_2.sol#1830) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1831,
+            "message": "Parameter '_sendTokenExchangeIds' of ExchangeIssuanceLibrary.validateSendTokenParams (ExchangeExecution_2.sol#1831) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1832,
+            "message": "Parameter '_sendTokens' of ExchangeIssuanceLibrary.validateSendTokenParams (ExchangeExecution_2.sol#1832) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1833,
+            "message": "Parameter '_sendTokenAmounts' of ExchangeIssuanceLibrary.validateSendTokenParams (ExchangeExecution_2.sol#1833) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1925,
+            "message": "Parameter '_core' of ExchangeWrapperLibrary.callExchange (ExchangeExecution_2.sol#1925) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1926,
+            "message": "Parameter '_exchangeData' of ExchangeWrapperLibrary.callExchange (ExchangeExecution_2.sol#1926) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1927,
+            "message": "Parameter '_exchangeWrapper' of ExchangeWrapperLibrary.callExchange (ExchangeExecution_2.sol#1927) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 1928,
+            "message": "Parameter '_bodyData' of ExchangeWrapperLibrary.callExchange (ExchangeExecution_2.sol#1928) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 2108,
+            "message": "Parameter '_core' of ModuleCoreState. (ExchangeExecution_2.sol#2108) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 2109,
+            "message": "Parameter '_vault' of ModuleCoreState. (ExchangeExecution_2.sol#2109) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 2167,
+            "message": "Parameter '_orderData' of ExchangeExecution.executeExchangeOrders (ExchangeExecution_2.sol#2167) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 2241,
+            "message": "Parameter '_exchangeIssuanceParams' of ExchangeExecution.calculateReceiveTokenBalances (ExchangeExecution_2.sol#2241) is not in mixedCase\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/ExchangeExecution_2.sol",
+            "impact": "Informational",
+            "line": 2272,
+            "message": "Parameter '_exchangeIssuanceParams' of ExchangeExecution.validateExchangeIssuanceParams (ExchangeExecution_2.sol#2272) is not in mixedCase\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

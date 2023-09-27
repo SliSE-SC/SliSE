@@ -1,0 +1,4849 @@
+{
+    "file": "spank_chain_payment.sol",
+    "global_structs": [
+        {
+            "name": "Channel",
+            "fields": {
+                "partyAddresses": [
+                    "array",
+                    "integer"
+                ],
+                "ethBalances": [
+                    "array",
+                    "integer"
+                ],
+                "erc20Balances": [
+                    "array",
+                    "integer"
+                ],
+                "initialDeposit": [
+                    "array",
+                    "integer"
+                ],
+                "sequence": [
+                    "integer"
+                ],
+                "confirmTime": [
+                    "integer"
+                ],
+                "VCrootHash": [
+                    "integer"
+                ],
+                "LCopenTimeout": [
+                    "integer"
+                ],
+                "updateLCtimeout": [
+                    "integer"
+                ],
+                "isOpen": [
+                    "boolean"
+                ],
+                "isUpdateLCSettling": [
+                    "boolean"
+                ],
+                "numOpenVC": [
+                    "integer"
+                ],
+                "token": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "VirtualChannel",
+            "fields": {
+                "isClose": [
+                    "boolean"
+                ],
+                "isInSettlementState": [
+                    "boolean"
+                ],
+                "sequence": [
+                    "integer"
+                ],
+                "challenger": [
+                    "integer"
+                ],
+                "updateVCtimeout": [
+                    "integer"
+                ],
+                "partyA": [
+                    "integer"
+                ],
+                "partyB": [
+                    "integer"
+                ],
+                "partyI": [
+                    "integer"
+                ],
+                "ethBalances": [
+                    "array",
+                    "integer"
+                ],
+                "erc20Balances": [
+                    "array",
+                    "integer"
+                ],
+                "bond": [
+                    "array",
+                    "integer"
+                ],
+                "token": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_block",
+            "fields": {
+                "coinbase": [
+                    "integer"
+                ],
+                "difficulty": [
+                    "integer"
+                ],
+                "gaslimit": [
+                    "integer"
+                ],
+                "number": [
+                    "integer"
+                ],
+                "timestamp": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_msg",
+            "fields": {
+                "data": [
+                    "integer"
+                ],
+                "sender": [
+                    "integer"
+                ],
+                "sig": [
+                    "integer"
+                ],
+                "value": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_tx",
+            "fields": {
+                "gasprice": [
+                    "integer"
+                ],
+                "origin": [
+                    "integer"
+                ]
+            }
+        },
+        {
+            "name": "struct_this",
+            "fields": {
+                "balance": [
+                    "integer"
+                ],
+                "address": [
+                    "integer"
+                ]
+            }
+        }
+    ],
+    "global_variables": [
+        {
+            "name": "block",
+            "type": [
+                "struct_block"
+            ],
+            "init": []
+        },
+        {
+            "name": "msg",
+            "type": [
+                "struct_msg"
+            ],
+            "init": [
+                "0x51a"
+            ]
+        },
+        {
+            "name": "now",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "tx",
+            "type": [
+                "struct_tx"
+            ],
+            "init": []
+        },
+        {
+            "name": "this",
+            "type": [
+                "struct_this"
+            ],
+            "init": [
+                "0x51b"
+            ]
+        },
+        {
+            "name": "msg_sender",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x51c"
+            ]
+        },
+        {
+            "name": "addmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "mulmod",
+            "type": [
+                "function3"
+            ],
+            "init": []
+        },
+        {
+            "name": "keccak",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha256",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "sha3",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ripemd160",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "ecrecover",
+            "type": [
+                "function4"
+            ],
+            "init": []
+        },
+        {
+            "name": "blockhash",
+            "type": [
+                "function1"
+            ],
+            "init": []
+        },
+        {
+            "name": "NAME",
+            "type": [
+                "unknown"
+            ],
+            "init": [
+                "0x3"
+            ]
+        },
+        {
+            "name": "VERSION",
+            "type": [
+                "unknown"
+            ],
+            "init": [
+                "0x4"
+            ]
+        },
+        {
+            "name": "totalSupply",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "balances",
+            "type": [
+                "array",
+                "integer",
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "allowed",
+            "type": [
+                "array",
+                "integer",
+                [
+                    "array",
+                    "integer",
+                    "integer"
+                ]
+            ],
+            "init": []
+        },
+        {
+            "name": "name",
+            "type": [
+                "unknown"
+            ],
+            "init": []
+        },
+        {
+            "name": "decimals",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "symbol",
+            "type": [
+                "unknown"
+            ],
+            "init": []
+        },
+        {
+            "name": "version",
+            "type": [
+                "unknown"
+            ],
+            "init": []
+        },
+        {
+            "name": "virtualChannels",
+            "type": [
+                "array",
+                "integer",
+                "VirtualChannel"
+            ],
+            "init": []
+        },
+        {
+            "name": "Channels",
+            "type": [
+                "array",
+                "integer",
+                "Channel"
+            ],
+            "init": []
+        },
+        {
+            "name": "numChannels",
+            "type": [
+                "integer"
+            ],
+            "init": [
+                "0x5e"
+            ]
+        },
+        {
+            "name": "Token",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "ECTools",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "StandardToken",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "HumanStandardToken",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        },
+        {
+            "name": "LedgerChannel",
+            "type": [
+                "integer"
+            ],
+            "init": []
+        }
+    ],
+    "global_blocks": [
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x3",
+            "instructions": [
+                "NAME = NEW_VAL unknown"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4",
+            "instructions": [
+                "VERSION = NEW_VAL unknown"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x5e",
+            "instructions": [
+                "numChannels = 0"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x168",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x169",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x16a",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x186",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x187",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x188",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1a4",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1a5",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1a6",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1c2",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1c3",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1c4",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1de",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1df",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x1e0",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x2a3",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x2a4",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x2a5",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x368",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x369",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x36a",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x42b",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x42c",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x42d",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4a8",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4a9",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x4aa",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x51a",
+            "instructions": [
+                "msg.sender = 0x6"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x51b",
+            "instructions": [
+                "this.address = 0x5"
+            ]
+        },
+        {
+            "scope": "__GLOBAL__",
+            "addr": "0x51c",
+            "instructions": [
+                "msg_sender = 0x4"
+            ]
+        }
+    ],
+    "range_variables": [
+        {
+            "name": "Channels",
+            "addrs": [
+                "0x2",
+                "0x21",
+                "0x2b",
+                "0x31",
+                "0x38",
+                "0x3f",
+                "0x46",
+                "0x4d",
+                "0x53",
+                "0x59",
+                "0xa1",
+                "0xa3",
+                "0xa5",
+                "0xa7",
+                "0xa9",
+                "0xab",
+                "0xad",
+                "0xaf",
+                "0xb1",
+                "0xbc",
+                "0xbf",
+                "0xc2",
+                "0xc8",
+                "0xcb",
+                "0xda",
+                "0xdc",
+                "0xde",
+                "0xe0",
+                "0x102"
+            ]
+        },
+        {
+            "name": "virtualChannels",
+            "addrs": [
+                "0x2",
+                "0x26",
+                "0x10a",
+                "0x110",
+                "0x116",
+                "0x11c",
+                "0x122",
+                "0x128",
+                "0x12e",
+                "0x134",
+                "0x13a",
+                "0x140",
+                "0x146",
+                "0x14b",
+                "0x150",
+                "0x155",
+                "0x15a",
+                "0x15f",
+                "0x164"
+            ]
+        },
+        {
+            "name": "balances",
+            "addrs": [
+                "0x2",
+                "0x60",
+                "0x67",
+                "0x6e",
+                "0x79",
+                "0x82",
+                "0x8d",
+                "0x9b",
+                "0x9d",
+                "0xb3",
+                "0xb6",
+                "0xce",
+                "0xd0",
+                "0xd2",
+                "0xd4",
+                "0xe2",
+                "0xea",
+                "0xf2",
+                "0xfa"
+            ]
+        },
+        {
+            "name": "numChannels",
+            "addrs": [
+                "0x2",
+                "0x96",
+                "0xc5",
+                "0x106"
+            ]
+        },
+        {
+            "name": "allowed",
+            "addrs": [
+                "0x2",
+                "0x9f",
+                "0xb9",
+                "0xd6",
+                "0xd8"
+            ]
+        }
+    ],
+    "range_blocks": [
+        {
+            "scope": "__RANGE__",
+            "addr": "0x1",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x21",
+            "instructions": [
+                "CLR_0 = virtualChannels[U]",
+                "REF_635 = CLR_0",
+                "CLR_1 = REF_635.updateVCtimeout",
+                "REF_636 = CLR_1",
+                "RTMP_363 = REF_636 < now",
+                "CONDITION RTMP_363 0x22 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x22",
+            "instructions": [
+                "CLR_2 = virtualChannels[U]",
+                "REF_637 = CLR_2",
+                "CLR_3 = REF_637.isClose",
+                "REF_638 = CLR_3",
+                "RTMP_364 = ! REF_638",
+                "CONDITION RTMP_364 0x23 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x23",
+            "instructions": [
+                "CLR_4 = virtualChannels[U]",
+                "REF_639 = CLR_4",
+                "CLR_5 = REF_639.isInSettlementState",
+                "REF_640 = CLR_5",
+                "RTMP_365 = REF_640 == true",
+                "CONDITION RTMP_365 0x24 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x24",
+            "instructions": [
+                "CLR_6 = Channels[U]",
+                "REF_641 = CLR_6",
+                "CLR_7 = REF_641.isOpen",
+                "REF_642 = CLR_7",
+                "RTMP_366 = REF_642 == true",
+                "CONDITION RTMP_366 0x20 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x20",
+            "instructions": [
+                "CLR_8 = Channels[U]",
+                "REF_633 = CLR_8",
+                "CLR_9 = REF_633.numOpenVC",
+                "REF_634 = CLR_9",
+                "TMP_362 = REF_634 - 1",
+                "CLR_10 = Channels[U]",
+                "CLR_10.numOpenVC = TMP_362"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x26",
+            "instructions": [
+                "CLR_11 = virtualChannels[U]",
+                "REF_645 = CLR_11",
+                "CLR_12 = REF_645.updateVCtimeout",
+                "REF_646 = CLR_12",
+                "RTMP_367 = REF_646 < now",
+                "CONDITION RTMP_367 0x27 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x27",
+            "instructions": [
+                "CLR_13 = virtualChannels[U]",
+                "REF_647 = CLR_13",
+                "CLR_14 = REF_647.isClose",
+                "REF_648 = CLR_14",
+                "RTMP_368 = ! REF_648",
+                "CONDITION RTMP_368 0x28 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x28",
+            "instructions": [
+                "CLR_15 = virtualChannels[U]",
+                "REF_649 = CLR_15",
+                "CLR_16 = REF_649.isInSettlementState",
+                "REF_650 = CLR_16",
+                "RTMP_369 = REF_650 == true",
+                "CONDITION RTMP_369 0x29 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x29",
+            "instructions": [
+                "CLR_17 = Channels[U]",
+                "REF_651 = CLR_17",
+                "CLR_18 = REF_651.isOpen",
+                "REF_652 = CLR_18",
+                "RTMP_370 = REF_652 == true",
+                "CONDITION RTMP_370 0x25 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x25",
+            "instructions": [
+                "CLR_19 = virtualChannels[U]",
+                "REF_643 = CLR_19",
+                "CLR_20 = REF_643.isClose",
+                "REF_644 = CLR_20",
+                "REF_643.isClose = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2b",
+            "instructions": [
+                "CLR_21 = virtualChannels[U]",
+                "REF_659 = CLR_21",
+                "CLR_22 = REF_659.partyA",
+                "REF_660 = CLR_22",
+                "CLR_23 = Channels[U]",
+                "REF_661 = CLR_23",
+                "CLR_24 = REF_661.partyAddresses",
+                "REF_662 = CLR_24",
+                "CLR_25 = REF_662[0]",
+                "REF_663 = CLR_25",
+                "RTMP_372 = REF_660 == REF_663",
+                "CONDITION RTMP_372 0x2c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2c",
+            "instructions": [
+                "CLR_26 = virtualChannels[U]",
+                "REF_664 = CLR_26",
+                "CLR_27 = REF_664.updateVCtimeout",
+                "REF_665 = CLR_27",
+                "RTMP_373 = REF_665 < now",
+                "CONDITION RTMP_373 0x2d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2d",
+            "instructions": [
+                "CLR_28 = virtualChannels[U]",
+                "REF_666 = CLR_28",
+                "CLR_29 = REF_666.isInSettlementState",
+                "REF_667 = CLR_29",
+                "RTMP_374 = REF_667 == true",
+                "CONDITION RTMP_374 0x2e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2e",
+            "instructions": [
+                "CLR_30 = Channels[U]",
+                "REF_668 = CLR_30",
+                "CLR_31 = REF_668.isOpen",
+                "REF_669 = CLR_31",
+                "RTMP_375 = REF_669 == true",
+                "CONDITION RTMP_375 0x2f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2f",
+            "instructions": [
+                "CLR_32 = virtualChannels[U]",
+                "REF_670 = CLR_32",
+                "CLR_33 = REF_670.isClose",
+                "REF_671 = CLR_33",
+                "RTMP_376 = ! REF_671",
+                "CONDITION RTMP_376 0x2a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x2a",
+            "instructions": [
+                "CLR_34 = Channels[U]",
+                "REF_653 = CLR_34",
+                "CLR_35 = REF_653.ethBalances",
+                "REF_654 = CLR_35",
+                "CLR_36 = REF_654[0]",
+                "REF_655 = CLR_36",
+                "CLR_37 = virtualChannels[U]",
+                "REF_656 = CLR_37",
+                "CLR_38 = REF_656.ethBalances",
+                "REF_657 = CLR_38",
+                "CLR_39 = REF_657[0]",
+                "REF_658 = CLR_39",
+                "TMP_371 = REF_655 + REF_658",
+                "CLR_40 = Channels[U]",
+                "CLR_41 = CLR_40.ethBalances",
+                "CLR_41[0] = TMP_371"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x31",
+            "instructions": [
+                "CLR_42 = virtualChannels[U]",
+                "REF_678 = CLR_42",
+                "CLR_43 = REF_678.partyA",
+                "REF_679 = CLR_43",
+                "CLR_44 = Channels[U]",
+                "REF_680 = CLR_44",
+                "CLR_45 = REF_680.partyAddresses",
+                "REF_681 = CLR_45",
+                "CLR_46 = REF_681[0]",
+                "REF_682 = CLR_46",
+                "RTMP_378 = REF_679 == REF_682",
+                "CONDITION RTMP_378 0x1 0x32"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x32",
+            "instructions": [
+                "CLR_47 = virtualChannels[U]",
+                "REF_683 = CLR_47",
+                "CLR_48 = REF_683.updateVCtimeout",
+                "REF_684 = CLR_48",
+                "RTMP_379 = REF_684 < now",
+                "CONDITION RTMP_379 0x33 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x33",
+            "instructions": [
+                "CLR_49 = virtualChannels[U]",
+                "REF_685 = CLR_49",
+                "CLR_50 = REF_685.isInSettlementState",
+                "REF_686 = CLR_50",
+                "RTMP_380 = REF_686 == true",
+                "CONDITION RTMP_380 0x34 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x34",
+            "instructions": [
+                "CLR_51 = virtualChannels[U]",
+                "REF_687 = CLR_51",
+                "CLR_52 = REF_687.partyB",
+                "REF_688 = CLR_52",
+                "CLR_53 = Channels[U]",
+                "REF_689 = CLR_53",
+                "CLR_54 = REF_689.partyAddresses",
+                "REF_690 = CLR_54",
+                "CLR_55 = REF_690[0]",
+                "REF_691 = CLR_55",
+                "RTMP_381 = REF_688 == REF_691",
+                "CONDITION RTMP_381 0x35 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x35",
+            "instructions": [
+                "CLR_56 = Channels[U]",
+                "REF_692 = CLR_56",
+                "CLR_57 = REF_692.isOpen",
+                "REF_693 = CLR_57",
+                "RTMP_382 = REF_693 == true",
+                "CONDITION RTMP_382 0x36 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x36",
+            "instructions": [
+                "CLR_58 = virtualChannels[U]",
+                "REF_694 = CLR_58",
+                "CLR_59 = REF_694.isClose",
+                "REF_695 = CLR_59",
+                "RTMP_383 = ! REF_695",
+                "CONDITION RTMP_383 0x30 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x30",
+            "instructions": [
+                "CLR_60 = Channels[U]",
+                "REF_672 = CLR_60",
+                "CLR_61 = REF_672.ethBalances",
+                "REF_673 = CLR_61",
+                "CLR_62 = REF_673[0]",
+                "REF_674 = CLR_62",
+                "CLR_63 = virtualChannels[U]",
+                "REF_675 = CLR_63",
+                "CLR_64 = REF_675.ethBalances",
+                "REF_676 = CLR_64",
+                "CLR_65 = REF_676[1]",
+                "REF_677 = CLR_65",
+                "TMP_377 = REF_674 + REF_677",
+                "CLR_66 = Channels[U]",
+                "CLR_67 = CLR_66.ethBalances",
+                "CLR_67[0] = TMP_377"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x38",
+            "instructions": [
+                "CLR_68 = virtualChannels[U]",
+                "REF_702 = CLR_68",
+                "CLR_69 = REF_702.partyA",
+                "REF_703 = CLR_69",
+                "CLR_70 = Channels[U]",
+                "REF_704 = CLR_70",
+                "CLR_71 = REF_704.partyAddresses",
+                "REF_705 = CLR_71",
+                "CLR_72 = REF_705[0]",
+                "REF_706 = CLR_72",
+                "RTMP_385 = REF_703 == REF_706",
+                "CONDITION RTMP_385 0x1 0x39"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x39",
+            "instructions": [
+                "CLR_73 = virtualChannels[U]",
+                "REF_707 = CLR_73",
+                "CLR_74 = REF_707.updateVCtimeout",
+                "REF_708 = CLR_74",
+                "RTMP_386 = REF_708 < now",
+                "CONDITION RTMP_386 0x3a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3a",
+            "instructions": [
+                "CLR_75 = virtualChannels[U]",
+                "REF_709 = CLR_75",
+                "CLR_76 = REF_709.isInSettlementState",
+                "REF_710 = CLR_76",
+                "RTMP_387 = REF_710 == true",
+                "CONDITION RTMP_387 0x3b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3b",
+            "instructions": [
+                "CLR_77 = virtualChannels[U]",
+                "REF_711 = CLR_77",
+                "CLR_78 = REF_711.partyB",
+                "REF_712 = CLR_78",
+                "CLR_79 = Channels[U]",
+                "REF_713 = CLR_79",
+                "CLR_80 = REF_713.partyAddresses",
+                "REF_714 = CLR_80",
+                "CLR_81 = REF_714[0]",
+                "REF_715 = CLR_81",
+                "RTMP_388 = REF_712 == REF_715",
+                "CONDITION RTMP_388 0x3c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3c",
+            "instructions": [
+                "CLR_82 = Channels[U]",
+                "REF_716 = CLR_82",
+                "CLR_83 = REF_716.isOpen",
+                "REF_717 = CLR_83",
+                "RTMP_389 = REF_717 == true",
+                "CONDITION RTMP_389 0x3d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3d",
+            "instructions": [
+                "CLR_84 = virtualChannels[U]",
+                "REF_718 = CLR_84",
+                "CLR_85 = REF_718.isClose",
+                "REF_719 = CLR_85",
+                "RTMP_390 = ! REF_719",
+                "CONDITION RTMP_390 0x37 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x37",
+            "instructions": [
+                "CLR_86 = Channels[U]",
+                "REF_696 = CLR_86",
+                "CLR_87 = REF_696.ethBalances",
+                "REF_697 = CLR_87",
+                "CLR_88 = REF_697[1]",
+                "REF_698 = CLR_88",
+                "CLR_89 = virtualChannels[U]",
+                "REF_699 = CLR_89",
+                "CLR_90 = REF_699.ethBalances",
+                "REF_700 = CLR_90",
+                "CLR_91 = REF_700[0]",
+                "REF_701 = CLR_91",
+                "TMP_384 = REF_698 + REF_701",
+                "CLR_92 = Channels[U]",
+                "CLR_93 = CLR_92.ethBalances",
+                "CLR_93[1] = TMP_384"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3f",
+            "instructions": [
+                "CLR_94 = virtualChannels[U]",
+                "REF_726 = CLR_94",
+                "CLR_95 = REF_726.partyA",
+                "REF_727 = CLR_95",
+                "CLR_96 = Channels[U]",
+                "REF_728 = CLR_96",
+                "CLR_97 = REF_728.partyAddresses",
+                "REF_729 = CLR_97",
+                "CLR_98 = REF_729[0]",
+                "REF_730 = CLR_98",
+                "RTMP_392 = REF_727 == REF_730",
+                "CONDITION RTMP_392 0x1 0x40"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x40",
+            "instructions": [
+                "CLR_99 = virtualChannels[U]",
+                "REF_731 = CLR_99",
+                "CLR_100 = REF_731.updateVCtimeout",
+                "REF_732 = CLR_100",
+                "RTMP_393 = REF_732 < now",
+                "CONDITION RTMP_393 0x41 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x41",
+            "instructions": [
+                "CLR_101 = virtualChannels[U]",
+                "REF_733 = CLR_101",
+                "CLR_102 = REF_733.isInSettlementState",
+                "REF_734 = CLR_102",
+                "RTMP_394 = REF_734 == true",
+                "CONDITION RTMP_394 0x42 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x42",
+            "instructions": [
+                "CLR_103 = virtualChannels[U]",
+                "REF_735 = CLR_103",
+                "CLR_104 = REF_735.partyB",
+                "REF_736 = CLR_104",
+                "CLR_105 = Channels[U]",
+                "REF_737 = CLR_105",
+                "CLR_106 = REF_737.partyAddresses",
+                "REF_738 = CLR_106",
+                "CLR_107 = REF_738[0]",
+                "REF_739 = CLR_107",
+                "RTMP_395 = REF_736 == REF_739",
+                "CONDITION RTMP_395 0x43 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x43",
+            "instructions": [
+                "CLR_108 = Channels[U]",
+                "REF_740 = CLR_108",
+                "CLR_109 = REF_740.isOpen",
+                "REF_741 = CLR_109",
+                "RTMP_396 = REF_741 == true",
+                "CONDITION RTMP_396 0x44 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x44",
+            "instructions": [
+                "CLR_110 = virtualChannels[U]",
+                "REF_742 = CLR_110",
+                "CLR_111 = REF_742.isClose",
+                "REF_743 = CLR_111",
+                "RTMP_397 = ! REF_743",
+                "CONDITION RTMP_397 0x3e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x3e",
+            "instructions": [
+                "CLR_112 = Channels[U]",
+                "REF_720 = CLR_112",
+                "CLR_113 = REF_720.erc20Balances",
+                "REF_721 = CLR_113",
+                "CLR_114 = REF_721[0]",
+                "REF_722 = CLR_114",
+                "CLR_115 = virtualChannels[U]",
+                "REF_723 = CLR_115",
+                "CLR_116 = REF_723.erc20Balances",
+                "REF_724 = CLR_116",
+                "CLR_117 = REF_724[1]",
+                "REF_725 = CLR_117",
+                "TMP_391 = REF_722 + REF_725",
+                "CLR_118 = Channels[U]",
+                "CLR_119 = CLR_118.erc20Balances",
+                "CLR_119[0] = TMP_391"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x46",
+            "instructions": [
+                "CLR_120 = virtualChannels[U]",
+                "REF_750 = CLR_120",
+                "CLR_121 = REF_750.partyA",
+                "REF_751 = CLR_121",
+                "CLR_122 = Channels[U]",
+                "REF_752 = CLR_122",
+                "CLR_123 = REF_752.partyAddresses",
+                "REF_753 = CLR_123",
+                "CLR_124 = REF_753[0]",
+                "REF_754 = CLR_124",
+                "RTMP_399 = REF_751 == REF_754",
+                "CONDITION RTMP_399 0x1 0x47"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x47",
+            "instructions": [
+                "CLR_125 = virtualChannels[U]",
+                "REF_755 = CLR_125",
+                "CLR_126 = REF_755.updateVCtimeout",
+                "REF_756 = CLR_126",
+                "RTMP_400 = REF_756 < now",
+                "CONDITION RTMP_400 0x48 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x48",
+            "instructions": [
+                "CLR_127 = virtualChannels[U]",
+                "REF_757 = CLR_127",
+                "CLR_128 = REF_757.isInSettlementState",
+                "REF_758 = CLR_128",
+                "RTMP_401 = REF_758 == true",
+                "CONDITION RTMP_401 0x49 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x49",
+            "instructions": [
+                "CLR_129 = virtualChannels[U]",
+                "REF_759 = CLR_129",
+                "CLR_130 = REF_759.partyB",
+                "REF_760 = CLR_130",
+                "CLR_131 = Channels[U]",
+                "REF_761 = CLR_131",
+                "CLR_132 = REF_761.partyAddresses",
+                "REF_762 = CLR_132",
+                "CLR_133 = REF_762[0]",
+                "REF_763 = CLR_133",
+                "RTMP_402 = REF_760 == REF_763",
+                "CONDITION RTMP_402 0x4a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4a",
+            "instructions": [
+                "CLR_134 = Channels[U]",
+                "REF_764 = CLR_134",
+                "CLR_135 = REF_764.isOpen",
+                "REF_765 = CLR_135",
+                "RTMP_403 = REF_765 == true",
+                "CONDITION RTMP_403 0x4b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4b",
+            "instructions": [
+                "CLR_136 = virtualChannels[U]",
+                "REF_766 = CLR_136",
+                "CLR_137 = REF_766.isClose",
+                "REF_767 = CLR_137",
+                "RTMP_404 = ! REF_767",
+                "CONDITION RTMP_404 0x45 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x45",
+            "instructions": [
+                "CLR_138 = Channels[U]",
+                "REF_744 = CLR_138",
+                "CLR_139 = REF_744.erc20Balances",
+                "REF_745 = CLR_139",
+                "CLR_140 = REF_745[1]",
+                "REF_746 = CLR_140",
+                "CLR_141 = virtualChannels[U]",
+                "REF_747 = CLR_141",
+                "CLR_142 = REF_747.erc20Balances",
+                "REF_748 = CLR_142",
+                "CLR_143 = REF_748[0]",
+                "REF_749 = CLR_143",
+                "TMP_398 = REF_746 + REF_749",
+                "CLR_144 = Channels[U]",
+                "CLR_145 = CLR_144.erc20Balances",
+                "CLR_145[1] = TMP_398"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4d",
+            "instructions": [
+                "CLR_146 = virtualChannels[U]",
+                "REF_774 = CLR_146",
+                "CLR_147 = REF_774.partyA",
+                "REF_775 = CLR_147",
+                "CLR_148 = Channels[U]",
+                "REF_776 = CLR_148",
+                "CLR_149 = REF_776.partyAddresses",
+                "REF_777 = CLR_149",
+                "CLR_150 = REF_777[0]",
+                "REF_778 = CLR_150",
+                "RTMP_406 = REF_775 == REF_778",
+                "CONDITION RTMP_406 0x4e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4e",
+            "instructions": [
+                "CLR_151 = virtualChannels[U]",
+                "REF_779 = CLR_151",
+                "CLR_152 = REF_779.updateVCtimeout",
+                "REF_780 = CLR_152",
+                "RTMP_407 = REF_780 < now",
+                "CONDITION RTMP_407 0x4f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4f",
+            "instructions": [
+                "CLR_153 = virtualChannels[U]",
+                "REF_781 = CLR_153",
+                "CLR_154 = REF_781.isInSettlementState",
+                "REF_782 = CLR_154",
+                "RTMP_408 = REF_782 == true",
+                "CONDITION RTMP_408 0x50 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x50",
+            "instructions": [
+                "CLR_155 = Channels[U]",
+                "REF_783 = CLR_155",
+                "CLR_156 = REF_783.isOpen",
+                "REF_784 = CLR_156",
+                "RTMP_409 = REF_784 == true",
+                "CONDITION RTMP_409 0x51 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x51",
+            "instructions": [
+                "CLR_157 = virtualChannels[U]",
+                "REF_785 = CLR_157",
+                "CLR_158 = REF_785.isClose",
+                "REF_786 = CLR_158",
+                "RTMP_410 = ! REF_786",
+                "CONDITION RTMP_410 0x4c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x4c",
+            "instructions": [
+                "CLR_159 = Channels[U]",
+                "REF_768 = CLR_159",
+                "CLR_160 = REF_768.ethBalances",
+                "REF_769 = CLR_160",
+                "CLR_161 = REF_769[1]",
+                "REF_770 = CLR_161",
+                "CLR_162 = virtualChannels[U]",
+                "REF_771 = CLR_162",
+                "CLR_163 = REF_771.ethBalances",
+                "REF_772 = CLR_163",
+                "CLR_164 = REF_772[1]",
+                "REF_773 = CLR_164",
+                "TMP_405 = REF_770 + REF_773",
+                "CLR_165 = Channels[U]",
+                "CLR_166 = CLR_165.ethBalances",
+                "CLR_166[1] = TMP_405"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x53",
+            "instructions": [
+                "CLR_167 = virtualChannels[U]",
+                "REF_793 = CLR_167",
+                "CLR_168 = REF_793.partyA",
+                "REF_794 = CLR_168",
+                "CLR_169 = Channels[U]",
+                "REF_795 = CLR_169",
+                "CLR_170 = REF_795.partyAddresses",
+                "REF_796 = CLR_170",
+                "CLR_171 = REF_796[0]",
+                "REF_797 = CLR_171",
+                "RTMP_412 = REF_794 == REF_797",
+                "CONDITION RTMP_412 0x54 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x54",
+            "instructions": [
+                "CLR_172 = virtualChannels[U]",
+                "REF_798 = CLR_172",
+                "CLR_173 = REF_798.updateVCtimeout",
+                "REF_799 = CLR_173",
+                "RTMP_413 = REF_799 < now",
+                "CONDITION RTMP_413 0x55 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x55",
+            "instructions": [
+                "CLR_174 = virtualChannels[U]",
+                "REF_800 = CLR_174",
+                "CLR_175 = REF_800.isInSettlementState",
+                "REF_801 = CLR_175",
+                "RTMP_414 = REF_801 == true",
+                "CONDITION RTMP_414 0x56 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x56",
+            "instructions": [
+                "CLR_176 = Channels[U]",
+                "REF_802 = CLR_176",
+                "CLR_177 = REF_802.isOpen",
+                "REF_803 = CLR_177",
+                "RTMP_415 = REF_803 == true",
+                "CONDITION RTMP_415 0x57 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x57",
+            "instructions": [
+                "CLR_178 = virtualChannels[U]",
+                "REF_804 = CLR_178",
+                "CLR_179 = REF_804.isClose",
+                "REF_805 = CLR_179",
+                "RTMP_416 = ! REF_805",
+                "CONDITION RTMP_416 0x52 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x52",
+            "instructions": [
+                "CLR_180 = Channels[U]",
+                "REF_787 = CLR_180",
+                "CLR_181 = REF_787.erc20Balances",
+                "REF_788 = CLR_181",
+                "CLR_182 = REF_788[0]",
+                "REF_789 = CLR_182",
+                "CLR_183 = virtualChannels[U]",
+                "REF_790 = CLR_183",
+                "CLR_184 = REF_790.erc20Balances",
+                "REF_791 = CLR_184",
+                "CLR_185 = REF_791[0]",
+                "REF_792 = CLR_185",
+                "TMP_411 = REF_789 + REF_792",
+                "CLR_186 = Channels[U]",
+                "CLR_187 = CLR_186.erc20Balances",
+                "CLR_187[0] = TMP_411"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x59",
+            "instructions": [
+                "CLR_188 = virtualChannels[U]",
+                "REF_812 = CLR_188",
+                "CLR_189 = REF_812.partyA",
+                "REF_813 = CLR_189",
+                "CLR_190 = Channels[U]",
+                "REF_814 = CLR_190",
+                "CLR_191 = REF_814.partyAddresses",
+                "REF_815 = CLR_191",
+                "CLR_192 = REF_815[0]",
+                "REF_816 = CLR_192",
+                "RTMP_418 = REF_813 == REF_816",
+                "CONDITION RTMP_418 0x5a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5a",
+            "instructions": [
+                "CLR_193 = virtualChannels[U]",
+                "REF_817 = CLR_193",
+                "CLR_194 = REF_817.updateVCtimeout",
+                "REF_818 = CLR_194",
+                "RTMP_419 = REF_818 < now",
+                "CONDITION RTMP_419 0x5b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5b",
+            "instructions": [
+                "CLR_195 = virtualChannels[U]",
+                "REF_819 = CLR_195",
+                "CLR_196 = REF_819.isInSettlementState",
+                "REF_820 = CLR_196",
+                "RTMP_420 = REF_820 == true",
+                "CONDITION RTMP_420 0x5c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5c",
+            "instructions": [
+                "CLR_197 = Channels[U]",
+                "REF_821 = CLR_197",
+                "CLR_198 = REF_821.isOpen",
+                "REF_822 = CLR_198",
+                "RTMP_421 = REF_822 == true",
+                "CONDITION RTMP_421 0x5d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5d",
+            "instructions": [
+                "CLR_199 = virtualChannels[U]",
+                "REF_823 = CLR_199",
+                "CLR_200 = REF_823.isClose",
+                "REF_824 = CLR_200",
+                "RTMP_422 = ! REF_824",
+                "CONDITION RTMP_422 0x58 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x58",
+            "instructions": [
+                "CLR_201 = Channels[U]",
+                "REF_806 = CLR_201",
+                "CLR_202 = REF_806.erc20Balances",
+                "REF_807 = CLR_202",
+                "CLR_203 = REF_807[1]",
+                "REF_808 = CLR_203",
+                "CLR_204 = virtualChannels[U]",
+                "REF_809 = CLR_204",
+                "CLR_205 = REF_809.erc20Balances",
+                "REF_810 = CLR_205",
+                "CLR_206 = REF_810[1]",
+                "REF_811 = CLR_206",
+                "TMP_417 = REF_808 + REF_811",
+                "CLR_207 = Channels[U]",
+                "CLR_208 = CLR_207.erc20Balances",
+                "CLR_208[1] = TMP_417"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x60",
+            "instructions": [
+                "CLR_209 = Channels[U]",
+                "REF_825 = CLR_209",
+                "CLR_210 = REF_825.partyAddresses",
+                "REF_826 = CLR_210",
+                "CLR_211 = REF_826[0]",
+                "REF_827 = CLR_211",
+                "CLR_212 = msg.sender",
+                "RTMP_423 = CLR_212 == REF_827",
+                "CONDITION RTMP_423 0x61 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x61",
+            "instructions": [
+                "CLR_213 = Channels[U]",
+                "REF_828 = CLR_213",
+                "CLR_214 = REF_828.isOpen",
+                "REF_829 = CLR_214",
+                "RTMP_424 = REF_829 == false",
+                "CONDITION RTMP_424 0x62 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x62",
+            "instructions": [
+                "CLR_215 = Channels[U]",
+                "REF_877 = CLR_215",
+                "CLR_216 = REF_877.erc20Balances",
+                "REF_878 = CLR_216",
+                "CLR_217 = REF_878[0]",
+                "REF_879 = CLR_217",
+                "RTMP_445 = REF_879 != 0",
+                "CONDITION RTMP_445 0x63 0x63"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x63",
+            "instructions": [
+                "CLR_218 = Channels[U]",
+                "REF_880 = CLR_218",
+                "CLR_219 = REF_880.erc20Balances",
+                "REF_881 = CLR_219",
+                "CLR_220 = REF_881[1]",
+                "REF_882 = CLR_220",
+                "RTMP_446 = REF_882 != 0",
+                "CONDITION RTMP_446 0x64 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x64",
+            "instructions": [
+                "CLR_221 = Channels[U]",
+                "REF_830 = CLR_221",
+                "CLR_222 = REF_830.initialDeposit",
+                "REF_831 = CLR_222",
+                "CLR_223 = REF_831[1]",
+                "REF_832 = CLR_223",
+                "RTMP_425 = REF_832 != 0",
+                "CONDITION RTMP_425 0x65 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x65",
+            "instructions": [
+                "CLR_224 = Channels[U]",
+                "REF_833 = CLR_224",
+                "CLR_225 = REF_833.LCopenTimeout",
+                "REF_834 = CLR_225",
+                "RTMP_426 = now > REF_834",
+                "CONDITION RTMP_426 0x5f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x5f",
+            "instructions": [
+                "CLR_226 = msg.sender",
+                "balances[CLR_226] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x67",
+            "instructions": [
+                "CLR_227 = Channels[U]",
+                "REF_835 = CLR_227",
+                "CLR_228 = REF_835.partyAddresses",
+                "REF_836 = CLR_228",
+                "CLR_229 = REF_836[0]",
+                "REF_837 = CLR_229",
+                "CLR_230 = msg.sender",
+                "RTMP_427 = CLR_230 == REF_837",
+                "CONDITION RTMP_427 0x68 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x68",
+            "instructions": [
+                "CLR_231 = Channels[U]",
+                "REF_838 = CLR_231",
+                "CLR_232 = REF_838.isOpen",
+                "REF_839 = CLR_232",
+                "RTMP_428 = REF_839 == false",
+                "CONDITION RTMP_428 0x69 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x69",
+            "instructions": [
+                "CLR_233 = Channels[U]",
+                "REF_891 = CLR_233",
+                "CLR_234 = REF_891.erc20Balances",
+                "REF_892 = CLR_234",
+                "CLR_235 = REF_892[0]",
+                "REF_893 = CLR_235",
+                "RTMP_451 = REF_893 != 0",
+                "CONDITION RTMP_451 0x6a 0x6a"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6a",
+            "instructions": [
+                "CLR_236 = Channels[U]",
+                "REF_894 = CLR_236",
+                "CLR_237 = REF_894.erc20Balances",
+                "REF_895 = CLR_237",
+                "CLR_238 = REF_895[1]",
+                "REF_896 = CLR_238",
+                "RTMP_452 = REF_896 != 0",
+                "CONDITION RTMP_452 0x6b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6b",
+            "instructions": [
+                "CLR_239 = Channels[U]",
+                "REF_840 = CLR_239",
+                "CLR_240 = REF_840.initialDeposit",
+                "REF_841 = CLR_240",
+                "CLR_241 = REF_841[1]",
+                "REF_842 = CLR_241",
+                "RTMP_429 = REF_842 != 0",
+                "CONDITION RTMP_429 0x6c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x6c",
+            "instructions": [
+                "CLR_242 = Channels[U]",
+                "REF_843 = CLR_242",
+                "CLR_243 = REF_843.LCopenTimeout",
+                "REF_844 = CLR_243",
+                "RTMP_430 = now > REF_844",
+                "CONDITION RTMP_430 0x66 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x66",
+            "instructions": [
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x79",
+            "instructions": [
+                "CLR_244 = Channels[U]",
+                "REF_825 = CLR_244",
+                "CLR_245 = REF_825.partyAddresses",
+                "REF_826 = CLR_245",
+                "CLR_246 = REF_826[0]",
+                "REF_827 = CLR_246",
+                "CLR_247 = msg.sender",
+                "RTMP_423 = CLR_247 == REF_827",
+                "CONDITION RTMP_423 0x7a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7a",
+            "instructions": [
+                "CLR_248 = Channels[U]",
+                "REF_828 = CLR_248",
+                "CLR_249 = REF_828.isOpen",
+                "REF_829 = CLR_249",
+                "RTMP_424 = REF_829 == false",
+                "CONDITION RTMP_424 0x7b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7b",
+            "instructions": [
+                "CLR_250 = Channels[U]",
+                "REF_877 = CLR_250",
+                "CLR_251 = REF_877.erc20Balances",
+                "REF_878 = CLR_251",
+                "CLR_252 = REF_878[0]",
+                "REF_879 = CLR_252",
+                "RTMP_445 = REF_879 != 0",
+                "CONDITION RTMP_445 0x7c 0x7c"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7c",
+            "instructions": [
+                "CLR_253 = Channels[U]",
+                "REF_880 = CLR_253",
+                "CLR_254 = REF_880.erc20Balances",
+                "REF_881 = CLR_254",
+                "CLR_255 = REF_881[1]",
+                "REF_882 = CLR_255",
+                "RTMP_446 = REF_882 != 0",
+                "CONDITION RTMP_446 0x7d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7d",
+            "instructions": [
+                "CLR_256 = Channels[U]",
+                "REF_873 = CLR_256",
+                "CLR_257 = REF_873.updateLCtimeout",
+                "REF_874 = CLR_257",
+                "RTMP_443 = REF_874 < now",
+                "CONDITION RTMP_443 0x7e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7e",
+            "instructions": [
+                "CLR_258 = Channels[U]",
+                "REF_875 = CLR_258",
+                "CLR_259 = REF_875.isOpen",
+                "REF_876 = CLR_259",
+                "RTMP_444 = REF_876 == true",
+                "CONDITION RTMP_444 0x7f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x7f",
+            "instructions": [
+                "CLR_260 = Channels[U]",
+                "REF_883 = CLR_260",
+                "CLR_261 = REF_883.numOpenVC",
+                "REF_884 = CLR_261",
+                "RTMP_447 = REF_884 == 0",
+                "CONDITION RTMP_447 0x80 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x80",
+            "instructions": [
+                "CLR_262 = Channels[U]",
+                "REF_885 = CLR_262",
+                "CLR_263 = REF_885.isUpdateLCSettling",
+                "REF_886 = CLR_263",
+                "RTMP_448 = REF_886 == true",
+                "CONDITION RTMP_448 0x78 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x78",
+            "instructions": [
+                "CLR_264 = msg.sender",
+                "balances[CLR_264] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8d",
+            "instructions": [
+                "CLR_265 = Channels[U]",
+                "REF_835 = CLR_265",
+                "CLR_266 = REF_835.partyAddresses",
+                "REF_836 = CLR_266",
+                "CLR_267 = REF_836[0]",
+                "REF_837 = CLR_267",
+                "CLR_268 = msg.sender",
+                "RTMP_427 = CLR_268 == REF_837",
+                "CONDITION RTMP_427 0x8e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8e",
+            "instructions": [
+                "CLR_269 = Channels[U]",
+                "REF_838 = CLR_269",
+                "CLR_270 = REF_838.isOpen",
+                "REF_839 = CLR_270",
+                "RTMP_428 = REF_839 == false",
+                "CONDITION RTMP_428 0x8f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8f",
+            "instructions": [
+                "CLR_271 = Channels[U]",
+                "REF_891 = CLR_271",
+                "CLR_272 = REF_891.erc20Balances",
+                "REF_892 = CLR_272",
+                "CLR_273 = REF_892[0]",
+                "REF_893 = CLR_273",
+                "RTMP_451 = REF_893 != 0",
+                "CONDITION RTMP_451 0x90 0x90"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x90",
+            "instructions": [
+                "CLR_274 = Channels[U]",
+                "REF_894 = CLR_274",
+                "CLR_275 = REF_894.erc20Balances",
+                "REF_895 = CLR_275",
+                "CLR_276 = REF_895[1]",
+                "REF_896 = CLR_276",
+                "RTMP_452 = REF_896 != 0",
+                "CONDITION RTMP_452 0x91 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x91",
+            "instructions": [
+                "CLR_277 = Channels[U]",
+                "REF_887 = CLR_277",
+                "CLR_278 = REF_887.updateLCtimeout",
+                "REF_888 = CLR_278",
+                "RTMP_449 = REF_888 < now",
+                "CONDITION RTMP_449 0x92 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x92",
+            "instructions": [
+                "CLR_279 = Channels[U]",
+                "REF_889 = CLR_279",
+                "CLR_280 = REF_889.isOpen",
+                "REF_890 = CLR_280",
+                "RTMP_450 = REF_890 == true",
+                "CONDITION RTMP_450 0x93 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x93",
+            "instructions": [
+                "CLR_281 = Channels[U]",
+                "REF_897 = CLR_281",
+                "CLR_282 = REF_897.numOpenVC",
+                "REF_898 = CLR_282",
+                "RTMP_453 = REF_898 == 0",
+                "CONDITION RTMP_453 0x94 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x94",
+            "instructions": [
+                "CLR_283 = Channels[U]",
+                "REF_899 = CLR_283",
+                "CLR_284 = REF_899.isUpdateLCSettling",
+                "REF_900 = CLR_284",
+                "RTMP_454 = REF_900 == true",
+                "CONDITION RTMP_454 0x8c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x8c",
+            "instructions": [
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x96",
+            "instructions": [
+                "CLR_285 = Channels[U]",
+                "REF_901 = CLR_285",
+                "CLR_286 = REF_901.updateLCtimeout",
+                "REF_902 = CLR_286",
+                "RTMP_456 = REF_902 < now",
+                "CONDITION RTMP_456 0x97 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x97",
+            "instructions": [
+                "CLR_287 = Channels[U]",
+                "REF_903 = CLR_287",
+                "CLR_288 = REF_903.numOpenVC",
+                "REF_904 = CLR_288",
+                "RTMP_457 = REF_904 == 0",
+                "CONDITION RTMP_457 0x98 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x98",
+            "instructions": [
+                "CLR_289 = Channels[U]",
+                "REF_905 = CLR_289",
+                "CLR_290 = REF_905.isOpen",
+                "REF_906 = CLR_290",
+                "RTMP_458 = REF_906 == true",
+                "CONDITION RTMP_458 0x99 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x99",
+            "instructions": [
+                "CLR_291 = Channels[U]",
+                "REF_907 = CLR_291",
+                "CLR_292 = REF_907.isUpdateLCSettling",
+                "REF_908 = CLR_292",
+                "RTMP_459 = REF_908 == true",
+                "CONDITION RTMP_459 0x95 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x95",
+            "instructions": [
+                "TMP_455 = numChannels - 1",
+                "numChannels = TMP_455"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9b",
+            "instructions": [
+                "CLR_293 = Channels[U]",
+                "REF_909 = CLR_293",
+                "CLR_294 = REF_909.partyAddresses",
+                "REF_910 = CLR_294",
+                "CLR_295 = REF_910[0]",
+                "REF_911 = CLR_295",
+                "RTMP_460 = REF_911 == 0",
+                "CONDITION RTMP_460 0x9a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9a",
+            "instructions": [
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9d",
+            "instructions": [
+                "CLR_296 = Channels[U]",
+                "REF_912 = CLR_296",
+                "CLR_297 = REF_912.partyAddresses",
+                "REF_913 = CLR_297",
+                "CLR_298 = REF_913[0]",
+                "REF_914 = CLR_298",
+                "RTMP_461 = REF_914 == 0",
+                "CONDITION RTMP_461 0x9c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9c",
+            "instructions": [
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9f",
+            "instructions": [
+                "CLR_299 = Channels[U]",
+                "REF_915 = CLR_299",
+                "CLR_300 = REF_915.partyAddresses",
+                "REF_916 = CLR_300",
+                "CLR_301 = REF_916[0]",
+                "REF_917 = CLR_301",
+                "RTMP_462 = REF_917 == 0",
+                "CONDITION RTMP_462 0x9e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x9e",
+            "instructions": [
+                "CLR_302 = msg.sender",
+                "CLR_303 = allowed[U]",
+                "CLR_303[CLR_302] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa1",
+            "instructions": [
+                "CLR_304 = Channels[U]",
+                "REF_921 = CLR_304",
+                "CLR_305 = REF_921.partyAddresses",
+                "REF_922 = CLR_305",
+                "CLR_306 = REF_922[0]",
+                "REF_923 = CLR_306",
+                "RTMP_463 = REF_923 == 0",
+                "CONDITION RTMP_463 0xa0 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa0",
+            "instructions": [
+                "CLR_307 = Channels[U]",
+                "REF_918 = CLR_307",
+                "CLR_308 = REF_918.partyAddresses",
+                "REF_919 = CLR_308",
+                "CLR_309 = REF_919[0]",
+                "REF_920 = CLR_309",
+                "CLR_310 = msg.sender",
+                "REF_919[0] = CLR_310"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa3",
+            "instructions": [
+                "CLR_311 = Channels[U]",
+                "REF_927 = CLR_311",
+                "CLR_312 = REF_927.partyAddresses",
+                "REF_928 = CLR_312",
+                "CLR_313 = REF_928[0]",
+                "REF_929 = CLR_313",
+                "RTMP_464 = REF_929 == 0",
+                "CONDITION RTMP_464 0xa2 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa2",
+            "instructions": [
+                "CLR_314 = Channels[U]",
+                "REF_924 = CLR_314",
+                "CLR_315 = REF_924.partyAddresses",
+                "REF_925 = CLR_315",
+                "CLR_316 = REF_925[1]",
+                "REF_926 = CLR_316",
+                "REF_925[1] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa5",
+            "instructions": [
+                "CLR_317 = Channels[U]",
+                "REF_932 = CLR_317",
+                "CLR_318 = REF_932.partyAddresses",
+                "REF_933 = CLR_318",
+                "CLR_319 = REF_933[0]",
+                "REF_934 = CLR_319",
+                "RTMP_465 = REF_934 == 0",
+                "CONDITION RTMP_465 0xa4 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa4",
+            "instructions": [
+                "CLR_320 = Channels[U]",
+                "REF_930 = CLR_320",
+                "CLR_321 = REF_930.token",
+                "REF_931 = CLR_321",
+                "REF_930.token = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa7",
+            "instructions": [
+                "CLR_322 = Channels[U]",
+                "REF_937 = CLR_322",
+                "CLR_323 = REF_937.partyAddresses",
+                "REF_938 = CLR_323",
+                "CLR_324 = REF_938[0]",
+                "REF_939 = CLR_324",
+                "RTMP_466 = REF_939 == 0",
+                "CONDITION RTMP_466 0xa6 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa6",
+            "instructions": [
+                "CLR_325 = Channels[U]",
+                "REF_935 = CLR_325",
+                "CLR_326 = REF_935.sequence",
+                "REF_936 = CLR_326",
+                "REF_935.sequence = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa9",
+            "instructions": [
+                "CLR_327 = Channels[U]",
+                "REF_942 = CLR_327",
+                "CLR_328 = REF_942.partyAddresses",
+                "REF_943 = CLR_328",
+                "CLR_329 = REF_943[0]",
+                "REF_944 = CLR_329",
+                "RTMP_467 = REF_944 == 0",
+                "CONDITION RTMP_467 0xa8 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xa8",
+            "instructions": [
+                "CLR_330 = Channels[U]",
+                "REF_940 = CLR_330",
+                "CLR_331 = REF_940.confirmTime",
+                "REF_941 = CLR_331",
+                "REF_940.confirmTime = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xab",
+            "instructions": [
+                "CLR_332 = Channels[U]",
+                "REF_947 = CLR_332",
+                "CLR_333 = REF_947.partyAddresses",
+                "REF_948 = CLR_333",
+                "CLR_334 = REF_948[0]",
+                "REF_949 = CLR_334",
+                "RTMP_468 = REF_949 == 0",
+                "CONDITION RTMP_468 0xaa 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xaa",
+            "instructions": [
+                "CLR_335 = Channels[U]",
+                "REF_945 = CLR_335",
+                "CLR_336 = REF_945.LCopenTimeout",
+                "REF_946 = CLR_336",
+                "REF_945.LCopenTimeout = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xad",
+            "instructions": [
+                "CLR_337 = Channels[U]",
+                "REF_952 = CLR_337",
+                "CLR_338 = REF_952.partyAddresses",
+                "REF_953 = CLR_338",
+                "CLR_339 = REF_953[0]",
+                "REF_954 = CLR_339",
+                "RTMP_469 = REF_954 == 0",
+                "CONDITION RTMP_469 0xac 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xac",
+            "instructions": [
+                "CLR_340 = Channels[U]",
+                "REF_950 = CLR_340",
+                "CLR_341 = REF_950.initialDeposit",
+                "REF_951 = CLR_341",
+                "REF_950.initialDeposit = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xaf",
+            "instructions": [
+                "CLR_342 = Channels[U]",
+                "REF_958 = CLR_342",
+                "CLR_343 = REF_958.partyAddresses",
+                "REF_959 = CLR_343",
+                "CLR_344 = REF_959[0]",
+                "REF_960 = CLR_344",
+                "RTMP_470 = REF_960 == 0",
+                "CONDITION RTMP_470 0xae 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xae",
+            "instructions": [
+                "CLR_345 = Channels[U]",
+                "REF_955 = CLR_345",
+                "CLR_346 = REF_955.erc20Balances",
+                "REF_956 = CLR_346",
+                "CLR_347 = REF_956[0]",
+                "REF_957 = CLR_347",
+                "REF_956[0] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb1",
+            "instructions": [
+                "CLR_348 = Channels[U]",
+                "REF_964 = CLR_348",
+                "CLR_349 = REF_964.partyAddresses",
+                "REF_965 = CLR_349",
+                "CLR_350 = REF_965[0]",
+                "REF_966 = CLR_350",
+                "RTMP_471 = REF_966 == 0",
+                "CONDITION RTMP_471 0xb0 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb0",
+            "instructions": [
+                "CLR_351 = Channels[U]",
+                "REF_961 = CLR_351",
+                "CLR_352 = REF_961.ethBalances",
+                "REF_962 = CLR_352",
+                "CLR_353 = REF_962[0]",
+                "REF_963 = CLR_353",
+                "CLR_354 = msg.value",
+                "REF_962[0] = CLR_354"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb3",
+            "instructions": [
+                "CLR_355 = Channels[U]",
+                "REF_967 = CLR_355",
+                "CLR_356 = REF_967.isOpen",
+                "REF_968 = CLR_356",
+                "RTMP_472 = REF_968 == false",
+                "CONDITION RTMP_472 0xb4 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb4",
+            "instructions": [
+                "CLR_357 = Channels[U]",
+                "REF_969 = CLR_357",
+                "CLR_358 = REF_969.partyAddresses",
+                "REF_970 = CLR_358",
+                "CLR_359 = REF_970[1]",
+                "REF_971 = CLR_359",
+                "CLR_360 = msg.sender",
+                "RTMP_473 = CLR_360 == REF_971",
+                "CONDITION RTMP_473 0xb2 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb2",
+            "instructions": [
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb6",
+            "instructions": [
+                "CLR_361 = Channels[U]",
+                "REF_972 = CLR_361",
+                "CLR_362 = REF_972.isOpen",
+                "REF_973 = CLR_362",
+                "RTMP_474 = REF_973 == false",
+                "CONDITION RTMP_474 0xb7 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb7",
+            "instructions": [
+                "CLR_363 = Channels[U]",
+                "REF_974 = CLR_363",
+                "CLR_364 = REF_974.partyAddresses",
+                "REF_975 = CLR_364",
+                "CLR_365 = REF_975[1]",
+                "REF_976 = CLR_365",
+                "CLR_366 = msg.sender",
+                "RTMP_475 = CLR_366 == REF_976",
+                "CONDITION RTMP_475 0xb5 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb5",
+            "instructions": [
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb9",
+            "instructions": [
+                "CLR_367 = Channels[U]",
+                "REF_977 = CLR_367",
+                "CLR_368 = REF_977.isOpen",
+                "REF_978 = CLR_368",
+                "RTMP_476 = REF_978 == false",
+                "CONDITION RTMP_476 0xba 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xba",
+            "instructions": [
+                "CLR_369 = Channels[U]",
+                "REF_979 = CLR_369",
+                "CLR_370 = REF_979.partyAddresses",
+                "REF_980 = CLR_370",
+                "CLR_371 = REF_980[1]",
+                "REF_981 = CLR_371",
+                "CLR_372 = msg.sender",
+                "RTMP_477 = CLR_372 == REF_981",
+                "CONDITION RTMP_477 0xb8 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xb8",
+            "instructions": [
+                "CLR_373 = msg.sender",
+                "CLR_374 = allowed[U]",
+                "CLR_374[CLR_373] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xbc",
+            "instructions": [
+                "CLR_375 = Channels[U]",
+                "REF_982 = CLR_375",
+                "CLR_376 = REF_982.isOpen",
+                "REF_983 = CLR_376",
+                "RTMP_478 = REF_983 == false",
+                "CONDITION RTMP_478 0xbd 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xbd",
+            "instructions": [
+                "CLR_377 = Channels[U]",
+                "REF_984 = CLR_377",
+                "CLR_378 = REF_984.partyAddresses",
+                "REF_985 = CLR_378",
+                "CLR_379 = REF_985[1]",
+                "REF_986 = CLR_379",
+                "CLR_380 = msg.sender",
+                "RTMP_479 = CLR_380 == REF_986",
+                "CONDITION RTMP_479 0xbb 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xbb",
+            "instructions": [
+                "CLR_381 = Channels[U]",
+                "CLR_382 = CLR_381.initialDeposit",
+                "CLR_382[0] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xbf",
+            "instructions": [
+                "CLR_383 = Channels[U]",
+                "REF_987 = CLR_383",
+                "CLR_384 = REF_987.isOpen",
+                "REF_988 = CLR_384",
+                "RTMP_480 = REF_988 == false",
+                "CONDITION RTMP_480 0xc0 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc0",
+            "instructions": [
+                "CLR_385 = Channels[U]",
+                "REF_989 = CLR_385",
+                "CLR_386 = REF_989.partyAddresses",
+                "REF_990 = CLR_386",
+                "CLR_387 = REF_990[1]",
+                "REF_991 = CLR_387",
+                "CLR_388 = msg.sender",
+                "RTMP_481 = CLR_388 == REF_991",
+                "CONDITION RTMP_481 0xbe 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xbe",
+            "instructions": [
+                "CLR_389 = Channels[U]",
+                "CLR_390 = CLR_389.initialDeposit",
+                "CLR_390[1] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc2",
+            "instructions": [
+                "CLR_391 = Channels[U]",
+                "REF_994 = CLR_391",
+                "CLR_392 = REF_994.isOpen",
+                "REF_995 = CLR_392",
+                "RTMP_482 = REF_995 == false",
+                "CONDITION RTMP_482 0xc3 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc3",
+            "instructions": [
+                "CLR_393 = Channels[U]",
+                "REF_996 = CLR_393",
+                "CLR_394 = REF_996.partyAddresses",
+                "REF_997 = CLR_394",
+                "CLR_395 = REF_997[1]",
+                "REF_998 = CLR_395",
+                "CLR_396 = msg.sender",
+                "RTMP_483 = CLR_396 == REF_998",
+                "CONDITION RTMP_483 0xc1 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc1",
+            "instructions": [
+                "CLR_397 = Channels[U]",
+                "REF_992 = CLR_397",
+                "CLR_398 = REF_992.isOpen",
+                "REF_993 = CLR_398",
+                "REF_992.isOpen = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc5",
+            "instructions": [
+                "CLR_399 = Channels[U]",
+                "REF_999 = CLR_399",
+                "CLR_400 = REF_999.isOpen",
+                "REF_1000 = CLR_400",
+                "RTMP_485 = REF_1000 == false",
+                "CONDITION RTMP_485 0xc6 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc6",
+            "instructions": [
+                "CLR_401 = Channels[U]",
+                "REF_1001 = CLR_401",
+                "CLR_402 = REF_1001.partyAddresses",
+                "REF_1002 = CLR_402",
+                "CLR_403 = REF_1002[1]",
+                "REF_1003 = CLR_403",
+                "CLR_404 = msg.sender",
+                "RTMP_486 = CLR_404 == REF_1003",
+                "CONDITION RTMP_486 0xc4 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc4",
+            "instructions": [
+                "TMP_484 = numChannels + 1",
+                "numChannels = TMP_484"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc8",
+            "instructions": [
+                "CLR_405 = Channels[U]",
+                "REF_1007 = CLR_405",
+                "CLR_406 = REF_1007.isOpen",
+                "REF_1008 = CLR_406",
+                "RTMP_487 = REF_1008 == false",
+                "CONDITION RTMP_487 0xc9 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc9",
+            "instructions": [
+                "CLR_407 = Channels[U]",
+                "REF_1009 = CLR_407",
+                "CLR_408 = REF_1009.partyAddresses",
+                "REF_1010 = CLR_408",
+                "CLR_409 = REF_1010[1]",
+                "REF_1011 = CLR_409",
+                "CLR_410 = msg.sender",
+                "RTMP_488 = CLR_410 == REF_1011",
+                "CONDITION RTMP_488 0xc7 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xc7",
+            "instructions": [
+                "CLR_411 = Channels[U]",
+                "REF_1004 = CLR_411",
+                "CLR_412 = REF_1004.erc20Balances",
+                "REF_1005 = CLR_412",
+                "CLR_413 = REF_1005[1]",
+                "REF_1006 = CLR_413",
+                "REF_1005[1] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xcb",
+            "instructions": [
+                "CLR_414 = Channels[U]",
+                "REF_1015 = CLR_414",
+                "CLR_415 = REF_1015.isOpen",
+                "REF_1016 = CLR_415",
+                "RTMP_489 = REF_1016 == false",
+                "CONDITION RTMP_489 0xcc 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xcc",
+            "instructions": [
+                "CLR_416 = Channels[U]",
+                "REF_1017 = CLR_416",
+                "CLR_417 = REF_1017.partyAddresses",
+                "REF_1018 = CLR_417",
+                "CLR_418 = REF_1018[1]",
+                "REF_1019 = CLR_418",
+                "CLR_419 = msg.sender",
+                "RTMP_490 = CLR_419 == REF_1019",
+                "CONDITION RTMP_490 0xca 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xca",
+            "instructions": [
+                "CLR_420 = Channels[U]",
+                "REF_1012 = CLR_420",
+                "CLR_421 = REF_1012.ethBalances",
+                "REF_1013 = CLR_421",
+                "CLR_422 = REF_1013[1]",
+                "REF_1014 = CLR_422",
+                "CLR_423 = msg.value",
+                "REF_1013[1] = CLR_423"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd0",
+            "instructions": [
+                "CLR_424 = Channels[U]",
+                "REF_1026 = CLR_424",
+                "CLR_425 = REF_1026.isOpen",
+                "REF_1027 = CLR_425",
+                "RTMP_494 = REF_1027 == true",
+                "CONDITION RTMP_494 0xcf 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xcf",
+            "instructions": [
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd4",
+            "instructions": [
+                "CLR_426 = Channels[U]",
+                "REF_1028 = CLR_426",
+                "CLR_427 = REF_1028.isOpen",
+                "REF_1029 = CLR_427",
+                "RTMP_495 = REF_1029 == true",
+                "CONDITION RTMP_495 0xd3 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd3",
+            "instructions": [
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd8",
+            "instructions": [
+                "CLR_428 = Channels[U]",
+                "REF_1030 = CLR_428",
+                "CLR_429 = REF_1030.isOpen",
+                "REF_1031 = CLR_429",
+                "RTMP_496 = REF_1031 == true",
+                "CONDITION RTMP_496 0xd7 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd7",
+            "instructions": [
+                "CLR_430 = msg.sender",
+                "CLR_431 = allowed[U]",
+                "CLR_431[CLR_430] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xda",
+            "instructions": [
+                "CLR_432 = Channels[U]",
+                "REF_1035 = CLR_432",
+                "CLR_433 = REF_1035.isOpen",
+                "REF_1036 = CLR_433",
+                "RTMP_498 = REF_1036 == true",
+                "CONDITION RTMP_498 0xd9 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xd9",
+            "instructions": [
+                "CLR_434 = Channels[U]",
+                "REF_1032 = CLR_434",
+                "CLR_435 = REF_1032.ethBalances",
+                "REF_1033 = CLR_435",
+                "CLR_436 = REF_1033[3]",
+                "REF_1034 = CLR_436",
+                "CLR_437 = msg.value",
+                "TMP_497 = REF_1034 + CLR_437",
+                "CLR_438 = Channels[U]",
+                "CLR_439 = CLR_438.ethBalances",
+                "CLR_439[3] = TMP_497"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xdc",
+            "instructions": [
+                "CLR_440 = Channels[U]",
+                "REF_1037 = CLR_440",
+                "CLR_441 = REF_1037.isOpen",
+                "REF_1038 = CLR_441",
+                "RTMP_499 = REF_1038 == true",
+                "CONDITION RTMP_499 0xdb 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xdb",
+            "instructions": [
+                "CLR_442 = Channels[U]",
+                "CLR_443 = CLR_442.erc20Balances",
+                "CLR_443[3] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xde",
+            "instructions": [
+                "CLR_444 = Channels[U]",
+                "REF_1042 = CLR_444",
+                "CLR_445 = REF_1042.isOpen",
+                "REF_1043 = CLR_445",
+                "RTMP_501 = REF_1043 == true",
+                "CONDITION RTMP_501 0xdd 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xdd",
+            "instructions": [
+                "CLR_446 = Channels[U]",
+                "REF_1039 = CLR_446",
+                "CLR_447 = REF_1039.ethBalances",
+                "REF_1040 = CLR_447",
+                "CLR_448 = REF_1040[2]",
+                "REF_1041 = CLR_448",
+                "CLR_449 = msg.value",
+                "TMP_500 = REF_1041 + CLR_449",
+                "CLR_450 = Channels[U]",
+                "CLR_451 = CLR_450.ethBalances",
+                "CLR_451[2] = TMP_500"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xe0",
+            "instructions": [
+                "CLR_452 = Channels[U]",
+                "REF_1044 = CLR_452",
+                "CLR_453 = REF_1044.isOpen",
+                "REF_1045 = CLR_453",
+                "RTMP_502 = REF_1045 == true",
+                "CONDITION RTMP_502 0xdf 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xdf",
+            "instructions": [
+                "CLR_454 = Channels[U]",
+                "CLR_455 = CLR_454.erc20Balances",
+                "CLR_455[2] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xea",
+            "instructions": [
+                "CLR_456 = Channels[U]",
+                "REF_825 = CLR_456",
+                "CLR_457 = REF_825.partyAddresses",
+                "REF_826 = CLR_457",
+                "CLR_458 = REF_826[0]",
+                "REF_827 = CLR_458",
+                "CLR_459 = msg.sender",
+                "RTMP_423 = CLR_459 == REF_827",
+                "CONDITION RTMP_423 0xeb 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xeb",
+            "instructions": [
+                "CLR_460 = Channels[U]",
+                "REF_828 = CLR_460",
+                "CLR_461 = REF_828.isOpen",
+                "REF_829 = CLR_461",
+                "RTMP_424 = REF_829 == false",
+                "CONDITION RTMP_424 0xec 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xec",
+            "instructions": [
+                "CLR_462 = Channels[U]",
+                "REF_877 = CLR_462",
+                "CLR_463 = REF_877.erc20Balances",
+                "REF_878 = CLR_463",
+                "CLR_464 = REF_878[0]",
+                "REF_879 = CLR_464",
+                "RTMP_445 = REF_879 != 0",
+                "CONDITION RTMP_445 0xed 0xed"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xed",
+            "instructions": [
+                "CLR_465 = Channels[U]",
+                "REF_880 = CLR_465",
+                "CLR_466 = REF_880.erc20Balances",
+                "REF_881 = CLR_466",
+                "CLR_467 = REF_881[1]",
+                "REF_882 = CLR_467",
+                "RTMP_446 = REF_882 != 0",
+                "CONDITION RTMP_446 0xee 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xee",
+            "instructions": [
+                "CLR_468 = Channels[U]",
+                "REF_1062 = CLR_468",
+                "CLR_469 = REF_1062.isOpen",
+                "REF_1063 = CLR_469",
+                "RTMP_509 = REF_1063 == true",
+                "CONDITION RTMP_509 0xef 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xef",
+            "instructions": [
+                "CLR_470 = Channels[U]",
+                "REF_1064 = CLR_470",
+                "CLR_471 = REF_1064.partyAddresses",
+                "REF_1065 = CLR_471",
+                "CLR_472 = REF_1065[1]",
+                "REF_1066 = CLR_472",
+                "RTMP_510 = REF_1066 == U",
+                "CONDITION RTMP_510 0xf0 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xf0",
+            "instructions": [
+                "CLR_473 = Channels[U]",
+                "REF_1067 = CLR_473",
+                "CLR_474 = REF_1067.partyAddresses",
+                "REF_1068 = CLR_474",
+                "CLR_475 = REF_1068[0]",
+                "REF_1069 = CLR_475",
+                "RTMP_511 = REF_1069 == U",
+                "CONDITION RTMP_511 0xe9 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xe9",
+            "instructions": [
+                "CLR_476 = msg.sender",
+                "balances[CLR_476] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xfa",
+            "instructions": [
+                "CLR_477 = Channels[U]",
+                "REF_835 = CLR_477",
+                "CLR_478 = REF_835.partyAddresses",
+                "REF_836 = CLR_478",
+                "CLR_479 = REF_836[0]",
+                "REF_837 = CLR_479",
+                "CLR_480 = msg.sender",
+                "RTMP_427 = CLR_480 == REF_837",
+                "CONDITION RTMP_427 0xfb 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xfb",
+            "instructions": [
+                "CLR_481 = Channels[U]",
+                "REF_838 = CLR_481",
+                "CLR_482 = REF_838.isOpen",
+                "REF_839 = CLR_482",
+                "RTMP_428 = REF_839 == false",
+                "CONDITION RTMP_428 0xfc 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xfc",
+            "instructions": [
+                "CLR_483 = Channels[U]",
+                "REF_891 = CLR_483",
+                "CLR_484 = REF_891.erc20Balances",
+                "REF_892 = CLR_484",
+                "CLR_485 = REF_892[0]",
+                "REF_893 = CLR_485",
+                "RTMP_451 = REF_893 != 0",
+                "CONDITION RTMP_451 0xfd 0xfd"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xfd",
+            "instructions": [
+                "CLR_486 = Channels[U]",
+                "REF_894 = CLR_486",
+                "CLR_487 = REF_894.erc20Balances",
+                "REF_895 = CLR_487",
+                "CLR_488 = REF_895[1]",
+                "REF_896 = CLR_488",
+                "RTMP_452 = REF_896 != 0",
+                "CONDITION RTMP_452 0xfe 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xfe",
+            "instructions": [
+                "CLR_489 = Channels[U]",
+                "REF_1070 = CLR_489",
+                "CLR_490 = REF_1070.isOpen",
+                "REF_1071 = CLR_490",
+                "RTMP_512 = REF_1071 == true",
+                "CONDITION RTMP_512 0xff 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xff",
+            "instructions": [
+                "CLR_491 = Channels[U]",
+                "REF_1072 = CLR_491",
+                "CLR_492 = REF_1072.partyAddresses",
+                "REF_1073 = CLR_492",
+                "CLR_493 = REF_1073[1]",
+                "REF_1074 = CLR_493",
+                "RTMP_513 = REF_1074 == U",
+                "CONDITION RTMP_513 0x100 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x100",
+            "instructions": [
+                "CLR_494 = Channels[U]",
+                "REF_1075 = CLR_494",
+                "CLR_495 = REF_1075.partyAddresses",
+                "REF_1076 = CLR_495",
+                "CLR_496 = REF_1076[0]",
+                "REF_1077 = CLR_496",
+                "RTMP_514 = REF_1077 == U",
+                "CONDITION RTMP_514 0xf9 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0xf9",
+            "instructions": [
+                "balances[0] = U",
+                "balances[1] = U",
+                "balances[2] = U",
+                "balances[3] = U",
+                "balances[4] = U",
+                "balances[5] = U",
+                "balances[6] = U",
+                "balances[7] = U",
+                "balances[8] = U",
+                "balances[9] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x102",
+            "instructions": [
+                "CLR_497 = Channels[U]",
+                "REF_1080 = CLR_497",
+                "CLR_498 = REF_1080.isOpen",
+                "REF_1081 = CLR_498",
+                "RTMP_515 = REF_1081 == true",
+                "CONDITION RTMP_515 0x103 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x103",
+            "instructions": [
+                "CLR_499 = Channels[U]",
+                "REF_1082 = CLR_499",
+                "CLR_500 = REF_1082.partyAddresses",
+                "REF_1083 = CLR_500",
+                "CLR_501 = REF_1083[0]",
+                "REF_1084 = CLR_501",
+                "RTMP_516 = REF_1084 == U",
+                "CONDITION RTMP_516 0x104 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x104",
+            "instructions": [
+                "CLR_502 = Channels[U]",
+                "REF_1085 = CLR_502",
+                "CLR_503 = REF_1085.partyAddresses",
+                "REF_1086 = CLR_503",
+                "CLR_504 = REF_1086[1]",
+                "REF_1087 = CLR_504",
+                "RTMP_517 = REF_1087 == U",
+                "CONDITION RTMP_517 0x101 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x101",
+            "instructions": [
+                "CLR_505 = Channels[U]",
+                "REF_1078 = CLR_505",
+                "CLR_506 = REF_1078.isOpen",
+                "REF_1079 = CLR_506",
+                "REF_1078.isOpen = false"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x106",
+            "instructions": [
+                "CLR_507 = Channels[U]",
+                "REF_1088 = CLR_507",
+                "CLR_508 = REF_1088.isOpen",
+                "REF_1089 = CLR_508",
+                "RTMP_519 = REF_1089 == true",
+                "CONDITION RTMP_519 0x107 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x107",
+            "instructions": [
+                "CLR_509 = Channels[U]",
+                "REF_1090 = CLR_509",
+                "CLR_510 = REF_1090.partyAddresses",
+                "REF_1091 = CLR_510",
+                "CLR_511 = REF_1091[0]",
+                "REF_1092 = CLR_511",
+                "RTMP_520 = REF_1092 == U",
+                "CONDITION RTMP_520 0x108 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x108",
+            "instructions": [
+                "CLR_512 = Channels[U]",
+                "REF_1093 = CLR_512",
+                "CLR_513 = REF_1093.partyAddresses",
+                "REF_1094 = CLR_513",
+                "CLR_514 = REF_1094[1]",
+                "REF_1095 = CLR_514",
+                "RTMP_521 = REF_1095 == U",
+                "CONDITION RTMP_521 0x105 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x105",
+            "instructions": [
+                "TMP_518 = numChannels - 1",
+                "numChannels = TMP_518"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10a",
+            "instructions": [
+                "CLR_515 = Channels[U]",
+                "REF_1098 = CLR_515",
+                "CLR_516 = REF_1098.isOpen",
+                "REF_1099 = CLR_516",
+                "RTMP_522 = REF_1099 == true",
+                "CONDITION RTMP_522 0x10b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10b",
+            "instructions": [
+                "RTMP_523 = false == true",
+                "RTMP_524 = false == true",
+                "RTMP_525 = RTMP_523 || RTMP_524",
+                "CONDITION RTMP_525 0x10c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10c",
+            "instructions": [
+                "CLR_517 = virtualChannels[U]",
+                "REF_1100 = CLR_517",
+                "CLR_518 = REF_1100.updateVCtimeout",
+                "REF_1101 = CLR_518",
+                "RTMP_526 = REF_1101 == 0",
+                "CONDITION RTMP_526 0x10d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10d",
+            "instructions": [
+                "CLR_519 = Channels[U]",
+                "REF_1102 = CLR_519",
+                "CLR_520 = REF_1102.updateLCtimeout",
+                "REF_1103 = CLR_520",
+                "RTMP_527 = REF_1103 < now",
+                "CONDITION RTMP_527 0x10e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10e",
+            "instructions": [
+                "CLR_521 = virtualChannels[U]",
+                "REF_1104 = CLR_521",
+                "CLR_522 = REF_1104.isClose",
+                "REF_1105 = CLR_522",
+                "RTMP_528 = ! REF_1105",
+                "CONDITION RTMP_528 0x109 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x109",
+            "instructions": [
+                "CLR_523 = virtualChannels[U]",
+                "REF_1096 = CLR_523",
+                "CLR_524 = REF_1096.partyA",
+                "REF_1097 = CLR_524",
+                "REF_1096.partyA = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x110",
+            "instructions": [
+                "CLR_525 = Channels[U]",
+                "REF_1108 = CLR_525",
+                "CLR_526 = REF_1108.isOpen",
+                "REF_1109 = CLR_526",
+                "RTMP_529 = REF_1109 == true",
+                "CONDITION RTMP_529 0x111 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x111",
+            "instructions": [
+                "RTMP_530 = false == true",
+                "RTMP_531 = false == true",
+                "RTMP_532 = RTMP_530 || RTMP_531",
+                "CONDITION RTMP_532 0x112 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x112",
+            "instructions": [
+                "CLR_527 = virtualChannels[U]",
+                "REF_1110 = CLR_527",
+                "CLR_528 = REF_1110.updateVCtimeout",
+                "REF_1111 = CLR_528",
+                "RTMP_533 = REF_1111 == 0",
+                "CONDITION RTMP_533 0x113 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x113",
+            "instructions": [
+                "CLR_529 = Channels[U]",
+                "REF_1112 = CLR_529",
+                "CLR_530 = REF_1112.updateLCtimeout",
+                "REF_1113 = CLR_530",
+                "RTMP_534 = REF_1113 < now",
+                "CONDITION RTMP_534 0x114 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x114",
+            "instructions": [
+                "CLR_531 = virtualChannels[U]",
+                "REF_1114 = CLR_531",
+                "CLR_532 = REF_1114.isClose",
+                "REF_1115 = CLR_532",
+                "RTMP_535 = ! REF_1115",
+                "CONDITION RTMP_535 0x10f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x10f",
+            "instructions": [
+                "CLR_533 = virtualChannels[U]",
+                "REF_1106 = CLR_533",
+                "CLR_534 = REF_1106.partyB",
+                "REF_1107 = CLR_534",
+                "REF_1106.partyB = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x116",
+            "instructions": [
+                "CLR_535 = Channels[U]",
+                "REF_1118 = CLR_535",
+                "CLR_536 = REF_1118.isOpen",
+                "REF_1119 = CLR_536",
+                "RTMP_536 = REF_1119 == true",
+                "CONDITION RTMP_536 0x117 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x117",
+            "instructions": [
+                "RTMP_537 = false == true",
+                "RTMP_538 = false == true",
+                "RTMP_539 = RTMP_537 || RTMP_538",
+                "CONDITION RTMP_539 0x118 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x118",
+            "instructions": [
+                "CLR_537 = virtualChannels[U]",
+                "REF_1120 = CLR_537",
+                "CLR_538 = REF_1120.updateVCtimeout",
+                "REF_1121 = CLR_538",
+                "RTMP_540 = REF_1121 == 0",
+                "CONDITION RTMP_540 0x119 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x119",
+            "instructions": [
+                "CLR_539 = Channels[U]",
+                "REF_1122 = CLR_539",
+                "CLR_540 = REF_1122.updateLCtimeout",
+                "REF_1123 = CLR_540",
+                "RTMP_541 = REF_1123 < now",
+                "CONDITION RTMP_541 0x11a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11a",
+            "instructions": [
+                "CLR_541 = virtualChannels[U]",
+                "REF_1124 = CLR_541",
+                "CLR_542 = REF_1124.isClose",
+                "REF_1125 = CLR_542",
+                "RTMP_542 = ! REF_1125",
+                "CONDITION RTMP_542 0x115 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x115",
+            "instructions": [
+                "CLR_543 = virtualChannels[U]",
+                "REF_1116 = CLR_543",
+                "CLR_544 = REF_1116.sequence",
+                "REF_1117 = CLR_544",
+                "REF_1116.sequence = 0"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11c",
+            "instructions": [
+                "CLR_545 = Channels[U]",
+                "REF_1129 = CLR_545",
+                "CLR_546 = REF_1129.isOpen",
+                "REF_1130 = CLR_546",
+                "RTMP_543 = REF_1130 == true",
+                "CONDITION RTMP_543 0x11d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11d",
+            "instructions": [
+                "RTMP_544 = false == true",
+                "RTMP_545 = false == true",
+                "RTMP_546 = RTMP_544 || RTMP_545",
+                "CONDITION RTMP_546 0x11e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11e",
+            "instructions": [
+                "CLR_547 = virtualChannels[U]",
+                "REF_1131 = CLR_547",
+                "CLR_548 = REF_1131.updateVCtimeout",
+                "REF_1132 = CLR_548",
+                "RTMP_547 = REF_1132 == 0",
+                "CONDITION RTMP_547 0x11f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11f",
+            "instructions": [
+                "CLR_549 = Channels[U]",
+                "REF_1133 = CLR_549",
+                "CLR_550 = REF_1133.updateLCtimeout",
+                "REF_1134 = CLR_550",
+                "RTMP_548 = REF_1134 < now",
+                "CONDITION RTMP_548 0x120 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x120",
+            "instructions": [
+                "CLR_551 = virtualChannels[U]",
+                "REF_1135 = CLR_551",
+                "CLR_552 = REF_1135.isClose",
+                "REF_1136 = CLR_552",
+                "RTMP_549 = ! REF_1136",
+                "CONDITION RTMP_549 0x11b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x11b",
+            "instructions": [
+                "CLR_553 = virtualChannels[U]",
+                "REF_1126 = CLR_553",
+                "CLR_554 = REF_1126.ethBalances",
+                "REF_1127 = CLR_554",
+                "CLR_555 = REF_1127[0]",
+                "REF_1128 = CLR_555",
+                "REF_1127[0] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x122",
+            "instructions": [
+                "CLR_556 = Channels[U]",
+                "REF_1140 = CLR_556",
+                "CLR_557 = REF_1140.isOpen",
+                "REF_1141 = CLR_557",
+                "RTMP_550 = REF_1141 == true",
+                "CONDITION RTMP_550 0x123 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x123",
+            "instructions": [
+                "RTMP_551 = false == true",
+                "RTMP_552 = false == true",
+                "RTMP_553 = RTMP_551 || RTMP_552",
+                "CONDITION RTMP_553 0x124 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x124",
+            "instructions": [
+                "CLR_558 = virtualChannels[U]",
+                "REF_1142 = CLR_558",
+                "CLR_559 = REF_1142.updateVCtimeout",
+                "REF_1143 = CLR_559",
+                "RTMP_554 = REF_1143 == 0",
+                "CONDITION RTMP_554 0x125 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x125",
+            "instructions": [
+                "CLR_560 = Channels[U]",
+                "REF_1144 = CLR_560",
+                "CLR_561 = REF_1144.updateLCtimeout",
+                "REF_1145 = CLR_561",
+                "RTMP_555 = REF_1145 < now",
+                "CONDITION RTMP_555 0x126 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x126",
+            "instructions": [
+                "CLR_562 = virtualChannels[U]",
+                "REF_1146 = CLR_562",
+                "CLR_563 = REF_1146.isClose",
+                "REF_1147 = CLR_563",
+                "RTMP_556 = ! REF_1147",
+                "CONDITION RTMP_556 0x121 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x121",
+            "instructions": [
+                "CLR_564 = virtualChannels[U]",
+                "REF_1137 = CLR_564",
+                "CLR_565 = REF_1137.ethBalances",
+                "REF_1138 = CLR_565",
+                "CLR_566 = REF_1138[1]",
+                "REF_1139 = CLR_566",
+                "REF_1138[1] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x128",
+            "instructions": [
+                "CLR_567 = Channels[U]",
+                "REF_1151 = CLR_567",
+                "CLR_568 = REF_1151.isOpen",
+                "REF_1152 = CLR_568",
+                "RTMP_557 = REF_1152 == true",
+                "CONDITION RTMP_557 0x129 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x129",
+            "instructions": [
+                "RTMP_558 = false == true",
+                "RTMP_559 = false == true",
+                "RTMP_560 = RTMP_558 || RTMP_559",
+                "CONDITION RTMP_560 0x12a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12a",
+            "instructions": [
+                "CLR_569 = virtualChannels[U]",
+                "REF_1153 = CLR_569",
+                "CLR_570 = REF_1153.updateVCtimeout",
+                "REF_1154 = CLR_570",
+                "RTMP_561 = REF_1154 == 0",
+                "CONDITION RTMP_561 0x12b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12b",
+            "instructions": [
+                "CLR_571 = Channels[U]",
+                "REF_1155 = CLR_571",
+                "CLR_572 = REF_1155.updateLCtimeout",
+                "REF_1156 = CLR_572",
+                "RTMP_562 = REF_1156 < now",
+                "CONDITION RTMP_562 0x12c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12c",
+            "instructions": [
+                "CLR_573 = virtualChannels[U]",
+                "REF_1157 = CLR_573",
+                "CLR_574 = REF_1157.isClose",
+                "REF_1158 = CLR_574",
+                "RTMP_563 = ! REF_1158",
+                "CONDITION RTMP_563 0x127 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x127",
+            "instructions": [
+                "CLR_575 = virtualChannels[U]",
+                "REF_1148 = CLR_575",
+                "CLR_576 = REF_1148.erc20Balances",
+                "REF_1149 = CLR_576",
+                "CLR_577 = REF_1149[0]",
+                "REF_1150 = CLR_577",
+                "REF_1149[0] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12e",
+            "instructions": [
+                "CLR_578 = Channels[U]",
+                "REF_1162 = CLR_578",
+                "CLR_579 = REF_1162.isOpen",
+                "REF_1163 = CLR_579",
+                "RTMP_564 = REF_1163 == true",
+                "CONDITION RTMP_564 0x12f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12f",
+            "instructions": [
+                "RTMP_565 = false == true",
+                "RTMP_566 = false == true",
+                "RTMP_567 = RTMP_565 || RTMP_566",
+                "CONDITION RTMP_567 0x130 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x130",
+            "instructions": [
+                "CLR_580 = virtualChannels[U]",
+                "REF_1164 = CLR_580",
+                "CLR_581 = REF_1164.updateVCtimeout",
+                "REF_1165 = CLR_581",
+                "RTMP_568 = REF_1165 == 0",
+                "CONDITION RTMP_568 0x131 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x131",
+            "instructions": [
+                "CLR_582 = Channels[U]",
+                "REF_1166 = CLR_582",
+                "CLR_583 = REF_1166.updateLCtimeout",
+                "REF_1167 = CLR_583",
+                "RTMP_569 = REF_1167 < now",
+                "CONDITION RTMP_569 0x132 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x132",
+            "instructions": [
+                "CLR_584 = virtualChannels[U]",
+                "REF_1168 = CLR_584",
+                "CLR_585 = REF_1168.isClose",
+                "REF_1169 = CLR_585",
+                "RTMP_570 = ! REF_1169",
+                "CONDITION RTMP_570 0x12d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x12d",
+            "instructions": [
+                "CLR_586 = virtualChannels[U]",
+                "REF_1159 = CLR_586",
+                "CLR_587 = REF_1159.erc20Balances",
+                "REF_1160 = CLR_587",
+                "CLR_588 = REF_1160[1]",
+                "REF_1161 = CLR_588",
+                "REF_1160[1] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x134",
+            "instructions": [
+                "CLR_589 = Channels[U]",
+                "REF_1172 = CLR_589",
+                "CLR_590 = REF_1172.isOpen",
+                "REF_1173 = CLR_590",
+                "RTMP_571 = REF_1173 == true",
+                "CONDITION RTMP_571 0x135 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x135",
+            "instructions": [
+                "RTMP_572 = false == true",
+                "RTMP_573 = false == true",
+                "RTMP_574 = RTMP_572 || RTMP_573",
+                "CONDITION RTMP_574 0x136 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x136",
+            "instructions": [
+                "CLR_591 = virtualChannels[U]",
+                "REF_1174 = CLR_591",
+                "CLR_592 = REF_1174.updateVCtimeout",
+                "REF_1175 = CLR_592",
+                "RTMP_575 = REF_1175 == 0",
+                "CONDITION RTMP_575 0x137 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x137",
+            "instructions": [
+                "CLR_593 = Channels[U]",
+                "REF_1176 = CLR_593",
+                "CLR_594 = REF_1176.updateLCtimeout",
+                "REF_1177 = CLR_594",
+                "RTMP_576 = REF_1177 < now",
+                "CONDITION RTMP_576 0x138 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x138",
+            "instructions": [
+                "CLR_595 = virtualChannels[U]",
+                "REF_1178 = CLR_595",
+                "CLR_596 = REF_1178.isClose",
+                "REF_1179 = CLR_596",
+                "RTMP_577 = ! REF_1179",
+                "CONDITION RTMP_577 0x133 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x133",
+            "instructions": [
+                "CLR_597 = virtualChannels[U]",
+                "REF_1170 = CLR_597",
+                "CLR_598 = REF_1170.bond",
+                "REF_1171 = CLR_598",
+                "REF_1170.bond = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13a",
+            "instructions": [
+                "CLR_599 = Channels[U]",
+                "REF_1182 = CLR_599",
+                "CLR_600 = REF_1182.isOpen",
+                "REF_1183 = CLR_600",
+                "RTMP_579 = REF_1183 == true",
+                "CONDITION RTMP_579 0x13b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13b",
+            "instructions": [
+                "RTMP_580 = false == true",
+                "RTMP_581 = false == true",
+                "RTMP_582 = RTMP_580 || RTMP_581",
+                "CONDITION RTMP_582 0x13c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13c",
+            "instructions": [
+                "CLR_601 = virtualChannels[U]",
+                "REF_1184 = CLR_601",
+                "CLR_602 = REF_1184.updateVCtimeout",
+                "REF_1185 = CLR_602",
+                "RTMP_583 = REF_1185 == 0",
+                "CONDITION RTMP_583 0x13d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13d",
+            "instructions": [
+                "CLR_603 = Channels[U]",
+                "REF_1186 = CLR_603",
+                "CLR_604 = REF_1186.updateLCtimeout",
+                "REF_1187 = CLR_604",
+                "RTMP_584 = REF_1187 < now",
+                "CONDITION RTMP_584 0x13e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13e",
+            "instructions": [
+                "CLR_605 = virtualChannels[U]",
+                "REF_1188 = CLR_605",
+                "CLR_606 = REF_1188.isClose",
+                "REF_1189 = CLR_606",
+                "RTMP_585 = ! REF_1189",
+                "CONDITION RTMP_585 0x139 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x139",
+            "instructions": [
+                "CLR_607 = Channels[U]",
+                "REF_1180 = CLR_607",
+                "CLR_608 = REF_1180.confirmTime",
+                "REF_1181 = CLR_608",
+                "TMP_578 = now + REF_1181",
+                "CLR_609 = virtualChannels[U]",
+                "CLR_609.updateVCtimeout = TMP_578"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x140",
+            "instructions": [
+                "CLR_610 = Channels[U]",
+                "REF_1192 = CLR_610",
+                "CLR_611 = REF_1192.isOpen",
+                "REF_1193 = CLR_611",
+                "RTMP_586 = REF_1193 == true",
+                "CONDITION RTMP_586 0x141 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x141",
+            "instructions": [
+                "RTMP_587 = false == true",
+                "RTMP_588 = false == true",
+                "RTMP_589 = RTMP_587 || RTMP_588",
+                "CONDITION RTMP_589 0x142 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x142",
+            "instructions": [
+                "CLR_612 = virtualChannels[U]",
+                "REF_1194 = CLR_612",
+                "CLR_613 = REF_1194.updateVCtimeout",
+                "REF_1195 = CLR_613",
+                "RTMP_590 = REF_1195 == 0",
+                "CONDITION RTMP_590 0x143 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x143",
+            "instructions": [
+                "CLR_614 = Channels[U]",
+                "REF_1196 = CLR_614",
+                "CLR_615 = REF_1196.updateLCtimeout",
+                "REF_1197 = CLR_615",
+                "RTMP_591 = REF_1197 < now",
+                "CONDITION RTMP_591 0x144 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x144",
+            "instructions": [
+                "CLR_616 = virtualChannels[U]",
+                "REF_1198 = CLR_616",
+                "CLR_617 = REF_1198.isClose",
+                "REF_1199 = CLR_617",
+                "RTMP_592 = ! REF_1199",
+                "CONDITION RTMP_592 0x13f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x13f",
+            "instructions": [
+                "CLR_618 = virtualChannels[U]",
+                "REF_1190 = CLR_618",
+                "CLR_619 = REF_1190.isInSettlementState",
+                "REF_1191 = CLR_619",
+                "REF_1190.isInSettlementState = true"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x146",
+            "instructions": [
+                "CLR_620 = virtualChannels[U]",
+                "REF_1202 = CLR_620",
+                "CLR_621 = REF_1202.isClose",
+                "REF_1203 = CLR_621",
+                "RTMP_593 = ! REF_1203",
+                "CONDITION RTMP_593 0x147 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x147",
+            "instructions": [
+                "CLR_622 = Channels[U]",
+                "REF_1204 = CLR_622",
+                "CLR_623 = REF_1204.updateLCtimeout",
+                "REF_1205 = CLR_623",
+                "RTMP_594 = REF_1205 < now",
+                "CONDITION RTMP_594 0x148 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x148",
+            "instructions": [
+                "CLR_624 = Channels[U]",
+                "REF_1206 = CLR_624",
+                "CLR_625 = REF_1206.isOpen",
+                "REF_1207 = CLR_625",
+                "RTMP_595 = REF_1207 == true",
+                "CONDITION RTMP_595 0x149 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x149",
+            "instructions": [
+                "CLR_626 = virtualChannels[U]",
+                "REF_1208 = CLR_626",
+                "CLR_627 = REF_1208.partyA",
+                "REF_1209 = CLR_627",
+                "RTMP_596 = REF_1209 == U",
+                "CONDITION RTMP_596 0x145 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x145",
+            "instructions": [
+                "CLR_628 = virtualChannels[U]",
+                "REF_1200 = CLR_628",
+                "CLR_629 = REF_1200.challenger",
+                "REF_1201 = CLR_629",
+                "CLR_630 = msg.sender",
+                "REF_1200.challenger = CLR_630"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14b",
+            "instructions": [
+                "CLR_631 = virtualChannels[U]",
+                "REF_1212 = CLR_631",
+                "CLR_632 = REF_1212.isClose",
+                "REF_1213 = CLR_632",
+                "RTMP_597 = ! REF_1213",
+                "CONDITION RTMP_597 0x14c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14c",
+            "instructions": [
+                "CLR_633 = Channels[U]",
+                "REF_1214 = CLR_633",
+                "CLR_634 = REF_1214.updateLCtimeout",
+                "REF_1215 = CLR_634",
+                "RTMP_598 = REF_1215 < now",
+                "CONDITION RTMP_598 0x14d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14d",
+            "instructions": [
+                "CLR_635 = Channels[U]",
+                "REF_1216 = CLR_635",
+                "CLR_636 = REF_1216.isOpen",
+                "REF_1217 = CLR_636",
+                "RTMP_599 = REF_1217 == true",
+                "CONDITION RTMP_599 0x14e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14e",
+            "instructions": [
+                "CLR_637 = virtualChannels[U]",
+                "REF_1218 = CLR_637",
+                "CLR_638 = REF_1218.partyA",
+                "REF_1219 = CLR_638",
+                "RTMP_600 = REF_1219 == U",
+                "CONDITION RTMP_600 0x14a 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14a",
+            "instructions": [
+                "CLR_639 = virtualChannels[U]",
+                "REF_1210 = CLR_639",
+                "CLR_640 = REF_1210.sequence",
+                "REF_1211 = CLR_640",
+                "REF_1210.sequence = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x150",
+            "instructions": [
+                "CLR_641 = virtualChannels[U]",
+                "REF_1223 = CLR_641",
+                "CLR_642 = REF_1223.isClose",
+                "REF_1224 = CLR_642",
+                "RTMP_601 = ! REF_1224",
+                "CONDITION RTMP_601 0x151 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x151",
+            "instructions": [
+                "CLR_643 = Channels[U]",
+                "REF_1225 = CLR_643",
+                "CLR_644 = REF_1225.updateLCtimeout",
+                "REF_1226 = CLR_644",
+                "RTMP_602 = REF_1226 < now",
+                "CONDITION RTMP_602 0x152 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x152",
+            "instructions": [
+                "CLR_645 = Channels[U]",
+                "REF_1227 = CLR_645",
+                "CLR_646 = REF_1227.isOpen",
+                "REF_1228 = CLR_646",
+                "RTMP_603 = REF_1228 == true",
+                "CONDITION RTMP_603 0x153 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x153",
+            "instructions": [
+                "CLR_647 = virtualChannels[U]",
+                "REF_1229 = CLR_647",
+                "CLR_648 = REF_1229.partyA",
+                "REF_1230 = CLR_648",
+                "RTMP_604 = REF_1230 == U",
+                "CONDITION RTMP_604 0x14f 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x14f",
+            "instructions": [
+                "CLR_649 = virtualChannels[U]",
+                "REF_1220 = CLR_649",
+                "CLR_650 = REF_1220.ethBalances",
+                "REF_1221 = CLR_650",
+                "CLR_651 = REF_1221[0]",
+                "REF_1222 = CLR_651",
+                "REF_1221[0] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x155",
+            "instructions": [
+                "CLR_652 = virtualChannels[U]",
+                "REF_1234 = CLR_652",
+                "CLR_653 = REF_1234.isClose",
+                "REF_1235 = CLR_653",
+                "RTMP_605 = ! REF_1235",
+                "CONDITION RTMP_605 0x156 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x156",
+            "instructions": [
+                "CLR_654 = Channels[U]",
+                "REF_1236 = CLR_654",
+                "CLR_655 = REF_1236.updateLCtimeout",
+                "REF_1237 = CLR_655",
+                "RTMP_606 = REF_1237 < now",
+                "CONDITION RTMP_606 0x157 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x157",
+            "instructions": [
+                "CLR_656 = Channels[U]",
+                "REF_1238 = CLR_656",
+                "CLR_657 = REF_1238.isOpen",
+                "REF_1239 = CLR_657",
+                "RTMP_607 = REF_1239 == true",
+                "CONDITION RTMP_607 0x158 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x158",
+            "instructions": [
+                "CLR_658 = virtualChannels[U]",
+                "REF_1240 = CLR_658",
+                "CLR_659 = REF_1240.partyA",
+                "REF_1241 = CLR_659",
+                "RTMP_608 = REF_1241 == U",
+                "CONDITION RTMP_608 0x154 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x154",
+            "instructions": [
+                "CLR_660 = virtualChannels[U]",
+                "REF_1231 = CLR_660",
+                "CLR_661 = REF_1231.ethBalances",
+                "REF_1232 = CLR_661",
+                "CLR_662 = REF_1232[1]",
+                "REF_1233 = CLR_662",
+                "REF_1232[1] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15a",
+            "instructions": [
+                "CLR_663 = virtualChannels[U]",
+                "REF_1245 = CLR_663",
+                "CLR_664 = REF_1245.isClose",
+                "REF_1246 = CLR_664",
+                "RTMP_609 = ! REF_1246",
+                "CONDITION RTMP_609 0x15b 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15b",
+            "instructions": [
+                "CLR_665 = Channels[U]",
+                "REF_1247 = CLR_665",
+                "CLR_666 = REF_1247.updateLCtimeout",
+                "REF_1248 = CLR_666",
+                "RTMP_610 = REF_1248 < now",
+                "CONDITION RTMP_610 0x15c 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15c",
+            "instructions": [
+                "CLR_667 = Channels[U]",
+                "REF_1249 = CLR_667",
+                "CLR_668 = REF_1249.isOpen",
+                "REF_1250 = CLR_668",
+                "RTMP_611 = REF_1250 == true",
+                "CONDITION RTMP_611 0x15d 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15d",
+            "instructions": [
+                "CLR_669 = virtualChannels[U]",
+                "REF_1251 = CLR_669",
+                "CLR_670 = REF_1251.partyA",
+                "REF_1252 = CLR_670",
+                "RTMP_612 = REF_1252 == U",
+                "CONDITION RTMP_612 0x159 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x159",
+            "instructions": [
+                "CLR_671 = virtualChannels[U]",
+                "REF_1242 = CLR_671",
+                "CLR_672 = REF_1242.erc20Balances",
+                "REF_1243 = CLR_672",
+                "CLR_673 = REF_1243[0]",
+                "REF_1244 = CLR_673",
+                "REF_1243[0] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15f",
+            "instructions": [
+                "CLR_674 = virtualChannels[U]",
+                "REF_1256 = CLR_674",
+                "CLR_675 = REF_1256.isClose",
+                "REF_1257 = CLR_675",
+                "RTMP_613 = ! REF_1257",
+                "CONDITION RTMP_613 0x160 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x160",
+            "instructions": [
+                "CLR_676 = Channels[U]",
+                "REF_1258 = CLR_676",
+                "CLR_677 = REF_1258.updateLCtimeout",
+                "REF_1259 = CLR_677",
+                "RTMP_614 = REF_1259 < now",
+                "CONDITION RTMP_614 0x161 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x161",
+            "instructions": [
+                "CLR_678 = Channels[U]",
+                "REF_1260 = CLR_678",
+                "CLR_679 = REF_1260.isOpen",
+                "REF_1261 = CLR_679",
+                "RTMP_615 = REF_1261 == true",
+                "CONDITION RTMP_615 0x162 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x162",
+            "instructions": [
+                "CLR_680 = virtualChannels[U]",
+                "REF_1262 = CLR_680",
+                "CLR_681 = REF_1262.partyA",
+                "REF_1263 = CLR_681",
+                "RTMP_616 = REF_1263 == U",
+                "CONDITION RTMP_616 0x15e 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x15e",
+            "instructions": [
+                "CLR_682 = virtualChannels[U]",
+                "REF_1253 = CLR_682",
+                "CLR_683 = REF_1253.erc20Balances",
+                "REF_1254 = CLR_683",
+                "CLR_684 = REF_1254[1]",
+                "REF_1255 = CLR_684",
+                "REF_1254[1] = U"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x164",
+            "instructions": [
+                "CLR_685 = virtualChannels[U]",
+                "REF_1266 = CLR_685",
+                "CLR_686 = REF_1266.isClose",
+                "REF_1267 = CLR_686",
+                "RTMP_617 = ! REF_1267",
+                "CONDITION RTMP_617 0x165 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x165",
+            "instructions": [
+                "CLR_687 = Channels[U]",
+                "REF_1268 = CLR_687",
+                "CLR_688 = REF_1268.updateLCtimeout",
+                "REF_1269 = CLR_688",
+                "RTMP_618 = REF_1269 < now",
+                "CONDITION RTMP_618 0x166 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x166",
+            "instructions": [
+                "CLR_689 = Channels[U]",
+                "REF_1270 = CLR_689",
+                "CLR_690 = REF_1270.isOpen",
+                "REF_1271 = CLR_690",
+                "RTMP_619 = REF_1271 == true",
+                "CONDITION RTMP_619 0x167 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x167",
+            "instructions": [
+                "CLR_691 = virtualChannels[U]",
+                "REF_1272 = CLR_691",
+                "CLR_692 = REF_1272.partyA",
+                "REF_1273 = CLR_692",
+                "RTMP_620 = REF_1273 == U",
+                "CONDITION RTMP_620 0x163 0x1"
+            ]
+        },
+        {
+            "scope": "__RANGE__",
+            "addr": "0x163",
+            "instructions": [
+                "CLR_693 = virtualChannels[U]",
+                "REF_1264 = CLR_693",
+                "CLR_694 = REF_1264.updateVCtimeout",
+                "REF_1265 = CLR_694",
+                "REF_1264.updateVCtimeout = U"
+            ]
+        }
+    ],
+    "root_addr": "0x51d",
+    "dest_addrs": [
+        "0x535"
+    ],
+    "normal_blocks": [
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x51d",
+            "instructions": [
+                "NOP",
+                "_lcID = NEW_VAL integer",
+                "JUMP 0x51e"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x51e",
+            "instructions": [
+                "CLR_695 = Channels[_lcID]",
+                "REF_93 = CLR_695",
+                "CLR_696 = REF_93.partyAddresses",
+                "REF_94 = CLR_696",
+                "CLR_697 = REF_94[0]",
+                "REF_95 = CLR_697",
+                "CLR_698 = msg.sender",
+                "TMP_131 = CLR_698 == REF_95",
+                "CLR_699 = Channels[_lcID]",
+                "REF_96 = CLR_699",
+                "CLR_700 = REF_96.isOpen",
+                "REF_97 = CLR_700",
+                "TMP_132 = REF_97 == false",
+                "TMP_133 = TMP_131 && TMP_132",
+                "CONDITION TMP_133 0x51e_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x51e_r0",
+            "instructions": [
+                "JUMP 0x51f"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x51f",
+            "instructions": [
+                "CLR_701 = Channels[_lcID]",
+                "REF_98 = CLR_701",
+                "CLR_702 = REF_98.LCopenTimeout",
+                "REF_99 = CLR_702",
+                "TMP_135 = now > REF_99",
+                "CONDITION TMP_135 0x51f_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x51f_r0",
+            "instructions": [
+                "JUMP 0x520"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x520",
+            "instructions": [
+                "CLR_703 = Channels[_lcID]",
+                "REF_100 = CLR_703",
+                "CLR_704 = REF_100.initialDeposit",
+                "REF_101 = CLR_704",
+                "CLR_705 = REF_101[0]",
+                "REF_102 = CLR_705",
+                "TMP_137 = REF_102 != 0",
+                "CONDITION TMP_137 0x521 0x522"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x521",
+            "instructions": [
+                "CLR_706 = Channels[_lcID]",
+                "REF_103 = CLR_706",
+                "CLR_707 = REF_103.partyAddresses",
+                "REF_104 = CLR_707",
+                "CLR_708 = REF_104[0]",
+                "REF_105 = CLR_708",
+                "CLR_709 = Channels[_lcID]",
+                "REF_107 = CLR_709",
+                "CLR_710 = REF_107.ethBalances",
+                "REF_108 = CLR_710",
+                "CLR_711 = REF_108[0]",
+                "REF_109 = CLR_711",
+                "CLR_712 = this.balance",
+                "WRP_0 = CLR_712 - REF_109",
+                "this.balance = WRP_0",
+                "JUMP 0x523"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x523",
+            "instructions": [
+                "NOP",
+                "JUMP 0x524"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x524",
+            "instructions": [
+                "CLR_713 = Channels[_lcID]",
+                "REF_110 = CLR_713",
+                "CLR_714 = REF_110.initialDeposit",
+                "REF_111 = CLR_714",
+                "CLR_715 = REF_111[1]",
+                "REF_112 = CLR_715",
+                "TMP_139 = REF_112 != 0",
+                "CONDITION TMP_139 0x525 0x522"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x525",
+            "instructions": [
+                "CLR_716 = Channels[_lcID]",
+                "REF_113 = CLR_716",
+                "CLR_717 = REF_113.token",
+                "REF_114 = CLR_717",
+                "CLR_718 = Channels[_lcID]",
+                "REF_116 = CLR_718",
+                "CLR_719 = REF_116.partyAddresses",
+                "REF_117 = CLR_719",
+                "CLR_720 = REF_117[0]",
+                "REF_118 = CLR_720",
+                "CLR_721 = Channels[_lcID]",
+                "REF_119 = CLR_721",
+                "CLR_722 = REF_119.erc20Balances",
+                "REF_120 = CLR_722",
+                "CLR_723 = REF_120[0]",
+                "REF_121 = CLR_723",
+                "ATTACK",
+                "TMP_140 = NEW_VAL boolean",
+                "JUMP 0x526"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x526",
+            "instructions": [
+                "NOP",
+                "_lcID = NEW_VAL integer",
+                "_confirmTime = NEW_VAL integer",
+                "_token = NEW_VAL integer",
+                "_balances = NEW_COL integer",
+                "_partyI = NEW_VAL integer",
+                "JUMP 0x527"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x527",
+            "instructions": [
+                "CLR_724 = Channels[_lcID]",
+                "REF_54 = CLR_724",
+                "CLR_725 = REF_54.partyAddresses",
+                "REF_55 = CLR_725",
+                "CLR_726 = REF_55[0]",
+                "REF_56 = CLR_726",
+                "TMP_113 = 0",
+                "TMP_114 = REF_56 == TMP_113",
+                "CONDITION TMP_114 0x527_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x527_r0",
+            "instructions": [
+                "JUMP 0x528"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x528",
+            "instructions": [
+                "TMP_116 = _partyI != 0",
+                "CONDITION TMP_116 0x528_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x528_r0",
+            "instructions": [
+                "JUMP 0x529"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x529",
+            "instructions": [
+                "CLR_727 = _balances[0]",
+                "REF_57 = CLR_727",
+                "TMP_118 = REF_57 >= 0",
+                "CLR_728 = _balances[1]",
+                "REF_58 = CLR_728",
+                "TMP_119 = REF_58 >= 0",
+                "TMP_120 = TMP_118 && TMP_119",
+                "CONDITION TMP_120 0x529_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x529_r0",
+            "instructions": [
+                "JUMP 0x52a"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x52a",
+            "instructions": [
+                "CLR_729 = Channels[_lcID]",
+                "REF_59 = CLR_729",
+                "CLR_730 = REF_59.partyAddresses",
+                "REF_60 = CLR_730",
+                "CLR_731 = REF_60[0]",
+                "REF_61 = CLR_731",
+                "CLR_732 = msg.sender",
+                "REF_60[0] = CLR_732",
+                "CLR_733 = Channels[_lcID]",
+                "REF_62 = CLR_733",
+                "CLR_734 = REF_62.partyAddresses",
+                "REF_63 = CLR_734",
+                "CLR_735 = REF_63[1]",
+                "REF_64 = CLR_735",
+                "REF_63[1] = _partyI",
+                "CLR_736 = _balances[0]",
+                "REF_65 = CLR_736",
+                "TMP_122 = REF_65 != 0",
+                "CONDITION TMP_122 0x52b 0x522"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x52b",
+            "instructions": [
+                "CLR_737 = _balances[0]",
+                "REF_66 = CLR_737",
+                "CLR_738 = msg.value",
+                "TMP_123 = CLR_738 == REF_66",
+                "CONDITION TMP_123 0x52b_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x52b_r0",
+            "instructions": [
+                "JUMP 0x52c"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x52d",
+            "instructions": [
+                "NOP",
+                "JUMP 0x52e"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x52e",
+            "instructions": [
+                "CLR_739 = _balances[1]",
+                "REF_70 = CLR_739",
+                "TMP_125 = REF_70 != 0",
+                "CONDITION TMP_125 0x52f 0x522"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x52f",
+            "instructions": [
+                "CLR_740 = Channels[_lcID]",
+                "REF_71 = CLR_740",
+                "CLR_741 = REF_71.token",
+                "REF_72 = CLR_741",
+                "TMP_126 = NEW_VAL unknown",
+                "REF_71.token = TMP_126",
+                "CLR_742 = Channels[_lcID]",
+                "REF_73 = CLR_742",
+                "CLR_743 = REF_73.token",
+                "REF_74 = CLR_743",
+                "CLR_744 = _balances[1]",
+                "REF_76 = CLR_744",
+                "TMP_127 = NEW_VAL boolean",
+                "JUMP 0x530"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x531",
+            "instructions": [
+                "NOP",
+                "JUMP 0x532"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x532",
+            "instructions": [
+                "CLR_745 = Channels[_lcID]",
+                "REF_81 = CLR_745",
+                "CLR_746 = REF_81.sequence",
+                "REF_82 = CLR_746",
+                "REF_81.sequence = 0",
+                "CLR_747 = Channels[_lcID]",
+                "REF_83 = CLR_747",
+                "CLR_748 = REF_83.confirmTime",
+                "REF_84 = CLR_748",
+                "REF_83.confirmTime = _confirmTime",
+                "CLR_749 = Channels[_lcID]",
+                "REF_85 = CLR_749",
+                "CLR_750 = REF_85.LCopenTimeout",
+                "REF_86 = CLR_750",
+                "TMP_129 = now + _confirmTime",
+                "REF_85.LCopenTimeout = TMP_129",
+                "CLR_751 = Channels[_lcID]",
+                "REF_87 = CLR_751",
+                "CLR_752 = REF_87.initialDeposit",
+                "REF_88 = CLR_752",
+                "REF_87.initialDeposit = _balances",
+                "CLR_753 = _balances[0]",
+                "REF_89 = CLR_753",
+                "CLR_754 = _balances[1]",
+                "REF_90 = CLR_754",
+                "CLR_755 = Channels[_lcID]",
+                "REF_91 = CLR_755",
+                "CLR_756 = REF_91.LCopenTimeout",
+                "REF_92 = CLR_756",
+                "NOP",
+                "JUMP 0x533"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x530",
+            "instructions": [
+                "CONDITION TMP_127 0x530_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x530_r0",
+            "instructions": [
+                "JUMP 0x534"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x534",
+            "instructions": [
+                "CLR_757 = Channels[_lcID]",
+                "REF_77 = CLR_757",
+                "CLR_758 = REF_77.erc20Balances",
+                "REF_78 = CLR_758",
+                "CLR_759 = REF_78[0]",
+                "REF_79 = CLR_759",
+                "CLR_760 = _balances[1]",
+                "REF_80 = CLR_760",
+                "REF_78[0] = REF_80",
+                "JUMP 0x531"
+            ]
+        },
+        {
+            "scope": "createChannel",
+            "addr": "0x52c",
+            "instructions": [
+                "CLR_761 = Channels[_lcID]",
+                "REF_67 = CLR_761",
+                "CLR_762 = REF_67.ethBalances",
+                "REF_68 = CLR_762",
+                "CLR_763 = REF_68[0]",
+                "REF_69 = CLR_763",
+                "CLR_764 = msg.value",
+                "REF_68[0] = CLR_764",
+                "JUMP 0x52d"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x535",
+            "instructions": [
+                "CLR_765 = Channels[_lcID]",
+                "REF_128 = CLR_765",
+                "NOP"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x536",
+            "instructions": [
+                "CLR_766 = Channels[_lcID]",
+                "REF_122 = CLR_766",
+                "CLR_767 = REF_122.ethBalances",
+                "REF_123 = CLR_767",
+                "CLR_768 = REF_123[0]",
+                "REF_124 = CLR_768",
+                "CLR_769 = Channels[_lcID]",
+                "REF_125 = CLR_769",
+                "CLR_770 = REF_125.erc20Balances",
+                "REF_126 = CLR_770",
+                "CLR_771 = REF_126[0]",
+                "REF_127 = CLR_771",
+                "NOP",
+                "JUMP 0x535"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x533",
+            "instructions": [
+                "CONDITION TMP_140 0x533_r0 0xRequireTrap"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x533_r0",
+            "instructions": [
+                "JUMP 0x537"
+            ]
+        },
+        {
+            "scope": "LCOpenTimeout",
+            "addr": "0x537",
+            "instructions": [
+                "NOP",
+                "JUMP 0x536"
+            ]
+        },
+        {
+            "scope": "trap",
+            "addr": "0x522",
+            "instructions": [
+                "NOP"
+            ]
+        },
+        {
+            "scope": "RequireTrap",
+            "addr": "0xRequireTrap",
+            "instructions": [
+                "NOP"
+            ]
+        }
+    ]
+}

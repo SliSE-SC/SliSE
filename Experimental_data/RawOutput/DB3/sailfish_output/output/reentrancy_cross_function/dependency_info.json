@@ -1,0 +1,40 @@
+{
+    "reentrancy_cross_function.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "withdrawBalance",
+                "transfer"
+            ],
+            "from_function": "transfer",
+            "to_function": "withdrawBalance",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 2\nFunction: transfer\nNode: \nIF userBalances[msg.sender] >= amount\nIRS: \nCONDITION TMP_0\"",
+                        "\"BlockID: 9\nFunction: withdrawBalance\nNode: \nEXPRESSION userBalances[msg.sender] = 0\nIRS: \nREF_6 := 0\""
+                    ],
+                    "state_variable": "userBalances"
+                }
+            ]
+        },
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "withdrawBalance",
+                "withdrawBalance"
+            ],
+            "from_function": "withdrawBalance",
+            "to_function": "withdrawBalance",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 11\nFunction: withdrawBalance\nNode: \nEXPRESSION (success) = msg.sender.call.value(amountToWithdraw)()\nIRS: \nTMP_2(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[''] value:amountToWithdraw \"",
+                        "\"BlockID: 9\nFunction: withdrawBalance\nNode: \nEXPRESSION userBalances[msg.sender] = 0\nIRS: \nREF_6 := 0\""
+                    ],
+                    "state_variable": "userBalances"
+                }
+            ]
+        }
+    ]
+}

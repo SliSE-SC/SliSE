@@ -1,0 +1,725 @@
+[00:00:00:00] Fuzz target : /home/test/benchmarks/B2/bin/lucky_doubler.bin
+[00:00:00:00] Fuzzing starts at 08:40:10
+[00:00:00:00] Time limit : 3600 s
+[DEBUG] Analyzing constructor @ 0
+Found sstore(<0x1, { }, { }>, <0x0, { }, { }>) @ 0x9
+Found sstore(<0x2, { }, { }>, <0x5, { }, { }>) @ 0xe
+Found sstore(<0x3, { }, { }>, <0x7D, { }, { }>) @ 0x13
+Found sload(<0x0, { }, { }>) @ 0x2a
+Found sstore(<0x0, { }, { }>, <T, { }, { CALLER, var_0 }>) @ 0x5f
+Found codecopy(<0x0, { }, { }>, _, _), arg# = 0
+constructor: Def = { var_0, var_1, var_2, var_3 }, Use = { var_0 }
+Constructor tainted: { var_0 }
+[DEBUG] Analyzing multiplierFactor(30677b83) @ 98
+Found sload(<0x3, { }, { }>) @ 0x50c
+multiplierFactor(30677b83): Def = {  }, Use = { var_3 }
+[DEBUG] Analyzing changeFee(6a1db1bf) @ 12f
+Found sload(<0x0, { }, { }>) @ 0x59c
+Found sload(<0x2, { }, { }>) @ 0x5f1
+Found sstore(<0x2, { }, { }>, <T, { }, { }>) @ 0x602
+changeFee(6a1db1bf): (onlyOwner) Def = { var_2 }, Use = { var_0, var_2 }
+[DEBUG] Analyzing totalEntries(7fef036e) @ 15c
+Found sload(<0x5, { }, { }>) @ 0x60f
+totalEntries(7fef036e): Def = {  }, Use = { var_5 }
+[DEBUG] Analyzing userStats(8a65d874) @ 1f3
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0x6b2
+Found sload(<T, { Sha(*, 0x4) + 0x1 }, { }>) @ 0x72f
+Found sload(<T, { Sha(*, 0x4) + 0x2 }, { }>) @ 0x774
+userStats(8a65d874): Def = {  }, Use = { map_4, map_4.off_1, map_4.off_2 }
+[DEBUG] Analyzing changeOwner(a6f9dae1) @ 2bd
+Found sload(<0x0, { }, { }>) @ 0x7e2
+Found sload(<0x0, { }, { }>) @ 0x83c
+Found sstore(<0x0, { }, { }>, <T, { }, { var_0 }>) @ 0x871
+changeOwner(a6f9dae1): (onlyOwner) Def = { var_0 }, Use = { var_0 }
+[DEBUG] Analyzing changeMultiplier(ced92670) @ 300
+Found sload(<0x0, { }, { }>) @ 0x87b
+Found sstore(<0x3, { }, { }>, <T, { }, { }>) @ 0x8ea
+changeMultiplier(ced92670): (onlyOwner) Def = { var_3 }, Use = { var_0 }
+[DEBUG] Analyzing currentFee(da3c300d) @ 32d
+Found sload(<0x2, { }, { }>) @ 0x8f6
+currentFee(da3c300d): Def = {  }, Use = { var_2 }
+[DEBUG] Analyzing entryDetails(f67abd87) @ 3c4
+Found sload(<0x5, { }, { }>) @ 0x98c
+Found sload(<0x5, { }, { }>) @ 0x99a
+Found sload(<T, { Sha(0x5) }, { }>) @ 0x9b9
+Found sload(<0x5, { }, { }>) @ 0x9e5
+Found sload(<T, { Sha(0x5) + 0x2 }, { }>) @ 0xa01
+Found sload(<0x5, { }, { }>) @ 0xa12
+Found sload(<T, { Sha(0x5) + 0x3 }, { }>) @ 0xa31
+entryDetails(f67abd87): Def = {  }, Use = { arr_5, arr_5.off_2, arr_5.off_3, var_5 }
+[DEBUG] Analyzing fallback @ 0
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0xb97
+Found sload(<T, { Sha(*, 0x4) }, { }>) @ 0xc1b
+Found sstore(<T, { Sha(*, 0x4) }, { }>, <T, { }, { CALLER, map_4 }>) @ 0xc50
+Found sstore(<T, { Sha(*, 0x4) + 0x1 }, { }>, <0x0, { }, { }>) @ 0xc98
+Found sstore(<T, { Sha(*, 0x4) + 0x2 }, { }>, <0x0, { }, { }>) @ 0xce0
+Found sload(<0x3, { }, { }>) @ 0xd17
+Found sload(<0x5, { }, { }>) @ 0xd35
+Found sstore(<0x5, { }, { }>, <T, { }, { var_5 }>) @ 0xd39
+Found sload(<T, { Sha(0x5) }, { var_5 }>) @ 0xd6b
+Found sstore(<T, { Sha(0x5) }, { var_5 }>, <_, { }, { arr_5 }>) @ 0xda0
+Found sstore(<T, { Sha(0x5) + 0x1 }, { var_5 }>, <_, { }, { }>) @ 0xdab
+Found sstore(<T, { Sha(0x5) + 0x2 }, { var_5 }>, <_, { }, { }>) @ 0xdb5
+Found sload(<T, { Sha(0x5) + 0x3 }, { var_5 }>) @ 0xdc6
+Found sstore(<T, { Sha(0x5) + 0x3 }, { var_5 }>, <T, { }, { arr_5.off_3 }>) @ 0xdd4
+Found sload(<T, { Sha(*, 0x4) + 0x1 }, { }>) @ 0xe1e
+Found sstore(<T, { Sha(*, 0x4) + 0x1 }, { }>, <T, { }, { map_4.off_1 }>) @ 0xe29
+Found sload(<0x5, { }, { }>) @ 0xe32
+Found sload(<0x6, { }, { }>) @ 0xe3b
+Found sstore(<0x6, { }, { }>, <T, { }, { var_6 }>) @ 0xe3f
+Found sstore(<T, { Sha(0x6) }, { var_6 }>, <T, { }, { var_5 }>) @ 0xe5d
+Found sload(<0x2, { }, { }>) @ 0xe63
+Found sload(<0x1, { }, { }>) @ 0xe79
+Found sstore(<0x1, { }, { }>, <T, { }, { var_1, var_2 }>) @ 0xe80
+Found sload(<0x6, { }, { }>) @ 0xe87
+Found sload(<0x6, { }, { }>) @ 0xe9c
+Found sload(<0x6, { }, { }>) @ 0xead
+Found sload(<T, { Sha(0x6) }, { var_6 }>) @ 0xec2
+Found sload(<0x5, { }, { }>) @ 0xec4
+Found sload(<T, { Sha(0x5) + 0x2 }, { arr_6 }>) @ 0xee3
+Found sload(<0x1, { }, { }>) @ 0xee6
+Found sload(<T, { Sha(0x5) + 0x2 }, { arr_6 }>) @ 0xef1
+Found sload(<T, { Sha(0x5) }, { arr_6 }>) @ 0xefb
+Found sload(<T, { Sha(0x5) + 0x3 }, { arr_6 }>) @ 0xf5b
+Found sstore(<T, { Sha(0x5) + 0x3 }, { arr_6 }>, <T, { }, { arr_5.off_3 }>) @ 0xf69
+Found sload(<T, { Sha(0x5) }, { arr_6 }>) @ 0xf76
+Found sload(<T, { Sha(*, 0x4) + 0x2 }, { }>) @ 0xfd4
+Found sstore(<T, { Sha(*, 0x4) + 0x2 }, { }>, <T, { }, { map_4.off_2 }>) @ 0xfdf
+Found sload(<0x1, { }, { }>) @ 0xfe8
+Found sstore(<0x1, { }, { }>, <T, { }, { arr_5.off_2, var_1 }>) @ 0xfef
+Found sload(<0x6, { }, { }>) @ 0xff6
+Found sload(<0x6, { }, { }>) @ 0x1008
+Found sload(<0x6, { }, { }>) @ 0x100d
+Found sload(<T, { Sha(0x6) }, { var_6 }>) @ 0x1022
+Found sload(<0x6, { }, { }>) @ 0x1027
+Found sstore(<T, { Sha(0x6) }, { var_6 }>, <T, { }, { arr_6 }>) @ 0x103e
+Found sload(<0x6, { }, { }>) @ 0x1044
+Found sload(<0x6, { }, { }>) @ 0x1145
+Found sstore(<0x6, { }, { }>, <T, { }, { var_6 }>) @ 0x1148
+Found sstore(<T, { Sha(0x6) }, { var_6 }>, <0x0, { }, { }>) @ 0x1184
+Found sload(<0x1, { }, { }>) @ 0x105a
+Found sload(<0x0, { }, { }>) @ 0x1083
+fallback: Def = { arr_5, arr_5.off_1, arr_5.off_2, arr_5.off_3, arr_6, map_4, map_4.off_1, map_4.off_2, var_1, var_5, var_6 }, Use = { arr_5, arr_5.off_2, arr_5.off_3, arr_6, map_4, map_4.off_1, map_4.off_2, var_0, var_1, var_2, var_3, var_5, var_6 }
+Pruning out ["fallback"]
+Pruning out ["changeMultiplier(ced92670)"]
+(11 candidate sequences)
+["changeOwner(a6f9dae1)"; "fallback"]
+["changeOwner(a6f9dae1)"; "changeOwner(a6f9dae1)"]
+["changeOwner(a6f9dae1)"; "changeMultiplier(ced92670)";
+ "multiplierFactor(30677b83)"]
+["changeOwner(a6f9dae1)"; "changeMultiplier(ced92670)"; "fallback"]
+["changeOwner(a6f9dae1)"; "changeFee(6a1db1bf)"]
+["changeFee(6a1db1bf)"; "fallback"; "userStats(8a65d874)"]
+["changeFee(6a1db1bf)"; "fallback"; "totalEntries(7fef036e)"]
+["changeFee(6a1db1bf)"; "fallback"; "fallback"]
+["changeFee(6a1db1bf)"; "fallback"; "entryDetails(f67abd87)"]
+["changeFee(6a1db1bf)"; "currentFee(da3c300d)"]
+["changeFee(6a1db1bf)"; "changeFee(6a1db1bf)"]
+[00:00:00:01] Start main fuzzing phase
+[00:00:00:01] Tx#2 found MishandledException at 4ef
+[00:00:00:01] Tx#2 found MishandledExceptionMythril at 4ef
+[00:00:00:01] Tx#2 found MishandledExceptionManticore at 4ef
+[00:00:00:01] [*] Save bug seed id-00000-ME-ME_mant-ME_myth_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00000_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:01] [*] Save new seed id-00001_00001: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00002_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: changeMultiplier(ced92670), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: multiplierFactor(30677b83), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00003_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 2    ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] Tx#2 found MishandledExceptionSFuzz at 4ef
+[00:00:00:02] Tx#2 found MishandledExceptionILF at 4ef
+[00:00:00:02] [*] Save bug seed id-00001-ME_ilf-ME_sfuzz_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: userStats(8a65d874), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00004_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: userStats(8a65d874), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00005_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: totalEntries(7fef036e), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00006_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: entryDetails(f67abd87), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00007_00002: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 2    ) Function: currentFee(da3c300d), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00008_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 400000003F000000000000000000000041000000008000000000008000000001
+(    TX 2    ) Function: totalEntries(7fef036e), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: userStats(8a65d874), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 5    ) Function: changeMultiplier(ced92670), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:02] [*] Save new seed id-00009_00002: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 000000000000000000000000000000FA00000000000000000000000000000000
+(    TX 2    ) Function: changeMultiplier(ced92670), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000200000000000000000000000000000000000000000000000000000000
+
+[00:00:00:03] Tx#2 found MishandledException at b27
+[00:00:00:03] Tx#2 found MishandledException at 10cf
+[00:00:00:03] Tx#2 found MishandledExceptionMythril at b27
+[00:00:00:03] Tx#2 found MishandledExceptionMythril at 10cf
+[00:00:00:03] Tx#2 found MishandledExceptionManticore at b27
+[00:00:00:03] Tx#2 found MishandledExceptionManticore at 10cf
+[00:00:00:03] Tx#2 found MultipleSend at 10cf
+[00:00:00:03] [*] Save bug seed id-00002-ME-ME_mant-ME_myth-MS_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+( => TX 2 <= ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000008600000000000000
+
+[00:00:00:03] [*] Save new seed id-00010_00003: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+( => TX 2 <= ) Function: fallback, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000008600000000000000
+
+[00:00:00:05] [*] Save new seed id-00011_00005: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeMultiplier(ced92670), From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000092
+(    TX 2    ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:07] [*] Save new seed id-00012_00007: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000FF0000000000000005000000000000000000004000000000000000000000
+(    TX 2    ) Function: changeFee(6a1db1bf), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF19FF7FFFFFFFFFFFFFFF
+(    TX 3    ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 4    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000010000000000000000000000000000000000
+
+[00:00:00:07] Tx#2 found MishandledExceptionSFuzz at b27
+[00:00:00:07] Tx#2 found MishandledExceptionILF at b27
+[00:00:00:07] [*] Save bug seed id-00003-ME_ilf-ME_sfuzz_00007: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: fallback, From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000008600000000000000
+(    TX 3    ) Function: userStats(8a65d874), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:07] [*] Save new seed id-00013_00007: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000008600000000000000
+(    TX 3    ) Function: totalEntries(7fef036e), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:09] [*] Save new seed id-00014_00009: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 2 <= ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000008600000000000000
+(    TX 3    ) Function: entryDetails(f67abd87), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+
+[00:00:00:14] Tx#3 found IntegerBug at e66
+[00:00:00:14] Tx#3 found IntegerBug at e68
+[00:00:00:14] Tx#3 found IntegerBug at 1073
+[00:00:00:14] Tx#3 found IntegerBugSFuzz at e66
+[00:00:00:14] Tx#3 found IntegerBugSFuzz at 1073
+[00:00:00:14] Tx#3 found IntegerBugMythril at e66
+[00:00:00:14] Tx#3 found IntegerBugMythril at e68
+[00:00:00:14] Tx#3 found IntegerBugMythril at 1073
+[00:00:00:14] Tx#3 found IntegerBugManticore at e66
+[00:00:00:14] Tx#3 found IntegerBugManticore at e68
+[00:00:00:14] Tx#3 found MishandledException at f47
+[00:00:00:14] Tx#3 found MishandledExceptionSFuzz at f47
+[00:00:00:14] Tx#3 found MishandledExceptionILF at f47
+[00:00:00:14] Tx#3 found MishandledExceptionMythril at f47
+[00:00:00:14] Tx#3 found MishandledExceptionManticore at f47
+[00:00:00:14] Tx#3 found MultipleSend at f47
+[00:00:00:14] [*] Save bug seed id-00004-IB-IB_mant-IB_myth-IB_sfuzz-ME-ME_ilf-ME_mant-ME_myth-ME_sfuzz-MS_00014: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 000000000000000000001E000000000000000000000000000000000000000000
+(    TX 2    ) Function: userStats(8a65d874), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000004500000000000000
+(    TX 4    ) Function: userStats(8a65d874), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:14] [*] Save new seed id-00015_00014: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 000000000000000000001E000000000000000000000000000000000000000000
+(    TX 2    ) Function: userStats(8a65d874), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000004500000000000000
+(    TX 4    ) Function: userStats(8a65d874), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+
+[00:00:00:22] [*] Save new seed id-00016_00022: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser2, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000008600000000000000
+(    TX 2    ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 3 <= ) Function: userStats(8a65d874), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 226CC61B3EAC93CC2CC9D6CB8D61856670D50FAD
+
+[00:00:00:27] Tx#2 found MishandledExceptionSFuzz at 10cf
+[00:00:00:27] Tx#2 found MishandledExceptionILF at 10cf
+[00:00:00:27] [*] Save bug seed id-00005-ME_ilf-ME_sfuzz_00027: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: entryDetails(f67abd87), From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0400000000000000000000000000000000000000000000000000000000000001
+(    TX 2    ) Function: fallback, From: TargetOwner, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000400000000000200000
+( => TX 3 <= ) Function: changeFee(6a1db1bf), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000020000000040000000000000000000000000000000
+(    TX 4    ) Function: entryDetails(f67abd87), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000080000000000000000
+
+[00:00:00:49] Tx#5 found BlockstateDependency at f47
+[00:00:00:49] Tx#5 found BlockstateDependency at 10cf
+[00:00:00:49] Tx#5 found BlockstateDependencySFuzz at 1117
+[00:00:00:49] Tx#5 found BlockstateDependencyMythril at eb5
+[00:00:00:49] Tx#5 found BlockstateDependencyMythril at 1000
+[00:00:00:49] Tx#5 found BlockstateDependencyMythril at 102f
+[00:00:00:49] Tx#5 found BlockstateDependencyManticore at 1117
+[00:00:00:49] Tx#5 found BlockstateDependencyManticore at 111c
+[00:00:00:49] [*] Save bug seed id-00006-BD-BD_mant-BD_myth-BD_sfuzz_00049: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000008600000000000000
+(    TX 2    ) Function: totalEntries(7fef036e), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 400000003F000000000000000000000041000000008000000000008000000001
+(    TX 4    ) Function: userStats(8a65d874), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 5    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000D40000000000000000
+(    TX 6    ) Function: changeMultiplier(ced92670), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000001000000
+
+[00:00:00:49] [*] Save new seed id-00017_00049: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+( => TX 1 <= ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000008600000000000000
+(    TX 2    ) Function: totalEntries(7fef036e), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 400000003F000000000000000000000041000000008000000000008000000001
+(    TX 4    ) Function: userStats(8a65d874), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 5    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000D40000000000000000
+(    TX 6    ) Function: changeMultiplier(ced92670), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000001000000
+
+[00:00:01:22] Tx#5 found EtherLeak at 10cf
+[00:00:01:22] [*] Save bug seed id-00007-EL_00082: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser3, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000008600000000000000
+( => TX 2 <= ) Function: totalEntries(7fef036e), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 400000003F000000000000000000000041000000008000000000008000000001
+(    TX 4    ) Function: userStats(8a65d874), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+(    TX 5    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000D40000000000000000
+(    TX 6    ) Function: changeMultiplier(ced92670), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000001000000
+
+[00:00:01:57] [*] Save new seed id-00018_00117: 
+(    TX 0    ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000008600000000000000
+(    TX 2    ) Function: totalEntries(7fef036e), From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: userStats(8a65d874), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000000000000000000000000000000000
+( => TX 4 <= ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 5    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000D40000000000000000
+(    TX 6    ) Function: changeMultiplier(ced92670), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 0000000000000000000000000000000000000000000000000000000001000000
+
+[00:00:16:40] Tx#6 found BlockstateDependency at 4ef
+[00:00:16:40] [*] Save bug seed id-00008-BD_01000: 
+( => TX 0 <= ) Function: constructor, From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 1    ) Function: fallback, From: NormalUser1, UseAgent: true
+          Value : uint256
+                 0000000000000000000000000000000000000000000000008600000000000000
+(    TX 2    ) Function: totalEntries(7fef036e), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+(    TX 3    ) Function: changeOwner(a6f9dae1), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 6B773032D99FB9AAD6FC267651C446FA7F9301AF
+(    TX 4    ) Function: fallback, From: NormalUser1, UseAgent: false
+          Value : uint256
+                 7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF98FFFFFFFFFFFFFFFFFF
+(    TX 5    ) Function: userStats(8a65d874), From: NormalUser1, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : address
+                 0000000000500000000000000000000000000000
+(    TX 6    ) Function: fallback, From: NormalUser2, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000D40000000000000000
+(    TX 7    ) Function: changeMultiplier(ced92670), From: TargetOwner, UseAgent: false
+          Value : uint256
+                 0000000000000000000000000000000000000000000000000000000000000000
+          Arg1 : uint256
+                 3F00000000000000000000000000000000000000000000000000000001000000
+
+Fuzzing timeout expired.
+[00:01:00:00] ===== Statistics =====
+[00:01:00:00] Total Executions: 561441
+[00:01:00:00] Deployment failures: 0
+[00:01:00:00] Test Cases: 19
+[00:01:00:00] Covered Edges: 123
+[00:01:00:00] Covered Instructions: 2335
+[00:01:00:00] Covered Def-Use Chains: 108
+[00:01:00:00] Found Bugs:
+[00:01:00:00]   Assertion Failure: 0
+[00:01:00:00]   Arbitrary Write: 0
+[00:01:00:00]   Block state Dependency: 3
+[00:01:00:00]   Control Hijack: 0
+[00:01:00:00]   Ether Leak: 1
+[00:01:00:00]   Integer Bug: 3
+[00:01:00:00]   Mishandled Exception: 4
+[00:01:00:00]   Multiple Send: 2
+[00:01:00:00]   Reentrancy: 0
+[00:01:00:00]   Suicidal Contract: 0
+[00:01:00:00]   Transaction Origin Use: 0
+[00:01:00:00]   Freezing Ether: 0
+[00:01:00:00]   Requirement Violation: 0
+[00:01:00:00] Done, clean up and exit...

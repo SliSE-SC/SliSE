@@ -1,0 +1,22 @@
+{
+    "reentrancy_simple.sol": [
+        {
+            "attack_type": "DAO",
+            "composed_functions": [
+                "withdrawBalance",
+                "withdrawBalance"
+            ],
+            "from_function": "withdrawBalance",
+            "to_function": "withdrawBalance",
+            "dependencies": [
+                {
+                    "path": [
+                        "\"BlockID: 9\nFunction: withdrawBalance\nNode: \nIF ! (msg.sender.call.value(userBalance[msg.sender])())\nIRS: \nTMP_1(bool) = LOW_LEVEL_CALL, dest:msg.sender, function:call, arguments:[] value:REF_4 \"",
+                        "\"BlockID: 7\nFunction: withdrawBalance\nNode: \nEXPRESSION userBalance[msg.sender] = 0\nIRS: \nREF_5 := 0\""
+                    ],
+                    "state_variable": "userBalance"
+                }
+            ]
+        }
+    ]
+}

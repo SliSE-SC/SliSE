@@ -1,0 +1,41 @@
+INFO:Slither:Compilation warnings/errors on /sb/Brokerage_1.sol:
+/sb/Brokerage_1.sol:3:1: Warning: Experimental features are turned on. Do not use experimental features on live deployments.
+pragma experimental ABIEncoderV2; // to enable structure-type parameter
+^-------------------------------^
+
+INFO:Detectors:[93m
+LibOrder.hashOrder (/sb/Brokerage_1.sol#483-495) is declared view but contains assembly code
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#constant-functions-changing-the-state[0m
+INFO:Detectors:[93m
+recovered in LibSignature.isValidSignature (/sb/Brokerage_1.sol#372-373) is a local variable never initialiazed
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#uninitialized-local-variables[0m
+INFO:Detectors:[92m
+LibOrder.hashOrder uses assembly (/sb/Brokerage_1.sol#483-495)
+	- /sb/Brokerage_1.sol#490-495
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#assembly-usage[0m
+INFO:Detectors:[92m
+Different versions of Solidity is used in /sb/Brokerage_1.sol:
+	- Version used: ['ABIEncoderV2', '^0.5.2']
+	- /sb/Brokerage_1.sol#1 declares pragma solidity^0.5.2
+	- /sb/Brokerage_1.sol#3 declares pragma experimentalABIEncoderV2
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#different-pragma-directives-are-used[0m
+INFO:Detectors:[92m
+Brokerage.currentBroker (/sb/Brokerage_1.sol) should be declared external
+Brokerage.getBroker (/sb/Brokerage_1.sol) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Function 'LibMathSigned.WAD' (/sb/Brokerage_1.sol#11-13) is not in mixedCase
+Constant 'LibMathSigned.fixed_digits' (/sb/Brokerage_1.sol#121) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'LibMathSigned.fixed_1' (/sb/Brokerage_1.sol#122) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'LibMathSigned.fixed_e' (/sb/Brokerage_1.sol#123) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'LibMathSigned.longer_digits' (/sb/Brokerage_1.sol#124) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'LibMathSigned.longer_fixed_log_e_1_5' (/sb/Brokerage_1.sol#125) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'LibMathSigned.longer_fixed_1' (/sb/Brokerage_1.sol#126) is not in UPPER_CASE_WITH_UNDERSCORES
+Constant 'LibMathSigned.longer_fixed_log_e_10' (/sb/Brokerage_1.sol#127) is not in UPPER_CASE_WITH_UNDERSCORES
+Function 'LibMathUnsigned.WAD' (/sb/Brokerage_1.sol#235-239) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Detectors:[92m
+LibEIP712.DOMAIN_NAME (/sb/Brokerage_1.sol#317-319) is never used in LibEIP712
+LibEIP712.EIP712_DOMAIN_TYPEHASH (/sb/Brokerage_1.sol#328-330) is never used in LibEIP712
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-state-variables[0m
+INFO:Slither:/sb/Brokerage_1.sol analyzed (7 contracts), 16 result(s) found

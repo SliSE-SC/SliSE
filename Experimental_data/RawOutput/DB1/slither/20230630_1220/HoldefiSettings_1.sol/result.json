@@ -1,0 +1,339 @@
+{
+    "errors": [
+        "EXIT_CODE_34"
+    ],
+    "fails": [],
+    "findings": [
+        {
+            "confidence": "High",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "fallback",
+            "impact": "Medium",
+            "line": 501,
+            "line_end": 503,
+            "message": "Contract locking ether found in HoldefiSettings_1.sol:\n\tContract HoldefiSettings has payable functions:\n\t - fallback (HoldefiSettings_1.sol#501-503)\n\tBut does not have a function to withdraw the ether\n",
+            "name": "locked-ether"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "addMarket",
+            "impact": "Medium",
+            "line": 670,
+            "line_end": 689,
+            "message": "Reentrancy in HoldefiSettings.addMarket (HoldefiSettings_1.sol#670-689):\n\tExternal calls:\n\t- setBorrowRateInternal(market,borrowRate) (HoldefiSettings_1.sol#685)\n\t- setSuppliersShareRateInternal(market,suppliersShareRate) (HoldefiSettings_1.sol#686)\n\tState variables written after the call(s):\n\t- marketAssets (HoldefiSettings_1.sol#686)\n\t- marketAssets (HoldefiSettings_1.sol#688)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "setBorrowRateInternal",
+            "impact": "Medium",
+            "line": 764,
+            "line_end": 784,
+            "message": "Reentrancy in HoldefiSettings.setBorrowRateInternal (HoldefiSettings_1.sol#764-784):\n\tExternal calls:\n\t- holdefiContract.beforeChangeBorrowRate(market) (HoldefiSettings_1.sol#777)\n\tState variables written after the call(s):\n\t- marketAssets (HoldefiSettings_1.sol#782)\n\t- marketAssets (HoldefiSettings_1.sol#783)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "setSuppliersShareRateInternal",
+            "impact": "Medium",
+            "line": 787,
+            "line_end": 817,
+            "message": "Reentrancy in HoldefiSettings.setSuppliersShareRateInternal (HoldefiSettings_1.sol#787-817):\n\tExternal calls:\n\t- holdefiContract.beforeChangeSupplyRate(market) (HoldefiSettings_1.sol#806)\n\tState variables written after the call(s):\n\t- marketAssets (HoldefiSettings_1.sol#815)\n\t- marketAssets (HoldefiSettings_1.sol#816)\n",
+            "name": "reentrancy-no-eth"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "removeMarket",
+            "impact": "Medium",
+            "line": 701,
+            "message": "index in HoldefiSettings.removeMarket (HoldefiSettings_1.sol#701) is a local variable never initialiazed\n",
+            "name": "uninitialized-local"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "removeMarket",
+            "impact": "Medium",
+            "line": 694,
+            "line_end": 718,
+            "message": "HoldefiSettings.removeMarket (HoldefiSettings_1.sol#694-718) does not use the value returned by external calls:\n\t-marketsList.pop() (HoldefiSettings_1.sol#715)\n",
+            "name": "unused-return"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "removeMarket",
+            "impact": "Low",
+            "line": 694,
+            "line_end": 718,
+            "message": "Reentrancy in HoldefiSettings.removeMarket (HoldefiSettings_1.sol#694-718):\n\tExternal calls:\n\t- totalBorrow = holdefiContract.marketAssets(market).totalBorrow (HoldefiSettings_1.sol#695)\n\t- holdefiContract.beforeChangeBorrowRate(market) (HoldefiSettings_1.sol#698)\n\tState variables written after the call(s):\n\t- marketsList (HoldefiSettings_1.sol#711)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "removeMarket",
+            "impact": "Low",
+            "line": 694,
+            "line_end": 718,
+            "message": "Reentrancy in HoldefiSettings.removeMarket (HoldefiSettings_1.sol#694-718):\n\tExternal calls:\n\t- totalBorrow = holdefiContract.marketAssets(market).totalBorrow (HoldefiSettings_1.sol#695)\n\t- holdefiContract.beforeChangeBorrowRate(market) (HoldefiSettings_1.sol#698)\n\t- marketsList.pop() (HoldefiSettings_1.sol#715)\n\tState variables written after the call(s):\n\t- marketAssets (HoldefiSettings_1.sol#716)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "setHoldefiContract",
+            "impact": "Low",
+            "line": 544,
+            "line_end": 550,
+            "message": "Reentrancy in HoldefiSettings.setHoldefiContract (HoldefiSettings_1.sol#544-550):\n\tExternal calls:\n\t- require(bool,string)(holdefiContractAddress.holdefiSettings() == address(this),Conflict with Holdefi contract address) (HoldefiSettings_1.sol#545-547)\n\tState variables written after the call(s):\n\t- holdefiContract (HoldefiSettings_1.sol#549)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "setPromotionRate",
+            "impact": "Low",
+            "line": 584,
+            "line_end": 592,
+            "message": "Reentrancy in HoldefiSettings.setPromotionRate (HoldefiSettings_1.sol#584-592):\n\tExternal calls:\n\t- holdefiContract.beforeChangeSupplyRate(market) (HoldefiSettings_1.sol#587)\n\t- holdefiContract.reserveSettlement(market) (HoldefiSettings_1.sol#588)\n\tState variables written after the call(s):\n\t- marketAssets (HoldefiSettings_1.sol#591)\n",
+            "name": "reentrancy-benign"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "setBorrowRateInternal",
+            "impact": "Low",
+            "line": 764,
+            "line_end": 784,
+            "message": "HoldefiSettings.setBorrowRateInternal (HoldefiSettings_1.sol#764-784) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(deltaTime >= periodBetweenUpdates,Increasing rate is not allowed at this time) (HoldefiSettings_1.sol#771)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "setSuppliersShareRateInternal",
+            "impact": "Low",
+            "line": 787,
+            "line_end": 817,
+            "message": "HoldefiSettings.setSuppliersShareRateInternal (HoldefiSettings_1.sol#787-817) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(deltaTime >= periodBetweenUpdates,Decreasing rate is not allowed at this time) (HoldefiSettings_1.sol#797)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "setValueToLoanRateInternal",
+            "impact": "Low",
+            "line": 820,
+            "line_end": 847,
+            "message": "HoldefiSettings.setValueToLoanRateInternal (HoldefiSettings_1.sol#820-847) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(deltaTime >= periodBetweenUpdates,Increasing rate is not allowed at this time) (HoldefiSettings_1.sol#833)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "Medium",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "setPenaltyRateInternal",
+            "impact": "Low",
+            "line": 850,
+            "line_end": 873,
+            "message": "HoldefiSettings.setPenaltyRateInternal (HoldefiSettings_1.sol#850-873) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(deltaTime >= periodBetweenUpdates,Increasing rate is not allowed at this time) (HoldefiSettings_1.sol#864)\n",
+            "name": "timestamp"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Different versions of Solidity is used in HoldefiSettings_1.sol:\n\t- Version used: ['0.6.12', 'ABIEncoderV2']\n\t- HoldefiSettings_1.sol#1 declares pragma solidity0.6.12\n\t- HoldefiSettings_1.sol#3 declares pragma experimentalABIEncoderV2\n",
+            "name": "pragma"
+        },
+        {
+            "confidence": "High",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "activateMarket",
+            "impact": "Informational",
+            "line": 508,
+            "line_end": 510,
+            "message": "HoldefiSettings.activateMarket (HoldefiSettings_1.sol#508-510) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "deactivateMarket",
+            "impact": "Informational",
+            "line": 515,
+            "line_end": 518,
+            "message": "HoldefiSettings.deactivateMarket (HoldefiSettings_1.sol#515-518) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "activateCollateral",
+            "impact": "Informational",
+            "line": 523,
+            "line_end": 525,
+            "message": "HoldefiSettings.activateCollateral (HoldefiSettings_1.sol#523-525) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "contract": "HoldefiSettings",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "function": "deactivateCollateral",
+            "impact": "Informational",
+            "line": 530,
+            "line_end": 533,
+            "message": "HoldefiSettings.deactivateCollateral (HoldefiSettings_1.sol#530-533) should be declared external\n",
+            "name": "external-function"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 1,
+            "message": "Detected issues with version pragma in HoldefiSettings_1.sol:\n\t- pragma solidity0.6.12 (HoldefiSettings_1.sol#1): it allows old versions\n",
+            "name": "solc-version"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 416,
+            "message": "Constant 'HoldefiSettings.rateDecimals' (HoldefiSettings_1.sol#416) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 418,
+            "message": "Constant 'HoldefiSettings.ethAddress' (HoldefiSettings_1.sol#418) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 420,
+            "message": "Constant 'HoldefiSettings.periodBetweenUpdates' (HoldefiSettings_1.sol#420) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 422,
+            "message": "Constant 'HoldefiSettings.maxBorrowRate' (HoldefiSettings_1.sol#422) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 424,
+            "message": "Constant 'HoldefiSettings.borrowRateMaxIncrease' (HoldefiSettings_1.sol#424) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 426,
+            "message": "Constant 'HoldefiSettings.minSuppliersShareRate' (HoldefiSettings_1.sol#426) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 428,
+            "message": "Constant 'HoldefiSettings.suppliersShareRateMaxDecrease' (HoldefiSettings_1.sol#428) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 430,
+            "message": "Constant 'HoldefiSettings.maxValueToLoanRate' (HoldefiSettings_1.sol#430) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 432,
+            "message": "Constant 'HoldefiSettings.valueToLoanRateMaxIncrease' (HoldefiSettings_1.sol#432) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 434,
+            "message": "Constant 'HoldefiSettings.maxPenaltyRate' (HoldefiSettings_1.sol#434) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 436,
+            "message": "Constant 'HoldefiSettings.penaltyRateMaxIncrease' (HoldefiSettings_1.sol#436) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 438,
+            "message": "Constant 'HoldefiSettings.maxPromotionRate' (HoldefiSettings_1.sol#438) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 440,
+            "message": "Constant 'HoldefiSettings.maxListsLength' (HoldefiSettings_1.sol#440) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        },
+        {
+            "confidence": "High",
+            "filename": "all_contract/HoldefiSettings_1.sol",
+            "impact": "Informational",
+            "line": 444,
+            "message": "Constant 'HoldefiSettings.fivePercentLiquidationGap' (HoldefiSettings_1.sol#444) is not in UPPER_CASE_WITH_UNDERSCORES\n",
+            "name": "naming-convention"
+        }
+    ],
+    "infos": [],
+    "parser": {
+        "id": "slither",
+        "mode": "solidity",
+        "version": "2022/11/14"
+    }
+}

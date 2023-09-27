@@ -1,0 +1,91 @@
+INFO:Slither:Compilation warnings/errors on /sb/PlasmaFramework_15.sol:
+/sb/PlasmaFramework_15.sol:2:1: Warning: Experimental features are turned on. Do not use experimental features on live deployments.
+pragma experimental ABIEncoderV2;
+^-------------------------------^
+
+INFO:Detectors:[93m
+ExitGameController.processExits (/sb/PlasmaFramework_15.sol#756-787) does not use the value returned by external calls:
+	-queue.delMin() (/sb/PlasmaFramework_15.sol#772)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#unused-return[0m
+INFO:Detectors:[92m
+Reentrancy in ExitGameController.enqueue (/sb/PlasmaFramework_15.sol#722-745):
+	External calls:
+	- queue.insert(priority) (/sb/PlasmaFramework_15.sol#740)
+	State variables written after the call(s):
+	- delegations (/sb/PlasmaFramework_15.sol#741)
+Reentrancy in ExitGameController.processExits (/sb/PlasmaFramework_15.sol#756-787):
+	External calls:
+	- require(bool,string)(queue.currentSize() > 0,Exit queue is empty) (/sb/PlasmaFramework_15.sol#760)
+	- uniquePriority = queue.getMin() (/sb/PlasmaFramework_15.sol#762)
+	State variables written after the call(s):
+	- delegations (/sb/PlasmaFramework_15.sol#771)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#reentrancy-vulnerabilities-2[0m
+INFO:Detectors:[92m
+Quarantine.isQuarantined (/sb/PlasmaFramework_15.sol#34-36) uses timestamp for comparisons
+	Dangerous comparisons:
+	- block.timestamp < _self.store[_contractAddress] (/sb/PlasmaFramework_15.sol#35)
+ExitGameController.processExits (/sb/PlasmaFramework_15.sol#756-787) uses timestamp for comparisons
+	Dangerous comparisons:
+	- processedNum < maxExitsToProcess && ExitPriority.parseExitableAt(uniquePriority) < block.timestamp (/sb/PlasmaFramework_15.sol#770-784)
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#block-timestamp[0m
+INFO:Detectors:[92m
+Different versions of Solidity is used in /sb/PlasmaFramework_15.sol:
+	- Version used: ['0.5.11', 'ABIEncoderV2']
+	- /sb/PlasmaFramework_15.sol#1 declares pragma solidity0.5.11
+	- /sb/PlasmaFramework_15.sol#2 declares pragma experimentalABIEncoderV2
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#different-pragma-directives-are-used[0m
+INFO:Detectors:[92m
+PlasmaFramework.getMaintainer (/sb/PlasmaFramework_15.sol#871-873) should be declared external
+VaultRegistry.getMaintainer (/sb/PlasmaFramework_15.sol#89) should be declared external
+VaultRegistry.registerVault (/sb/PlasmaFramework_15.sol#106-117) should be declared external
+VaultRegistry.vaults (/sb/PlasmaFramework_15.sol#122-124) should be declared external
+VaultRegistry.vaultToId (/sb/PlasmaFramework_15.sol#129-131) should be declared external
+BlockController.submitDepositBlock (/sb/PlasmaFramework_15.sol#229-241) should be declared external
+ExitGameRegistry.getMaintainer (/sb/PlasmaFramework_15.sol#326) should be declared external
+ExitGameRegistry.isExitGameSafeToUse (/sb/PlasmaFramework_15.sol#334-336) should be declared external
+ExitGameRegistry.registerExitGame (/sb/PlasmaFramework_15.sol#345-358) should be declared external
+ExitGameRegistry.protocols (/sb/PlasmaFramework_15.sol#363-365) should be declared external
+ExitGameRegistry.exitGames (/sb/PlasmaFramework_15.sol#370-372) should be declared external
+ExitGameRegistry.exitGameToTxType (/sb/PlasmaFramework_15.sol#377-379) should be declared external
+ExitGameController.hasExitQueue (/sb/PlasmaFramework_15.sol#690-693) should be declared external
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#public-function-that-could-be-declared-as-external[0m
+INFO:Detectors:[92m
+Detected issues with version pragma in /sb/PlasmaFramework_15.sol:
+	- pragma solidity0.5.11 (/sb/PlasmaFramework_15.sol#1): it allows old versions
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#incorrect-version-of-solidity[0m
+INFO:Detectors:[92m
+Parameter '_self' of Quarantine.isQuarantined (/sb/PlasmaFramework_15.sol#34) is not in mixedCase
+Parameter '_contractAddress' of Quarantine.isQuarantined (/sb/PlasmaFramework_15.sol#34) is not in mixedCase
+Parameter '_self' of Quarantine.quarantine (/sb/PlasmaFramework_15.sol#42) is not in mixedCase
+Parameter '_contractAddress' of Quarantine.quarantine (/sb/PlasmaFramework_15.sol#42) is not in mixedCase
+Parameter '_minExitPeriod' of VaultRegistry. (/sb/PlasmaFramework_15.sol#78) is not in mixedCase
+Parameter '_initialImmuneVaults' of VaultRegistry. (/sb/PlasmaFramework_15.sol#78) is not in mixedCase
+Parameter '_vaultId' of VaultRegistry.registerVault (/sb/PlasmaFramework_15.sol#106) is not in mixedCase
+Parameter '_vaultAddress' of VaultRegistry.registerVault (/sb/PlasmaFramework_15.sol#106) is not in mixedCase
+Parameter '_vaultId' of VaultRegistry.vaults (/sb/PlasmaFramework_15.sol#122) is not in mixedCase
+Parameter '_vaultAddress' of VaultRegistry.vaultToId (/sb/PlasmaFramework_15.sol#129) is not in mixedCase
+Parameter '_interval' of BlockController. (/sb/PlasmaFramework_15.sol#162) is not in mixedCase
+Parameter '_authority' of BlockController. (/sb/PlasmaFramework_15.sol#165) is not in mixedCase
+Parameter '_blockRoot' of BlockController.submitBlock (/sb/PlasmaFramework_15.sol#208) is not in mixedCase
+Parameter '_blockRoot' of BlockController.submitDepositBlock (/sb/PlasmaFramework_15.sol#229) is not in mixedCase
+Function 'Protocol.MVP' (/sb/PlasmaFramework_15.sol#273-275) is not in mixedCase
+Function 'Protocol.MORE_VP' (/sb/PlasmaFramework_15.sol#278-280) is not in mixedCase
+Parameter '_minExitPeriod' of ExitGameRegistry. (/sb/PlasmaFramework_15.sol#306) is not in mixedCase
+Parameter '_initialImmuneExitGames' of ExitGameRegistry. (/sb/PlasmaFramework_15.sol#306) is not in mixedCase
+Parameter '_contract' of ExitGameRegistry.isExitGameSafeToUse (/sb/PlasmaFramework_15.sol#334) is not in mixedCase
+Parameter '_txType' of ExitGameRegistry.registerExitGame (/sb/PlasmaFramework_15.sol#345) is not in mixedCase
+Parameter '_contract' of ExitGameRegistry.registerExitGame (/sb/PlasmaFramework_15.sol#345) is not in mixedCase
+Parameter '_protocol' of ExitGameRegistry.registerExitGame (/sb/PlasmaFramework_15.sol#345) is not in mixedCase
+Parameter '_txType' of ExitGameRegistry.protocols (/sb/PlasmaFramework_15.sol#363) is not in mixedCase
+Parameter '_txType' of ExitGameRegistry.exitGames (/sb/PlasmaFramework_15.sol#370) is not in mixedCase
+Parameter '_exitGame' of ExitGameRegistry.exitGameToTxType (/sb/PlasmaFramework_15.sol#377) is not in mixedCase
+Parameter '_element' of PriorityQueue.insert (/sb/PlasmaFramework_15.sol#477) is not in mixedCase
+Parameter '_txPos' of TxPosLib.blockNum (/sb/PlasmaFramework_15.sol#563) is not in mixedCase
+Parameter '_txPos' of TxPosLib.txIndex (/sb/PlasmaFramework_15.sol#576) is not in mixedCase
+Parameter '_outputIds' of ExitGameController.isAnyOutputsSpent (/sb/PlasmaFramework_15.sol#793) is not in mixedCase
+Parameter '_outputIds' of ExitGameController.batchFlagOutputsSpent (/sb/PlasmaFramework_15.sol#806) is not in mixedCase
+Parameter '_outputId' of ExitGameController.flagOutputSpent (/sb/PlasmaFramework_15.sol#817) is not in mixedCase
+Parameter '_minExitPeriod' of PlasmaFramework. (/sb/PlasmaFramework_15.sol#857) is not in mixedCase
+Parameter '_maintainer' of PlasmaFramework. (/sb/PlasmaFramework_15.sol#861) is not in mixedCase
+Reference: https://github.com/trailofbits/slither/wiki/Detectors-Documentation#conformance-to-solidity-naming-conventions[0m
+INFO:Slither:/sb/PlasmaFramework_15.sol analyzed (14 contracts), 53 result(s) found
