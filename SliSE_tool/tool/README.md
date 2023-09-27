@@ -85,6 +85,6 @@ python SliSE.py -s <filename> -vt reentrancy
 python SliSE.py -s input/smartbugs_all/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3 -vt reentrancy
 
 # Verification of path reachability
-python SliSE.py -s <filename> -c <contract filename> -func <function name> -r 
+python SliSE.py -s <filename> -tc <contract filename> -tf <function name>
 python SliSE.py -f input/smartbugs_all/0x7b368c4e805c3870b6c49a3f1f49f69af8662cf3 -tc 'W_WALLET' -tf 'Collect(uint256)'
 ```
