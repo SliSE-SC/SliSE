@@ -2,6 +2,28 @@
 
 SliSE is a tool designed to efficiently detect reentrancy vulnerabilities in complex smart contracts.
 
+## SliSE Tool Docker Guide
+
+
+## File Structure
+
+- `/example`: Directory for storing Solidity files to be analyzed.
+- `start.sh`: Script used to initiate the analysis.
+
+## Usage Steps
+
+### 1. Prepare Files for Analysis
+
+Place the Solidity files you wish to analyze into the `/example` directory.
+
+### 2. Run the Analysis Script (Using Docker Image slise_image.tar)
+
+```bash
+docker pull janson1060/slise_tool:v1
+bash start.sh example/0x0da76de0916ef2da3c58a97e4d09d501c56a9f15.sol
+```
+
+
 ## Dependencies Installation
 
 ### [virtualenv](https://virtualenvwrapper.readthedocs.io/en/latest/) for configuring the Python environment.
